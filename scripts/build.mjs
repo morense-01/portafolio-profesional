@@ -55,7 +55,7 @@ const NAV = [
   ['/proyectos/', 'Proyectos'], ['/documentos/', 'Documentos'], ['/contacto/', 'Contacto'],
 ];
 function layout({ title, desc, route, body, noindex = false, ld = null, type = 'website' }) {
-  const full = title === site.shortName ? site.title : `${title} | ${site.shortName}`;
+  const full = title === site.shortName ? (site.minimal ? site.shortName : site.title) : `${title} | ${site.shortName}`;
   const url = abs(route);
   const nav = NAV.map(([r, t]) => `<li><a href="${L(r)}"${r === route || (r !== '/' && route.startsWith(r)) ? ' aria-current="page"' : ''}>${t}</a></li>`).join('');
   return `<!doctype html>
@@ -89,10 +89,10 @@ ${ld ? `<script type="application/ld+json">${JSON.stringify(ld).replace(/</g, '\
 <header class="site-header">
   <div class="wrap bar">
     <a class="brand" href="${L('/')}"><span class="mark" aria-hidden="true">MM</span><span>${esc(site.shortName)}</span></a>
-    <button class="menu-btn" aria-expanded="false" aria-controls="menu">Menú</button>
-    <nav id="menu" aria-label="Principal"><ul>${nav}</ul></nav>
+    ${site.minimal ? '' : `<button class="menu-btn" aria-expanded="false" aria-controls="menu">Menú</button>
+    <nav id="menu" aria-label="Principal"><ul>${nav}</ul></nav>`}
   </div>
-  <div class="wrap tools">
+  ${site.minimal ? '' : `<div class="wrap tools">
     <form class="gsearch" role="search" action="${L('/buscar/')}" method="get"><label class="sr" for="q">Buscar en el sitio</label><input id="q" name="q" type="search" placeholder="Buscar empresa, tecnología, proyecto…" autocomplete="off"><button type="submit">Buscar</button></form>
     <div class="views" role="group" aria-label="Vista de lectura">
       <span class="views-l">Vista:</span>
@@ -100,16 +100,16 @@ ${ld ? `<script type="application/ld+json">${JSON.stringify(ld).replace(/</g, '\
       <button data-set-view="exec" aria-pressed="false">Ejecutiva</button>
       <button data-set-view="tech" aria-pressed="false">Técnica</button>
     </div>
-  </div>
+  </div>`}
 </header>
 <main id="contenido">
 ${body}
 </main>
 <footer class="site-footer">
   <div class="wrap">
-    <p><strong>${esc(site.shortName)}</strong> · ${esc(profile.location)}</p>
-    <p class="muted">Documento de acceso por enlace privado. Solo se incluye información verificada o autorizada. Última revisión: ${esc(site.lastReview)}. Este sitio no usa cookies de seguimiento ni analítica.</p>
-    <p><a href="${L('/')}">Volver al inicio</a> · <a href="${L('/buscar/')}">Buscador</a></p>
+    ${site.minimal ? `<p><strong>${esc(site.shortName)}</strong></p>` : `<p><strong>${esc(site.shortName)}</strong> · ${esc(profile.location)}</p>
+    <p class="muted">Documento de acceso por enlace privado. Solo se incluye información verificada o autorizada. Última revisión: ${esc(site.lastReview)}. Este sitio no usa cookies de seguimiento ni analítica.</p>`}
+    ${site.minimal ? '' : `<p><a href="${L('/')}">Volver al inicio</a> · <a href="${L('/buscar/')}">Buscador</a></p>`}
   </div>
 </footer>
 <script src="${L('/assets/app.js')}" defer></script>
@@ -126,6 +126,16 @@ const cvHref = cvDoc ? L(`/documents/${cvDoc.file}`) : L('/documentos/');
 const cvLabel = cvDoc ? 'Descargar currículum' : 'Consultar currículum';
 const company = (e) => `${esc(e.company)}`;
 const roleLine = (e) => [e.roleConfirmed && e.role ? e.role : '', clean(e.relationship)].filter(Boolean).join(' · ');
+
+function homeMinimal() {
+  const body = `<section class="hero"><div class="wrap">
+  <h1>${esc(site.shortName)}</h1>
+  <p class="headline">${esc(profile.headline)}</p>
+  <p class="eyebrow">${esc(profile.location)}</p>
+  <p class="ext">${links.map((l) => ext(l.url, l.label)).join(" · ")}</p>
+</div></section>`;
+  out('index.html', layout({ title: site.shortName, desc: site.description, route: '/', body }));
+}
 
 function home() {
   const jobs = exps.filter((e) => e.slug !== '5m-technology').length;
@@ -320,7 +330,8 @@ function ogImage() {
 // ---------- ejecución ----------
 fs.rmSync(DIST, { recursive: true, force: true });
 fs.cpSync(path.join(ROOT, 'public'), DIST, { recursive: true });
-home(); perfilEjecutivo(); perfilTecnico(); trayectoria(); experiencia(); logros(); certificaciones(); proyectos(); documentos(); contacto(); buscar(); pagina404(); searchIndex(); seo(); ogImage();
+if (site.minimal) { homeMinimal(); pagina404(); seo(); ogImage(); }
+else { home(); perfilEjecutivo(); perfilTecnico(); trayectoria(); experiencia(); logros(); certificaciones(); proyectos(); documentos(); contacto(); buscar(); pagina404(); searchIndex(); seo(); ogImage(); }
 fs.writeFileSync(path.join(DIST, '.nojekyll'), '');
 
 // Informe de pendientes generado desde los datos (docs/PENDIENTES.md).
