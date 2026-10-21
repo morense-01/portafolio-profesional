@@ -1,0 +1,12 @@
+{
+  "slug": "dominicana-de-cales", "order": 4, "public": true,
+  "company": "Dominicana de Cales", "location": "", "sector": "",
+  "relationship": "Empleado (por confirmar)",
+  "role": "", "roleConfirmed": false,
+  "start": "2018", "end": "2020", "periodDisplay": "2018 – 2020", "periodNote": "Cargo exacto y responsabilidades por confirmar con el currículum.",
+  "summary": "Experiencia en tecnología en Dominicana de Cales durante el período 2018–2020.",
+  "context": [], "executive": [], "operational": [], "cases": [], "impact": [],
+  "technologies": [], "evidence": [], "links": [], "learnings": [],
+  "recruiterSummary": ["Experiencia en tecnología entre 2018 y 2020."],
+  "pending": ["Cargo exacto.", "Meses de inicio y fin.", "Sector y contexto de la empresa.", "Responsabilidades y logros.", "Tecnologías utilizadas.", "Relación laboral."]
+}

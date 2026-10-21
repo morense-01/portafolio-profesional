@@ -1,0 +1,12 @@
+{
+  "slug": "madeco", "order": 2, "public": true,
+  "company": "MADECO", "location": "", "sector": "",
+  "relationship": "Empleado",
+  "role": "Gerente de Tecnología", "roleConfirmed": true,
+  "start": "2022", "end": "2024", "periodDisplay": "2022 – 2024", "periodNote": "Se indica solo el año; meses por confirmar.",
+  "summary": "Gerente de Tecnología de MADECO durante el período 2022–2024.",
+  "context": [], "executive": [], "operational": [], "cases": [], "impact": [],
+  "technologies": [], "evidence": [], "links": [], "learnings": [],
+  "recruiterSummary": ["Posición gerencial: Gerente de Tecnología (2022–2024)."],
+  "pending": ["Meses de inicio y fin.", "Sector y descripción de la empresa.", "Dimensión: usuarios, sedes, servidores, tamaño del equipo, presupuesto (solo si es publicable).", "Responsabilidades ejecutivas y operativas reales.", "Proyectos y casos de éxito (posible origen de: migración de 63 servidores, reducción de costos hasta 88%, reducción de incidentes hasta 60%; NO asignar sin confirmar).", "Tecnologías utilizadas.", "Autorización para publicar documentos o capturas."]
+}

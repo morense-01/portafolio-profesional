@@ -1,0 +1,21 @@
+{
+  "slug": "ods-odw-logistics", "order": 1, "public": true,
+  "company": "ODS/ODW Logistics", "location": "Boston, Estados Unidos", "sector": "Logística",
+  "relationship": "Consultor externo (contratación externa)",
+  "role": "Consultor de infraestructura y tecnología", "roleConfirmed": false,
+  "start": "", "end": "2026-06", "periodDisplay": "Hasta junio de 2026", "periodNote": "Fecha de inicio y fecha exacta de cierre por confirmar.",
+  "summary": "Consultoría de infraestructura y tecnología para un entorno logístico, mediante contratación externa. Participación en operaciones de almacén, WMS, lectores RF, infraestructura híbrida, redes, seguridad y continuidad.",
+  "context": ["Entorno logístico con operación de almacén, sistema de gestión de almacenes (WMS) y dispositivos de radiofrecuencia (RF)."],
+  "executive": [], 
+  "operational": ["Participación en infraestructura híbrida, redes, seguridad y continuidad operativa del entorno de almacén.", "Participación en la plataforma de WMS y lectores RF que sostienen la operación de almacén."],
+  "cases": [], "impact": [],
+  "technologies": [
+    {"name": "WMS", "context": "Sistema de gestión de almacenes en la operación logística."},
+    {"name": "Lectores RF", "context": "Dispositivos de captura en la operación de almacén."},
+    {"name": "Infraestructura híbrida", "context": "Proveedor(es) de nube y alcance por confirmar."},
+    {"name": "Redes y seguridad", "context": "Marcas y alcance por confirmar."}
+  ],
+  "evidence": [], "links": [], "learnings": [],
+  "recruiterSummary": ["Consultor externo en un entorno logístico de Estados Unidos.", "Áreas de participación: WMS, lectores RF, infraestructura híbrida, redes, seguridad y continuidad.", "Trabajo con infraestructura que sostiene una operación de almacén."],
+  "pending": ["Fecha exacta de inicio y de fin (junio 2026).", "Cargo o título formal del contrato.", "Superficie del almacén, número de servidores, usuarios y ubicaciones.", "Marca del WMS y de los lectores RF (confirmar que puede publicarse).", "Proveedor de nube de la infraestructura híbrida.", "Proyectos y casos de éxito con responsabilidad individual.", "Métricas asociadas: precisión de inventario +30%, errores de picking -25%, procesamiento manual -40%, disponibilidad 99.9% (solo si el proyecto las respalda).", "Confirmar con la empresa qué puede mencionarse públicamente (nombre, alcance)."]
+}

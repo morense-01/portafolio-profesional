@@ -1,0 +1,12 @@
+{
+  "slug": "vicrisa", "order": 5, "public": true,
+  "company": "VICRISA", "location": "", "sector": "",
+  "relationship": "Empleado (por confirmar)",
+  "role": "", "roleConfirmed": false,
+  "start": "2007", "end": "2018", "periodDisplay": "2007 – 2018", "periodNote": "Período largo; los cargos y sus fechas por confirmar. Puede incluir varias etapas.",
+  "summary": "Experiencia profesional en VICRISA entre 2007 y 2018.",
+  "context": [], "executive": [], "operational": [], "cases": [], "impact": [],
+  "technologies": [], "evidence": [], "links": [], "learnings": [],
+  "recruiterSummary": ["Once años de experiencia profesional continua (2007–2018)."],
+  "pending": ["Cargos, en orden cronológico, y fecha de cada ascenso o cambio.", "Sector y contexto de la empresa.", "Responsabilidades por cargo.", "Proyectos y logros (la etapa más extensa de la trayectoria).", "Tecnologías utilizadas.", "Aclarar si hubo períodos simultáneos con otras empresas."]
+}

@@ -1,0 +1,28 @@
+{
+    "slug":  "cocinandote-wala-n8n",
+    "public":  false,
+    "name":  "Automatización de contenidos de CocinandoteRD y Wala con n8n",
+    "type":  "Automatización",
+    "role":  "",
+    "status":  "Decidir si se presenta",
+    "relatedCompany":  "",
+    "summary":  "",
+    "problem":  "",
+    "architecture":  "",
+    "technologies":  [
+
+                     ],
+    "contributions":  [
+
+                      ],
+    "evidence":  [
+
+                 ],
+    "links":  [
+
+              ],
+    "pending":  [
+                    "Decidir si se desea presentar este proyecto.",
+                    "Describir flujos reales y resultados."
+                ]
+}

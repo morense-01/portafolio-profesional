@@ -1,0 +1,158 @@
+{
+    "_ayuda":  "type: certificacion | curso | insignia | formacion. Publique (public true) solo con enlace de verificación o documento. Imagen en public/certifications/.",
+    "categories":  [
+                       "Cloud y arquitectura",
+                       "Infraestructura y administración de sistemas",
+                       "Ciberseguridad",
+                       "Redes",
+                       "SAP y sistemas empresariales",
+                       "Inteligencia artificial y automatización",
+                       "Gestión y liderazgo"
+                   ],
+    "items":  [
+                  {
+                      "id":  "aws-cloud-practitioner",
+                      "name":  "AWS Certified Cloud Practitioner (o formación AWS equivalente)",
+                      "issuer":  "Amazon Web Services",
+                      "category":  "Cloud y arquitectura",
+                      "type":  "por-confirmar",
+                      "status":  "pendiente-verificacion",
+                      "public":  false,
+                      "date":  "",
+                      "expires":  "",
+                      "credentialId":  "",
+                      "verifyUrl":  "",
+                      "badgeImage":  "",
+                      "skills":  [
+
+                                 ],
+                      "notes":  "Registro inicial. Confirme denominación oficial, tipo, fecha y enlace de verificación antes de publicar."
+                  },
+                  {
+                      "id":  "mcsa-windows-server-2016",
+                      "name":  "Microsoft MCSA: Windows Server 2016",
+                      "issuer":  "Microsoft",
+                      "category":  "Infraestructura y administración de sistemas",
+                      "type":  "por-confirmar",
+                      "status":  "pendiente-verificacion",
+                      "public":  false,
+                      "date":  "",
+                      "expires":  "",
+                      "credentialId":  "",
+                      "verifyUrl":  "",
+                      "badgeImage":  "",
+                      "skills":  [
+
+                                 ],
+                      "notes":  "Registro inicial. Confirme denominación oficial, tipo, fecha y enlace de verificación antes de publicar."
+                  },
+                  {
+                      "id":  "fortinet-nse4",
+                      "name":  "Fortinet NSE 4",
+                      "issuer":  "Fortinet",
+                      "category":  "Redes",
+                      "type":  "por-confirmar",
+                      "status":  "pendiente-verificacion",
+                      "public":  false,
+                      "date":  "",
+                      "expires":  "",
+                      "credentialId":  "",
+                      "verifyUrl":  "",
+                      "badgeImage":  "",
+                      "skills":  [
+
+                                 ],
+                      "notes":  "Registro inicial. Confirme denominación oficial, tipo, fecha y enlace de verificación antes de publicar."
+                  },
+                  {
+                      "id":  "comptia-a-plus",
+                      "name":  "CompTIA A+",
+                      "issuer":  "CompTIA",
+                      "category":  "Infraestructura y administración de sistemas",
+                      "type":  "por-confirmar",
+                      "status":  "pendiente-verificacion",
+                      "public":  false,
+                      "date":  "",
+                      "expires":  "",
+                      "credentialId":  "",
+                      "verifyUrl":  "",
+                      "badgeImage":  "",
+                      "skills":  [
+
+                                 ],
+                      "notes":  "Registro inicial. Confirme denominación oficial, tipo, fecha y enlace de verificación antes de publicar."
+                  },
+                  {
+                      "id":  "ibm-cybersecurity-fundamentals",
+                      "name":  "IBM Cybersecurity Fundamentals",
+                      "issuer":  "IBM",
+                      "category":  "Ciberseguridad",
+                      "type":  "por-confirmar",
+                      "status":  "pendiente-verificacion",
+                      "public":  false,
+                      "date":  "",
+                      "expires":  "",
+                      "credentialId":  "",
+                      "verifyUrl":  "",
+                      "badgeImage":  "",
+                      "skills":  [
+
+                                 ],
+                      "notes":  "Registro inicial. Confirme denominación oficial, tipo, fecha y enlace de verificación antes de publicar."
+                  },
+                  {
+                      "id":  "cisco-cybersecurity",
+                      "name":  "Cisco Cybersecurity (denominación exacta por confirmar)",
+                      "issuer":  "Cisco",
+                      "category":  "Ciberseguridad",
+                      "type":  "por-confirmar",
+                      "status":  "pendiente-verificacion",
+                      "public":  false,
+                      "date":  "",
+                      "expires":  "",
+                      "credentialId":  "",
+                      "verifyUrl":  "",
+                      "badgeImage":  "",
+                      "skills":  [
+
+                                 ],
+                      "notes":  "Registro inicial. Confirme denominación oficial, tipo, fecha y enlace de verificación antes de publicar."
+                  },
+                  {
+                      "id":  "azure-concepts",
+                      "name":  "Azure Concepts (denominación exacta por confirmar)",
+                      "issuer":  "Microsoft",
+                      "category":  "Cloud y arquitectura",
+                      "type":  "por-confirmar",
+                      "status":  "pendiente-verificacion",
+                      "public":  false,
+                      "date":  "",
+                      "expires":  "",
+                      "credentialId":  "",
+                      "verifyUrl":  "",
+                      "badgeImage":  "",
+                      "skills":  [
+
+                                 ],
+                      "notes":  "Registro inicial. Confirme denominación oficial, tipo, fecha y enlace de verificación antes de publicar."
+                  },
+                  {
+                      "id":  "google-it",
+                      "name":  "Google IT (denominación exacta por confirmar)",
+                      "issuer":  "Google",
+                      "category":  "Infraestructura y administración de sistemas",
+                      "type":  "por-confirmar",
+                      "status":  "pendiente-verificacion",
+                      "public":  false,
+                      "date":  "",
+                      "expires":  "",
+                      "credentialId":  "",
+                      "verifyUrl":  "",
+                      "badgeImage":  "",
+                      "skills":  [
+
+                                 ],
+                      "notes":  "Registro inicial. Confirme denominación oficial, tipo, fecha y enlace de verificación antes de publicar."
+                  }
+              ]
+}

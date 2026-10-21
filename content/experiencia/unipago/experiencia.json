@@ -1,0 +1,12 @@
+{
+  "slug": "unipago", "order": 3, "public": true,
+  "company": "UNIPAGO", "location": "", "sector": "",
+  "relationship": "Empleado (por confirmar)",
+  "role": "", "roleConfirmed": false,
+  "start": "2020", "end": "2022", "periodDisplay": "2020 – 2022", "periodNote": "Cargo exacto y responsabilidades por confirmar con el currículum.",
+  "summary": "Experiencia en tecnología en UNIPAGO durante el período 2020–2022.",
+  "context": [], "executive": [], "operational": [], "cases": [], "impact": [],
+  "technologies": [], "evidence": [], "links": [], "learnings": [],
+  "recruiterSummary": ["Experiencia en tecnología entre 2020 y 2022."],
+  "pending": ["Cargo exacto.", "Meses de inicio y fin.", "Sector y contexto de la empresa.", "Responsabilidades y logros.", "Tecnologías utilizadas.", "Relación laboral (empleado o contratista)."]
+}

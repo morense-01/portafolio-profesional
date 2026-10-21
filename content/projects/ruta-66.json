@@ -1,0 +1,31 @@
+{
+    "slug":  "ruta-66",
+    "public":  true,
+    "name":  "Ruta 66",
+    "type":  "Aplicación web progresiva (PWA)",
+    "role":  "Desarrollador independiente (por confirmar)",
+    "status":  "En documentación",
+    "relatedCompany":  "",
+    "summary":  "Aplicación web progresiva (PWA). La ficha técnica se publicará cuando se confirmen sus características reales.",
+    "problem":  "",
+    "architecture":  "",
+    "technologies":  [
+
+                     ],
+    "contributions":  [
+
+                      ],
+    "evidence":  [
+
+                 ],
+    "links":  [
+
+              ],
+    "pending":  [
+                    "Propósito y usuarios del proyecto.",
+                    "Características reales de la PWA.",
+                    "Estado (prototipo, producción).",
+                    "Tecnologías.",
+                    "Repositorio, demostración y capturas no sensibles."
+                ]
+}

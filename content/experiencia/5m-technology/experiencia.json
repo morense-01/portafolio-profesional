@@ -1,0 +1,14 @@
+{
+  "slug": "5m-technology", "order": 0, "public": true,
+  "company": "5M Technology", "location": "República Dominicana", "sector": "Consultoría y servicios tecnológicos",
+  "relationship": "Fundador (actividad empresarial propia)",
+  "role": "Fundador y CEO", "roleConfirmed": true,
+  "start": "2024", "end": "", "periodDisplay": "2024 – presente", "periodNote": "Actividad empresarial propia; corre en paralelo con contratos y empleos. No es un empleo.",
+  "summary": "Empresa fundada en 2024 que presta consultoría y servicios tecnológicos. Esta experiencia se presenta de forma separada de los empleos y contratos anteriores.",
+  "context": ["Firma de consultoría y servicios tecnológicos dirigida por su fundador."],
+  "executive": ["Dirección de la empresa como fundador y CEO."],
+  "operational": [], "cases": [], "impact": [],
+  "technologies": [], "evidence": [], "links": [], "learnings": [],
+  "recruiterSummary": ["Fundador y CEO de una firma de consultoría y servicios tecnológicos desde 2024.", "Actividad empresarial propia, distinta de la trayectoria como empleado."],
+  "pending": ["Catálogo de servicios publicable.", "Clientes o sectores atendidos (solo con autorización).", "Proyectos de infraestructura realizados y su alcance.", "Ubicación del domicilio comercial.", "Verificar el certificado TLS de 5mtechnology.com y activar el enlace en content/profile/profile.json."]
+}

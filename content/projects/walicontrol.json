@@ -1,0 +1,30 @@
+{
+    "slug":  "walicontrol",
+    "public":  true,
+    "name":  "WaliControl",
+    "type":  "Automatización",
+    "role":  "Desarrollador independiente (por confirmar)",
+    "status":  "En documentación",
+    "relatedCompany":  "",
+    "summary":  "Automatización del procesamiento de mensajes de voz hacia Google Sheets. Los componentes se publicarán cuando se confirmen.",
+    "problem":  "",
+    "architecture":  "",
+    "technologies":  [
+
+                     ],
+    "contributions":  [
+
+                      ],
+    "evidence":  [
+
+                 ],
+    "links":  [
+
+              ],
+    "pending":  [
+                    "Componentes implementados (transcripción, orquestación, hoja).",
+                    "Estado y alcance.",
+                    "Datos de ejemplo no sensibles y capturas.",
+                    "Repositorio."
+                ]
+}

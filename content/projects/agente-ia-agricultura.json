@@ -1,0 +1,31 @@
+{
+    "slug":  "agente-ia-agricultura",
+    "public":  true,
+    "name":  "Agente de inteligencia artificial para agricultura",
+    "type":  "Inteligencia artificial y automatización",
+    "role":  "Desarrollador independiente (por confirmar)",
+    "status":  "En documentación",
+    "relatedCompany":  "",
+    "summary":  "Agente de inteligencia artificial orientado a la agricultura. La arquitectura se publicará cuando se confirmen los componentes realmente implementados.",
+    "problem":  "",
+    "architecture":  "",
+    "technologies":  [
+
+                     ],
+    "contributions":  [
+
+                      ],
+    "evidence":  [
+
+                 ],
+    "links":  [
+
+              ],
+    "pending":  [
+                    "Confirmar si Open WebUI, Gemini, Qdrant y SearXNG siguen formando parte de la implementación.",
+                    "Problema atendido y usuarios.",
+                    "Estado: prototipo o producto.",
+                    "Diagrama de arquitectura sanitizado.",
+                    "Repositorio y demostración."
+                ]
+}
