@@ -65,6 +65,8 @@ button,.btn{font:inherit;cursor:pointer}
 .results li{border-bottom:1px solid var(--line);padding:12px 0}.results a{font-weight:600}
 .table-wrap{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:.92rem}th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}thead th{background:var(--navy);color:#fff}
 .cert-cards.list{display:block}.cert-cards.list .card{display:flex;gap:14px;flex-wrap:wrap;align-items:baseline;border-radius:0;box-shadow:none;border-width:0 0 1px}.cert-cards.list .card h3{margin:0}
+.cert-sources{margin-bottom:24px;border-left:4px solid var(--cyan);background:var(--soft)}
+.cert-sources h3{margin:0 0 6px}
 .facts-dl dt{font-weight:700;margin-top:.8em}.facts-dl dd{margin:0}
 .contact{font-size:1.05rem}.contact li{margin:.5em 0}
 .site-footer{background:var(--navy);color:#cfe3f1;padding:28px 0;margin-top:40px}.site-footer a{color:#9fe0fa}

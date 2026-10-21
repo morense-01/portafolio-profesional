@@ -6,7 +6,10 @@
 
 - [x] LinkedIn: https://www.linkedin.com/in/mariomendeza/. undefined
 - [x] GitHub: https://github.com/morense-01. undefined
-- [x] Credly (Insignias Oficiales): https://www.credly.com/users/mario-mendez.630726a8/badges/credly. undefined
+- [x] Google Skills: https://www.skills.google/public_profiles/195595b2-3a40-4602-905a-78c34b68fe62. undefined
+- [x] Credly (Insignias): https://www.credly.com/users/mario-mendez.630726a8/badges. undefined
+- [x] Microsoft Learn: https://learn.microsoft.com/es-es/users/MarioMendezAlcantaraalc. undefined
+- [x] Perfil Oficial SAP: https://profile.sap.com/u/mario_mendez_a. undefined
 - [ ] Validar las cifras de trayectoria: más de 21 años en tecnología y 12 en gerencia, contra el historial completo.
 - [ ] Confirmar `siteUrl` y `basePath` en `content/site.json` según el hosting final.
 
@@ -59,10 +62,25 @@
 
 ## Certificaciones pendientes de verificación (ocultas)
 
-- [x] Networking Basics (Cisco): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] Introduction to Vertex AI Studio (Google Cloud): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] Create Image Captioning Models (Google Cloud): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] Transformer Models and BERT Model (Google Cloud): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] Introduction to Image Generation (Google Cloud): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] Introduction to Large Language Models (Google Cloud): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] Generative AI Fundamentals (Google Cloud): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] Introduction to Responsible AI (Google Cloud): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] Introduction to Generative AI (Google Cloud): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] Clean, transform, and load data in Power BI (Microsoft Learn): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] Get started with computer vision in Azure (Microsoft Learn): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] Introduction to end-to-end analytics using Microsoft Fabric (Microsoft Learn): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] Write DAX formulas for semantic models in Power BI (Microsoft Learn): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] Introduction to Retrieval-Augmented Generation (RAG) concepts (Microsoft Learn): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] Get started with Microsoft data analytics (Ruta de Aprendizaje) (Microsoft Learn): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] Optimize business processes with Microsoft 365 Copilot (Microsoft Learn): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
 - [x] Model Context Protocol: Advanced Topics (Anthropic (Skilljar)): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
 - [x] Introduction to Model Context Protocol (Anthropic (Skilljar)): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
 - [x] Introduction to Claude Cowork (Anthropic (Skilljar)): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] Networking Basics (Cisco): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
 - [x] IBM Cloud Essentials (IBM): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
 - [x] AWS Educate Introduction to Cloud 101 (Amazon Web Services): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
 - [x] Cybersecurity Fundamentals (IBM SkillsBuild): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.

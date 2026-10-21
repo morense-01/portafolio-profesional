@@ -53,8 +53,23 @@
       "verified": true
     },
     {
-      "label": "Credly (Insignias Oficiales)",
-      "url": "https://www.credly.com/users/mario-mendez.630726a8/badges/credly",
+      "label": "Google Skills",
+      "url": "https://www.skills.google/public_profiles/195595b2-3a40-4602-905a-78c34b68fe62",
+      "verified": true
+    },
+    {
+      "label": "Credly (Insignias)",
+      "url": "https://www.credly.com/users/mario-mendez.630726a8/badges",
+      "verified": true
+    },
+    {
+      "label": "Microsoft Learn",
+      "url": "https://learn.microsoft.com/es-es/users/MarioMendezAlcantaraalc",
+      "verified": true
+    },
+    {
+      "label": "Perfil Oficial SAP",
+      "url": "https://profile.sap.com/u/mario_mendez_a",
       "verified": true
     }
   ],

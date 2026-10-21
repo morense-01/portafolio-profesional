@@ -1,34 +1,239 @@
 {
-  "_ayuda": "type: certificacion | curso | insignia | formacion. Publique (public true y status verificada) con enlace de verificación o documento.",
+  "_ayuda": "type: certificacion | curso | insignia | formacion. Todos los registros cuentan con su enlace oficial directo de verificación.",
   "categories": [
+    "Inteligencia artificial y automatización",
     "Cloud y arquitectura",
-    "Infraestructura y administración de sistemas",
     "Ciberseguridad",
     "Redes",
     "SAP y sistemas empresariales",
-    "Inteligencia artificial y automatización",
+    "Infraestructura y administración de sistemas",
     "Gestión y liderazgo"
   ],
   "items": [
     {
-      "id": "cisco-networking-basics",
-      "name": "Networking Basics",
-      "issuer": "Cisco",
-      "category": "Redes",
+      "id": "google-vertex-ai-studio",
+      "name": "Introduction to Vertex AI Studio",
+      "issuer": "Google Cloud",
+      "category": "Inteligencia artificial y automatización",
       "type": "insignia",
       "status": "verificada",
       "public": true,
-      "date": "2026-09",
-      "credentialId": "33eccf9a-b4bb-414d-9cd0-ab9904f6d3a6",
-      "verifyUrl": "https://www.credly.com/badges/33eccf9a-b4bb-414d-9cd0-ab9904f6d3a6",
-      "badgeImage": "cisco-networking-basics.png",
-      "skills": [
-        "Networking",
-        "TCP/IP",
-        "Ethernet",
-        "Network Configuration"
-      ],
-      "notes": "Insignia oficial emitida a través de Credly."
+      "date": "2023-08-17",
+      "credentialId": "4740827",
+      "verifyUrl": "https://www.skills.google/public_profiles/195595b2-3a40-4602-905a-78c34b68fe62/badges/4740827",
+      "badgeImage": "google-vertex-ai.png",
+      "skills": ["Vertex AI", "Generative AI Studio", "Prompt Design", "Model Tuning"],
+      "notes": "Insignia oficial verificable en Google Skills."
+    },
+    {
+      "id": "google-image-captioning",
+      "name": "Create Image Captioning Models",
+      "issuer": "Google Cloud",
+      "category": "Inteligencia artificial y automatización",
+      "type": "insignia",
+      "status": "verificada",
+      "public": true,
+      "date": "2023-08-16",
+      "credentialId": "4724726",
+      "verifyUrl": "https://www.skills.google/public_profiles/195595b2-3a40-4602-905a-78c34b68fe62/badges/4724726",
+      "badgeImage": "google-image-captioning.png",
+      "skills": ["Computer Vision", "Deep Learning", "Image Captioning", "TensorFlow"],
+      "notes": "Insignia oficial verificable en Google Skills."
+    },
+    {
+      "id": "google-transformer-bert",
+      "name": "Transformer Models and BERT Model",
+      "issuer": "Google Cloud",
+      "category": "Inteligencia artificial y automatización",
+      "type": "insignia",
+      "status": "verificada",
+      "public": true,
+      "date": "2023-08-11",
+      "credentialId": "4659320",
+      "verifyUrl": "https://www.skills.google/public_profiles/195595b2-3a40-4602-905a-78c34b68fe62/badges/4659320",
+      "badgeImage": "google-transformer-bert.png",
+      "skills": ["BERT", "Transformers", "NLP", "Attention Mechanism"],
+      "notes": "Insignia oficial verificable en Google Skills."
+    },
+    {
+      "id": "google-image-generation",
+      "name": "Introduction to Image Generation",
+      "issuer": "Google Cloud",
+      "category": "Inteligencia artificial y automatización",
+      "type": "insignia",
+      "status": "verificada",
+      "public": true,
+      "date": "2023-08-10",
+      "credentialId": "4642129",
+      "verifyUrl": "https://www.skills.google/public_profiles/195595b2-3a40-4602-905a-78c34b68fe62/badges/4642129",
+      "badgeImage": "google-image-generation.png",
+      "skills": ["Diffusion Models", "Generative AI", "Image Synthesis"],
+      "notes": "Insignia oficial verificable en Google Skills."
+    },
+    {
+      "id": "google-large-language-models",
+      "name": "Introduction to Large Language Models",
+      "issuer": "Google Cloud",
+      "category": "Inteligencia artificial y automatización",
+      "type": "insignia",
+      "status": "verificada",
+      "public": true,
+      "date": "2023-08-09",
+      "credentialId": "4625871",
+      "verifyUrl": "https://www.skills.google/public_profiles/195595b2-3a40-4602-905a-78c34b68fe62/badges/4625871",
+      "badgeImage": "google-llm.png",
+      "skills": ["LLM", "Prompt Engineering", "Fine-Tuning", "Gen AI"],
+      "notes": "Insignia oficial verificable en Google Skills."
+    },
+    {
+      "id": "google-genai-fundamentals",
+      "name": "Generative AI Fundamentals",
+      "issuer": "Google Cloud",
+      "category": "Inteligencia artificial y automatización",
+      "type": "insignia",
+      "status": "verificada",
+      "public": true,
+      "date": "2023-08-08",
+      "credentialId": "4610739",
+      "verifyUrl": "https://www.skills.google/public_profiles/195595b2-3a40-4602-905a-78c34b68fe62/badges/4610739",
+      "badgeImage": "google-genai-fundamentals.png",
+      "skills": ["Generative AI", "Responsible AI", "Model Architecture"],
+      "notes": "Insignia oficial verificable en Google Skills."
+    },
+    {
+      "id": "google-responsible-ai",
+      "name": "Introduction to Responsible AI",
+      "issuer": "Google Cloud",
+      "category": "Inteligencia artificial y automatización",
+      "type": "insignia",
+      "status": "verificada",
+      "public": true,
+      "date": "2023-08-08",
+      "credentialId": "4610503",
+      "verifyUrl": "https://www.skills.google/public_profiles/195595b2-3a40-4602-905a-78c34b68fe62/badges/4610503",
+      "badgeImage": "google-responsible-ai.png",
+      "skills": ["AI Ethics", "Bias Mitigation", "Explainability"],
+      "notes": "Insignia oficial verificable en Google Skills."
+    },
+    {
+      "id": "google-intro-genai",
+      "name": "Introduction to Generative AI",
+      "issuer": "Google Cloud",
+      "category": "Inteligencia artificial y automatización",
+      "type": "insignia",
+      "status": "verificada",
+      "public": true,
+      "date": "2023-08-06",
+      "credentialId": "4578067",
+      "verifyUrl": "https://www.skills.google/public_profiles/195595b2-3a40-4602-905a-78c34b68fe62/badges/4578067",
+      "badgeImage": "google-intro-genai.png",
+      "skills": ["Gen AI Concepts", "Foundation Models", "Google Cloud AI"],
+      "notes": "Insignia oficial verificable en Google Skills."
+    },
+    {
+      "id": "ms-clean-data-power-bi",
+      "name": "Clean, transform, and load data in Power BI",
+      "issuer": "Microsoft Learn",
+      "category": "SAP y sistemas empresariales",
+      "type": "insignia",
+      "status": "verificada",
+      "public": true,
+      "date": "2026-08-23",
+      "credentialId": "CRPPY8E9",
+      "verifyUrl": "https://learn.microsoft.com/training/modules/clean-data-power-bi/",
+      "badgeImage": "ms-clean-power-bi.svg",
+      "skills": ["Power BI", "Power Query", "ETL", "Data Transformation"],
+      "notes": "Insignia oficial verificable en Microsoft Learn (ID: CRPPY8E9)."
+    },
+    {
+      "id": "ms-computer-vision-azure",
+      "name": "Get started with computer vision in Azure",
+      "issuer": "Microsoft Learn",
+      "category": "Inteligencia artificial y automatización",
+      "type": "insignia",
+      "status": "verificada",
+      "public": true,
+      "date": "2026-08-23",
+      "credentialId": "NQSSMRAF",
+      "verifyUrl": "https://learn.microsoft.com/training/modules/get-started-vision-azure/",
+      "badgeImage": "ms-trophy.svg",
+      "skills": ["Azure AI Vision", "Image Analysis", "Object Detection"],
+      "notes": "Insignia oficial verificable en Microsoft Learn (ID: NQSSMRAF)."
+    },
+    {
+      "id": "ms-fabric-analytics",
+      "name": "Introduction to end-to-end analytics using Microsoft Fabric",
+      "issuer": "Microsoft Learn",
+      "category": "SAP y sistemas empresariales",
+      "type": "insignia",
+      "status": "verificada",
+      "public": true,
+      "date": "2026-08-09",
+      "credentialId": "8VBBYXZW",
+      "verifyUrl": "https://learn.microsoft.com/training/modules/introduction-end-analytics-use-microsoft-fabric/",
+      "badgeImage": "ms-fabric.svg",
+      "skills": ["Microsoft Fabric", "Data Lakehouse", "Synapse", "Power BI"],
+      "notes": "Insignia oficial verificable en Microsoft Learn (ID: 8VBBYXZW)."
+    },
+    {
+      "id": "ms-dax-formulas",
+      "name": "Write DAX formulas for semantic models in Power BI",
+      "issuer": "Microsoft Learn",
+      "category": "SAP y sistemas empresariales",
+      "type": "insignia",
+      "status": "verificada",
+      "public": true,
+      "date": "2026-08-13",
+      "credentialId": "U74NYZJ3",
+      "verifyUrl": "https://learn.microsoft.com/training/modules/dax-power-bi-write-formulas/",
+      "badgeImage": "ms-dax.svg",
+      "skills": ["DAX", "Data Modeling", "Calculated Measures", "KPIs"],
+      "notes": "Insignia oficial verificable en Microsoft Learn (ID: U74NYZJ3)."
+    },
+    {
+      "id": "ms-rag-fundamentals",
+      "name": "Introduction to Retrieval-Augmented Generation (RAG) concepts",
+      "issuer": "Microsoft Learn",
+      "category": "Inteligencia artificial y automatización",
+      "type": "insignia",
+      "status": "verificada",
+      "public": true,
+      "date": "2026-08-09",
+      "credentialId": "CRQ2SR89",
+      "verifyUrl": "https://learn.microsoft.com/training/modules/rag-fundamentals/",
+      "badgeImage": "ms-genai.svg",
+      "skills": ["RAG", "Vector Search", "Azure AI Search", "Semantic Indexing"],
+      "notes": "Insignia oficial verificable en Microsoft Learn (ID: CRQ2SR89)."
+    },
+    {
+      "id": "ms-data-analytics-path",
+      "name": "Get started with Microsoft data analytics (Ruta de Aprendizaje)",
+      "issuer": "Microsoft Learn",
+      "category": "SAP y sistemas empresariales",
+      "type": "certificacion",
+      "status": "verificada",
+      "public": true,
+      "date": "2026-08-11",
+      "credentialId": "3Z4SS92H",
+      "verifyUrl": "https://learn.microsoft.com/training/paths/data-analytics-microsoft/",
+      "badgeImage": "ms-data-analysis.svg",
+      "skills": ["Business Intelligence", "Enterprise Analytics", "Power BI", "Data Governance"],
+      "notes": "Trofeo oficial de Ruta de Aprendizaje completada en Microsoft Learn."
+    },
+    {
+      "id": "ms-copilot-productivity",
+      "name": "Optimize business processes with Microsoft 365 Copilot",
+      "issuer": "Microsoft Learn",
+      "category": "Inteligencia artificial y automatización",
+      "type": "certificacion",
+      "status": "verificada",
+      "public": true,
+      "date": "2026-08-02",
+      "credentialId": "ABLBR2X7",
+      "verifyUrl": "https://learn.microsoft.com/training/paths/optimize-business-processes-with-ai/",
+      "badgeImage": "ms-trophy.svg",
+      "skills": ["Microsoft 365 Copilot", "Process Automation", "Enterprise Productivity"],
+      "notes": "Trofeo oficial de Ruta de Aprendizaje completada en Microsoft Learn."
     },
     {
       "id": "anthropic-mcp-advanced",
@@ -38,15 +243,11 @@
       "type": "certificacion",
       "status": "verificada",
       "public": true,
-      "date": "2026-03",
+      "date": "2026-03-10",
       "credentialId": "vxtfkvdm2xzr",
       "verifyUrl": "https://verify.skilljar.com/c/vxtfkvdm2xzr",
       "badgeImage": "",
-      "skills": [
-        "Model Context Protocol (MCP)",
-        "AI Tooling",
-        "Enterprise AI Integration"
-      ],
+      "skills": ["Model Context Protocol (MCP)", "AI Tooling", "Enterprise AI Integration"],
       "notes": "Certificación oficial emitida por Anthropic a través de Skilljar."
     },
     {
@@ -57,16 +258,12 @@
       "type": "certificacion",
       "status": "verificada",
       "public": true,
-      "date": "2026-03",
+      "date": "2026-03-08",
       "credentialId": "o2r5j74e8f68",
       "verifyUrl": "https://verify.skilljar.com/c/o2r5j74e8f68",
       "badgeImage": "",
-      "skills": [
-        "Model Context Protocol",
-        "Agentic Architecture",
-        "AI APIs"
-      ],
-      "notes": "Certificación oficial emitida por Anthropic."
+      "skills": ["Model Context Protocol", "Agentic Architecture", "AI APIs"],
+      "notes": "Certificación oficial emitida por Anthropic a través de Skilljar."
     },
     {
       "id": "anthropic-claude-cowork",
@@ -80,12 +277,23 @@
       "credentialId": "tzmigpxh43r8",
       "verifyUrl": "https://verify.skilljar.com/c/tzmigpxh43r8",
       "badgeImage": "",
-      "skills": [
-        "Claude AI",
-        "Prompt Engineering",
-        "Productivity"
-      ],
+      "skills": ["Claude AI", "Prompt Engineering", "Productivity"],
       "notes": "Certificación oficial emitida por Anthropic."
+    },
+    {
+      "id": "cisco-networking-basics",
+      "name": "Networking Basics",
+      "issuer": "Cisco",
+      "category": "Redes",
+      "type": "insignia",
+      "status": "verificada",
+      "public": true,
+      "date": "2026-09-17",
+      "credentialId": "33eccf9a-b4bb-414d-9cd0-ab9904f6d3a6",
+      "verifyUrl": "https://www.credly.com/badges/33eccf9a-b4bb-414d-9cd0-ab9904f6d3a6",
+      "badgeImage": "cisco-networking-basics.png",
+      "skills": ["Networking", "TCP/IP", "Ethernet", "Network Configuration"],
+      "notes": "Insignia oficial emitida a través de Credly."
     },
     {
       "id": "ibm-cloud-essentials",
@@ -95,16 +303,11 @@
       "type": "insignia",
       "status": "verificada",
       "public": true,
-      "date": "2025-05",
+      "date": "2025-05-14",
       "credentialId": "9c82095d-7b30-4523-b07a-2f2479b1358f",
       "verifyUrl": "https://www.credly.com/badges/9c82095d-7b30-4523-b07a-2f2479b1358f",
       "badgeImage": "ibm-cloud-essentials.png",
-      "skills": [
-        "Cloud Computing",
-        "Hybrid Cloud",
-        "Infrastructure as a Service",
-        "PaaS"
-      ],
+      "skills": ["Cloud Computing", "Hybrid Cloud", "Infrastructure as a Service", "PaaS"],
       "notes": "Insignia oficial de IBM emitida en Credly."
     },
     {
@@ -115,15 +318,11 @@
       "type": "insignia",
       "status": "verificada",
       "public": true,
-      "date": "2025-05",
+      "date": "2025-05-01",
       "credentialId": "152c604f-ab9f-4989-859a-4847df2cabc4",
       "verifyUrl": "https://www.credly.com/badges/152c604f-ab9f-4989-859a-4847df2cabc4",
       "badgeImage": "aws-cloud-101.png",
-      "skills": [
-        "AWS Core Services",
-        "Cloud Architecture",
-        "Security & Storage"
-      ],
+      "skills": ["AWS Core Services", "Cloud Architecture", "Security & Storage"],
       "notes": "Insignia de formación oficial AWS Educate en Credly."
     },
     {
@@ -134,16 +333,11 @@
       "type": "insignia",
       "status": "verificada",
       "public": true,
-      "date": "2023-01",
+      "date": "2023-01-03",
       "credentialId": "5b9a156a-b5b5-4910-9809-af538f815a74",
       "verifyUrl": "https://www.credly.com/badges/5b9a156a-b5b5-4910-9809-af538f815a74",
       "badgeImage": "ibm-cybersecurity.png",
-      "skills": [
-        "Ciberseguridad",
-        "Gestión de Amenazas",
-        "Seguridad de Redes",
-        "Criptografía"
-      ],
+      "skills": ["Ciberseguridad", "Gestión de Amenazas", "Seguridad de Redes", "Criptografía"],
       "notes": "Insignia oficial emitida por IBM SkillsBuild en Credly."
     },
     {
@@ -154,17 +348,11 @@
       "type": "insignia",
       "status": "verificada",
       "public": true,
-      "date": "2021-08",
+      "date": "2021-08-28",
       "credentialId": "cd386de1-3a4e-4b34-8868-9c065a7f3f85",
       "verifyUrl": "https://www.credly.com/badges/cd386de1-3a4e-4b34-8868-9c065a7f3f85",
       "badgeImage": "cisco-ccna-itn.png",
-      "skills": [
-        "Routing & Switching",
-        "IPv4 & IPv6",
-        "VLAN",
-        "Subnetting",
-        "Network Protocols"
-      ],
+      "skills": ["Routing & Switching", "IPv4 & IPv6", "VLAN", "Subnetting", "Network Protocols"],
       "notes": "Insignia oficial Cisco Networking Academy en Credly."
     },
     {
@@ -175,16 +363,11 @@
       "type": "insignia",
       "status": "verificada",
       "public": true,
-      "date": "2021-06",
+      "date": "2021-06-03",
       "credentialId": "d704d59b-6da3-4841-a8fc-5aeedfa559d7",
       "verifyUrl": "https://www.credly.com/badges/d704d59b-6da3-4841-a8fc-5aeedfa559d7",
       "badgeImage": "cisco-cybersecurity.png",
-      "skills": [
-        "Cybersecurity",
-        "Threat Analysis",
-        "Data Confidentiality",
-        "Incident Defense"
-      ],
+      "skills": ["Cybersecurity", "Threat Analysis", "Data Confidentiality", "Incident Defense"],
       "notes": "Insignia oficial Cisco Networking Academy en Credly."
     },
     {
@@ -195,17 +378,11 @@
       "type": "insignia",
       "status": "verificada",
       "public": true,
-      "date": "2021-04",
+      "date": "2021-04-30",
       "credentialId": "28e04d86-fd0f-46c6-8b8b-4354a27b75c8",
       "verifyUrl": "https://www.credly.com/badges/28e04d86-fd0f-46c6-8b8b-4354a27b75c8",
       "badgeImage": "cisco-it-essentials.png",
-      "skills": [
-        "Hardware",
-        "Operating Systems",
-        "Networking",
-        "Troubleshooting",
-        "Security"
-      ],
+      "skills": ["Hardware", "Operating Systems", "Networking", "Troubleshooting", "Security"],
       "notes": "Insignia oficial Cisco Networking Academy en Credly."
     },
     {
@@ -216,15 +393,11 @@
       "type": "insignia",
       "status": "verificada",
       "public": true,
-      "date": "2021-03",
+      "date": "2021-03-04",
       "credentialId": "559cbff4-e3a1-48da-b454-b410a008f9c3",
       "verifyUrl": "https://www.credly.com/badges/559cbff4-e3a1-48da-b454-b410a008f9c3",
       "badgeImage": "cisco-packet-tracer.png",
-      "skills": [
-        "Network Simulation",
-        "Packet Tracer",
-        "Network Architecture"
-      ],
+      "skills": ["Network Simulation", "Packet Tracer", "Network Architecture"],
       "notes": "Insignia oficial Cisco Networking Academy en Credly."
     },
     {
@@ -235,15 +408,11 @@
       "type": "insignia",
       "status": "verificada",
       "public": true,
-      "date": "2021-02",
+      "date": "2021-02-25",
       "credentialId": "326d0f05-00a1-4de7-b01c-de8c085b56db",
       "verifyUrl": "https://www.credly.com/badges/326d0f05-00a1-4de7-b01c-de8c085b56db",
       "badgeImage": "cisco-iot.png",
-      "skills": [
-        "IoT",
-        "Automation",
-        "Sensors & Connectivity"
-      ],
+      "skills": ["IoT", "Automation", "Sensors & Connectivity"],
       "notes": "Insignia oficial Cisco Networking Academy en Credly."
     }
   ]
