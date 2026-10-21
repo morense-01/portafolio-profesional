@@ -151,8 +151,6 @@ ${body}
 </main>
 <footer class="site-footer">
   <div class="wrap">
-    ${site.minimal ? `<p><strong>${esc(site.shortName)}</strong></p>` : `<p><strong>${esc(site.shortName)}</strong> · ${esc(profile.location)}</p>
-    <p class="muted">Documento de acceso por enlace privado. Solo se incluye información verificada o autorizada. Última revisión: ${esc(site.lastReview)}. Este sitio no usa cookies de seguimiento ni analítica.</p>`}
     ${site.minimal ? '' : `<p><a href="${L('/')}">Volver al inicio</a> · <a href="${L('/buscar/')}">Buscador</a></p>`}
   </div>
 </footer>

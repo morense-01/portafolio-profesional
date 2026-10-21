@@ -273,10 +273,7 @@
       "Antes → después": "Before → After",
       "Método": "Method",
       "Fuente": "Source",
-      "Alcance": "Scope",
-
-      "Documento de acceso por enlace privado. Solo se incluye información verificada o autorizada. Última revisión: 2026-10-21. Este sitio no usa cookies de seguimiento ni analítica.":
-        "Private link access document. Contains only verified or authorized information. Last review: 2026-10-21. This site does not use tracking or analytical cookies."
+      "Alcance": "Scope"
     },
     fr: {
       "Inicio": "Accueil",
