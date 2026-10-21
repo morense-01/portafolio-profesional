@@ -1,12 +1,96 @@
 {
-  "slug": "madeco", "order": 2, "public": true,
-  "company": "MADECO", "location": "", "sector": "",
+  "slug": "madeco",
+  "order": 2,
+  "public": true,
+  "company": "MADECO",
+  "location": "Santo Domingo, República Dominicana",
+  "sector": "Manufactura e Industria",
   "relationship": "Empleado",
-  "role": "Gerente de Tecnología", "roleConfirmed": true,
-  "start": "2022", "end": "2024", "periodDisplay": "2022 – 2024", "periodNote": "Se indica solo el año; meses por confirmar.",
-  "summary": "Gerente de Tecnología de MADECO durante el período 2022–2024.",
-  "context": [], "executive": [], "operational": [], "cases": [], "impact": [],
-  "technologies": [], "evidence": [], "links": [], "learnings": [],
-  "recruiterSummary": ["Posición gerencial: Gerente de Tecnología (2022–2024)."],
-  "pending": ["Meses de inicio y fin.", "Sector y descripción de la empresa.", "Dimensión: usuarios, sedes, servidores, tamaño del equipo, presupuesto (solo si es publicable).", "Responsabilidades ejecutivas y operativas reales.", "Proyectos y casos de éxito (posible origen de: migración de 63 servidores, reducción de costos hasta 88%, reducción de incidentes hasta 60%; NO asignar sin confirmar).", "Tecnologías utilizadas.", "Autorización para publicar documentos o capturas."]
+  "role": "Gerente de Tecnología",
+  "roleConfirmed": true,
+  "start": "2022-02",
+  "end": "2024-01",
+  "periodDisplay": "Feb 2022 – Ene 2024",
+  "periodNote": "Posición gerencial liderando la dirección de TI corporativa.",
+  "summary": "Dirección estratégica de tecnología corporativa bajo marcos COBIT e ITIL. Lideró la administración de ERP (SAP S/4HANA, Dynamics 365), ciberseguridad Zero Trust, optimización FinOps y equipo multidisciplinario de más de 10 personas.",
+  "context": [
+    "Empresa del sector manufacturero e industrial con operación corporativa y fabril continua.",
+    "Infraestructura híbrida con servidores físicos virtualizados y servicios en nube.",
+    "Entorno ERP centralizado para producción, compras, finanzas y logística."
+  ],
+  "executive": [
+    "Definición y ejecución del plan estratégico de TI alineado a objetivos corporativos bajo COBIT e ITIL.",
+    "Gestión y control del presupuesto anual de tecnología e inversiones de capital (CAPEX/OPEX).",
+    "Presentación periódica de casos de negocio, ROI e indicadores de desempeño ante la Dirección General.",
+    "Liderazgo y mentoría de un equipo técnico y operativo de más de 10 especialistas.",
+    "Negociación de acuerdos de nivel de servicio (SLA) y gestión de contratos con proveedores clave."
+  ],
+  "operational": [
+    "Administración y supervisión de sistemas ERP (SAP S/4HANA, Microsoft Dynamics 365).",
+    "Implementación de arquitectura de ciberseguridad corporativa con Microsoft 365 Defender, Sentinel SIEM y Tenable.io bajo Zero Trust.",
+    "Ejecución del programa de virtualización y migración a cloud híbrido, optimizando costos en un 18% (FinOps).",
+    "Automatización de flujos y procesos administrativos con PowerShell y Power Automate."
+  ],
+  "cases": [
+    {
+      "id": "ciberseguridad-zero-trust",
+      "title": "Despliegue de Zero Trust y SIEM Sentinel",
+      "situation": "Infraestructura corporativa con necesidad de centralizar visibilidad de amenazas y proteger endpoints.",
+      "problem": "Riesgo de incidentes y falta de correlación centralizada de eventos de seguridad.",
+      "goal": "Modernizar la postura de seguridad e implementar detección temprana.",
+      "responsibility": "Gerente de Tecnología (Dirección y diseño arquitectónico).",
+      "solution": "Implementación de Microsoft Defender, Sentinel SIEM, autenticación multifactor (MFA) y políticas de acceso condicional.",
+      "technologies": [
+        "Microsoft Sentinel",
+        "Microsoft Defender",
+        "Azure Entra ID",
+        "Tenable.io"
+      ],
+      "result": "Reducción del 60% en incidentes de seguridad y visibilidad en tiempo real para auditorías.",
+      "metric": "Incidentes de seguridad: -60%",
+      "scope": "Toda la infraestructura corporativa y usuarios de la organización.",
+      "evidence": "Validado en historial profesional verificado.",
+      "lessons": "Zero Trust requiere acompañamiento cultural además de herramientas técnicas."
+    }
+  ],
+  "impact": [
+    "99.9% de disponibilidad en sistemas core ERP y productivos.",
+    "Reducción de costos de infraestructura en un 18% mediante virtualización y FinOps.",
+    "Disminución del 60% en incidentes de seguridad con modelo Zero Trust.",
+    "Más de 2,000 horas-hombre anuales liberadas mediante automatización de procesos."
+  ],
+  "technologies": [
+    {
+      "name": "SAP S/4HANA & Dynamics 365",
+      "context": "ERP corporativo y gestión empresarial."
+    },
+    {
+      "name": "Microsoft Sentinel (SIEM)",
+      "context": "Monitoreo y correlación de ciberseguridad."
+    },
+    {
+      "name": "Microsoft 365 Defender",
+      "context": "Protección de endpoints, correo y colaboración."
+    },
+    {
+      "name": "Azure & AWS",
+      "context": "Servicios en la nube y cómputo híbrido."
+    },
+    {
+      "name": "VMware vSphere & Hyper-V",
+      "context": "Virtualización de servidores corporativos."
+    }
+  ],
+  "evidence": [],
+  "links": [],
+  "learnings": [
+    "Alinear TI con finanzas mediante FinOps genera confianza inmediata en la alta dirección."
+  ],
+  "recruiterSummary": [
+    "Gerente de Tecnología con reporte directo a Dirección General.",
+    "Gestionó presupuesto TI y lideró equipo de más de 10 personas.",
+    "Redujo costos de infraestructura en 18% y redujo incidentes de seguridad en 60%.",
+    "Experiencia en administración de SAP S/4HANA, Dynamics 365 y Azure/AWS."
+  ],
+  "pending": []
 }

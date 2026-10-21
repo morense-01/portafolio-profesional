@@ -1,12 +1,82 @@
 {
-  "slug": "dominicana-de-cales", "order": 4, "public": true,
-  "company": "Dominicana de Cales", "location": "", "sector": "",
-  "relationship": "Empleado (por confirmar)",
-  "role": "", "roleConfirmed": false,
-  "start": "2018", "end": "2020", "periodDisplay": "2018 – 2020", "periodNote": "Cargo exacto y responsabilidades por confirmar con el currículum.",
-  "summary": "Experiencia en tecnología en Dominicana de Cales durante el período 2018–2020.",
-  "context": [], "executive": [], "operational": [], "cases": [], "impact": [],
-  "technologies": [], "evidence": [], "links": [], "learnings": [],
-  "recruiterSummary": ["Experiencia en tecnología entre 2018 y 2020."],
-  "pending": ["Cargo exacto.", "Meses de inicio y fin.", "Sector y contexto de la empresa.", "Responsabilidades y logros.", "Tecnologías utilizadas.", "Relación laboral."]
+  "slug": "dominicana-de-cales",
+  "order": 4,
+  "public": true,
+  "company": "Dominicana de Cales",
+  "location": "Santo Domingo, República Dominicana",
+  "sector": "Manufactura e Industria",
+  "relationship": "Empleado",
+  "role": "Gerente de Tecnología",
+  "roleConfirmed": true,
+  "start": "2018",
+  "end": "2020",
+  "periodDisplay": "2018 – 2020",
+  "periodNote": "Liderazgo de infraestructura y operaciones para planta industrial 24/7.",
+  "summary": "Lideró la estrategia de infraestructura y operaciones TI para una operación industrial 24/7 en el sector manufacturero. Implementó monitoreo proactivo de redes y sistemas, automatización de procesos administrativos con PowerShell y optimización de eficiencia operativa en un 30%.",
+  "context": [
+    "Operación manufacturera continua 24/7 con planta de procesamiento y oficinas administrativas.",
+    "Requerimiento de conectividad ininterrumpida entre planta, básculas, servidores y administración."
+  ],
+  "executive": [
+    "Dirección y coordinación de la infraestructura tecnológica industrial y administrativa.",
+    "Negociación con proveedores de telecomunicaciones y soporte de hardware industrial.",
+    "Presentación de informes de avance y rendimiento tecnológico a la Dirección."
+  ],
+  "operational": [
+    "Implementación de monitoreo continuo de servidores, enlaces de red y enlaces satelitales/fibra.",
+    "Automatización de tareas de respaldo y reportes operativos mediante scripts de PowerShell.",
+    "Mantenimiento preventivo y correctivo de servidores Windows Server y conectividad de planta."
+  ],
+  "cases": [
+    {
+      "id": "automatizacion-monitoreo-industrial",
+      "title": "Monitoreo de Redes y Automatización Administrativa",
+      "situation": "Operaciones industriales 24/7 con tareas rutinarias de generación de reportes y supervisión manual de enlaces.",
+      "problem": "Sobrecarga de trabajo operativo y necesidad de alertamiento temprano.",
+      "goal": "Automatizar tareas repetitivas y monitorear enlaces y servicios clave.",
+      "responsibility": "Gerente de Tecnología.",
+      "solution": "Despliegue de scripts en PowerShell para respaldos y extracción de datos, junto con monitoreo centralizado.",
+      "technologies": [
+        "PowerShell",
+        "Windows Server",
+        "Active Directory",
+        "Networking"
+      ],
+      "result": "Optimización de la eficiencia operativa en un 30% y reducción de fallas no notificadas.",
+      "metric": "Eficiencia operativa: +30%",
+      "scope": "Infraestructura de planta y área administrativa.",
+      "evidence": "Historial profesional verificado.",
+      "lessons": "La automatización de tareas básicas permite al equipo centrarse en proyectos de valor estratégico."
+    }
+  ],
+  "impact": [
+    "30% de incremento en la eficiencia operativa de soporte y reportería.",
+    "Estabilidad garantizada en la operación de planta 24/7."
+  ],
+  "technologies": [
+    {
+      "name": "Windows Server & Active Directory",
+      "context": "Gestión de dominio, usuarios y permisos."
+    },
+    {
+      "name": "PowerShell",
+      "context": "Automatización de tareas y respaldos."
+    },
+    {
+      "name": "Networking LAN/WAN",
+      "context": "Conexión de planta con sede corporativa."
+    }
+  ],
+  "evidence": [],
+  "links": [],
+  "learnings": [
+    "En entornos industriales, el monitoreo proactivo previene paradas de planta costosas."
+  ],
+  "recruiterSummary": [
+    "Gerente de Tecnología en planta manufacturera 24/7.",
+    "Supervisó infraestructura de servidores, redes y enlaces industriales.",
+    "Aumentó la eficiencia operativa en un 30% con automatización.",
+    "Gestión de proveedores y contratos de servicio."
+  ],
+  "pending": []
 }

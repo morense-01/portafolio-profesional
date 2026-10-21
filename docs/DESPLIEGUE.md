@@ -6,13 +6,11 @@ El portafolio está publicado y en línea de forma gratuita mediante GitHub Page
 - **URL principal del portafolio:** https://morense-01.github.io/portafolio-profesional/
 
 ## Enlaces directos por expediente
-- **ODS/ODW Logistics:** https://morense-01.github.io/portafolio-profesional/experiencia/ods-odw-logistics/
+- **ODS Logistics:** https://morense-01.github.io/portafolio-profesional/experiencia/ods-odw-logistics/
 - **MADECO:** https://morense-01.github.io/portafolio-profesional/experiencia/madeco/
 - **UNIPAGO:** https://morense-01.github.io/portafolio-profesional/experiencia/unipago/
 - **Dominicana de Cales:** https://morense-01.github.io/portafolio-profesional/experiencia/dominicana-de-cales/
 - **VICRISA:** https://morense-01.github.io/portafolio-profesional/experiencia/vicrisa/
-- **Consorcio de Bancas:** https://morense-01.github.io/portafolio-profesional/experiencia/consorcio-de-bancas/
-- **5M Technology:** https://morense-01.github.io/portafolio-profesional/experiencia/5m-technology/
 
 ## Privacidad ante buscadores (Modo privado por enlace)
 - Todas las páginas tienen `<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">`.

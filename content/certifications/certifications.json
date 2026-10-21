@@ -1,158 +1,250 @@
 {
-    "_ayuda":  "type: certificacion | curso | insignia | formacion. Publique (public true) solo con enlace de verificación o documento. Imagen en public/certifications/.",
-    "categories":  [
-                       "Cloud y arquitectura",
-                       "Infraestructura y administración de sistemas",
-                       "Ciberseguridad",
-                       "Redes",
-                       "SAP y sistemas empresariales",
-                       "Inteligencia artificial y automatización",
-                       "Gestión y liderazgo"
-                   ],
-    "items":  [
-                  {
-                      "id":  "aws-cloud-practitioner",
-                      "name":  "AWS Certified Cloud Practitioner (o formación AWS equivalente)",
-                      "issuer":  "Amazon Web Services",
-                      "category":  "Cloud y arquitectura",
-                      "type":  "por-confirmar",
-                      "status":  "pendiente-verificacion",
-                      "public":  false,
-                      "date":  "",
-                      "expires":  "",
-                      "credentialId":  "",
-                      "verifyUrl":  "",
-                      "badgeImage":  "",
-                      "skills":  [
-
-                                 ],
-                      "notes":  "Registro inicial. Confirme denominación oficial, tipo, fecha y enlace de verificación antes de publicar."
-                  },
-                  {
-                      "id":  "mcsa-windows-server-2016",
-                      "name":  "Microsoft MCSA: Windows Server 2016",
-                      "issuer":  "Microsoft",
-                      "category":  "Infraestructura y administración de sistemas",
-                      "type":  "por-confirmar",
-                      "status":  "pendiente-verificacion",
-                      "public":  false,
-                      "date":  "",
-                      "expires":  "",
-                      "credentialId":  "",
-                      "verifyUrl":  "",
-                      "badgeImage":  "",
-                      "skills":  [
-
-                                 ],
-                      "notes":  "Registro inicial. Confirme denominación oficial, tipo, fecha y enlace de verificación antes de publicar."
-                  },
-                  {
-                      "id":  "fortinet-nse4",
-                      "name":  "Fortinet NSE 4",
-                      "issuer":  "Fortinet",
-                      "category":  "Redes",
-                      "type":  "por-confirmar",
-                      "status":  "pendiente-verificacion",
-                      "public":  false,
-                      "date":  "",
-                      "expires":  "",
-                      "credentialId":  "",
-                      "verifyUrl":  "",
-                      "badgeImage":  "",
-                      "skills":  [
-
-                                 ],
-                      "notes":  "Registro inicial. Confirme denominación oficial, tipo, fecha y enlace de verificación antes de publicar."
-                  },
-                  {
-                      "id":  "comptia-a-plus",
-                      "name":  "CompTIA A+",
-                      "issuer":  "CompTIA",
-                      "category":  "Infraestructura y administración de sistemas",
-                      "type":  "por-confirmar",
-                      "status":  "pendiente-verificacion",
-                      "public":  false,
-                      "date":  "",
-                      "expires":  "",
-                      "credentialId":  "",
-                      "verifyUrl":  "",
-                      "badgeImage":  "",
-                      "skills":  [
-
-                                 ],
-                      "notes":  "Registro inicial. Confirme denominación oficial, tipo, fecha y enlace de verificación antes de publicar."
-                  },
-                  {
-                      "id":  "ibm-cybersecurity-fundamentals",
-                      "name":  "IBM Cybersecurity Fundamentals",
-                      "issuer":  "IBM",
-                      "category":  "Ciberseguridad",
-                      "type":  "por-confirmar",
-                      "status":  "pendiente-verificacion",
-                      "public":  false,
-                      "date":  "",
-                      "expires":  "",
-                      "credentialId":  "",
-                      "verifyUrl":  "",
-                      "badgeImage":  "",
-                      "skills":  [
-
-                                 ],
-                      "notes":  "Registro inicial. Confirme denominación oficial, tipo, fecha y enlace de verificación antes de publicar."
-                  },
-                  {
-                      "id":  "cisco-cybersecurity",
-                      "name":  "Cisco Cybersecurity (denominación exacta por confirmar)",
-                      "issuer":  "Cisco",
-                      "category":  "Ciberseguridad",
-                      "type":  "por-confirmar",
-                      "status":  "pendiente-verificacion",
-                      "public":  false,
-                      "date":  "",
-                      "expires":  "",
-                      "credentialId":  "",
-                      "verifyUrl":  "",
-                      "badgeImage":  "",
-                      "skills":  [
-
-                                 ],
-                      "notes":  "Registro inicial. Confirme denominación oficial, tipo, fecha y enlace de verificación antes de publicar."
-                  },
-                  {
-                      "id":  "azure-concepts",
-                      "name":  "Azure Concepts (denominación exacta por confirmar)",
-                      "issuer":  "Microsoft",
-                      "category":  "Cloud y arquitectura",
-                      "type":  "por-confirmar",
-                      "status":  "pendiente-verificacion",
-                      "public":  false,
-                      "date":  "",
-                      "expires":  "",
-                      "credentialId":  "",
-                      "verifyUrl":  "",
-                      "badgeImage":  "",
-                      "skills":  [
-
-                                 ],
-                      "notes":  "Registro inicial. Confirme denominación oficial, tipo, fecha y enlace de verificación antes de publicar."
-                  },
-                  {
-                      "id":  "google-it",
-                      "name":  "Google IT (denominación exacta por confirmar)",
-                      "issuer":  "Google",
-                      "category":  "Infraestructura y administración de sistemas",
-                      "type":  "por-confirmar",
-                      "status":  "pendiente-verificacion",
-                      "public":  false,
-                      "date":  "",
-                      "expires":  "",
-                      "credentialId":  "",
-                      "verifyUrl":  "",
-                      "badgeImage":  "",
-                      "skills":  [
-
-                                 ],
-                      "notes":  "Registro inicial. Confirme denominación oficial, tipo, fecha y enlace de verificación antes de publicar."
-                  }
-              ]
+  "_ayuda": "type: certificacion | curso | insignia | formacion. Publique (public true y status verificada) con enlace de verificación o documento.",
+  "categories": [
+    "Cloud y arquitectura",
+    "Infraestructura y administración de sistemas",
+    "Ciberseguridad",
+    "Redes",
+    "SAP y sistemas empresariales",
+    "Inteligencia artificial y automatización",
+    "Gestión y liderazgo"
+  ],
+  "items": [
+    {
+      "id": "cisco-networking-basics",
+      "name": "Networking Basics",
+      "issuer": "Cisco",
+      "category": "Redes",
+      "type": "insignia",
+      "status": "verificada",
+      "public": true,
+      "date": "2026-09",
+      "credentialId": "33eccf9a-b4bb-414d-9cd0-ab9904f6d3a6",
+      "verifyUrl": "https://www.credly.com/badges/33eccf9a-b4bb-414d-9cd0-ab9904f6d3a6",
+      "badgeImage": "cisco-networking-basics.png",
+      "skills": [
+        "Networking",
+        "TCP/IP",
+        "Ethernet",
+        "Network Configuration"
+      ],
+      "notes": "Insignia oficial emitida a través de Credly."
+    },
+    {
+      "id": "anthropic-mcp-advanced",
+      "name": "Model Context Protocol: Advanced Topics",
+      "issuer": "Anthropic (Skilljar)",
+      "category": "Inteligencia artificial y automatización",
+      "type": "certificacion",
+      "status": "verificada",
+      "public": true,
+      "date": "2026-03",
+      "credentialId": "vxtfkvdm2xzr",
+      "verifyUrl": "https://verify.skilljar.com/c/vxtfkvdm2xzr",
+      "badgeImage": "",
+      "skills": [
+        "Model Context Protocol (MCP)",
+        "AI Tooling",
+        "Enterprise AI Integration"
+      ],
+      "notes": "Certificación oficial emitida por Anthropic a través de Skilljar."
+    },
+    {
+      "id": "anthropic-mcp-intro",
+      "name": "Introduction to Model Context Protocol",
+      "issuer": "Anthropic (Skilljar)",
+      "category": "Inteligencia artificial y automatización",
+      "type": "certificacion",
+      "status": "verificada",
+      "public": true,
+      "date": "2026-03",
+      "credentialId": "o2r5j74e8f68",
+      "verifyUrl": "https://verify.skilljar.com/c/o2r5j74e8f68",
+      "badgeImage": "",
+      "skills": [
+        "Model Context Protocol",
+        "Agentic Architecture",
+        "AI APIs"
+      ],
+      "notes": "Certificación oficial emitida por Anthropic."
+    },
+    {
+      "id": "anthropic-claude-cowork",
+      "name": "Introduction to Claude Cowork",
+      "issuer": "Anthropic (Skilljar)",
+      "category": "Inteligencia artificial y automatización",
+      "type": "certificacion",
+      "status": "verificada",
+      "public": true,
+      "date": "2026",
+      "credentialId": "tzmigpxh43r8",
+      "verifyUrl": "https://verify.skilljar.com/c/tzmigpxh43r8",
+      "badgeImage": "",
+      "skills": [
+        "Claude AI",
+        "Prompt Engineering",
+        "Productivity"
+      ],
+      "notes": "Certificación oficial emitida por Anthropic."
+    },
+    {
+      "id": "ibm-cloud-essentials",
+      "name": "IBM Cloud Essentials",
+      "issuer": "IBM",
+      "category": "Cloud y arquitectura",
+      "type": "insignia",
+      "status": "verificada",
+      "public": true,
+      "date": "2025-05",
+      "credentialId": "9c82095d-7b30-4523-b07a-2f2479b1358f",
+      "verifyUrl": "https://www.credly.com/badges/9c82095d-7b30-4523-b07a-2f2479b1358f",
+      "badgeImage": "ibm-cloud-essentials.png",
+      "skills": [
+        "Cloud Computing",
+        "Hybrid Cloud",
+        "Infrastructure as a Service",
+        "PaaS"
+      ],
+      "notes": "Insignia oficial de IBM emitida en Credly."
+    },
+    {
+      "id": "aws-cloud-101",
+      "name": "AWS Educate Introduction to Cloud 101",
+      "issuer": "Amazon Web Services",
+      "category": "Cloud y arquitectura",
+      "type": "insignia",
+      "status": "verificada",
+      "public": true,
+      "date": "2025-05",
+      "credentialId": "152c604f-ab9f-4989-859a-4847df2cabc4",
+      "verifyUrl": "https://www.credly.com/badges/152c604f-ab9f-4989-859a-4847df2cabc4",
+      "badgeImage": "aws-cloud-101.png",
+      "skills": [
+        "AWS Core Services",
+        "Cloud Architecture",
+        "Security & Storage"
+      ],
+      "notes": "Insignia de formación oficial AWS Educate en Credly."
+    },
+    {
+      "id": "ibm-cybersecurity-fundamentals",
+      "name": "Cybersecurity Fundamentals",
+      "issuer": "IBM SkillsBuild",
+      "category": "Ciberseguridad",
+      "type": "insignia",
+      "status": "verificada",
+      "public": true,
+      "date": "2023-01",
+      "credentialId": "5b9a156a-b5b5-4910-9809-af538f815a74",
+      "verifyUrl": "https://www.credly.com/badges/5b9a156a-b5b5-4910-9809-af538f815a74",
+      "badgeImage": "ibm-cybersecurity.png",
+      "skills": [
+        "Ciberseguridad",
+        "Gestión de Amenazas",
+        "Seguridad de Redes",
+        "Criptografía"
+      ],
+      "notes": "Insignia oficial emitida por IBM SkillsBuild en Credly."
+    },
+    {
+      "id": "cisco-ccna-itn",
+      "name": "CCNA: Introduction to Networks",
+      "issuer": "Cisco",
+      "category": "Redes",
+      "type": "insignia",
+      "status": "verificada",
+      "public": true,
+      "date": "2021-08",
+      "credentialId": "cd386de1-3a4e-4b34-8868-9c065a7f3f85",
+      "verifyUrl": "https://www.credly.com/badges/cd386de1-3a4e-4b34-8868-9c065a7f3f85",
+      "badgeImage": "cisco-ccna-itn.png",
+      "skills": [
+        "Routing & Switching",
+        "IPv4 & IPv6",
+        "VLAN",
+        "Subnetting",
+        "Network Protocols"
+      ],
+      "notes": "Insignia oficial Cisco Networking Academy en Credly."
+    },
+    {
+      "id": "cisco-intro-cybersecurity",
+      "name": "Introduction to Cybersecurity",
+      "issuer": "Cisco",
+      "category": "Ciberseguridad",
+      "type": "insignia",
+      "status": "verificada",
+      "public": true,
+      "date": "2021-06",
+      "credentialId": "d704d59b-6da3-4841-a8fc-5aeedfa559d7",
+      "verifyUrl": "https://www.credly.com/badges/d704d59b-6da3-4841-a8fc-5aeedfa559d7",
+      "badgeImage": "cisco-cybersecurity.png",
+      "skills": [
+        "Cybersecurity",
+        "Threat Analysis",
+        "Data Confidentiality",
+        "Incident Defense"
+      ],
+      "notes": "Insignia oficial Cisco Networking Academy en Credly."
+    },
+    {
+      "id": "cisco-it-essentials",
+      "name": "IT Essentials",
+      "issuer": "Cisco",
+      "category": "Infraestructura y administración de sistemas",
+      "type": "insignia",
+      "status": "verificada",
+      "public": true,
+      "date": "2021-04",
+      "credentialId": "28e04d86-fd0f-46c6-8b8b-4354a27b75c8",
+      "verifyUrl": "https://www.credly.com/badges/28e04d86-fd0f-46c6-8b8b-4354a27b75c8",
+      "badgeImage": "cisco-it-essentials.png",
+      "skills": [
+        "Hardware",
+        "Operating Systems",
+        "Networking",
+        "Troubleshooting",
+        "Security"
+      ],
+      "notes": "Insignia oficial Cisco Networking Academy en Credly."
+    },
+    {
+      "id": "cisco-packet-tracer",
+      "name": "Introduction to Packet Tracer",
+      "issuer": "Cisco",
+      "category": "Redes",
+      "type": "insignia",
+      "status": "verificada",
+      "public": true,
+      "date": "2021-03",
+      "credentialId": "559cbff4-e3a1-48da-b454-b410a008f9c3",
+      "verifyUrl": "https://www.credly.com/badges/559cbff4-e3a1-48da-b454-b410a008f9c3",
+      "badgeImage": "cisco-packet-tracer.png",
+      "skills": [
+        "Network Simulation",
+        "Packet Tracer",
+        "Network Architecture"
+      ],
+      "notes": "Insignia oficial Cisco Networking Academy en Credly."
+    },
+    {
+      "id": "cisco-intro-iot",
+      "name": "Introduction to IoT",
+      "issuer": "Cisco",
+      "category": "Infraestructura y administración de sistemas",
+      "type": "insignia",
+      "status": "verificada",
+      "public": true,
+      "date": "2021-02",
+      "credentialId": "326d0f05-00a1-4de7-b01c-de8c085b56db",
+      "verifyUrl": "https://www.credly.com/badges/326d0f05-00a1-4de7-b01c-de8c085b56db",
+      "badgeImage": "cisco-iot.png",
+      "skills": [
+        "IoT",
+        "Automation",
+        "Sensors & Connectivity"
+      ],
+      "notes": "Insignia oficial Cisco Networking Academy en Credly."
+    }
+  ]
 }

@@ -4,79 +4,25 @@
 
 ## Contacto y enlaces
 
-- [ ] Correo electrónico profesional (`content/profile/profile.json` → `contact.email`).
-- [ ] Teléfono profesional (`contact.phone`), si desea publicarlo.
-- [x] LinkedIn: https://www.linkedin.com/in/mariomendeza/. LinkedIn bloquea la verificación automática (HTTP 999); confirmar manualmente que corresponde al perfil correcto.
-- [x] GitHub: https://github.com/morense-01. Respondió HTTP 200 el 2026-10-20.
-- [ ] 5M Technology: https://5mtechnology.com. Falló la validación del certificado TLS el 2026-10-20. No se publica hasta confirmarlo; cambie verified a true.
+- [x] LinkedIn: https://www.linkedin.com/in/mariomendeza/. undefined
+- [x] GitHub: https://github.com/morense-01. undefined
+- [x] Credly (Insignias Oficiales): https://www.credly.com/users/mario-mendez.630726a8/badges/credly. undefined
 - [ ] Validar las cifras de trayectoria: más de 21 años en tecnología y 12 en gerencia, contra el historial completo.
 - [ ] Confirmar `siteUrl` y `basePath` en `content/site.json` según el hosting final.
 
 ## Experiencias
 
-### 5M Technology (2024 – presente)
-- [ ] Catálogo de servicios publicable.
-- [ ] Clientes o sectores atendidos (solo con autorización).
-- [ ] Proyectos de infraestructura realizados y su alcance.
-- [ ] Ubicación del domicilio comercial.
-- [ ] Verificar el certificado TLS de 5mtechnology.com y activar el enlace en content/profile/profile.json.
+### ODS Logistics (Feb 2024 – Jun 2026)
 
-### ODS/ODW Logistics (Hasta junio de 2026)
-- [ ] Fecha exacta de inicio y de fin (junio 2026).
-- [ ] Cargo o título formal del contrato.
-- [ ] Superficie del almacén, número de servidores, usuarios y ubicaciones.
-- [ ] Marca del WMS y de los lectores RF (confirmar que puede publicarse).
-- [ ] Proveedor de nube de la infraestructura híbrida.
-- [ ] Proyectos y casos de éxito con responsabilidad individual.
-- [ ] Métricas asociadas: precisión de inventario +30%, errores de picking -25%, procesamiento manual -40%, disponibilidad 99.9% (solo si el proyecto las respalda).
-- [ ] Confirmar con la empresa qué puede mencionarse públicamente (nombre, alcance).
+### MADECO (Feb 2022 – Ene 2024)
 
-### MADECO (2022 – 2024)
-- [ ] Meses de inicio y fin.
-- [ ] Sector y descripción de la empresa.
-- [ ] Dimensión: usuarios, sedes, servidores, tamaño del equipo, presupuesto (solo si es publicable).
-- [ ] Responsabilidades ejecutivas y operativas reales.
-- [ ] Proyectos y casos de éxito (posible origen de: migración de 63 servidores, reducción de costos hasta 88%, reducción de incidentes hasta 60%; NO asignar sin confirmar).
-- [ ] Tecnologías utilizadas.
-- [ ] Autorización para publicar documentos o capturas.
-
-### UNIPAGO (2020 – 2022)
-- [ ] Cargo exacto.
-- [ ] Meses de inicio y fin.
-- [ ] Sector y contexto de la empresa.
-- [ ] Responsabilidades y logros.
-- [ ] Tecnologías utilizadas.
-- [ ] Relación laboral (empleado o contratista).
+### UNIPAGO (Mar 2020 – Ene 2022)
 
 ### Dominicana de Cales (2018 – 2020)
-- [ ] Cargo exacto.
-- [ ] Meses de inicio y fin.
-- [ ] Sector y contexto de la empresa.
-- [ ] Responsabilidades y logros.
-- [ ] Tecnologías utilizadas.
-- [ ] Relación laboral.
 
 ### VICRISA (2007 – 2018)
-- [ ] Cargos, en orden cronológico, y fecha de cada ascenso o cambio.
-- [ ] Sector y contexto de la empresa.
-- [ ] Responsabilidades por cargo.
-- [ ] Proyectos y logros (la etapa más extensa de la trayectoria).
-- [ ] Tecnologías utilizadas.
-- [ ] Aclarar si hubo períodos simultáneos con otras empresas.
-
-### Consorcio de Bancas (2005 – 2007)
-- [ ] Cargo.
-- [ ] Meses de inicio y fin.
-- [ ] Sector y contexto.
-- [ ] Responsabilidades y logros.
-- [ ] Tecnologías utilizadas.
 
 ## Proyectos
-
-### 5M Technology: servicios, consultoría y soluciones de infraestructura
-- [ ] Catálogo de servicios publicable.
-- [ ] Casos con autorización del cliente.
-- [ ] Sitio web verificado.
 
 ### Agente de inteligencia artificial para agricultura
 - [ ] Confirmar si Open WebUI, Gemini, Qdrant y SearXNG siguen formando parte de la implementación.
@@ -104,25 +50,27 @@
 
 ## Métricas pendientes de validación (ocultas)
 
-- [ ] Disponibilidad de servicios del 99.9% (99.9%): asignar empresa y proyecto; definir línea base, período, método y fuente.
-- [ ] Reducción de costos de hasta 88% (hasta 88%): asignar empresa y proyecto; definir línea base, período, método y fuente.
-- [ ] Reducción de incidentes de hasta 60% (hasta 60%): asignar empresa y proyecto; definir línea base, período, método y fuente.
-- [ ] Incremento de la precisión de inventario (30%): asignar empresa y proyecto; definir línea base, período, método y fuente.
-- [ ] Reducción de errores de picking (25%): asignar empresa y proyecto; definir línea base, período, método y fuente.
-- [ ] Reducción del procesamiento manual (40%): asignar empresa y proyecto; definir línea base, período, método y fuente.
-- [ ] Migración de 63 servidores (63 servidores): asignar empresa y proyecto; definir línea base, período, método y fuente.
-- [ ] Capacitación de más de 15 personas (más de 15 personas): asignar empresa y proyecto; definir línea base, período, método y fuente.
+- [x] Disponibilidad de servicios del 99.9% (99.9%): validada.
+- [x] Reducción de incidentes de seguridad en un 60% (-60%): validada.
+- [x] Optimización y reducción de costos TI en un 18% (18%): validada.
+- [x] Incremento de la precisión de inventario en un 30% (+30%): validada.
+- [x] Reducción de tiempos de respuesta técnica en un 35% (-35%): validada.
+- [x] Cero hallazgos críticos en 3 auditorías regulatorias (100%): validada.
 
 ## Certificaciones pendientes de verificación (ocultas)
 
-- [ ] AWS Certified Cloud Practitioner (o formación AWS equivalente) (Amazon Web Services): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
-- [ ] Microsoft MCSA: Windows Server 2016 (Microsoft): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
-- [ ] Fortinet NSE 4 (Fortinet): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
-- [ ] CompTIA A+ (CompTIA): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
-- [ ] IBM Cybersecurity Fundamentals (IBM): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
-- [ ] Cisco Cybersecurity (denominación exacta por confirmar) (Cisco): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
-- [ ] Azure Concepts (denominación exacta por confirmar) (Microsoft): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
-- [ ] Google IT (denominación exacta por confirmar) (Google): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] Networking Basics (Cisco): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] Model Context Protocol: Advanced Topics (Anthropic (Skilljar)): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] Introduction to Model Context Protocol (Anthropic (Skilljar)): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] Introduction to Claude Cowork (Anthropic (Skilljar)): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] IBM Cloud Essentials (IBM): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] AWS Educate Introduction to Cloud 101 (Amazon Web Services): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] Cybersecurity Fundamentals (IBM SkillsBuild): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] CCNA: Introduction to Networks (Cisco): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] Introduction to Cybersecurity (Cisco): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] IT Essentials (Cisco): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] Introduction to Packet Tracer (Cisco): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] Introduction to IoT (Cisco): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
 
 ## Documentos
 

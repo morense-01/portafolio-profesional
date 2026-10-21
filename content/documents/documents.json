@@ -1,18 +1,25 @@
 {
-    "_ayuda":  "Para publicar un documento: copie el archivo a public/documents/ y agregue un registro con public true. Ver docs/MANTENIMIENTO.md.",
-    "categories":  [
-                       "CV ejecutivo",
-                       "CV técnico",
-                       "CV de gerencia de TI",
-                       "CV de infraestructura y operaciones",
-                       "Certificados",
-                       "Insignias digitales",
-                       "Resúmenes de proyectos",
-                       "Casos de éxito",
-                       "Diagramas sanitizados",
-                       "Publicaciones y presentaciones"
-                   ],
-    "items":  [
-
-              ]
+  "_ayuda": "Para publicar un documento: copie el archivo a public/documents/ y agregue un registro con public true. Ver docs/MANTENIMIENTO.md.",
+  "categories": [
+    "CV ejecutivo",
+    "CV técnico",
+    "CV de gerencia de TI",
+    "CV de infraestructura y operaciones",
+    "Certificados",
+    "Insignias digitales",
+    "Resúmenes de proyectos",
+    "Casos de éxito",
+    "Diagramas sanitizados",
+    "Publicaciones y presentaciones"
+  ],
+  "items": [
+    {
+      "title": "Currículum Vitae Ejecutivo - Mario Méndez",
+      "description": "CV profesional orientado a Gerencia de TI, Infraestructura y Operaciones Tecnológicas.",
+      "category": "CV de gerencia de TI",
+      "date": "2026",
+      "file": "CV_Mario_Mendez_Gerente_de_Tecnologia.pdf",
+      "public": true
+    }
+  ]
 }

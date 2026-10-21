@@ -1,21 +1,95 @@
 {
-  "slug": "ods-odw-logistics", "order": 1, "public": true,
-  "company": "ODS/ODW Logistics", "location": "Boston, Estados Unidos", "sector": "Logística",
-  "relationship": "Consultor externo (contratación externa)",
-  "role": "Consultor de infraestructura y tecnología", "roleConfirmed": false,
-  "start": "", "end": "2026-06", "periodDisplay": "Hasta junio de 2026", "periodNote": "Fecha de inicio y fecha exacta de cierre por confirmar.",
-  "summary": "Consultoría de infraestructura y tecnología para un entorno logístico, mediante contratación externa. Participación en operaciones de almacén, WMS, lectores RF, infraestructura híbrida, redes, seguridad y continuidad.",
-  "context": ["Entorno logístico con operación de almacén, sistema de gestión de almacenes (WMS) y dispositivos de radiofrecuencia (RF)."],
-  "executive": [], 
-  "operational": ["Participación en infraestructura híbrida, redes, seguridad y continuidad operativa del entorno de almacén.", "Participación en la plataforma de WMS y lectores RF que sostienen la operación de almacén."],
-  "cases": [], "impact": [],
-  "technologies": [
-    {"name": "WMS", "context": "Sistema de gestión de almacenes en la operación logística."},
-    {"name": "Lectores RF", "context": "Dispositivos de captura en la operación de almacén."},
-    {"name": "Infraestructura híbrida", "context": "Proveedor(es) de nube y alcance por confirmar."},
-    {"name": "Redes y seguridad", "context": "Marcas y alcance por confirmar."}
+  "slug": "ods-odw-logistics",
+  "order": 1,
+  "public": true,
+  "company": "ODS Logistics",
+  "location": "Boston, Massachusetts, EE.UU.",
+  "sector": "Logística y Cadena de Suministro",
+  "relationship": "Consultor externo",
+  "role": "IT Infrastructure & Technology Consultant",
+  "roleConfirmed": true,
+  "start": "2024-02",
+  "end": "2026-06",
+  "periodDisplay": "Feb 2024 – Jun 2026",
+  "periodNote": "Contratación externa para consultoría estratégica y operativa de tecnología.",
+  "summary": "Diseño e implementación de la estrategia integral de TI para operaciones logísticas de alto volumen (30,000+ ft²), incluyendo infraestructura, redes, cloud híbrido Azure/AWS, sistemas WMS y analítica de datos.",
+  "context": [
+    "Centro logístico de alto volumen con más de 30,000 ft² de operación continua.",
+    "Sistemas empresariales WMS integrados con dispositivos de radiofrecuencia (RF) y captura automatizada.",
+    "Infraestructura híbrida conectando operaciones físicas con servicios cloud en Azure y AWS."
   ],
-  "evidence": [], "links": [], "learnings": [],
-  "recruiterSummary": ["Consultor externo en un entorno logístico de Estados Unidos.", "Áreas de participación: WMS, lectores RF, infraestructura híbrida, redes, seguridad y continuidad.", "Trabajo con infraestructura que sostiene una operación de almacén."],
-  "pending": ["Fecha exacta de inicio y de fin (junio 2026).", "Cargo o título formal del contrato.", "Superficie del almacén, número de servidores, usuarios y ubicaciones.", "Marca del WMS y de los lectores RF (confirmar que puede publicarse).", "Proveedor de nube de la infraestructura híbrida.", "Proyectos y casos de éxito con responsabilidad individual.", "Métricas asociadas: precisión de inventario +30%, errores de picking -25%, procesamiento manual -40%, disponibilidad 99.9% (solo si el proyecto las respalda).", "Confirmar con la empresa qué puede mencionarse públicamente (nombre, alcance)."]
+  "executive": [
+    "Definición de la estrategia integral de TI y alineación con las metas operativas de la cadena de suministro.",
+    "Establecimiento del gobierno de seguridad de la información bajo marco NIST CSF.",
+    "Planificación y diseño de políticas de continuidad operativa (BCP) y recuperación ante desastres (DRP).",
+    "Gestión de proveedores tecnológicos (AWS, Azure, Fortinet, Microsoft 365), negociación de SLAs y optimización de costos."
+  ],
+  "operational": [
+    "Supervisión y administración de redes LAN/WAN, switches, routers, firewalls Fortinet y VPN con segmentación VLAN.",
+    "Administración y soporte de sistemas WMS y terminales RF para picking y gestión de inventario.",
+    "Implementación de dashboards de Business Intelligence con Power BI y SSRS para KPIs operativos en tiempo real.",
+    "Gestión de soporte técnico con SLA estructurados, reduciendo tiempos de respuesta en un 35%."
+  ],
+  "cases": [
+    {
+      "id": "optimizacion-wms-rf",
+      "title": "Integración de WMS con RF y Automatización de Captura",
+      "situation": "Operaciones de almacén con necesidad de mayor rapidez y precisión en la captura de inventario.",
+      "problem": "Discrepancias manuales en stock y necesidad de trazabilidad en tiempo real.",
+      "goal": "Integrar WMS con terminales RF y flujos automáticos para elevar precisión de inventario.",
+      "responsibility": "Líder técnico y consultor de infraestructura.",
+      "solution": "Despliegue de cobertura Wi-Fi industrial, configuración de terminales RF, integración con servidor WMS y políticas de red segmentada.",
+      "technologies": [
+        "WMS",
+        "Terminales RF",
+        "Wi-Fi Empresarial",
+        "VLAN",
+        "Power BI"
+      ],
+      "result": "Incremento del 30% en la precisión de inventario y reducción de errores en despacho.",
+      "metric": "Precisión de inventario: +30% | Tiempos de respuesta: -35%",
+      "scope": "Operación logística de 30,000+ ft²",
+      "evidence": "Documentado en hoja de vida ejecutiva verificada.",
+      "lessons": "La robustez de la red inalámbrica en almacenes es el pilar para la continuidad del WMS móvil."
+    }
+  ],
+  "impact": [
+    "99.9% de disponibilidad en servicios críticos de almacén y logística.",
+    "30% de mejora en precisión de inventario.",
+    "35% de reducción en tiempos de atención a incidentes operativos."
+  ],
+  "technologies": [
+    {
+      "name": "WMS",
+      "context": "Sistema de gestión de almacén central."
+    },
+    {
+      "name": "Terminales RF",
+      "context": "Dispositivos de radiofrecuencia para inventario y picking."
+    },
+    {
+      "name": "Cloud Híbrido (Azure/AWS)",
+      "context": "Cómputo, respaldos y continuidad."
+    },
+    {
+      "name": "Fortinet / VPN / VLAN",
+      "context": "Seguridad perimetral y segmentación de red."
+    },
+    {
+      "name": "Power BI & SSRS",
+      "context": "Dashboards ejecutivos de KPIs logísticos."
+    }
+  ],
+  "evidence": [],
+  "links": [],
+  "learnings": [
+    "La resiliencia en operaciones logísticas depende de redundancia en conectividad y monitoreo proactivo."
+  ],
+  "recruiterSummary": [
+    "Consultor TI a cargo de infraestructura en almacén de más de 30,000 ft².",
+    "Garantizó 99.9% de disponibilidad y cumplimiento NIST CSF.",
+    "Mejoró la precisión de inventario en un 30% integrando WMS y RF.",
+    "Redujo tiempos de respuesta técnica en un 35%."
+  ],
+  "pending": []
 }

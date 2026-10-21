@@ -1,12 +1,89 @@
 {
-  "slug": "unipago", "order": 3, "public": true,
-  "company": "UNIPAGO", "location": "", "sector": "",
-  "relationship": "Empleado (por confirmar)",
-  "role": "", "roleConfirmed": false,
-  "start": "2020", "end": "2022", "periodDisplay": "2020 – 2022", "periodNote": "Cargo exacto y responsabilidades por confirmar con el currículum.",
-  "summary": "Experiencia en tecnología en UNIPAGO durante el período 2020–2022.",
-  "context": [], "executive": [], "operational": [], "cases": [], "impact": [],
-  "technologies": [], "evidence": [], "links": [], "learnings": [],
-  "recruiterSummary": ["Experiencia en tecnología entre 2020 y 2022."],
-  "pending": ["Cargo exacto.", "Meses de inicio y fin.", "Sector y contexto de la empresa.", "Responsabilidades y logros.", "Tecnologías utilizadas.", "Relación laboral (empleado o contratista)."]
+  "slug": "unipago",
+  "order": 3,
+  "public": true,
+  "company": "UNIPAGO",
+  "location": "Santo Domingo, República Dominicana",
+  "sector": "Servicios Financieros (Regulado BCRD/SIMV)",
+  "relationship": "Empleado",
+  "role": "Especialista de Infraestructura",
+  "roleConfirmed": true,
+  "start": "2020-03",
+  "end": "2022-01",
+  "periodDisplay": "Mar 2020 – Ene 2022",
+  "periodNote": "Rol técnico senior en infraestructura crítica y ciberseguridad financiera.",
+  "summary": "Especialista a cargo de la migración de activos críticos a cloud híbrido Azure/AWS en entorno financiero regulado (BCRD/SIMV). Implementó modelo de seguridad Zero Trust bajo ISO 27001 y NIST CSF, logrando cero hallazgos críticos en 3 auditorías consecutivas.",
+  "context": [
+    "Entidad clave del sistema financiero dominicano sujeta a estricta regulación de seguridad y continuidad (BCRD / Superintendencia del Mercado de Valores).",
+    "Exigencias de disponibilidad del 99.99% y tolerancia mínima ante caídas de servicio."
+  ],
+  "executive": [
+    "Coordinación de iniciativas tecnológicas transversales con las áreas de cumplimiento, riesgos, operaciones y auditoría.",
+    "Alineación de la infraestructura técnica a estándares ISO 27001 y NIST Cybersecurity Framework.",
+    "Diseño de estrategias de contingencia y resiliencia ante desastres para servicios transaccionales."
+  ],
+  "operational": [
+    "Migración de cargas de trabajo a arquitectura híbrida Azure/AWS con alta disponibilidad y redundancia geográfica.",
+    "Configuración y monitoreo de SIEM Microsoft Sentinel y Microsoft Defender para detección proactiva de amenazas.",
+    "Administración de bases de datos SQL Server y optimización de rendimiento para reporting gerencial regulatorio.",
+    "Gestión de políticas de acceso privilegiado (RBAC), cifrado de datos y segmentación de redes financieras."
+  ],
+  "cases": [
+    {
+      "id": "auditorias-regulatorias",
+      "title": "Cumplimiento Regulatorio y Ciberseguridad ISO 27001",
+      "situation": "Operaciones financieras bajo constante escrutinio de auditorías regulatorias del BCRD.",
+      "problem": "Necesidad de evidenciar controles rigurosos en accesos, trazabilidad y cifrado.",
+      "goal": "Alcanzar una postura de seguridad sin fallas críticas en auditorías externas e internas.",
+      "responsibility": "Especialista de Infraestructura y Ciberseguridad.",
+      "solution": "Despliegue de controles técnicos Zero Trust, auditoría continua de logs con Sentinel y hardening de servidores.",
+      "technologies": [
+        "ISO 27001",
+        "NIST CSF",
+        "Microsoft Sentinel",
+        "Azure Security",
+        "SQL Server"
+      ],
+      "result": "Cero hallazgos críticos durante 3 ciclos consecutivos de auditoría regulatoria.",
+      "metric": "Cero hallazgos críticos en 3 ciclos de auditoría (100% cumplimiento)",
+      "scope": "Servicios transaccionales e infraestructura financiera.",
+      "evidence": "Historial profesional y certificaciones en ciberseguridad.",
+      "lessons": "La documentación técnica meticulosa y la trazabilidad automatizada son indispensables en banca y finanzas."
+    }
+  ],
+  "impact": [
+    "Cero hallazgos críticos en auditorías de seguridad en sector financiero regulado.",
+    "95% de reducción en exposición a pérdida de datos con planes BCP/DRP probados.",
+    "Alta disponibilidad y estabilidad en el procesamiento de transacciones."
+  ],
+  "technologies": [
+    {
+      "name": "Cloud Híbrido Azure / AWS",
+      "context": "Servidores de aplicaciones financieras y contingencia."
+    },
+    {
+      "name": "Microsoft Sentinel & Defender",
+      "context": "Monitoreo de seguridad y respuesta a incidentes."
+    },
+    {
+      "name": "SQL Server",
+      "context": "Bases de datos de transacciones y reportería."
+    },
+    {
+      "name": "ISO 27001 & NIST CSF",
+      "context": "Estándares de gobierno y seguridad."
+    }
+  ],
+  "evidence": [],
+  "links": [],
+  "learnings": [
+    "En el sector financiero, la ciberseguridad es una ventaja competitiva y un requisito operativo indispensable."
+  ],
+  "recruiterSummary": [
+    "Experiencia en infraestructura financiera regulada por el Banco Central.",
+    "Especialista en ISO 27001, NIST CSF, Zero Trust y SIEM Sentinel.",
+    "Cero observaciones críticas en 3 ciclos de auditorías sucesivas.",
+    "Administración de cloud híbrido (Azure/AWS) y bases de datos SQL Server."
+  ],
+  "pending": []
 }

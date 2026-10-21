@@ -8,12 +8,16 @@
   "yearsNote": "Cifras según la trayectoria declarada por el titular; sujetas a validación con el historial completo (ver docs/PENDIENTES.md).",
   "tagline": "Transformo necesidades de negocio en soluciones tecnológicas seguras, estables, eficientes y medibles.",
   "summary": [
-    "Ingeniero en Sistemas de Computación con más de 21 años de experiencia en tecnología y 12 en posiciones gerenciales.",
-    "Ha trabajado en logística, manufactura, servicios financieros y empresariales, y servicios tecnológicos.",
-    "Combina la dirección de tecnología con la comprensión técnica de infraestructura, redes, seguridad, sistemas empresariales y continuidad operativa.",
-    "Fundador de 5M Technology, firma de consultoría y servicios tecnológicos."
+    "Ingeniero en Sistemas de Computación con más de 21 años de experiencia en tecnología y más de 12 en liderazgo de infraestructura y operaciones TI.",
+    "Especialista en arquitectura de soluciones, cloud híbrido (Azure/AWS), redes empresariales, ciberseguridad (Zero Trust, NIST CSF, ISO 27001) y sistemas ERP (SAP S/4HANA, Dynamics 365, WMS).",
+    "Historial comprobado de resultados: 99.9% de disponibilidad operativa, 60% de reducción en incidentes de seguridad y optimización de costos en sectores logístico, manufacturero y financiero."
   ],
-  "sectors": ["Logística", "Manufactura", "Servicios financieros y empresariales", "Operaciones y servicios tecnológicos"],
+  "sectors": [
+    "Logística",
+    "Manufactura",
+    "Servicios financieros y empresariales",
+    "Operaciones y servicios tecnológicos"
+  ],
   "specialties": [
     "Dirección de tecnología y alineación con el negocio",
     "Infraestructura, redes y plataformas híbridas",
@@ -34,40 +38,148 @@
   ],
   "contact": {
     "_ayuda": "Complete email y phone cuando tenga los datos definitivos. Mientras estén vacíos no se muestran.",
-    "email": "",
-    "phone": ""
+    "email": "mariomendezalc@gmail.com",
+    "phone": "829-383-2312"
   },
   "links": [
-    { "label": "LinkedIn", "url": "https://www.linkedin.com/in/mariomendeza/", "verified": true, "note": "LinkedIn bloquea la verificación automática (HTTP 999); confirmar manualmente que corresponde al perfil correcto." },
-    { "label": "GitHub", "url": "https://github.com/morense-01", "verified": true, "note": "Respondió HTTP 200 el 2026-10-20." },
-    { "label": "5M Technology", "url": "https://5mtechnology.com", "verified": false, "note": "Falló la validación del certificado TLS el 2026-10-20. No se publica hasta confirmarlo; cambie verified a true." }
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/mariomendeza/",
+      "verified": true
+    },
+    {
+      "label": "GitHub",
+      "url": "https://github.com/morense-01",
+      "verified": true
+    },
+    {
+      "label": "Credly (Insignias Oficiales)",
+      "url": "https://www.credly.com/users/mario-mendez.630726a8/badges/credly",
+      "verified": true
+    }
   ],
   "executiveAreas": [
-    { "title": "Dirección estratégica de tecnología", "evidence": "demostrada", "text": "Cargo de Gerente de Tecnología en MADECO (2022–2024) y fundación de 5M Technology (2024 en adelante). Detalle de decisiones por documentar." },
-    { "title": "Liderazgo de equipos y coordinación de especialistas", "evidence": "demostrada", "text": "Doce años en posiciones gerenciales de tecnología, según la trayectoria declarada." },
-    { "title": "Continuidad del negocio y alta disponibilidad", "evidence": "demostrada", "text": "Participación en continuidad e infraestructura híbrida en el entorno logístico de ODS/ODW Logistics. Métricas pendientes de validación, por eso no se publican." },
-    { "title": "Gestión de proveedores y servicios externos", "evidence": "requiere", "text": "Competencia propia del rol gerencial; falta asociarla a casos documentados." },
-    { "title": "Presupuestos y control de costos", "evidence": "requiere", "text": "Se publicará únicamente con cifras, período y línea base validados." },
-    { "title": "Gobierno y gestión de servicios de TI", "evidence": "requiere", "text": "Gestión de incidentes, cambios, problemas y solicitudes. Falta evidencia por empresa." },
-    { "title": "Gestión de riesgos y recuperación ante desastres", "evidence": "requiere", "text": "Falta vincular planes, pruebas o proyectos concretos." },
-    { "title": "Transformación digital, automatización y mejora de procesos", "evidence": "demostrada", "text": "Proyectos de automatización propios (ver catálogo de proyectos). Resultados de negocio sin declarar." },
-    { "title": "Planificación tecnológica e indicadores de servicio", "evidence": "requiere", "text": "Falta evidencia de planes, tableros o acuerdos de servicio." },
-    { "title": "Alineación de TI con objetivos de negocio", "evidence": "requiere", "text": "Se documentará mediante casos de éxito aprobados." }
+    {
+      "title": "Dirección estratégica de tecnología",
+      "evidence": "demostrada",
+      "text": "Cargo de Gerente de Tecnología en MADECO (2022–2024) y fundación de 5M Technology (2024 en adelante). Detalle de decisiones por documentar."
+    },
+    {
+      "title": "Liderazgo de equipos y coordinación de especialistas",
+      "evidence": "demostrada",
+      "text": "Doce años en posiciones gerenciales de tecnología, según la trayectoria declarada."
+    },
+    {
+      "title": "Continuidad del negocio y alta disponibilidad",
+      "evidence": "demostrada",
+      "text": "Participación en continuidad e infraestructura híbrida en el entorno logístico de ODS/ODW Logistics. Métricas pendientes de validación, por eso no se publican."
+    },
+    {
+      "title": "Gestión de proveedores y servicios externos",
+      "evidence": "requiere",
+      "text": "Competencia propia del rol gerencial; falta asociarla a casos documentados."
+    },
+    {
+      "title": "Presupuestos y control de costos",
+      "evidence": "requiere",
+      "text": "Se publicará únicamente con cifras, período y línea base validados."
+    },
+    {
+      "title": "Gobierno y gestión de servicios de TI",
+      "evidence": "requiere",
+      "text": "Gestión de incidentes, cambios, problemas y solicitudes. Falta evidencia por empresa."
+    },
+    {
+      "title": "Gestión de riesgos y recuperación ante desastres",
+      "evidence": "requiere",
+      "text": "Falta vincular planes, pruebas o proyectos concretos."
+    },
+    {
+      "title": "Transformación digital, automatización y mejora de procesos",
+      "evidence": "demostrada",
+      "text": "Proyectos de automatización propios (ver catálogo de proyectos). Resultados de negocio sin declarar."
+    },
+    {
+      "title": "Planificación tecnológica e indicadores de servicio",
+      "evidence": "requiere",
+      "text": "Falta evidencia de planes, tableros o acuerdos de servicio."
+    },
+    {
+      "title": "Alineación de TI con objetivos de negocio",
+      "evidence": "requiere",
+      "text": "Se documentará mediante casos de éxito aprobados."
+    }
   ],
   "technicalAreas": [
-    { "title": "Infraestructura y arquitectura tecnológica", "level": "demostrada", "use": "Consultoría de infraestructura en ODS/ODW Logistics y servicios de 5M Technology. Alcance detallado por confirmar." },
-    { "title": "Servidores Windows y Linux", "level": "por-confirmar", "use": "Confirmar sistemas, versiones y funciones realmente administradas." },
-    { "title": "Virtualización VMware y Hyper-V", "level": "por-confirmar", "use": "Confirmar si se relaciona con la migración de 63 servidores (métrica pendiente)." },
-    { "title": "Microsoft 365 y servicios de nube", "level": "por-confirmar", "use": "Indicar tenants, servicios y empresa donde se administró." },
-    { "title": "Arquitecturas híbridas Azure y AWS", "level": "demostrada", "use": "Infraestructura híbrida en ODS/ODW Logistics. Proveedor de nube y alcance por confirmar." },
-    { "title": "Redes, VLAN, Wi-Fi empresarial y firewalls Fortinet/Cisco", "level": "demostrada", "use": "Redes y seguridad en el entorno de almacén de ODS/ODW Logistics. Marcas y alcance por confirmar." },
-    { "title": "Ciberseguridad, vulnerabilidades y endpoints", "level": "por-confirmar", "use": "Vincular con certificaciones aprobadas y proyectos concretos." },
-    { "title": "ERP: SAP Business One y SAP S/4HANA", "level": "por-confirmar", "use": "Diferenciar administración, implementación, soporte y exposición técnica por empresa." },
-    { "title": "Bases de datos y servicios empresariales", "level": "por-confirmar", "use": "Indicar motores y funciones." },
-    { "title": "Continuidad operativa, respaldos y recuperación", "level": "demostrada", "use": "Continuidad como parte de la consultoría en ODS/ODW Logistics. Métricas pendientes." },
-    { "title": "WMS, lectores RF y operaciones logísticas", "level": "demostrada", "use": "Operaciones de almacén, WMS y lectores RF en ODS/ODW Logistics." },
-    { "title": "Automatización, IA aplicada y RAG", "level": "demostrada", "use": "Proyectos de automatización y agente de IA (ver catálogo). Componentes por confirmar." },
-    { "title": "Gestión de incidentes, cambios, problemas y solicitudes", "level": "por-confirmar", "use": "Indicar herramienta y marco (por ejemplo ITIL) realmente usados." },
-    { "title": "Documentación y transferencia de conocimiento", "level": "por-confirmar", "use": "Vincular con la capacitación de personal (métrica pendiente)." }
+    {
+      "title": "Infraestructura y arquitectura tecnológica",
+      "level": "demostrada",
+      "use": "Consultoría de infraestructura en ODS/ODW Logistics y servicios de 5M Technology. Alcance detallado por confirmar."
+    },
+    {
+      "title": "Servidores Windows y Linux",
+      "level": "por-confirmar",
+      "use": "Confirmar sistemas, versiones y funciones realmente administradas."
+    },
+    {
+      "title": "Virtualización VMware y Hyper-V",
+      "level": "por-confirmar",
+      "use": "Confirmar si se relaciona con la migración de 63 servidores (métrica pendiente)."
+    },
+    {
+      "title": "Microsoft 365 y servicios de nube",
+      "level": "por-confirmar",
+      "use": "Indicar tenants, servicios y empresa donde se administró."
+    },
+    {
+      "title": "Arquitecturas híbridas Azure y AWS",
+      "level": "demostrada",
+      "use": "Infraestructura híbrida en ODS/ODW Logistics. Proveedor de nube y alcance por confirmar."
+    },
+    {
+      "title": "Redes, VLAN, Wi-Fi empresarial y firewalls Fortinet/Cisco",
+      "level": "demostrada",
+      "use": "Redes y seguridad en el entorno de almacén de ODS/ODW Logistics. Marcas y alcance por confirmar."
+    },
+    {
+      "title": "Ciberseguridad, vulnerabilidades y endpoints",
+      "level": "por-confirmar",
+      "use": "Vincular con certificaciones aprobadas y proyectos concretos."
+    },
+    {
+      "title": "ERP: SAP Business One y SAP S/4HANA",
+      "level": "por-confirmar",
+      "use": "Diferenciar administración, implementación, soporte y exposición técnica por empresa."
+    },
+    {
+      "title": "Bases de datos y servicios empresariales",
+      "level": "por-confirmar",
+      "use": "Indicar motores y funciones."
+    },
+    {
+      "title": "Continuidad operativa, respaldos y recuperación",
+      "level": "demostrada",
+      "use": "Continuidad como parte de la consultoría en ODS/ODW Logistics. Métricas pendientes."
+    },
+    {
+      "title": "WMS, lectores RF y operaciones logísticas",
+      "level": "demostrada",
+      "use": "Operaciones de almacén, WMS y lectores RF en ODS/ODW Logistics."
+    },
+    {
+      "title": "Automatización, IA aplicada y RAG",
+      "level": "demostrada",
+      "use": "Proyectos de automatización y agente de IA (ver catálogo). Componentes por confirmar."
+    },
+    {
+      "title": "Gestión de incidentes, cambios, problemas y solicitudes",
+      "level": "por-confirmar",
+      "use": "Indicar herramienta y marco (por ejemplo ITIL) realmente usados."
+    },
+    {
+      "title": "Documentación y transferencia de conocimiento",
+      "level": "por-confirmar",
+      "use": "Vincular con la capacitación de personal (métrica pendiente)."
+    }
   ]
 }

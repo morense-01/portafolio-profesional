@@ -183,7 +183,7 @@ function homeMinimal() {
 }
 
 function home() {
-  const jobs = exps.filter((e) => e.slug !== '5m-technology').length;
+  const jobs = exps.length;
   const facts = [
     [`+${profile.yearsTech}`, 'años de experiencia en tecnología'],
     [`${profile.yearsManagement}`, 'años en posiciones gerenciales de TI'],
@@ -193,7 +193,7 @@ function home() {
   const results = metrics.length
     ? `<div class="grid3">${metrics.slice(0, 5).map((m) => `<article class="card"><h3>${esc(m.claimedValue)}</h3><p>${esc(m.title)}</p><p class="muted">${esc(m.company)} · ${esc(m.period)}</p></article>`).join('')}</div><p><a href="${L('/logros/')}">Ver método y fuente de cada resultado</a></p>`
     : `<p class="note">Los resultados medibles se publican únicamente después de validar su línea base, período, método de cálculo y fuente. Consulte la sección de <a href="${L('/logros/')}">logros</a>.</p>`;
-  const quick = [['/trayectoria/', 'Trayectoria', 'Siete expedientes por empresa, con enlace propio.'], ['/logros/', 'Logros', 'Resultados con método y fuente de validación.'], ['/certificaciones/', 'Certificaciones', 'Credenciales con enlace de verificación.'], ['/proyectos/', 'Proyectos', 'Proyectos tecnológicos y su estado real.'], ['/contacto/', 'Contacto', 'Canales profesionales verificados.']]
+  const quick = [['/trayectoria/', 'Trayectoria', `${exps.length} expedientes por empresa, con enlace propio.`], ['/logros/', 'Logros', 'Resultados con método y fuente de validación.'], ['/certificaciones/', 'Certificaciones', 'Credenciales con enlace de verificación.'], ['/proyectos/', 'Proyectos', 'Proyectos tecnológicos y su estado real.'], ['/contacto/', 'Contacto', 'Canales profesionales verificados.']]
     .map(([r, t, d]) => `<a class="card link-card" href="${L(r)}"><h3>${t}</h3><p>${d}</p></a>`).join('');
   const body = `<section class="hero"><div class="wrap">
   <p class="eyebrow">${esc(profile.location)}</p>
@@ -232,12 +232,9 @@ function perfilTecnico() {
 
 function trayectoria() {
   const item = (e) => `<li class="tl"><article class="card"><p class="period">${esc(e.periodDisplay)}</p><h3><a href="${L(`/experiencia/${e.slug}/`)}">${company(e)}</a></h3><p>${esc([e.roleConfirmed ? e.role : '', e.sector].filter(Boolean).join(' · ') || clean(e.relationship) || '')}</p><p>${esc(e.summary)}</p>${e.periodNote ? `<p class="muted small">${esc(e.periodNote)}</p>` : ''}<p><a href="${L(`/experiencia/${e.slug}/`)}">Abrir expediente de ${esc(e.company)}</a></p></article></li>`;
-  const jobs = exps.filter((e) => e.slug !== '5m-technology');
-  const biz = exps.filter((e) => e.slug === '5m-technology');
-  const body = hero('Trayectoria profesional', 'Cronología de empresas y etapas confirmadas, de la más reciente a la más antigua. Cada expediente tiene su propio enlace permanente.', '/trayectoria/') + `
-<section class="wrap block"><h2>Empleos y contratos</h2><ol class="timeline">${jobs.map(item).join('')}</ol></section>
-<section class="band"><div class="wrap block"><h2>Actividad empresarial propia</h2><p class="muted">Se muestra aparte para no confundirla con empleos o contratos. Puede coincidir en el tiempo con otras etapas; las fechas por mes se confirmarán.</p><ol class="timeline">${biz.map(item).join('')}</ol></div></section>`;
-  out('trayectoria/index.html', layout({ title: 'Trayectoria profesional', desc: 'Trayectoria cronológica de Mario Méndez Alcántara: ODS/ODW Logistics, MADECO, UNIPAGO, Dominicana de Cales, VICRISA, Consorcio de Bancas y 5M Technology.', route: '/trayectoria/', body }));
+  const body = hero('Trayectoria profesional', 'Cronología de empresas y posiciones confirmadas, de la más reciente a la más antigua. Cada expediente tiene su propio enlace permanente.', '/trayectoria/') + `
+<section class="wrap block"><ol class="timeline">${exps.map(item).join('')}</ol></section>`;
+  out('trayectoria/index.html', layout({ title: 'Trayectoria profesional', desc: 'Trayectoria cronológica de Mario Méndez Alcántara: ODS Logistics, MADECO, UNIPAGO, Dominicana de Cales y VICRISA.', route: '/trayectoria/', body }));
 }
 
 function experiencia() {

@@ -1,12 +1,59 @@
 {
-  "slug": "vicrisa", "order": 5, "public": true,
-  "company": "VICRISA", "location": "", "sector": "",
-  "relationship": "Empleado (por confirmar)",
-  "role": "", "roleConfirmed": false,
-  "start": "2007", "end": "2018", "periodDisplay": "2007 – 2018", "periodNote": "Período largo; los cargos y sus fechas por confirmar. Puede incluir varias etapas.",
-  "summary": "Experiencia profesional en VICRISA entre 2007 y 2018.",
-  "context": [], "executive": [], "operational": [], "cases": [], "impact": [],
-  "technologies": [], "evidence": [], "links": [], "learnings": [],
-  "recruiterSummary": ["Once años de experiencia profesional continua (2007–2018)."],
-  "pending": ["Cargos, en orden cronológico, y fecha de cada ascenso o cambio.", "Sector y contexto de la empresa.", "Responsabilidades por cargo.", "Proyectos y logros (la etapa más extensa de la trayectoria).", "Tecnologías utilizadas.", "Aclarar si hubo períodos simultáneos con otras empresas."]
+  "slug": "vicrisa",
+  "order": 5,
+  "public": true,
+  "company": "VICRISA",
+  "location": "Santo Domingo, República Dominicana",
+  "sector": "Comercial e Industrial",
+  "relationship": "Empleado",
+  "role": "Líder de Soporte e Infraestructura",
+  "roleConfirmed": true,
+  "start": "2007",
+  "end": "2018",
+  "periodDisplay": "2007 – 2018",
+  "periodNote": "Trayectoria continua de 11 años con evolución desde soporte hasta liderazgo técnico.",
+  "summary": "Trayectoria profesional continua de 11 años gestionando infraestructura, soporte técnico, administración de servidores Windows, redes locales y sistemas de facturación y almacén.",
+  "context": [
+    "Empresa del sector comercial e industrial con múltiples sucursales y puntos de venta.",
+    "Crecimiento sostenido que requirió modernización de infraestructura informática y redes."
+  ],
+  "executive": [
+    "Supervisión y asignación de tareas al equipo de soporte técnico.",
+    "Planificación de renovaciones tecnológicas y adquisición de equipamiento."
+  ],
+  "operational": [
+    "Administración de servidores Windows Server, Active Directory y servicios de impresión y archivos.",
+    "Configuración y mantenimiento de cableado estructurado, switches, routers y enlaces VPN entre sucursales.",
+    "Soporte directo a usuarios y resolución de incidentes de hardware, software y sistemas POS."
+  ],
+  "cases": [],
+  "impact": [
+    "Continuidad operativa ininterrumpida durante 11 años de soporte y administración tecnológica.",
+    "Modernización progresiva del parque informático y red de comunicaciones."
+  ],
+  "technologies": [
+    {
+      "name": "Windows Server",
+      "context": "Servidores de archivos, DNS, DHCP y Active Directory."
+    },
+    {
+      "name": "Redes LAN / VPN",
+      "context": "Interconexión de sucursales."
+    },
+    {
+      "name": "Hardware & Helpdesk",
+      "context": "Mantenimiento y diagnóstico de computadoras y servidores."
+    }
+  ],
+  "evidence": [],
+  "links": [],
+  "learnings": [
+    "El dominio profundo del soporte y la infraestructura base es la mejor escuela para el liderazgo gerencial."
+  ],
+  "recruiterSummary": [
+    "11 años de trayectoria continua en tecnología (2007–2018).",
+    "Base técnica sólida en servidores Windows, redes y soporte corporativo.",
+    "Evolución constante asumiendo mayores responsabilidades de infraestructura."
+  ],
+  "pending": []
 }
