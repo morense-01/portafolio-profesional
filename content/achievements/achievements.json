@@ -108,6 +108,24 @@
       "confidentiality": "Público / Demostrable",
       "scope": "Infraestructura transaccional financiera",
       "notes": "Entorno de alta criticidad para el sistema financiero nacional."
+    },
+    {
+      "id": "eficiencia-operativa-30",
+      "title": "Incremento del 30% en eficiencia operativa por automatización",
+      "claimedValue": "+30%",
+      "status": "validada",
+      "public": true,
+      "company": "Dominicana de Cales / MADECO",
+      "project": "Automatización de tareas administrativas y optimización de recursos TI",
+      "period": "2018 – 2024",
+      "definition": "Aumento en la productividad de los equipos de soporte y operaciones mediante scripting y flujos automatizados.",
+      "baseline": "Procesos manuales de generación de reportes, monitoreo manual y tareas repetitivas de mantenimiento",
+      "result": "+30% de eficiencia y más de 2,000 horas-hombre anuales liberadas",
+      "method": "Despliegue de scripts en PowerShell, flujos con Power Automate y automatización de respaldos y consultas SQL.",
+      "validationSource": "Registros de tickets de soporte, métricas de ejecución de scripts y comités directivos.",
+      "confidentiality": "Público / Demostrable",
+      "scope": "Operaciones corporativas, industriales y soporte a usuarios",
+      "notes": "Replicado con éxito en entornos industriales y corporativos de manufactura."
     }
   ]
 }

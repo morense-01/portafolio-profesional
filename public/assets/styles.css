@@ -96,3 +96,12 @@ body { top: 0px !important; position: static !important; }
 #goog-gt-tt { display: none !important; visibility: hidden !important; }
 .goog-te-balloon-frame { display: none !important; }
 #google_translate_element { display: none; }
+
+/* Componentes para calificaciones directivas y referencias */
+.grid4{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:14px}
+.rating-card{text-align:center;padding:14px;background:#fff;border:1px solid var(--line);border-radius:var(--r)}
+.rating-num{color:var(--cyan-d);font-size:1.5rem;font-weight:800;margin:6px 0 0}
+.ref-box{margin-top:20px;border-left:4px solid var(--cyan);background:#fff}
+.spacer-sm{margin-top:12px}
+.spacer-md{margin-top:20px}
+

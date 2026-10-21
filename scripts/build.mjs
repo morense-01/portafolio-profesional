@@ -214,19 +214,58 @@ function home() {
 }
 
 function perfilEjecutivo() {
-  const lab = { demostrada: 'Experiencia demostrada', requiere: 'Requiere evidencia adicional' };
+  const lab = { demostrada: 'Competencias directivas demostradas', requiere: 'Competencias en documentación' };
   const rows = (ev) => profile.executiveAreas.filter((a) => a.evidence === ev).map((a) => `<article class="card"><h3>${esc(a.title)}</h3><p>${esc(a.text)}</p></article>`).join('');
-  const body = hero('Perfil ejecutivo', 'Para directores generales, reclutadores ejecutivos, propietarios de empresas y responsables de selección.', '/perfil-ejecutivo/') + `
-<section class="wrap block"><h2>Resumen de trayectoria</h2>${ul(profile.summary)}<p><a href="${L('/trayectoria/')}">Consultar la trayectoria cronológica</a></p></section>
-<section class="wrap block"><h2>${lab.demostrada}</h2><p class="muted">Competencias respaldadas por un cargo o actividad confirmados.</p><div class="grid2">${rows('demostrada')}</div></section>
-<section class="band"><div class="wrap block"><h2>${lab.requiere}</h2><p class="muted">Competencias propias del rol gerencial que aún no se acompañan de casos documentados. No se presentan como logros.</p><div class="grid2">${rows('requiere')}</div></div></section>`;
-  out('perfil-ejecutivo/index.html', layout({ title: 'Perfil ejecutivo', desc: 'Dirección de tecnología, continuidad del negocio, gestión de proveedores y equipos. Experiencia demostrada y competencias por evidenciar.', route: '/perfil-ejecutivo/', body }));
+  const ratings = profile.executiveRatings ? `
+<section class="wrap block"><div class="card cert-sources">
+  <h3>Evaluación de Competencias Directivas (${esc(profile.executiveRatings.group)})</h3>
+  <p class="muted">Calificación obtenida en evaluación profesional para posiciones de dirección y alta gerencia de tecnología:</p>
+  <div class="grid4 spacer-sm">
+    <div class="rating-card"><strong>Conocimientos</strong><div class="rating-num">${esc(profile.executiveRatings.knowledge)}</div></div>
+    <div class="rating-card"><strong>Habilidades</strong><div class="rating-num">${esc(profile.executiveRatings.skills)}</div></div>
+    <div class="rating-card"><strong>Comprensión</strong><div class="rating-num">${esc(profile.executiveRatings.comprehension)}</div></div>
+    <div class="rating-card"><strong>Actitudes</strong><div class="rating-num">${esc(profile.executiveRatings.attitudes)}</div></div>
+  </div>
+  <h4 class="spacer-md">Aptitudes y Habilidades Clave</h4>
+  <ul class="chips alt spacer-sm">
+    ${profile.executiveRatings.keyCompetencies.map(k => `<li><strong>${esc(k.name)}:</strong> ${esc(k.score)}</li>`).join('')}
+  </ul>
+</div></section>` : '';
+
+  const contractsHtml = profile.workContracts?.length ? `
+<section class="band"><div class="wrap block">
+  <h2>Condiciones y Modalidades de Contratación</h2>
+  <div class="grid2">
+    <article class="card">
+      <h3>Modalidades Aceptadas</h3>
+      <ul class="chips">${profile.workContracts.map(c => `<li>${esc(c)}</li>`).join('')}</ul>
+      <p class="spacer-sm"><strong>Situación laboral:</strong> ${esc(profile.workStatus || '')}</p>
+      <p><strong>Movilidad:</strong> ${esc(profile.drivingLicense || '')}</p>
+    </article>
+    <article class="card">
+      <h3>Ubicación y Relocalización</h3>
+      <p><strong>Ubicación actual:</strong> ${esc(profile.location)}</p>
+      <p><strong>Relocalizable en:</strong> ${esc(profile.relocatable || 'Santo Domingo')}</p>
+      <p><strong>Nivel de inglés:</strong> ${esc(profile.englishLevel || '')}</p>
+      <p><strong>Formación académica:</strong> ${esc(profile.degree || '')} (${esc(profile.educationLevel || '')})</p>
+    </article>
+  </div>
+  ${profile.referencesNote ? `<div class="card ref-box"><h3>Referencias Directivas y Laborales</h3><p>${esc(profile.referencesNote)}</p></div>` : ''}
+</div></section>` : '';
+
+  const body = hero('Perfil ejecutivo', 'Para directores generales, comités de selección, reclutadores ejecutivos y directores de operaciones.', '/perfil-ejecutivo/') + `
+<section class="wrap block"><h2>Resumen de trayectoria ejecutiva</h2>${ul(profile.summary)}<p><a href="${L('/trayectoria/')}">Consultar la trayectoria cronológica</a></p></section>
+${ratings}
+<section class="wrap block"><h2>${lab.demostrada}</h2><p class="muted">Competencias estratégicas respaldadas por cargos gerenciales y consultoría en entornos de alta exigencia.</p><div class="grid2">${rows('demostrada')}</div></section>
+${profile.executiveAreas.some(a => a.evidence === 'requiere') ? `<section class="band"><div class="wrap block"><h2>${lab.requiere}</h2><p class="muted">Competencias adicionales en proceso de vinculación a casos específicos.</p><div class="grid2">${rows('requiere')}</div></div></section>` : ''}
+${contractsHtml}`;
+  out('perfil-ejecutivo/index.html', layout({ title: 'Perfil ejecutivo', desc: 'Dirección de tecnología, continuidad del negocio, gestión de proveedores y equipos. Experiencia demostrada y competencias directivas.', route: '/perfil-ejecutivo/', body }));
 }
 
 function perfilTecnico() {
   const lab = { demostrada: 'Experiencia demostrada', 'por-confirmar': 'Por confirmar con evidencia' };
   const cards = profile.technicalAreas.map((a, i) => `<article class="card" id="area-${i + 1}"><span class="tag ${a.level}">${lab[a.level]}</span><h3>${i + 1}. ${esc(a.title)}</h3><p>${esc(a.use)}</p></article>`).join('');
-  const body = hero('Perfil operativo y técnico', 'Para gerentes de TI, líderes técnicos, responsables de infraestructura y entrevistadores especializados. Cada competencia indica su uso práctico y no incluye porcentajes de dominio.', '/perfil-tecnico/') + `<section class="wrap block"><div class="grid2">${cards}</div></section>`;
+  const body = hero('Perfil operativo y técnico', 'Para gerentes de TI, líderes técnicos, responsables de infraestructura y entrevistadores especializados. Cada competencia indica su uso práctico y alcance real.', '/perfil-tecnico/') + `<section class="wrap block"><div class="grid2">${cards}</div></section>`;
   out('perfil-tecnico/index.html', layout({ title: 'Perfil operativo y técnico', desc: 'Infraestructura, redes, seguridad, nube híbrida, continuidad, WMS y automatización: competencias técnicas con su contexto de uso.', route: '/perfil-tecnico/', body }));
 }
 
@@ -280,8 +319,8 @@ function certificaciones() {
   const cats = certData.categories.filter((c) => certs.some((x) => x.category === c));
   const years = [...new Set(certs.map((c) => (c.date || '').slice(0, 4)).filter(Boolean))].sort().reverse();
   const opt = (a) => a.map((v) => `<option>${esc(v)}</option>`).join('');
-  const typeL = { certificacion: 'Certificación', curso: 'Curso', insignia: 'Insignia', formacion: 'Formación' };
-  const cards = certs.map((c) => `<article class="card cert" data-issuer="${esc(c.issuer)}" data-cat="${esc(c.category)}" data-year="${esc((c.date || '').slice(0, 4))}">${c.badgeImage ? `<img src="${L(`/certifications/${c.badgeImage}`)}" alt="Insignia ${esc(c.name)}" width="96" height="96" loading="lazy">` : ''}<span class="tag">${typeL[c.type] || ''}</span><h3>${esc(c.name)}</h3><p>${esc(c.issuer)} · ${esc(c.category)}</p><p class="muted">${esc(c.date || '')}${c.expires ? ` · vence ${esc(c.expires)}` : ''}${c.credentialId ? ` · ID ${esc(c.credentialId)}` : ''}</p>${c.skills?.length ? `<p class="small">${esc(c.skills.join(', '))}</p>` : ''}${c.verifyUrl ? `<p>${ext(c.verifyUrl, 'Verificar credencial en emisor oficial')}</p>` : ''}</article>`).join('');
+  const typeL = { certificacion: 'Certificación', curso: 'Curso', insignia: 'Insignia', formacion: 'Formación', diplomado: 'Diplomado', especialidad: 'Especialidad' };
+  const cards = certs.map((c) => `<article class="card cert" data-issuer="${esc(c.issuer)}" data-cat="${esc(c.category)}" data-year="${esc((c.date || '').slice(0, 4))}">${c.badgeImage ? `<img src="${L(`/certifications/${c.badgeImage}`)}" alt="Insignia ${esc(c.name)}" width="96" height="96" loading="lazy">` : ''}<span class="tag">${typeL[c.type] || esc(c.type)}</span><h3>${esc(c.name)}</h3><p>${esc(c.issuer)} · ${esc(c.category)}</p><p class="muted">${esc(c.date || '')}${c.expires ? ` · vence ${esc(c.expires)}` : ''}${c.credentialId ? ` · ID ${esc(c.credentialId)}` : ''}</p>${c.skills?.length ? `<p class="small">${esc(c.skills.join(', '))}</p>` : ''}${c.verifyUrl ? `<p>${ext(c.verifyUrl, 'Verificar credencial en emisor oficial')}</p>` : ''}</article>`).join('');
   const sourcesBox = `<div class="card cert-sources"><h3>Perfiles oficiales para verificación directa</h3><p class="muted">Para corroborar la autenticidad de cada credencial e insignia, los reclutadores pueden consultar los registros públicos oficiales:</p><p class="ext">${ext('https://www.skills.google/public_profiles/195595b2-3a40-4602-905a-78c34b68fe62', 'Google Skills')} · ${ext('https://www.credly.com/users/mario-mendez.630726a8/badges', 'Credly Badges')} · ${ext('https://learn.microsoft.com/es-es/users/MarioMendezAlcantaraalc', 'Microsoft Learn')} · ${ext('https://profile.sap.com/u/mario_mendez_a', 'Perfil Oficial SAP')}</p></div>`;
   const body = hero('Certificaciones, cursos e insignias', 'Credenciales con denominación oficial, fecha y enlace original de verificación directa con el emisor.', '/certificaciones/') + `<section class="wrap block">${sourcesBox}${certs.length ? `<div class="filters no-print"><label>Entidad <select data-f="issuer"><option value="">Todas</option>${opt(issuers)}</select></label><label>Categoría <select data-f="cat"><option value="">Todas</option>${opt(cats)}</select></label><label>Año <select data-f="year"><option value="">Todos</option>${opt(years)}</select></label><div class="views"><button data-cert-view="cards" aria-pressed="true">Tarjetas</button><button data-cert-view="list" aria-pressed="false">Lista compacta</button></div></div><div id="certs" class="grid3 cert-cards">${cards}</div><p id="none" class="note" hidden>Ninguna credencial coincide con el filtro.</p>` : `<p class="note">Las certificaciones y cursos se publicarán a medida que cada credencial sea verificada con su emisor.</p>`}</section>`;
   out('certificaciones/index.html', layout({ title: 'Certificaciones, cursos e insignias', desc: 'Credenciales profesionales verificables con enlace directo al emisor: Google Cloud, Microsoft, Cisco, IBM y Anthropic.', route: '/certificaciones/', body }));
@@ -291,7 +330,7 @@ function proyectos() {
   const types = [...new Set(projects.map((p) => p.type))].sort();
   const cards = projects.map((p) => `<article class="card" data-type="${esc(p.type)}"><span class="tag">${esc(p.type)}</span><h3><a href="${L(`/proyectos/${p.slug}/`)}">${esc(p.name)}</a></h3><p>${esc(p.summary)}</p><p class="muted small">Estado: ${esc(p.status)}</p></article>`).join('');
   const body = hero('Proyectos tecnológicos', 'Cada ficha indica su estado real y el rol desempeñado. Un prototipo no se presenta como producto terminado.', '/proyectos/') + `<section class="wrap block"><div class="filters no-print"><label>Tipo de proyecto <select data-pf><option value="">Todos</option>${types.map((t) => `<option>${esc(t)}</option>`).join('')}</select></label></div><div class="grid2" id="projs">${cards}</div></section>`;
-  out('proyectos/index.html', layout({ title: 'Proyectos tecnológicos', desc: 'Catálogo de proyectos: 5M Technology, aplicaciones web, automatización e inteligencia artificial, con su estado real.', route: '/proyectos/', body }));
+  out('proyectos/index.html', layout({ title: 'Proyectos tecnológicos', desc: 'Catálogo de proyectos: aplicaciones web, automatización e inteligencia artificial, con su estado real.', route: '/proyectos/', body }));
   projects.forEach((p) => {
     const route = `/proyectos/${p.slug}/`;
     const co = exps.find((e) => e.slug === p.relatedCompany);
@@ -310,8 +349,33 @@ function documentos() {
 
 function contacto() {
   const c = profile.contact;
-  const items = [c.email ? `<li><strong>Correo:</strong> <a href="mailto:${esc(c.email)}">${esc(c.email)}</a></li>` : '', c.phone ? `<li><strong>Teléfono:</strong> <a href="tel:${esc(c.phone.replace(/\s/g, ''))}">${esc(c.phone)}</a></li>` : '', ...links.map((l) => `<li><strong>${esc(l.label)}:</strong> ${ext(l.url, l.url)}</li>`)].filter(Boolean).join('');
-  const body = hero('Contacto', 'Canales profesionales verificados. Sin formularios que no envíen mensajes ni registros obligatorios.', '/contacto/') + `<section class="wrap block"><p><strong>Ubicación profesional:</strong> ${esc(profile.location)}</p><ul class="contact">${items}</ul></section>`;
+  const items = [
+    c.email ? `<li><strong>Correo electrónico:</strong> <a href="mailto:${esc(c.email)}">${esc(c.email)}</a></li>` : '',
+    c.phone ? `<li><strong>Teléfono / WhatsApp:</strong> <a href="tel:${esc(c.phone.replace(/\s/g, ''))}">${esc(c.phone)}</a></li>` : '',
+    `<li><strong>Ubicación:</strong> ${esc(profile.location)}</li>`,
+    profile.relocatable ? `<li><strong>Relocalizable en:</strong> ${esc(profile.relocatable)}</li>` : '',
+    profile.workStatus ? `<li><strong>Disponibilidad:</strong> ${esc(profile.workStatus)}</li>` : '',
+    profile.drivingLicense ? `<li><strong>Movilidad:</strong> ${esc(profile.drivingLicense)}</li>` : '',
+    profile.englishLevel ? `<li><strong>Inglés:</strong> ${esc(profile.englishLevel)}</li>` : '',
+    ...links.map((l) => `<li><strong>${esc(l.label)}:</strong> ${ext(l.url, l.url)}</li>`)
+  ].filter(Boolean).join('');
+
+  const body = hero('Contacto profesional', 'Canales directos para reclutadores, comités de selección y directores ejecutivos.', '/contacto/') + `
+<section class="wrap block">
+  <div class="grid2">
+    <article class="card">
+      <h3>Datos de Contacto Directo</h3>
+      <ul class="contact">${items}</ul>
+    </article>
+    <article class="card">
+      <h3>Modalidades de Contratación</h3>
+      <p class="muted">Abierto a propuestas formales que requieran liderazgo y resolución técnica:</p>
+      <ul class="chips">${(profile.workContracts || []).map(k => `<li>${esc(k)}</li>`).join('')}</ul>
+      <h4 class="spacer-md">Referencias Profesionales</h4>
+      <p>${esc(profile.referencesNote || 'Referencias directivas y laborales disponibles a solicitud.')}</p>
+    </article>
+  </div>
+</section>`;
   out('contacto/index.html', layout({ title: 'Contacto', desc: `Contacto profesional con ${profile.name}: perfiles y canales verificados.`, route: '/contacto/', body }));
 }
 

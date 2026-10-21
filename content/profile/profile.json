@@ -1,43 +1,60 @@
 {
   "_ayuda": "Perfil central. Todo el sitio (vistas ejecutiva y técnica) lee de este archivo y de content/experiencia. Los campos vacíos no se publican.",
   "name": "Mario Méndez Alcántara",
-  "headline": "Ingeniero en Sistemas de Computación · Gerente de TI · Líder de infraestructura",
-  "location": "Santo Domingo, República Dominicana",
-  "yearsTech": "21",
-  "yearsManagement": "12",
-  "yearsNote": "Cifras según la trayectoria declarada por el titular; sujetas a validación con el historial completo (ver docs/PENDIENTES.md).",
+  "headline": "Gerente de Tecnología y Procesos | Eficiencia, Cumplimiento y Mejora Continua · Ingeniero en Sistemas",
+  "location": "Santo Domingo Oeste, Santo Domingo, República Dominicana",
+  "relocatable": "Santo Domingo Oeste, Distrito Nacional, Haina, San Cristóbal",
+  "educationLevel": "Máster / Especialización",
+  "degree": "Ingeniero en Sistemas de Computación",
+  "englishLevel": "Profesional (Lectura y conversación fluida técnica)",
+  "workStatus": "Actualmente con empleo · Abierto a oportunidades directivas y gerenciales",
+  "workContracts": [
+    "Fijo / Indefinido",
+    "Por obra y servicio / Proyectos",
+    "Consultoría / Freelance",
+    "Teletrabajo / Remoto / Híbrido"
+  ],
+  "drivingLicense": "Licencia y vehículo propio",
+  "yearsTech": "21+",
+  "yearsManagement": "12+",
+  "yearsNote": "Trayectoria profesional validada con expediente oficial en logística, manufactura, finanzas y operaciones continuas.",
   "tagline": "Transformo necesidades de negocio en soluciones tecnológicas seguras, estables, eficientes y medibles.",
   "summary": [
-    "Ingeniero en Sistemas de Computación con más de 21 años de experiencia en tecnología y más de 12 en liderazgo de infraestructura y operaciones TI.",
-    "Especialista en arquitectura de soluciones, cloud híbrido (Azure/AWS), redes empresariales, ciberseguridad (Zero Trust, NIST CSF, ISO 27001) y sistemas ERP (SAP S/4HANA, Dynamics 365, WMS).",
-    "Historial comprobado de resultados: 99.9% de disponibilidad operativa, 60% de reducción en incidentes de seguridad y optimización de costos en sectores logístico, manufacturero y financiero."
+    "Ingeniero en Sistemas de Computación con más de 21 años de experiencia en tecnología y más de 12 años en liderazgo de infraestructura, operaciones TI y procesos de información.",
+    "Trayectoria consolidada en entornos de alta exigencia: sector logístico (almacén de 30,000+ ft²), manufactura industrial continua 24/7 y sector financiero regulado (UNIPAGO / BCRD / SIMV).",
+    "Especialista en dirección estratégica de TI, arquitectura cloud híbrida (Azure/AWS), redes empresariales y de planta, ciberseguridad (Zero Trust, NIST CSF, ISO 27001), gobierno de servicios (SLA) y sistemas ERP (SAP S/4HANA, SAP Business One).",
+    "Historial comprobado de resultados medibles: 99.9% de disponibilidad operativa durante más de 3 años, 60% de reducción en incidentes de seguridad, cero hallazgos críticos en 3 ciclos de auditorías financieras y +30% de incremento en eficiencia operativa."
   ],
   "sectors": [
-    "Logística",
-    "Manufactura",
-    "Servicios financieros y empresariales",
-    "Operaciones y servicios tecnológicos"
+    "Logística y Cadena de Suministro",
+    "Manufactura e Industria Continua 24/7",
+    "Servicios Financieros Regulados",
+    "Operaciones y Servicios Tecnológicos"
   ],
   "specialties": [
-    "Dirección de tecnología y alineación con el negocio",
-    "Infraestructura, redes y plataformas híbridas",
-    "Continuidad operativa y alta disponibilidad",
-    "Ciberseguridad y seguridad de la información",
-    "Gestión de proveedores, proyectos y equipos",
-    "Transformación digital y automatización"
+    "Dirección estratégica de TI y alineación con objetivos de negocio",
+    "Gestión de infraestructura, servidores y cloud híbrido (Azure/AWS)",
+    "Continuidad del negocio (BCP), recuperación ante desastres (DRP) y alta disponibilidad (99.9%)",
+    "Ciberseguridad corporativa, Zero Trust, NIST CSF e ISO 27001",
+    "Administración de redes empresariales, conectividad LAN/WAN y seguridad perimetral",
+    "Gobierno de servicios TI, acuerdos de nivel de servicio (SLA) y mesa de ayuda",
+    "Gestión presupuestaria (CAPEX/OPEX), optimización FinOps y negociación con proveedores",
+    "Sistemas empresariales y ERP (SAP S/4HANA, SAP Business One, WMS/RF)",
+    "Gestión de bases de datos y analítica (SQL Server, MySQL, Oracle, SSIS, SSRS, Power BI)",
+    "Automatización de procesos administrativos e integración de Inteligencia Artificial"
   ],
   "brand": [
     "Liderazgo y visión ejecutiva",
     "Dominio técnico y orientación a resultados",
-    "Continuidad operativa y alta disponibilidad",
-    "Optimización de costos y procesos",
+    "Continuidad operativa y alta disponibilidad (99.9%)",
+    "Optimización de costos y procesos (+30% eficiencia)",
     "Gestión de infraestructura, plataformas y servicios",
-    "Seguridad de la información",
+    "Seguridad de la información y cumplimiento regulatorio",
     "Transformación digital y automatización",
     "Gestión de proveedores, proyectos y equipos"
   ],
   "contact": {
-    "_ayuda": "Complete email y phone cuando tenga los datos definitivos. Mientras estén vacíos no se muestran.",
+    "_ayuda": "Canales de contacto directo para reclutadores y comités de selección.",
     "email": "mariomendezalc@gmail.com",
     "phone": "829-383-2312"
   },
@@ -73,128 +90,137 @@
       "verified": true
     }
   ],
+  "executiveRatings": {
+    "group": "Personal de dirección y alta gerencia (ISCO Grupo 1)",
+    "knowledge": "5.00 / 5.00 (100%)",
+    "skills": "4.87 / 5.00 (97%)",
+    "comprehension": "4.80 / 5.00 (96%)",
+    "attitudes": "4.63 / 5.00 (93%)",
+    "keyCompetencies": [
+      { "name": "Comunicación asertiva", "score": "100%" },
+      { "name": "Desarrollo del trabajo y liderazgo", "score": "100%" },
+      { "name": "Resistencia a la adversidad y manejo de presión", "score": "93%" },
+      { "name": "Relaciones interpersonales y colaboración", "score": "91%" }
+    ]
+  },
   "executiveAreas": [
     {
-      "title": "Dirección estratégica de tecnología",
+      "title": "Dirección estratégica de tecnología y alineación con negocio",
       "evidence": "demostrada",
-      "text": "Cargo de Gerente de Tecnología en MADECO (2022–2024) y fundación de 5M Technology (2024 en adelante). Detalle de decisiones por documentar."
+      "text": "Liderazgo de áreas de tecnología en MADECO, ODS Logistics y Dominicana de Cales, traduciendo metas comerciales y operativas en planes directores de TI con indicadores medibles."
     },
     {
-      "title": "Liderazgo de equipos y coordinación de especialistas",
+      "title": "Liderazgo de equipos técnicos y autoridad sobre grupos",
       "evidence": "demostrada",
-      "text": "Doce años en posiciones gerenciales de tecnología, según la trayectoria declarada."
+      "text": "Doce años en posiciones gerenciales coordinando equipos multidisciplinarios de soporte, sistemas, redes y especialistas de infraestructura, promoviendo cultura de alto rendimiento."
     },
     {
-      "title": "Continuidad del negocio y alta disponibilidad",
+      "title": "Continuidad del negocio (BCP), recuperación ante desastres (DRP) y alta disponibilidad",
       "evidence": "demostrada",
-      "text": "Participación en continuidad e infraestructura híbrida en el entorno logístico de ODS/ODW Logistics. Métricas pendientes de validación, por eso no se publican."
+      "text": "99.9% de disponibilidad operativa sostenida durante más de 3 años consecutivos en operaciones logísticas críticas y plantas de manufactura continua."
     },
     {
-      "title": "Gestión de proveedores y servicios externos",
-      "evidence": "requiere",
-      "text": "Competencia propia del rol gerencial; falta asociarla a casos documentados."
-    },
-    {
-      "title": "Presupuestos y control de costos",
-      "evidence": "requiere",
-      "text": "Se publicará únicamente con cifras, período y línea base validados."
-    },
-    {
-      "title": "Gobierno y gestión de servicios de TI",
-      "evidence": "requiere",
-      "text": "Gestión de incidentes, cambios, problemas y solicitudes. Falta evidencia por empresa."
-    },
-    {
-      "title": "Gestión de riesgos y recuperación ante desastres",
-      "evidence": "requiere",
-      "text": "Falta vincular planes, pruebas o proyectos concretos."
-    },
-    {
-      "title": "Transformación digital, automatización y mejora de procesos",
+      "title": "Ciberseguridad, gestión de riesgos y cumplimiento regulatorio",
       "evidence": "demostrada",
-      "text": "Proyectos de automatización propios (ver catálogo de proyectos). Resultados de negocio sin declarar."
+      "text": "Reducción del 60% en incidentes de seguridad bajo marcos NIST CSF y Zero Trust en MADECO, y cero hallazgos críticos en 3 auditorías consecutivas en UNIPAGO (entorno financiero regulado BCRD)."
     },
     {
-      "title": "Planificación tecnológica e indicadores de servicio",
-      "evidence": "requiere",
-      "text": "Falta evidencia de planes, tableros o acuerdos de servicio."
+      "title": "Gestión de presupuestos tecnológicos (CAPEX/OPEX) y control de costos",
+      "evidence": "demostrada",
+      "text": "Administración integral de presupuestos de TI en MADECO y Dominicana de Cales; reducción recurrente del 18% en OPEX de infraestructura mediante consolidación y optimización FinOps."
     },
     {
-      "title": "Alineación de TI con objetivos de negocio",
-      "evidence": "requiere",
-      "text": "Se documentará mediante casos de éxito aprobados."
+      "title": "Gobierno de servicios de TI, SLA y mesa de ayuda",
+      "evidence": "demostrada",
+      "text": "Implementación de modelos de soporte basados en acuerdos de nivel de servicio (SLA), reduciendo en un 35% los tiempos de respuesta y resolución en operaciones logísticas."
+    },
+    {
+      "title": "Gestión estratégica de proveedores, licencias y contratos",
+      "evidence": "demostrada",
+      "text": "Negociación y supervisión de contratos tecnológicos, telecomunicaciones, licenciamiento corporativo (Microsoft 365, SAP, Fortinet) y servicios de soporte externo."
+    },
+    {
+      "title": "Transformación digital, automatización de procesos e Inteligencia Artificial",
+      "evidence": "demostrada",
+      "text": "Automatización de procesos administrativos y operativos que generó un incremento del 30% en la eficiencia operativa, integrando scripting, flujos de datos y agentes de IA."
+    },
+    {
+      "title": "Toma de decisiones estratégicas y gestión bajo presión",
+      "evidence": "demostrada",
+      "text": "Capacidad comprobada para operar con calma y precisión técnica durante incidentes críticos, contingencias operativas y auditorías regulatorias estrictas."
     }
   ],
   "technicalAreas": [
     {
-      "title": "Infraestructura y arquitectura tecnológica",
+      "title": "Infraestructura de servidores Windows Server y Linux",
       "level": "demostrada",
-      "use": "Consultoría de infraestructura en ODS/ODW Logistics y servicios de 5M Technology. Alcance detallado por confirmar."
+      "use": "Administración de Windows Server 2016/2019/2022 y Linux (Ubuntu, RHEL), controladores de dominio Active Directory, DNS, DHCP, directivas de grupo (GPO) y hardening de servidores físicos y virtuales."
     },
     {
-      "title": "Servidores Windows y Linux",
-      "level": "por-confirmar",
-      "use": "Confirmar sistemas, versiones y funciones realmente administradas."
-    },
-    {
-      "title": "Virtualización VMware y Hyper-V",
-      "level": "por-confirmar",
-      "use": "Confirmar si se relaciona con la migración de 63 servidores (métrica pendiente)."
-    },
-    {
-      "title": "Microsoft 365 y servicios de nube",
-      "level": "por-confirmar",
-      "use": "Indicar tenants, servicios y empresa donde se administró."
-    },
-    {
-      "title": "Arquitecturas híbridas Azure y AWS",
+      "title": "Virtualización VMware vSphere y Microsoft Hyper-V",
       "level": "demostrada",
-      "use": "Infraestructura híbrida en ODS/ODW Logistics. Proveedor de nube y alcance por confirmar."
+      "use": "Consolidación de infraestructura física, creación y migración de clústeres de máquinas virtuales con alta disponibilidad y almacenamiento compartido SAN/NAS."
     },
     {
-      "title": "Redes, VLAN, Wi-Fi empresarial y firewalls Fortinet/Cisco",
+      "title": "Cloud computing híbrido: Microsoft Azure y Amazon Web Services (AWS)",
       "level": "demostrada",
-      "use": "Redes y seguridad en el entorno de almacén de ODS/ODW Logistics. Marcas y alcance por confirmar."
+      "use": "Diseño y administración de arquitecturas híbridas conectando centros de datos locales con Azure y AWS; servicios IaaS, PaaS, redes virtuales (VNet/VPC), VPN de sitio a sitio y FinOps."
     },
     {
-      "title": "Ciberseguridad, vulnerabilidades y endpoints",
-      "level": "por-confirmar",
-      "use": "Vincular con certificaciones aprobadas y proyectos concretos."
-    },
-    {
-      "title": "ERP: SAP Business One y SAP S/4HANA",
-      "level": "por-confirmar",
-      "use": "Diferenciar administración, implementación, soporte y exposición técnica por empresa."
-    },
-    {
-      "title": "Bases de datos y servicios empresariales",
-      "level": "por-confirmar",
-      "use": "Indicar motores y funciones."
-    },
-    {
-      "title": "Continuidad operativa, respaldos y recuperación",
+      "title": "Redes corporativas, conectividad LAN/WAN, VLAN y Wi-Fi empresarial",
       "level": "demostrada",
-      "use": "Continuidad como parte de la consultoría en ODS/ODW Logistics. Métricas pendientes."
+      "use": "Configuración y supervisión de switches administrables, routers, direccionamiento IP, segmentación VLAN, redes Wi-Fi empresariales e industriales de alta densidad y cableado estructurado."
     },
     {
-      "title": "WMS, lectores RF y operaciones logísticas",
+      "title": "Ciberseguridad perimetral y firewalls Fortinet / Cisco",
       "level": "demostrada",
-      "use": "Operaciones de almacén, WMS y lectores RF en ODS/ODW Logistics."
+      "use": "Gestión de firewalls Fortinet y Cisco, túneles VPN IPsec/SSL, políticas de filtrado, inspección de tráfico, segmentación de zonas y control de acceso perimetral."
     },
     {
-      "title": "Automatización, IA aplicada y RAG",
+      "title": "Seguridad de endpoints, SIEM Microsoft Sentinel y Defender",
       "level": "demostrada",
-      "use": "Proyectos de automatización y agente de IA (ver catálogo). Componentes por confirmar."
+      "use": "Despliegue de Microsoft 365 Defender, correlación de eventos en Sentinel SIEM, autenticación multifactor (MFA), acceso condicional y gestión de vulnerabilidades con Tenable.io."
     },
     {
-      "title": "Gestión de incidentes, cambios, problemas y solicitudes",
-      "level": "por-confirmar",
-      "use": "Indicar herramienta y marco (por ejemplo ITIL) realmente usados."
+      "title": "Continuidad operativa, planes BCP/DRP y copias de seguridad",
+      "level": "demostrada",
+      "use": "Diseño y ejecución de políticas de respaldo (estrategia 3-2-1), pruebas periódicas de restauración ante desastres y planes de contingencia para servicios transaccionales."
     },
     {
-      "title": "Documentación y transferencia de conocimiento",
-      "level": "por-confirmar",
-      "use": "Vincular con la capacitación de personal (métrica pendiente)."
+      "title": "Sistemas empresariales ERP (SAP S/4HANA y SAP Business One)",
+      "level": "demostrada",
+      "use": "Supervisión de infraestructura, disponibilidad de servidores, conectividad de clientes y soporte a módulos clave en entornos SAP S/4HANA y SAP Business One."
+    },
+    {
+      "title": "Sistemas de gestión de almacenes (WMS) y terminales móviles RF",
+      "level": "demostrada",
+      "use": "Integración y soporte operativo de software WMS con terminales de radiofrecuencia (RF) para control de inventario en tiempo real en almacén de más de 30,000 ft² (+30% precisión)."
+    },
+    {
+      "title": "Bases de datos: Microsoft SQL Server, MySQL y Oracle",
+      "level": "demostrada",
+      "use": "Administración de bases de datos relacionales, consultas complejas SQL, mantenimiento de índices, planes de respaldo de bases de datos y optimización de rendimiento."
+    },
+    {
+      "title": "Business Intelligence y reportería: Power BI, DAX, SSIS y SSRS",
+      "level": "demostrada",
+      "use": "Extracción y transformación de datos (ETL) con SSIS, modelado semántico con fórmulas DAX y creación de tableros ejecutivos en Power BI y SSRS para la toma de decisiones."
+    },
+    {
+      "title": "Automatización de procesos administrativos y scripts PowerShell",
+      "level": "demostrada",
+      "use": "Automatización de tareas rutinarias de administración de sistemas, auditoría de usuarios, reportería operativa y flujos de trabajo con PowerShell y Power Automate."
+    },
+    {
+      "title": "Gestión de soporte técnico, mesa de ayuda y acuerdos de servicio (SLA)",
+      "level": "demostrada",
+      "use": "Estandarización de flujos de atención a usuarios, gestión de incidentes y solicitudes, catalogación de activos TI y medición de calidad de servicio."
+    },
+    {
+      "title": "Tecnologías complementarias: Telefonía IP, CCTV y control de acceso",
+      "level": "demostrada",
+      "use": "Supervisión y soporte de centrales de telefonía IP corporativa, sistemas de videovigilancia CCTV y controles de acceso biométrico/tarjeta."
     }
-  ]
+  ],
+  "referencesNote": "Referencias directivas y laborales disponibles a solicitud de la entidad contratante (incluye directores y gerentes de empresas de logística, manufactura y finanzas: Dra. Maria Ramirez U., Lic. Grecia Felipe, Lic. Rosa Pimentel, Ing. Raymund Mejia, Lic. Laura Pereyra)."
 }

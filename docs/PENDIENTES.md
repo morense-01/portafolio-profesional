@@ -59,6 +59,7 @@
 - [x] Incremento de la precisión de inventario en un 30% (+30%): validada.
 - [x] Reducción de tiempos de respuesta técnica en un 35% (-35%): validada.
 - [x] Cero hallazgos críticos en 3 auditorías regulatorias (100%): validada.
+- [x] Incremento del 30% en eficiencia operativa por automatización (+30%): validada.
 
 ## Certificaciones pendientes de verificación (ocultas)
 
@@ -89,6 +90,19 @@
 - [x] IT Essentials (Cisco): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
 - [x] Introduction to Packet Tracer (Cisco): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
 - [x] Introduction to IoT (Cisco): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] Fortinet NSE 4 – Network Security Professional (Fortinet): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] MCSA: Windows Server (Microsoft): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] CompTIA A+ (Core Hardware & Operating Systems) (CompTIA): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] Diplomado en Cómputo en la Nube (Educación Superior Continua): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] Diplomado en Inteligencia de Negocios (BI) (Educación Superior Continua): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] Diplomado en Redes y Telecomunicaciones (Educación Superior Continua): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] Diplomado en Sistemas Informáticos (Educación Superior Continua): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] Diplomado en Integridad y Seguridad Web (Educación Superior Continua): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] Diplomado en Internet de las Cosas (IoT) (Educación Superior Continua): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] Diplomado en Estrategias Digitales de Aprendizaje (Educación Superior Continua): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] Especialidad en Tecnologías de la Información (TI) (Educación Superior Especializada): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] Especialidad en Tratamiento y Gestión de Datos (Educación Superior Especializada): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] Especialidad en Integrador de Servicios IoT (Educación Superior Especializada): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
 
 ## Documentos
 

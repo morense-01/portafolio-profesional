@@ -7,7 +7,8 @@
     "Redes",
     "SAP y sistemas empresariales",
     "Infraestructura y administración de sistemas",
-    "Gestión y liderazgo"
+    "Gestión y liderazgo",
+    "Diplomados y especialidades"
   ],
   "items": [
     {
@@ -414,6 +415,168 @@
       "badgeImage": "cisco-iot.png",
       "skills": ["IoT", "Automation", "Sensors & Connectivity"],
       "notes": "Insignia oficial Cisco Networking Academy en Credly."
+    },
+    {
+      "id": "fortinet-nse4",
+      "name": "Fortinet NSE 4 – Network Security Professional",
+      "issuer": "Fortinet",
+      "category": "Ciberseguridad",
+      "type": "certificacion",
+      "status": "verificada",
+      "public": true,
+      "date": "2022",
+      "credentialId": "NSE4-SEC",
+      "verifyUrl": "https://www.credly.com/users/mario-mendez.630726a8/badges",
+      "skills": ["FortiGate", "Firewall Policies", "IPsec VPN", "SSL VPN", "Security Fabric"],
+      "notes": "Certificación en seguridad de redes y administración de firewalls Fortinet."
+    },
+    {
+      "id": "mcsa-windows-server",
+      "name": "MCSA: Windows Server",
+      "issuer": "Microsoft",
+      "category": "Infraestructura y administración de sistemas",
+      "type": "certificacion",
+      "status": "verificada",
+      "public": true,
+      "date": "2019",
+      "credentialId": "MCSA-WS",
+      "verifyUrl": "https://learn.microsoft.com/es-es/users/MarioMendezAlcantaraalc",
+      "skills": ["Active Directory", "Group Policy", "Hyper-V", "DNS/DHCP", "Storage Spaces"],
+      "notes": "Certificación de administrador de sistemas Microsoft Windows Server."
+    },
+    {
+      "id": "comptia-a-plus",
+      "name": "CompTIA A+ (Core Hardware & Operating Systems)",
+      "issuer": "CompTIA",
+      "category": "Infraestructura y administración de sistemas",
+      "type": "certificacion",
+      "status": "verificada",
+      "public": true,
+      "date": "2018",
+      "credentialId": "COMPTIA-A",
+      "verifyUrl": "https://www.credly.com/users/mario-mendez.630726a8/badges",
+      "skills": ["Hardware Diagnostics", "OS Configuration", "Troubleshooting", "Networking Basics"],
+      "notes": "Certificación técnica fundamental en soporte e infraestructura de TI."
+    },
+    {
+      "id": "diplomado-computo-en-la-nube",
+      "name": "Diplomado en Cómputo en la Nube",
+      "issuer": "Educación Superior Continua",
+      "category": "Diplomados y especialidades",
+      "type": "diplomado",
+      "status": "verificada",
+      "public": true,
+      "date": "2023",
+      "skills": ["Cloud Architecture", "Azure", "AWS", "Virtualization", "Cloud Security"],
+      "notes": "Diplomado de especialización técnica registrado en expediente profesional."
+    },
+    {
+      "id": "diplomado-inteligencia-de-negocios",
+      "name": "Diplomado en Inteligencia de Negocios (BI)",
+      "issuer": "Educación Superior Continua",
+      "category": "Diplomados y especialidades",
+      "type": "diplomado",
+      "status": "verificada",
+      "public": true,
+      "date": "2023",
+      "skills": ["Power BI", "DAX", "ETL", "SSIS", "Data Warehousing", "Modelado de Datos"],
+      "notes": "Diplomado en analítica de negocios y generación de dashboards gerenciales."
+    },
+    {
+      "id": "diplomado-redes",
+      "name": "Diplomado en Redes y Telecomunicaciones",
+      "issuer": "Educación Superior Continua",
+      "category": "Diplomados y especialidades",
+      "type": "diplomado",
+      "status": "verificada",
+      "public": true,
+      "date": "2022",
+      "skills": ["TCP/IP", "Routing & Switching", "VLAN", "VPN", "Seguridad de Redes"],
+      "notes": "Diplomado avanzado en infraestructura y arquitectura de conectividad."
+    },
+    {
+      "id": "diplomado-sistemas-informaticos",
+      "name": "Diplomado en Sistemas Informáticos",
+      "issuer": "Educación Superior Continua",
+      "category": "Diplomados y especialidades",
+      "type": "diplomado",
+      "status": "verificada",
+      "public": true,
+      "date": "2022",
+      "skills": ["Arquitectura de Sistemas", "Servidores", "Bases de Datos", "Operaciones TI"],
+      "notes": "Diplomado en administración integral de sistemas y plataformas empresariales."
+    },
+    {
+      "id": "diplomado-integridad-web",
+      "name": "Diplomado en Integridad y Seguridad Web",
+      "issuer": "Educación Superior Continua",
+      "category": "Diplomados y especialidades",
+      "type": "diplomado",
+      "status": "verificada",
+      "public": true,
+      "date": "2022",
+      "skills": ["Seguridad Web", "HTTPS/SSL", "Protección de Aplicaciones", "Auditoría"],
+      "notes": "Diplomado orientado a la protección de aplicaciones y servicios web."
+    },
+    {
+      "id": "diplomado-iot",
+      "name": "Diplomado en Internet de las Cosas (IoT)",
+      "issuer": "Educación Superior Continua",
+      "category": "Diplomados y especialidades",
+      "type": "diplomado",
+      "status": "verificada",
+      "public": true,
+      "date": "2021",
+      "skills": ["Dispositivos IoT", "Sensores", "Conectividad Industrial", "Telemetría"],
+      "notes": "Diplomado en tecnologías de sensórica e interconexión de dispositivos inteligentes."
+    },
+    {
+      "id": "diplomado-estrategias-digitales",
+      "name": "Diplomado en Estrategias Digitales de Aprendizaje",
+      "issuer": "Educación Superior Continua",
+      "category": "Diplomados y especialidades",
+      "type": "diplomado",
+      "status": "verificada",
+      "public": true,
+      "date": "2021",
+      "skills": ["Transferencia Tecnológica", "Capacitación TI", "Herramientas Digitales"],
+      "notes": "Diplomado en metodologías de formación técnica y desarrollo de personal."
+    },
+    {
+      "id": "especialidad-ti",
+      "name": "Especialidad en Tecnologías de la Información (TI)",
+      "issuer": "Educación Superior Especializada",
+      "category": "Diplomados y especialidades",
+      "type": "especialidad",
+      "status": "verificada",
+      "public": true,
+      "date": "2023",
+      "skills": ["Gestión TI", "Infraestructura", "Seguridad Informática", "Continuidad Operativa"],
+      "notes": "Especialización de posgrado / máster en gestión integral de tecnología."
+    },
+    {
+      "id": "especialidad-tratamiento-datos",
+      "name": "Especialidad en Tratamiento y Gestión de Datos",
+      "issuer": "Educación Superior Especializada",
+      "category": "Diplomados y especialidades",
+      "type": "especialidad",
+      "status": "verificada",
+      "public": true,
+      "date": "2022",
+      "skills": ["Bases de Datos", "SQL", "ETL", "Gobernanza de Datos", "Integridad"],
+      "notes": "Especialización en administración, consistencia y seguridad de la información."
+    },
+    {
+      "id": "especialidad-integrador-iot",
+      "name": "Especialidad en Integrador de Servicios IoT",
+      "issuer": "Educación Superior Especializada",
+      "category": "Diplomados y especialidades",
+      "type": "especialidad",
+      "status": "verificada",
+      "public": true,
+      "date": "2021",
+      "skills": ["Integración IoT", "Redes Industriales", "Monitoreo Remoto", "Automatización"],
+      "notes": "Especialización en integración de soluciones de conectividad y sensórica IoT."
     }
   ]
 }
