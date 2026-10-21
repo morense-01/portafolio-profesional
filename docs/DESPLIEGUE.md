@@ -1,26 +1,27 @@
-﻿# Publicación privada por enlace (gratis)
+# Despliegue en GitHub Pages (Activo)
 
-**Objetivo:** el código vive en un repositorio **privado** y el sitio solo lo conocen quienes reciben el enlace. No se indexa en buscadores.
+El portafolio está publicado y en línea de forma gratuita mediante GitHub Pages y GitHub Actions.
 
-## Por qué no GitHub Pages
-En el plan gratuito, GitHub Pages exige repositorio público, y en planes de pago el sitio sigue siendo accesible por URL pública. Por eso se usa **Cloudflare Pages** (gratis), que sí despliega desde un repositorio privado.
+## Enlace público activo
+- **URL principal del portafolio:** https://morense-01.github.io/portafolio-profesional/
 
-## Qué hace el proyecto para no ser indexado
-- `content/site.json` → `"indexable": false` (valor actual).
-- Todas las páginas llevan `<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">`.
-- `robots.txt` contiene `Disallow: /` y **no se genera `sitemap.xml`**.
-- Para hacerlo público en el futuro: `"indexable": true`; se generan canonical, sitemap y robots permisivo.
+## Enlaces directos por expediente
+- **ODS/ODW Logistics:** https://morense-01.github.io/portafolio-profesional/experiencia/ods-odw-logistics/
+- **MADECO:** https://morense-01.github.io/portafolio-profesional/experiencia/madeco/
+- **UNIPAGO:** https://morense-01.github.io/portafolio-profesional/experiencia/unipago/
+- **Dominicana de Cales:** https://morense-01.github.io/portafolio-profesional/experiencia/dominicana-de-cales/
+- **VICRISA:** https://morense-01.github.io/portafolio-profesional/experiencia/vicrisa/
+- **Consorcio de Bancas:** https://morense-01.github.io/portafolio-profesional/experiencia/consorcio-de-bancas/
+- **5M Technology:** https://morense-01.github.io/portafolio-profesional/experiencia/5m-technology/
 
-Importante: `robots.txt` y `noindex` son indicaciones que los buscadores respetan, no un control de acceso. Cualquiera con el enlace puede abrirlo y reenviarlo. No use contraseñas compartidas; si necesita acceso restringido real, Cloudflare Access (gratis hasta 50 usuarios) puede pedir un código por correo, a costa de que el reclutador se identifique.
+## Privacidad ante buscadores (Modo privado por enlace)
+- Todas las páginas tienen `<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">`.
+- El archivo `robots.txt` bloquea a todos los rastreadores con `Disallow: /`.
+- No existe `sitemap.xml`.
+- **Resultado:** Ningún buscador (Google, Bing, etc.) indexará el portafolio. Solo podrán acceder las personas con las que compartas el enlace directo.
 
-## Pasos
-1. Repositorio privado: ya creado como `morense-01/portafolio-profesional`.
-2. Cloudflare: cree cuenta gratuita → **Workers & Pages → Create → Pages → Connect to Git** → autorice solo ese repositorio.
-3. Configuración de build: comando `npm run build`, directorio de salida `dist`, variable `SITE_URL` = `https://<nombre-del-proyecto>.pages.dev`. Nombre sugerido del proyecto: `portafolio-mario`. Para un enlace difícil de adivinar, elija un nombre menos obvio y ponga el mismo valor en `siteUrl` de `content/site.json`.
-4. Cada `git push` a `main` publica de nuevo. El enlace general es la URL `pages.dev`; cada expediente tiene el suyo (`/experiencia/madeco/`).
-5. Desactive las vistas previas públicas: **Settings → Enable access policy** en Cloudflare Pages protege las URL de vista previa de ramas.
-
-## Limitaciones
-- Las vistas previas de LinkedIn/WhatsApp funcionan con la URL pública final (Open Graph); el `noindex` no las impide.
-- No hay formulario de contacto: solo enlaces a canales verificados.
-- Sin dominio propio la URL termina en `.pages.dev`; un dominio propio es opcional.
+## Despliegue continuo automático
+Cada vez que hagas cambios y ejecutes `git push`, el flujo de trabajo `.github/workflows/pages.yml` se ejecuta automáticamente:
+1. Valida las pruebas de calidad (`npm test`).
+2. Compila el sitio estático (`npm run build`).
+3. Publica la versión actualizada en GitHub Pages en segundos.
