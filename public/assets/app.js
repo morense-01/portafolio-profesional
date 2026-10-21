@@ -99,4 +99,123 @@
       run();
     }).catch(function () { $('#count').textContent = 'No se pudo cargar el índice de búsqueda.'; });
   }
+
+  // --- Detección automática de idioma del visitante y selector multilingüe ---
+  function getBrowserLang() {
+    var list = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || navigator.userLanguage || 'es'];
+    for (var i = 0; i < list.length; i++) {
+      var raw = (list[i] || '').toLowerCase().trim();
+      if (!raw) continue;
+      if (raw.startsWith('zh-tw') || raw.startsWith('zh-hk')) return 'zh-TW';
+      if (raw.startsWith('zh')) return 'zh-CN';
+      var primary = raw.split('-')[0];
+      if (primary) return primary;
+    }
+    return 'es';
+  }
+
+  function setTransCookie(targetLang) {
+    var host = window.location.hostname;
+    if (!targetLang || targetLang === 'es') {
+      document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+      document.cookie = 'googtrans=/es/es; path=/; SameSite=Lax';
+      if (host && host !== 'localhost' && !host.match(/^\d+\.\d+\.\d+\.\d+$/)) {
+        document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=' + host + ';';
+        document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.' + host + ';';
+      }
+    } else {
+      var val = '/es/' + targetLang;
+      document.cookie = 'googtrans=' + val + '; path=/; SameSite=Lax';
+      if (host && host !== 'localhost' && !host.match(/^\d+\.\d+\.\d+\.\d+$/)) {
+        document.cookie = 'googtrans=' + val + '; path=/; domain=' + host + '; SameSite=Lax';
+        document.cookie = 'googtrans=' + val + '; path=/; domain=.' + host + '; SameSite=Lax';
+      }
+    }
+  }
+
+  var savedLang = null;
+  try { savedLang = localStorage.getItem('portfolio_lang'); } catch (e) {}
+
+  var activeLang = savedLang;
+  if (!activeLang) {
+    var detected = getBrowserLang();
+    if (detected && detected !== 'es') {
+      activeLang = detected;
+      try { localStorage.setItem('portfolio_lang', detected); } catch (e) {}
+      setTransCookie(detected);
+    } else {
+      activeLang = 'es';
+    }
+  } else if (activeLang !== 'es') {
+    setTransCookie(activeLang);
+  }
+
+  function updateLangUI(lang) {
+    $$('.lang-btn').forEach(function (btn) {
+      btn.setAttribute('aria-pressed', String(btn.dataset.lang === lang));
+    });
+    var sel = $('.lang-select');
+    if (sel) {
+      sel.value = (['es','en','fr','pt','de','it'].indexOf(lang) > -1) ? '' : lang;
+    }
+  }
+
+  updateLangUI(activeLang);
+
+  $$('.lang-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      applyLanguage(btn.dataset.lang);
+    });
+  });
+
+  var lSelect = $('.lang-select');
+  if (lSelect) {
+    lSelect.addEventListener('change', function () {
+      if (lSelect.value) {
+        applyLanguage(lSelect.value);
+      }
+    });
+  }
+
+  function triggerTranslate(targetLang) {
+    var combo = document.querySelector('.goog-te-combo');
+    if (combo) {
+      combo.value = targetLang;
+      combo.dispatchEvent(new Event('change'));
+    }
+  }
+
+  function applyLanguage(targetLang) {
+    try { localStorage.setItem('portfolio_lang', targetLang); } catch (e) {}
+    setTransCookie(targetLang);
+    updateLangUI(targetLang);
+
+    var combo = document.querySelector('.goog-te-combo');
+    if (combo) {
+      combo.value = targetLang;
+      combo.dispatchEvent(new Event('change'));
+      if (targetLang === 'es') {
+        setTimeout(function () { window.location.reload(); }, 150);
+      }
+    } else {
+      window.location.reload();
+    }
+  }
+
+  window.googleTranslateElementInit = function () {
+    if (window.google && window.google.translate) {
+      new window.google.translate.TranslateElement({
+        pageLanguage: 'es',
+        autoDisplay: false,
+        layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+
+      if (activeLang && activeLang !== 'es') {
+        setTimeout(function () {
+          triggerTranslate(activeLang);
+        }, 300);
+      }
+    }
+  };
+
 })();
