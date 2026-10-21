@@ -95,7 +95,8 @@ body { top: 0px !important; position: static !important; }
 .goog-text-highlight { background-color: transparent !important; border: none !important; box-shadow: none !important; }
 #goog-gt-tt { display: none !important; visibility: hidden !important; }
 .goog-te-balloon-frame { display: none !important; }
-#google_translate_element { display: none; }
+#google_translate_element { position: absolute; left: -9999px; top: 0; width: 1px; height: 1px; overflow: hidden; opacity: 0; pointer-events: none; }
+
 
 /* Componentes para calificaciones directivas y referencias */
 .grid4{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:14px}

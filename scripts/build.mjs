@@ -65,7 +65,7 @@ function layout({ title, desc, route, body, noindex = false, ld = null, type = '
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(full)}</title>
 <meta name="description" content="${esc(desc)}">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://translate.google.com https://translate.googleapis.com https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://translate.googleapis.com; script-src 'self' https://translate.google.com https://translate.googleapis.com; connect-src 'self' https://translate.googleapis.com; font-src 'self' https://fonts.gstatic.com; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://translate.google.com https://translate.googleapis.com https://www.gstatic.com https://*.google.com; style-src 'self' 'unsafe-inline' https://translate.googleapis.com https://www.gstatic.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://translate.google.com https://translate.googleapis.com https://translate-pa.googleapis.com https://www.gstatic.com; connect-src 'self' https://translate.googleapis.com https://translate-pa.googleapis.com https://*.googleapis.com; font-src 'self' https://fonts.gstatic.com; base-uri 'none'; form-action 'none'; object-src 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="theme-color" content="#0b2545">
 ${(noindex || !site.indexable) ? '<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">' : `<link rel="canonical" href="${url}">`}
@@ -131,7 +131,7 @@ ${ld ? `<script type="application/ld+json">${JSON.stringify(ld).replace(/</g, '\
         <option value="hu">Magyar (Húngaro)</option>
         <option value="uk">Українська (Ucraniano)</option>
       </select>
-      <div id="google_translate_element" class="sr" aria-hidden="true"></div>
+      <div id="google_translate_element" aria-hidden="true"></div>
     </div>
     ${site.minimal ? '' : `<button class="menu-btn" aria-expanded="false" aria-controls="menu">Menú</button>
     <nav id="menu" aria-label="Principal"><ul>${nav}</ul></nav>`}
