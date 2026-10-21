@@ -1,6 +1,6 @@
 # Mantenimiento del portafolio
 
-Después de cualquier cambio: `npm test`. Si pasa, haga `git commit` y `git push`; GitHub Actions publica el sitio.
+Después de cualquier cambio: `npm test`. Si pasa, haga `git commit` y `git push`; Cloudflare Pages publica el sitio (y GitHub Actions ejecuta las pruebas).
 
 ## Añadir una empresa
 

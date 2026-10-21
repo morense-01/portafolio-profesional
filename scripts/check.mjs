@@ -18,9 +18,8 @@ const get = async (p) => { const r = await fetch(origin + p); return { status: r
 // Rutas esperadas
 const exps = fs.readdirSync(path.join(ROOT, 'content/experiencia')).filter((d) => fs.statSync(path.join(ROOT, 'content/experiencia', d)).isDirectory());
 const routes = ['/', '/perfil-ejecutivo/', '/perfil-tecnico/', '/trayectoria/', '/logros/', '/certificaciones/', '/proyectos/', '/documentos/', '/contacto/', '/buscar/', ...exps.map((e) => `/experiencia/${e}/`)];
-const sitemap = (await get('/sitemap.xml')).text;
 const pages = [...routes];
-for (const m of sitemap.matchAll(/<loc>https?:\/\/[^/]+(\/[^<]*)<\/loc>/g)) if (!pages.includes(m[1])) pages.push(m[1]);
+(function walk(d) { for (const f of fs.readdirSync(d, { withFileTypes: true })) { const p = path.join(d, f.name); if (f.isDirectory()) walk(p); else if (f.name === 'index.html') { const r = '/' + path.relative(DIST, d).split(path.sep).join('/') + '/'; const u = r === '//' ? '/' : r; if (!pages.includes(u)) pages.push(u); } } })(DIST);
 
 const idsCache = {};
 const checked = new Set();
@@ -70,7 +69,8 @@ pass(`${linkCount} enlaces/recursos internos verificados (incluye anclas)`);
 // 404 y archivos SEO
 const nf = await get('/ruta-que-no-existe/');
 if (nf.status === 404 && /Página no encontrada/.test(nf.text)) pass('404 personalizada servida para rutas inexistentes'); else fail('404 personalizada no funciona');
-if (/Sitemap:/.test((await get('/robots.txt')).text)) pass('robots.txt y sitemap.xml presentes'); else fail('robots.txt sin sitemap');
+const robots = (await get('/robots.txt')).text;
+if (/Disallow: \/\s*$/m.test(robots) && !/Sitemap:/.test(robots) && (await get('/sitemap.xml')).status === 404) pass('Modo privado: robots.txt bloquea todo y no existe sitemap.xml'); else fail('Modo privado mal configurado (robots/sitemap)');
 const png = fs.readFileSync(path.join(DIST, 'assets/og-default.png'));
 if (png.slice(1, 4).toString() === 'PNG') pass('Imagen Open Graph PNG válida'); else fail('og-default.png inválido');
 

@@ -68,7 +68,7 @@ function layout({ title, desc, route, body, noindex = false, ld = null, type = '
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="theme-color" content="#0b2545">
-${noindex ? '<meta name="robots" content="noindex">' : `<link rel="canonical" href="${url}">`}
+${(noindex || !site.indexable) ? '<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">' : `<link rel="canonical" href="${url}">`}
 <link rel="icon" href="${L('/assets/favicon.svg')}" type="image/svg+xml">
 <meta property="og:type" content="${type}">
 <meta property="og:site_name" content="${esc(site.shortName)}">
@@ -108,8 +108,8 @@ ${body}
 <footer class="site-footer">
   <div class="wrap">
     <p><strong>${esc(site.shortName)}</strong> · ${esc(profile.location)}</p>
-    <p class="muted">Solo se publica información verificada o autorizada. Última revisión: ${esc(site.lastReview)}. Este sitio no usa cookies de seguimiento ni analítica.</p>
-    <p><a href="${L('/')}">Volver al inicio</a> · <a href="${L('/buscar/')}">Buscador</a> · <a href="${L('/sitemap.xml')}">Mapa del sitio</a></p>
+    <p class="muted">Documento de acceso por enlace privado. Solo se incluye información verificada o autorizada. Última revisión: ${esc(site.lastReview)}. Este sitio no usa cookies de seguimiento ni analítica.</p>
+    <p><a href="${L('/')}">Volver al inicio</a> · <a href="${L('/buscar/')}">Buscador</a></p>
   </div>
 </footer>
 <script src="${L('/assets/app.js')}" defer></script>
@@ -265,7 +265,7 @@ function contacto() {
 function buscar() {
   const body = hero('Buscador', 'Consulta el contenido público de este sitio. Los elementos pendientes de validación no se indexan.', '/buscar/') + `<section class="wrap block"><form id="sf" class="filters" role="search" action="${L('/buscar/')}" method="get"><label>Texto <input id="sq" name="q" type="search"></label>
 <label>Empresa <select id="f-company"><option value="">Todas</option></select></label><label>Área <select id="f-area"><option value="">Todas</option></select></label><label>Tecnología <select id="f-tech"><option value="">Todas</option></select></label><label>Tipo de proyecto <select id="f-ptype"><option value="">Todos</option></select></label><label>Certificación <select id="f-cert"><option value="">Todas</option></select></label></form>
-<p id="count" aria-live="polite" class="muted"></p><ul id="results" class="plain results"></ul><noscript><p class="note">El buscador requiere JavaScript. Use el menú o el <a href="${L('/sitemap.xml')}">mapa del sitio</a>.</p></noscript></section>`;
+<p id="count" aria-live="polite" class="muted"></p><ul id="results" class="plain results"></ul><noscript><p class="note">El buscador requiere JavaScript. Use el menú de navegación.</p></noscript></section>`;
   out('buscar/index.html', layout({ title: 'Buscador', desc: 'Buscador del contenido público del portafolio.', route: '/buscar/', body, noindex: true }));
 }
 
@@ -289,6 +289,7 @@ function searchIndex() {
 }
 
 function seo() {
+  if (!site.indexable) { out('robots.txt', 'User-agent: *\nDisallow: /\n'); return; } // modo privado: sin sitemap y sin indexación
   const pages = written.filter((f) => f.endsWith('index.html'));
   const skip = new Set(['buscar/index.html']);
   const urls = pages.filter((f) => !skip.has(f)).map((f) => `/${f.replace(/index\.html$/, '')}`);

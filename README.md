@@ -2,14 +2,9 @@
 
 Expediente profesional estático: perfil ejecutivo y técnico, un expediente independiente por empresa, logros con método de validación, certificaciones, proyectos, biblioteca de documentos, buscador y enlaces permanentes. Sin servidor, sin base de datos, sin servicios de pago y sin dependencias de npm.
 
-## Decisión de hosting: GitHub Pages
+## Decisión de hosting: repositorio privado en GitHub + Cloudflare Pages
 
-| Opción | Resultado |
-|---|---|
-| **GitHub Pages (elegida)** | Gratis, HTTPS, el titular ya tiene cuenta en GitHub (`morense-01`), despliegue con GitHub Actions incluido, rutas `/carpeta/` servidas desde `index.html` y `404.html` personalizado. |
-| Cloudflare Pages | También válida y más flexible (cabeceras HTTP), pero añade otra cuenta y otro servicio. Es la alternativa si se necesitan cabeceras de seguridad propias. |
-
-Limitaciones: no permite cabeceras HTTP personalizadas (la política CSP se aplica con `<meta>`), el repositorio gratuito debe ser público y el sitio tiene límites de ancho de banda suficientes para un portafolio.
+Acceso solo por enlace, sin indexación (noindex, robots.txt `Disallow: /`, sin sitemap). GitHub Pages no sirve aquí porque exige repositorio público en el plan gratuito. Detalles y límites en [docs/DESPLIEGUE.md](docs/DESPLIEGUE.md).
 
 ## Tecnología
 
@@ -22,7 +17,7 @@ Limitaciones: no permite cabeceras HTTP personalizadas (la política CSP se apli
 ```bash
 npm test        # genera dist/ en modo local y ejecuta las pruebas de calidad
 npm run dev     # genera y sirve en http://localhost:4173
-npm run build   # genera dist/ para producción (usa basePath de content/site.json)
+npm run build   # genera dist/ para producción (usa `SITE_URL`/`basePath`)
 ```
 
 Requiere Node.js 18 o superior.
@@ -56,7 +51,7 @@ Un registro aparece en el sitio, en el buscador y en el mapa del sitio solo si c
 - **Documentos:** `"public": true`.
 - **Enlaces de perfil:** `"verified": true`.
 
-Los datos que no cumplen quedan solo en el repositorio de trabajo. Nota: el repositorio de GitHub Pages es público; los JSON con registros ocultos también lo son. No escriba en ellos datos confidenciales (use únicamente cifras y nombres que no le importe que se vean, o guarde los borradores sensibles fuera del repositorio).
+Los datos que no cumplen quedan solo en el repositorio de trabajo. Nota: el repositorio es privado, pero igualmente no escriba en ellos datos confidenciales (use únicamente cifras y nombres que no le importe que se vean, o guarde los borradores sensibles fuera del repositorio).
 
 ## Documentación
 

@@ -11,7 +11,7 @@ Fecha: 2026-10-20. Entorno: Windows, Node 24, servidor local que imita GitHub Pa
 | 414 enlaces y recursos internos, incluidas anclas (`#id`) | Aprobada, sin enlaces rotos |
 | Enlaces externos con `rel="noopener noreferrer"` | Aprobada |
 | 404 personalizada para rutas inexistentes | Aprobada |
-| `robots.txt`, `sitemap.xml`, imagen PNG de Open Graph | Aprobada |
+| Modo privado: `noindex` en todas las páginas, `robots.txt` con `Disallow: /`, sin `sitemap.xml` | Aprobada |
 | Métricas, certificaciones y proyectos no validados ausentes del HTML y del índice de búsqueda | Aprobada |
 | Enlace no verificado (5mtechnology.com) no publicado | Aprobada |
 | Sin IP, credenciales, texto de relleno, scripts/estilos en línea ni rastreadores | Aprobada |

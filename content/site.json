@@ -1,10 +1,11 @@
 {
   "_ayuda": "Configuración global. siteUrl = URL pública final (sin / al final). basePath = '' si usa dominio propio o repositorio usuario.github.io; '/nombre-repo' si es un sitio de proyecto en GitHub Pages.",
-  "siteUrl": "https://morense-01.github.io",
+  "siteUrl": "https://portafolio-mario.pages.dev",
   "basePath": "",
   "title": "Mario Méndez Alcántara | Ejecutivo de Tecnología e Infraestructura",
   "shortName": "Mario Méndez Alcántara",
   "description": "Ingeniero en Sistemas de Computación y gerente de tecnología en Santo Domingo, República Dominicana. Infraestructura, continuidad operativa, ciberseguridad y transformación digital.",
+  "indexable": false,
   "lang": "es",
   "locale": "es_DO",
   "lastReview": "2026-10-20"
