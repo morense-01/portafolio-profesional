@@ -198,7 +198,7 @@ function perfilEjecutivo() {
 </div></section>` : '';
 
   const body = hero('Perfil ejecutivo', '', '/perfil-ejecutivo/') + `
-<section class="wrap block"><h2>Resumen de trayectoria ejecutiva</h2>${ul(profile.summary)}<p><a href="${L('/trayectoria/')}">Consultar la trayectoria cronológica</a></p></section>
+<section class="wrap block"><h2>Resumen de trayectoria ejecutiva</h2>${ul(profile.summary)}</section>
 ${ratings}
 <section class="wrap block"><h2>${lab.demostrada}</h2><p class="muted">Competencias estratégicas respaldadas por cargos gerenciales y consultoría en entornos de alta exigencia.</p><div class="grid2">${rows('demostrada')}</div></section>
 ${profile.executiveAreas.some(a => a.evidence === 'requiere') ? `<section class="band"><div class="wrap block"><h2>${lab.requiere}</h2><p class="muted">Competencias adicionales en proceso de vinculación a casos específicos.</p><div class="grid2">${rows('requiere')}</div></div></section>` : ''}
