@@ -162,7 +162,7 @@ function perfilEjecutivo() {
   const rows = (ev) => profile.executiveAreas.filter((a) => a.evidence === ev).slice(0, 22).map((a) => `<article class="tech-item"><span class="tech-item-title">${esc(a.title)}</span><p class="tech-item-desc">${esc(a.text)}</p></article>`).join('');
 
   const execSummaryItems = profile.executiveSummary && profile.executiveSummary.length ? profile.executiveSummary : profile.summary;
-  const execCards = execSummaryItems.slice(0, 32).map((item) => {
+  const execCards = execSummaryItems.slice(0, 33).map((item) => {
     const match = item.match(/<strong>(.*?):?<\/strong>\s*(.*)/);
     const title = match ? match[1].replace(/:$/, '') : '';
     const desc = match ? match[2] : item;
@@ -188,7 +188,7 @@ function perfilTecnico() {
     return `<article class="tech-item"><span class="tech-item-title">${esc(title)}</span><p class="tech-item-desc">${esc(desc)}</p></article>`;
   }).join('');
   const techSummaryHtml = techSummaryItems.length ? `<section class="wrap block"><h2>Resumen de trayectoria técnica</h2><p class="muted">Síntesis estructurada de capacidades y dominios técnicos clave para evaluación rápida de reclutadores y líderes de TI:</p><div class="tech-summary-grid">${techCards}</div></section>` : '';
-  const dirRows = profile.executiveAreas.filter((a) => a.evidence === 'demostrada').slice(0, 29).map((a) => `<article class="tech-item"><span class="tech-item-title">${esc(a.title)}</span><p class="tech-item-desc">${esc(a.text)}</p></article>`).join('');
+  const dirRows = profile.executiveAreas.filter((a) => a.evidence === 'demostrada').slice(0, 30).map((a) => `<article class="tech-item"><span class="tech-item-title">${esc(a.title)}</span><p class="tech-item-desc">${esc(a.text)}</p></article>`).join('');
   const dirHtml = dirRows ? `<section class="wrap block"><h2>Competencias directivas demostradas</h2><p class="muted">Competencias estratégicas de liderazgo y gestión respaldadas por más de 20 años en dirección tecnológica:</p><div class="tech-summary-grid">${dirRows}</div></section>` : '';
   const body = hero('Perfil Operativo', '', '/perfil-tecnico/', '', false) + `${techSummaryHtml}${dirHtml}<section class="wrap block"><h2>Competencias y Áreas Técnicas</h2><div class="grid2">${cards}</div></section>`;
   out('perfil-tecnico/index.html', layout({ title: 'Perfil Operativo', desc: 'Infraestructura, redes, seguridad, nube híbrida, continuidad, WMS y automatización: competencias técnicas con su contexto de uso.', route: '/perfil-tecnico/', body }));

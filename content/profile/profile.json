@@ -57,7 +57,8 @@
     "<strong>Cultura de Ciberseguridad:</strong> Programas de concientización para colaboradores, reduciendo vectores de ingeniería social y phishing.",
     "<strong>SLA y Calidad de Servicio:</strong> Acuerdos de servicio rigurosos con usuarios internos y clientes externos en entornos de misión crítica.",
     "<strong>FinOps y Optimización Cloud:</strong> Monitoreo constante del consumo de recursos en nube para eliminar sobrecostos y maximizar rendimiento.",
-    "<strong>Gestión de Riesgo Tecnológico:</strong> Matrices de riesgo operativo, planes de mitigación y simulacros periódicos de recuperación ante desastres."
+    "<strong>Gestión de Riesgo Tecnológico:</strong> Matrices de riesgo operativo, planes de mitigación y simulacros periódicos de recuperación ante desastres.",
+    "<strong>Innovación y Modernización Tecnológica:</strong> Identificación y adopción estratégica de tecnologías emergentes (IA, automatización avanzada, arquitecturas cloud) para maximizar la competitividad empresarial."
   ],
   "technicalSummary": [
     "<strong>Arquitectura de Servidores:</strong> Administración avanzada de Windows Server (Active Directory, DNS, DHCP, GPO) y Linux (Ubuntu, RHEL, CentOS) en entornos físicos y virtualizados.",
@@ -302,6 +303,11 @@
       "title": "Continuidad en telecomunicaciones y enlaces redundantes de alta disponibilidad",
       "evidence": "demostrada",
       "text": "Diseño de esquemas de conectividad con proveedores múltiples (ISP), balanceo automático de carga (failover) y túneles VPN encriptados entre sedes y centros de datos."
+    },
+    {
+      "title": "Cumplimiento normativo y seguridad en transacciones críticas",
+      "evidence": "demostrada",
+      "text": "Implementación y vigilancia de controles de seguridad de la información en plataformas transaccionales de alto volumen y servicios financieros, asegurando apego a normativas regulatorias bancarias."
     }
   ],
   "technicalAreas": [
