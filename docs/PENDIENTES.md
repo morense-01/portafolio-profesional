@@ -15,6 +15,8 @@
 
 ## Experiencias
 
+### Astro - Pico Duarte Cartón (Actual (2024 – Presente))
+
 ### ODS Logistics (Feb 2024 – Jun 2026)
 
 ### MADECO (Feb 2022 – Ene 2024)

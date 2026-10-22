@@ -1,0 +1,91 @@
+{
+  "slug": "astro-pico-duarte-carton",
+  "order": 1,
+  "public": true,
+  "company": "Astro - Pico Duarte Cartón",
+  "location": "Santo Domingo Oeste, República Dominicana",
+  "sector": "Manufactura, Empaque e Industria de Cartón Corrugado",
+  "relationship": "Posición ejecutiva actual",
+  "role": "Responsable de Tecnología de la Información, Desarrollo, Automatización e IA",
+  "roleConfirmed": true,
+  "start": "2024",
+  "end": "Actual",
+  "periodDisplay": "Actual (2024 – Presente)",
+  "periodNote": "Posición activa a cargo de la infraestructura tecnológica, desarrollo de sistemas internos, automatización de procesos e Inteligencia Artificial.",
+  "summary": "Dirección y ejecución de la estrategia tecnológica corporativa, infraestructura industrial, desarrollo de soluciones informáticas a la medida, automatización operativa e integración práctica de Inteligencia Artificial para optimizar las operaciones de manufactura continua y distribución.",
+  "context": [
+    "Planta industrial de manufactura de empaques y soluciones en cartón corrugado con operación continua.",
+    "Procesos productivos y administrativos que requieren alta disponibilidad en telecomunicaciones, conectividad de planta y captura de datos en tiempo real.",
+    "Estrategia de transformación digital enfocada en desarrollo interno, analítica con Power BI, automatización y herramientas de IA agéntica."
+  ],
+  "executive": [
+    "Dirección de la infraestructura tecnológica, servidores, telecomunicaciones y sistemas de información corporativos.",
+    "Liderazgo en la estrategia de automatización de procesos operativos y adopción empresarial de Inteligencia Artificial.",
+    "Alineación de iniciativas de TI con las metas de producción, cadena de suministro, calidad y rentabilidad del negocio.",
+    "Supervisión del equipo técnico, gestión de proveedores tecnológicos y optimización del gasto de TI."
+  ],
+  "operational": [
+    "Administración y aseguramiento de redes industriales, servidores Windows Server / Linux y seguridad perimetral.",
+    "Desarrollo de scripts de automatización e integración de sistemas para eliminar tareas manuales repetitivas.",
+    "Diseño e implementación de cuadros de mando analíticos en Power BI para el control operativo y toma de decisiones.",
+    "Garantía de alta disponibilidad (99.9%) y soporte técnico continuo a las líneas de producción y áreas administrativas."
+  ],
+  "cases": [
+    {
+      "id": "automatizacion-ia-manufactura",
+      "title": "Automatización de Procesos Operativos e Integración de Inteligencia Artificial",
+      "situation": "Operaciones industriales de manufactura continua con necesidad de agilizar el procesamiento de información operativa y reportería.",
+      "problem": "Tiempos manuales en la consolidación de datos entre producción, almacén y administración.",
+      "goal": "Desarrollar flujos automatizados e integrar soluciones de IA para acelerar la toma de decisiones y elevar la eficiencia operativa.",
+      "responsibility": "Responsable de TI, Desarrollo, Automatización e IA.",
+      "solution": "Despliegue de scripts en Python y PowerShell, flujos de integración de datos, tableros analíticos en Power BI e incorporación de asistentes agénticos de IA.",
+      "technologies": [
+        "Inteligencia Artificial",
+        "Automatización",
+        "Python",
+        "PowerShell",
+        "Power BI",
+        "Windows Server"
+      ],
+      "result": "Optimización en la velocidad de procesamiento de reportes y reducción de tiempos muertos operativos.",
+      "metric": "Disponibilidad de sistemas: 99.9% | Procesos automatizados: +30%",
+      "scope": "Operación corporativa y de planta industrial",
+      "evidence": "Posición actual confirmada.",
+      "lessons": "La combinación de desarrollo propio, automatización e Inteligencia Artificial multiplica la productividad en entornos industriales modernos."
+    }
+  ],
+  "impact": [
+    "99.9% de disponibilidad operativa en sistemas de planta y oficinas corporativas.",
+    "Modernización de flujos de trabajo mediante desarrollo y automatización de procesos.",
+    "Adopción práctica de Inteligencia Artificial en la analítica de datos y operaciones cotidianas."
+  ],
+  "technologies": [
+    {
+      "name": "Inteligencia Artificial y Automatización",
+      "context": "Herramientas agénticas de IA y automatización de flujos operativos."
+    },
+    {
+      "name": "Desarrollo y Scripting",
+      "context": "Python, PowerShell y herramientas de integración de sistemas."
+    },
+    {
+      "name": "Infraestructura y Redes",
+      "context": "Windows Server, Linux, firewalls y telecomunicaciones de planta."
+    },
+    {
+      "name": "Power BI & Analítica",
+      "context": "Cuadros de mando y reportería de indicadores operativos en tiempo real."
+    }
+  ],
+  "evidence": [],
+  "links": [],
+  "learnings": [
+    "El liderazgo en desarrollo y automatización con IA es el mayor acelerador de eficiencia y valor en la manufactura."
+  ],
+  "recruiterSummary": [
+    "Responsable de Tecnología de la Información, Desarrollo, Automatización e IA en Astro - Pico Duarte Cartón (posición actual).",
+    "Lidera la infraestructura, el desarrollo de sistemas y la transformación digital industrial.",
+    "Aplica Inteligencia Artificial y automatización para elevar la rentabilidad y continuidad del negocio."
+  ],
+  "pending": []
+}
