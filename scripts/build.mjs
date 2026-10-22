@@ -185,7 +185,13 @@ function perfilTecnico() {
   const lab = { demostrada: 'Experiencia demostrada', 'por-confirmar': 'Por confirmar con evidencia' };
   const cards = profile.technicalAreas.map((a, i) => `<article class="card" id="area-${i + 1}"><span class="tag ${a.level}">${lab[a.level]}</span><h3>${i + 1}. ${esc(a.title)}</h3><p>${esc(a.use)}</p></article>`).join('');
   const techSummaryItems = profile.technicalSummary && profile.technicalSummary.length ? profile.technicalSummary : [];
-  const techSummaryHtml = techSummaryItems.length ? `<section class="wrap block"><h2>Resumen de trayectoria técnica</h2>${ul(techSummaryItems)}</section>` : '';
+  const techCards = techSummaryItems.map((item) => {
+    const match = item.match(/<strong>(.*?):?<\/strong>\s*(.*)/);
+    const title = match ? match[1].replace(/:$/, '') : '';
+    const desc = match ? match[2] : item;
+    return `<article class="tech-item"><span class="tech-item-title">${esc(title)}</span><p class="tech-item-desc">${esc(desc)}</p></article>`;
+  }).join('');
+  const techSummaryHtml = techSummaryItems.length ? `<section class="wrap block"><h2>Resumen de trayectoria técnica</h2><p class="muted">Síntesis estructurada de capacidades y dominios técnicos clave para evaluación rápida de reclutadores y líderes de TI:</p><div class="tech-summary-grid">${techCards}</div></section>` : '';
   const ratings = profile.executiveRatings ? `
 <section class="wrap block"><div class="card cert-sources">
   <h3>Evaluación de Competencias (${esc(profile.executiveRatings.group)})</h3>

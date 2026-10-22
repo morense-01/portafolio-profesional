@@ -170,3 +170,37 @@ iframe[id^=":"] {
 .spacer-sm{margin-top:12px}
 .spacer-md{margin-top:20px}
 
+/* Tarjetas ejecutivas para resumen técnico y lectura ágil */
+.tech-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+.tech-item {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--cyan);
+  border-radius: var(--r);
+  padding: 16px;
+  box-shadow: 0 1px 3px rgba(11,37,69,0.06);
+  transition: transform .15s, border-color .15s;
+}
+.tech-item:hover {
+  transform: translateY(-2px);
+  border-left-color: var(--navy);
+}
+.tech-item-title {
+  display: block;
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+.tech-item-desc {
+  font-size: 0.92rem;
+  color: var(--ink);
+  line-height: 1.5;
+  margin: 0;
+}
+
