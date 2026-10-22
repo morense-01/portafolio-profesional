@@ -184,7 +184,9 @@ ${profile.executiveAreas.some(a => a.evidence === 'requiere') ? `<section class=
 function perfilTecnico() {
   const lab = { demostrada: 'Experiencia demostrada', 'por-confirmar': 'Por confirmar con evidencia' };
   const cards = profile.technicalAreas.map((a, i) => `<article class="card" id="area-${i + 1}"><span class="tag ${a.level}">${lab[a.level]}</span><h3>${i + 1}. ${esc(a.title)}</h3><p>${esc(a.use)}</p></article>`).join('');
-  const body = hero('Perfil operativo y técnico', '', '/perfil-tecnico/', '', false) + `<section class="wrap block"><div class="grid2">${cards}</div></section>`;
+  const techSummaryItems = profile.technicalSummary && profile.technicalSummary.length ? profile.technicalSummary : [];
+  const techSummaryHtml = techSummaryItems.length ? `<section class="wrap block"><h2>Resumen de trayectoria técnica</h2>${ul(techSummaryItems)}</section>` : '';
+  const body = hero('Perfil operativo y técnico', '', '/perfil-tecnico/', '', false) + `${techSummaryHtml}<section class="wrap block"><h2>Competencias y Áreas Técnicas</h2><div class="grid2">${cards}</div></section>`;
   out('perfil-tecnico/index.html', layout({ title: 'Perfil operativo y técnico', desc: 'Infraestructura, redes, seguridad, nube híbrida, continuidad, WMS y automatización: competencias técnicas con su contexto de uso.', route: '/perfil-tecnico/', body }));
 }
 

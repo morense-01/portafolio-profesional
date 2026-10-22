@@ -47,6 +47,20 @@
     "<strong>Comunicación C-Level:</strong> Presentación clara de casos de negocio, métricas de retorno de inversión (ROI) e informes directivos.",
     "<strong>Gestión de Crisis:</strong> Resolución ágil y metódica de incidentes críticos bajo presión, minimizando cualquier impacto operativo."
   ],
+  "technicalSummary": [
+    "<strong>Arquitectura de Servidores:</strong> Administración avanzada de Windows Server (Active Directory, DNS, DHCP, GPO) y Linux (Ubuntu, RHEL, CentOS) en entornos físicos y virtualizados.",
+    "<strong>Virtualización y Cómputo:</strong> Despliegue, consolidación y mantenimiento de clústeres de alta disponibilidad bajo VMware vSphere y Microsoft Hyper-V.",
+    "<strong>Cloud Computing Híbrido:</strong> Arquitectura e interconexión segura de infraestructura híbrida combinando centros de datos locales con Microsoft Azure y Amazon Web Services (AWS).",
+    "<strong>Redes y Telecomunicaciones:</strong> Diseño y configuración de redes LAN/WAN, routing & switching, segmentación por VLANs, enlaces redundantes y enlaces punto a punto VPN.",
+    "<strong>Seguridad Perimetral y Firewalls:</strong> Implementación de firewalls de última generación (Fortinet FortiGate, pfSense), filtrado web, inspección SSL y políticas de acceso Zero Trust.",
+    "<strong>Sistemas Empresariales ERP:</strong> Administración técnica, bases de datos y soporte operativo en SAP Business One y módulos clave de SAP S/4HANA.",
+    "<strong>Continuidad y Respaldo (DRP):</strong> Estrategias de backup 3-2-1 con Veeam Backup, copias inmutables, almacenamiento SAN/NAS y recuperación ante desastres con RTO y RPO mínimos.",
+    "<strong>Ciberseguridad y Hardening:</strong> Gestión de vulnerabilidades, auditorías de seguridad, protección de endpoints y aplicación de controles basados en el marco NIST CSF.",
+    "<strong>Gestión de Bases de Datos:</strong> Mantenimiento, optimización, respaldos automatizados y consultas analíticas en Microsoft SQL Server, MySQL y Oracle.",
+    "<strong>Sistemas de Almacén y WMS:</strong> Conectividad inalámbrica industrial, terminales de radiofrecuencia (RF) e integración de flujos de control de inventarios WMS.",
+    "<strong>Monitoreo y Telemetría:</strong> Implementación de herramientas de monitoreo continuo de infraestructura y servicios (Zabbix, PRTG, Nagios, CloudWatch) para detección proactiva.",
+    "<strong>Automatización e IA Operativa:</strong> Creación de scripts de mantenimiento en PowerShell, Bash y Python, e integración de herramientas agénticas de Inteligencia Artificial."
+  ],
   "sectors": [
     "Logística y Cadena de Suministro",
     "Manufactura e Industria Continua 24/7",
