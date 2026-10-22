@@ -48,7 +48,16 @@
     "<strong>Gestión del Cambio Organizacional:</strong> Acompañamiento a usuarios y planes de capacitación para garantizar adopción tecnológica sin fricciones.",
     "<strong>Cultura de Mejora Continua:</strong> Auditorías internas periódicas, evaluación de brechas y estandarización bajo mejores prácticas internacionales.",
     "<strong>Comunicación C-Level:</strong> Presentación clara de casos de negocio, métricas de retorno de inversión (ROI) e informes directivos.",
-    "<strong>Gestión de Crisis:</strong> Resolución ágil y metódica de incidentes críticos bajo presión, minimizando cualquier impacto operativo."
+    "<strong>Gestión de Crisis:</strong> Resolución ágil y metódica de incidentes críticos bajo presión, minimizando cualquier impacto operativo.",
+    "<strong>Arquitectura Empresarial:</strong> Definición de mapas de ruta tecnológica plurianuales alineados con la expansión comercial y operativa.",
+    "<strong>Gobierno de Datos:</strong> Custodia, clasificación y retención de datos corporativos asegurando integridad y cumplimiento regulatorio.",
+    "<strong>Gestión de la Cadena de Suministro:</strong> Resiliencia en almacenes WMS y conectividad de terminales RF para despacho continuo.",
+    "<strong>Evaluación Tecnológica RFP:</strong> Licitaciones formales y análisis comparativo técnico-financiero para selección de plataformas.",
+    "<strong>Reingeniería de Procesos (BPR):</strong> Optimización de flujos entre áreas comercial, operativa y financiera mediante integración de TI.",
+    "<strong>Cultura de Ciberseguridad:</strong> Programas de concientización para colaboradores, reduciendo vectores de ingeniería social y phishing.",
+    "<strong>SLA y Calidad de Servicio:</strong> Acuerdos de servicio rigurosos con usuarios internos y clientes externos en entornos de misión crítica.",
+    "<strong>FinOps y Optimización Cloud:</strong> Monitoreo constante del consumo de recursos en nube para eliminar sobrecostos y maximizar rendimiento.",
+    "<strong>Gestión de Riesgo Tecnológico:</strong> Matrices de riesgo operativo, planes de mitigación y simulacros periódicos de recuperación ante desastres."
   ],
   "technicalSummary": [
     "<strong>Arquitectura de Servidores:</strong> Administración avanzada de Windows Server (Active Directory, DNS, DHCP, GPO) y Linux (Ubuntu, RHEL, CentOS) en entornos físicos y virtualizados.",
@@ -258,6 +267,41 @@
       "title": "Cultura de ciberseguridad y concientización corporativa",
       "evidence": "demostrada",
       "text": "Diseño e impartición de programas continuos de concientización en seguridad de la información para colaboradores de todos los niveles, mitigando riesgos de ingeniería social y phishing."
+    },
+    {
+      "title": "Optimización de costos en la nube y gobierno FinOps",
+      "evidence": "demostrada",
+      "text": "Control riguroso del consumo en Microsoft Azure y AWS mediante políticas de dimensionamiento correcto (right-sizing), reservas y desasignación automatizada de recursos no productivos."
+    },
+    {
+      "title": "Gestión del ciclo de vida de aplicaciones empresariales (ALM)",
+      "evidence": "demostrada",
+      "text": "Supervisión de pruebas, ambientes de staging, control de versiones y pases a producción en sistemas core y aplicaciones satélite sin interrupción de operaciones."
+    },
+    {
+      "title": "Gestión de acuerdos de nivel operacional (OLA) y contratos de soporte",
+      "evidence": "demostrada",
+      "text": "Alineación de compromisos entre departamentos internos y proveedores externos para garantizar tiempos de respuesta estrictos en incidentes prioritarios."
+    },
+    {
+      "title": "Supervisión de infraestructura en entornos industriales y logística continua",
+      "evidence": "demostrada",
+      "text": "Mantenimiento preventivo y correctivo de telecomunicaciones, servidores y terminales en plantas de manufactura y bodegas logísticas con operación ininterrumpida."
+    },
+    {
+      "title": "Gobierno de identidades y accesos privilegiados (PAM)",
+      "evidence": "demostrada",
+      "text": "Implementación de directivas de mínimo privilegio, segregación estricta de funciones y autenticación multifactor para cuentas de administración en toda la red."
+    },
+    {
+      "title": "Evaluación de madurez tecnológica y análisis de brechas (Gap Analysis)",
+      "evidence": "demostrada",
+      "text": "Diagnósticos integrales del estado del parque informático para priorizar inversiones de modernización según su impacto directo en la productividad del negocio."
+    },
+    {
+      "title": "Continuidad en telecomunicaciones y enlaces redundantes de alta disponibilidad",
+      "evidence": "demostrada",
+      "text": "Diseño de esquemas de conectividad con proveedores múltiples (ISP), balanceo automático de carga (failover) y túneles VPN encriptados entre sedes y centros de datos."
     }
   ],
   "technicalAreas": [
