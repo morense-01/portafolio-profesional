@@ -170,10 +170,6 @@ function perfilEjecutivo() {
     <div class="rating-card"><strong>Comprensión</strong><div class="rating-num">${esc(profile.executiveRatings.comprehension)}</div></div>
     <div class="rating-card"><strong>Actitudes</strong><div class="rating-num">${esc(profile.executiveRatings.attitudes)}</div></div>
   </div>
-  <h4 class="spacer-md">Aptitudes y Habilidades Clave</h4>
-  <ul class="chips alt spacer-sm">
-    ${profile.executiveRatings.keyCompetencies.map(k => `<li><strong>${esc(k.name)}:</strong> ${esc(k.score)}</li>`).join('')}
-  </ul>
 </div></section>` : '';
 
   const execSummaryItems = profile.executiveSummary && profile.executiveSummary.length ? profile.executiveSummary : profile.summary;
