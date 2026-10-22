@@ -52,7 +52,7 @@ function out(rel, content) {
 const NAV = [
   ['/', 'Inicio'], ['/perfil-ejecutivo/', 'Perfil ejecutivo'], ['/perfil-tecnico/', 'Perfil técnico'],
   ['/trayectoria/', 'Trayectoria'], ['/logros/', 'Logros'], ['/certificaciones/', 'Certificaciones'],
-  ['/proyectos/', 'Proyectos'], ['/documentos/', 'Documentos'], ['/contacto/', 'Contacto'],
+  ['/proyectos/', 'Proyectos'], ['/documentos/', 'Documentos'],
 ];
 function layout({ title, desc, route, body, noindex = false, ld = null, type = 'website' }) {
   const full = title === site.shortName ? (site.minimal ? site.shortName : site.title) : `${title} | ${site.shortName}`;
@@ -190,7 +190,7 @@ function home() {
   const results = metrics.length
     ? `<div class="grid3">${metrics.slice(0, 5).map((m) => `<article class="card"><h3>${esc(m.claimedValue)}</h3><p>${esc(m.title)}</p><p class="muted">${esc(m.company)} · ${esc(m.period)}</p></article>`).join('')}</div><p><a href="${L('/logros/')}">Ver método y fuente de cada resultado</a></p>`
     : `<p class="note">Los resultados medibles se publican únicamente después de validar su línea base, período, método de cálculo y fuente. Consulte la sección de <a href="${L('/logros/')}">logros</a>.</p>`;
-  const quick = [['/trayectoria/', 'Trayectoria', `${exps.length} expedientes por empresa, con enlace propio.`], ['/logros/', 'Logros', 'Resultados con método y fuente de validación.'], ['/certificaciones/', 'Certificaciones', 'Credenciales con enlace de verificación.'], ['/proyectos/', 'Proyectos', 'Proyectos tecnológicos y su estado real.'], ['/contacto/', 'Contacto', 'Canales profesionales verificados.']]
+  const quick = [['/trayectoria/', 'Trayectoria', `${exps.length} expedientes por empresa, con enlace propio.`], ['/logros/', 'Logros', 'Resultados con método y fuente de validación.'], ['/certificaciones/', 'Certificaciones', 'Credenciales con enlace de verificación.'], ['/proyectos/', 'Proyectos', 'Proyectos tecnológicos y su estado real.'], ['/documentos/', 'Documentos', 'Biblioteca documental y currículum.']]
     .map(([r, t, d]) => `<a class="card link-card" href="${L(r)}"><h3>${t}</h3><p>${d}</p></a>`).join('');
   const body = `<section class="hero"><div class="wrap">
   <p class="eyebrow">${esc(profile.location)}</p>
@@ -340,7 +340,7 @@ function proyectos() {
 function documentos() {
   const cats = docData.categories.filter((c) => docs.some((d) => d.category === c));
   const list = docs.map((d) => `<li class="card" data-cat="${esc(d.category)}"><span class="tag">${esc(d.category)}</span><h3>${esc(d.title)}</h3><p>${esc(d.description)}</p><p class="muted small">${esc(d.date)}</p><p><a class="btn" href="${L(`/documents/${d.file}`)}" target="_blank" rel="noopener">Abrir</a> <a class="btn ghost" href="${L(`/documents/${d.file}`)}" download>Descargar</a></p></li>`).join('');
-  const body = hero('Biblioteca de documentos', 'Documentos públicos o autorizados. Cada versión nueva reemplaza a la anterior para evitar datos inconsistentes.', '/documentos/') + `<section class="wrap block">${docs.length ? `<div class="filters no-print"><label>Categoría <select data-df><option value="">Todas</option>${cats.map((c) => `<option>${esc(c)}</option>`).join('')}</select></label></div><ul class="grid2 plain" id="docs">${list}</ul>` : `<p class="note">Los documentos (currículum y certificados, entre otros) se publicarán aquí en cuanto estén revisados y autorizados. Mientras tanto, el perfil de LinkedIn y el contacto están disponibles en la sección de <a href="${L('/contacto/')}">contacto</a>.</p>`}</section>`;
+  const body = hero('Biblioteca de documentos', 'Documentos públicos o autorizados. Cada versión nueva reemplaza a la anterior para evitar datos inconsistentes.', '/documentos/') + `<section class="wrap block">${docs.length ? `<div class="filters no-print"><label>Categoría <select data-df><option value="">Todas</option>${cats.map((c) => `<option>${esc(c)}</option>`).join('')}</select></label></div><ul class="grid2 plain" id="docs">${list}</ul>` : `<p class="note">Los documentos (currículum y certificados, entre otros) se publicarán aquí en cuanto estén revisados y autorizados. Mientras tanto, el perfil de LinkedIn está disponible en la sección de inicio.</p>`}</section>`;
   out('documentos/index.html', layout({ title: 'Biblioteca de documentos', desc: 'Currículum, certificados y documentos públicos o autorizados.', route: '/documentos/', body }));
 }
 
@@ -413,7 +413,7 @@ function ogImage() {
 fs.rmSync(DIST, { recursive: true, force: true });
 fs.cpSync(path.join(ROOT, 'public'), DIST, { recursive: true });
 if (site.minimal) { homeMinimal(); pagina404(); seo(); ogImage(); }
-else { home(); perfilEjecutivo(); perfilTecnico(); trayectoria(); experiencia(); logros(); certificaciones(); proyectos(); documentos(); contacto(); pagina404(); seo(); ogImage(); }
+else { home(); perfilEjecutivo(); perfilTecnico(); trayectoria(); experiencia(); logros(); certificaciones(); proyectos(); documentos(); pagina404(); seo(); ogImage(); }
 fs.writeFileSync(path.join(DIST, '.nojekyll'), '');
 
 // Informe de pendientes generado desde los datos (docs/PENDIENTES.md).

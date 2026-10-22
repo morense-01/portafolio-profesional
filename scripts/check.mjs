@@ -18,7 +18,7 @@ const get = async (p) => { const r = await fetch(origin + p); return { status: r
 // Rutas esperadas
 const exps = fs.readdirSync(path.join(ROOT, 'content/experiencia')).filter((d) => fs.statSync(path.join(ROOT, 'content/experiencia', d)).isDirectory());
 const MIN = rd('content/site.json').minimal;
-const routes = MIN ? ['/'] : ['/', '/perfil-ejecutivo/', '/perfil-tecnico/', '/trayectoria/', '/logros/', '/certificaciones/', '/proyectos/', '/documentos/', '/contacto/', ...exps.map((e) => `/experiencia/${e}/`)];
+const routes = MIN ? ['/'] : ['/', '/perfil-ejecutivo/', '/perfil-tecnico/', '/trayectoria/', '/logros/', '/certificaciones/', '/proyectos/', '/documentos/', ...exps.map((e) => `/experiencia/${e}/`)];
 const pages = [...routes];
 (function walk(d) { for (const f of fs.readdirSync(d, { withFileTypes: true })) { const p = path.join(d, f.name); if (f.isDirectory()) walk(p); else if (f.name === 'index.html') { const r = '/' + path.relative(DIST, d).split(path.sep).join('/') + '/'; const u = r === '//' ? '/' : r; if (!pages.includes(u)) pages.push(u); } } })(DIST);
 
