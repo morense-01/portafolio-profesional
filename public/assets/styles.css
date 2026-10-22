@@ -88,14 +88,52 @@ body[data-view=exec] .aud-tech{display:none}body[data-view=tech] .aud-exec{displ
 .lang-select option{background:var(--navy);color:#fff}
 @media (max-width:760px){.lang-bar{order:2;margin:4px 0}.menu-btn{order:3}nav#menu{order:4}}
 
-/* Ocultar marcos y tooltips automáticos de Google Translate para mantener estética ejecutiva */
-.goog-te-banner-frame.skiptranslate, iframe.goog-te-banner-frame { display: none !important; }
-body { top: 0px !important; position: static !important; }
-.goog-tooltip, .goog-tooltip:hover { display: none !important; }
-.goog-text-highlight { background-color: transparent !important; border: none !important; box-shadow: none !important; }
-#goog-gt-tt { display: none !important; visibility: hidden !important; }
-.goog-te-balloon-frame { display: none !important; }
-#google_translate_element { position: absolute; left: -9999px; top: 0; width: 1px; height: 1px; overflow: hidden; opacity: 0; pointer-events: none; }
+/* Ocultar barra superior, banner, marcos y tooltips automáticos de Google Translate */
+.goog-te-banner-frame.skiptranslate,
+iframe.goog-te-banner-frame,
+.goog-te-banner-frame,
+#goog-gt-tt,
+.goog-te-balloon-frame,
+.goog-tooltip,
+.goog-tooltip:hover {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  width: 0 !important;
+}
+
+body {
+  top: 0px !important;
+  position: static !important;
+  min-height: 100% !important;
+}
+
+html {
+  top: 0px !important;
+}
+
+.skiptranslate > iframe {
+  display: none !important;
+}
+
+.goog-text-highlight {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+#google_translate_element {
+  display: none !important;
+  position: absolute !important;
+  left: -9999px !important;
+  top: -9999px !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
 
 
 /* Componentes para calificaciones directivas y referencias */

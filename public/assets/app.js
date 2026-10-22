@@ -550,6 +550,20 @@
     triggerGoogleTranslate(targetLang);
   }
 
+  // Asegurar que la barra superior de Google Translate permanezca oculta y no desplace el body
+  function suppressGoogleBanner() {
+    var banner = document.querySelector('.goog-te-banner-frame');
+    if (banner) {
+      banner.style.display = 'none';
+      banner.style.visibility = 'hidden';
+      banner.style.height = '0';
+    }
+    if (document.body.style.top !== '0px') {
+      document.body.style.top = '0px';
+    }
+  }
+  setInterval(suppressGoogleBanner, 250);
+
   // Inicialización de idioma
   var savedLang = null;
   try { savedLang = localStorage.getItem('portfolio_lang'); } catch (e) {}
