@@ -196,7 +196,7 @@ function perfilTecnico() {
 
 function trayectoria() {
   const item = (e) => `<li class="tl"><article class="card"><p class="period">${esc(e.periodDisplay)}</p><h3><a href="${L(`/experiencia/${e.slug}/`)}">${company(e)}</a></h3><p>${esc([e.roleConfirmed ? e.role : '', e.sector].filter(Boolean).join(' · ') || clean(e.relationship) || '')}</p><p>${esc(e.summary)}</p>${e.periodNote ? `<p class="muted small">${esc(e.periodNote)}</p>` : ''}<p><a href="${L(`/experiencia/${e.slug}/`)}">Abrir expediente de ${esc(e.company)}</a></p></article></li>`;
-  const body = hero('Trayectoria profesional', 'Cronología de empresas y posiciones confirmadas, de la más reciente a la más antigua. Cada expediente tiene su propio enlace permanente.', '/trayectoria/') + `
+  const body = hero('Trayectoria profesional', '', '/trayectoria/', '', false) + `
 <section class="wrap block"><ol class="timeline">${exps.map(item).join('')}</ol></section>`;
   out('trayectoria/index.html', layout({ title: 'Trayectoria profesional', desc: 'Trayectoria cronológica de Mario Méndez: ODS Logistics, MADECO, UNIPAGO, Dominicana de Cales y VICRISA.', route: '/trayectoria/', body }));
 }
