@@ -184,7 +184,7 @@ ${profile.executiveAreas.some(a => a.evidence === 'requiere') ? `<section class=
 function perfilTecnico() {
   const lab = { demostrada: 'Experiencia demostrada', 'por-confirmar': 'Por confirmar con evidencia' };
   const cards = profile.technicalAreas.map((a, i) => `<article class="card" id="area-${i + 1}"><span class="tag ${a.level}">${lab[a.level]}</span><h3>${i + 1}. ${esc(a.title)}</h3><p>${esc(a.use)}</p></article>`).join('');
-  const body = hero('Perfil operativo y técnico', 'Para gerentes de TI, líderes técnicos, responsables de infraestructura y entrevistadores especializados. Cada competencia indica su uso práctico y alcance real.', '/perfil-tecnico/') + `<section class="wrap block"><div class="grid2">${cards}</div></section>`;
+  const body = hero('Perfil operativo y técnico', '', '/perfil-tecnico/', '', false) + `<section class="wrap block"><div class="grid2">${cards}</div></section>`;
   out('perfil-tecnico/index.html', layout({ title: 'Perfil operativo y técnico', desc: 'Infraestructura, redes, seguridad, nube híbrida, continuidad, WMS y automatización: competencias técnicas con su contexto de uso.', route: '/perfil-tecnico/', body }));
 }
 
