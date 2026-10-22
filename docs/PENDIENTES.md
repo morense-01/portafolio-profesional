@@ -60,6 +60,8 @@
 - [x] Reducción de tiempos de respuesta técnica en un 35% (-35%): validada.
 - [x] Cero hallazgos críticos en 3 auditorías regulatorias (100%): validada.
 - [x] Incremento del 30% en eficiencia operativa por automatización (+30%): validada.
+- [x] Reducción del 95% en exposición a pérdida de datos críticos (-95%): validada.
+- [x] Reducción del 70% en downtime no planificado (-70%): validada.
 
 ## Certificaciones pendientes de verificación (ocultas)
 
@@ -103,6 +105,9 @@
 - [x] Especialidad en Tecnologías de la Información (TI) (Educación Superior Especializada): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
 - [x] Especialidad en Tratamiento y Gestión de Datos (Educación Superior Especializada): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
 - [x] Especialidad en Integrador de Servicios IoT (Educación Superior Especializada): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] AWS Certified Cloud Practitioner (CLF-C01) (Amazon Web Services): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] Certified IT Professional (TI) (Grow with Google): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] Ethical Hacking from A–Z (Pentesting & Corporate Defense) (Educación Especializada en Ciberseguridad): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
 
 ## Documentos
 

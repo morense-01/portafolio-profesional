@@ -577,6 +577,46 @@
       "date": "2021",
       "skills": ["Integración IoT", "Redes Industriales", "Monitoreo Remoto", "Automatización"],
       "notes": "Especialización en integración de soluciones de conectividad y sensórica IoT."
+    },
+    {
+      "id": "aws-certified-cloud-practitioner",
+      "name": "AWS Certified Cloud Practitioner (CLF-C01)",
+      "issuer": "Amazon Web Services",
+      "category": "Cloud y arquitectura",
+      "type": "certificacion",
+      "status": "verificada",
+      "public": true,
+      "date": "2023",
+      "credentialId": "AWS-CLF",
+      "verifyUrl": "https://www.credly.com/users/mario-mendez.630726a8/badges",
+      "skills": ["AWS Core Services", "Cloud Security", "Cloud Economics", "Billing & Pricing", "Architectural Principles"],
+      "notes": "Certificación oficial de Amazon Web Services en fundamentos de computación en la nube."
+    },
+    {
+      "id": "google-certified-it-professional",
+      "name": "Certified IT Professional (TI)",
+      "issuer": "Grow with Google",
+      "category": "Infraestructura y administración de sistemas",
+      "type": "certificacion",
+      "status": "verificada",
+      "public": true,
+      "date": "2022",
+      "credentialId": "GOOGLE-IT",
+      "verifyUrl": "https://www.skills.google/public_profiles/195595b2-3a40-4602-905a-78c34b68fe62",
+      "skills": ["Troubleshooting", "Customer Support", "Networking", "System Administration", "Security"],
+      "notes": "Certificación profesional de soporte y administración de tecnologías de la información emitida por Google."
+    },
+    {
+      "id": "ethical-hacking-az",
+      "name": "Ethical Hacking from A–Z (Pentesting & Corporate Defense)",
+      "issuer": "Educación Especializada en Ciberseguridad",
+      "category": "Ciberseguridad",
+      "type": "curso",
+      "status": "verificada",
+      "public": true,
+      "date": "2023",
+      "skills": ["Ethical Hacking", "Kali Linux", "Vulnerability Assessment", "Network Defense", "Penetration Testing"],
+      "notes": "Formación integral en técnicas de evaluación de seguridad ofensiva y defensiva corporativa."
     }
   ]
 }

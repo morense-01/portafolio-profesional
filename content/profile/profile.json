@@ -1,11 +1,11 @@
 {
   "_ayuda": "Perfil central. Todo el sitio (vistas ejecutiva y técnica) lee de este archivo y de content/experiencia. Los campos vacíos no se publican.",
-  "name": "Mario Méndez Alcántara",
+  "name": "Mario Méndez",
   "headline": "Gerente de Tecnología y Procesos | Eficiencia, Cumplimiento y Mejora Continua · Ingeniero en Sistemas",
   "location": "Santo Domingo Oeste, Santo Domingo, República Dominicana",
   "relocatable": "Santo Domingo Oeste, Distrito Nacional, Haina, San Cristóbal",
   "educationLevel": "Máster / Especialización",
-  "degree": "Ingeniero en Sistemas de Computación",
+  "degree": "Ingeniero en Sistemas de Computación (Universidad Dominicana O&M)",
   "englishLevel": "Profesional (Lectura y conversación fluida técnica)",
   "workStatus": "Actualmente con empleo · Abierto a oportunidades directivas y gerenciales",
   "workContracts": [
@@ -16,14 +16,14 @@
   ],
   "drivingLicense": "Licencia y vehículo propio",
   "yearsTech": "21+",
-  "yearsManagement": "12+",
-  "yearsNote": "Trayectoria profesional validada con expediente oficial en logística, manufactura, finanzas y operaciones continuas.",
+  "yearsManagement": "17",
+  "yearsNote": "21+ años de trayectoria profesional, incluyendo 17 años en dirección tecnológica y gestión de infraestructura en logística, manufactura, finanzas y operaciones continuas.",
   "tagline": "Transformo necesidades de negocio en soluciones tecnológicas seguras, estables, eficientes y medibles.",
   "summary": [
-    "Ingeniero en Sistemas de Computación con más de 21 años de experiencia en tecnología y más de 12 años en liderazgo de infraestructura, operaciones TI y procesos de información.",
-    "Trayectoria consolidada en entornos de alta exigencia: sector logístico (almacén de 30,000+ ft²), manufactura industrial continua 24/7 y sector financiero regulado (UNIPAGO / BCRD / SIMV).",
-    "Especialista en dirección estratégica de TI, arquitectura cloud híbrida (Azure/AWS), redes empresariales y de planta, ciberseguridad (Zero Trust, NIST CSF, ISO 27001), gobierno de servicios (SLA) y sistemas ERP (SAP S/4HANA, SAP Business One).",
-    "Historial comprobado de resultados medibles: 99.9% de disponibilidad operativa durante más de 3 años, 60% de reducción en incidentes de seguridad, cero hallazgos críticos en 3 ciclos de auditorías financieras y +30% de incremento en eficiencia operativa."
+    "Ingeniero en Sistemas de Computación con más de 21 años de experiencia en tecnología y 17 años en dirección tecnológica, infraestructura y operaciones TI.",
+    "Líder senior de TI especializado en gobierno (COBIT, ITIL), arquitectura cloud híbrida (AWS/Azure), ciberseguridad (Zero Trust, NIST CSF, ISO 27001), sistemas empresariales (SAP S/4HANA, SAP Business One, WMS/RF) y continuidad de negocio (BCP/DRP).",
+    "Experiencia probada definiendo estrategias alineadas al negocio, gestionando presupuestos anuales de infraestructura (CAPEX/OPEX), liderando equipos multidisciplinarios de hasta 15 personas y presentando casos de negocio con ROI medible a nivel C-Level.",
+    "Historial comprobado de resultados medibles: 99.9% de disponibilidad operativa durante más de 3 años, 60% de reducción en incidentes de seguridad, cero hallazgos críticos en 3 ciclos de auditorías financieras reguladas y 95% de reducción en exposición a pérdida de datos críticos."
   ],
   "sectors": [
     "Logística y Cadena de Suministro",
@@ -112,7 +112,7 @@
     {
       "title": "Liderazgo de equipos técnicos y autoridad sobre grupos",
       "evidence": "demostrada",
-      "text": "Doce años en posiciones gerenciales coordinando equipos multidisciplinarios de soporte, sistemas, redes y especialistas de infraestructura, promoviendo cultura de alto rendimiento."
+      "text": "Diecisiete años en dirección tecnológica coordinando equipos multidisciplinarios de hasta 15 personas (soporte, sistemas, redes, desarrollo e infraestructura), promoviendo cultura de alto rendimiento y alineación con metas corporativas."
     },
     {
       "title": "Continuidad del negocio (BCP), recuperación ante desastres (DRP) y alta disponibilidad",

@@ -137,7 +137,6 @@ ${ld ? `<script type="application/ld+json">${JSON.stringify(ld).replace(/</g, '\
     <nav id="menu" aria-label="Principal"><ul>${nav}</ul></nav>`}
   </div>
   ${site.minimal ? '' : `<div class="wrap tools">
-    <form class="gsearch" role="search" action="${L('/buscar/')}" method="get"><label class="sr" for="q">Buscar en el sitio</label><input id="q" name="q" type="search" placeholder="Buscar empresa, tecnología, proyecto…" autocomplete="off"><button type="submit">Buscar</button></form>
     <div class="views" role="group" aria-label="Vista de lectura">
       <span class="views-l">Vista:</span>
       <button data-set-view="all" aria-pressed="true">Completa</button>
@@ -151,7 +150,7 @@ ${body}
 </main>
 <footer class="site-footer">
   <div class="wrap">
-    ${site.minimal ? '' : `<p><a href="${L('/')}">Volver al inicio</a> · <a href="${L('/buscar/')}">Buscador</a></p>`}
+    ${site.minimal ? '' : `<p><a href="${L('/')}">Volver al inicio</a></p>`}
   </div>
 </footer>
 <script src="${L('/assets/app.js')}" defer></script>
@@ -271,7 +270,7 @@ function trayectoria() {
   const item = (e) => `<li class="tl"><article class="card"><p class="period">${esc(e.periodDisplay)}</p><h3><a href="${L(`/experiencia/${e.slug}/`)}">${company(e)}</a></h3><p>${esc([e.roleConfirmed ? e.role : '', e.sector].filter(Boolean).join(' · ') || clean(e.relationship) || '')}</p><p>${esc(e.summary)}</p>${e.periodNote ? `<p class="muted small">${esc(e.periodNote)}</p>` : ''}<p><a href="${L(`/experiencia/${e.slug}/`)}">Abrir expediente de ${esc(e.company)}</a></p></article></li>`;
   const body = hero('Trayectoria profesional', 'Cronología de empresas y posiciones confirmadas, de la más reciente a la más antigua. Cada expediente tiene su propio enlace permanente.', '/trayectoria/') + `
 <section class="wrap block"><ol class="timeline">${exps.map(item).join('')}</ol></section>`;
-  out('trayectoria/index.html', layout({ title: 'Trayectoria profesional', desc: 'Trayectoria cronológica de Mario Méndez Alcántara: ODS Logistics, MADECO, UNIPAGO, Dominicana de Cales y VICRISA.', route: '/trayectoria/', body }));
+  out('trayectoria/index.html', layout({ title: 'Trayectoria profesional', desc: 'Trayectoria cronológica de Mario Méndez: ODS Logistics, MADECO, UNIPAGO, Dominicana de Cales y VICRISA.', route: '/trayectoria/', body }));
 }
 
 function experiencia() {
@@ -377,39 +376,17 @@ function contacto() {
   out('contacto/index.html', layout({ title: 'Contacto', desc: `Contacto profesional con ${profile.name}: perfiles y canales verificados.`, route: '/contacto/', body }));
 }
 
-function buscar() {
-  const body = hero('Buscador', 'Consulta el contenido público de este sitio. Los elementos pendientes de validación no se indexan.', '/buscar/') + `<section class="wrap block"><form id="sf" class="filters" role="search" action="${L('/buscar/')}" method="get"><label>Texto <input id="sq" name="q" type="search"></label>
-<label>Empresa <select id="f-company"><option value="">Todas</option></select></label><label>Área <select id="f-area"><option value="">Todas</option></select></label><label>Tecnología <select id="f-tech"><option value="">Todas</option></select></label><label>Tipo de proyecto <select id="f-ptype"><option value="">Todos</option></select></label><label>Certificación <select id="f-cert"><option value="">Todas</option></select></label></form>
-<p id="count" aria-live="polite" class="muted"></p><ul id="results" class="plain results"></ul><noscript><p class="note">El buscador requiere JavaScript. Use el menú de navegación.</p></noscript></section>`;
-  out('buscar/index.html', layout({ title: 'Buscador', desc: 'Buscador del contenido público del portafolio.', route: '/buscar/', body, noindex: true }));
-}
-
 function pagina404() {
-  const body = `<section class="wrap block"><h1>Página no encontrada</h1><p class="lead">El enlace no existe o fue movido.</p><p><a class="btn primary" href="${L('/')}">Volver al inicio</a> <a class="btn" href="${L('/trayectoria/')}">Ver trayectoria</a> <a class="btn" href="${L('/buscar/')}">Buscar</a></p></section>`;
+  const body = `<section class="wrap block"><h1>Página no encontrada</h1><p class="lead">El enlace no existe o fue movido.</p><p><a class="btn primary" href="${L('/')}">Volver al inicio</a> <a class="btn" href="${L('/trayectoria/')}">Ver trayectoria</a></p></section>`;
   out('404.html', layout({ title: 'Página no encontrada', desc: 'La página solicitada no existe.', route: '/404.html', body, noindex: true }));
-}
-
-function searchIndex() {
-  const idx = [];
-  const add = (e) => idx.push({ company: [], area: [], tech: [], ptype: [], cert: [], text: '', ...e });
-  exps.forEach((e) => add({ title: e.company, url: L(`/experiencia/${e.slug}/`), kind: 'Experiencia', desc: e.summary, company: [e.company], tech: (e.technologies || []).map((t) => t.name), text: [e.sector, e.role, ...(e.context || []), ...(e.executive || []), ...(e.operational || []), ...(e.recruiterSummary || [])].join(' ') }));
-  exps.forEach((e) => (e.cases || []).forEach((c) => add({ title: c.title, url: L(`/experiencia/${e.slug}/#${c.id || slugify(c.title)}`), kind: 'Caso de éxito', desc: c.result || c.situation || '', company: [e.company], tech: c.technologies || [], text: Object.values(c).flat().join(' ') })));
-  projects.forEach((p) => add({ title: p.name, url: L(`/proyectos/${p.slug}/`), kind: 'Proyecto', desc: p.summary, company: p.relatedCompany ? [exps.find((e) => e.slug === p.relatedCompany)?.company].filter(Boolean) : [], ptype: [p.type], tech: p.technologies, text: p.type }));
-  certs.forEach((c) => add({ title: c.name, url: L('/certificaciones/'), kind: 'Certificación', desc: `${c.issuer} · ${c.category}`, area: [c.category], cert: [c.name], tech: c.skills || [], text: c.issuer }));
-  metrics.forEach((m) => add({ title: `${m.claimedValue}: ${m.title}`, url: L('/logros/'), kind: 'Logro', desc: m.definition, company: [m.company], text: m.project }));
-  docs.forEach((d) => add({ title: d.title, url: L('/documentos/'), kind: 'Documento', desc: d.description, text: d.category }));
-  profile.executiveAreas.forEach((a) => add({ title: a.title, url: L('/perfil-ejecutivo/'), kind: 'Competencia ejecutiva', desc: a.text, area: [a.title] }));
-  profile.technicalAreas.forEach((a, i) => add({ title: a.title, url: L(`/perfil-tecnico/#area-${i + 1}`), kind: 'Competencia técnica', desc: a.use, area: [a.title] }));
-  out('search-index.json', JSON.stringify(idx));
 }
 
 function seo() {
   if (!site.indexable) { out('robots.txt', 'User-agent: *\nDisallow: /\n'); return; } // modo privado: sin sitemap y sin indexación
   const pages = written.filter((f) => f.endsWith('index.html'));
-  const skip = new Set(['buscar/index.html']);
-  const urls = pages.filter((f) => !skip.has(f)).map((f) => `/${f.replace(/index\.html$/, '')}`);
+  const urls = pages.map((f) => `/${f.replace(/index\.html$/, '')}`);
   out('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u) => `  <url><loc>${abs(u)}</loc><lastmod>${site.lastReview}</lastmod></url>`).join('\n')}\n</urlset>\n`);
-  out('robots.txt', `User-agent: *\nAllow: /\nDisallow: /buscar/\n\nSitemap: ${abs('/sitemap.xml')}\n`);
+  out('robots.txt', `User-agent: *\nAllow: /\n\nSitemap: ${abs('/sitemap.xml')}\n`);
 }
 
 // PNG 1200x630 (degradado azul oscuro a cian) generado sin dependencias.
@@ -436,7 +413,7 @@ function ogImage() {
 fs.rmSync(DIST, { recursive: true, force: true });
 fs.cpSync(path.join(ROOT, 'public'), DIST, { recursive: true });
 if (site.minimal) { homeMinimal(); pagina404(); seo(); ogImage(); }
-else { home(); perfilEjecutivo(); perfilTecnico(); trayectoria(); experiencia(); logros(); certificaciones(); proyectos(); documentos(); contacto(); buscar(); pagina404(); searchIndex(); seo(); ogImage(); }
+else { home(); perfilEjecutivo(); perfilTecnico(); trayectoria(); experiencia(); logros(); certificaciones(); proyectos(); documentos(); contacto(); pagina404(); seo(); ogImage(); }
 fs.writeFileSync(path.join(DIST, '.nojekyll'), '');
 
 // Informe de pendientes generado desde los datos (docs/PENDIENTES.md).

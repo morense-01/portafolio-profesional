@@ -64,42 +64,6 @@
   filterList('[data-pf]', $$('#projs > article'), 'data-type');
   filterList('[data-df]', $$('#docs > li'), 'data-cat');
 
-  // Buscador global (consulta /search-index.json, generado solo con contenido público)
-  var sf = $('#sf');
-  if (sf) {
-    var facets = ['company', 'area', 'tech', 'ptype', 'cert'];
-    var norm = function (s) { return String(s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''); };
-    fetch(base + '/search-index.json').then(function (r) { return r.json(); }).then(function (idx) {
-      facets.forEach(function (f) {
-        var set = {}; idx.forEach(function (e) { (e[f] || []).forEach(function (v) { if (v) set[v] = 1; }); });
-        var sel = $('#f-' + f);
-        Object.keys(set).sort().forEach(function (v) { var o = document.createElement('option'); o.textContent = v; o.value = v; sel.appendChild(o); });
-        sel.addEventListener('change', run);
-      });
-      var q = $('#sq');
-      q.value = new URLSearchParams(location.search).get('q') || '';
-      q.addEventListener('input', run);
-      sf.addEventListener('submit', function (e) { e.preventDefault(); run(); });
-      function run() {
-        var terms = norm(q.value).split(/\s+/).filter(Boolean);
-        var res = idx.filter(function (e) {
-          for (var i = 0; i < facets.length; i++) { var v = $('#f-' + facets[i]).value; if (v && (e[facets[i]] || []).indexOf(v) < 0) return false; }
-          var hay = norm([e.title, e.desc, e.text, e.kind, (e.tech || []).join(' '), (e.company || []).join(' ')].join(' '));
-          return terms.every(function (t) { return hay.indexOf(t) > -1; });
-        });
-        $('#count').textContent = res.length + (res.length === 1 ? ' resultado' : ' resultados');
-        var ul = $('#results'); ul.textContent = '';
-        res.forEach(function (e) {
-          var li = document.createElement('li'), a = document.createElement('a'), k = document.createElement('span'), p = document.createElement('p');
-          a.href = e.url; a.textContent = e.title; k.className = 'tag'; k.textContent = e.kind; k.style.marginLeft = '8px';
-          p.className = 'muted'; p.textContent = e.desc || '';
-          li.appendChild(a); li.appendChild(k); li.appendChild(p); ul.appendChild(li);
-        });
-      }
-      run();
-    }).catch(function () { $('#count').textContent = 'No se pudo cargar el índice de búsqueda.'; });
-  }
-
   // =========================================================================
   // MOTOR DE TRADUCCIÓN NATIVO Y GESTIÓN MULTILINGÜE
   // =========================================================================

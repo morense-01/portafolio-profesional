@@ -19,7 +19,7 @@ nav li a{display:block;padding:6px 10px;border-radius:6px;font-size:.92rem}
 nav li a:hover,nav li a[aria-current]{background:var(--navy2)}
 nav li a[aria-current]{box-shadow:inset 0 -2px var(--cyan)}
 .menu-btn{display:none;background:var(--navy2);color:#fff;border:1px solid #fff4;border-radius:6px;padding:6px 12px;font:inherit}
-.tools{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap;padding-bottom:10px}
+.tools{display:flex;gap:12px;align-items:center;justify-content:flex-end;flex-wrap:wrap;padding-bottom:10px}
 .gsearch{display:flex;gap:6px;flex:1 1 280px;max-width:460px}
 .gsearch input{flex:1;padding:7px 10px;border-radius:6px;border:1px solid #fff4;font:inherit}
 button,.btn{font:inherit;cursor:pointer}

@@ -1,4 +1,4 @@
-# Portafolio profesional digital: Mario Méndez Alcántara
+# Portafolio profesional digital: Mario Méndez
 
 Expediente profesional estático: perfil ejecutivo y técnico, un expediente independiente por empresa, logros con método de validación, certificaciones, proyectos, biblioteca de documentos, buscador y enlaces permanentes. Sin servidor, sin base de datos, sin servicios de pago y sin dependencias de npm.
 

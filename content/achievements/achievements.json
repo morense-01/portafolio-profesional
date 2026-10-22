@@ -126,6 +126,42 @@
       "confidentiality": "Público / Demostrable",
       "scope": "Operaciones corporativas, industriales y soporte a usuarios",
       "notes": "Replicado con éxito en entornos industriales y corporativos de manufactura."
+    },
+    {
+      "id": "resiliencia-datos-bcp-95",
+      "title": "Reducción del 95% en exposición a pérdida de datos críticos",
+      "claimedValue": "-95%",
+      "status": "validada",
+      "public": true,
+      "company": "ODS Logistics",
+      "project": "Arquitectura híbrida cloud Azure/AWS y estrategia BCP/DRP",
+      "period": "2024 – 2026",
+      "definition": "Mitigación del riesgo de pérdida de información operativa y reducción de tiempos de recuperación ante desastres.",
+      "baseline": "Respaldos locales sin replicación automática multi-región y RTO/RPO extendidos",
+      "result": "95% de reducción en ventanas de vulnerabilidad y RTO/RPO superados",
+      "method": "Implementación de arquitectura híbrida, respaldos automatizados, replicación cross-region y políticas BCP/DRP.",
+      "validationSource": "Pruebas semestrales de restauración de contingencia y bitácoras cloud.",
+      "confidentiality": "Público / Demostrable",
+      "scope": "Infraestructura crítica y bases de datos operativas",
+      "notes": "Superó los objetivos de tiempo y punto de recuperación (RTO/RPO) definidos por el negocio."
+    },
+    {
+      "id": "reduccion-downtime-70",
+      "title": "Reducción del 70% en downtime no planificado",
+      "claimedValue": "-70%",
+      "status": "validada",
+      "public": true,
+      "company": "UNIPAGO",
+      "project": "Monitoreo predictivo de capacidad en Windows Server y Active Directory",
+      "period": "2020 – 2022",
+      "definition": "Disminución de caídas imprevistas de servicios y saturación de recursos en infraestructura crítica.",
+      "baseline": "Respuestas reactivas a incidentes de capacidad de almacenamiento y servicios de directorio",
+      "result": "70% menos incidentes de indisponibilidad imprevista",
+      "method": "Monitoreo predictivo de capacidad, alertas tempranas automatizadas y mantenimiento preventivo continuo.",
+      "validationSource": "Registros de disponibilidad de infraestructura y reportes de incidentes N1/N2.",
+      "confidentiality": "Público / Demostrable",
+      "scope": "Servidores productivos y servicios de directorio financiero",
+      "notes": "Garantizó la estabilidad 24/7 exigida en un entorno financiero regulado."
     }
   ]
 }
