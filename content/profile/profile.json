@@ -223,6 +223,41 @@
       "title": "Gestión de crisis operativas y resiliencia corporativa",
       "evidence": "demostrada",
       "text": "Respuesta estructurada y liderazgo en la resolución de contingencias mayores de TI, manteniendo comunicación transparente con los líderes del negocio y restaurando la continuidad operativa."
+    },
+    {
+      "title": "Definición y control de KPIs de tecnología y operaciones",
+      "evidence": "demostrada",
+      "text": "Diseño e implantación de matrices de indicadores clave de rendimiento (KPIs) y niveles de servicio, correlacionando la disponibilidad técnica con la rentabilidad y productividad del negocio."
+    },
+    {
+      "title": "Arquitectura empresarial y roadmap tecnológico a largo plazo",
+      "evidence": "demostrada",
+      "text": "Planificación plurianual del ciclo de renovación de plataformas tecnológicas, asegurando compatibilidad técnica, escalabilidad y protección de las inversiones corporativas."
+    },
+    {
+      "title": "Gobierno de datos, calidad y seguridad de la información",
+      "evidence": "demostrada",
+      "text": "Establecimiento de políticas corporativas de custodia, clasificación y retención de información sensible, garantizando confidencialidad e integridad de datos corporativos transaccionales."
+    },
+    {
+      "title": "Continuidad tecnológica en logística y cadena de suministro",
+      "evidence": "demostrada",
+      "text": "Aseguramiento de la resiliencia tecnológica en almacenes, centros de distribución y flotas de transporte, minimizando tiempos de inactividad en despachos y control de inventarios."
+    },
+    {
+      "title": "Evaluación y selección de soluciones tecnológicas (RFP / RFI)",
+      "evidence": "demostrada",
+      "text": "Dirección de procesos formales de licitación, evaluación técnica y financiera de software ERP, infraestructura y servicios gestionados, asegurando la mejor relación costo-beneficio."
+    },
+    {
+      "title": "Optimización de procesos de negocio mediante tecnología (BPR)",
+      "evidence": "demostrada",
+      "text": "Reingeniería de flujos operativos entre áreas comerciales, financieras y logísticas mediante la integración de sistemas de información, reduciendo duplicidad y tiempos de ciclo."
+    },
+    {
+      "title": "Cultura de ciberseguridad y concientización corporativa",
+      "evidence": "demostrada",
+      "text": "Diseño e impartición de programas continuos de concientización en seguridad de la información para colaboradores de todos los niveles, mitigando riesgos de ingeniería social y phishing."
     }
   ],
   "technicalAreas": [
