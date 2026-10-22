@@ -107,7 +107,7 @@ ${body}
 `;
 }
 const shareBar = (route, title) => `<div class="actions no-print"><button class="btn ghost" data-share data-url="${abs(route)}" data-title="${esc(title)}">Compartir enlace</button><button class="btn ghost" data-copy="${abs(route)}">Copiar enlace</button><button class="btn ghost" data-print>Imprimir o guardar PDF</button></div>`;
-const hero = (h, lead, route, extra = '') => `<section class="page-head"><div class="wrap"><nav class="crumbs" aria-label="Ruta"><a href="${L('/')}">Inicio</a> › <span>${esc(h)}</span></nav><h1>${esc(h)}</h1>${lead ? `<p class="lead">${esc(lead)}</p>` : ''}${extra}${shareBar(route, h)}</div></section>`;
+const hero = (h, lead, route, extra = '', showShare = true) => `<section class="page-head"><div class="wrap"><nav class="crumbs" aria-label="Ruta"><a href="${L('/')}">Inicio</a> › <span>${esc(h)}</span></nav><h1>${esc(h)}</h1>${lead ? `<p class="lead">${esc(lead)}</p>` : ''}${extra}${showShare ? shareBar(route, h) : ''}</div></section>`;
 
 // ---------- páginas ----------
 const cvDoc = docs.find((d) => /^CV/i.test(d.category));
@@ -177,7 +177,7 @@ function perfilEjecutivo() {
 </div></section>` : '';
 
   const execSummaryItems = profile.executiveSummary && profile.executiveSummary.length ? profile.executiveSummary : profile.summary;
-  const body = hero('Perfil ejecutivo', '', '/perfil-ejecutivo/') + `
+  const body = hero('Perfil ejecutivo', '', '/perfil-ejecutivo/', '', false) + `
 <section class="wrap block"><h2>Resumen de trayectoria ejecutiva</h2>${ul(execSummaryItems)}</section>
 ${ratings}
 <section class="wrap block"><h2>${lab.demostrada}</h2><p class="muted">Competencias estratégicas respaldadas por cargos gerenciales y consultoría en entornos de alta exigencia.</p><div class="grid2">${rows('demostrada')}</div></section>
