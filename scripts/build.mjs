@@ -36,7 +36,7 @@ const esc = (s = '') => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').r
 const L = (p) => BASE + p;
 const abs = (p) => SITE_URL + BASE + p;
 const clean = (s) => (s && !/por confirmar|por definir/i.test(s) ? s : '');
-const ul = (items, cls = '') => (items.length ? `<ul class="${cls}">${items.map((i) => `<li>${esc(i)}</li>`).join('')}</ul>` : '');
+const ul = (items, cls = '') => (items.length ? `<ul class="${cls}">${items.map((i) => `<li>${esc(i).replace(/&lt;strong&gt;/g, '<strong>').replace(/&lt;\/strong&gt;/g, '</strong>')}</li>`).join('')}</ul>` : '');
 const empty = '<p class="muted">Información en preparación.</p>';
 const slugify = (s) => s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 const ext = (u, t) => `<a href="${esc(u)}" target="_blank" rel="noopener noreferrer">${esc(t)}</a>`;
