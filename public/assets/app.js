@@ -540,14 +540,22 @@
   function applyLanguage(targetLang) {
     if (!targetLang) targetLang = 'es';
     try { localStorage.setItem('portfolio_lang', targetLang); } catch (e) {}
-    setTransCookie(targetLang);
     updateLangUI(targetLang);
 
-    // 1. Traducción nativa inmediata en el DOM (latencia 0 ms)
-    translateDom(targetLang);
+    // Eliminar cookies previas de googtrans para que no quede residuo en el navegador
+    try {
+      var d = new Date();
+      d.setTime(d.getTime() - 10000);
+      var expires = 'expires=' + d.toUTCString();
+      document.cookie = 'googtrans=; path=/; ' + expires;
+      if (base) {
+        document.cookie = 'googtrans=; path=' + base + '; ' + expires;
+        document.cookie = 'googtrans=; path=' + base + '/; ' + expires;
+      }
+    } catch (e) {}
 
-    // 2. Coordinación con Google Translate para idiomas adicionales o traducción profunda
-    triggerGoogleTranslate(targetLang);
+    // Traducción nativa inmediata en el DOM (latencia 0 ms)
+    translateDom(targetLang);
   }
 
   // Asegurar que la barra superior de Google Translate permanezca oculta y no desplace el body

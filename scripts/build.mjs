@@ -65,7 +65,7 @@ function layout({ title, desc, route, body, noindex = false, ld = null, type = '
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(full)}</title>
 <meta name="description" content="${esc(desc)}">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://translate.google.com https://translate.googleapis.com https://www.gstatic.com https://*.google.com; style-src 'self' 'unsafe-inline' https://translate.googleapis.com https://www.gstatic.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://translate.google.com https://translate.googleapis.com https://translate-pa.googleapis.com https://www.gstatic.com; connect-src 'self' https://translate.googleapis.com https://translate-pa.googleapis.com https://*.googleapis.com; font-src 'self' https://fonts.gstatic.com; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; base-uri 'none'; form-action 'none'; object-src 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="theme-color" content="#0b2545">
 ${(noindex || !site.indexable) ? '<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">' : `<link rel="canonical" href="${url}">`}
@@ -101,37 +101,13 @@ ${ld ? `<script type="application/ld+json">${JSON.stringify(ld).replace(/</g, '\
       </div>
       <select class="lang-select" aria-label="Más idiomas / More languages">
         <option value="">+ Idiomas</option>
-        <option value="en">English (Inglés)</option>
-        <option value="es">Español</option>
-        <option value="fr">Français (Francés)</option>
-        <option value="pt">Português (Portugués)</option>
-        <option value="de">Deutsch (Alemán)</option>
-        <option value="it">Italiano</option>
-        <option value="nl">Nederlands (Holandés)</option>
-        <option value="zh-CN">中文 (Chino Simplificado)</option>
-        <option value="zh-TW">繁體中文 (Chino Tradicional)</option>
-        <option value="ja">日本語 (Japonés)</option>
-        <option value="ko">한국어 (Coreano)</option>
-        <option value="ar">العربية (Árabe)</option>
-        <option value="ru">Русский (Ruso)</option>
-        <option value="hi">हिन्दी (Hindi)</option>
-        <option value="tr">Türkçe (Turco)</option>
-        <option value="pl">Polski (Polaco)</option>
-        <option value="sv">Svenska (Sueco)</option>
-        <option value="da">Dansk (Danés)</option>
-        <option value="fi">Suomi (Finlandés)</option>
-        <option value="no">Norsk (Noruego)</option>
-        <option value="cs">Čeština (Checo)</option>
-        <option value="el">Ελληνικά (Griego)</option>
-        <option value="he">עברית (Hebreo)</option>
-        <option value="id">Bahasa Indonesia</option>
-        <option value="vi">Tiếng Việt (Vietnamita)</option>
-        <option value="th">ไทย (Tailandés)</option>
-        <option value="ro">Română (Rumano)</option>
-        <option value="hu">Magyar (Húngaro)</option>
-        <option value="uk">Українська (Ucraniano)</option>
+        <option value="es">Español (ES)</option>
+        <option value="en">English (EN)</option>
+        <option value="fr">Français (FR)</option>
+        <option value="pt">Português (PT)</option>
+        <option value="de">Deutsch (DE)</option>
+        <option value="it">Italiano (IT)</option>
       </select>
-      <div id="google_translate_element" aria-hidden="true"></div>
     </div>
     ${site.minimal ? '' : `<button class="menu-btn" aria-expanded="false" aria-controls="menu">Menú</button>
     <nav id="menu" aria-label="Principal"><ul>${nav}</ul></nav>`}
@@ -154,7 +130,6 @@ ${body}
   </div>
 </footer>
 <script src="${L('/assets/app.js')}" defer></script>
-<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
 </body>
 </html>
 `;
