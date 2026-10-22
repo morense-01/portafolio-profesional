@@ -3,6 +3,7 @@
   "categories": [
     "CV ejecutivo",
     "CV técnico",
+    "CV AI / MLOps",
     "CV de gerencia de TI",
     "CV de infraestructura y operaciones",
     "Certificados",
@@ -13,6 +14,14 @@
     "Publicaciones y presentaciones"
   ],
   "items": [
+    {
+      "title": "Machine Learning Operations Engineer (AI/ML) - CV Mario Méndez",
+      "description": "CV técnico especializado en MLOps, despliegue de modelos en producción, LLMs, RAG, arquitecturas agénticas y pipelines CI/CD.",
+      "category": "CV AI / MLOps",
+      "date": "2026",
+      "file": "CV_Mario_Mendez_MLOps_Engineer.pdf",
+      "public": true
+    },
     {
       "title": "Currículum Vitae Ejecutivo - Mario Méndez",
       "description": "CV profesional orientado a Gerencia de TI, Infraestructura y Operaciones Tecnológicas.",
