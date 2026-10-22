@@ -43,6 +43,10 @@
     "<strong>Integración Práctica de IA:</strong> Adopción de IA generativa y herramientas agénticas para acelerar la toma de decisiones y operaciones.",
     "<strong>Gestión de Identidades:</strong> Administración centralizada de accesos, permisos y directivas de seguridad en Active Directory y M365.",
     "<strong>Control de Activos TI:</strong> Gestión del ciclo de vida de hardware y licencias (ITAM), garantizando trazabilidad y auditoría permanente.",
+    "<strong>Gestión de Proyectos:</strong> Planificación y ejecución metódica de proyectos de infraestructura y migración cumpliendo plazos y presupuestos.",
+    "<strong>Business Intelligence y KPIs:</strong> Implementación de cuadros de mando directivos en Power BI para seguimiento en tiempo real y toma de decisiones.",
+    "<strong>Gestión del Cambio Organizacional:</strong> Acompañamiento a usuarios y planes de capacitación para garantizar adopción tecnológica sin fricciones.",
+    "<strong>Cultura de Mejora Continua:</strong> Auditorías internas periódicas, evaluación de brechas y estandarización bajo mejores prácticas internacionales.",
     "<strong>Comunicación C-Level:</strong> Presentación clara de casos de negocio, métricas de retorno de inversión (ROI) e informes directivos.",
     "<strong>Gestión de Crisis:</strong> Resolución ágil y metódica de incidentes críticos bajo presión, minimizando cualquier impacto operativo."
   ],
@@ -56,9 +60,15 @@
     "<strong>Continuidad y Respaldo (DRP):</strong> Estrategias de backup 3-2-1 con Veeam Backup, copias inmutables, almacenamiento SAN/NAS y recuperación ante desastres con RTO y RPO mínimos.",
     "<strong>Ciberseguridad y Hardening:</strong> Gestión de vulnerabilidades, auditorías de seguridad, protección de endpoints y aplicación de controles basados en el marco NIST CSF.",
     "<strong>Gestión de Bases de Datos:</strong> Mantenimiento, optimización, respaldos automatizados y consultas analíticas en Microsoft SQL Server, MySQL y Oracle.",
+    "<strong>Business Intelligence y Analytics:</strong> Modelado de datos, extracción ETL (SSIS), diseño de métricas DAX y desarrollo de cuadros de mando analíticos en Power BI y SSRS.",
     "<strong>Sistemas de Almacén y WMS:</strong> Conectividad inalámbrica industrial, terminales de radiofrecuencia (RF) e integración de flujos de control de inventarios WMS.",
+    "<strong>Mesa de Ayuda y Gestión ITIL:</strong> Implementación y administración de plataformas ITSM, flujos de tickets, gestión de incidentes y cumplimiento de acuerdos SLA.",
+    "<strong>Telefonía IP y Comunicaciones:</strong> Despliegue y soporte de centrales telefónicas corporativas VoIP (Asterisk, FreePBX), enlaces troncales SIP y extensiones remotas.",
+    "<strong>Seguridad Física y CCTV:</strong> Configuración y mantenimiento de sistemas de videovigilancia IP, grabación NVR/DVR y control de acceso biométrico.",
+    "<strong>Almacenamiento Empresarial (SAN/NAS):</strong> Configuración de arreglos de almacenamiento RAID, volúmenes iSCSI y políticas de retención y tiered storage.",
     "<strong>Monitoreo y Telemetría:</strong> Implementación de herramientas de monitoreo continuo de infraestructura y servicios (Zabbix, PRTG, Nagios, CloudWatch) para detección proactiva.",
-    "<strong>Automatización e IA Operativa:</strong> Creación de scripts de mantenimiento en PowerShell, Bash y Python, e integración de herramientas agénticas de Inteligencia Artificial."
+    "<strong>Automatización e IA Operativa:</strong> Creación de scripts de mantenimiento en PowerShell, Bash y Python, e integración de herramientas agénticas de Inteligencia Artificial.",
+    "<strong>Auditoría y Gestión de Parches:</strong> Escaneo continuo de vulnerabilidades, evaluación de seguridad y despliegue programado de actualizaciones críticas."
   ],
   "sectors": [
     "Logística y Cadena de Suministro",
