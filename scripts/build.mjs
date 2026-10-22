@@ -106,7 +106,7 @@ ${body}
 </html>
 `;
 }
-const shareBar = (route, title) => `<div class="actions no-print"><button class="btn ghost" data-share data-url="${abs(route)}" data-title="${esc(title)}">Compartir enlace</button><button class="btn ghost" data-copy="${abs(route)}">Copiar enlace</button><button class="btn ghost" data-print>Imprimir o guardar PDF</button></div><p class="perma muted no-print">Enlace permanente: <a href="${L(route)}">${abs(route)}</a></p>`;
+const shareBar = (route, title) => `<div class="actions no-print"><button class="btn ghost" data-share data-url="${abs(route)}" data-title="${esc(title)}">Compartir enlace</button><button class="btn ghost" data-copy="${abs(route)}">Copiar enlace</button><button class="btn ghost" data-print>Imprimir o guardar PDF</button></div>`;
 const hero = (h, lead, route, extra = '') => `<section class="page-head"><div class="wrap"><nav class="crumbs" aria-label="Ruta"><a href="${L('/')}">Inicio</a> › <span>${esc(h)}</span></nav><h1>${esc(h)}</h1>${lead ? `<p class="lead">${esc(lead)}</p>` : ''}${extra}${shareBar(route, h)}</div></section>`;
 
 // ---------- páginas ----------
