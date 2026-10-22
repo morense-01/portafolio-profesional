@@ -15,7 +15,7 @@
 
 ## Experiencias
 
-### Astro - Pico Duarte Cartón (Actual (2024 – Presente))
+### Astro - Pico Duarte Cartón (Actual)
 
 ### ODS Logistics (Feb 2024 – Jun 2026)
 
