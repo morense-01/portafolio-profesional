@@ -160,22 +160,10 @@ function home() {
 function perfilEjecutivo() {
   const lab = { demostrada: 'Competencias directivas demostradas', requiere: 'Competencias en documentación' };
   const rows = (ev) => profile.executiveAreas.filter((a) => a.evidence === ev).map((a) => `<article class="card"><h3>${esc(a.title)}</h3><p>${esc(a.text)}</p></article>`).join('');
-  const ratings = profile.executiveRatings ? `
-<section class="wrap block"><div class="card cert-sources">
-  <h3>Evaluación de Competencias Directivas (${esc(profile.executiveRatings.group)})</h3>
-  <p class="muted">Calificación obtenida en evaluación profesional para posiciones de dirección y alta gerencia de tecnología:</p>
-  <div class="grid4 spacer-sm">
-    <div class="rating-card"><strong>Conocimientos</strong><div class="rating-num">${esc(profile.executiveRatings.knowledge)}</div></div>
-    <div class="rating-card"><strong>Habilidades</strong><div class="rating-num">${esc(profile.executiveRatings.skills)}</div></div>
-    <div class="rating-card"><strong>Comprensión</strong><div class="rating-num">${esc(profile.executiveRatings.comprehension)}</div></div>
-    <div class="rating-card"><strong>Actitudes</strong><div class="rating-num">${esc(profile.executiveRatings.attitudes)}</div></div>
-  </div>
-</div></section>` : '';
 
   const execSummaryItems = profile.executiveSummary && profile.executiveSummary.length ? profile.executiveSummary : profile.summary;
   const body = hero('Perfil ejecutivo', '', '/perfil-ejecutivo/', '', false) + `
 <section class="wrap block"><h2>Resumen de trayectoria ejecutiva</h2>${ul(execSummaryItems)}</section>
-${ratings}
 <section class="wrap block"><h2>${lab.demostrada}</h2><p class="muted">Competencias estratégicas respaldadas por cargos gerenciales y consultoría en entornos de alta exigencia.</p><div class="grid2">${rows('demostrada')}</div></section>
 ${profile.executiveAreas.some(a => a.evidence === 'requiere') ? `<section class="band"><div class="wrap block"><h2>${lab.requiere}</h2><p class="muted">Competencias adicionales en proceso de vinculación a casos específicos.</p><div class="grid2">${rows('requiere')}</div></div></section>` : ''}`;
   out('perfil-ejecutivo/index.html', layout({ title: 'Perfil ejecutivo', desc: 'Dirección de tecnología, continuidad del negocio, gestión de proveedores y equipos. Experiencia demostrada y competencias directivas.', route: '/perfil-ejecutivo/', body }));
@@ -192,18 +180,7 @@ function perfilTecnico() {
     return `<article class="tech-item"><span class="tech-item-title">${esc(title)}</span><p class="tech-item-desc">${esc(desc)}</p></article>`;
   }).join('');
   const techSummaryHtml = techSummaryItems.length ? `<section class="wrap block"><h2>Resumen de trayectoria técnica</h2><p class="muted">Síntesis estructurada de capacidades y dominios técnicos clave para evaluación rápida de reclutadores y líderes de TI:</p><div class="tech-summary-grid">${techCards}</div></section>` : '';
-  const ratings = profile.executiveRatings ? `
-<section class="wrap block"><div class="card cert-sources">
-  <h3>Evaluación de Competencias (${esc(profile.executiveRatings.group)})</h3>
-  <p class="muted">Calificación obtenida en evaluación profesional para posiciones de tecnología y operaciones:</p>
-  <div class="grid4 spacer-sm">
-    <div class="rating-card"><strong>Conocimientos</strong><div class="rating-num">${esc(profile.executiveRatings.knowledge)}</div></div>
-    <div class="rating-card"><strong>Habilidades</strong><div class="rating-num">${esc(profile.executiveRatings.skills)}</div></div>
-    <div class="rating-card"><strong>Comprensión</strong><div class="rating-num">${esc(profile.executiveRatings.comprehension)}</div></div>
-    <div class="rating-card"><strong>Actitudes</strong><div class="rating-num">${esc(profile.executiveRatings.attitudes)}</div></div>
-  </div>
-</div></section>` : '';
-  const body = hero('Perfil Operativo', '', '/perfil-tecnico/', '', false) + `${techSummaryHtml}${ratings}<section class="wrap block"><h2>Competencias y Áreas Técnicas</h2><div class="grid2">${cards}</div></section>`;
+  const body = hero('Perfil Operativo', '', '/perfil-tecnico/', '', false) + `${techSummaryHtml}<section class="wrap block"><h2>Competencias y Áreas Técnicas</h2><div class="grid2">${cards}</div></section>`;
   out('perfil-tecnico/index.html', layout({ title: 'Perfil Operativo', desc: 'Infraestructura, redes, seguridad, nube híbrida, continuidad, WMS y automatización: competencias técnicas con su contexto de uso.', route: '/perfil-tecnico/', body }));
 }
 
