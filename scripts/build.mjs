@@ -50,7 +50,7 @@ function out(rel, content) {
 
 // ---------- plantilla ----------
 const NAV = [
-  ['/', 'Inicio'], ['/perfil-ejecutivo/', 'Perfil ejecutivo'], ['/perfil-tecnico/', 'Perfil técnico'],
+  ['/', 'Inicio'], ['/perfil-ejecutivo/', 'Perfil ejecutivo'], ['/perfil-tecnico/', 'Perfil Operativo'],
   ['/trayectoria/', 'Trayectoria'], ['/logros/', 'Logros'], ['/certificaciones/', 'Certificaciones'],
   ['/proyectos/', 'Proyectos'], ['/documentos/', 'Documentos'],
 ];
@@ -152,7 +152,7 @@ function home() {
 <h3>Sectores</h3><ul class="chips alt">${profile.sectors.map((s) => `<li>${esc(s)}</li>`).join('')}</ul></div></section>
 <section class="wrap block"><h2>Resultados profesionales</h2>${results}</section>
 <section class="wrap block"><h2>Explore el expediente</h2><div class="grid3">${quick}</div>
-<p>Dos formas de lectura: <a href="${L('/perfil-ejecutivo/')}">perfil ejecutivo</a> para dirección y selección, y <a href="${L('/perfil-tecnico/')}">perfil operativo y técnico</a> para entrevistadores especializados.</p></section>`;
+<p>Dos formas de lectura: <a href="${L('/perfil-ejecutivo/')}">perfil ejecutivo</a> para dirección y selección, y <a href="${L('/perfil-tecnico/')}">perfil operativo</a> para entrevistadores técnicos.</p></section>`;
   const ld = { '@context': 'https://schema.org', '@type': 'Person', name: profile.name, jobTitle: 'Gerente de Tecnología e Infraestructura', description: site.description, address: { '@type': 'PostalAddress', addressLocality: 'Santo Domingo', addressCountry: 'DO' }, url: abs('/'), sameAs: links.map((l) => l.url) };
   out('index.html', layout({ title: site.shortName, desc: site.description, route: '/', body, ld }));
 }
@@ -186,8 +186,19 @@ function perfilTecnico() {
   const cards = profile.technicalAreas.map((a, i) => `<article class="card" id="area-${i + 1}"><span class="tag ${a.level}">${lab[a.level]}</span><h3>${i + 1}. ${esc(a.title)}</h3><p>${esc(a.use)}</p></article>`).join('');
   const techSummaryItems = profile.technicalSummary && profile.technicalSummary.length ? profile.technicalSummary : [];
   const techSummaryHtml = techSummaryItems.length ? `<section class="wrap block"><h2>Resumen de trayectoria técnica</h2>${ul(techSummaryItems)}</section>` : '';
-  const body = hero('Perfil operativo y técnico', '', '/perfil-tecnico/', '', false) + `${techSummaryHtml}<section class="wrap block"><h2>Competencias y Áreas Técnicas</h2><div class="grid2">${cards}</div></section>`;
-  out('perfil-tecnico/index.html', layout({ title: 'Perfil operativo y técnico', desc: 'Infraestructura, redes, seguridad, nube híbrida, continuidad, WMS y automatización: competencias técnicas con su contexto de uso.', route: '/perfil-tecnico/', body }));
+  const ratings = profile.executiveRatings ? `
+<section class="wrap block"><div class="card cert-sources">
+  <h3>Evaluación de Competencias (${esc(profile.executiveRatings.group)})</h3>
+  <p class="muted">Calificación obtenida en evaluación profesional para posiciones de tecnología y operaciones:</p>
+  <div class="grid4 spacer-sm">
+    <div class="rating-card"><strong>Conocimientos</strong><div class="rating-num">${esc(profile.executiveRatings.knowledge)}</div></div>
+    <div class="rating-card"><strong>Habilidades</strong><div class="rating-num">${esc(profile.executiveRatings.skills)}</div></div>
+    <div class="rating-card"><strong>Comprensión</strong><div class="rating-num">${esc(profile.executiveRatings.comprehension)}</div></div>
+    <div class="rating-card"><strong>Actitudes</strong><div class="rating-num">${esc(profile.executiveRatings.attitudes)}</div></div>
+  </div>
+</div></section>` : '';
+  const body = hero('Perfil Operativo', '', '/perfil-tecnico/', '', false) + `${techSummaryHtml}${ratings}<section class="wrap block"><h2>Competencias y Áreas Técnicas</h2><div class="grid2">${cards}</div></section>`;
+  out('perfil-tecnico/index.html', layout({ title: 'Perfil Operativo', desc: 'Infraestructura, redes, seguridad, nube híbrida, continuidad, WMS y automatización: competencias técnicas con su contexto de uso.', route: '/perfil-tecnico/', body }));
 }
 
 function trayectoria() {
