@@ -558,11 +558,23 @@
       banner.style.visibility = 'hidden';
       banner.style.height = '0';
     }
-    if (document.body.style.top !== '0px') {
+    // Suprimir cualquier iframe inyectado directamente en el body por Google Translate
+    var bodyIframes = document.querySelectorAll('body > iframe, body > .skiptranslate');
+    bodyIframes.forEach(function (el) {
+      if (!el.classList.contains('lang-bar')) {
+        el.style.display = 'none';
+        el.style.visibility = 'hidden';
+        el.style.height = '0';
+      }
+    });
+    if (document.body.style.top && document.body.style.top !== '0px') {
       document.body.style.top = '0px';
     }
+    if (document.documentElement.style.top && document.documentElement.style.top !== '0px') {
+      document.documentElement.style.top = '0px';
+    }
   }
-  setInterval(suppressGoogleBanner, 250);
+  setInterval(suppressGoogleBanner, 100);
 
   // Inicialización de idioma
   var savedLang = null;

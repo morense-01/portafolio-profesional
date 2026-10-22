@@ -92,6 +92,8 @@ body[data-view=exec] .aud-tech{display:none}body[data-view=tech] .aud-exec{displ
 .goog-te-banner-frame.skiptranslate,
 iframe.goog-te-banner-frame,
 .goog-te-banner-frame,
+.goog-te-banner,
+.skiptranslate,
 #goog-gt-tt,
 .goog-te-balloon-frame,
 .goog-tooltip,
@@ -101,6 +103,16 @@ iframe.goog-te-banner-frame,
   opacity: 0 !important;
   height: 0 !important;
   width: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Permitir que nuestra barra de selección personalizada se mantenga visible */
+.lang-bar.notranslate,
+.lang-bar {
+  display: inline-flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
 }
 
 body {
@@ -111,6 +123,14 @@ body {
 
 html {
   top: 0px !important;
+}
+
+iframe[name="goog-te-banner-frame"],
+iframe[id^=":"] {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  width: 0 !important;
 }
 
 .skiptranslate > iframe {
