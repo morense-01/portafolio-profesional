@@ -159,7 +159,7 @@ function home() {
 
 function perfilEjecutivo() {
   const lab = { demostrada: 'Competencias directivas demostradas', requiere: 'Competencias en documentación' };
-  const rows = (ev) => profile.executiveAreas.filter((a) => a.evidence === ev).map((a) => `<article class="card"><h3>${esc(a.title)}</h3><p>${esc(a.text)}</p></article>`).join('');
+  const rows = (ev) => profile.executiveAreas.filter((a) => a.evidence === ev).map((a) => `<article class="tech-item"><span class="tech-item-title">${esc(a.title)}</span><p class="tech-item-desc">${esc(a.text)}</p></article>`).join('');
 
   const execSummaryItems = profile.executiveSummary && profile.executiveSummary.length ? profile.executiveSummary : profile.summary;
   const execCards = execSummaryItems.map((item) => {
@@ -172,8 +172,8 @@ function perfilEjecutivo() {
 
   const body = hero('Perfil ejecutivo', '', '/perfil-ejecutivo/', '', false) + `
 ${execSummaryHtml}
-<section class="wrap block"><h2>${lab.demostrada}</h2><p class="muted">Competencias estratégicas respaldadas por cargos gerenciales y consultoría en entornos de alta exigencia.</p><div class="grid2">${rows('demostrada')}</div></section>
-${profile.executiveAreas.some(a => a.evidence === 'requiere') ? `<section class="band"><div class="wrap block"><h2>${lab.requiere}</h2><p class="muted">Competencias adicionales en proceso de vinculación a casos específicos.</p><div class="grid2">${rows('requiere')}</div></div></section>` : ''}`;
+<section class="wrap block"><h2>${lab.demostrada}</h2><p class="muted">Competencias estratégicas respaldadas por cargos gerenciales y consultoría en entornos de alta exigencia.</p><div class="tech-summary-grid">${rows('demostrada')}</div></section>
+${profile.executiveAreas.some(a => a.evidence === 'requiere') ? `<section class="band"><div class="wrap block"><h2>${lab.requiere}</h2><p class="muted">Competencias adicionales en proceso de vinculación a casos específicos.</p><div class="tech-summary-grid">${rows('requiere')}</div></div></section>` : ''}`;
   out('perfil-ejecutivo/index.html', layout({ title: 'Perfil ejecutivo', desc: 'Dirección de tecnología, continuidad del negocio, gestión de proveedores y equipos. Experiencia demostrada y competencias directivas.', route: '/perfil-ejecutivo/', body }));
 }
 
