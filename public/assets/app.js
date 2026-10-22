@@ -199,12 +199,12 @@
 
       "años de experiencia en tecnología": "years of technology experience",
       "años en posiciones gerenciales de TI": "years in IT management positions",
-      "25+ años de trayectoria profesional, incluyendo 17 años en dirección tecnológica y gestión de infraestructura en logística, manufactura, finanzas y operaciones continuas.":
-        "25+ years of professional career, including 17 years in technology leadership and infrastructure management across logistics, manufacturing, finance, and continuous operations.",
-      "Ingeniero en Sistemas de Computación con más de 25 años de experiencia en tecnología y 17 años en dirección tecnológica, infraestructura y operaciones TI.":
-        "Systems Engineer with over 25 years of experience in technology and 17 years in technology leadership, infrastructure, and IT operations.",
+      "25+ años de trayectoria profesional, incluyendo 20 años en dirección tecnológica y gestión de infraestructura en logística, manufactura, finanzas y operaciones continuas.":
+        "25+ years of professional career, including 20 years in technology leadership and infrastructure management across logistics, manufacturing, finance, and continuous operations.",
+      "Ingeniero en Sistemas de Computación con más de 25 años de experiencia en tecnología y 20 años en dirección tecnológica, infraestructura y operaciones TI.":
+        "Systems Engineer with over 25 years of experience in technology and 20 years in technology leadership, infrastructure, and IT operations.",
       "Ingeniero en Sistemas de Computación con más de 21 años de experiencia en tecnología y más de 12 años en liderazgo de infraestructura, operaciones TI y procesos de información.":
-        "Systems Engineer with over 25 years of experience in technology and more than 17 years in leadership of IT infrastructure, operations, and information processes.",
+        "Systems Engineer with over 25 years of experience in technology and more than 20 years in leadership of IT infrastructure, operations, and information processes.",
       "Trayectoria consolidada en entornos de alta exigencia: sector logístico (almacén de 30,000+ ft²), manufactura industrial continua 24/7 y sector financiero regulado (UNIPAGO / BCRD / SIMV).":
         "Established track record in high-demand environments: logistics (30,000+ sq ft warehouse), continuous 24/7 industrial manufacturing, and regulated financial sector (UNIPAGO / Central Bank BCRD / SIMV).",
       "Especialista en dirección estratégica de TI, arquitectura cloud híbrida (Azure/AWS), redes empresariales y de planta, ciberseguridad (Zero Trust, NIST CSF, ISO 27001), gobierno de servicios (SLA) y sistemas ERP (SAP S/4HANA, SAP Business One).":
