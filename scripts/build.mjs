@@ -112,14 +112,6 @@ ${ld ? `<script type="application/ld+json">${JSON.stringify(ld).replace(/</g, '\
     ${site.minimal ? '' : `<button class="menu-btn" aria-expanded="false" aria-controls="menu">Menú</button>
     <nav id="menu" aria-label="Principal"><ul>${nav}</ul></nav>`}
   </div>
-  ${site.minimal ? '' : `<div class="wrap tools">
-    <div class="views" role="group" aria-label="Vista de lectura">
-      <span class="views-l">Vista:</span>
-      <button data-set-view="all" aria-pressed="true">Completa</button>
-      <button data-set-view="exec" aria-pressed="false">Ejecutiva</button>
-      <button data-set-view="tech" aria-pressed="false">Técnica</button>
-    </div>
-  </div>`}
 </header>
 <main id="contenido">
 ${body}
