@@ -176,34 +176,12 @@ function perfilEjecutivo() {
   </ul>
 </div></section>` : '';
 
-  const contractsHtml = profile.workContracts?.length ? `
-<section class="band"><div class="wrap block">
-  <h2>Condiciones y Modalidades de Contratación</h2>
-  <div class="grid2">
-    <article class="card">
-      <h3>Modalidades Aceptadas</h3>
-      <ul class="chips">${profile.workContracts.map(c => `<li>${esc(c)}</li>`).join('')}</ul>
-      <p class="spacer-sm"><strong>Situación laboral:</strong> ${esc(profile.workStatus || '')}</p>
-      <p><strong>Movilidad:</strong> ${esc(profile.drivingLicense || '')}</p>
-    </article>
-    <article class="card">
-      <h3>Ubicación y Relocalización</h3>
-      <p><strong>Ubicación actual:</strong> ${esc(profile.location)}</p>
-      <p><strong>Relocalizable en:</strong> ${esc(profile.relocatable || 'Santo Domingo')}</p>
-      <p><strong>Nivel de inglés:</strong> ${esc(profile.englishLevel || '')}</p>
-      <p><strong>Formación académica:</strong> ${esc(profile.degree || '')} (${esc(profile.educationLevel || '')})</p>
-    </article>
-  </div>
-  ${profile.referencesNote ? `<div class="card ref-box"><h3>Referencias Directivas y Laborales</h3><p>${esc(profile.referencesNote)}</p></div>` : ''}
-</div></section>` : '';
-
   const execSummaryItems = profile.executiveSummary && profile.executiveSummary.length ? profile.executiveSummary : profile.summary;
   const body = hero('Perfil ejecutivo', '', '/perfil-ejecutivo/') + `
 <section class="wrap block"><h2>Resumen de trayectoria ejecutiva</h2>${ul(execSummaryItems)}</section>
 ${ratings}
 <section class="wrap block"><h2>${lab.demostrada}</h2><p class="muted">Competencias estratégicas respaldadas por cargos gerenciales y consultoría en entornos de alta exigencia.</p><div class="grid2">${rows('demostrada')}</div></section>
-${profile.executiveAreas.some(a => a.evidence === 'requiere') ? `<section class="band"><div class="wrap block"><h2>${lab.requiere}</h2><p class="muted">Competencias adicionales en proceso de vinculación a casos específicos.</p><div class="grid2">${rows('requiere')}</div></div></section>` : ''}
-${contractsHtml}`;
+${profile.executiveAreas.some(a => a.evidence === 'requiere') ? `<section class="band"><div class="wrap block"><h2>${lab.requiere}</h2><p class="muted">Competencias adicionales en proceso de vinculación a casos específicos.</p><div class="grid2">${rows('requiere')}</div></div></section>` : ''}`;
   out('perfil-ejecutivo/index.html', layout({ title: 'Perfil ejecutivo', desc: 'Dirección de tecnología, continuidad del negocio, gestión de proveedores y equipos. Experiencia demostrada y competencias directivas.', route: '/perfil-ejecutivo/', body }));
 }
 
