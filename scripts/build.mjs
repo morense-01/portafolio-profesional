@@ -107,7 +107,7 @@ ${body}
 `;
 }
 const shareBar = (route, title) => `<div class="actions no-print"><button class="btn ghost" data-share data-url="${abs(route)}" data-title="${esc(title)}">Compartir enlace</button><button class="btn ghost" data-copy="${abs(route)}">Copiar enlace</button><button class="btn ghost" data-print>Imprimir o guardar PDF</button></div><p class="perma muted no-print">Enlace permanente: <a href="${L(route)}">${abs(route)}</a></p>`;
-const hero = (h, lead, route, extra = '') => `<section class="page-head"><div class="wrap"><nav class="crumbs" aria-label="Ruta"><a href="${L('/')}">Inicio</a> › <span>${esc(h)}</span></nav><h1>${esc(h)}</h1><p class="lead">${esc(lead)}</p>${extra}${shareBar(route, h)}</div></section>`;
+const hero = (h, lead, route, extra = '') => `<section class="page-head"><div class="wrap"><nav class="crumbs" aria-label="Ruta"><a href="${L('/')}">Inicio</a> › <span>${esc(h)}</span></nav><h1>${esc(h)}</h1>${lead ? `<p class="lead">${esc(lead)}</p>` : ''}${extra}${shareBar(route, h)}</div></section>`;
 
 // ---------- páginas ----------
 const cvDoc = docs.find((d) => /^CV/i.test(d.category));
@@ -197,7 +197,7 @@ function perfilEjecutivo() {
   ${profile.referencesNote ? `<div class="card ref-box"><h3>Referencias Directivas y Laborales</h3><p>${esc(profile.referencesNote)}</p></div>` : ''}
 </div></section>` : '';
 
-  const body = hero('Perfil ejecutivo', 'Para directores generales, comités de selección, reclutadores ejecutivos y directores de operaciones.', '/perfil-ejecutivo/') + `
+  const body = hero('Perfil ejecutivo', '', '/perfil-ejecutivo/') + `
 <section class="wrap block"><h2>Resumen de trayectoria ejecutiva</h2>${ul(profile.summary)}<p><a href="${L('/trayectoria/')}">Consultar la trayectoria cronológica</a></p></section>
 ${ratings}
 <section class="wrap block"><h2>${lab.demostrada}</h2><p class="muted">Competencias estratégicas respaldadas por cargos gerenciales y consultoría en entornos de alta exigencia.</p><div class="grid2">${rows('demostrada')}</div></section>
