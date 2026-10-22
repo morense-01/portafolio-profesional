@@ -157,7 +157,7 @@ function homeMinimal() {
 function home() {
   const jobs = exps.length;
   const facts = [
-    [`+${profile.yearsTech}`, 'años de experiencia en tecnología'],
+    [`${profile.yearsTech}`, 'años de experiencia en tecnología'],
     [`${profile.yearsManagement}`, 'años en posiciones gerenciales de TI'],
     [`${exps.length}`, 'expedientes profesionales documentados'],
     [`${profile.sectors.length}`, 'sectores de experiencia'],

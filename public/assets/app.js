@@ -197,8 +197,14 @@
       "disponibilidad en servicios críticos": "availability in critical services",
       "reducción en incidentes de seguridad": "reduction in security incidents",
 
+      "años de experiencia en tecnología": "years of technology experience",
+      "años en posiciones gerenciales de TI": "years in IT management positions",
+      "25+ años de trayectoria profesional, incluyendo 17 años en dirección tecnológica y gestión de infraestructura en logística, manufactura, finanzas y operaciones continuas.":
+        "25+ years of professional career, including 17 years in technology leadership and infrastructure management across logistics, manufacturing, finance, and continuous operations.",
+      "Ingeniero en Sistemas de Computación con más de 25 años de experiencia en tecnología y 17 años en dirección tecnológica, infraestructura y operaciones TI.":
+        "Systems Engineer with over 25 years of experience in technology and 17 years in technology leadership, infrastructure, and IT operations.",
       "Ingeniero en Sistemas de Computación con más de 21 años de experiencia en tecnología y más de 12 años en liderazgo de infraestructura, operaciones TI y procesos de información.":
-        "Systems Engineer with over 21 years of experience in technology and more than 12 years in leadership of IT infrastructure, operations, and information processes.",
+        "Systems Engineer with over 25 years of experience in technology and more than 17 years in leadership of IT infrastructure, operations, and information processes.",
       "Trayectoria consolidada en entornos de alta exigencia: sector logístico (almacén de 30,000+ ft²), manufactura industrial continua 24/7 y sector financiero regulado (UNIPAGO / BCRD / SIMV).":
         "Established track record in high-demand environments: logistics (30,000+ sq ft warehouse), continuous 24/7 industrial manufacturing, and regulated financial sector (UNIPAGO / Central Bank BCRD / SIMV).",
       "Especialista en dirección estratégica de TI, arquitectura cloud híbrida (Azure/AWS), redes empresariales y de planta, ciberseguridad (Zero Trust, NIST CSF, ISO 27001), gobierno de servicios (SLA) y sistemas ERP (SAP S/4HANA, SAP Business One).":
@@ -417,6 +423,22 @@
   var originalTexts = new Map();
   var originalAttrs = new Map();
 
+  function walkDomNodes(node, callback) {
+    if (!node) return;
+    if (node.nodeType === 3) { // Text Node
+      callback(node);
+    } else if (node.nodeType === 1) { // Element Node
+      var tag = node.tagName ? node.tagName.toLowerCase() : '';
+      if (tag === 'script' || tag === 'style' || tag === 'noscript') return;
+      if (node.classList && (node.classList.contains('notranslate') || (node.closest && node.closest('.notranslate')))) return;
+      var child = node.firstChild;
+      while (child) {
+        walkDomNodes(child, callback);
+        child = child.nextSibling;
+      }
+    }
+  }
+
   function translateDom(targetLang) {
     document.documentElement.lang = targetLang;
     var dict = I18N[targetLang];
@@ -435,20 +457,8 @@
 
     var keys = Object.keys(dict).sort(function (a, b) { return b.length - a.length; });
 
-    var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
-      acceptNode: function (node) {
-        if (!node.nodeValue || !node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
-        var p = node.parentElement;
-        if (!p) return NodeFilter.FILTER_REJECT;
-        var tag = p.tagName.toLowerCase();
-        if (tag === 'script' || tag === 'style' || tag === 'noscript') return NodeFilter.FILTER_REJECT;
-        if (p.closest('.notranslate') || p.classList.contains('notranslate')) return NodeFilter.FILTER_REJECT;
-        return NodeFilter.FILTER_ACCEPT;
-      }
-    });
-
-    var node;
-    while ((node = walker.nextNode())) {
+    walkDomNodes(document.body, function (node) {
+      if (!node.nodeValue || !node.nodeValue.trim()) return;
       if (!originalTexts.has(node)) {
         originalTexts.set(node, node.nodeValue);
       }
@@ -468,11 +478,11 @@
           node.nodeValue = replaced;
         }
       }
-    }
+    });
 
     var inputs = Array.prototype.slice.call(document.querySelectorAll('input[placeholder], [title]'));
     inputs.forEach(function (el) {
-      if (el.closest('.notranslate')) return;
+      if (el.closest && el.closest('.notranslate')) return;
       if (!originalAttrs.has(el)) originalAttrs.set(el, {});
       var stored = originalAttrs.get(el);
       ['placeholder', 'title'].forEach(function (attr) {
