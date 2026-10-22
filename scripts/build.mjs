@@ -89,26 +89,6 @@ ${ld ? `<script type="application/ld+json">${JSON.stringify(ld).replace(/</g, '\
 <header class="site-header">
   <div class="wrap bar">
     <a class="brand" href="${L('/')}"><span class="mark" aria-hidden="true">MM</span><span>${esc(site.shortName)}</span></a>
-    <div class="lang-bar notranslate" translate="no" role="group" aria-label="Idioma / Language">
-      <span class="lang-icon" aria-hidden="true">🌐</span>
-      <div class="lang-pills">
-        <button type="button" class="lang-btn" data-lang="es" aria-pressed="true" title="Español">ES</button>
-        <button type="button" class="lang-btn" data-lang="en" aria-pressed="false" title="English">EN</button>
-        <button type="button" class="lang-btn" data-lang="fr" aria-pressed="false" title="Français">FR</button>
-        <button type="button" class="lang-btn" data-lang="pt" aria-pressed="false" title="Português">PT</button>
-        <button type="button" class="lang-btn" data-lang="de" aria-pressed="false" title="Deutsch">DE</button>
-        <button type="button" class="lang-btn" data-lang="it" aria-pressed="false" title="Italiano">IT</button>
-      </div>
-      <select class="lang-select" aria-label="Más idiomas / More languages">
-        <option value="">+ Idiomas</option>
-        <option value="es">Español (ES)</option>
-        <option value="en">English (EN)</option>
-        <option value="fr">Français (FR)</option>
-        <option value="pt">Português (PT)</option>
-        <option value="de">Deutsch (DE)</option>
-        <option value="it">Italiano (IT)</option>
-      </select>
-    </div>
     ${site.minimal ? '' : `<button class="menu-btn" aria-expanded="false" aria-controls="menu">Menú</button>
     <nav id="menu" aria-label="Principal"><ul>${nav}</ul></nav>`}
   </div>

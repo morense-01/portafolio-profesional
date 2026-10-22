@@ -85,17 +85,14 @@ body[data-view=exec] .aud-tech{display:none}body[data-view=tech] .aud-exec{displ
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 @media print{.site-header,.site-footer,.no-print,.hero .actions{display:none!important}body{font-size:11pt}.card{box-shadow:none;break-inside:avoid}.page-head{background:none}a{color:inherit;text-decoration:none}.exp a[href^=http]:after{content:" (" attr(href) ")";font-size:.8em}.exp .block{break-inside:avoid-page}}
 
-/* Selector de idioma / Multi-language bar */
-.lang-bar{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.18);padding:3px 8px;border-radius:20px;font-size:.85rem}
-.lang-icon{font-size:.95rem;line-height:1}
-.lang-pills{display:inline-flex;gap:3px;align-items:center}
-.lang-btn{background:transparent;color:#fff;border:none;padding:2px 7px;border-radius:12px;font-size:.8rem;font-weight:600;line-height:1.3;cursor:pointer;transition:background .15s,color .15s}
-.lang-btn:hover{background:rgba(255,255,255,0.2)}
-.lang-btn[aria-pressed=true]{background:var(--cyan);color:var(--navy)}
-.lang-select{background:var(--navy2);color:#fff;border:1px solid rgba(255,255,255,0.25);border-radius:12px;padding:2px 8px;font-size:.78rem;font-family:inherit;cursor:pointer}
-.lang-select:focus{outline:2px solid var(--cyan)}
-.lang-select option{background:var(--navy);color:#fff}
-@media (max-width:760px){.lang-bar{order:2;margin:4px 0}.menu-btn{order:3}nav#menu{order:4}}
+/* Ocultar barra de idiomas */
+.lang-bar {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
 
 /* Ocultar barra superior, banner, marcos y tooltips automáticos de Google Translate */
 .goog-te-banner-frame.skiptranslate,
