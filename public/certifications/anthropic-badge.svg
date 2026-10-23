@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96">
+  <defs>
+    <linearGradient id="antbg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d97757"/>
+      <stop offset="100%" stop-color="#b05234"/>
+    </linearGradient>
+  </defs>
+  <rect width="96" height="96" rx="20" fill="url(#antbg)"/>
+  <!-- Letra A estilizada de Anthropic -->
+  <polygon points="48,22 68,74 57,74 53,62 43,62 39,74 28,74" fill="#ffffff"/>
+  <polygon points="48,36 45,54 51,54" fill="#d97757"/>
+</svg>

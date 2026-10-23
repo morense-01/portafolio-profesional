@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96">
+  <defs>
+    <linearGradient id="fortbg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ee3124"/>
+      <stop offset="100%" stop-color="#a81910"/>
+    </linearGradient>
+  </defs>
+  <rect width="96" height="96" rx="20" fill="url(#fortbg)"/>
+  <rect x="24" y="24" width="20" height="20" rx="3" fill="#ffffff"/>
+  <rect x="52" y="24" width="20" height="20" rx="3" fill="#ffffff"/>
+  <rect x="24" y="52" width="20" height="20" rx="3" fill="#ffffff"/>
+  <rect x="52" y="52" width="20" height="20" rx="3" fill="#ffffff"/>
+  <circle cx="48" cy="48" r="8" fill="#a81910"/>
+</svg>

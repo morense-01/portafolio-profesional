@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96">
+  <defs>
+    <linearGradient id="ggbg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f1f3f4"/>
+    </linearGradient>
+  </defs>
+  <rect width="96" height="96" rx="20" fill="url(#ggbg)" stroke="#dadce0" stroke-width="2"/>
+  <circle cx="48" cy="48" r="28" fill="#4285f4"/>
+  <text x="48" y="55" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="20" fill="#ffffff" text-anchor="middle">IT</text>
+  <circle cx="48" cy="48" r="32" fill="none" stroke="#34a853" stroke-width="3" stroke-dasharray="12,4"/>
+</svg>
