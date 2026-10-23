@@ -10,6 +10,11 @@ const types = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 
 export function start(port = 4173) {
   const server = http.createServer((req, res) => {
     let p = decodeURIComponent(new URL(req.url, 'http://x').pathname);
+    if (p.startsWith('/portafolio-profesional/')) {
+      p = p.slice('/portafolio-profesional'.length);
+    } else if (p === '/portafolio-profesional') {
+      p = '/';
+    }
     let f = path.join(DIST, p);
     if (!f.startsWith(DIST)) { res.writeHead(403); return res.end(); }
     if (fs.existsSync(f) && fs.statSync(f).isDirectory()) f = path.join(f, 'index.html');
