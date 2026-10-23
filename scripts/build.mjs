@@ -223,8 +223,7 @@ function experiencia() {
     const body = `<section class="page-head"><div class="wrap"><nav class="crumbs" aria-label="Ruta"><a href="${L('/')}">Inicio</a> › <a href="${L('/trayectoria/')}">Trayectoria</a> › <span>${company(e)}</span></nav>
 <p class="eyebrow">${esc(e.periodDisplay)}</p><h1>${company(e)}</h1>
 <p class="lead">${esc([roleLine(e), clean(e.sector), clean(e.location)].filter(Boolean).join(' · '))}</p>
-${e.periodNote ? `<p class="note">${esc(e.periodNote)}</p>` : ''}${shareBar(route, `${e.company} | ${site.shortName}`)}
-<nav class="toc no-print" aria-label="Secciones del expediente"><a href="#resumen">Resumen</a><a href="#contexto">Contexto</a><a href="#ejecutivas" class="aud-exec">Ejecutivas</a><a href="#operativas" class="aud-tech">Operativas</a><a href="#casos">Casos</a><a href="#impacto" class="aud-exec">Impacto</a><a href="#tecnologias" class="aud-tech">Tecnologías</a><a href="#evidencias">Evidencias</a><a href="#reclutadores">Reclutadores</a></nav></div></section>
+${e.periodNote ? `<p class="note">${esc(e.periodNote)}</p>` : ''}</div></section>
 <div class="wrap exp">
 ${sec(1, 'resumen', 'Resumen ejecutivo de la experiencia', `<p>${esc(e.summary)}</p>`)}
 ${sec(2, 'contexto', 'Contexto operativo', ul(e.context || []))}
