@@ -12,6 +12,15 @@
   "end": "2024-01",
   "periodDisplay": "Feb 2022 – Ene 2024",
   "periodNote": "Posición gerencial liderando la dirección de TI corporativa.",
+  "highlights": [
+    { "num": "01", "title": "Gobierno de TI (COBIT & ITIL)", "desc": "Alineación de tecnología con metas corporativas y gestión de cartera de proyectos." },
+    { "num": "02", "title": "Administración de ERP Corporativo", "desc": "Soporte e integraciones en SAP S/4HANA y Microsoft Dynamics 365." },
+    { "num": "03", "title": "Ciberseguridad Zero Trust & SIEM", "desc": "Microsoft Defender, Sentinel SIEM y gestión de vulnerabilidades con Tenable.io." },
+    { "num": "04", "title": "Optimización Cloud & FinOps", "desc": "Virtualización de servidores y reducción del 18% en costos de nube." },
+    { "num": "05", "title": "Automatización de Procesos", "desc": "Flujos de trabajo administrativos automatizados con PowerShell y Power Automate." },
+    { "num": "06", "title": "Liderazgo de Equipos Técnicos", "desc": "Gestión, mentoría y dirección de un equipo multidisciplinario de más de 10 personas." },
+    { "num": "07", "title": "Evidencias transversales", "desc": "Control presupuestario CAPEX/OPEX, auditorías de seguridad y contratos de proveedores." }
+  ],
   "summary": "Dirección estratégica de tecnología corporativa bajo marcos COBIT e ITIL. Lideró la administración de ERP (SAP S/4HANA, Dynamics 365), ciberseguridad Zero Trust, optimización FinOps y equipo multidisciplinario de más de 10 personas.",
   "context": [
     "Empresa del sector manufacturero e industrial con operación corporativa y fabril continua.",

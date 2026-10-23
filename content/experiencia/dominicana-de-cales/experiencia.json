@@ -12,6 +12,15 @@
   "end": "2020",
   "periodDisplay": "2018 – 2020",
   "periodNote": "Liderazgo de infraestructura y operaciones para planta industrial 24/7.",
+  "highlights": [
+    { "num": "01", "title": "Infraestructura Industrial 24/7", "desc": "Garantía de conectividad entre oficinas administrativas, planta y básculas." },
+    { "num": "02", "title": "Monitoreo Proactivo de Redes", "desc": "Supervisión continua de enlaces, fibra óptica, telecomunicaciones y servidores." },
+    { "num": "03", "title": "Automatización con PowerShell", "desc": "Scripts para tareas repetitivas de respaldo, extracción de datos y reportes." },
+    { "num": "04", "title": "Optimización Operativa (+30%)", "desc": "Reducción de tiempos de inactividad y mejoras directas en la eficiencia técnica." },
+    { "num": "05", "title": "Administración Windows Server", "desc": "Servicios de directorio Active Directory, seguridad de accesos y servicios de red." },
+    { "num": "06", "title": "Gestión de Proveedores y Enlaces", "desc": "Negociación y supervisión de servicios de telecomunicaciones y soporte de hardware." },
+    { "num": "07", "title": "Evidencias transversales", "desc": "Informes de desempeño a Dirección, registros de mantenimiento preventivo y continuidad." }
+  ],
   "summary": "Lideró la estrategia de infraestructura y operaciones TI para una operación industrial 24/7 en el sector manufacturero. Implementó monitoreo proactivo de redes y sistemas, automatización de procesos administrativos con PowerShell y optimización de eficiencia operativa en un 30%.",
   "context": [
     "Operación manufacturera continua 24/7 con planta de procesamiento y oficinas administrativas.",

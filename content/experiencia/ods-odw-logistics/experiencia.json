@@ -12,6 +12,15 @@
   "end": "2026-06",
   "periodDisplay": "Feb 2024 – Jun 2026",
   "periodNote": "Contratación Extrangera para consultoría estratégica y operativa de tecnología.",
+  "highlights": [
+    { "num": "01", "title": "Arquitectura Cloud Híbrida", "desc": "Interconexión segura de infraestructura on-premise con Azure y AWS." },
+    { "num": "02", "title": "Integración WMS y Radiofrecuencia", "desc": "Optimización de picking, inventario en tiempo real y terminales RF." },
+    { "num": "03", "title": "Seguridad Perimetral y Redes", "desc": "Firewalls Fortinet, segmentación VLAN y enlaces de alta disponibilidad." },
+    { "num": "04", "title": "Gobierno de Seguridad NIST CSF", "desc": "Políticas de protección de datos, control de accesos y auditoría continua." },
+    { "num": "05", "title": "Continuidad Operativa BCP/DRP", "desc": "Planes de contingencia y respaldos automatizados ante interrupciones." },
+    { "num": "06", "title": "Analítica Operativa en Tiempo Real", "desc": "Tableros de BI en Power BI y SSRS para KPIs de cadena de suministro." },
+    { "num": "07", "title": "Evidencias transversales", "desc": "Gestión de contratos con proveedores internacionales, SLAs y soporte técnico estructurado." }
+  ],
   "summary": "Diseño e implementación de la estrategia integral de TI para operaciones logísticas de alto volumen (30,000+ ft²), incluyendo infraestructura, redes, cloud híbrido Azure/AWS, sistemas WMS y analítica de datos.",
   "context": [
     "Centro logístico de alto volumen con más de 30,000 ft² de operación continua.",

@@ -11,7 +11,16 @@
   "start": "2020-03",
   "end": "2022-01",
   "periodDisplay": "Mar 2020 – Ene 2022",
-  "periodNote": "Rol técnico senior en infraestructura crítica y ciberseguridad financiera.",
+  "periodNote": "Rol Especialista sénior en infraestructura tecnológica crítica, seguridad de la información y resiliencia operativa en el sector Salud.",
+  "highlights": [
+    { "num": "01", "title": "Infraestructura Cloud Crítica", "desc": "Migración y arquitectura híbrida Azure/AWS de alta disponibilidad (99.99%)." },
+    { "num": "02", "title": "Seguridad en Entorno Regulado", "desc": "Controles de seguridad bajo normativas BCRD, SIMV, ISO 27001 y NIST CSF." },
+    { "num": "03", "title": "Zero Trust & Monitoreo SIEM", "desc": "Detección proactiva de incidentes con Microsoft Sentinel y Defender." },
+    { "num": "04", "title": "Gestión de Datos y SQL Server", "desc": "Optimización y administración de bases de datos para reportería regulatoria." },
+    { "num": "05", "title": "Auditorías de Cumplimiento", "desc": "Cero hallazgos críticos durante 3 ciclos de auditoría continua." },
+    { "num": "06", "title": "Resiliencia Operativa y DRP", "desc": "Estrategias de continuidad tecnológica para sistemas de misión crítica." },
+    { "num": "07", "title": "Evidencias transversales", "desc": "Control de accesos privilegiados (RBAC), cifrado de datos y certificaciones oficiales." }
+  ],
   "summary": "Especialista a cargo de la migración de activos críticos a cloud híbrido Azure/AWS en entorno financiero regulado (BCRD/SIMV). Implementó modelo de seguridad Zero Trust bajo ISO 27001 y NIST CSF, logrando cero hallazgos críticos en 3 auditorías consecutivas.",
   "context": [
     "Entidad clave del sistema financiero dominicano sujeta a estricta regulación de seguridad y continuidad (BCRD / Superintendencia del Mercado de Valores).",

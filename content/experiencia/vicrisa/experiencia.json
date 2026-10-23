@@ -11,7 +11,16 @@
   "start": "2007",
   "end": "2018",
   "periodDisplay": "2007 – 2018",
-  "periodNote": "Trayectoria continua de 11 años con evolución desde soporte hasta liderazgo técnico.",
+  "periodNote": "Trayectoria continua de 11 años con crecimiento progresivo en responsabilidades y liderazgo.",
+  "highlights": [
+    { "num": "01", "title": "Administración de Infraestructura", "desc": "Servidores Windows Server, Active Directory, DNS, DHCP y servicios centrales." },
+    { "num": "02", "title": "Interconexión y Redes VPN", "desc": "Cableado estructurado, switches, routers y enlaces seguros entre sucursales." },
+    { "num": "03", "title": "Sistemas de Facturación y POS", "desc": "Soporte y alta disponibilidad en aplicaciones de punto de venta y almacenes." },
+    { "num": "04", "title": "Gestión de Soporte Técnico", "desc": "Supervisión del equipo de soporte y atención a incidencias técnicas multinivel." },
+    { "num": "05", "title": "Modernización de Equipamiento", "desc": "Planificación y ejecución de renovaciones del parque computacional." },
+    { "num": "06", "title": "Continuidad Operativa por 11 Años", "desc": "Mantenimiento preventivo ininterrumpido en operaciones comerciales e industriales." },
+    { "num": "07", "title": "Evidencias transversales", "desc": "Historial de servicio comprobado, control de inventario de TI y liderazgo de proyectos." }
+  ],
   "summary": "Trayectoria profesional continua de 11 años gestionando infraestructura, soporte técnico, administración de servidores Windows, redes locales y sistemas de facturación y almacén.",
   "context": [
     "Empresa del sector comercial e industrial con múltiples sucursales y puntos de venta.",
