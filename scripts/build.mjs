@@ -195,7 +195,16 @@ function perfilTecnico() {
 }
 
 function trayectoria() {
-  const item = (e) => `<li class="tl"><article class="card"><p class="period">${esc(e.periodDisplay)}</p><h3><a href="${L(`/experiencia/${e.slug}/`)}">${company(e)}</a></h3><p>${esc([e.roleConfirmed ? e.role : '', e.sector].filter(Boolean).join(' · ') || clean(e.relationship) || '')}</p><p>${esc(e.summary)}</p>${e.periodNote ? `<p class="muted small">${esc(e.periodNote)}</p>` : ''}<p><a href="${L(`/experiencia/${e.slug}/`)}">Abrir expediente de ${esc(e.company)}</a></p></article></li>`;
+  const renderHighlights = (hl) => {
+    if (!hl || !hl.length) return '';
+    const items = hl.map((h) => `
+      <article class="tech-item">
+        <span class="tech-item-title">${esc(h.num)} — ${esc(h.title)}</span>
+        <p class="tech-item-desc">${esc(h.desc)}</p>
+      </article>`).join('');
+    return `<div class="tech-summary-grid spacer-sm">${items}</div>`;
+  };
+  const item = (e) => `<li class="tl"><article class="card"><p class="period">${esc(e.periodDisplay)}</p><h3><a href="${L(`/experiencia/${e.slug}/`)}">${company(e)}</a></h3><p>${esc([e.roleConfirmed ? e.role : '', e.sector].filter(Boolean).join(' · ') || clean(e.relationship) || '')}</p><p>${esc(e.summary)}</p>${e.periodNote ? `<p class="muted small">${esc(e.periodNote)}</p>` : ''}${renderHighlights(e.highlights)}<p class="spacer-sm"><a href="${L(`/experiencia/${e.slug}/`)}">Abrir expediente de ${esc(e.company)}</a></p></article></li>`;
   const body = hero('Trayectoria profesional', '', '/trayectoria/', '', false) + `
 <section class="wrap block"><ol class="timeline">${exps.map(item).join('')}</ol></section>`;
   out('trayectoria/index.html', layout({ title: 'Trayectoria profesional', desc: 'Trayectoria cronológica de Mario Méndez: Astro - Pico Duarte Cartón, ODS Logistics, MADECO, UNIPAGO, Dominicana de Cales y VICRISA.', route: '/trayectoria/', body }));

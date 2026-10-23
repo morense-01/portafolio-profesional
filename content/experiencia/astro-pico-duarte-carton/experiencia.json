@@ -3,89 +3,234 @@
   "order": 1,
   "public": true,
   "company": "Astro - Pico Duarte Cartón",
-  "location": "Santo Domingo Oeste, República Dominicana",
+  "location": "Haina, República Dominicana",
   "sector": "",
-  "relationship": "Posición ejecutiva actual",
-  "role": "Responsable de Tecnología de la Información, Desarrollo, Automatización e IA",
+  "relationship": "Responsabilidad ejecutiva en Tecnología de la Información",
+  "role": "Responsable de Tecnología de la Información | Desarrollo de Software | Inteligencia Artificial | Automatización de Procesos",
   "roleConfirmed": true,
-  "start": "2024",
+  "start": "2026",
   "end": "Actual",
   "periodDisplay": "Actual",
-  "periodNote": "Posición activa a cargo de la infraestructura tecnológica, desarrollo de sistemas internos, automatización de procesos e Inteligencia Artificial.",
-  "summary": "Dirección y ejecución de la estrategia tecnológica corporativa, infraestructura industrial, desarrollo de soluciones informáticas a la medida, automatización operativa e integración práctica de Inteligencia Artificial para optimizar las operaciones de manufactura continua y distribución.",
+  "periodNote": "Responsable de la gestión tecnológica, el desarrollo de soluciones empresariales, la integración de sistemas, la automatización de procesos y las iniciativas de continuidad operativa e Inteligencia Artificial.",
+  "highlights": [
+    { "num": "01", "title": "Ecosistema de gestión de TI", "desc": "Módulos, flujos de trabajo y arquitectura" },
+    { "num": "02", "title": "Sistema de control de calidad", "desc": "Requerimientos, registros y demostración" },
+    { "num": "03", "title": "Respaldos y contingencia", "desc": "Scripts, registros y pruebas de restauración" },
+    { "num": "04", "title": "Facturas electrónicas y SAP", "desc": "Factura de prueba, validaciones y flujo de integración" },
+    { "num": "05", "title": "Automatización e Inteligencia Artificial", "desc": "Casos de uso, flujos y resultados" },
+    { "num": "06", "title": "Infraestructura y continuidad", "desc": "Diagramas, monitoreo e indicadores" },
+    { "num": "07", "title": "Evidencias transversales", "desc": "Participación personal, tecnologías, fechas, documentación y referencias autorizadas." }
+  ],
+  "summary": "Gestión estratégica y operativa de Tecnología de la Información en un entorno industrial de manufactura y distribución. Desarrollo de un ecosistema de soluciones tecnológicas orientado a integrar la gestión del departamento de TI, el control de calidad, la continuidad operativa, la automatización de procesos y la interoperabilidad con el ERP SAP. Enfoque en desarrollar herramientas internas adaptadas a las necesidades del negocio, simplificar operaciones, fortalecer los controles tecnológicos y facilitar el acceso a información confiable para la toma de decisiones.",
   "context": [
-    "Planta industrial de manufactura de empaques y soluciones en cartón corrugado con operación continua.",
-    "Procesos productivos y administrativos que requieren alta disponibilidad en telecomunicaciones, conectividad de planta y captura de datos en tiempo real.",
-    "Estrategia de transformación digital enfocada en desarrollo interno, analítica con Power BI, automatización y herramientas de IA agéntica."
+    "Entorno industrial dedicado a la manufactura de empaques y soluciones de cartón corrugado, con procesos productivos, administrativos y logísticos interdependientes.",
+    "Necesidad de mantener la disponibilidad de los sistemas, la conectividad industrial, la protección de la información y la continuidad de los servicios tecnológicos.",
+    "Desarrollo de soluciones internas para responder a necesidades específicas de Tecnología de la Información, calidad, administración y operaciones.",
+    "Integración de herramientas de software con el ERP SAP para facilitar el procesamiento de información empresarial y reducir la complejidad de tareas operativas.",
+    "Evolución de los procesos mediante automatización, analítica de datos, desarrollo de software e incorporación práctica de Inteligencia Artificial."
   ],
   "executive": [
-    "Dirección de la infraestructura tecnológica, servidores, telecomunicaciones y sistemas de información corporativos.",
-    "Liderazgo en la estrategia de automatización de procesos operativos y adopción empresarial de Inteligencia Artificial.",
-    "Alineación de iniciativas de TI con las metas de producción, cadena de suministro, calidad y rentabilidad del negocio.",
-    "Supervisión del equipo técnico, gestión de proveedores tecnológicos y optimización del gasto de TI."
+    "Dirección de las operaciones tecnológicas, incluyendo infraestructura, redes, servidores, sistemas de información, seguridad y continuidad de los servicios.",
+    "Diseño y desarrollo de un ecosistema tecnológico interno para organizar procesos del departamento de TI, centralizar herramientas de gestión y facilitar el seguimiento de actividades, controles e incidencias.",
+    "Liderazgo de iniciativas de desarrollo de software e integración de sistemas, priorizando soluciones adaptadas a los procesos reales de la organización.",
+    "Desarrollo de soluciones digitales para apoyar el control de calidad y mejorar la organización, disponibilidad y trazabilidad de la información relacionada con los procesos industriales.",
+    "Automatización de actividades relacionadas con copias de seguridad, planes de contingencia y procedimientos de recuperación tecnológica.",
+    "Diseño e implementación de mecanismos de procesamiento e integración de facturas electrónicas para facilitar su interpretación y tratamiento dentro del ERP SAP.",
+    "Identificación de oportunidades de automatización e Inteligencia Artificial para reducir tareas repetitivas y mejorar los flujos de información.",
+    "Coordinación de recursos técnicos, proveedores y servicios tecnológicos, considerando la continuidad operativa, la seguridad y la eficiencia en el uso de los recursos."
   ],
   "operational": [
-    "Administración y aseguramiento de redes industriales, servidores Windows Server / Linux y seguridad perimetral.",
-    "Desarrollo de scripts de automatización e integración de sistemas para eliminar tareas manuales repetitivas.",
-    "Diseño e implementación de cuadros de mando analíticos en Power BI para el control operativo y toma de decisiones.",
-    "Garantía de alta disponibilidad (99.9%) y soporte técnico continuo a las líneas de producción y áreas administrativas."
+    "Administración de infraestructura tecnológica, redes, servidores Windows Server y Linux, conectividad industrial y seguridad perimetral.",
+    "Desarrollo de aplicaciones y herramientas internas para apoyar la gestión de TI y atender necesidades específicas de las áreas operativas.",
+    "Implementación de funcionalidades para el registro, seguimiento y control de actividades, solicitudes e información tecnológica.",
+    "Desarrollo de un sistema de apoyo al control de calidad, orientado a estructurar registros, facilitar el seguimiento de controles y mejorar la consulta de información.",
+    "Automatización de tareas de respaldo, verificaciones operativas y actividades asociadas a planes de contingencia y recuperación.",
+    "Desarrollo de una solución de procesamiento de facturas electrónicas para facilitar la lectura, extracción, estructuración y preparación de datos para su utilización en SAP.",
+    "Evaluación de validaciones de datos, formatos de entrada, consistencia de la información y tratamiento de excepciones en procesos de integración.",
+    "Desarrollo de scripts y automatizaciones mediante Python y PowerShell para estandarizar tareas y reducir intervenciones manuales.",
+    "Diseño de tableros e informes en Power BI para facilitar el análisis de información y el seguimiento de indicadores.",
+    "Evaluación e incorporación de herramientas de Inteligencia Artificial para apoyar procesos de análisis, procesamiento de información y productividad.",
+    "Gestión de la disponibilidad, seguridad y continuidad de los servicios tecnológicos que respaldan las operaciones de planta y las áreas administrativas."
   ],
   "cases": [
     {
+      "id": "ecosistema-gestion-tecnologia",
+      "title": "Desarrollo de un ecosistema de gestión para el departamento de Tecnología de la Información",
+      "situation": "Necesidad de organizar y mejorar la gestión de los procesos, las herramientas y las actividades operativas del departamento de TI.",
+      "problem": "La dispersión de tareas, controles y herramientas de seguimiento puede dificultar la trazabilidad, la estandarización y la supervisión de las operaciones tecnológicas.",
+      "goal": "Construir un entorno integrado de soluciones internas que facilite la administración del departamento, el seguimiento de actividades y la estandarización de procesos tecnológicos.",
+      "responsibility": "Diseño, desarrollo e implementación de soluciones de software para la gestión de TI.",
+      "solution": "Desarrollo de un ecosistema de herramientas tecnológicas adaptadas a las necesidades del departamento, orientado a organizar procesos, automatizar tareas y facilitar el acceso a información operativa. El alcance documentado debe especificar los módulos implementados, sus integraciones y los procesos cubiertos.",
+      "technologies": [
+        "Desarrollo de software",
+        "Automatización de procesos",
+        "Integración de sistemas",
+        "Gestión de servicios de TI",
+        "Bases de datos"
+      ],
+      "result": "Disponibilidad de herramientas internas orientadas a mejorar la organización, el seguimiento y la eficiencia de los procesos del departamento de TI. El impacto cuantitativo debe establecerse a partir del uso real y de mediciones comparativas.",
+      "metric": "Indicadores recomendados: procesos gestionados, tiempo de atención, tareas automatizadas y cumplimiento de actividades.",
+      "scope": "Gestión interna de Tecnología de la Información.",
+      "evidence": "Documentar mediante capturas de pantalla anonimizadas, descripción de módulos, diagramas de arquitectura y demostraciones autorizadas.",
+      "lessons": "El desarrollo de soluciones internas permite adaptar las herramientas tecnológicas a los procesos de la organización y facilita la evolución progresiva de la gestión de TI."
+    },
+    {
+      "id": "sistema-control-calidad",
+      "title": "Desarrollo de un sistema de información para el control de calidad",
+      "situation": "Procesos industriales que requieren registrar, consultar y dar seguimiento a información relacionada con los controles de calidad.",
+      "problem": "Necesidad de disponer de una herramienta informática adaptada al flujo de trabajo para organizar los registros y facilitar el seguimiento de la información de calidad.",
+      "goal": "Desarrollar una solución que facilite la gestión de registros, la consulta de información y el seguimiento de los controles establecidos.",
+      "responsibility": "Análisis de requerimientos, desarrollo de software e implementación de la solución tecnológica.",
+      "solution": "Desarrollo de un sistema de apoyo al control de calidad, diseñado de acuerdo con los requerimientos del proceso. La descripción funcional debe identificar los registros gestionados, las validaciones implementadas, los perfiles de acceso y los reportes disponibles.",
+      "technologies": [
+        "Desarrollo de software",
+        "Bases de datos",
+        "Validación de información",
+        "Gestión de registros",
+        "Reportería"
+      ],
+      "result": "Herramienta de apoyo para organizar y consultar información de calidad, con potencial para mejorar la trazabilidad de los registros y facilitar el seguimiento de los procesos.",
+      "metric": "Indicadores recomendados: registros procesados, tiempo de consulta, incidencias registradas y porcentaje de registros completos.",
+      "scope": "Procesos de control de calidad industrial.",
+      "evidence": "Demostración funcional, capturas anonimizadas, documentación de requerimientos y ejemplos de reportes sin datos confidenciales.",
+      "lessons": "La digitalización de los registros de calidad facilita su consulta y seguimiento, siempre que la solución responda a los procedimientos definidos por el área responsable."
+    },
+    {
+      "id": "automatizacion-contingencia-backups",
+      "title": "Automatización de respaldos y procedimientos de contingencia tecnológica",
+      "situation": "Dependencia de sistemas, servidores y datos que respaldan las operaciones administrativas e industriales.",
+      "problem": "Necesidad de reducir la dependencia de tareas manuales en los procedimientos de respaldo y mejorar la consistencia de las actividades de preparación para contingencias.",
+      "goal": "Automatizar tareas seleccionadas de respaldo y apoyo a la continuidad tecnológica, facilitando la ejecución de procedimientos y la verificación de sus resultados.",
+      "responsibility": "Diseño técnico, desarrollo de automatizaciones y administración de infraestructura y continuidad de TI.",
+      "solution": "Automatización de tareas relacionadas con copias de seguridad, verificaciones de ejecución y procedimientos de contingencia mediante herramientas de scripting y administración de sistemas. El alcance de recuperación debe describirse según las pruebas efectivamente realizadas.",
+      "technologies": [
+        "PowerShell",
+        "Python",
+        "Windows Server",
+        "Linux",
+        "Automatización",
+        "Copias de seguridad",
+        "Continuidad operativa"
+      ],
+      "result": "Estandarización de tareas tecnológicas relacionadas con los respaldos y la preparación para contingencias. La efectividad de la recuperación debe acreditarse con registros y pruebas documentadas.",
+      "metric": "Indicadores recomendados: ejecuciones satisfactorias de respaldos, fallos detectados, tiempo de recuperación y resultados de pruebas de restauración.",
+      "scope": "Infraestructura tecnológica y protección de la información.",
+      "evidence": "Procedimientos técnicos, registros de ejecución, inventario de respaldos y resultados de pruebas de restauración, con información sensible debidamente protegida.",
+      "lessons": "La automatización debe complementarse con supervisión, pruebas periódicas de restauración y procedimientos de recuperación documentados para aportar valor real a la continuidad del negocio."
+    },
+    {
+      "id": "integracion-facturas-electronicas-sap",
+      "title": "Desarrollo de una solución para el procesamiento de facturas electrónicas e integración con SAP",
+      "situation": "Necesidad de facilitar el tratamiento de facturas electrónicas y preparar su información para el procesamiento dentro del ERP SAP.",
+      "problem": "La interpretación y transferencia manual de datos de facturas puede generar tareas repetitivas, demoras y oportunidades de error en la captura de información.",
+      "goal": "Desarrollar un mecanismo que simplifique la lectura de las facturas electrónicas, estructure sus datos y facilite su incorporación al flujo de trabajo de SAP.",
+      "responsibility": "Análisis del proceso, desarrollo de software, tratamiento de datos e integración con el entorno ERP.",
+      "solution": "Desarrollo de una solución para interpretar los datos de las facturas electrónicas, estructurar la información necesaria y prepararla para su procesamiento en SAP. Las funcionalidades documentadas deben especificar los formatos admitidos, las reglas de validación, el mecanismo de integración y el tratamiento de excepciones.",
+      "technologies": [
+        "SAP ERP",
+        "Desarrollo de software",
+        "Procesamiento de datos",
+        "Integración de sistemas",
+        "Validación de información",
+        "Automatización de procesos"
+      ],
+      "result": "Simplificación del flujo de procesamiento de la información de las facturas electrónicas mediante una solución adaptada al entorno SAP. La reducción de tiempos y errores debe cuantificarse mediante pruebas y mediciones comparativas.",
+      "metric": "Indicadores recomendados: tiempo promedio de procesamiento por factura, porcentaje de documentos procesados correctamente, tasa de excepciones y cantidad de intervenciones manuales.",
+      "scope": "Integración de información documental y procesos empresariales gestionados mediante SAP.",
+      "evidence": "Demostración con documentos de prueba anonimizados, ejemplos de entrada y salida, reglas de validación y documentación del mecanismo de integración.",
+      "lessons": "Una capa de procesamiento y validación entre los documentos electrónicos y el ERP puede simplificar el flujo de trabajo y mejorar la consistencia de los datos antes de su incorporación."
+    },
+    {
       "id": "automatizacion-ia-manufactura",
-      "title": "Automatización de Procesos Operativos e Integración de Inteligencia Artificial",
-      "situation": "Operaciones industriales de manufactura continua con necesidad de agilizar el procesamiento de información operativa y reportería.",
-      "problem": "Tiempos manuales en la consolidación de datos entre producción, almacén y administración.",
-      "goal": "Desarrollar flujos automatizados e integrar soluciones de IA para acelerar la toma de decisiones y elevar la eficiencia operativa.",
-      "responsibility": "Responsable de TI, Desarrollo, Automatización e IA.",
-      "solution": "Despliegue de scripts en Python y PowerShell, flujos de integración de datos, tableros analíticos en Power BI e incorporación de asistentes agénticos de IA.",
+      "title": "Automatización de procesos, analítica e integración de Inteligencia Artificial",
+      "situation": "Entorno de manufactura continua con necesidades de consolidación de información, procesamiento de datos y elaboración de reportes para apoyar la gestión operativa.",
+      "problem": "Oportunidades de mejora en la ejecución de tareas recurrentes, la consolidación de información y la disponibilidad de datos para el análisis.",
+      "goal": "Optimizar flujos de trabajo mediante desarrollo de software, automatización, analítica e incorporación de herramientas de Inteligencia Artificial cuando aporten valor al proceso.",
+      "responsibility": "Responsable de Tecnología de la Información, desarrollo de software, automatización e iniciativas de Inteligencia Artificial.",
+      "solution": "Desarrollo de scripts con Python y PowerShell, automatización de tareas, estructuración de flujos de datos, elaboración de tableros en Power BI y evaluación e integración de herramientas de Inteligencia Artificial de acuerdo con los requerimientos operativos.",
       "technologies": [
         "Inteligencia Artificial",
-        "Automatización",
         "Python",
         "PowerShell",
         "Power BI",
-        "Windows Server"
+        "Automatización de procesos",
+        "Integración de datos"
       ],
-      "result": "Optimización en la velocidad de procesamiento de reportes y reducción de tiempos muertos operativos.",
-      "metric": "Disponibilidad de sistemas: 99.9% | Procesos automatizados: +30%",
-      "scope": "Operación corporativa y de planta industrial",
-      "evidence": "Posición actual confirmada.",
-      "lessons": "La combinación de desarrollo propio, automatización e Inteligencia Artificial multiplica la productividad en entornos industriales modernos."
+      "result": "Soluciones orientadas a agilizar el procesamiento de información, reducir tareas repetitivas y facilitar el análisis operativo. Los resultados deben evaluarse por proceso y con mediciones verificables.",
+      "metric": "Disponibilidad reportada de sistemas: 99.9%, pendiente de validación documental. Otros indicadores: tiempo de procesamiento, tareas automatizadas y reducción de intervenciones manuales.",
+      "scope": "Infraestructura tecnológica, procesos administrativos y operaciones industriales.",
+      "evidence": "Código autorizado, documentación técnica, demostraciones, registros de ejecución e indicadores comparativos cuando estén disponibles.",
+      "lessons": "La combinación de desarrollo, automatización y analítica permite construir soluciones ajustadas a las necesidades del negocio y medir su contribución a la operación."
     }
   ],
   "impact": [
-    "99.9% de disponibilidad operativa en sistemas de planta y oficinas corporativas.",
-    "Modernización de flujos de trabajo mediante desarrollo y automatización de procesos.",
-    "Adopción práctica de Inteligencia Artificial en la analítica de datos y operaciones cotidianas."
+    "Desarrollo de un ecosistema de herramientas internas para apoyar la gestión y los procesos del departamento de Tecnología de la Información.",
+    "Digitalización y organización de actividades relacionadas con el control de calidad industrial mediante una solución de software.",
+    "Automatización de tareas relacionadas con copias de seguridad y procedimientos de contingencia tecnológica.",
+    "Desarrollo de una solución para facilitar la lectura y preparación de datos de facturas electrónicas destinadas a su procesamiento en SAP.",
+    "Integración de desarrollo de software, scripting y automatización para responder a necesidades específicas de la organización.",
+    "Aplicación de analítica mediante Power BI para facilitar la consulta de información y el seguimiento de indicadores.",
+    "Gestión de la continuidad de los servicios tecnológicos; disponibilidad reportada del 99.9%, sujeta a validación mediante registros de monitoreo.",
+    "Orientación a resultados medibles mediante indicadores operativos, documentación técnica y evidencias de las implementaciones."
   ],
   "technologies": [
     {
-      "name": "Inteligencia Artificial y Automatización",
-      "context": "Herramientas agénticas de IA y automatización de flujos operativos."
+      "name": "Desarrollo de software y ecosistemas internos",
+      "context": "Diseño e implementación de herramientas digitales para apoyar la gestión de TI y resolver necesidades operativas específicas."
     },
     {
-      "name": "Desarrollo y Scripting",
-      "context": "Python, PowerShell y herramientas de integración de sistemas."
+      "name": "Integración empresarial y SAP",
+      "context": "Procesamiento y estructuración de información documental para facilitar su utilización dentro de los flujos de trabajo del ERP."
     },
     {
-      "name": "Infraestructura y Redes",
-      "context": "Windows Server, Linux, firewalls y telecomunicaciones de planta."
+      "name": "Automatización y scripting",
+      "context": "Python y PowerShell para automatizar tareas, procesar información y estandarizar procedimientos."
     },
     {
-      "name": "Power BI & Analítica",
-      "context": "Cuadros de mando y reportería de indicadores operativos en tiempo real."
+      "name": "Continuidad operativa y respaldos",
+      "context": "Automatización de tareas de respaldo, verificaciones técnicas y apoyo a los procedimientos de contingencia y recuperación."
+    },
+    {
+      "name": "Sistemas de información y calidad",
+      "context": "Desarrollo de herramientas para gestionar registros, consultar información y apoyar el seguimiento de los controles de calidad."
+    },
+    {
+      "name": "Infraestructura, redes y seguridad",
+      "context": "Administración de Windows Server, Linux, redes, conectividad industrial y seguridad perimetral."
+    },
+    {
+      "name": "Inteligencia Artificial",
+      "context": "Evaluación e incorporación de herramientas de IA para apoyar tareas de análisis, procesamiento de información y productividad."
+    },
+    {
+      "name": "Analítica empresarial y Power BI",
+      "context": "Construcción de tableros e informes para visualizar información y facilitar el seguimiento de indicadores operativos."
     }
   ],
   "evidence": [],
   "links": [],
   "learnings": [
-    "El liderazgo en desarrollo y automatización con IA es el mayor acelerador de eficiencia y valor en la manufactura."
+    "El desarrollo de un ecosistema tecnológico integrado permite abordar necesidades departamentales y operativas mediante soluciones adaptadas a los procesos reales de la organización.",
+    "La integración entre documentos electrónicos y ERP requiere validar los datos antes de su procesamiento para reducir errores y facilitar la trazabilidad.",
+    "La automatización de respaldos aporta valor cuando se acompaña de monitoreo, pruebas de restauración y procedimientos de recuperación documentados.",
+    "Los sistemas de control de calidad deben facilitar el seguimiento de registros y alinearse con los procedimientos establecidos por el área responsable.",
+    "La medición antes y después de una implementación permite demostrar su impacto en tiempos de ejecución, calidad de datos, productividad y continuidad operativa."
   ],
   "recruiterSummary": [
-    "Responsable de Tecnología de la Información, Desarrollo, Automatización e IA en Astro - Pico Duarte Cartón (posición actual).",
-    "Lidera la infraestructura, el desarrollo de sistemas y la transformación digital industrial.",
-    "Aplica Inteligencia Artificial y automatización para elevar la rentabilidad y continuidad del negocio."
+    "Responsable de Tecnología de la Información en Astro - Pico Duarte Cartón, con responsabilidades en infraestructura, desarrollo de software, integración de sistemas, automatización e Inteligencia Artificial.",
+    "Desarrolló soluciones internas para la gestión de TI, el control de calidad, la automatización de tareas de respaldo y contingencia y el procesamiento de facturas electrónicas para SAP.",
+    "Combina gestión tecnológica y ejecución técnica para resolver necesidades operativas mediante herramientas de software adaptadas al entorno industrial.",
+    "Enfoque en continuidad operativa, eficiencia de procesos, integración de información y mejora de los controles tecnológicos.",
+    "Experiencia presentada mediante proyectos documentables, con indicadores cuantitativos sujetos a validación y evidencias técnicas que pueden incorporarse al portafolio."
   ],
-  "pending": []
+  "pending": [
+    "Incorporar una descripción funcional y capturas anonimizadas del ecosistema desarrollado para el departamento de TI.",
+    "Documentar los módulos, flujos de trabajo y controles incluidos en el sistema de calidad.",
+    "Registrar las herramientas, frecuencias, verificaciones y pruebas de restauración asociadas a los respaldos y planes de contingencia.",
+    "Precisar los formatos de facturas electrónicas admitidos, las validaciones implementadas y el método de integración con SAP.",
+    "Añadir tecnologías específicas, lenguajes, frameworks, bases de datos y arquitectura únicamente cuando correspondan a las implementaciones reales.",
+    "Establecer métricas de referencia y resultados posteriores para cuantificar el impacto de cada proyecto.",
+    "Incorporar evidencias autorizadas, documentación técnica y demostraciones sin exponer datos confidenciales de la empresa.",
+    "Validar el período laboral, el alcance de las responsabilidades y los indicadores publicados."
+  ]
 }

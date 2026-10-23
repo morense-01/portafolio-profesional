@@ -16,6 +16,14 @@
 ## Experiencias
 
 ### Astro - Pico Duarte Cartón (Actual)
+- [ ] Incorporar una descripción funcional y capturas anonimizadas del ecosistema desarrollado para el departamento de TI.
+- [ ] Documentar los módulos, flujos de trabajo y controles incluidos en el sistema de calidad.
+- [ ] Registrar las herramientas, frecuencias, verificaciones y pruebas de restauración asociadas a los respaldos y planes de contingencia.
+- [ ] Precisar los formatos de facturas electrónicas admitidos, las validaciones implementadas y el método de integración con SAP.
+- [ ] Añadir tecnologías específicas, lenguajes, frameworks, bases de datos y arquitectura únicamente cuando correspondan a las implementaciones reales.
+- [ ] Establecer métricas de referencia y resultados posteriores para cuantificar el impacto de cada proyecto.
+- [ ] Incorporar evidencias autorizadas, documentación técnica y demostraciones sin exponer datos confidenciales de la empresa.
+- [ ] Validar el período laboral, el alcance de las responsabilidades y los indicadores publicados.
 
 ### ODS Logistics (Feb 2024 – Jun 2026)
 
