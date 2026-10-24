@@ -14,6 +14,7 @@ import { shouldNotify } from './core/extras';
 import { SEED_WORDS, DICTATIONS, MINIMAL_PAIRS } from './data/content';
 import { fetchYouTubeTranscript } from './core/transcription';
 import { extractVocabularyFromTranscript, extractDictationLines, extractSpeakingLines, extractNotebookLines } from './core/extractor';
+import { LEVELED_CATALOG, getUnlockedLevels, type LeveledSong } from './data/catalog';
 
 type Tab = 'home' | 'library' | 'review' | 'progress' | 'settings' | 'lesson' | 'tutor' | 'missions' | 'practice';
 const uid = () => crypto.randomUUID();
@@ -130,20 +131,204 @@ function Home({ db, go, open, update }: { db: DB; go: (t: Tab) => void; open: (i
   const due = dueCards(db.cards).length;
   const s = streak(db.activeDays, today());
   const active = db.lessons.filter((l) => l.stage !== 'done');
+  const passed = db.assessments.filter((a) => a.passed).length;
+  const unlocked = getUnlockedLevels(db.settings.level, passed);
+  const [loadingSongId, setLoadingSongId] = useState<string | null>(null);
+
+  let nextUnlockMsg = '';
+  if (!unlocked.includes('A2')) {
+    nextUnlockMsg = `🎯 Aprueba ${1 - passed} lección más para desbloquear canciones de nivel A2`;
+  } else if (!unlocked.includes('B1')) {
+    nextUnlockMsg = `🎯 Aprueba ${4 - passed} lección(es) más para desbloquear canciones de nivel B1`;
+  } else if (!unlocked.includes('B2')) {
+    nextUnlockMsg = `🎯 Aprueba ${8 - passed} lección(es) más para desbloquear canciones de nivel B2`;
+  } else {
+    nextUnlockMsg = '🏆 ¡Todos los niveles (A1, A2, B1, B2) están desbloqueados!';
+  }
+
+  function deleteLesson(lessonId: string, songId: string) {
+    if (typeof window !== 'undefined' && window.confirm && !window.confirm('¿Deseas eliminar esta lección en curso de tu lista?')) {
+      return;
+    }
+    update((d) => ({
+      ...d,
+      lessons: d.lessons.filter((x) => x.id !== lessonId),
+      songs: d.songs.filter((s) => s.id !== songId),
+      cards: d.cards.filter((c) => !c.id.startsWith(songId)),
+    }));
+  }
+
+  async function handleStartCatalog(catSong: LeveledSong) {
+    const existing = db.songs.find((s) => s.videoId === catSong.videoId);
+    if (existing) {
+      const existingLesson = db.lessons.find((l) => l.songId === existing.id);
+      if (existingLesson) {
+        open(existingLesson.id);
+        return;
+      }
+    }
+
+    setLoadingSongId(catSong.id);
+    let tr = '';
+    let src: Song['transcriptSource'] = 'none';
+    try {
+      const res = await fetchYouTubeTranscript(catSong.videoId);
+      if (res.ok && res.transcript) {
+        tr = res.transcript;
+        src = 'youtube';
+      }
+    } catch {}
+    setLoadingSongId(null);
+
+    const songId = uid();
+    const lessonId = uid();
+    const newS: Song = {
+      id: songId,
+      title: catSong.title,
+      artist: catSong.artist,
+      videoId: catSong.videoId,
+      url: catSong.url,
+      level: catSong.level,
+      accent: catSong.accent,
+      transcript: tr,
+      transcriptSource: src,
+      createdAt: Date.now(),
+    };
+    const newL = newLesson(lessonId, songId);
+    update((d) => ({
+      ...d,
+      songs: [...d.songs, newS],
+      lessons: [...d.lessons, newL],
+    }));
+    open(lessonId);
+  }
+
+  const recommended = LEVELED_CATALOG.filter((c) => c.level === db.settings.level);
+
   return (
     <>
       {!db.placementDone && <Placement db={db} update={update} onDone={() => {}} />}
-      <div className="card"><h2>Hola 👋</h2>
+      <div className="card">
+        <h2>Hola 👋</h2>
         <p>Aprende inglés con canciones de YouTube. Nivel orientativo: <b>{db.settings.level}</b> (no es una certificación oficial).</p>
         <p>XP: <b>{db.xp.total}</b> · Racha: <b>{s}</b> día(s) · Repasos pendientes: <b>{due}</b></p>
         <button className="p" onClick={() => go('library')}>Añadir canción</button>
         <button className="s" onClick={() => go('review')}>Repasar hoy</button>
       </div>
-      {active.length > 0 && <div className="card"><h2>Continuar</h2>{active.map((l) => {
-        const sg = db.songs.find((x) => x.id === l.songId)!;
-        return <p key={l.id}>{sg.title} — etapa: {STAGE_LABEL[l.stage]} <button className="s" onClick={() => open(l.id)}>Retomar</button></p>;
-      })}</div>}
-      {db.songs.length === 0 && <p className="mut">Aún no hay canciones. Añade una URL de YouTube para empezar.</p>}
+
+      {active.length > 0 && (
+        <div className="card">
+          <h2>Continuar</h2>
+          <p className="mut" style={{ fontSize: '0.9rem', marginBottom: 12 }}>
+            Tienes {active.length} lección(es) iniciada(s). Puedes retomarlas o eliminarlas de tu lista.
+          </p>
+          {active.map((l) => {
+            const sg = db.songs.find((x) => x.id === l.songId);
+            if (!sg) return null;
+            return (
+              <div
+                key={l.id}
+                style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                  marginBottom: 10,
+                  paddingBottom: 10,
+                  borderBottom: '1px solid var(--bd)',
+                  flexWrap: 'wrap',
+                  gap: 8,
+                }}
+              >
+                <div>
+                  <b>{sg.title}</b> — <span className="mut">{sg.artist}</span><br />
+                  <span className="mut" style={{ fontSize: '0.85rem' }}>
+                    Etapa: <b>{STAGE_LABEL[l.stage]}</b> · Nivel: {sg.level}
+                  </span>
+                </div>
+                <div style={{ display: 'flex', gap: 6 }}>
+                  <button className="s" onClick={() => open(l.id)}>Retomar</button>
+                  <button
+                    className="s"
+                    onClick={() => deleteLesson(l.id, l.songId)}
+                  >
+                    🗑️ Eliminar
+                  </button>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      )}
+
+      <div className="card">
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 8 }}>
+          <div>
+            <h2 style={{ margin: 0 }}>🎵 Canciones recomendadas para tu nivel ({db.settings.level})</h2>
+            <p className="mut" style={{ margin: '4px 0 0 0', fontSize: '0.88rem' }}>
+              Seleccionadas pedagógicamente para tu ritmo auditivo y gramática.
+            </p>
+          </div>
+          <span className="ok" style={{ fontWeight: 600, fontSize: '0.9rem' }}>
+            Niveles activos: {unlocked.join(', ')}
+          </span>
+        </div>
+
+        <div style={{
+          border: '1px solid var(--bd)',
+          borderRadius: 8,
+          padding: '10px 14px',
+          margin: '12px 0 16px 0',
+          fontSize: '0.9rem',
+        }}>
+          <b>{nextUnlockMsg}</b>
+          <span className="mut" style={{ display: 'block', fontSize: '0.82rem', marginTop: 4 }}>
+            Lecciones aprobadas acumuladas: <b>{passed}</b>. Cada lección completada suma a tu desbloqueo de niveles más avanzados.
+          </span>
+        </div>
+
+        <div style={{ display: 'grid', gap: 12 }}>
+          {recommended.map((cat) => {
+            const isOngoing = active.some((l) => {
+              const sg = db.songs.find((s) => s.id === l.songId);
+              return sg?.videoId === cat.videoId;
+            });
+            const isLoading = loadingSongId === cat.id;
+
+            return (
+              <div
+                key={cat.id}
+                style={{
+                  padding: 12,
+                  borderRadius: 8,
+                  border: '1px solid var(--bd)',
+                }}
+              >
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: 6 }}>
+                  <div>
+                    <b style={{ fontSize: '1.05rem' }}>{cat.title}</b> — <span className="mut">{cat.artist}</span>
+                    <div style={{ margin: '4px 0' }}>
+                      <b>Nivel {cat.level}</b> · <span className="mut">Acento: {cat.accent === 'US' ? 'Americano (US)' : 'Británico (UK)'}</span>
+                    </div>
+                  </div>
+                  <button
+                    className="p"
+                    disabled={isLoading}
+                    onClick={() => handleStartCatalog(cat)}
+                  >
+                    {isLoading ? '⏳ Preparando...' : (isOngoing ? '▶️ Continuar' : '🎧 Practicar')}
+                  </button>
+                </div>
+                <p style={{ margin: '6px 0 4px 0', fontSize: '0.88rem' }}>
+                  {cat.description}
+                </p>
+                <p className="mut" style={{ margin: 0, fontSize: '0.82rem' }}>
+                  🎯 <b>Enfoque gramatical:</b> {cat.grammarFocus}
+                </p>
+              </div>
+            );
+          })}
+        </div>
+      </div>
     </>
   );
 }
@@ -153,6 +338,68 @@ function Library({ db, update, open }: { db: DB; update: (f: (d: DB) => DB) => v
   const [err, setErr] = useState('');
   const [loadingTr, setLoadingTr] = useState(false);
   const [trNotice, setTrNotice] = useState('');
+  const [levelFilter, setLevelFilter] = useState<'ALL' | 'A1' | 'A2' | 'B1' | 'B2'>('ALL');
+  const [loadingCatalogId, setLoadingCatalogId] = useState<string | null>(null);
+
+  const passed = db.assessments.filter((a) => a.passed).length;
+  const unlocked = getUnlockedLevels(db.settings.level, passed);
+
+  function deleteSong(songId: string) {
+    if (typeof window !== 'undefined' && window.confirm && !window.confirm('¿Seguro que deseas eliminar esta canción y su lección?')) {
+      return;
+    }
+    update((d) => ({
+      ...d,
+      songs: d.songs.filter((s) => s.id !== songId),
+      lessons: d.lessons.filter((l) => l.songId !== songId),
+      cards: d.cards.filter((c) => !c.id.startsWith(songId)),
+    }));
+  }
+
+  async function handleStartCatalog(catSong: LeveledSong) {
+    const existing = db.songs.find((s) => s.videoId === catSong.videoId);
+    if (existing) {
+      const existingLesson = db.lessons.find((l) => l.songId === existing.id);
+      if (existingLesson) {
+        open(existingLesson.id);
+        return;
+      }
+    }
+
+    setLoadingCatalogId(catSong.id);
+    let transcriptText = '';
+    let src: Song['transcriptSource'] = 'none';
+    try {
+      const res = await fetchYouTubeTranscript(catSong.videoId);
+      if (res.ok && res.transcript) {
+        transcriptText = res.transcript;
+        src = 'youtube';
+      }
+    } catch {}
+    setLoadingCatalogId(null);
+
+    const songId = uid();
+    const lessonId = uid();
+    const newS: Song = {
+      id: songId,
+      title: catSong.title,
+      artist: catSong.artist,
+      videoId: catSong.videoId,
+      url: catSong.url,
+      level: catSong.level,
+      accent: catSong.accent,
+      transcript: transcriptText,
+      transcriptSource: src,
+      createdAt: Date.now(),
+    };
+    const newL = newLesson(lessonId, songId);
+    update((d) => ({
+      ...d,
+      songs: [...d.songs, newS],
+      lessons: [...d.lessons, newL],
+    }));
+    open(lessonId);
+  }
 
   async function extractAuto(providedUrl?: string) {
     const target = providedUrl ?? url;
@@ -192,10 +439,12 @@ function Library({ db, update, open }: { db: DB; update: (f: (d: DB) => DB) => v
     setErr(''); setUrl(''); setTitle(''); setArtist(''); setTr(''); setTrNotice(''); open(l.id);
   }
 
+  const filteredCatalog = LEVELED_CATALOG.filter((c) => levelFilter === 'ALL' || c.level === levelFilter);
+
   return (
     <>
       <form className="card" onSubmit={add} noValidate>
-        <h2>Añadir canción</h2>
+        <h2>Añadir canción personalizada</h2>
         <div style={{ marginBottom: 12, display: 'flex', gap: 6, flexWrap: 'wrap' }}>
           <span className="mut" style={{ width: '100%' }}>Ejemplos listos para probar:</span>
           <button type="button" className="s" onClick={() => loadSample('https://www.youtube.com/watch?v=k4V3Mo61fJM', 'Fix You', 'Coldplay')}>🎵 Coldplay - Fix You</button>
@@ -208,7 +457,7 @@ function Library({ db, update, open }: { db: DB; update: (f: (d: DB) => DB) => v
             {loadingTr ? '⏳ Extrayendo...' : '⚡ Extraer subtítulos'}
           </button>
         </div>
-        {trNotice && <p style={{ color: trNotice.startsWith('✓') ? '#48bb78' : '#ed8936', fontSize: '0.9rem', margin: '4px 0' }}>{trNotice}</p>}
+        {trNotice && <p className="ok" style={{ fontSize: '0.9rem', margin: '4px 0' }}>{trNotice}</p>}
         <label htmlFor="t">Título</label><input id="t" value={title} onChange={(e) => setTitle(e.target.value)} />
         <label htmlFor="a">Artista</label><input id="a" value={artist} onChange={(e) => setArtist(e.target.value)} />
         <label htmlFor="tr">Transcripción / Letra de la canción</label>
@@ -217,12 +466,102 @@ function Library({ db, update, open }: { db: DB; update: (f: (d: DB) => DB) => v
         {err && <p role="alert" className="bad">{err}</p>}
         <div style={{ marginTop: 12 }}><button className="p" type="submit">Crear lección</button></div>
       </form>
+
       <h2>Mis canciones</h2>
-      {db.songs.length === 0 && <p className="mut">Aún no hay canciones. Selecciona un ejemplo arriba o pega tu propia URL de YouTube.</p>}
-      {db.songs.map((s) => { const l = db.lessons.find((x) => x.songId === s.id)!; return (
-        <div className="card" key={s.id}><b>{s.title}</b> — {s.artist || 'Artista desconocido'}<br />
-          <span className="mut">Etapa: {STAGE_LABEL[l.stage]} · Transcripción: {s.transcriptSource === 'none' ? 'sin texto' : (s.transcriptSource === 'youtube' ? 'extraída del video' : 'aportada por ti')}</span><br />
-          <button className="p" onClick={() => open(l.id)}>{l.stage === 'done' ? 'Ver' : 'Continuar'}</button></div>); })}
+      {db.songs.length === 0 && <p className="mut">Aún no hay canciones añadidas. Selecciona una del catálogo abajo o pega tu propia URL de YouTube.</p>}
+      {db.songs.map((s) => {
+        const l = db.lessons.find((x) => x.songId === s.id);
+        const stageLabel = l ? STAGE_LABEL[l.stage] : 'Sin lección';
+        return (
+          <div className="card" key={s.id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 8 }}>
+            <div>
+              <b>{s.title}</b> — {s.artist || 'Artista desconocido'}<br />
+              <span className="mut" style={{ fontSize: '0.85rem' }}>
+                Etapa: {stageLabel} · Nivel: {s.level} · Transcripción: {s.transcriptSource === 'none' ? 'sin texto' : (s.transcriptSource === 'youtube' ? 'extraída del video' : 'aportada por ti')}
+              </span>
+            </div>
+            <div style={{ display: 'flex', gap: 6 }}>
+              {l && <button className="p" onClick={() => open(l.id)}>{l.stage === 'done' ? 'Ver' : 'Continuar'}</button>}
+              <button
+                className="s"
+                onClick={() => deleteSong(s.id)}
+              >
+                🗑️ Eliminar
+              </button>
+            </div>
+          </div>
+        );
+      })}
+
+      <div className="card" style={{ marginTop: 24 }}>
+        <h2>📚 Catálogo estructurado por nivel (A1–B2)</h2>
+        <p className="mut" style={{ fontSize: '0.9rem', marginBottom: 12 }}>
+          Canciones organizadas según el Marco Común Europeo (MCER). A medida que apruebes lecciones, se integrarán y desbloquearán automáticamente los siguientes niveles.
+        </p>
+
+        <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginBottom: 16 }}>
+          {(['ALL', 'A1', 'A2', 'B1', 'B2'] as const).map((lv) => (
+            <button
+              key={lv}
+              type="button"
+              className={levelFilter === lv ? 'p' : 's'}
+              style={{ padding: '4px 12px', fontSize: '0.85rem' }}
+              onClick={() => setLevelFilter(lv)}
+            >
+              {lv === 'ALL' ? 'Todas' : lv}
+            </button>
+          ))}
+        </div>
+
+        <div style={{ display: 'grid', gap: 12 }}>
+          {filteredCatalog.map((cat) => {
+            const isUnlocked = unlocked.includes(cat.level);
+            const isOngoing = db.songs.some((s) => s.videoId === cat.videoId);
+            const isLoading = loadingCatalogId === cat.id;
+
+            return (
+              <div
+                key={cat.id}
+                style={{
+                  padding: 12,
+                  borderRadius: 8,
+                  border: isUnlocked ? '1px solid var(--bd)' : '1px dashed var(--bd)',
+                }}
+              >
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: 6 }}>
+                  <div>
+                    <b style={{ fontSize: '1.05rem' }}>{cat.title}</b> — <span className="mut">{cat.artist}</span>
+                    <div style={{ margin: '4px 0' }}>
+                      <b>Nivel {cat.level}</b> · <span className="mut">Acento: {cat.accent === 'US' ? 'Americano (US)' : 'Británico (UK)'}</span>
+                    </div>
+                  </div>
+                  <div>
+                    {isUnlocked ? (
+                      <button
+                        className="p"
+                        disabled={isLoading}
+                        onClick={() => handleStartCatalog(cat)}
+                      >
+                        {isLoading ? '⏳ Preparando...' : (isOngoing ? '▶️ Continuar' : '🎧 Practicar')}
+                      </button>
+                    ) : (
+                      <span style={{ fontSize: '0.85rem', fontWeight: 600 }}>
+                        🔒 Bloqueado
+                      </span>
+                    )}
+                  </div>
+                </div>
+                <p style={{ margin: '6px 0 4px 0', fontSize: '0.88rem' }}>
+                  {cat.description}
+                </p>
+                <p className="mut" style={{ margin: 0, fontSize: '0.82rem' }}>
+                  🎯 <b>Enfoque gramatical:</b> {cat.grammarFocus}
+                </p>
+              </div>
+            );
+          })}
+        </div>
+      </div>
     </>
   );
 }
