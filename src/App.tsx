@@ -775,21 +775,98 @@ function Listening({ lesson: l, song, setLesson, done, online }: { lesson: Lesso
   const [cmp, setCmp] = useState(3), [diff, setDiff] = useState(3), [sum, setSum] = useState('');
   const [reload, setReload] = useState(0);
   const [ended, setEnded] = useState(false);
+  const [embedBlocked, setEmbedBlocked] = useState(false);
   useEffect(() => { const t = setInterval(() => setSecs((s) => s + 1), 1000); return () => clearInterval(t); }, []);
-  // Ayuda opcional: el reproductor oficial informa del fin (state 0) vía postMessage con enablejsapi.
+
+  // Escuchar eventos de la API oficial de YouTube (fin de video o error de inserción por derechos de autor)
   useEffect(() => {
-    const h = (e: MessageEvent) => { if (typeof e.data !== 'string' || !e.origin.includes('youtube.com')) return; try { const d = JSON.parse(e.data); if (d.event === 'onStateChange' && d.info === 0) setEnded(true); } catch { /* ignorar */ } };
-    addEventListener('message', h); return () => removeEventListener('message', h);
+    const h = (e: MessageEvent) => {
+      if (typeof e.data !== 'string' || !e.origin.includes('youtube.com')) return;
+      try {
+        const d = JSON.parse(e.data);
+        if (d.event === 'onStateChange' && d.info === 0) setEnded(true);
+        // Error 150 o 101: la discográfica bloqueó la inserción en páginas externas
+        if (d.event === 'onError' && (d.info === 150 || d.info === 101 || d.info === 100)) {
+          setEmbedBlocked(true);
+        }
+      } catch {
+        /* ignorar */
+      }
+    };
+    addEventListener('message', h);
+    return () => removeEventListener('message', h);
   }, []);
+
+  const ytDirectUrl = `https://www.youtube.com/watch?v=${song.videoId}`;
+
   return (
     <div className="card">
       <h3>Escucha sin leer</h3>
       <p className="mut">La letra y las traducciones están ocultas. Tiempo: {Math.floor(secs / 60)}:{String(secs % 60).padStart(2, '0')} · Repeticiones: {l.listening.replays}</p>
-      {online
-        ? <iframe key={reload} className="video" title={`Video de YouTube: ${song.title}`} src={`https://www.youtube-nocookie.com/embed/${song.videoId}?enablejsapi=1&rel=0&origin=${encodeURIComponent(location.origin)}`} allow="encrypted-media; picture-in-picture" allowFullScreen referrerPolicy="strict-origin-when-cross-origin" />
-        : <p role="alert" className="bad">Sin conexión: YouTube necesita internet.</p>}
+
+      {/* AVISO Y BOTÓN DIRECTO SI EL PROPIETARIO O DISCOGRÁFICA BLOQUEÓ EL EMBED */}
+      <div style={{
+        background: 'rgba(59, 130, 246, 0.08)',
+        border: '1px solid rgba(59, 130, 246, 0.3)',
+        borderRadius: 12,
+        padding: '12px 14px',
+        marginBottom: 14,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        flexWrap: 'wrap',
+        gap: 10,
+      }}>
+        <div style={{ flex: 1, minWidth: 220 }}>
+          <b style={{ color: '#60a5fa' }}>🎧 Reproducción de la canción:</b>
+          <p className="mut" style={{ margin: '2px 0 0 0', fontSize: '0.86rem' }}>
+            Si el reproductor integrado muestra <i>«Video no disponible por derechos de autor»</i>, puedes escucharlo directamente en YouTube y regresar aquí para continuar la lección.
+          </p>
+        </div>
+        <a
+          href={ytDirectUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="p"
+          style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: '0.9rem', padding: '8px 14px' }}
+        >
+          ▶️ Abrir en YouTube
+        </a>
+      </div>
+
+      {online ? (
+        <iframe
+          key={reload}
+          className="video"
+          title={`Video de YouTube: ${song.title}`}
+          src={`https://www.youtube-nocookie.com/embed/${song.videoId}?enablejsapi=1&rel=0&origin=${encodeURIComponent(location.origin)}`}
+          allow="encrypted-media; picture-in-picture"
+          allowFullScreen
+          referrerPolicy="strict-origin-when-cross-origin"
+        />
+      ) : (
+        <p role="alert" className="bad">Sin conexión: YouTube necesita internet.</p>
+      )}
+
+      {embedBlocked && (
+        <div style={{ background: 'rgba(239, 68, 68, 0.1)', border: '1px solid #ef4444', borderRadius: 8, padding: 10, margin: '10px 0' }}>
+          <b style={{ color: '#ef4444' }}>⚠️ Inserción bloqueada por la discográfica (LatinAutor / UMPG):</b>
+          <p style={{ margin: '4px 0 8px 0', fontSize: '0.88rem' }}>
+            Este video no permite ser reproducido incrustado en otras apps por restricciones de derechos. Pulsa el botón para escucharlo en la app o web oficial de YouTube y luego confirma tu escucha abajo:
+          </p>
+          <a href={ytDirectUrl} target="_blank" rel="noopener noreferrer" className="p" style={{ textDecoration: 'none', display: 'inline-block' }}>
+            ▶️ Escuchar «{song.title}» en YouTube
+          </a>
+        </div>
+      )}
+
       {ended && <p role="status" className="ok">El reproductor indicó que el video terminó. Aun así, confirma tú cuando estés listo.</p>}
-      <button className="s" onClick={() => { setReload((r) => r + 1); setLesson({ ...l, listening: { ...l.listening, replays: l.listening.replays + 1 } }); }}>Volver a escuchar</button>
+      <div style={{ marginTop: 10, marginBottom: 14 }}>
+        <button className="s" onClick={() => { setReload((r) => r + 1); setLesson({ ...l, listening: { ...l.listening, replays: l.listening.replays + 1 } }); }}>
+          🔄 Volver a escuchar
+        </button>
+      </div>
+
       <h4>Autoevaluación (opcional)</h4>
       <label htmlFor="c">Comprensión (1–5): {cmp}</label><input id="c" type="range" min={1} max={5} value={cmp} onChange={(e) => setCmp(+e.target.value)} />
       <label htmlFor="d">Dificultad percibida (1–5): {diff}</label><input id="d" type="range" min={1} max={5} value={diff} onChange={(e) => setDiff(+e.target.value)} />

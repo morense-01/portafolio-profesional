@@ -13,11 +13,22 @@ export interface LeveledSong {
 export const LEVELED_CATALOG: LeveledSong[] = [
   // NIVEL A1 (Principiante: oraciones cortas, vocabulario cotidiano, ritmo pausado)
   {
+    id: 'a1-what-a-wonderful-world',
+    title: 'What a Wonderful World',
+    artist: 'Louis Armstrong',
+    videoId: 'rBrd_3VMC3c',
+    url: 'https://www.youtube.com/watch?v=rBrd_3VMC3c',
+    level: 'A1',
+    accent: 'US',
+    description: 'Canción icónica con dicción lenta, vocabulario de la naturaleza, colores y presente simple.',
+    grammarFocus: 'Presente simple (I see trees of green), colores y adjetivos básicos.',
+  },
+  {
     id: 'a1-stand-by-me',
-    title: 'Stand By Me',
+    title: 'Stand By Me (Live)',
     artist: 'Ben E. King',
-    videoId: 'hwZNL7QVJjE',
-    url: 'https://www.youtube.com/watch?v=hwZNL7QVJjE',
+    videoId: 'A-zYd5_xrj8',
+    url: 'https://www.youtube.com/watch?v=A-zYd5_xrj8',
     level: 'A1',
     accent: 'US',
     description: 'Canción clásica con pronunciación muy clara, vocabulario básico y oraciones simples.',
