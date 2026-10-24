@@ -1,0 +1,21 @@
+:root{--bg:#f7f7fb;--fg:#1c1b29;--card:#fff;--ac:#4f46e5;--mut:#5d5c70;--ok:#15803d;--bad:#b91c1c;--bd:#d9d8e6;font-size:16px}
+@media (prefers-color-scheme:dark){:root[data-theme=auto]{--bg:#12121a;--fg:#ececf5;--card:#1d1d2a;--mut:#a6a5bb;--bd:#35354a;--ac:#8b85ff}}
+:root[data-theme=dark]{--bg:#12121a;--fg:#ececf5;--card:#1d1d2a;--mut:#a6a5bb;--bd:#35354a;--ac:#8b85ff}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,sans-serif;background:var(--bg);color:var(--fg);line-height:1.5}
+main{max-width:860px;margin:0 auto;padding:1rem 1rem 6rem}
+nav{position:fixed;bottom:0;left:0;right:0;display:flex;justify-content:space-around;background:var(--card);border-top:1px solid var(--bd);padding:.25rem}
+nav button{background:none;border:0;color:var(--fg);padding:.6rem .5rem;min-height:44px;min-width:44px;font-size:.9rem;border-radius:8px}
+nav button[aria-current=page]{color:var(--ac);font-weight:700;text-decoration:underline}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:1rem;margin:.75rem 0}
+button.p,button.s{min-height:44px;padding:.5rem 1rem;border-radius:10px;border:1px solid var(--ac);font-size:1rem;cursor:pointer;margin:.2rem}
+button.p{background:var(--ac);color:#fff}button.s{background:transparent;color:var(--ac)}
+button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #f59e0b;outline-offset:2px}
+input,textarea,select{width:100%;padding:.6rem;border:1px solid var(--bd);border-radius:8px;background:var(--card);color:var(--fg);font-size:1rem;margin:.25rem 0 .75rem}
+label{font-weight:600}.mut{color:var(--mut)}.ok{color:var(--ok)}.bad{color:var(--bad)}
+.steps{display:flex;gap:.25rem;flex-wrap:wrap}.steps span{padding:.2rem .6rem;border-radius:99px;border:1px solid var(--bd);font-size:.85rem}.steps .on{background:var(--ac);color:#fff}
+.video{aspect-ratio:16/9;width:100%;border:0;border-radius:12px}
+mark.e{background:#fecaca;color:#7f1d1d;border-radius:4px;padding:0 2px}mark.g{background:#bbf7d0;color:#14532d;border-radius:4px;padding:0 2px}
+.bar{height:10px;background:var(--bd);border-radius:9px;overflow:hidden}.bar i{display:block;height:100%;background:var(--ac)}
+.banner{background:#fef3c7;color:#78350f;padding:.5rem 1rem;text-align:center}
+@media print{nav,.noprint{display:none}body{background:#fff;color:#000}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
