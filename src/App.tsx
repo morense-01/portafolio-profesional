@@ -85,8 +85,33 @@ export function App() {
   const open = (id: string) => { setLessonId(id); setTab('lesson'); };
 
   if (!ready) return <main><p role="status">Cargando tus datos…</p></main>;
+  const s = streak(db.activeDays, today());
   return (
     <>
+      <header className="duo-header">
+        <div className="duo-header-inner">
+          <div className="duo-pill" title="Nivel objetivo">
+            <span style={{ fontSize: '1.2rem' }}>{db.settings.accent === 'UK' ? '🇬🇧' : '🇺🇸'}</span>
+            <span className="duo-pill-text">{db.settings.level}</span>
+          </div>
+
+          <div className="duo-pill duo-streak" title={`Racha actual: ${s} días seguidos`}>
+            <span>🔥</span>
+            <span className="duo-pill-text">{s}</span>
+          </div>
+
+          <div className="duo-pill duo-xp" title={`Total XP: ${db.xp.total}`}>
+            <span>⚡</span>
+            <span className="duo-pill-text">{db.xp.total} XP</span>
+          </div>
+
+          <div className="duo-pill duo-hearts" title="Vidas de práctica">
+            <span>❤️</span>
+            <span className="duo-pill-text">5</span>
+          </div>
+        </div>
+      </header>
+
       {!online && <div className="banner" role="status">Sin conexión: el reproductor de YouTube no funciona, pero repaso, cuaderno y dictados guardados sí.</div>}
       <main>
         <h1>Lingua Songs AI</h1>
@@ -120,12 +145,19 @@ export function App() {
       </main>
       <nav aria-label="Navegación principal">
         {([['home', 'Inicio'], ['library', 'Canciones'], ['review', 'Repasar'], ['practice', 'Escribir'], ['tutor', 'Tutor'], ['missions', 'Misiones'], ['progress', 'Progreso'], ['settings', 'Ajustes']] as [Tab, string][]).map(([t, l]) => (
-          <button key={t} aria-current={tab === t ? 'page' : undefined} onClick={() => setTab(t)}>{l}</button>
+          <button key={t} data-tab={t} aria-current={tab === t ? 'page' : undefined} onClick={() => setTab(t)}>{l}</button>
         ))}
       </nav>
     </>
   );
 }
+
+const DUO_SECTIONS = [
+  { level: 'A1', name: 'Sección 1: Principiante', subtitle: 'Presente simple y vocabulario cotidiano', icon: '🌱' },
+  { level: 'A2', name: 'Sección 2: Básico consolidado', subtitle: 'Pasado simple, preguntas y rutinas familiares', icon: '🌿' },
+  { level: 'B1', name: 'Sección 3: Intermedio', subtitle: 'Narrativas, emociones y lenguaje figurado', icon: '🌳' },
+  { level: 'B2', name: 'Sección 4: Intermedio alto', subtitle: 'Phrasal verbs, velocidad y entonación nativa', icon: '🚀' },
+] as const;
 
 function Home({ db, go, open, update }: { db: DB; go: (t: Tab) => void; open: (id: string) => void; update: (f: (d: DB) => DB) => void }) {
   const due = dueCards(db.cards).length;
@@ -208,12 +240,23 @@ function Home({ db, go, open, update }: { db: DB; go: (t: Tab) => void; open: (i
   return (
     <>
       {!db.placementDone && <Placement db={db} update={update} onDone={() => {}} />}
-      <div className="card">
-        <h2>Hola 👋</h2>
-        <p>Aprende inglés con canciones de YouTube. Nivel orientativo: <b>{db.settings.level}</b> (no es una certificación oficial).</p>
-        <p>XP: <b>{db.xp.total}</b> · Racha: <b>{s}</b> día(s) · Repasos pendientes: <b>{due}</b></p>
-        <button className="p" onClick={() => go('library')}>Añadir canción</button>
-        <button className="s" onClick={() => go('review')}>Repasar hoy</button>
+      
+      {/* DUOLINGO MASCOT GREETING */}
+      <div className="duo-mascot-box">
+        <div className="duo-mascot-avatar" aria-hidden="true">🦉</div>
+        <div style={{ flex: 1 }}>
+          <h2 style={{ margin: '0 0 4px 0', fontSize: '1.25rem' }}>¡Hola! Modo Aprendizaje Activo</h2>
+          <p className="mut" style={{ margin: '0 0 6px 0', fontSize: '0.9rem' }}>
+            Aprende inglés con canciones de YouTube. Nivel orientativo: <b>{db.settings.level}</b> (no es una certificación oficial).
+          </p>
+          <p className="mut" style={{ margin: '0 0 10px 0', fontSize: '0.88rem' }}>
+            XP: <b>{db.xp.total}</b> · Racha: <b>{s}</b> día(s) · Repasos pendientes: <b>{due}</b>
+          </p>
+          <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
+            <button className="p" onClick={() => go('library')}>Añadir canción</button>
+            <button className="s" onClick={() => go('review')}>Repasar hoy</button>
+          </div>
+        </div>
       </div>
 
       {active.length > 0 && (
@@ -259,6 +302,109 @@ function Home({ db, go, open, update }: { db: DB; go: (t: Tab) => void; open: (i
           })}
         </div>
       )}
+
+      {/* EL CAMINO DE APRENDIZAJE DE DUOLINGO (THE LEARNING PATH) */}
+      <h2 style={{ fontSize: '1.4rem', marginTop: '1.5rem', marginBottom: '0.5rem' }}>
+        🗺️ Tu Camino de Aprendizaje
+      </h2>
+      <p className="mut" style={{ marginTop: 0, marginBottom: '1rem', fontSize: '0.92rem' }}>
+        Avanza nodo por nodo a través de las canciones. Superar lecciones desbloquea las siguientes secciones.
+      </p>
+
+      {DUO_SECTIONS.map((sec) => {
+        const isSecUnlocked = unlocked.includes(sec.level);
+        const secSongs = LEVELED_CATALOG.filter((c) => c.level === sec.level);
+
+        return (
+          <div key={sec.level} style={{ marginBottom: '2.5rem' }}>
+            <div
+              className="duo-section-card"
+              style={{
+                background: isSecUnlocked
+                  ? 'linear-gradient(135deg, #22c55e, #15803d)'
+                  : 'linear-gradient(135deg, #64748b, #475569)',
+                boxShadow: isSecUnlocked ? '0 5px 0 #14532d' : '0 5px 0 #334155',
+              }}
+            >
+              <div>
+                <span style={{ fontSize: '0.8rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '1px', color: '#ffffff' }}>
+                  {sec.subtitle}
+                </span>
+                <h3 style={{ margin: '4px 0', fontSize: '1.25rem', color: '#ffffff' }}>
+                  {sec.icon} {sec.name}
+                </h3>
+              </div>
+              <span style={{
+                background: 'rgba(0,0,0,0.25)',
+                color: '#ffffff',
+                padding: '4px 12px',
+                borderRadius: 99,
+                fontWeight: 800,
+                fontSize: '0.8rem',
+              }}>
+                {isSecUnlocked ? '✓ DESBLOQUEADA' : '🔒 BLOQUEADA'}
+              </span>
+            </div>
+
+            {/* NODOS DEL CAMINO SERPENTINO */}
+            <div className="duo-path-container">
+              {secSongs.map((cat, idx) => {
+                const existing = db.songs.find((x) => x.videoId === cat.videoId);
+                const l = existing ? db.lessons.find((x) => x.songId === existing.id) : null;
+                const isDone = l?.stage === 'done';
+                const isCurrent = l && !isDone;
+                const isLoading = loadingSongId === cat.id;
+
+                let nodeClass = 'duo-node-btn';
+                if (!isSecUnlocked) nodeClass += ' locked';
+                else if (isDone) nodeClass += ' done';
+                else if (isCurrent) nodeClass += ' active';
+
+                const xOffset = idx === 0 ? -32 : (idx === 1 ? 0 : 32);
+
+                return (
+                  <div
+                    key={cat.id}
+                    className="duo-path-node-wrapper"
+                    style={{ transform: `translateX(${xOffset}px)` }}
+                  >
+                    <button
+                      type="button"
+                      className={nodeClass}
+                      disabled={!isSecUnlocked || isLoading}
+                      onClick={() => handleStartCatalog(cat)}
+                      title={`${cat.title} - ${cat.artist}`}
+                    >
+                      {isLoading ? '⏳' : (isDone ? '⭐' : (isCurrent ? '▶️' : (isSecUnlocked ? '🎵' : '🔒')))}
+                    </button>
+                    <div className="duo-bubble">
+                      <b>{cat.title}</b><br />
+                      <span className="mut" style={{ fontSize: '0.8rem' }}>{cat.artist}</span>
+                      <div style={{ marginTop: 6 }}>
+                        {isSecUnlocked ? (
+                          <button
+                            type="button"
+                            className="p"
+                            style={{ minHeight: 34, padding: '4px 10px', fontSize: '0.78rem', width: '100%' }}
+                            disabled={isLoading}
+                            onClick={() => handleStartCatalog(cat)}
+                          >
+                            {isLoading ? '⏳ Cargando...' : (isDone ? 'Repasar' : (isCurrent ? 'Continuar' : 'Empezar'))}
+                          </button>
+                        ) : (
+                          <span className="mut" style={{ fontSize: '0.78rem', fontWeight: 700 }}>
+                            🔒 Bloqueada
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        );
+      })}
 
       <div className="card">
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 8 }}>
