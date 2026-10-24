@@ -13,7 +13,7 @@ import { Placement, Tutor, Missions, Practice } from './Extras';
 import { shouldNotify } from './core/extras';
 import { SEED_WORDS, DICTATIONS, MINIMAL_PAIRS } from './data/content';
 import { fetchYouTubeTranscript } from './core/transcription';
-import { extractVocabularyFromTranscript, extractDictationLines, extractSpeakingLines } from './core/extractor';
+import { extractVocabularyFromTranscript, extractDictationLines, extractSpeakingLines, extractNotebookLines } from './core/extractor';
 
 type Tab = 'home' | 'library' | 'review' | 'progress' | 'settings' | 'lesson' | 'tutor' | 'missions' | 'practice';
 const uid = () => crypto.randomUUID();
@@ -22,8 +22,30 @@ const STAGE_LABEL: Record<Stage, string> = { listening: 'Listening', confirm: 'C
 
 function speak(text: string, accent: 'US' | 'UK', rate = 1) {
   if (!('speechSynthesis' in window)) return false;
-  const u = new SpeechSynthesisUtterance(text); u.lang = accent === 'US' ? 'en-US' : 'en-GB'; u.rate = rate;
-  speechSynthesis.cancel(); speechSynthesis.speak(u); return true;
+  window.speechSynthesis.cancel();
+  setTimeout(() => {
+    try {
+      const u = new SpeechSynthesisUtterance(text);
+      const targetLang = accent === 'US' ? 'en-US' : 'en-GB';
+      u.lang = targetLang;
+      // Normal = 1.0; Lento = 0.5 (la mitad de velocidad para diferenciar claramente lento vs normal)
+      u.rate = rate < 0.8 ? 0.5 : 1.0;
+      u.pitch = rate < 0.8 ? 0.9 : 1.0;
+
+      const voices = window.speechSynthesis.getVoices();
+      if (voices && voices.length > 0) {
+        const matchingVoice =
+          voices.find((v) => v.lang === targetLang) ||
+          voices.find((v) => v.lang.replace('_', '-').startsWith('en')) ||
+          voices[0];
+        if (matchingVoice) u.voice = matchingVoice;
+      }
+      window.speechSynthesis.speak(u);
+    } catch {
+      // Ignorar si el sintetizador no está listo
+    }
+  }, 50);
+  return true;
 }
 
 export function App() {
@@ -67,6 +89,11 @@ export function App() {
       {!online && <div className="banner" role="status">Sin conexión: el reproductor de YouTube no funciona, pero repaso, cuaderno y dictados guardados sí.</div>}
       <main>
         <h1>Lingua Songs AI</h1>
+        {tab !== 'home' && tab !== 'lesson' && (
+          <div style={{ marginBottom: 12 }}>
+            <button className="s" onClick={() => setTab('home')}>⬅️ Volver al Inicio</button>
+          </div>
+        )}
         {tab === 'home' && <Home db={db} go={setTab} open={open} update={update} />}
         {tab === 'library' && <Library db={db} update={update} open={open} />}
         {tab === 'tutor' && <Tutor db={db} update={update} giveXp={giveXp} />}
@@ -75,7 +102,19 @@ export function App() {
         {tab === 'review' && <Review db={db} update={update} giveXp={giveXp} />}
         {tab === 'progress' && <Progress db={db} />}
         {tab === 'settings' && <Settings db={db} update={update} />}
-        {tab === 'lesson' && lesson && song && <LessonView key={lesson.id} db={db} lesson={lesson} song={song} setLesson={setLesson} update={update} giveXp={giveXp} online={online} />}
+        {tab === 'lesson' && lesson && song && (
+          <LessonView
+            key={lesson.id}
+            db={db}
+            lesson={lesson}
+            song={song}
+            setLesson={setLesson}
+            update={update}
+            giveXp={giveXp}
+            online={online}
+            exitToLibrary={() => setTab('library')}
+          />
+        )}
         {tab === 'lesson' && !lesson && <p>No hay lección activa. Ve a la biblioteca.</p>}
       </main>
       <nav aria-label="Navegación principal">
@@ -188,12 +227,43 @@ function Library({ db, update, open }: { db: DB; update: (f: (d: DB) => DB) => v
   );
 }
 
-function LessonView(p: { db: DB; lesson: Lesson; song: Song; setLesson: (l: Lesson) => void; update: (f: (d: DB) => DB) => void; giveXp: (a: Activity) => void; online: boolean }) {
-  const { lesson: l, song } = p;
+const PREV_STAGE: Partial<Record<Stage, Stage>> = {
+  confirm: 'listening',
+  reading: 'listening',
+  writing: 'reading',
+  speaking: 'writing',
+  test: 'speaking',
+  done: 'test',
+};
+
+function LessonView(p: {
+  db: DB;
+  lesson: Lesson;
+  song: Song;
+  setLesson: (l: Lesson) => void;
+  update: (f: (d: DB) => DB) => void;
+  giveXp: (a: Activity) => void;
+  online: boolean;
+  exitToLibrary: () => void;
+}) {
+  const { lesson: l, song, exitToLibrary } = p;
   const steps: Stage[] = ['listening', 'confirm', 'reading', 'writing', 'speaking', 'test', 'done'];
+  const prev = PREV_STAGE[l.stage];
   const go = (extra?: Partial<Lesson['completed']>) => { p.setLesson(advance(l)); void extra; };
+
   return (
     <>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12, flexWrap: 'wrap', gap: 8 }}>
+        <button className="s" onClick={exitToLibrary}>
+          ⬅️ Volver a Canciones
+        </button>
+        {prev && (
+          <button className="s" onClick={() => p.setLesson({ ...l, stage: prev })}>
+            ⬅️ Etapa anterior ({STAGE_LABEL[prev]})
+          </button>
+        )}
+      </div>
+
       <h2>{song.title}</h2>
       <div className="steps" aria-label="Etapas">{steps.map((s) => <span key={s} className={s === l.stage ? 'on' : ''} aria-current={s === l.stage ? 'step' : undefined}>{STAGE_LABEL[s]}</span>)}</div>
       {l.stage === 'listening' && <Listening {...p} done={(secs) => { p.giveXp('listening'); p.setLesson(advance({ ...l, listening: { ...l.listening, seconds: l.listening.seconds + secs } })); }} />}
@@ -447,11 +517,17 @@ function Writing({ song, db, update, done }: { song: Song; db: DB; update: (f: (
     () => extractDictationLines(song.transcript, DICTATIONS),
     [song.transcript]
   );
+  const notebookLines = useMemo(
+    () => extractNotebookLines(song.transcript, 10),
+    [song.transcript]
+  );
+  const [copiedLines, setCopiedLines] = useState<Record<number, boolean>>({});
   const [dictIndex, setDictIndex] = useState(0);
   const dict = songDictations[dictIndex % songDictations.length] || DICTATIONS[0];
   const [ans, setAns] = useState('');
   const [res, setRes] = useState<ReturnType<typeof compareText> | null>(null);
   const cards = db.cards.filter((c) => c.id.startsWith(song.id));
+  const copiedCount = Object.values(copiedLines).filter(Boolean).length;
 
   function nextSentence() {
     setDictIndex((i) => i + 1);
@@ -460,40 +536,192 @@ function Writing({ song, db, update, done }: { song: Song; db: DB; update: (f: (
   }
 
   function check() {
-    const r = compareText(dict, ans); setRes(r);
-    update((d) => ({ ...d, events: [...d.events, { type: 'dictations', at: Date.now() }], writingAttempts: [...d.writingAttempts, { at: Date.now(), type: 'dictation', prompt: dict, response: ans, accuracy: r.accuracy }] }));
+    const r = compareText(dict, ans);
+    setRes(r);
+    update((d) => ({
+      ...d,
+      events: [...d.events, { type: 'dictations', at: Date.now() }],
+      writingAttempts: [
+        ...d.writingAttempts,
+        { at: Date.now(), type: 'dictation', prompt: dict, response: ans, accuracy: r.accuracy },
+      ],
+    }));
+  }
+
+  function copyAllToClipboard() {
+    const text = `--- ${song.title} (${song.artist}) ---\n\n` + notebookLines.map((l, i) => `${i + 1}. ${l}`).join('\n');
+    navigator.clipboard?.writeText(text);
+    alert('Texto copiado al portapapeles.');
   }
 
   return (
     <>
-      <div className="card"><h3>Mi cuaderno de inglés</h3>
-        {cards.length === 0 ? <p className="mut">Guarda palabras en Reading para verlas aquí.</p> :
-          <table><thead><tr><th>Palabra</th><th>Significado</th><th>Ejemplo</th><th>Notas</th></tr></thead><tbody>
-            {cards.map((c) => <tr key={c.id}><td>{c.term}<br />{c.pronunciation}</td><td>{c.meaning}</td><td>{c.example}<br />{c.translation}</td><td style={{ minWidth: 100 }}></td></tr>)}</tbody></table>}
-        <button className="s noprint" onClick={() => print()}>Imprimir / guardar PDF</button>
-        <button className="s noprint" onClick={() => download('vocabulario.json', JSON.stringify(cards, null, 2), 'application/json')}>Exportar JSON</button>
-        <button className="s noprint" onClick={() => download('vocabulario.csv', toCsv(cards), 'text/csv')}>Exportar CSV</button>
+      {/* 1. SECCIÓN PRINCIPAL: TEXTO LEGIBLE PARA COPIAR EN CUADERNO FÍSICO */}
+      <div className="card" style={{ borderLeft: '4px solid #3182ce' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 6 }}>
+          <h3 style={{ margin: 0 }}>📖 Texto para copiar en tu cuaderno de notas</h3>
+          <div style={{ display: 'flex', gap: 6 }}>
+            <button type="button" className="s noprint" onClick={copyAllToClipboard}>📋 Copiar texto</button>
+            <button type="button" className="s noprint" onClick={() => window.print()}>🖨️ Imprimir</button>
+          </div>
+        </div>
+
+        <p className="mut" style={{ marginTop: 8, fontSize: '0.92rem', lineHeight: 1.5 }}>
+          <b>Consejo de aprendizaje:</b> Escribir a mano en papel fija las contracciones (<i>don't, can't, you'll</i>) y la ortografía en tu memoria motriz.
+          Toma tu lápiz o bolígrafo, transcribe estos versos en tu cuaderno físico y marca cada línea a medida que la completes:
+        </p>
+
+        <div style={{
+          background: 'rgba(0, 0, 0, 0.25)',
+          borderRadius: 8,
+          border: '1px solid rgba(255, 255, 255, 0.1)',
+          padding: '12px 16px',
+          margin: '12px 0',
+        }}>
+          {notebookLines.map((line, idx) => (
+            <div
+              key={idx}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                padding: '8px 0',
+                borderBottom: idx < notebookLines.length - 1 ? '1px dashed rgba(255,255,255,0.1)' : 'none',
+                gap: 12,
+              }}
+            >
+              <div style={{ flex: 1, display: 'flex', alignItems: 'baseline', gap: 10, flexWrap: 'wrap' }}>
+                <span style={{ color: '#718096', fontSize: '0.85rem', minWidth: 24, userSelect: 'none' }}>
+                  {String(idx + 1).padStart(2, '0')}.
+                </span>
+                <span style={{
+                  fontSize: '1.08rem',
+                  letterSpacing: '0.3px',
+                  color: copiedLines[idx] ? '#a0aec0' : '#fff',
+                  textDecoration: copiedLines[idx] ? 'line-through' : 'none',
+                }}>
+                  {line}
+                </span>
+                <button
+                  type="button"
+                  className="s"
+                  style={{ padding: '2px 6px', fontSize: '0.75rem', marginLeft: 6 }}
+                  onClick={() => speak(line, song.accent)}
+                  title="Escuchar pronunciación de este verso"
+                >
+                  🔊
+                </button>
+              </div>
+
+              <label style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: '0.82rem', cursor: 'pointer', userSelect: 'none', whiteSpace: 'nowrap' }}>
+                <input
+                  type="checkbox"
+                  style={{ width: 'auto' }}
+                  checked={!!copiedLines[idx]}
+                  onChange={(e) => setCopiedLines({ ...copiedLines, [idx]: e.target.checked })}
+                />
+                <span style={{ color: copiedLines[idx] ? '#48bb78' : '#a0aec0' }}>
+                  {copiedLines[idx] ? '✓ Escrito' : 'Por escribir'}
+                </span>
+              </label>
+            </div>
+          ))}
+        </div>
+
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 8 }}>
+          <span className="mut" style={{ fontSize: '0.9rem' }}>
+            Progreso en cuaderno: <b>{copiedCount} de {notebookLines.length} versos</b>
+          </span>
+          {copiedCount === notebookLines.length && notebookLines.length > 0 && (
+            <span className="ok" style={{ fontSize: '0.9rem', fontWeight: 600 }}>
+              🎉 ¡Excelente! Transcribiste todos los versos a mano en tu cuaderno.
+            </span>
+          )}
+        </div>
       </div>
-      <div className="card"><h3>Dictado (frases extraídas del video)</h3>
+
+      {/* 2. EJERCICIO INTERACTIVO DE DICTADO */}
+      <div className="card">
+        <h3>✍️ Dictado (escucha y escribe en la app)</h3>
+        <p className="mut" style={{ margin: '4px 0 10px 0', fontSize: '0.9rem' }}>
+          Pon a prueba tu oído: reproduce el audio y escribe exactamente lo que escuches sin mirar el texto.
+        </p>
+
         {songDictations.length > 1 && (
-          <div style={{ marginBottom: 10 }}>
-            <span className="mut">Frase { (dictIndex % songDictations.length) + 1 } de {songDictations.length}:</span>{' '}
+          <div style={{ marginBottom: 10, display: 'flex', alignItems: 'center', gap: 10 }}>
+            <span className="mut">Frase { (dictIndex % songDictations.length) + 1 } de {songDictations.length}</span>
             <button className="s" onClick={nextSentence}>Siguiente frase ⏭️</button>
           </div>
         )}
-        <button className="s" onClick={() => { if (!speak(dict, song.accent)) alert('Tu navegador no tiene síntesis de voz.'); }}>🔊 Reproducir</button>
-        <button className="s" onClick={() => speak(dict, song.accent, 0.6)}>🐢 Lento</button>
-        <label htmlFor="dict">Escribe lo que oyes</label><textarea id="dict" rows={2} value={ans} onChange={(e) => setAns(e.target.value)} />
-        <button className="p" onClick={check} disabled={!ans.trim()}>Comparar</button>
-        {res && <div role="status"><p>Precisión: <b>{Math.round(res.accuracy * 100)}%</b></p>
-          <p>{res.items.map((it, i) => <mark key={i} className={it.kind === 'correct' ? 'g' : 'e'}>{it.actual ?? `[${it.expected}]`} </mark>)}</p>
-          <p className="mut">Referencia: {dict}</p>
-          <ul>{res.items.filter((i) => i.tip).map((i, k) => <li key={k}>{i.tip}</li>)}{res.punctuationNotes.map((n) => <li key={n}>{n}</li>)}</ul></div>}
+
+        <div style={{ display: 'flex', gap: 8, marginBottom: 12 }}>
+          <button className="s" onClick={() => speak(dict, song.accent)}>🔊 Normal (1.0x)</button>
+          <button className="s" onClick={() => speak(dict, song.accent, 0.5)}>🐢 Lento (0.5x)</button>
+        </div>
+
+        <label htmlFor="dict" style={{ fontWeight: 600 }}>Escribe lo que oyes:</label>
+        <textarea
+          id="dict"
+          rows={2}
+          value={ans}
+          onChange={(e) => setAns(e.target.value)}
+          placeholder="Escribe aquí en inglés..."
+        />
+        <div style={{ marginTop: 8 }}>
+          <button className="p" onClick={check} disabled={!ans.trim()}>Comparar con la canción</button>
+        </div>
+
+        {res && (
+          <div role="status" style={{ marginTop: 12 }}>
+            <p>Precisión ortográfica: <b>{Math.round(res.accuracy * 100)}%</b></p>
+            <p style={{ fontSize: '1.05rem', margin: '8px 0' }}>
+              {res.items.map((it, i) => (
+                <mark key={i} className={it.kind === 'correct' ? 'g' : 'e'}>
+                  {it.actual ?? `[${it.expected}]`}{' '}
+                </mark>
+              ))}
+            </p>
+            <p className="mut">Texto original de la canción: <i>«{dict}»</i></p>
+            <ul>
+              {res.items.filter((i) => i.tip).map((i, k) => <li key={k}>{i.tip}</li>)}
+              {res.punctuationNotes.map((n) => <li key={n}>{n}</li>)}
+            </ul>
+          </div>
+        )}
       </div>
+
+      {/* 3. VOCABULARIO GUARDADO */}
+      <div className="card">
+        <h3>Vocabulario guardado de esta canción</h3>
+        {cards.length === 0 ? (
+          <p className="mut">Aún no has guardado tarjetas de esta canción. Guarda palabras en la etapa de Reading para verlas aquí.</p>
+        ) : (
+          <table>
+            <thead>
+              <tr><th>Palabra</th><th>Significado</th><th>Ejemplo</th></tr>
+            </thead>
+            <tbody>
+              {cards.map((c) => (
+                <tr key={c.id}>
+                  <td><b>{c.term}</b><br /><span className="mut">{c.pronunciation}</span></td>
+                  <td>{c.meaning}</td>
+                  <td><i>{c.example}</i><br /><span className="mut">{c.translation}</span></td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
+        <div style={{ display: 'flex', gap: 6, marginTop: 8 }}>
+          <button className="s noprint" onClick={() => download('vocabulario.json', JSON.stringify(cards, null, 2), 'application/json')}>Exportar JSON</button>
+          <button className="s noprint" onClick={() => download('vocabulario.csv', toCsv(cards), 'text/csv')}>Exportar CSV</button>
+        </div>
+      </div>
+
       <button className="p" onClick={done}>Continuar a Speaking</button>
     </>
   );
 }
+
 const csvCell = (s: string) => `"${String(s).replace(/"/g, '""').replace(/^([=+\-@])/, "'$1")}"`;
 const toCsv = (c: Card[]) => ['term,meaning,pronunciation,example,translation', ...c.map((x) => [x.term, x.meaning, x.pronunciation, x.example, x.translation].map(csvCell).join(','))].join('\n');
 function download(name: string, text: string, type: string) { const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([text], { type })); a.download = name; a.click(); URL.revokeObjectURL(a.href); }
@@ -507,63 +735,240 @@ function Speaking({ song, update, done }: { song: Song; update: (f: (d: DB) => D
   const target = songPhrases[phraseIndex % songPhrases.length] || 'I would like a cup of tea, please.';
 
   const SR = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
-  const [rec, setRec] = useState<string | null>(null), [msg, setMsg] = useState('');
-  const [audioUrl, setAudioUrl] = useState<string | null>(null); const [consent, setConsent] = useState(false);
+  const [rec, setRec] = useState<string | null>(null);
+  const [msg, setMsg] = useState('');
+  const [isListening, setIsListening] = useState(false);
+  const [audioUrl, setAudioUrl] = useState<string | null>(null);
+  const [isRecording, setIsRecording] = useState(false);
+  const [selfScore, setSelfScore] = useState<number | null>(null);
   const mr = useRef<MediaRecorder | null>(null);
 
   function nextPhrase() {
     setPhraseIndex((i) => i + 1);
     setRec(null);
     setMsg('');
+    setSelfScore(null);
   }
 
   async function record() {
-    if (!consent) return setMsg('Marca el consentimiento: la grabación se queda solo en tu dispositivo.');
-    if (!navigator.mediaDevices?.getUserMedia || !('MediaRecorder' in window)) return setMsg('Tu navegador no permite grabar audio.');
+    if (!navigator.mediaDevices?.getUserMedia || !('MediaRecorder' in window)) {
+      return setMsg('Tu navegador no permite grabar audio.');
+    }
     try {
+      setMsg('Iniciando micrófono...');
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-      const chunks: Blob[] = []; const m = new MediaRecorder(stream); mr.current = m;
+      const chunks: Blob[] = [];
+      const m = new MediaRecorder(stream);
+      mr.current = m;
       m.ondataavailable = (e) => chunks.push(e.data);
-      m.onstop = () => { stream.getTracks().forEach((t) => t.stop()); setAudioUrl(URL.createObjectURL(new Blob(chunks))); };
-      m.start(); setMsg('Grabando… pulsa Detener.');
-      setTimeout(() => m.state === 'recording' && m.stop(), 15000);
-    } catch { setMsg('Permiso de micrófono denegado. Actívalo en la configuración del navegador o continúa sin grabar.'); }
+      m.onstop = () => {
+        stream.getTracks().forEach((t) => t.stop());
+        setAudioUrl(URL.createObjectURL(new Blob(chunks)));
+        setIsRecording(false);
+        setMsg('✓ Grabación guardada en tu dispositivo. Escúchala abajo y compárala con el original.');
+      };
+      m.start();
+      setIsRecording(true);
+      setMsg('🎙️ Grabando... Habla ahora con claridad y pulsa «Detener grabación».');
+      setTimeout(() => {
+        if (m.state === 'recording') m.stop();
+      }, 15000);
+    } catch {
+      setIsRecording(false);
+      setMsg('Permiso de micrófono no concedido. Habilita el acceso al micrófono en el navegador.');
+    }
   }
+
+  function stopRecording() {
+    if (mr.current && mr.current.state === 'recording') {
+      mr.current.stop();
+    }
+  }
+
   async function recognize() {
     if (isNative()) {
       try {
         const text = await nativeRecognize(song.accent === 'US' ? 'en-US' : 'en-GB');
-        if (!text) return setMsg('Este dispositivo no tiene reconocimiento de voz disponible. No se genera puntuación.');
-        setRec(text); update((d) => ({ ...d, speakingAttempts: [...d.speakingAttempts, { at: Date.now(), reference: target, recognized: text, status: 'recognized' }] }));
-      } catch { setMsg('Permiso de voz denegado o reconocimiento no disponible.'); }
+        if (!text) return setMsg('Este dispositivo no tiene reconocimiento de voz disponible. Usa el botón «🎙️ Grabar mi voz» para comparar al oído.');
+        setRec(text);
+        update((d) => ({
+          ...d,
+          speakingAttempts: [...d.speakingAttempts, { at: Date.now(), reference: target, recognized: text, status: 'recognized' }],
+        }));
+      } catch {
+        setMsg('Permiso de voz denegado o reconocimiento no disponible en el dispositivo.');
+      }
       return;
     }
-    if (!SR) return setMsg('Este navegador no tiene reconocimiento de voz. No se genera puntuación; usa grabar y comparar al oído.');
-    const r = new SR(); r.lang = song.accent === 'US' ? 'en-US' : 'en-GB';
-    r.onresult = (e: any) => { const t = e.results[0][0].transcript as string; setRec(t); update((d) => ({ ...d, speakingAttempts: [...d.speakingAttempts, { at: Date.now(), reference: target, recognized: t, status: 'recognized' }] })); };
-    r.onerror = () => setMsg('No se pudo reconocer la voz (permiso o conexión).'); r.start();
+
+    if (!SR) {
+      return setMsg('Tu navegador no cuenta con el motor de reconocimiento en línea. Usa «🎙️ Grabar mi voz» abajo para grabarte y escucharte.');
+    }
+
+    // Pedir permiso explícito al micrófono primero para evitar error de permiso silencioso
+    try {
+      if (navigator.mediaDevices?.getUserMedia) {
+        const testStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        testStream.getTracks().forEach((t) => t.stop());
+      }
+    } catch {
+      return setMsg('Permiso de micrófono no concedido. Permite el acceso al micrófono en el navegador (candado en la barra superior).');
+    }
+
+    try {
+      const r = new SR();
+      r.lang = song.accent === 'US' ? 'en-US' : 'en-GB';
+      r.interimResults = false;
+      r.maxAlternatives = 1;
+      setIsListening(true);
+      setMsg('🎙️ Escuchando... Di la frase en inglés ahora.');
+
+      r.onresult = (e: any) => {
+        setIsListening(false);
+        const t = e.results[0][0].transcript as string;
+        setRec(t);
+        setMsg('✓ Reconocimiento completado con éxito.');
+        update((d) => ({
+          ...d,
+          speakingAttempts: [...d.speakingAttempts, { at: Date.now(), reference: target, recognized: t, status: 'recognized' }],
+        }));
+      };
+
+      r.onerror = (e: any) => {
+        setIsListening(false);
+        const code = e.error;
+        if (code === 'network') {
+          setMsg('El servidor de reconocimiento en la nube de Google no respondió en esta conexión. ¡No te preocupes! Usa la opción «🎙️ Grabar mi voz» para grabarte y autoevaluar tu pronunciación al oído.');
+        } else if (code === 'not-allowed') {
+          setMsg('Acceso al micrófono denegado en el navegador. Haz clic en el candado de la URL para permitirlo.');
+        } else if (code === 'no-speech') {
+          setMsg('No se detectó voz. Vuelve a pulsar Reconocer voz y habla cerca del micrófono.');
+        } else {
+          setMsg(`Aviso: (${code}). Puedes grabarte localmente con el botón de abajo.`);
+        }
+      };
+
+      r.onend = () => {
+        setIsListening(false);
+      };
+
+      r.start();
+    } catch {
+      setIsListening(false);
+      setMsg('No se pudo iniciar el reconocedor de voz. Usa «🎙️ Grabar mi voz» abajo.');
+    }
   }
+
+  function ratePronunciation(stars: number) {
+    setSelfScore(stars);
+    setMsg(`✓ Calificación de pronunciación registrada: ${stars}/5 estrellas.`);
+    update((d) => ({
+      ...d,
+      speakingAttempts: [
+        ...d.speakingAttempts,
+        {
+          at: Date.now(),
+          reference: target,
+          recognized: `[Autoevaluación: ${stars}/5 estrellas]`,
+          status: 'recognized',
+        },
+      ],
+    }));
+  }
+
   const cmp = rec ? compareText(target, rec) : null;
+
   return (
     <>
-      <div className="card"><h3>Escuchar, repetir y comparar (frase del video)</h3>
+      <div className="card">
+        <h3>Escuchar, repetir y comparar (frase del video)</h3>
         {songPhrases.length > 1 && (
-          <div style={{ marginBottom: 10 }}>
-            <span className="mut">Frase { (phraseIndex % songPhrases.length) + 1 } de {songPhrases.length}:</span>{' '}
+          <div style={{ marginBottom: 10, display: 'flex', alignItems: 'center', gap: 10 }}>
+            <span className="mut">Frase { (phraseIndex % songPhrases.length) + 1 } de {songPhrases.length}:</span>
             <button className="s" onClick={nextPhrase}>Siguiente frase ⏭️</button>
           </div>
         )}
-        <p><b>{target}</b></p>
-        <button className="s" onClick={() => speak(target, song.accent)}>🔊 Normal</button><button className="s" onClick={() => speak(target, song.accent, 0.6)}>🐢 Lento</button>
-        <label><input type="checkbox" style={{ width: 'auto' }} checked={consent} onChange={(e) => setConsent(e.target.checked)} /> Acepto grabar mi voz (solo local; no se envía a ningún servidor por la app)</label>
-        <div><button className="s" onClick={record}>🎙️ Grabar</button><button className="s" onClick={() => mr.current?.state === 'recording' && mr.current.stop()}>Detener</button>
-          <button className="s" onClick={recognize}>Reconocer voz</button></div>
-        {audioUrl && <div><audio controls src={audioUrl} /><button className="s" onClick={() => { URL.revokeObjectURL(audioUrl); setAudioUrl(null); }}>Eliminar grabación</button></div>}
-        {msg && <p role="status">{msg}</p>}
-        {cmp && <p role="status">Reconocido: «{rec}» — coincidencia de texto: <b>{Math.round(cmp.accuracy * 100)}%</b>. <span className="mut">Esto mide coincidencia de transcripción, no pronunciación fonética.</span></p>}
-        <p className="mut">Limitación: no hay evaluación de fonemas gratuita; la app solo compara texto reconocido y te deja escuchar tu grabación.</p>
+
+        <div style={{
+          background: 'rgba(0, 0, 0, 0.25)',
+          padding: '16px',
+          borderRadius: 8,
+          margin: '12px 0',
+          borderLeft: '4px solid #48bb78',
+        }}>
+          <span className="mut" style={{ fontSize: '0.85rem' }}>Frase objetivo:</span>
+          <p style={{ fontSize: '1.25rem', fontWeight: 700, margin: '6px 0 12px 0' }}>{target}</p>
+
+          <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+            <button className="s" onClick={() => speak(target, song.accent)}>🔊 Normal (1.0x)</button>
+            <button className="s" onClick={() => speak(target, song.accent, 0.5)}>🐢 Lento (0.5x)</button>
+          </div>
+        </div>
+
+        <h4>Práctica oral</h4>
+        <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 12 }}>
+          <button className="p" onClick={recognize} disabled={isListening}>
+            {isListening ? '⏳ Escuchando...' : '🎤 Reconocer voz'}
+          </button>
+          {!isRecording ? (
+            <button className="s" onClick={record}>🎙️ Grabar mi voz</button>
+          ) : (
+            <button className="p" onClick={stopRecording} style={{ background: '#e53e3e', borderColor: '#e53e3e' }}>
+              ⏹️ Detener grabación
+            </button>
+          )}
+        </div>
+
+        {audioUrl && (
+          <div style={{ margin: '14px 0', padding: 12, background: 'rgba(255,255,255,0.05)', borderRadius: 6 }}>
+            <p style={{ margin: '0 0 6px 0', fontWeight: 600 }}>Tu grabación:</p>
+            <audio controls src={audioUrl} style={{ width: '100%', marginBottom: 8 }} />
+            
+            <p style={{ fontSize: '0.9rem', margin: '8px 0 4px 0' }}>
+              ¿Cómo calificarías tu pronunciación comparada con el audio original?
+            </p>
+            <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
+              {[1, 2, 3, 4, 5].map((s) => (
+                <button
+                  key={s}
+                  type="button"
+                  className={selfScore === s ? 'p' : 's'}
+                  style={{ minWidth: 40, padding: '4px 8px' }}
+                  onClick={() => ratePronunciation(s)}
+                >
+                  {'⭐'.repeat(s)} ({s})
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {msg && <p role="status" style={{ color: msg.startsWith('✓') ? '#48bb78' : '#ed8936', margin: '8px 0' }}>{msg}</p>}
+
+        {cmp && (
+          <div role="status" style={{ marginTop: 12, padding: 10, background: 'rgba(0,0,0,0.2)', borderRadius: 6 }}>
+            <p>Reconocido: «<b>{rec}</b>»</p>
+            <p>Coincidencia de texto: <b>{Math.round(cmp.accuracy * 100)}%</b></p>
+          </div>
+        )}
+
+        <p className="mut" style={{ fontSize: '0.85rem', marginTop: 14 }}>
+          Nota técnica: La grabación de audio se procesa 100% en tu dispositivo y nunca se envía a servidores externos.
+        </p>
       </div>
-      <div className="card"><h3>Pares mínimos</h3>{MINIMAL_PAIRS.map(([a, b]) => <p key={a}>{a} / {b} <button className="s" onClick={() => speak(a, song.accent)}>🔊 {a}</button><button className="s" onClick={() => speak(b, song.accent)}>🔊 {b}</button></p>)}</div>
+
+      <div className="card">
+        <h3>Pares mínimos</h3>
+        <p className="mut" style={{ fontSize: '0.88rem' }}>Distingue sonidos cercanos en inglés:</p>
+        {MINIMAL_PAIRS.map(([a, b]) => (
+          <p key={a} style={{ margin: '8px 0' }}>
+            <b>{a}</b> / <b>{b}</b>{' '}
+            <button className="s" onClick={() => speak(a, song.accent)}>🔊 {a}</button>{' '}
+            <button className="s" onClick={() => speak(b, song.accent)}>🔊 {b}</button>
+          </p>
+        ))}
+      </div>
+
       <button className="p" onClick={done}>Ir al test final</button>
     </>
   );

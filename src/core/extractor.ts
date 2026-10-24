@@ -206,3 +206,21 @@ export function extractSpeakingLines(transcript: string, fallback: string[] = []
   }
   return fallback;
 }
+
+/**
+ * Extrae estrofas y versos limpios para transcribir y copiar en un cuaderno físico.
+ */
+export function extractNotebookLines(transcript: string, maxLines: number = 12): string[] {
+  const lines = extractLines(transcript);
+  if (lines.length > 0) {
+    return lines.slice(0, maxLines);
+  }
+  return [
+    'I am learning English every day.',
+    'Writing by hand improves memory and spelling.',
+    'Music helps connect sounds with written words.',
+    'Practice a little bit each morning.',
+    'Consistency is the key to fluency.',
+  ];
+}
+

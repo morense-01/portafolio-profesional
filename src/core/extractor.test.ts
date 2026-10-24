@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { extractVocabularyFromTranscript, extractDictationLines, extractSpeakingLines } from './extractor';
+import { extractVocabularyFromTranscript, extractDictationLines, extractSpeakingLines, extractNotebookLines } from './extractor';
 
 describe('extractor', () => {
   const sampleTranscript = `
@@ -40,6 +40,12 @@ And I will try to fix you
     const speaking = extractSpeakingLines(sampleTranscript);
     expect(speaking.length).toBeGreaterThan(0);
     expect(speaking.some((s) => s.includes('Lights will guide you home') || s.includes('Stuck in reverse'))).toBe(true);
+  });
+
+  it('extrae líneas para cuaderno físico de notas', () => {
+    const notebook = extractNotebookLines(sampleTranscript, 5);
+    expect(notebook.length).toBe(5);
+    expect(notebook[0]).toContain('When you try your best');
   });
 
   it('devuelve array vacío de forma segura si la transcripción está vacía', () => {
