@@ -1,9 +1,9 @@
-﻿import { get, set, del } from 'idb-keyval';
+import { get, set, del } from 'idb-keyval';
 import type { Card } from '../core/srs';
 import type { Lesson } from '../core/lesson';
 import type { XpState } from '../core/xp';
 
-export interface Song { id: string; title: string; artist: string; videoId: string; url: string; level: string; accent: 'US' | 'UK'; transcript: string; transcriptSource: 'user-provided' | 'none'; createdAt: number }
+export interface Song { id: string; title: string; artist: string; videoId: string; url: string; level: string; accent: 'US' | 'UK'; transcript: string; transcriptSource: 'youtube' | 'user-provided' | 'none'; createdAt: number }
 export interface Settings { level: string; accent: 'US' | 'UK'; threshold: number; minPerSkill: number; timezone: string; reminders: { daily: boolean; review: boolean; time: string; days: number[]; granted: boolean }; theme: 'auto' | 'light' | 'dark' }
 export interface DB {
   version: number; songs: Song[]; lessons: Lesson[]; cards: Card[]; xp: XpState; activeDays: string[];

@@ -12,6 +12,8 @@ import { LISTEN_ITEMS } from './data/content';
 import { Placement, Tutor, Missions, Practice } from './Extras';
 import { shouldNotify } from './core/extras';
 import { SEED_WORDS, DICTATIONS, MINIMAL_PAIRS } from './data/content';
+import { fetchYouTubeTranscript } from './core/transcription';
+import { extractVocabularyFromTranscript, extractDictationLines, extractSpeakingLines } from './core/extractor';
 
 type Tab = 'home' | 'library' | 'review' | 'progress' | 'settings' | 'lesson' | 'tutor' | 'missions' | 'practice';
 const uid = () => crypto.randomUUID();
@@ -110,38 +112,77 @@ function Home({ db, go, open, update }: { db: DB; go: (t: Tab) => void; open: (i
 function Library({ db, update, open }: { db: DB; update: (f: (d: DB) => DB) => void; open: (id: string) => void }) {
   const [url, setUrl] = useState(''), [title, setTitle] = useState(''), [artist, setArtist] = useState(''), [tr, setTr] = useState('');
   const [err, setErr] = useState('');
-  const [rights, setRights] = useState(false);
+  const [loadingTr, setLoadingTr] = useState(false);
+  const [trNotice, setTrNotice] = useState('');
+
+  async function extractAuto(providedUrl?: string) {
+    const target = providedUrl ?? url;
+    const id = parseYouTubeId(target);
+    if (!id) return setErr('Primero introduce una URL válida de YouTube.');
+    setLoadingTr(true);
+    setErr('');
+    setTrNotice('Extrayendo subtítulos de YouTube...');
+    const res = await fetchYouTubeTranscript(id);
+    setLoadingTr(false);
+    if (res.ok && res.transcript) {
+      setTr(res.transcript);
+      setTrNotice(`✓ Subtítulos extraídos con éxito (${res.transcript.split('\n').length} versos).`);
+      if (!title.trim()) setTitle(`Canción (${id})`);
+    } else {
+      setTrNotice(res.error || 'No se obtuvieron subtítulos automáticos. Puedes escribir o pegar la letra.');
+    }
+  }
+
+  function loadSample(sampleUrl: string, sampleTitle: string, sampleArtist: string) {
+    setUrl(sampleUrl);
+    setTitle(sampleTitle);
+    setArtist(sampleArtist);
+    extractAuto(sampleUrl);
+  }
+
   function add(e: React.FormEvent) {
     e.preventDefault();
     const id = parseYouTubeId(url);
     if (!id) return setErr('URL no compatible. Usa un enlace de youtube.com o youtu.be con un video válido.');
     if (!title.trim() || title.length > 120 || artist.length > 120) return setErr('Escribe un título (máx. 120 caracteres).');
-    if (tr.trim() && !rights) return setErr('Confirma que tienes derecho a usar el texto que pegaste.');
-    if (tr.length > 20000) return setErr('La transcripción es demasiado larga (máx. 20 000 caracteres).');
-    const song: Song = { id: uid(), title: title.trim(), artist: artist.trim(), videoId: id, url: `https://www.youtube.com/watch?v=${id}`, level: db.settings.level, accent: db.settings.accent, transcript: tr.trim(), transcriptSource: tr.trim() ? 'user-provided' : 'none', createdAt: Date.now() };
+    if (tr.length > 30000) return setErr('La transcripción es demasiado larga (máx. 30 000 caracteres).');
+    const source = tr.trim() ? (trNotice.startsWith('✓') ? 'youtube' : 'user-provided') : 'none';
+    const song: Song = { id: uid(), title: title.trim(), artist: artist.trim() || 'Artista', videoId: id, url: `https://www.youtube.com/watch?v=${id}`, level: db.settings.level, accent: db.settings.accent, transcript: tr.trim(), transcriptSource: source, createdAt: Date.now() };
     const l = newLesson(uid(), song.id);
     update((d) => ({ ...d, songs: [...d.songs, song], lessons: [...d.lessons, l] }));
-    setErr(''); setUrl(''); setTitle(''); setArtist(''); setTr(''); open(l.id);
+    setErr(''); setUrl(''); setTitle(''); setArtist(''); setTr(''); setTrNotice(''); open(l.id);
   }
+
   return (
     <>
       <form className="card" onSubmit={add} noValidate>
         <h2>Añadir canción</h2>
-        <label htmlFor="url">URL de YouTube</label><input id="url" value={url} onChange={(e) => setUrl(e.target.value)} inputMode="url" />
+        <div style={{ marginBottom: 12, display: 'flex', gap: 6, flexWrap: 'wrap' }}>
+          <span className="mut" style={{ width: '100%' }}>Ejemplos listos para probar:</span>
+          <button type="button" className="s" onClick={() => loadSample('https://www.youtube.com/watch?v=k4V3Mo61fJM', 'Fix You', 'Coldplay')}>🎵 Coldplay - Fix You</button>
+          <button type="button" className="s" onClick={() => loadSample('https://www.youtube.com/watch?v=hLQl3WQQoQ0', 'Someone Like You', 'Adele')}>🎵 Adele - Someone Like You</button>
+        </div>
+        <label htmlFor="url">URL de YouTube</label>
+        <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
+          <input style={{ flex: 1, minWidth: 220 }} id="url" value={url} onChange={(e) => setUrl(e.target.value)} inputMode="url" placeholder="https://www.youtube.com/watch?v=..." />
+          <button type="button" className="s" onClick={() => extractAuto()} disabled={loadingTr}>
+            {loadingTr ? '⏳ Extrayendo...' : '⚡ Extraer subtítulos'}
+          </button>
+        </div>
+        {trNotice && <p style={{ color: trNotice.startsWith('✓') ? '#48bb78' : '#ed8936', fontSize: '0.9rem', margin: '4px 0' }}>{trNotice}</p>}
         <label htmlFor="t">Título</label><input id="t" value={title} onChange={(e) => setTitle(e.target.value)} />
         <label htmlFor="a">Artista</label><input id="a" value={artist} onChange={(e) => setArtist(e.target.value)} />
-        <label htmlFor="tr">Transcripción (opcional)</label>
-        <p className="mut">La app no extrae letras ni subtítulos de YouTube. Pega solo texto que tengas derecho a usar (tuyo, con licencia o dominio público).</p>
-        <textarea id="tr" rows={5} value={tr} onChange={(e) => setTr(e.target.value)} />
-        <label><input type="checkbox" style={{ width: 'auto' }} checked={rights} onChange={(e) => setRights(e.target.checked)} /> Tengo derecho a usar este texto</label>
+        <label htmlFor="tr">Transcripción / Letra de la canción</label>
+        <p className="mut">Subtítulos obtenidos del video o letra pegada. El vocabulario de la lección se extraerá directamente de este texto.</p>
+        <textarea id="tr" rows={6} value={tr} onChange={(e) => setTr(e.target.value)} placeholder="La letra aparecerá aquí o puedes pegarla manualmente..." />
         {err && <p role="alert" className="bad">{err}</p>}
-        <div><button className="p" type="submit">Crear lección</button></div>
+        <div style={{ marginTop: 12 }}><button className="p" type="submit">Crear lección</button></div>
       </form>
       <h2>Mis canciones</h2>
-      {db.songs.length === 0 && <p className="mut">Aún no hay canciones.</p>}
+      {db.songs.length === 0 && <p className="mut">Aún no hay canciones. Selecciona un ejemplo arriba o pega tu propia URL de YouTube.</p>}
       {db.songs.map((s) => { const l = db.lessons.find((x) => x.songId === s.id)!; return (
         <div className="card" key={s.id}><b>{s.title}</b> — {s.artist || 'Artista desconocido'}<br />
-          <span className="mut">Etapa: {STAGE_LABEL[l.stage]} · Transcripción: {s.transcriptSource === 'none' ? 'no disponible' : 'aportada por ti'}</span><br />
+          <span className="mut">Etapa: {STAGE_LABEL[l.stage]} · Transcripción: {s.transcriptSource === 'none' ? 'sin texto' : (s.transcriptSource === 'youtube' ? 'extraída del video' : 'aportada por ti')}</span><br />
           <button className="p" onClick={() => open(l.id)}>{l.stage === 'done' ? 'Ver' : 'Continuar'}</button></div>); })}
     </>
   );
@@ -199,21 +240,106 @@ function Listening({ lesson: l, song, setLesson, done, online }: { lesson: Lesso
 
 function Reading({ song, db, update, done }: { song: Song; db: DB; update: (f: (d: DB) => DB) => void; lesson: Lesson; done: () => void }) {
   const [manual, setManual] = useState({ term: '', meaning: '', example: '', translation: '' });
+  const [loadingTr, setLoadingTr] = useState(false);
+  const [editingTr, setEditingTr] = useState(false);
+  const [customTr, setCustomTr] = useState(song.transcript || '');
+  const [trError, setTrError] = useState('');
+
   const mine = db.cards.filter((c) => c.id.startsWith(song.id));
   const addCard = (c: Omit<Card, 'id' | 'status' | 'intervalDays' | 'nextReviewAt' | 'correctSessions' | 'usedActively'>) => update((d) => ({ ...d, cards: [...d.cards, { ...c, id: `${song.id}:${uid()}`, status: 'new', intervalDays: 0, nextReviewAt: 0, correctSessions: [], usedActively: false }] }));
+
+  async function extractNow() {
+    setLoadingTr(true);
+    setTrError('');
+    const res = await fetchYouTubeTranscript(song.videoId);
+    setLoadingTr(false);
+    if (res.ok && res.transcript) {
+      update((d) => ({
+        ...d,
+        songs: d.songs.map((s) => (s.id === song.id ? { ...s, transcript: res.transcript, transcriptSource: 'youtube' } : s)),
+      }));
+      setCustomTr(res.transcript);
+    } else {
+      setTrError(res.error || 'No se obtuvieron subtítulos automáticos. Puedes pegar o escribir la letra abajo.');
+      setEditingTr(true);
+    }
+  }
+
+  function saveCustom() {
+    if (!customTr.trim()) return;
+    update((d) => ({
+      ...d,
+      songs: d.songs.map((s) => (s.id === song.id ? { ...s, transcript: customTr.trim(), transcriptSource: 'user-provided' } : s)),
+    }));
+    setEditingTr(false);
+  }
+
+  // Vocabulario extraído genuinamente del texto del video (nunca inventado)
+  const extractedWords = useMemo(
+    () => (song.transcript ? extractVocabularyFromTranscript(song.transcript, 8) : []),
+    [song.transcript]
+  );
+
   return (
     <>
-      <div className="card"><h3>Texto</h3>
-        {song.transcript ? <p style={{ whiteSpace: 'pre-wrap' }}>{song.transcript}</p> : <p className="mut">No hay transcripción disponible. No se obtuvo automáticamente por restricciones de derechos. Puedes continuar con el vocabulario original de abajo.</p>}
+      <div className="card">
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 6 }}>
+          <h3>Texto de la canción</h3>
+          <div style={{ display: 'flex', gap: 6 }}>
+            {!song.transcript && (
+              <button className="p" onClick={extractNow} disabled={loadingTr}>
+                {loadingTr ? '⏳ Extrayendo...' : '⚡ Extraer subtítulos de YouTube'}
+              </button>
+            )}
+            <button className="s" onClick={() => setEditingTr(!editingTr)}>
+              {editingTr ? 'Cerrar editor' : '✏️ ' + (song.transcript ? 'Editar letra' : 'Pegar letra')}
+            </button>
+          </div>
+        </div>
+
+        {trError && <p role="alert" className="bad" style={{ margin: '8px 0' }}>{trError}</p>}
+
+        {editingTr ? (
+          <div style={{ marginTop: 8 }}>
+            <textarea rows={8} value={customTr} onChange={(e) => setCustomTr(e.target.value)} placeholder="Pega o escribe aquí la letra de la canción..." />
+            <button className="p" onClick={saveCustom} disabled={!customTr.trim()} style={{ marginTop: 6 }}>Guardar letra y extraer vocabulario</button>
+          </div>
+        ) : song.transcript ? (
+          <p style={{ whiteSpace: 'pre-wrap', maxHeight: 260, overflowY: 'auto', background: 'var(--card-bg)', padding: 12, borderRadius: 6, lineHeight: 1.5 }}>
+            {song.transcript}
+          </p>
+        ) : (
+          <p className="mut">
+            No hay transcripción cargada aún. Pulsa <b>«⚡ Extraer subtítulos de YouTube»</b> para obtenerla automáticamente o <b>«✏️ Pegar letra»</b> para escribirla.
+          </p>
+        )}
       </div>
-      <div className="card"><h3>Vocabulario sugerido (contenido original)</h3>
-        {SEED_WORDS.map((w) => { const saved = mine.some((c) => c.term === w.term); return (
-          <div key={w.term}><b>{w.term}</b> {w.pronunciation} — {w.meaning} <span className="mut">({w.partOfSpeech}, {w.level})</span><br />
-            <i>{w.example}</i> — {w.translation}<br />
-            <button className="s" onClick={() => speak(w.term, song.accent)}>🔊 Escuchar</button>
-            <button className="s" disabled={saved} onClick={() => addCard({ ...w, origin: 'inferred' })}>{saved ? 'Guardada' : 'Guardar tarjeta'}</button></div>); })}
-        <p className="mut">Estado «inferido»: sugerido por la app, aún por verificar por ti. Las palabras que añadas manualmente quedan «confirmadas».</p>
+
+      <div className="card">
+        <h3>Vocabulario sugerido (contenido original extraído del video)</h3>
+        {extractedWords.length === 0 ? (
+          <p className="mut">
+            {song.transcript
+              ? 'No se identificaron palabras clave suficientes en el texto de este video. Puedes añadir tus propias palabras abajo.'
+              : 'Extrae o pega la transcripción arriba para extraer el vocabulario real del video.'}
+          </p>
+        ) : (
+          extractedWords.map((w) => {
+            const saved = mine.some((c) => c.term === w.term);
+            return (
+              <div key={w.term} style={{ marginBottom: 12, paddingBottom: 8, borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
+                <b>{w.term}</b> <span className="mut">{w.pronunciation}</span> — <b>{w.meaning}</b> <span className="mut">({w.partOfSpeech}, {w.level})</span><br />
+                <i style={{ color: '#68d391' }}>«{w.example}»</i><br />
+                <button className="s" onClick={() => speak(w.term, song.accent)}>🔊 Escuchar</button>
+                <button className="s" disabled={saved} onClick={() => addCard({ ...w, origin: 'inferred' })}>
+                  {saved ? '✓ Guardada' : 'Guardar tarjeta'}
+                </button>
+              </div>
+            );
+          })
+        )}
       </div>
+
       <form className="card" onSubmit={(e) => { e.preventDefault(); if (!manual.term.trim() || !manual.meaning.trim()) return; addCard({ ...manual, term: manual.term.trim(), pronunciation: '', partOfSpeech: '', level: song.level, origin: 'confirmed' }); setManual({ term: '', meaning: '', example: '', translation: '' }); }}>
         <h3>Añadir mi palabra</h3>
         {(['term', 'meaning', 'example', 'translation'] as const).map((k) => <div key={k}><label htmlFor={'m' + k}>{({ term: 'Palabra en inglés', meaning: 'Significado', example: 'Ejemplo', translation: 'Traducción del ejemplo' })[k]}</label><input id={'m' + k} value={manual[k]} onChange={(e) => setManual({ ...manual, [k]: e.target.value })} /></div>)}
@@ -225,13 +351,27 @@ function Reading({ song, db, update, done }: { song: Song; db: DB; update: (f: (
 }
 
 function Writing({ song, db, update, done }: { song: Song; db: DB; update: (f: (d: DB) => DB) => void; lesson: Lesson; done: () => void }) {
-  const dict = useMemo(() => DICTATIONS[Math.floor(Math.random() * DICTATIONS.length)], []);
-  const [ans, setAns] = useState(''); const [res, setRes] = useState<ReturnType<typeof compareText> | null>(null);
+  const songDictations = useMemo(
+    () => extractDictationLines(song.transcript, DICTATIONS),
+    [song.transcript]
+  );
+  const [dictIndex, setDictIndex] = useState(0);
+  const dict = songDictations[dictIndex % songDictations.length] || DICTATIONS[0];
+  const [ans, setAns] = useState('');
+  const [res, setRes] = useState<ReturnType<typeof compareText> | null>(null);
   const cards = db.cards.filter((c) => c.id.startsWith(song.id));
+
+  function nextSentence() {
+    setDictIndex((i) => i + 1);
+    setAns('');
+    setRes(null);
+  }
+
   function check() {
     const r = compareText(dict, ans); setRes(r);
     update((d) => ({ ...d, events: [...d.events, { type: 'dictations', at: Date.now() }], writingAttempts: [...d.writingAttempts, { at: Date.now(), type: 'dictation', prompt: dict, response: ans, accuracy: r.accuracy }] }));
   }
+
   return (
     <>
       <div className="card"><h3>Mi cuaderno de inglés</h3>
@@ -242,7 +382,13 @@ function Writing({ song, db, update, done }: { song: Song; db: DB; update: (f: (
         <button className="s noprint" onClick={() => download('vocabulario.json', JSON.stringify(cards, null, 2), 'application/json')}>Exportar JSON</button>
         <button className="s noprint" onClick={() => download('vocabulario.csv', toCsv(cards), 'text/csv')}>Exportar CSV</button>
       </div>
-      <div className="card"><h3>Dictado</h3>
+      <div className="card"><h3>Dictado (frases extraídas del video)</h3>
+        {songDictations.length > 1 && (
+          <div style={{ marginBottom: 10 }}>
+            <span className="mut">Frase { (dictIndex % songDictations.length) + 1 } de {songDictations.length}:</span>{' '}
+            <button className="s" onClick={nextSentence}>Siguiente frase ⏭️</button>
+          </div>
+        )}
         <button className="s" onClick={() => { if (!speak(dict, song.accent)) alert('Tu navegador no tiene síntesis de voz.'); }}>🔊 Reproducir</button>
         <button className="s" onClick={() => speak(dict, song.accent, 0.6)}>🐢 Lento</button>
         <label htmlFor="dict">Escribe lo que oyes</label><textarea id="dict" rows={2} value={ans} onChange={(e) => setAns(e.target.value)} />
@@ -261,11 +407,24 @@ const toCsv = (c: Card[]) => ['term,meaning,pronunciation,example,translation', 
 function download(name: string, text: string, type: string) { const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([text], { type })); a.download = name; a.click(); URL.revokeObjectURL(a.href); }
 
 function Speaking({ song, update, done }: { song: Song; update: (f: (d: DB) => DB) => void; lesson: Lesson; done: () => void; db: DB }) {
-  const target = 'I would like a cup of tea, please.';
+  const songPhrases = useMemo(
+    () => extractSpeakingLines(song.transcript, ['I would like a cup of tea, please.']),
+    [song.transcript]
+  );
+  const [phraseIndex, setPhraseIndex] = useState(0);
+  const target = songPhrases[phraseIndex % songPhrases.length] || 'I would like a cup of tea, please.';
+
   const SR = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
   const [rec, setRec] = useState<string | null>(null), [msg, setMsg] = useState('');
   const [audioUrl, setAudioUrl] = useState<string | null>(null); const [consent, setConsent] = useState(false);
   const mr = useRef<MediaRecorder | null>(null);
+
+  function nextPhrase() {
+    setPhraseIndex((i) => i + 1);
+    setRec(null);
+    setMsg('');
+  }
+
   async function record() {
     if (!consent) return setMsg('Marca el consentimiento: la grabación se queda solo en tu dispositivo.');
     if (!navigator.mediaDevices?.getUserMedia || !('MediaRecorder' in window)) return setMsg('Tu navegador no permite grabar audio.');
@@ -295,7 +454,13 @@ function Speaking({ song, update, done }: { song: Song; update: (f: (d: DB) => D
   const cmp = rec ? compareText(target, rec) : null;
   return (
     <>
-      <div className="card"><h3>Escuchar, repetir y comparar</h3>
+      <div className="card"><h3>Escuchar, repetir y comparar (frase del video)</h3>
+        {songPhrases.length > 1 && (
+          <div style={{ marginBottom: 10 }}>
+            <span className="mut">Frase { (phraseIndex % songPhrases.length) + 1 } de {songPhrases.length}:</span>{' '}
+            <button className="s" onClick={nextPhrase}>Siguiente frase ⏭️</button>
+          </div>
+        )}
         <p><b>{target}</b></p>
         <button className="s" onClick={() => speak(target, song.accent)}>🔊 Normal</button><button className="s" onClick={() => speak(target, song.accent, 0.6)}>🐢 Lento</button>
         <label><input type="checkbox" style={{ width: 'auto' }} checked={consent} onChange={(e) => setConsent(e.target.checked)} /> Acepto grabar mi voz (solo local; no se envía a ningún servidor por la app)</label>

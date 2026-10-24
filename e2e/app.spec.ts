@@ -10,7 +10,6 @@ async function addSong(page: any, url = 'https://youtu.be/dQw4w9WgXcQ') {
   await page.getByLabel('URL de YouTube').fill(url);
   await page.getByLabel('Título').fill('Demo');
   await page.getByLabel(/Transcripción/).fill('SECRETLYRIC hello world');
-  await page.getByLabel(/Tengo derecho/).check();
   await page.getByRole('button', { name: 'Crear lección' }).click();
 }
 
@@ -27,7 +26,7 @@ test('Listening oculta la letra y Reading exige confirmación', async ({ page })
   await expect(page.getByText('¿Estás listo para comenzar la lectura')).toBeVisible();
   await expect(page.getByText('SECRETLYRIC')).toHaveCount(0);
   await page.getByRole('button', { name: 'Sí, empezar Reading' }).click();
-  await expect(page.getByText('SECRETLYRIC')).toBeVisible();
+  await expect(page.getByText('SECRETLYRIC').first()).toBeVisible();
 });
 
 test('la lección se retoma tras recargar', async ({ page }) => {
