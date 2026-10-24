@@ -244,6 +244,7 @@ function Reading({ song, db, update, done }: { song: Song; db: DB; update: (f: (
   const [editingTr, setEditingTr] = useState(false);
   const [customTr, setCustomTr] = useState(song.transcript || '');
   const [trError, setTrError] = useState('');
+  const [savedNotice, setSavedNotice] = useState('');
 
   const mine = db.cards.filter((c) => c.id.startsWith(song.id));
   const addCard = (c: Omit<Card, 'id' | 'status' | 'intervalDays' | 'nextReviewAt' | 'correctSessions' | 'usedActively'>) => update((d) => ({ ...d, cards: [...d.cards, { ...c, id: `${song.id}:${uid()}`, status: 'new', intervalDays: 0, nextReviewAt: 0, correctSessions: [], usedActively: false }] }));
@@ -340,10 +341,101 @@ function Reading({ song, db, update, done }: { song: Song; db: DB; update: (f: (
         )}
       </div>
 
-      <form className="card" onSubmit={(e) => { e.preventDefault(); if (!manual.term.trim() || !manual.meaning.trim()) return; addCard({ ...manual, term: manual.term.trim(), pronunciation: '', partOfSpeech: '', level: song.level, origin: 'confirmed' }); setManual({ term: '', meaning: '', example: '', translation: '' }); }}>
-        <h3>Añadir mi palabra</h3>
-        {(['term', 'meaning', 'example', 'translation'] as const).map((k) => <div key={k}><label htmlFor={'m' + k}>{({ term: 'Palabra en inglés', meaning: 'Significado', example: 'Ejemplo', translation: 'Traducción del ejemplo' })[k]}</label><input id={'m' + k} value={manual[k]} onChange={(e) => setManual({ ...manual, [k]: e.target.value })} /></div>)}
-        <button className="s" type="submit">Guardar tarjeta</button>
+      <form
+        className="card"
+        onSubmit={(e) => {
+          e.preventDefault();
+          if (!manual.term.trim() || !manual.meaning.trim()) return;
+          addCard({
+            ...manual,
+            term: manual.term.trim(),
+            pronunciation: '',
+            partOfSpeech: 'personalizada',
+            level: song.level,
+            origin: 'confirmed',
+          });
+          setSavedNotice(`✓ ¡Tarjeta guardada con éxito! «${manual.term.trim()}» se añadió a tu cuaderno y al sistema de repetición espaciada.`);
+          setManual({ term: '', meaning: '', example: '', translation: '' });
+          setTimeout(() => setSavedNotice(''), 5000);
+        }}
+      >
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+          <span style={{ fontSize: '1.4rem' }}>📝</span>
+          <h3 style={{ margin: 0 }}>Añadir mi palabra (Tarjeta de estudio personalizada)</h3>
+        </div>
+        <p className="mut" style={{ marginTop: 6, marginBottom: 14, fontSize: '0.92rem', lineHeight: 1.5 }}>
+          ¿Encontraste en la canción una palabra, expresión o contracción que no está en la lista de arriba?
+          Complétala aquí para crear tu propia tarjeta de estudio. Se guardará con estado <b>«confirmada»</b> y
+          se programará automáticamente en tus repasos diarios mediante <b>Repetición Espaciada (SRS)</b>.
+        </p>
+
+        <div style={{ display: 'grid', gap: 12 }}>
+          <div>
+            <label htmlFor="mterm" style={{ fontWeight: 600 }}>Palabra en inglés *</label>
+            <p className="mut" style={{ margin: '2px 0 6px 0', fontSize: '0.85rem' }}>
+              La palabra, phrasal verb o expresión exacta que escuchaste o leíste en la canción.
+            </p>
+            <input
+              id="mterm"
+              value={manual.term}
+              onChange={(e) => setManual({ ...manual, term: e.target.value })}
+              placeholder="Ej: reverse, stuck, guide you home, mistakes..."
+              required
+            />
+          </div>
+
+          <div>
+            <label htmlFor="mmeaning" style={{ fontWeight: 600 }}>Significado en español *</label>
+            <p className="mut" style={{ margin: '2px 0 6px 0', fontSize: '0.85rem' }}>
+              La traducción o definición de la palabra al español en este contexto.
+            </p>
+            <input
+              id="mmeaning"
+              value={manual.meaning}
+              onChange={(e) => setManual({ ...manual, meaning: e.target.value })}
+              placeholder="Ej: marcha atrás / retroceso, atrapado, guiar a casa..."
+              required
+            />
+          </div>
+
+          <div>
+            <label htmlFor="mexample" style={{ fontWeight: 600 }}>Ejemplo (verso de la canción)</label>
+            <p className="mut" style={{ margin: '2px 0 6px 0', fontSize: '0.85rem' }}>
+              El verso completo en inglés donde escuchaste la palabra (para memorizarla siempre con contexto).
+            </p>
+            <input
+              id="mexample"
+              value={manual.example}
+              onChange={(e) => setManual({ ...manual, example: e.target.value })}
+              placeholder="Ej: Stuck in reverse"
+            />
+          </div>
+
+          <div>
+            <label htmlFor="mtranslation" style={{ fontWeight: 600 }}>Traducción del ejemplo</label>
+            <p className="mut" style={{ margin: '2px 0 6px 0', fontSize: '0.85rem' }}>
+              La traducción al español de ese verso u oración de ejemplo.
+            </p>
+            <input
+              id="mtranslation"
+              value={manual.translation}
+              onChange={(e) => setManual({ ...manual, translation: e.target.value })}
+              placeholder="Ej: Atrapado en marcha atrás"
+            />
+          </div>
+        </div>
+
+        {savedNotice && (
+          <p style={{ color: '#48bb78', fontWeight: 600, marginTop: 12, fontSize: '0.92rem' }}>
+            {savedNotice}
+          </p>
+        )}
+
+        <div style={{ marginTop: 14 }}>
+          <button className="p" type="submit" disabled={!manual.term.trim() || !manual.meaning.trim()}>
+            💾 Guardar tarjeta en mi cuaderno
+          </button>
+        </div>
       </form>
       <button className="p" onClick={done}>Continuar a Writing</button>
     </>
