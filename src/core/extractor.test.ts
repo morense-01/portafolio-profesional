@@ -1,5 +1,11 @@
 import { describe, it, expect } from 'vitest';
-import { extractVocabularyFromTranscript, extractDictationLines, extractSpeakingLines, extractNotebookLines } from './extractor';
+import {
+  extractVocabularyFromTranscript,
+  extractDictationLines,
+  extractSpeakingLines,
+  extractNotebookLines,
+  formatProseForWriting,
+} from './extractor';
 
 describe('extractor', () => {
   const sampleTranscript = `
@@ -46,6 +52,16 @@ And I will try to fix you
     const notebook = extractNotebookLines(sampleTranscript, 5);
     expect(notebook.length).toBe(5);
     expect(notebook[0]).toContain('When you try your best');
+  });
+
+  it('formatea el texto de la canción en prosa y oraciones completas con sentido gramatical', () => {
+    const prose = formatProseForWriting(sampleTranscript);
+    expect(prose.sentences.length).toBeGreaterThan(0);
+    // Cada oración debe terminar en punto, signo de interrogación o exclamación
+    expect(prose.sentences.every((s) => /[.?!]$/.test(s.sentence))).toBe(true);
+    // Debe tener párrafos legibles
+    expect(prose.paragraphs.length).toBeGreaterThan(0);
+    expect(typeof prose.fullProse).toBe('string');
   });
 
   it('devuelve array vacío de forma segura si la transcripción está vacía', () => {

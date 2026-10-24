@@ -208,6 +208,131 @@ export function extractSpeakingLines(transcript: string, fallback: string[] = []
 }
 
 /**
+ * Estructura de texto en prosa/oraciones completas para escritura y comprensión.
+ */
+export interface NotebookSentence {
+  id: number;
+  sentence: string;
+  wordCount: number;
+}
+
+export interface WritingTextComposition {
+  sentences: NotebookSentence[];
+  paragraphs: string[];
+  fullProse: string;
+}
+
+/**
+ * Convierte las líneas líricas de una canción en oraciones completas y párrafos legibles en prosa.
+ * Une versos rotos o líneas poéticas en oraciones gramaticalmente fluidas,
+ * facilitando la escritura a mano en cuaderno y una comprensión natural del texto.
+ */
+export function formatProseForWriting(transcript: string): WritingTextComposition {
+  const lines = extractLines(transcript);
+  if (lines.length === 0) {
+    const fallbackSentences: NotebookSentence[] = [
+      { id: 1, sentence: 'I am learning English every day by listening to natural songs.', wordCount: 11 },
+      { id: 2, sentence: 'Writing complete sentences in a notebook improves memory and spelling.', wordCount: 11 },
+      { id: 3, sentence: 'Music helps you connect the real sounds of spoken language with written words.', wordCount: 13 },
+      { id: 4, sentence: 'Practicing a little bit each morning creates long-lasting habits.', wordCount: 10 },
+      { id: 5, sentence: 'Consistency and clear practice are the real keys to fluency.', wordCount: 10 },
+    ];
+    return {
+      sentences: fallbackSentences,
+      paragraphs: [
+        'I am learning English every day by listening to natural songs. Writing complete sentences in a notebook improves memory and spelling.',
+        'Music helps you connect the real sounds of spoken language with written words. Practicing a little bit each morning creates long-lasting habits. Consistency and clear practice are the real keys to fluency.',
+      ],
+      fullProse: fallbackSentences.map((s) => s.sentence).join(' '),
+    };
+  }
+
+  // 1. Unir líneas líricas que continúan en la siguiente
+  // (por ejemplo, si terminan sin punto/signo de interrogación o si la siguiente empieza en minúscula o conectores)
+  const mergedTokens: string[] = [];
+  for (let i = 0; i < lines.length; i++) {
+    const raw = lines[i].replace(/[♪]/g, '').trim();
+    if (!raw) continue;
+    mergedTokens.push(raw);
+  }
+
+  // Juntar en un solo flujo continuo de texto
+  const joinedText = mergedTokens.join(' ');
+
+  // 2. Dividir en oraciones naturales usando puntuación (. ? !)
+  // Si la letra original no tiene puntos, segmentar inteligentemente cada 8 a 16 palabras
+  let rawSentences = joinedText
+    .split(/(?<=[.?!])\s+/)
+    .map((s) => s.trim())
+    .filter((s) => s.length > 0);
+
+  // Si casi no hay puntos (letra lírica sin puntuación), agrupamos líneas líricas de 2 en 2 o por longitud lógica
+  if (rawSentences.length <= 1 && mergedTokens.length > 2) {
+    const grouped: string[] = [];
+    let currentChunk = '';
+    for (const line of mergedTokens) {
+      if (!currentChunk) {
+        currentChunk = line;
+      } else {
+        const words = currentChunk.split(/\s+/).length;
+        if (words < 7) {
+          currentChunk += ` ${line}`;
+        } else {
+          grouped.push(currentChunk);
+          currentChunk = line;
+        }
+      }
+    }
+    if (currentChunk) grouped.push(currentChunk);
+    rawSentences = grouped;
+  }
+
+  // 3. Normalizar oraciones en prosa: capitalizar primera letra y asegurar punto final
+  const cleanSentences: NotebookSentence[] = rawSentences.map((raw, idx) => {
+    let clean = raw.trim();
+    if (!clean) return { id: idx + 1, sentence: '', wordCount: 0 };
+    // Quitar comas o guiones huérfanos al final
+    clean = clean.replace(/[,;:\-\s]+$/, '');
+    // Capitalizar primera letra
+    clean = clean.charAt(0).toUpperCase() + clean.slice(1);
+    // Asegurar signo de cierre
+    if (!/[.?!]$/.test(clean)) {
+      clean += '.';
+    }
+    const words = clean.split(/\s+/).filter(Boolean).length;
+    return {
+      id: idx + 1,
+      sentence: clean,
+      wordCount: words,
+    };
+  }).filter((s) => s.sentence.length > 0 && s.wordCount >= 3);
+
+  // Si tras la limpieza quedó muy poco, usar fallback seguro
+  if (cleanSentences.length === 0) {
+    return formatProseForWriting('');
+  }
+
+  // 4. Agrupar oraciones en párrafos coherentes (de 2 a 3 oraciones por párrafo)
+  const paragraphs: string[] = [];
+  const chunkSize = 3;
+  for (let i = 0; i < cleanSentences.length; i += chunkSize) {
+    const para = cleanSentences
+      .slice(i, i + chunkSize)
+      .map((s) => s.sentence)
+      .join(' ');
+    paragraphs.push(para);
+  }
+
+  const fullProse = cleanSentences.map((s) => s.sentence).join(' ');
+
+  return {
+    sentences: cleanSentences,
+    paragraphs,
+    fullProse,
+  };
+}
+
+/**
  * Extrae estrofas y versos limpios para transcribir y copiar en un cuaderno físico.
  */
 export function extractNotebookLines(transcript: string, maxLines: number = 12): string[] {

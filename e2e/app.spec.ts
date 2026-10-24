@@ -70,6 +70,8 @@ test('modo oscuro y navegación por teclado', async ({ page }) => {
   await page.getByLabel('Tema').selectOption('dark');
   await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
   await page.reload();
+  await page.waitForLoadState('networkidle');
+  await page.locator('body').click();
   await page.keyboard.press('Tab');
   await expect.poll(() => page.evaluate(() => document.activeElement?.tagName)).not.toBe('BODY');
 });

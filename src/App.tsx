@@ -13,7 +13,13 @@ import { Placement, Tutor, Missions, Practice } from './Extras';
 import { shouldNotify } from './core/extras';
 import { SEED_WORDS, DICTATIONS, MINIMAL_PAIRS } from './data/content';
 import { fetchYouTubeTranscript } from './core/transcription';
-import { extractVocabularyFromTranscript, extractDictationLines, extractSpeakingLines, extractNotebookLines } from './core/extractor';
+import {
+  extractVocabularyFromTranscript,
+  extractDictationLines,
+  extractSpeakingLines,
+  extractNotebookLines,
+  formatProseForWriting,
+} from './core/extractor';
 import { LEVELED_CATALOG, getUnlockedLevels, type LeveledSong } from './data/catalog';
 
 type Tab = 'home' | 'library' | 'review' | 'progress' | 'settings' | 'lesson' | 'tutor' | 'missions' | 'practice';
@@ -1002,17 +1008,25 @@ function Writing({ song, db, update, done }: { song: Song; db: DB; update: (f: (
     () => extractDictationLines(song.transcript, DICTATIONS),
     [song.transcript]
   );
-  const notebookLines = useMemo(
-    () => extractNotebookLines(song.transcript, 10),
+  const writingComposition = useMemo(
+    () => formatProseForWriting(song.transcript),
     [song.transcript]
   );
-  const [copiedLines, setCopiedLines] = useState<Record<number, boolean>>({});
+  const [viewMode, setViewMode] = useState<'sentences' | 'paragraphs'>('sentences');
+  const [copiedSentences, setCopiedSentences] = useState<Record<number, boolean>>({});
+  const [copiedParagraphs, setCopiedParagraphs] = useState<Record<number, boolean>>({});
   const [dictIndex, setDictIndex] = useState(0);
   const dict = songDictations[dictIndex % songDictations.length] || DICTATIONS[0];
   const [ans, setAns] = useState('');
   const [res, setRes] = useState<ReturnType<typeof compareText> | null>(null);
   const cards = db.cards.filter((c) => c.id.startsWith(song.id));
-  const copiedCount = Object.values(copiedLines).filter(Boolean).length;
+
+  const sentences = writingComposition.sentences;
+  const paragraphs = writingComposition.paragraphs;
+  const copiedCount = viewMode === 'sentences'
+    ? Object.values(copiedSentences).filter(Boolean).length
+    : Object.values(copiedParagraphs).filter(Boolean).length;
+  const totalCount = viewMode === 'sentences' ? sentences.length : paragraphs.length;
 
   function nextSentence() {
     setDictIndex((i) => i + 1);
@@ -1034,92 +1048,177 @@ function Writing({ song, db, update, done }: { song: Song; db: DB; update: (f: (
   }
 
   function copyAllToClipboard() {
-    const text = `--- ${song.title} (${song.artist}) ---\n\n` + notebookLines.map((l, i) => `${i + 1}. ${l}`).join('\n');
+    let text = `--- ${song.title} (${song.artist}) ---\n\n`;
+    if (viewMode === 'sentences') {
+      text += sentences.map((s, i) => `${i + 1}. ${s.sentence}`).join('\n\n');
+    } else {
+      text += paragraphs.map((p, i) => `[Párrafo ${i + 1}]\n${p}`).join('\n\n');
+    }
     navigator.clipboard?.writeText(text);
-    alert('Texto copiado al portapapeles.');
+    alert('Texto en prosa copiado al portapapeles.');
   }
 
   return (
     <>
-      {/* 1. SECCIÓN PRINCIPAL: TEXTO LEGIBLE PARA COPIAR EN CUADERNO FÍSICO */}
+      {/* 1. SECCIÓN PRINCIPAL: TEXTO EN PROSA / ORACIONES COMPLETAS PARA CUADERNO */}
       <div className="card" style={{ borderLeft: '4px solid #3182ce' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 6 }}>
-          <h3 style={{ margin: 0 }}>📖 Texto para copiar en tu cuaderno de notas</h3>
-          <div style={{ display: 'flex', gap: 6 }}>
-            <button type="button" className="s noprint" onClick={copyAllToClipboard}>📋 Copiar texto</button>
-            <button type="button" className="s noprint" onClick={() => window.print()}>🖨️ Imprimir</button>
+          <div>
+            <h3 style={{ margin: 0 }}>📖 Texto para escritura y comprensión (Prosa / Oraciones)</h3>
+            <span className="mut" style={{ fontSize: '0.85rem' }}>
+              Formateado en oraciones completas y párrafos legibles (no en versos líricos cortados)
+            </span>
+          </div>
+          <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
+            <button
+              type="button"
+              className={viewMode === 'sentences' ? 'p' : 's'}
+              style={{ fontSize: '0.85rem', padding: '4px 10px' }}
+              onClick={() => setViewMode('sentences')}
+            >
+              📝 Por Oraciones
+            </button>
+            <button
+              type="button"
+              className={viewMode === 'paragraphs' ? 'p' : 's'}
+              style={{ fontSize: '0.85rem', padding: '4px 10px' }}
+              onClick={() => setViewMode('paragraphs')}
+            >
+              📄 Por Párrafos
+            </button>
+            <button type="button" className="s noprint" onClick={copyAllToClipboard} style={{ fontSize: '0.85rem', padding: '4px 10px' }}>
+              📋 Copiar
+            </button>
+            <button type="button" className="s noprint" onClick={() => window.print()} style={{ fontSize: '0.85rem', padding: '4px 10px' }}>
+              🖨️ Imprimir
+            </button>
           </div>
         </div>
 
-        <p className="mut" style={{ marginTop: 8, fontSize: '0.92rem', lineHeight: 1.5 }}>
-          <b>Consejo de aprendizaje:</b> Escribir a mano en papel fija las contracciones (<i>don't, can't, you'll</i>) y la ortografía en tu memoria motriz.
-          Toma tu lápiz o bolígrafo, transcribe estos versos en tu cuaderno físico y marca cada línea a medida que la completes:
+        <p className="mut" style={{ marginTop: 10, fontSize: '0.92rem', lineHeight: 1.5 }}>
+          <b>Consejo de escritura y comprensión:</b> Las canciones suelen cortar ideas a mitad de verso por la métrica musical. Aquí unimos las ideas en <b>oraciones completas y párrafos continuos</b> con gramática y puntuación clara para que al transcribir a tu cuaderno entrenes la estructura real del inglés.
         </p>
 
-        <div style={{
-          background: 'rgba(0, 0, 0, 0.25)',
-          borderRadius: 8,
-          border: '1px solid rgba(255, 255, 255, 0.1)',
-          padding: '12px 16px',
-          margin: '12px 0',
-        }}>
-          {notebookLines.map((line, idx) => (
-            <div
-              key={idx}
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                padding: '8px 0',
-                borderBottom: idx < notebookLines.length - 1 ? '1px dashed rgba(255,255,255,0.1)' : 'none',
-                gap: 12,
-              }}
-            >
-              <div style={{ flex: 1, display: 'flex', alignItems: 'baseline', gap: 10, flexWrap: 'wrap' }}>
-                <span style={{ color: '#718096', fontSize: '0.85rem', minWidth: 24, userSelect: 'none' }}>
-                  {String(idx + 1).padStart(2, '0')}.
-                </span>
-                <span style={{
-                  fontSize: '1.08rem',
-                  letterSpacing: '0.3px',
-                  color: copiedLines[idx] ? '#a0aec0' : '#fff',
-                  textDecoration: copiedLines[idx] ? 'line-through' : 'none',
-                }}>
-                  {line}
-                </span>
-                <button
-                  type="button"
-                  className="s"
-                  style={{ padding: '2px 6px', fontSize: '0.75rem', marginLeft: 6 }}
-                  onClick={() => speak(line, song.accent)}
-                  title="Escuchar pronunciación de este verso"
-                >
-                  🔊
-                </button>
-              </div>
+        {viewMode === 'sentences' ? (
+          <div style={{
+            background: 'rgba(0, 0, 0, 0.25)',
+            borderRadius: 8,
+            border: '1px solid rgba(255, 255, 255, 0.1)',
+            padding: '12px 16px',
+            margin: '12px 0',
+          }}>
+            {sentences.map((item, idx) => (
+              <div
+                key={item.id}
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  padding: '10px 0',
+                  borderBottom: idx < sentences.length - 1 ? '1px dashed rgba(255,255,255,0.1)' : 'none',
+                  gap: 12,
+                }}
+              >
+                <div style={{ flex: 1, display: 'flex', alignItems: 'baseline', gap: 10, flexWrap: 'wrap' }}>
+                  <span style={{ color: '#718096', fontSize: '0.85rem', minWidth: 24, userSelect: 'none' }}>
+                    {String(idx + 1).padStart(2, '0')}.
+                  </span>
+                  <span style={{
+                    fontSize: '1.08rem',
+                    letterSpacing: '0.3px',
+                    lineHeight: 1.5,
+                    color: copiedSentences[idx] ? '#a0aec0' : '#fff',
+                    textDecoration: copiedSentences[idx] ? 'line-through' : 'none',
+                  }}>
+                    {item.sentence}
+                  </span>
+                  <button
+                    type="button"
+                    className="s"
+                    style={{ padding: '2px 8px', fontSize: '0.75rem', marginLeft: 6 }}
+                    onClick={() => speak(item.sentence, song.accent)}
+                    title="Escuchar oración completa"
+                  >
+                    🔊
+                  </button>
+                </div>
 
-              <label style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: '0.82rem', cursor: 'pointer', userSelect: 'none', whiteSpace: 'nowrap' }}>
-                <input
-                  type="checkbox"
-                  style={{ width: 'auto' }}
-                  checked={!!copiedLines[idx]}
-                  onChange={(e) => setCopiedLines({ ...copiedLines, [idx]: e.target.checked })}
-                />
-                <span style={{ color: copiedLines[idx] ? '#48bb78' : '#a0aec0' }}>
-                  {copiedLines[idx] ? '✓ Escrito' : 'Por escribir'}
-                </span>
-              </label>
-            </div>
-          ))}
-        </div>
+                <label style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: '0.82rem', cursor: 'pointer', userSelect: 'none', whiteSpace: 'nowrap' }}>
+                  <input
+                    type="checkbox"
+                    style={{ width: 'auto' }}
+                    checked={!!copiedSentences[idx]}
+                    onChange={(e) => setCopiedSentences({ ...copiedSentences, [idx]: e.target.checked })}
+                  />
+                  <span style={{ color: copiedSentences[idx] ? '#48bb78' : '#a0aec0' }}>
+                    {copiedSentences[idx] ? '✓ Escrita' : 'Por escribir'}
+                  </span>
+                </label>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div style={{
+            background: 'rgba(0, 0, 0, 0.25)',
+            borderRadius: 8,
+            border: '1px solid rgba(255, 255, 255, 0.1)',
+            padding: '14px 18px',
+            margin: '12px 0',
+          }}>
+            {paragraphs.map((para, idx) => (
+              <div
+                key={idx}
+                style={{
+                  padding: '12px 0',
+                  borderBottom: idx < paragraphs.length - 1 ? '1px dashed rgba(255,255,255,0.1)' : 'none',
+                }}
+              >
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 6 }}>
+                  <b style={{ fontSize: '0.88rem', color: '#63b3ed' }}>Párrafo {idx + 1}</b>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                    <button
+                      type="button"
+                      className="s"
+                      style={{ padding: '2px 8px', fontSize: '0.75rem' }}
+                      onClick={() => speak(para, song.accent)}
+                      title="Escuchar párrafo"
+                    >
+                      🔊 Escuchar
+                    </button>
+                    <label style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: '0.82rem', cursor: 'pointer', userSelect: 'none' }}>
+                      <input
+                        type="checkbox"
+                        style={{ width: 'auto' }}
+                        checked={!!copiedParagraphs[idx]}
+                        onChange={(e) => setCopiedParagraphs({ ...copiedParagraphs, [idx]: e.target.checked })}
+                      />
+                      <span style={{ color: copiedParagraphs[idx] ? '#48bb78' : '#a0aec0' }}>
+                        {copiedParagraphs[idx] ? '✓ Escrito' : 'Por escribir'}
+                      </span>
+                    </label>
+                  </div>
+                </div>
+                <p style={{
+                  margin: 0,
+                  fontSize: '1.05rem',
+                  lineHeight: 1.6,
+                  color: copiedParagraphs[idx] ? '#a0aec0' : '#fff',
+                  textDecoration: copiedParagraphs[idx] ? 'line-through' : 'none',
+                }}>
+                  {para}
+                </p>
+              </div>
+            ))}
+          </div>
+        )}
 
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 8 }}>
           <span className="mut" style={{ fontSize: '0.9rem' }}>
-            Progreso en cuaderno: <b>{copiedCount} de {notebookLines.length} versos</b>
+            Progreso en cuaderno: <b>{copiedCount} de {totalCount} {viewMode === 'sentences' ? 'oraciones' : 'párrafos'}</b>
           </span>
-          {copiedCount === notebookLines.length && notebookLines.length > 0 && (
+          {copiedCount === totalCount && totalCount > 0 && (
             <span className="ok" style={{ fontSize: '0.9rem', fontWeight: 600 }}>
-              🎉 ¡Excelente! Transcribiste todos los versos a mano en tu cuaderno.
+              🎉 ¡Excelente! Has transcrito todo el texto estructurado a mano en tu cuaderno.
             </span>
           )}
         </div>
