@@ -1,0 +1,35 @@
+import { describe, it, expect } from 'vitest';
+import { correctLocal, localProvider } from './tutor';
+import { placementLevel, PLACEMENT, MISSIONS, missionProgress, shouldNotify, localParts } from './extras';
+
+describe('tutor', () => {
+  it('corrige y explica en español', () => {
+    const c = correctLocal('She have a car');
+    expect(c?.corrected).toBe('She has a car'); expect(c?.explanation).toMatch(/has/);
+  });
+  it('contracciones', () => expect(correctLocal('I dont know')?.corrected).toBe("I don't know"));
+  it('frase correcta sin corrección', () => expect(correctLocal('I like music.')).toBeNull());
+  it('pregunta según nivel', async () => expect(await localProvider.nextQuestion('work', 'A1', 0)).toBe('What is your job?'));
+});
+describe('placement', () => {
+  it('todo correcto → B2', () => expect(placementLevel(PLACEMENT.map((q) => q.answer))).toBe('B2'));
+  it('todo incorrecto → A1', () => expect(placementLevel(PLACEMENT.map(() => 99))).toBe('A1'));
+  it('hasta A2', () => expect(placementLevel(PLACEMENT.map((q) => (q.level === 'A1' || q.level === 'A2' ? q.answer : 99)))).toBe('A2'));
+});
+describe('missions', () => {
+  const now = Date.UTC(2026, 0, 10, 15);
+  it('cuenta solo eventos del periodo y con tope', () => {
+    const ev = [...Array(8)].map((_, i) => ({ type: 'reviews' as const, at: now - i * 1000 })).concat([{ type: 'reviews', at: now - 3 * 86_400_000 }]);
+    expect(missionProgress(MISSIONS[0], ev, now)).toBe(5);
+    expect(missionProgress(MISSIONS[1], ev, now)).toBe(0);
+  });
+});
+describe('notificaciones', () => {
+  const base = { daily: true, time: '19:00', days: [0, 1, 2, 3, 4, 5, 6], timezone: 'America/Santo_Domingo', notificationsGranted: true };
+  const t = (h: number) => Date.UTC(2026, 0, 10, h); // Santo Domingo = UTC-4
+  it('zona horaria', () => expect(localParts(t(23), base.timezone).hhmm).toBe('19:00'));
+  it('antes de la hora no avisa', () => expect(shouldNotify(base, t(22), null)).toBe(false));
+  it('a la hora avisa una vez al día', () => { expect(shouldNotify(base, t(23), null)).toBe(true); expect(shouldNotify(base, t(23), '2026-01-10')).toBe(false); });
+  it('respeta desactivado y permiso denegado', () => { expect(shouldNotify({ ...base, daily: false }, t(23), null)).toBe(false); expect(shouldNotify({ ...base, notificationsGranted: false }, t(23), null)).toBe(false); });
+  it('respeta días de la semana', () => expect(shouldNotify({ ...base, days: [1] }, t(23), null)).toBe(false)); // 10 ene 2026 = sábado
+});

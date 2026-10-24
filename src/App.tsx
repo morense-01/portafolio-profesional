@@ -6,9 +6,11 @@ import { evaluate } from './core/assessment';
 import { award, streak, type Activity } from './core/xp';
 import { advance, canShowTranscript, newLesson, repeatListening, type Lesson, type Stage } from './core/lesson';
 import { localRepo, type DB, type Song } from './data/repo';
+import { Placement, Tutor, Missions, Practice } from './Extras';
+import { shouldNotify } from './core/extras';
 import { SEED_WORDS, DICTATIONS, MINIMAL_PAIRS } from './data/content';
 
-type Tab = 'home' | 'library' | 'review' | 'progress' | 'settings' | 'lesson';
+type Tab = 'home' | 'library' | 'review' | 'progress' | 'settings' | 'lesson' | 'tutor' | 'missions' | 'practice';
 const uid = () => crypto.randomUUID();
 const today = () => dayKey(Date.now());
 const STAGE_LABEL: Record<Stage, string> = { listening: 'Listening', confirm: 'Confirmar', reading: 'Reading', writing: 'Writing', speaking: 'Speaking', test: 'Test final', done: 'Resultado' };
@@ -32,6 +34,17 @@ export function App() {
     return () => { removeEventListener('online', on); removeEventListener('offline', off); };
   }, []);
   const update = (f: (d: DB) => DB) => setDb((d) => f(d));
+  useEffect(() => {
+    const tick = () => {
+      const r = db.settings.reminders;
+      const granted = r.granted && 'Notification' in window && Notification.permission === 'granted';
+      if (shouldNotify({ daily: r.daily, time: r.time, days: r.days, timezone: db.settings.timezone, notificationsGranted: granted }, Date.now(), db.lastNotifiedDay)) {
+        new Notification('Lingua Songs AI', { body: 'Es hora de tu práctica de inglés.' });
+        setDb((d) => ({ ...d, lastNotifiedDay: new Intl.DateTimeFormat('en-CA', { timeZone: d.settings.timezone }).format(Date.now()) }));
+      }
+    };
+    tick(); const t = setInterval(tick, 30000); return () => clearInterval(t);
+  }, [db.settings, db.lastNotifiedDay]);
   const giveXp = (a: Activity) => update((d) => {
     const r = award(d.xp, a, today());
     return { ...d, xp: r.state, activeDays: d.activeDays.includes(today()) ? d.activeDays : [...d.activeDays, today()] };
@@ -46,8 +59,11 @@ export function App() {
       {!online && <div className="banner" role="status">Sin conexión: el reproductor de YouTube no funciona, pero repaso, cuaderno y dictados guardados sí.</div>}
       <main>
         <h1>Lingua Songs AI</h1>
-        {tab === 'home' && <Home db={db} go={setTab} open={open} />}
+        {tab === 'home' && <Home db={db} go={setTab} open={open} update={update} />}
         {tab === 'library' && <Library db={db} update={update} open={open} />}
+        {tab === 'tutor' && <Tutor db={db} update={update} giveXp={giveXp} />}
+        {tab === 'missions' && <Missions db={db} />}
+        {tab === 'practice' && <Practice db={db} update={update} />}
         {tab === 'review' && <Review db={db} update={update} giveXp={giveXp} />}
         {tab === 'progress' && <Progress db={db} />}
         {tab === 'settings' && <Settings db={db} update={update} />}
@@ -55,7 +71,7 @@ export function App() {
         {tab === 'lesson' && !lesson && <p>No hay lección activa. Ve a la biblioteca.</p>}
       </main>
       <nav aria-label="Navegación principal">
-        {([['home', 'Inicio'], ['library', 'Canciones'], ['review', 'Repasar'], ['progress', 'Progreso'], ['settings', 'Ajustes']] as [Tab, string][]).map(([t, l]) => (
+        {([['home', 'Inicio'], ['library', 'Canciones'], ['review', 'Repasar'], ['practice', 'Escribir'], ['tutor', 'Tutor'], ['missions', 'Misiones'], ['progress', 'Progreso'], ['settings', 'Ajustes']] as [Tab, string][]).map(([t, l]) => (
           <button key={t} aria-current={tab === t ? 'page' : undefined} onClick={() => setTab(t)}>{l}</button>
         ))}
       </nav>
@@ -63,12 +79,13 @@ export function App() {
   );
 }
 
-function Home({ db, go, open }: { db: DB; go: (t: Tab) => void; open: (id: string) => void }) {
+function Home({ db, go, open, update }: { db: DB; go: (t: Tab) => void; open: (id: string) => void; update: (f: (d: DB) => DB) => void }) {
   const due = dueCards(db.cards).length;
   const s = streak(db.activeDays, today());
   const active = db.lessons.filter((l) => l.stage !== 'done');
   return (
     <>
+      {!db.placementDone && <Placement db={db} update={update} onDone={() => {}} />}
       <div className="card"><h2>Hola 👋</h2>
         <p>Aprende inglés con canciones de YouTube. Nivel orientativo: <b>{db.settings.level}</b> (no es una certificación oficial).</p>
         <p>XP: <b>{db.xp.total}</b> · Racha: <b>{s}</b> día(s) · Repasos pendientes: <b>{due}</b></p>
@@ -207,7 +224,7 @@ function Writing({ song, db, update, done }: { song: Song; db: DB; update: (f: (
   const cards = db.cards.filter((c) => c.id.startsWith(song.id));
   function check() {
     const r = compareText(dict, ans); setRes(r);
-    update((d) => ({ ...d, writingAttempts: [...d.writingAttempts, { at: Date.now(), type: 'dictation', prompt: dict, response: ans, accuracy: r.accuracy }] }));
+    update((d) => ({ ...d, events: [...d.events, { type: 'dictations', at: Date.now() }], writingAttempts: [...d.writingAttempts, { at: Date.now(), type: 'dictation', prompt: dict, response: ans, accuracy: r.accuracy }] }));
   }
   return (
     <>
@@ -314,7 +331,7 @@ function FinalTest({ db, lesson: l, song, update, giveXp, done }: { db: DB; less
         <p className="mut">Respuestas correctas: {qs.map((q) => `${q.c.term} = ${q.c.meaning}`).join(' · ')}</p>
         {!res.passed && <p>Puedes repetir el test, revisar errores o avanzar igualmente (la lección queda pendiente de dominio).</p>}
         <button className="s" onClick={() => { setRes(null); setAns({}); setFill(''); }}>Repetir prueba</button>
-        {l.stage === 'test' && <button className="p" onClick={done}>Finalizar lección</button>}</div>}
+        {l.stage === 'test' && <button className="p" onClick={() => { update((d) => ({ ...d, events: [...d.events, { type: 'lessons', at: Date.now() }] })); done(); }}>Finalizar lección</button>}</div>}
       {hist.length > 0 && <p className="mut">Intentos previos: {hist.map((h) => h.total).join(', ')}</p>}
     </div>
   );
@@ -324,7 +341,7 @@ function Review({ db, update, giveXp }: { db: DB; update: (f: (d: DB) => DB) => 
   const due = dueCards(db.cards); const [shown, setShown] = useState(false); const [typed, setTyped] = useState('');
   const c = due[0];
   if (!c) return <p className="card">🎉 No tienes repasos pendientes hoy. {db.cards.length === 0 && 'Guarda tarjetas desde Reading.'}</p>;
-  const answer = (ok: boolean, active = false) => { update((d) => ({ ...d, cards: d.cards.map((x) => (x.id === c.id ? review(x, ok, Date.now(), active) : x)) })); giveXp('review'); setShown(false); setTyped(''); };
+  const answer = (ok: boolean, active = false) => { update((d) => ({ ...d, events: [...d.events, { type: 'reviews', at: Date.now() }], cards: d.cards.map((x) => (x.id === c.id ? review(x, ok, Date.now(), active) : x)) })); giveXp('review'); setShown(false); setTyped(''); };
   const okTyped = compareText(c.term, typed).accuracy >= 0.99;
   return (
     <div className="card"><h2>Repasar hoy ({due.length})</h2>
@@ -358,6 +375,8 @@ function Progress({ db }: { db: DB }) {
       <div className="card"><h2>Diagnóstico</h2>
         {last.length === 0 ? <p className="mut">Completa un test para ver resultados.</p> : last.map((a) => <p key={a.at}>{new Date(a.at).toLocaleDateString()} — total {a.total}; {Object.entries(a.scores).map(([k, v]) => `${k}: ${v ?? 'pendiente'}`).join(', ')}</p>)}
         <p>Tarjetas: {Object.entries(counts).map(([k, v]) => `${k} ${v}`).join(' · ') || 'ninguna'}</p>
+        {Object.keys(db.tutorErrors).length > 0 && <p>Errores recurrentes del tutor: {Object.entries(db.tutorErrors).sort((a, b) => b[1] - a[1]).slice(0, 3).map(([k, v]) => `${k} (×${v})`).join(', ')}</p>}
+        <p>Últimos 7 días: {db.events.filter((e) => e.at > Date.now() - 7 * 86_400_000).length} actividades registradas.</p>
         <p className="mut">Solo se muestran mediciones registradas; no se estiman porcentajes de mejora sin datos comparables.</p></div>
     </>
   );
@@ -371,7 +390,7 @@ function Settings({ db, update }: { db: DB; update: (f: (d: DB) => DB) => void }
     if (!('Notification' in window)) return setNote('Este navegador no admite notificaciones.');
     const p = await Notification.requestPermission();
     if (p !== 'granted') return setNote('Permiso denegado: no se enviarán recordatorios.');
-    set({ reminders: { ...s.reminders, daily: true } });
+    set({ reminders: { ...s.reminders, daily: true, granted: true } });
     setNote('Activado. Los navegadores solo muestran avisos locales mientras la app esté abierta o instalada; no hay entrega garantizada en segundo plano.');
   }
   return (
@@ -385,6 +404,7 @@ function Settings({ db, update }: { db: DB; update: (f: (d: DB) => DB) => void }
       <div className="card"><h2>Recordatorios</h2>
         <label><input type="checkbox" style={{ width: 'auto' }} checked={s.reminders.daily} onChange={(e) => enableNotif(e.target.checked)} /> Recordatorio diario ({s.timezone})</label>
         <label htmlFor="tm">Hora</label><input id="tm" type="time" value={s.reminders.time} onChange={(e) => set({ reminders: { ...s.reminders, time: e.target.value } })} />
+        <fieldset><legend>Días</legend>{['D', 'L', 'M', 'X', 'J', 'V', 'S'].map((n, i) => <label key={i} style={{ marginRight: 8 }}><input type="checkbox" style={{ width: 'auto' }} checked={s.reminders.days.includes(i)} onChange={(e) => set({ reminders: { ...s.reminders, days: e.target.checked ? [...s.reminders.days, i] : s.reminders.days.filter((x) => x !== i) } })} /> {n}</label>)}</fieldset>
         {note && <p role="status">{note}</p>}</div>
       <div className="card"><h2>Privacidad y datos</h2>
         <p>Todo se guarda en este dispositivo. Sin cuentas, sin anuncios, sin venta de datos. Las grabaciones no se almacenan.</p>
