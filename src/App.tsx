@@ -5,7 +5,10 @@ import { review, dueCards, dayKey, type Card } from './core/srs';
 import { evaluate } from './core/assessment';
 import { award, streak, type Activity } from './core/xp';
 import { advance, canShowTranscript, newLesson, repeatListening, type Lesson, type Stage } from './core/lesson';
-import { localRepo, type DB, type Song } from './data/repo';
+import { loadAsync, saveAsync, clearAsync, emptyDB, type DB, type Song } from './data/repo';
+import { isNative, nativeRecognize, syncNativeReminders } from './platform';
+import { diagnose, weeklySummary, mapState } from './core/diagnosis';
+import { LISTEN_ITEMS } from './data/content';
 import { Placement, Tutor, Missions, Practice } from './Extras';
 import { shouldNotify } from './core/extras';
 import { SEED_WORDS, DICTATIONS, MINIMAL_PAIRS } from './data/content';
@@ -22,11 +25,13 @@ function speak(text: string, accent: 'US' | 'UK', rate = 1) {
 }
 
 export function App() {
-  const [db, setDb] = useState<DB>(() => localRepo.load());
+  const [db, setDb] = useState<DB>(emptyDB);
+  const [ready, setReady] = useState(false);
+  useEffect(() => { loadAsync().then((d) => { setDb(d); setReady(true); }); navigator.storage?.persist?.().catch(() => {}); }, []);
   const [tab, setTab] = useState<Tab>('home');
   const [lessonId, setLessonId] = useState<string | null>(null);
   const [online, setOnline] = useState(navigator.onLine);
-  useEffect(() => { localRepo.save(db); }, [db]);
+  useEffect(() => { if (ready) saveAsync(db); }, [db, ready]);
   useEffect(() => { document.documentElement.dataset.theme = db.settings.theme; }, [db.settings.theme]);
   useEffect(() => {
     const on = () => setOnline(true), off = () => setOnline(false);
@@ -54,6 +59,7 @@ export function App() {
   const setLesson = (l: Lesson) => update((d) => ({ ...d, lessons: d.lessons.map((x) => (x.id === l.id ? l : x)) }));
   const open = (id: string) => { setLessonId(id); setTab('lesson'); };
 
+  if (!ready) return <main><p role="status">Cargando tus datos…</p></main>;
   return (
     <>
       {!online && <div className="banner" role="status">Sin conexión: el reproductor de YouTube no funciona, pero repaso, cuaderno y dictados guardados sí.</div>}
@@ -272,7 +278,15 @@ function Speaking({ song, update, done }: { song: Song; update: (f: (d: DB) => D
       setTimeout(() => m.state === 'recording' && m.stop(), 15000);
     } catch { setMsg('Permiso de micrófono denegado. Actívalo en la configuración del navegador o continúa sin grabar.'); }
   }
-  function recognize() {
+  async function recognize() {
+    if (isNative()) {
+      try {
+        const text = await nativeRecognize(song.accent === 'US' ? 'en-US' : 'en-GB');
+        if (!text) return setMsg('Este dispositivo no tiene reconocimiento de voz disponible. No se genera puntuación.');
+        setRec(text); update((d) => ({ ...d, speakingAttempts: [...d.speakingAttempts, { at: Date.now(), reference: target, recognized: text, status: 'recognized' }] }));
+      } catch { setMsg('Permiso de voz denegado o reconocimiento no disponible.'); }
+      return;
+    }
     if (!SR) return setMsg('Este navegador no tiene reconocimiento de voz. No se genera puntuación; usa grabar y comparar al oído.');
     const r = new SR(); r.lang = song.accent === 'US' ? 'en-US' : 'en-GB';
     r.onresult = (e: any) => { const t = e.results[0][0].transcript as string; setRec(t); update((d) => ({ ...d, speakingAttempts: [...d.speakingAttempts, { at: Date.now(), reference: target, recognized: t, status: 'recognized' }] })); };
@@ -303,6 +317,8 @@ function FinalTest({ db, lesson: l, song, update, giveXp, done }: { db: DB; less
   const pool = cards.length >= 2 ? cards : SEED_WORDS.map((w) => ({ ...w, id: w.term }) as unknown as Card);
   const qs = useMemo(() => pool.slice(0, 5).map((c) => ({ c, opts: [...pool].sort(() => Math.random() - 0.5).slice(0, 3).map((x) => x.meaning).concat(c.meaning).filter((v, i, a) => a.indexOf(v) === i).sort(() => Math.random() - 0.5) })), []);
   const [ans, setAns] = useState<Record<number, string>>({}); const [fill, setFill] = useState('');
+  const [lAns, setLAns] = useState<Record<number, string>>({}); const [noAudio, setNoAudio] = useState(!('speechSynthesis' in window));
+  const lItems = useMemo(() => LISTEN_ITEMS.slice(0, 4), []);
   const [res, setRes] = useState<ReturnType<typeof evaluate> | null>(null);
   const hist = db.assessments.filter((a) => a.lessonId === l.id);
   function submit() {
@@ -313,7 +329,7 @@ function FinalTest({ db, lesson: l, song, update, giveXp, done }: { db: DB; less
     const sp = db.speakingAttempts.filter((a) => a.status === 'recognized').slice(-3);
     const speaking = sp.length ? Math.round((sp.reduce((s, a) => s + compareText(a.reference, a.recognized!).accuracy, 0) / sp.length) * 25) : null;
     // Listening: el test no puede medir la escucha real sin audio autorizado; se usa autoevaluación y se marca como estimación.
-    const listening = Math.round((right / qs.length) * 25);
+    const listening = noAudio ? null : Math.round((lItems.filter((it, i) => lAns[i] === it.say).length / lItems.length) * 25);
     const r = evaluate({ listening, reading, writing, speaking }, { threshold: db.settings.threshold, minPerSkill: db.settings.minPerSkill });
     setRes(r); giveXp('test');
     update((d) => ({ ...d, assessments: [...d.assessments, { lessonId: l.id, at: Date.now(), scores: { ...r.perSkill }, total: r.total, passed: r.passed }] }));
@@ -322,13 +338,18 @@ function FinalTest({ db, lesson: l, song, update, giveXp, done }: { db: DB; less
     <div className="card"><h3>Test final</h3>
       {qs.map((q, i) => <fieldset key={i}><legend>¿Qué significa «{q.c.term}»? <button className="s" onClick={() => speak(q.c.term, song.accent)}>🔊</button></legend>
         {q.opts.map((o) => <label key={o} style={{ display: 'block', fontWeight: 400 }}><input type="radio" style={{ width: 'auto' }} name={'q' + i} checked={ans[i] === o} onChange={() => setAns({ ...ans, [i]: o })} /> {o}</label>)}</fieldset>)}
+      <h4>Listening: ¿qué oyes?</h4>
+      <p className="mut">Frases originales leídas por la voz de tu dispositivo (no son letras de canciones). Escucha y elige lo que oyes.</p>
+      <label><input type="checkbox" style={{ width: 'auto' }} checked={noAudio} onChange={(e) => setNoAudio(e.target.checked)} /> No puedo reproducir audio ahora (Listening quedará pendiente)</label>
+      {!noAudio && lItems.map((it, i) => <fieldset key={i}><legend>Frase {i + 1} <button className="s" onClick={() => speak(it.say, song.accent)}>🔊 Escuchar</button> <button className="s" onClick={() => speak(it.say, song.accent, 0.6)}>🐢</button></legend>
+        {it.options.map((o) => <label key={o} style={{ display: 'block', fontWeight: 400 }}><input type="radio" style={{ width: 'auto' }} name={'l' + i} checked={lAns[i] === o} onChange={() => setLAns({ ...lAns, [i]: o })} /> {o}</label>)}</fieldset>)}
       <label htmlFor="fill">Escribe en inglés: «{qs[0].c.meaning}»</label><input id="fill" value={fill} onChange={(e) => setFill(e.target.value)} />
       <button className="p" onClick={submit}>Calificar</button>
       {res && <div role="status"><h4>Total: {res.total}/{res.maxPossible} {res.passed ? '✅ Aprobado' : '— Pendiente de dominio'}</h4>
-        <ul><li>Listening: {res.perSkill.listening}/25 (estimado con las preguntas de palabras; no hay audio autorizado para medir escucha real)</li><li>Reading: {res.perSkill.reading}/25</li><li>Writing: {res.perSkill.writing}/25</li>
+        <ul><li>Listening: {res.perSkill.listening === null ? 'pendiente (sin audio disponible, no se inventa puntuación)' : res.perSkill.listening + '/25'}</li><li>Reading: {res.perSkill.reading}/25</li><li>Writing: {res.perSkill.writing}/25</li>
           <li>Speaking: {res.perSkill.speaking === null ? 'pendiente (sin reconocimiento de voz, no se inventa puntuación)' : res.perSkill.speaking + '/25'}</li></ul>
         <p>Prioridades de mejora: {res.priorities.join(', ')}</p>
-        <p className="mut">Respuestas correctas: {qs.map((q) => `${q.c.term} = ${q.c.meaning}`).join(' · ')}</p>
+        <p className="mut">Respuestas correctas: {qs.map((q) => `${q.c.term} = ${q.c.meaning}`).join(' · ')} · Listening: {lItems.map((it) => it.say).join(' / ')}</p>
         {!res.passed && <p>Puedes repetir el test, revisar errores o avanzar igualmente (la lección queda pendiente de dominio).</p>}
         <button className="s" onClick={() => { setRes(null); setAns({}); setFill(''); }}>Repetir prueba</button>
         {l.stage === 'test' && <button className="p" onClick={() => { update((d) => ({ ...d, events: [...d.events, { type: 'lessons', at: Date.now() }] })); done(); }}>Finalizar lección</button>}</div>}
@@ -356,28 +377,38 @@ function Review({ db, update, giveXp }: { db: DB; update: (f: (d: DB) => DB) => 
 }
 
 function Progress({ db }: { db: DB }) {
+  const passed = db.assessments.filter((a) => a.passed).length;
+  const map = mapState(passed);
+  const dg = diagnose(db); const wk = weeklySummary(db);
   const last = db.assessments.slice(-3).reverse();
   const counts = db.cards.reduce<Record<string, number>>((m, c) => ({ ...m, [c.status]: (m[c.status] ?? 0) + 1 }), {});
+  const skills = ['reading', 'writing', 'listening', 'speaking'].map((k) => { const v = db.assessments.map((a) => a.scores[k]).filter((x): x is number => typeof x === 'number'); return [k, v.length ? Math.round((v.reduce((s, x) => s + x, 0) / v.length / 25) * 100) : null] as const; });
   const badges = [
     ['Primera canción completada', db.lessons.some((l) => l.stage === 'done')],
     ['Siete días de práctica', streak(db.activeDays, today()) >= 7],
     ['Diez dictados completados', db.writingAttempts.filter((a) => a.type === 'dictation').length >= 10],
-    ['Cinco lecciones aprobadas', db.assessments.filter((a) => a.passed).length >= 5],
+    ['Cinco lecciones aprobadas', passed >= 5],
     ['Cien palabras aprendidas', db.cards.filter((c) => c.status === 'mastered').length >= 100],
+    ['Primera conversación completa', db.events.some((e) => e.type === 'conversations')],
   ] as [string, boolean][];
   return (
     <>
       <div className="card"><h2>Mapa A1 → B2 (orientativo)</h2>
-        {['A1', 'A2', 'B1', 'B2'].map((lv, i) => { const passed = db.assessments.filter((a) => a.passed).length; const pct = Math.min(100, Math.max(0, (passed - i * 3) * 33)); return <div key={lv}><b>{lv}</b> {pct}% <div className="bar" role="progressbar" aria-valuenow={pct} aria-valuemin={0} aria-valuemax={100} aria-label={'Progreso ' + lv}><i style={{ width: pct + '%' }} /></div></div>; })}
-        <p className="mut">Cada nivel requiere 3 lecciones aprobadas (≥ {db.settings.threshold}). No es una certificación oficial.</p></div>
-      <div className="card"><h2>XP y racha</h2><p>{db.xp.total} XP · racha {streak(db.activeDays, today())} día(s). El XP tiene tope diario por actividad.</p></div>
+        {map.map((lv) => <div key={lv.level}><h3>{lv.level}</h3><ul>{lv.units.map((u) => <li key={u.name}>{u.done ? '✅' : '🔒'} {u.name}{!u.done && <span className="mut"> — te faltan {u.missing} lección(es) aprobada(s) (≥ {db.settings.threshold}) para desbloquearla</span>}</li>)}</ul></div>)}
+        <p className="mut">Lecciones aprobadas: {passed}. Los niveles son orientativos, no certificaciones.</p></div>
+      <div className="card"><h2>Competencias (promedio de tests)</h2>
+        {skills.map(([k, v]) => <div key={k}>{k}: {v === null ? 'sin datos' : v + '%'}<div className="bar" role="progressbar" aria-valuenow={v ?? 0} aria-valuemin={0} aria-valuemax={100} aria-label={'Competencia ' + k}><i style={{ width: (v ?? 0) + '%' }} /></div></div>)}</div>
+      <div className="card"><h2>XP y racha</h2><p>{db.xp.total} XP · racha {streak(db.activeDays, today())} día(s). El XP tiene tope diario por actividad. Si pierdes la racha, vuelve a empezar con cualquier actividad real.</p></div>
       <div className="card"><h2>Logros</h2><ul>{badges.map(([n, ok]) => <li key={n}>{ok ? '🏅' : '🔒'} {n}</li>)}</ul></div>
       <div className="card"><h2>Diagnóstico</h2>
-        {last.length === 0 ? <p className="mut">Completa un test para ver resultados.</p> : last.map((a) => <p key={a.at}>{new Date(a.at).toLocaleDateString()} — total {a.total}; {Object.entries(a.scores).map(([k, v]) => `${k}: ${v ?? 'pendiente'}`).join(', ')}</p>)}
-        <p>Tarjetas: {Object.entries(counts).map(([k, v]) => `${k} ${v}`).join(' · ') || 'ninguna'}</p>
-        {Object.keys(db.tutorErrors).length > 0 && <p>Errores recurrentes del tutor: {Object.entries(db.tutorErrors).sort((a, b) => b[1] - a[1]).slice(0, 3).map(([k, v]) => `${k} (×${v})`).join(', ')}</p>}
-        <p>Últimos 7 días: {db.events.filter((e) => e.at > Date.now() - 7 * 86_400_000).length} actividades registradas.</p>
-        <p className="mut">Solo se muestran mediciones registradas; no se estiman porcentajes de mejora sin datos comparables.</p></div>
+        {dg.findings.length === 0 && <p className="mut">Aún no hay hallazgos con evidencia suficiente.</p>}
+        {dg.findings.map((f) => <div key={f.title}><b>{f.title}</b><br />Evidencia: {f.evidence}<br />Ejercicio recomendado: {f.exercise}</div>)}
+        {dg.insufficient.length > 0 && <p className="mut">Datos insuficientes para: {dg.insufficient.join('; ')}.</p>}
+        {last.map((a) => <p key={a.at}>{new Date(a.at).toLocaleDateString()} — total {a.total}; {Object.entries(a.scores).map(([k, v]) => `${k}: ${v ?? 'pendiente'}`).join(', ')}</p>)}
+        <p>Tarjetas: {Object.entries(counts).map(([k, v]) => `${k} ${v}`).join(' · ') || 'ninguna'}</p></div>
+      <div className="card"><h2>Resumen semanal</h2>
+        <p>Actividades en 7 días: {wk.events} · intentos de escritura: {wk.attempts}</p>
+        {wk.comparison ? <p>Precisión media de escritura: {Math.round(wk.comparison.now * 100)}% (semana anterior: {Math.round(wk.comparison.before * 100)}%).</p> : <p className="mut">Sin mediciones comparables todavía (se necesitan ≥3 intentos en cada semana); no se calcula mejora.</p>}</div>
     </>
   );
 }
@@ -385,8 +416,21 @@ function Progress({ db }: { db: DB }) {
 function Settings({ db, update }: { db: DB; update: (f: (d: DB) => DB) => void }) {
   const s = db.settings; const set = (p: Partial<typeof s>) => update((d) => ({ ...d, settings: { ...d.settings, ...p } }));
   const [note, setNote] = useState('');
+  const deviceTz = Intl.DateTimeFormat().resolvedOptions().timeZone;
   async function enableNotif(on: boolean) {
-    if (!on) return set({ reminders: { ...s.reminders, daily: false } });
+    const base = { time: s.reminders.time, days: s.reminders.days, timezone: s.timezone, deviceTz };
+    if (!on) {
+      if (isNative()) await syncNativeReminders({ ...base, daily: false, notificationsGranted: false }).catch(() => {});
+      return set({ reminders: { ...s.reminders, daily: false } });
+    }
+    if (isNative()) {
+      try {
+        const r = await syncNativeReminders({ ...base, daily: true, notificationsGranted: true });
+        if (r === 'denied') { set({ reminders: { ...s.reminders, daily: false, granted: false } }); return setNote('Permiso de notificaciones denegado: no se enviarán recordatorios.'); }
+        set({ reminders: { ...s.reminders, daily: true, granted: true } });
+        return setNote('Recordatorios programados en el sistema (Android puede retrasarlos por ahorro de batería).');
+      } catch { return setNote('No se pudieron programar los recordatorios en este dispositivo.'); }
+    }
     if (!('Notification' in window)) return setNote('Este navegador no admite notificaciones.');
     const p = await Notification.requestPermission();
     if (p !== 'granted') return setNote('Permiso denegado: no se enviarán recordatorios.');
@@ -403,13 +447,13 @@ function Settings({ db, update }: { db: DB; update: (f: (d: DB) => DB) => void }
         <label htmlFor="th2">Tema</label><select id="th2" value={s.theme} onChange={(e) => set({ theme: e.target.value as any })}><option value="auto">Automático</option><option value="light">Claro</option><option value="dark">Oscuro</option></select></div>
       <div className="card"><h2>Recordatorios</h2>
         <label><input type="checkbox" style={{ width: 'auto' }} checked={s.reminders.daily} onChange={(e) => enableNotif(e.target.checked)} /> Recordatorio diario ({s.timezone})</label>
-        <label htmlFor="tm">Hora</label><input id="tm" type="time" value={s.reminders.time} onChange={(e) => set({ reminders: { ...s.reminders, time: e.target.value } })} />
+        <label htmlFor="tm">Hora</label><input id="tm" type="time" value={s.reminders.time} onChange={(e) => { set({ reminders: { ...s.reminders, time: e.target.value } }); if (isNative() && s.reminders.daily) syncNativeReminders({ time: e.target.value, days: s.reminders.days, timezone: s.timezone, deviceTz, daily: true, notificationsGranted: true }).catch(() => {}); }} />
         <fieldset><legend>Días</legend>{['D', 'L', 'M', 'X', 'J', 'V', 'S'].map((n, i) => <label key={i} style={{ marginRight: 8 }}><input type="checkbox" style={{ width: 'auto' }} checked={s.reminders.days.includes(i)} onChange={(e) => set({ reminders: { ...s.reminders, days: e.target.checked ? [...s.reminders.days, i] : s.reminders.days.filter((x) => x !== i) } })} /> {n}</label>)}</fieldset>
         {note && <p role="status">{note}</p>}</div>
       <div className="card"><h2>Privacidad y datos</h2>
         <p>Todo se guarda en este dispositivo. Sin cuentas, sin anuncios, sin venta de datos. Las grabaciones no se almacenan.</p>
         <button className="s" onClick={() => download('lingua-datos.json', JSON.stringify(db, null, 2), 'application/json')}>Exportar mis datos</button>
-        <button className="s" onClick={() => { if (confirm('¿Borrar todos los datos locales?')) { localRepo.clear(); location.reload(); } }}>Borrar todos mis datos</button></div>
+        <button className="s" onClick={() => { if (confirm('¿Borrar todos los datos locales?')) { clearAsync().then(() => location.reload()); } }}>Borrar todos mis datos</button></div>
       <div className="card"><h2>Ayuda y limitaciones</h2><ul>
         <li>YouTube requiere conexión; la app no extrae audio, letras ni subtítulos.</li>
         <li>No hay evaluación fonética profesional; el reconocimiento de voz depende del navegador.</li>

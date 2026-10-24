@@ -1,3 +1,4 @@
+﻿import { get, set, del } from 'idb-keyval';
 import type { Card } from '../core/srs';
 import type { Lesson } from '../core/lesson';
 import type { XpState } from '../core/xp';
@@ -43,3 +44,16 @@ export const localRepo: Repo = {
   save(db) { localStorage.setItem(KEY, JSON.stringify(db)); },
   clear() { localStorage.removeItem(KEY); },
 };
+
+/** Persistencia principal: IndexedDB (idb-keyval). Migra automáticamente datos antiguos de localStorage. */
+export async function loadAsync(): Promise<DB> {
+  try {
+    const v = await get('db');
+    if (v) return migrate(v);
+    const ls = localStorage.getItem(KEY);
+    if (ls) { const d = migrate(JSON.parse(ls)); await set('db', d); localStorage.removeItem(KEY); return d; }
+  } catch { /* IndexedDB no disponible: se usa estado vacío */ }
+  return emptyDB();
+}
+export async function saveAsync(db: DB): Promise<void> { try { await set('db', db); } catch { try { localStorage.setItem(KEY, JSON.stringify(db)); } catch { /* sin almacenamiento */ } } }
+export async function clearAsync(): Promise<void> { try { await del('db'); } catch { /* ignorar */ } localStorage.removeItem(KEY); }

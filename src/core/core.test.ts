@@ -69,6 +69,7 @@ describe('assessment', () => {
   it('speaking pendiente no inventa puntaje', () => {
     const r = evaluate({ listening: 25, reading: 25, writing: 25, speaking: null });
     expect(r.passed).toBe(false); expect(r.speakingStatus).toBe('pending'); expect(r.maxPossible).toBe(75);
+    expect(evaluate({ listening: null, reading: 25, writing: 25, speaking: 25 }).passed).toBe(false);
   });
   it('mínimo por habilidad', () => {
     const r = evaluate({ listening: 25, reading: 25, writing: 25, speaking: 10 }, { threshold: 80, minPerSkill: 15 });
