@@ -84,8 +84,12 @@ describe('diagnóstico', () => {
 });
 
 describe('migración de esquema', () => {
-  it('v1 → v2 conserva datos y añade campos', () => {
+  it('v1 → versión actual conserva datos y añade campos', () => {
     const d = migrate({ version: 1, songs: [{ id: 's' }], settings: { level: 'B1', reminders: { daily: true, review: false, time: '08:00' } } });
-    expect(d.version).toBe(2); expect(d.songs).toHaveLength(1); expect(d.events).toEqual([]); expect(d.settings.reminders.days).toHaveLength(7);
+    expect(d.version).toBeGreaterThanOrEqual(2);
+    expect(d.songs).toHaveLength(1);
+    expect(d.events).toEqual([]);
+    expect(d.settings.reminders.days).toHaveLength(7);
+    expect(d.settings.accent).toBeDefined();
   });
 });

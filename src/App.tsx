@@ -21,19 +21,32 @@ import {
   formatProseForWriting,
 } from './core/extractor';
 import { LEVELED_CATALOG, getUnlockedLevels, type LeveledSong } from './data/catalog';
+import type { Accent } from './data/repo';
 
 type Tab = 'home' | 'library' | 'review' | 'progress' | 'settings' | 'lesson' | 'tutor' | 'missions' | 'practice';
 const uid = () => crypto.randomUUID();
 const today = () => dayKey(Date.now());
 const STAGE_LABEL: Record<Stage, string> = { listening: 'Listening', confirm: 'Confirmar', reading: 'Reading', writing: 'Writing', speaking: 'Speaking', test: 'Test final', done: 'Resultado' };
 
-function speak(text: string, accent: 'US' | 'UK', rate = 1) {
+export const ACCENT_LABELS: Record<Accent, string> = {
+  CA: 'Canadiense (CA)',
+  US: 'Americano (US)',
+  UK: 'Británico (UK)',
+};
+
+export const ACCENT_FLAGS: Record<Accent, string> = {
+  CA: '🇨🇦',
+  US: '🇺🇸',
+  UK: '🇬🇧',
+};
+
+function speak(text: string, accent: Accent, rate = 1) {
   if (!('speechSynthesis' in window)) return false;
   window.speechSynthesis.cancel();
   setTimeout(() => {
     try {
       const u = new SpeechSynthesisUtterance(text);
-      const targetLang = accent === 'US' ? 'en-US' : 'en-GB';
+      const targetLang = accent === 'CA' ? 'en-CA' : (accent === 'UK' ? 'en-GB' : 'en-US');
       u.lang = targetLang;
       // Normal = 1.0; Lento = 0.5 (la mitad de velocidad para diferenciar claramente lento vs normal)
       u.rate = rate < 0.8 ? 0.5 : 1.0;
@@ -43,6 +56,7 @@ function speak(text: string, accent: 'US' | 'UK', rate = 1) {
       if (voices && voices.length > 0) {
         const matchingVoice =
           voices.find((v) => v.lang === targetLang) ||
+          (accent === 'CA' ? voices.find((v) => v.lang === 'en-US') : undefined) ||
           voices.find((v) => v.lang.replace('_', '-').startsWith('en')) ||
           voices[0];
         if (matchingVoice) u.voice = matchingVoice;
@@ -96,8 +110,8 @@ export function App() {
     <>
       <header className="duo-header">
         <div className="duo-header-inner">
-          <div className="duo-pill" title="Nivel objetivo">
-            <span style={{ fontSize: '1.2rem' }}>{db.settings.accent === 'UK' ? '🇬🇧' : '🇺🇸'}</span>
+          <div className="duo-pill" title={`Acento: ${ACCENT_LABELS[db.settings.accent || 'CA']}`}>
+            <span style={{ fontSize: '1.2rem' }}>{ACCENT_FLAGS[db.settings.accent || 'CA']}</span>
             <span className="duo-pill-text">{db.settings.level}</span>
           </div>
 
@@ -459,7 +473,7 @@ function Home({ db, go, open, update }: { db: DB; go: (t: Tab) => void; open: (i
                   <div>
                     <b style={{ fontSize: '1.05rem' }}>{cat.title}</b> — <span className="mut">{cat.artist}</span>
                     <div style={{ margin: '4px 0' }}>
-                      <b>Nivel {cat.level}</b> · <span className="mut">Acento: {cat.accent === 'US' ? 'Americano (US)' : 'Británico (UK)'}</span>
+                      <b>Nivel {cat.level}</b> · <span className="mut">Acento: {ACCENT_FLAGS[cat.accent]} {ACCENT_LABELS[cat.accent]}</span>
                     </div>
                   </div>
                   <button
@@ -684,7 +698,7 @@ function Library({ db, update, open }: { db: DB; update: (f: (d: DB) => DB) => v
                   <div>
                     <b style={{ fontSize: '1.05rem' }}>{cat.title}</b> — <span className="mut">{cat.artist}</span>
                     <div style={{ margin: '4px 0' }}>
-                      <b>Nivel {cat.level}</b> · <span className="mut">Acento: {cat.accent === 'US' ? 'Americano (US)' : 'Británico (UK)'}</span>
+                      <b>Nivel {cat.level}</b> · <span className="mut">Acento: {ACCENT_FLAGS[cat.accent]} {ACCENT_LABELS[cat.accent]}</span>
                     </div>
                   </div>
                   <div>
@@ -1447,9 +1461,10 @@ function Speaking({ song, update, done }: { song: Song; update: (f: (d: DB) => D
   }
 
   async function recognize() {
+    const speechLang = song.accent === 'CA' ? 'en-CA' : (song.accent === 'UK' ? 'en-GB' : 'en-US');
     if (isNative()) {
       try {
-        const text = await nativeRecognize(song.accent === 'US' ? 'en-US' : 'en-GB');
+        const text = await nativeRecognize(speechLang);
         if (!text) return setMsg('Este dispositivo no tiene reconocimiento de voz disponible. Usa el botón «🎙️ Grabar mi voz» para comparar al oído.');
         setRec(text);
         update((d) => ({
@@ -1478,7 +1493,7 @@ function Speaking({ song, update, done }: { song: Song; update: (f: (d: DB) => D
 
     try {
       const r = new SR();
-      r.lang = song.accent === 'US' ? 'en-US' : 'en-GB';
+      r.lang = speechLang;
       r.interimResults = false;
       r.maxAlternatives = 1;
       setIsListening(true);
@@ -1764,7 +1779,12 @@ function Settings({ db, update }: { db: DB; update: (f: (d: DB) => DB) => void }
     <>
       <div className="card"><h2>Idioma, nivel y acento</h2>
         <label htmlFor="lv">Nivel (manual)</label><select id="lv" value={s.level} onChange={(e) => set({ level: e.target.value })}>{['A1', 'A2', 'B1', 'B2'].map((x) => <option key={x}>{x}</option>)}</select>
-        <label htmlFor="ac">Acento</label><select id="ac" value={s.accent} onChange={(e) => set({ accent: e.target.value as 'US' | 'UK' })}><option value="US">Americano</option><option value="UK">Británico</option></select>
+        <label htmlFor="ac">Acento objetivo</label>
+        <select id="ac" value={s.accent} onChange={(e) => set({ accent: e.target.value as Accent })}>
+          <option value="CA">🇨🇦 Canadiense (Principal)</option>
+          <option value="US">🇺🇸 Americano</option>
+          <option value="UK">🇬🇧 Británico</option>
+        </select>
         <label htmlFor="th">Umbral para aprobar: {s.threshold}</label><input id="th" type="range" min={50} max={100} value={s.threshold} onChange={(e) => set({ threshold: +e.target.value })} />
         <label htmlFor="mn">Mínimo por habilidad: {s.minPerSkill}/25</label><input id="mn" type="range" min={0} max={25} value={s.minPerSkill} onChange={(e) => set({ minPerSkill: +e.target.value })} />
         <label htmlFor="th2">Tema</label><select id="th2" value={s.theme} onChange={(e) => set({ theme: e.target.value as any })}><option value="auto">Automático</option><option value="light">Claro</option><option value="dark">Oscuro</option></select></div>

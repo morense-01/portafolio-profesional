@@ -1,3 +1,5 @@
+import type { Accent } from './repo';
+
 export interface LeveledSong {
   id: string;
   title: string;
@@ -5,13 +7,24 @@ export interface LeveledSong {
   videoId: string;
   url: string;
   level: 'A1' | 'A2' | 'B1' | 'B2';
-  accent: 'US' | 'UK';
+  accent: Accent;
   description: string;
   grammarFocus: string;
 }
 
 export const LEVELED_CATALOG: LeveledSong[] = [
   // NIVEL A1 (Principiante: oraciones cortas, vocabulario cotidiano, ritmo pausado)
+  {
+    id: 'a1-heaven',
+    title: 'Heaven',
+    artist: 'Bryan Adams',
+    videoId: '3eT464L1YRA',
+    url: 'https://www.youtube.com/watch?v=3eT464L1YRA',
+    level: 'A1',
+    accent: 'CA',
+    description: 'Clásico canadiense con pronunciación clara, tiempo pausado y oraciones básicas en presente.',
+    grammarFocus: 'Presente simple, oraciones de amor cotidiano y contracciones básicas.',
+  },
   {
     id: 'a1-what-a-wonderful-world',
     title: 'What a Wonderful World',
@@ -59,6 +72,17 @@ export const LEVELED_CATALOG: LeveledSong[] = [
 
   // NIVEL A2 (Básico consolidado: preguntas, pasado simple, rutinas)
   {
+    id: 'a2-ghost',
+    title: 'Ghost',
+    artist: 'Justin Bieber',
+    videoId: 'Fp8msa5uYsc',
+    url: 'https://www.youtube.com/watch?v=Fp8msa5uYsc',
+    level: 'A2',
+    accent: 'CA',
+    description: 'Canción canadiense moderna con dicción clara sobre recuerdos y sentimientos.',
+    grammarFocus: 'Pasado simple, preguntas y pronombres demostrativos.',
+  },
+  {
     id: 'a2-fix-you',
     title: 'Fix You',
     artist: 'Coldplay',
@@ -94,6 +118,17 @@ export const LEVELED_CATALOG: LeveledSong[] = [
 
   // NIVEL B1 (Intermedio: narrativa en pasado, emociones, expresiones idiomáticas)
   {
+    id: 'b1-treat-you-better',
+    title: 'Treat You Better',
+    artist: 'Shawn Mendes',
+    videoId: 'lY2yjAdbvdQ',
+    url: 'https://www.youtube.com/watch?v=lY2yjAdbvdQ',
+    level: 'B1',
+    accent: 'CA',
+    description: 'Pop canadiense con entonación natural, comparativos y oraciones condicionales.',
+    grammarFocus: 'Comparativos (better than he can), oraciones condicionales y causa.',
+  },
+  {
     id: 'b1-someone-like-you',
     title: 'Someone Like You',
     artist: 'Adele',
@@ -128,6 +163,17 @@ export const LEVELED_CATALOG: LeveledSong[] = [
   },
 
   // NIVEL B2 (Intermedio alto: habla rápida, phrasal verbs, contracciones naturales)
+  {
+    id: 'b2-my-heart-will-go-on',
+    title: 'My Heart Will Go On',
+    artist: 'Celine Dion',
+    videoId: '9bFHsd3o1w0',
+    url: 'https://www.youtube.com/watch?v=9bFHsd3o1w0',
+    level: 'B2',
+    accent: 'CA',
+    description: 'Balada emblemática con amplia variedad léxica, entonación lírica y estructuras complejas.',
+    grammarFocus: 'Futuro con "will", oraciones adverbiales de tiempo y léxico poético.',
+  },
   {
     id: 'b2-viva-la-vida',
     title: 'Viva La Vida',
