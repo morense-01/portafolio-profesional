@@ -81,7 +81,7 @@ ${(noindex || !site.indexable) ? '<meta name="robots" content="noindex, nofollow
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="${esc(site.shortName)}: portafolio profesional">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="${L('/assets/styles.css')}">
+<link rel="stylesheet" href="${L('/assets/styles.css')}?v=201220">
 ${ld ? `<script type="application/ld+json">${JSON.stringify(ld).replace(/</g, '\\u003c')}</script>` : ''}
 </head>
 <body data-view="all" data-base="${esc(BASE)}">
@@ -101,7 +101,7 @@ ${body}
     ${site.minimal ? '' : `<p><a href="${L('/')}">Volver al inicio</a></p>`}
   </div>
 </footer>
-<script src="${L('/assets/app.js')}" defer></script>
+<script src="${L('/assets/app.js')}?v=201220" defer></script>
 </body>
 </html>
 `;
@@ -113,6 +113,7 @@ const hero = (h, lead, route, extra = '', showShare = true) => `<section class="
 const cvDoc = docs.find((d) => /^CV/i.test(d.category));
 const cvHref = cvDoc ? L(`/documents/${cvDoc.file}`) : L('/documentos/');
 const cvLabel = cvDoc ? 'Descargar currículum' : 'Consultar currículum';
+const cvAttr = cvDoc ? ' download' : '';
 const company = (e) => `${esc(e.company)}`;
 const roleLine = (e) => [e.roleConfirmed && e.role ? e.role : '', clean(e.relationship)].filter(Boolean).join(' · ');
 
@@ -135,16 +136,18 @@ function home() {
     [`${profile.sectors.length}`, 'sectores de experiencia'],
   ].map(([n, t]) => `<div class="fact"><b>${esc(n)}</b><span>${esc(t)}</span></div>`).join('');
   const results = metrics.length
-    ? `<div class="grid3">${metrics.slice(0, 5).map((m) => `<article class="card"><h3>${esc(m.claimedValue)}</h3><p>${esc(m.title)}</p><p class="muted">${esc(m.company)} · ${esc(m.period)}</p></article>`).join('')}</div><p><a href="${L('/logros/')}">Ver método y fuente de cada resultado</a></p>`
+    ? `<div class="grid3">${metrics.slice(0, 6).map((m) => `<article class="card"><h3>${esc(m.claimedValue)}</h3><p>${esc(m.title)}</p><p class="muted">${esc(m.company)} · ${esc(m.period)}</p></article>`).join('')}</div><p><a href="${L('/logros/')}">Ver método, tiempo y ruta de cada resultado</a></p>`
     : `<p class="note">Los resultados medibles se publican únicamente después de validar su línea base, período, método de cálculo y fuente. Consulte la sección de <a href="${L('/logros/')}">logros</a>.</p>`;
   const quick = [['/trayectoria/', 'Trayectoria', `${exps.length} expedientes por empresa, con enlace propio.`], ['/logros/', 'Logros', 'Resultados con método y fuente de validación.'], ['/certificaciones/', 'Certificaciones', 'Credenciales con enlace de verificación.'], ['/proyectos/', 'Proyectos', 'Proyectos tecnológicos y su estado real.'], ['/documentos/', 'Documentos', 'Biblioteca documental y currículum.']]
     .map(([r, t, d]) => `<a class="card link-card" href="${L(r)}"><h3>${t}</h3><p>${d}</p></a>`).join('');
   const body = `<section class="hero"><div class="wrap">
-  <p class="eyebrow">${esc(profile.location)}</p>
+  <p class="eyebrow">${esc(profile.location)} · <span class="tag demostrada">Actual: Astro - Pico Duarte Cartón</span></p>
   <h1>${esc(profile.name)}</h1>
   <p class="headline">${esc(profile.headline)}</p>
   <p class="lead">${esc(profile.tagline)}</p>
-  <div class="actions"><a class="btn primary" href="${L('/trayectoria/')}">Ver trayectoria</a><a class="btn" href="${cvHref}">${cvLabel}</a><button class="btn ghost" data-share data-url="${abs('/')}" data-title="${esc(site.title)}">Compartir portafolio</button><button class="btn ghost" data-copy="${abs('/')}">Copiar enlace</button></div>
+  <div class="card current-role-card"><p><strong>Posición Actual:</strong> Responsable de Tecnología de la Información en <a href="${L('/experiencia/astro-pico-duarte-carton/')}">Astro - Pico Duarte Cartón</a> (Haina, Rep. Dom.) · Liderando infraestructura industrial, desarrollo de soluciones internas, integración con SAP ERP, control digital de calidad e Inteligencia Artificial.</p></div>
+  <div class="card current-role-card"><p><strong>Formación Académica Superior:</strong> ${esc(profile.degree)} · <a href="${L('/documents/Titulo_Ingenieria_Sistemas_OyM.pdf')}" target="_blank" rel="noopener">Consultar Título Universitario oficial (PDF)</a> · <a href="${L('/certificaciones/')}">Ver credenciales y títulos</a></p></div>
+  <div class="actions"><a class="btn primary" href="${L('/trayectoria/')}">Ver trayectoria</a><a class="btn" href="${cvHref}"${cvAttr}>${cvLabel}</a><button class="btn ghost" data-share data-url="${abs('/')}" data-title="${esc(site.title)}">Compartir portafolio</button><button class="btn ghost" data-copy="${abs('/')}">Copiar enlace</button></div>
   <p class="ext">${links.map((l) => ext(l.url, l.label)).join(' · ')}</p>
 </div></section>
 <section class="wrap block"><h2>Resumen ejecutivo</h2>${ul(profile.summary, 'summary')}<div class="facts">${facts}</div><p class="muted small">${esc(profile.yearsNote)}</p></section>
@@ -161,6 +164,8 @@ function perfilEjecutivo() {
   const lab = { demostrada: 'Competencias directivas demostradas', requiere: 'Competencias en documentación' };
   const rows = (ev) => profile.executiveAreas.filter((a) => a.evidence === ev).slice(0, 22).map((a) => `<article class="tech-item"><span class="tech-item-title">${esc(a.title)}</span><p class="tech-item-desc">${esc(a.text)}</p></article>`).join('');
 
+  const currentBox = `<section class="wrap block"><div class="card current-role-card"><p><strong>Desempeño Ejecutivo Actual:</strong> Responsable de Tecnología de la Información en <a href="${L('/experiencia/astro-pico-duarte-carton/')}">Astro - Pico Duarte Cartón</a> (Haina, Rep. Dom.) · Liderazgo estratégico de infraestructura industrial, desarrollo del ecosistema interno de gestión TI, control digital de calidad, integración de facturas electrónicas en SAP y proyectos de IA.</p></div></section>`;
+
   const execSummaryItems = profile.executiveSummary && profile.executiveSummary.length ? profile.executiveSummary : profile.summary;
   const execCards = execSummaryItems.slice(0, 33).map((item) => {
     const match = item.match(/<strong>(.*?):?<\/strong>\s*(.*)/);
@@ -171,6 +176,7 @@ function perfilEjecutivo() {
   const execSummaryHtml = execSummaryItems.length ? `<section class="wrap block"><h2>Resumen de trayectoria ejecutiva</h2><p class="muted">Síntesis estructurada de capacidades directivas, gobierno y liderazgo estratégico para evaluación rápida:</p><div class="tech-summary-grid">${execCards}</div></section>` : '';
 
   const body = hero('Perfil ejecutivo', '', '/perfil-ejecutivo/', '', false) + `
+${currentBox}
 ${execSummaryHtml}
 <section class="wrap block"><h2>${lab.demostrada}</h2><p class="muted">Competencias estratégicas respaldadas por cargos gerenciales y consultoría en entornos de alta exigencia.</p><div class="tech-summary-grid">${rows('demostrada')}</div></section>
 ${profile.executiveAreas.some(a => a.evidence === 'requiere') ? `<section class="band"><div class="wrap block"><h2>${lab.requiere}</h2><p class="muted">Competencias adicionales en proceso de vinculación a casos específicos.</p><div class="tech-summary-grid">${rows('requiere')}</div></div></section>` : ''}`;
@@ -180,6 +186,9 @@ ${profile.executiveAreas.some(a => a.evidence === 'requiere') ? `<section class=
 function perfilTecnico() {
   const lab = { demostrada: 'Experiencia demostrada', 'por-confirmar': 'Por confirmar con evidencia' };
   const cards = profile.technicalAreas.slice(0, 14).map((a, i) => `<article class="card" id="area-${i + 1}"><span class="tag ${a.level}">${lab[a.level]}</span><h3>${i + 1}. ${esc(a.title)}</h3><p>${esc(a.use)}</p></article>`).join('');
+
+  const currentBox = `<section class="wrap block"><div class="card current-role-card"><p><strong>Entorno Operativo Actual:</strong> Responsable de TI en <a href="${L('/experiencia/astro-pico-duarte-carton/')}">Astro - Pico Duarte Cartón</a> (Haina, Rep. Dom.) · Infraestructura industrial continua, servidores Windows/Linux, desarrollo de software interno, scripts de automatización en Python/PowerShell, integración ERP SAP y modelos de IA.</p></div></section>`;
+
   const techSummaryItems = profile.technicalSummary && profile.technicalSummary.length ? profile.technicalSummary : [];
   const techCards = techSummaryItems.slice(0, 18).map((item) => {
     const match = item.match(/<strong>(.*?):?<\/strong>\s*(.*)/);
@@ -190,7 +199,7 @@ function perfilTecnico() {
   const techSummaryHtml = techSummaryItems.length ? `<section class="wrap block"><h2>Resumen de trayectoria técnica</h2><p class="muted">Síntesis estructurada de capacidades y dominios técnicos clave para evaluación rápida de reclutadores y líderes de TI:</p><div class="tech-summary-grid">${techCards}</div></section>` : '';
   const dirRows = profile.executiveAreas.filter((a) => a.evidence === 'demostrada').slice(0, 30).map((a) => `<article class="tech-item"><span class="tech-item-title">${esc(a.title)}</span><p class="tech-item-desc">${esc(a.text)}</p></article>`).join('');
   const dirHtml = dirRows ? `<section class="wrap block"><h2>Competencias directivas demostradas</h2><p class="muted">Competencias estratégicas de liderazgo y gestión respaldadas por más de 20 años en dirección tecnológica:</p><div class="tech-summary-grid">${dirRows}</div></section>` : '';
-  const body = hero('Perfil Operativo', '', '/perfil-tecnico/', '', false) + `${techSummaryHtml}${dirHtml}<section class="wrap block"><h2>Competencias y Áreas Técnicas</h2><div class="grid2">${cards}</div></section>`;
+  const body = hero('Perfil Operativo', '', '/perfil-tecnico/', '', false) + `${currentBox}${techSummaryHtml}${dirHtml}<section class="wrap block"><h2>Competencias y Áreas Técnicas</h2><div class="grid2">${cards}</div></section>`;
   out('perfil-tecnico/index.html', layout({ title: 'Perfil Operativo', desc: 'Infraestructura, redes, seguridad, nube híbrida, continuidad, WMS y automatización: competencias técnicas con su contexto de uso.', route: '/perfil-tecnico/', body }));
 }
 
@@ -204,7 +213,10 @@ function trayectoria() {
       </article>`).join('');
     return `<div class="tech-summary-grid spacer-sm">${items}</div>`;
   };
-  const item = (e) => `<li class="tl"><article class="card"><p class="period">${esc(e.periodDisplay)}</p><h3><a href="${L(`/experiencia/${e.slug}/`)}">${company(e)}</a></h3><p>${esc([e.roleConfirmed ? e.role : '', e.sector].filter(Boolean).join(' · ') || clean(e.relationship) || '')}</p><p>${esc(e.summary)}</p>${e.periodNote ? `<p class="muted small">${esc(e.periodNote)}</p>` : ''}${renderHighlights(e.highlights)}<p class="spacer-sm"><a href="${L(`/experiencia/${e.slug}/`)}">Abrir expediente de ${esc(e.company)}</a></p></article></li>`;
+  const item = (e) => {
+    const isCurrent = e.end === 'Actual' || String(e.periodDisplay).includes('Actual');
+    return `<li class="tl"><article class="card"><p class="period">${esc(e.periodDisplay)} ${isCurrent ? '<span class="tag demostrada">Empleo actual</span>' : ''}</p><h3><a href="${L(`/experiencia/${e.slug}/`)}">${company(e)}</a></h3><p>${esc([e.roleConfirmed ? e.role : '', e.sector].filter(Boolean).join(' · ') || clean(e.relationship) || '')}</p><p>${esc(e.summary)}</p>${e.periodNote ? `<p class="muted small">${esc(e.periodNote)}</p>` : ''}${renderHighlights(e.highlights)}<p class="spacer-sm"><a href="${L(`/experiencia/${e.slug}/`)}">Abrir expediente de ${esc(e.company)}</a></p></article></li>`;
+  };
   const body = hero('Trayectoria profesional', '', '/trayectoria/', '', false) + `
 <section class="wrap block"><ol class="timeline">${exps.map(item).join('')}</ol></section>`;
   out('trayectoria/index.html', layout({ title: 'Trayectoria profesional', desc: 'Trayectoria cronológica de Mario Méndez: Astro - Pico Duarte Cartón, ODS Logistics, MADECO, UNIPAGO, Dominicana de Cales y VICRISA.', route: '/trayectoria/', body }));
@@ -215,11 +227,49 @@ function experiencia() {
     const route = `/experiencia/${e.slug}/`;
     const prev = exps[i - 1], next = exps[i + 1];
     const myProj = projects.filter((p) => p.relatedCompany === e.slug);
-    const myMetrics = metrics.filter((m) => m.company === e.company || m.company === e.slug);
-    const cases = (e.cases || []).map((c) => `<article class="card case" id="${esc(c.id || slugify(c.title))}"><h3>${esc(c.title)}</h3><dl>${[['Situación inicial', c.situation], ['Problema o necesidad', c.problem], ['Objetivo', c.goal], ['Responsabilidad específica', c.responsibility], ['Solución aplicada', c.solution], ['Tecnologías', (c.technologies || []).join(', ')], ['Resultado obtenido', c.result], ['Métrica antes y después', c.metric], ['Alcance del resultado', c.scope], ['Evidencia verificable', c.evidence], ['Lecciones aprendidas', c.lessons]].filter(([, v]) => v).map(([k, v]) => `<dt>${k}</dt><dd>${esc(v)}</dd>`).join('')}</dl></article>`).join('');
-    const ev = (e.evidence || []).map((x) => `<li>${ext(x.url, x.title)}${x.type ? ` <span class="muted">(${esc(x.type)})</span>` : ''}</li>`).join('');
+    const myMetrics = metrics.filter((m) => m.company === e.company || m.companySlug === e.slug || m.company?.includes(e.company));
+    const cases = (e.cases || []).map((c) => {
+      const fields = [
+        ['Situación inicial', c.situation],
+        ['Problema o necesidad', c.problem],
+        ['Objetivo', c.goal],
+        ['Tiempo de ejecución y duración', c.duration || c.time],
+        ['Ruta y fases de implementación', c.roadmap],
+        ['Responsabilidad específica', c.responsibility],
+        ['Solución aplicada', c.solution],
+        ['Tecnologías', (c.technologies || []).join(', ')],
+        ['Resultado obtenido', c.result],
+        ['Métrica antes y después', c.metric],
+        ['Alcance del resultado', c.scope],
+        ['Evidencia verificable', c.evidence],
+        ['Lecciones aprendidas', c.lessons]
+      ].filter(([, v]) => v);
+
+      return `<article class="card case" id="${esc(c.id || slugify(c.title))}"><h3>${esc(c.title)}</h3><dl>${fields.map(([k, v]) => `<dt>${k}</dt><dd>${esc(v)}</dd>`).join('')}</dl></article>`;
+    }).join('');
+
+    const ev = (e.evidence || []).map((x) => {
+      const href = /^https?:/.test(x.url) ? x.url : L('/' + x.url.replace(/^\//, ''));
+      return `<li><a href="${esc(href)}" target="_blank" rel="noopener noreferrer">${esc(x.title)}</a>${x.type ? ` <span class="muted">(${esc(x.type)})</span>` : ''}</li>`;
+    }).join('');
     const techs = (e.technologies || []).map((t) => `<li><strong>${esc(t.name)}</strong>${clean(t.context) ? `: ${esc(t.context)}` : ''}</li>`).join('');
     const sec = (n, id, t, inner, aud = '') => `<section class="block ${aud}" id="${id}"><h2>${n}. ${t}</h2>${inner || empty}</section>`;
+
+    const metricsHtml = myMetrics.length
+      ? `<h3>Métricas y logros validados en esta experiencia (${myMetrics.length})</h3>
+         <div class="tech-summary-grid">
+           ${myMetrics.map((m) => `
+             <article class="tech-item">
+               <span class="tech-item-title">${esc(m.claimedValue)} · ${esc(m.title)}</span>
+               <p class="tech-item-desc"><strong>Tiempo y duración:</strong> ${esc(m.period)} ${m.duration ? `(${esc(m.duration)})` : ''}</p>
+               <p class="tech-item-desc"><strong>Antes → Después:</strong> ${esc(m.baseline)} → ${esc(m.result)}</p>
+               ${m.roadmap && m.roadmap.length ? `<p class="tech-item-desc"><strong>Ruta:</strong> ${esc(m.roadmap.map(r => r.phase).join(' → '))}</p>` : ''}
+               <p class="tech-item-desc muted small">${esc(m.method)}</p>
+             </article>
+           `).join('')}
+         </div>`
+      : '';
+
     const body = `<section class="page-head"><div class="wrap"><nav class="crumbs" aria-label="Ruta"><a href="${L('/')}">Inicio</a> › <a href="${L('/trayectoria/')}">Trayectoria</a> › <span>${company(e)}</span></nav>
 <p class="eyebrow">${esc(e.periodDisplay)}</p><h1>${company(e)}</h1>
 <p class="lead">${esc([roleLine(e), clean(e.sector), clean(e.location)].filter(Boolean).join(' · '))}</p>
@@ -229,10 +279,10 @@ ${sec(1, 'resumen', 'Resumen ejecutivo de la experiencia', `<p>${esc(e.summary)}
 ${sec(2, 'contexto', 'Contexto operativo', ul(e.context || []))}
 ${sec(3, 'ejecutivas', 'Responsabilidades ejecutivas', ul(e.executive || []), 'aud-exec')}
 ${sec(4, 'operativas', 'Responsabilidades operativas', ul(e.operational || []), 'aud-tech')}
-${sec(5, 'casos', 'Casos de éxito', cases ? `<p class="muted">Se distingue entre resultados individuales, de equipo y de la empresa.</p>${cases}` : `${empty}<p class="muted small">Los casos se publican con su evidencia y alcance verificados.</p>`)}
+${sec(5, 'casos', 'Casos de éxito y proyectos ejecutados', cases ? `<p class="muted">Se documenta la situación inicial, problema, tiempo de ejecución, ruta paso a paso de cómo se hizo, tecnologías, métricas y lecciones aprendidas.</p>${cases}` : `${empty}<p class="muted small">Los casos se publican con su evidencia y alcance verificados.</p>`)}
 ${sec(6, 'impacto', 'Impacto empresarial', ul(e.impact || []) , 'aud-exec')}
 ${sec(7, 'tecnologias', 'Tecnologías y competencias demostradas', techs ? `<ul>${techs}</ul>` : '', 'aud-tech')}
-${sec(8, 'evidencias', 'Evidencias y documentos', (ev ? `<ul>${ev}</ul>` : '') + (myMetrics.length ? `<h3>Métricas validadas</h3><ul>${myMetrics.map((m) => `<li>${esc(m.title)}: ${esc(m.claimedValue)}</li>`).join('')}</ul>` : '') + (myProj.length ? `<h3>Proyectos asociados</h3><ul>${myProj.map((p) => `<li><a href="${L(`/proyectos/${p.slug}/`)}">${esc(p.name)}</a></li>`).join('')}</ul>` : ''))}
+${sec(8, 'evidencias', 'Evidencias, métricas y proyectos asociados', (ev ? `<ul>${ev}</ul>` : '') + metricsHtml + (myProj.length ? `<h3>Proyectos asociados</h3><ul>${myProj.map((p) => `<li><a href="${L(`/proyectos/${p.slug}/`)}">${esc(p.name)}</a></li>`).join('')}</ul>` : ''))}
 ${sec(9, 'reclutadores', 'Resumen para reclutadores', e.recruiterSummary?.length ? `<ol class="rec">${e.recruiterSummary.map((r) => `<li>${esc(r)}</li>`).join('')}</ol>` : '')}
 <nav class="pager no-print" aria-label="Otras experiencias"><div>${prev ? `← <a href="${L(`/experiencia/${prev.slug}/`)}">${esc(prev.company)}</a>` : ''}</div><div><a href="${L('/trayectoria/')}">Todas las experiencias</a> · <a href="${L('/perfil-ejecutivo/')}">Volver al perfil</a></div><div>${next ? `<a href="${L(`/experiencia/${next.slug}/`)}">${esc(next.company)}</a> →` : ''}</div></nav>
 </div>`;
@@ -242,21 +292,186 @@ ${sec(9, 'reclutadores', 'Resumen para reclutadores', e.recruiterSummary?.length
 }
 
 function logros() {
-  const rows = metrics.map((m) => `<tr data-company="${esc(m.company)}"><th scope="row">${esc(m.title)}<br><span class="muted small">${esc(m.definition)}</span></th><td>${esc(m.company)}<br><span class="muted small">${esc(m.project)}</span></td><td>${esc(m.period)}</td><td>${esc(m.baseline)} → ${esc(m.result)}</td><td>${esc(m.method)}</td><td>${esc(m.validationSource)}</td><td>${esc(m.scope)}</td></tr>`).join('');
-  const body = hero('Logros y métricas', 'Cada resultado se asocia a la empresa y al proyecto que lo originó, con su método de cálculo y fuente de validación. No se suman resultados de proyectos distintos.', '/logros/', '', false) + `<section class="wrap block">${metrics.length ? `<div class="table-wrap"><table><thead><tr><th>Resultado</th><th>Empresa y proyecto</th><th>Período</th><th>Antes → después</th><th>Método</th><th>Fuente</th><th>Alcance</th></tr></thead><tbody>${rows}</tbody></table></div>` : `<p class="note">Aún no hay métricas validadas para publicar. Cada indicador se incorporará cuando se confirme su línea base, período, alcance, método de cálculo y fuente de validación.</p>`}</section>`;
-  out('logros/index.html', layout({ title: 'Logros y métricas', desc: 'Resultados profesionales verificados, con empresa, proyecto, período, método de cálculo y fuente de validación.', route: '/logros/', body }));
+  const companies = [...new Set(metrics.map((m) => m.company))].sort();
+  const opt = (a) => a.map((v) => `<option value="${esc(v)}">${esc(v)}</option>`).join('');
+
+  const cards = metrics.map((m) => {
+    const rm = (m.roadmap || []).map((step) => `
+      <li class="roadmap-step">
+        <span class="step-phase">${esc(step.phase)}</span>
+        <span class="step-time">${esc(step.time)}</span>
+        <p class="step-desc">${esc(step.desc)}</p>
+      </li>
+    `).join('');
+
+    const roadmapHtml = rm ? `
+      <div class="roadmap-container">
+        <div class="roadmap-title">Ruta y fases de implementación ("Cómo se hizo"):</div>
+        <ul class="roadmap-steps">${rm}</ul>
+      </div>
+    ` : '';
+
+    const techChips = (m.technologies || []).length
+      ? `<ul class="chips">${m.technologies.map((t) => `<li>${esc(t)}</li>`).join('')}</ul>`
+      : '';
+
+    return `
+      <article class="ach-card" data-company="${esc(m.company)}">
+        <div class="ach-header">
+          <div>
+            <h3>${esc(m.title)}</h3>
+            <div class="ach-meta">
+              <span><strong>Empresa:</strong> ${esc(m.company)}</span>
+              <span><strong>Proyecto:</strong> ${esc(m.project)}</span>
+              <span><strong>Período:</strong> ${esc(m.period)}</span>
+              ${m.duration ? `<span><strong>Duración:</strong> ${esc(m.duration)}</span>` : ''}
+            </div>
+          </div>
+          <div class="ach-claimed">${esc(m.claimedValue)}</div>
+        </div>
+
+        <p>${esc(m.definition)}</p>
+
+        <div class="before-after-grid">
+          <div class="ba-box before">
+            <span class="ba-label">Línea base previa</span>
+            <p>${esc(m.baseline)}</p>
+          </div>
+          <div class="ba-box after">
+            <span class="ba-label">Resultado verificado</span>
+            <p>${esc(m.result)}</p>
+          </div>
+        </div>
+
+        ${roadmapHtml}
+
+        ${techChips ? `<div class="spacer-sm">${techChips}</div>` : ''}
+
+        <div class="ach-footer">
+          <div><strong>Método de cálculo:</strong> ${esc(m.method)}</div>
+          <div><strong>Fuente de validación:</strong> ${esc(m.validationSource)}</div>
+          <div><strong>Alcance:</strong> ${esc(m.scope)}</div>
+          ${m.notes ? `<div><strong>Notas de impacto:</strong> ${esc(m.notes)}</div>` : ''}
+        </div>
+      </article>
+    `;
+  }).join('');
+
+  const rows = metrics.map((m) => `<tr data-company="${esc(m.company)}"><th scope="row">${esc(m.title)}<br><span class="muted small">${esc(m.definition)}</span></th><td>${esc(m.company)}<br><span class="muted small">${esc(m.project)}</span></td><td>${esc(m.period)}<br><span class="muted small">${esc(m.duration || '')}</span></td><td>${esc(m.baseline)} → <strong>${esc(m.result)}</strong></td><td>${esc(m.method)}</td><td>${esc(m.validationSource)}</td><td>${esc(m.scope)}</td></tr>`).join('');
+
+  const body = hero('Logros y métricas', 'Cada resultado profesional se documenta con su empresa, proyecto, período, tiempo de ejecución, la ruta paso a paso de cómo se logró, su método de cálculo y su fuente de validación.', '/logros/', '', false) + `
+<section class="wrap block">
+  <div class="filters no-print">
+    <label>Filtrar por empresa u organización:
+      <select data-ach-filter>
+        <option value="">Todas las empresas (${metrics.length} métricas validadas)</option>
+        ${opt(companies)}
+      </select>
+    </label>
+  </div>
+
+  <h2>Expediente detallado de logros con tiempo y ruta de ejecución</h2>
+  <div id="ach-list">${cards}</div>
+
+  <h2 class="spacer-md">Matriz comparativa de auditoría y validación</h2>
+  <p class="muted">Tabla técnica con línea base, método y fuente de verificación para auditorías directivas:</p>
+  <div class="table-wrap">
+    <table id="ach-table">
+      <thead>
+        <tr><th>Resultado</th><th>Empresa y proyecto</th><th>Período y Duración</th><th>Antes → después</th><th>Método</th><th>Fuente</th><th>Alcance</th></tr>
+      </thead>
+      <tbody>${rows}</tbody>
+    </table>
+  </div>
+</section>`;
+  out('logros/index.html', layout({ title: 'Logros y métricas', desc: 'Resultados profesionales verificados, con empresa, proyecto, tiempo, ruta paso a paso de cómo se hicieron, método de cálculo y fuente de validación.', route: '/logros/', body }));
 }
 
 function certificaciones() {
   const issuers = [...new Set(certs.map((c) => c.issuer))].sort();
   const cats = certData.categories.filter((c) => certs.some((x) => x.category === c));
   const years = [...new Set(certs.map((c) => (c.date || '').slice(0, 4)).filter(Boolean))].sort().reverse();
-  const opt = (a) => a.map((v) => `<option>${esc(v)}</option>`).join('');
-  const typeL = { certificacion: 'Certificación', curso: 'Curso', insignia: 'Insignia', formacion: 'Formación', diplomado: 'Diplomado', especialidad: 'Especialidad' };
-  const cards = certs.map((c) => `<article class="card cert" data-issuer="${esc(c.issuer)}" data-cat="${esc(c.category)}" data-year="${esc((c.date || '').slice(0, 4))}">${c.badgeImage ? `<img src="${L(`/certifications/${c.badgeImage}`)}" alt="Insignia ${esc(c.name)}" width="96" height="96" loading="lazy">` : ''}<span class="tag">${typeL[c.type] || esc(c.type)}</span><h3>${esc(c.name)}</h3><p>${esc(c.issuer)} · ${esc(c.category)}</p><p class="muted">${esc(c.date || '')}${c.expires ? ` · vence ${esc(c.expires)}` : ''}${c.credentialId ? ` · ID ${esc(c.credentialId)}` : ''}</p>${c.skills?.length ? `<p class="small">${esc(c.skills.join(', '))}</p>` : ''}${c.verifyUrl ? `<p>${ext(c.verifyUrl, 'Verificar credencial en emisor oficial')}</p>` : ''}</article>`).join('');
-  const sourcesBox = `<div class="card cert-sources"><h3>Perfiles oficiales para verificación directa</h3><p class="muted">Para corroborar la autenticidad de cada credencial e insignia, los reclutadores pueden consultar los registros públicos oficiales:</p><p class="ext">${ext('https://www.skills.google/public_profiles/195595b2-3a40-4602-905a-78c34b68fe62', 'Google Skills')} · ${ext('https://www.credly.com/users/mario-mendez.630726a8/badges', 'Credly Badges')} · ${ext('https://learn.microsoft.com/es-es/users/MarioMendezAlcantaraalc', 'Microsoft Learn')} · ${ext('https://profile.sap.com/u/mario_mendez_a', 'Perfil Oficial SAP')}</p></div>`;
-  const body = hero('Certificaciones, cursos e insignias', 'Credenciales con denominación oficial, fecha y enlace original de verificación directa con el emisor.', '/certificaciones/', '', false) + `<section class="wrap block">${sourcesBox}${certs.length ? `<div class="filters no-print"><label>Entidad <select data-f="issuer"><option value="">Todas</option>${opt(issuers)}</select></label><label>Categoría <select data-f="cat"><option value="">Todas</option>${opt(cats)}</select></label><label>Año <select data-f="year"><option value="">Todos</option>${opt(years)}</select></label><div class="views"><button data-cert-view="cards" aria-pressed="true">Tarjetas</button><button data-cert-view="list" aria-pressed="false">Lista compacta</button></div></div><div id="certs" class="grid3 cert-cards">${cards}</div><p id="none" class="note" hidden>Ninguna credencial coincide con el filtro.</p>` : `<p class="note">Las certificaciones y cursos se publicarán a medida que cada credencial sea verificada con su emisor.</p>`}</section>`;
-  out('certificaciones/index.html', layout({ title: 'Certificaciones, cursos e insignias', desc: 'Credenciales profesionales verificables con enlace directo al emisor: Google Cloud, Microsoft, Cisco, IBM y Anthropic.', route: '/certificaciones/', body }));
+  const opt = (a) => a.map((v) => `<option value="${esc(v)}">${esc(v)}</option>`).join('');
+  const typeL = {
+    titulo: 'Título Universitario',
+    especialidad: 'Especialidad',
+    diplomado: 'Diplomado',
+    certificacion: 'Certificación',
+    merito: 'Carta al Mérito',
+    curso: 'Curso',
+    insignia: 'Insignia',
+    formacion: 'Formación'
+  };
+
+  const getTypeGroup = (t) => {
+    if (t === 'titulo' || t === 'grado') return 'titulo';
+    if (t === 'especialidad') return 'especialidad';
+    if (t === 'diplomado') return 'diplomado';
+    if (t === 'certificacion') return 'certificacion';
+    if (t === 'merito' || t === 'carta-merito') return 'merito';
+    if (t === 'insignia') return 'insignia';
+    return 'curso';
+  };
+
+  const typeCounts = {
+    all: certs.length,
+    titulo: certs.filter(c => getTypeGroup(c.type) === 'titulo').length,
+    especialidad: certs.filter(c => getTypeGroup(c.type) === 'especialidad').length,
+    diplomado: certs.filter(c => getTypeGroup(c.type) === 'diplomado').length,
+    certificacion: certs.filter(c => getTypeGroup(c.type) === 'certificacion').length,
+    merito: certs.filter(c => getTypeGroup(c.type) === 'merito').length,
+    curso: certs.filter(c => getTypeGroup(c.type) === 'curso').length,
+    insignia: certs.filter(c => getTypeGroup(c.type) === 'insignia').length
+  };
+
+  const cards = certs.map((c) => {
+    const group = getTypeGroup(c.type);
+    const docLabel = c.type === 'titulo'
+      ? 'Consultar título universitario oficial (PDF)'
+      : (c.type === 'merito'
+          ? 'Consultar carta de mérito oficial (PDF)'
+          : (c.type === 'especialidad'
+              ? 'Consultar certificado de especialidad (PDF)'
+              : (c.type === 'diplomado'
+                  ? 'Consultar diploma oficial (PDF)'
+                  : 'Consultar certificado oficial (PDF)')));
+    const docLink = c.documentUrl
+      ? `<p><a class="btn small" href="${L('/' + c.documentUrl)}" target="_blank" rel="noopener noreferrer">${docLabel}</a></p>`
+      : '';
+    const verifyLink = c.verifyUrl
+      ? `<p><a class="btn small ghost" href="${c.verifyUrl}" target="_blank" rel="noopener noreferrer">Verificar credencial en emisor oficial ↗</a></p>`
+      : '';
+
+    return `<article class="card cert" data-issuer="${esc(c.issuer)}" data-cat="${esc(c.category)}" data-year="${esc((c.date || '').slice(0, 4))}" data-type="${esc(group)}">
+      ${c.badgeImage ? `<img src="${L(`/certifications/${c.badgeImage}`)}" alt="Insignia ${esc(c.name)}" width="96" height="96" loading="lazy">` : ''}
+      <span class="tag tag-${esc(group)}">${typeL[c.type] || esc(c.type)}</span>
+      <h3>${esc(c.name)}</h3>
+      <p>${esc(c.issuer)} · ${esc(c.category)}</p>
+      <p class="muted">${esc(c.date || '')}${c.expires ? ` · vence ${esc(c.expires)}` : ''}${c.credentialId ? ` · ID ${esc(c.credentialId)}` : ''}</p>
+      ${c.skills?.length ? `<p class="small">${esc(c.skills.join(', '))}</p>` : ''}
+      ${c.notes ? `<p class="muted small">${esc(c.notes)}</p>` : ''}
+      ${docLink}
+      ${verifyLink}
+    </article>`;
+  }).join('');
+
+  const typeTabs = `
+    <div class="cert-type-tabs no-print">
+      <button class="cert-tab" data-type-tab="" aria-pressed="true">Todas las credenciales (${typeCounts.all})</button>
+      <button class="cert-tab" data-type-tab="titulo" aria-pressed="false">Título Universitario (${typeCounts.titulo})</button>
+      <button class="cert-tab" data-type-tab="especialidad" aria-pressed="false">Especialidades (${typeCounts.especialidad})</button>
+      <button class="cert-tab" data-type-tab="diplomado" aria-pressed="false">Diplomados (${typeCounts.diplomado})</button>
+      <button class="cert-tab" data-type-tab="certificacion" aria-pressed="false">Certificaciones (${typeCounts.certificacion})</button>
+      <button class="cert-tab" data-type-tab="merito" aria-pressed="false">Cartas al Mérito (${typeCounts.merito})</button>
+      <button class="cert-tab" data-type-tab="curso" aria-pressed="false">Cursos y Talleres (${typeCounts.curso})</button>
+      <button class="cert-tab" data-type-tab="insignia" aria-pressed="false">Insignias Digitales (${typeCounts.insignia})</button>
+    </div>
+  `;
+
+  const sourcesBox = `<div class="card cert-sources"><h3>Perfiles oficiales para verificación directa</h3><p class="muted">Para corroborar la autenticidad de cada credencial, mérito e insignia, los comités evaluadores y reclutadores pueden consultar los registros públicos oficiales:</p><p class="ext">${ext('https://www.netacad.com', 'Cisco NetAcad')} · ${ext('https://www.skills.google/public_profiles/195595b2-3a40-4602-905a-78c34b68fe62', 'Google Skills')} · ${ext('https://www.credly.com/users/mario-mendez.630726a8/badges', 'Credly Badges')} · ${ext('https://learn.microsoft.com/es-es/users/MarioMendezAlcantaraalc', 'Microsoft Learn')} · ${ext('https://profile.sap.com/u/mario_mendez_a', 'Perfil Oficial SAP')}</p></div>`;
+
+  const body = hero('Certificaciones, cursos e insignias', 'Expediente clasificado de credenciales profesionales con denominación oficial, fecha y enlace original de verificación con el emisor.', '/certificaciones/', '', false) + `<section class="wrap block">${sourcesBox}${typeTabs}${certs.length ? `<div class="filters no-print"><label>Tipo de credencial <select data-f="type"><option value="">Todos los tipos (${typeCounts.all})</option><option value="titulo">Título Universitario (${typeCounts.titulo})</option><option value="especialidad">Especialidades (${typeCounts.especialidad})</option><option value="diplomado">Diplomados (${typeCounts.diplomado})</option><option value="certificacion">Certificaciones (${typeCounts.certificacion})</option><option value="merito">Cartas al Mérito (${typeCounts.merito})</option><option value="curso">Cursos y Talleres (${typeCounts.curso})</option><option value="insignia">Insignias Digitales (${typeCounts.insignia})</option></select></label><label>Entidad <select data-f="issuer"><option value="">Todas</option>${opt(issuers)}</select></label><label>Categoría <select data-f="cat"><option value="">Todas</option>${opt(cats)}</select></label><label>Año <select data-f="year"><option value="">Todos</option>${opt(years)}</select></label><div class="views"><button data-cert-view="cards" aria-pressed="true">Tarjetas</button><button data-cert-view="list" aria-pressed="false">Lista compacta</button></div></div><div id="certs" class="grid3 cert-cards">${cards}</div><p id="none" class="note" hidden>Ninguna credencial coincide con el filtro.</p>` : `<p class="note">Las certificaciones y cursos se publicarán a medida que cada credencial sea verificada con su emisor.</p>`}</section>`;
+  out('certificaciones/index.html', layout({ title: 'Certificaciones, cursos e insignias', desc: 'Credenciales profesionales verificables con enlace directo al emisor: Cisco, Google Cloud, Microsoft, IBM y Anthropic.', route: '/certificaciones/', body }));
 }
 
 function proyectos() {

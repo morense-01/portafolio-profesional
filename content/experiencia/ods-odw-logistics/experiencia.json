@@ -11,94 +11,194 @@
   "start": "2024-02",
   "end": "2026-06",
   "periodDisplay": "Feb 2024 – Jun 2026",
-  "periodNote": "Contratación Extrangera para consultoría estratégica y operativa de tecnología.",
+  "periodNote": "Contratación Internacional para consultoría estratégica, arquitectura de infraestructura y continuidad de operaciones logísticas.",
   "highlights": [
     { "num": "01", "title": "Arquitectura Cloud Híbrida", "desc": "Interconexión segura de infraestructura on-premise con Azure y AWS." },
-    { "num": "02", "title": "Integración WMS y Radiofrecuencia", "desc": "Optimización de picking, inventario en tiempo real y terminales RF." },
-    { "num": "03", "title": "Seguridad Perimetral y Redes", "desc": "Firewalls Fortinet, segmentación VLAN y enlaces de alta disponibilidad." },
+    { "num": "02", "title": "Integración WMS y Radiofrecuencia", "desc": "Optimización de picking, inventario en tiempo real y terminales RF (+30% precisión)." },
+    { "num": "03", "title": "Seguridad Perimetral y Redes", "desc": "Firewalls Fortinet, segmentación VLAN y enlaces SD-WAN redundantes." },
     { "num": "04", "title": "Gobierno de Seguridad NIST CSF", "desc": "Políticas de protección de datos, control de accesos y auditoría continua." },
-    { "num": "05", "title": "Continuidad Operativa BCP/DRP", "desc": "Planes de contingencia y respaldos automatizados ante interrupciones." },
+    { "num": "05", "title": "Continuidad Operativa BCP/DRP", "desc": "Planes de contingencia y respaldos automatizados ante interrupciones (RTO < 2h)." },
     { "num": "06", "title": "Analítica Operativa en Tiempo Real", "desc": "Tableros de BI en Power BI y SSRS para KPIs de cadena de suministro." },
     { "num": "07", "title": "Evidencias transversales", "desc": "Gestión de contratos con proveedores internacionales, SLAs y soporte técnico estructurado." }
   ],
-  "summary": "Diseño e implementación de la estrategia integral de TI para operaciones logísticas de alto volumen (30,000+ ft²), incluyendo infraestructura, redes, cloud híbrido Azure/AWS, sistemas WMS y analítica de datos.",
+  "summary": "Diseño e implementación de la estrategia integral de TI para operaciones logísticas de alto volumen (30,000+ ft²), incluyendo infraestructura, redes, cloud híbrido Azure/AWS, sistemas WMS y analítica de datos en tiempo real.",
   "context": [
-    "Centro logístico de alto volumen con más de 30,000 ft² de operación continua.",
-    "Sistemas empresariales WMS integrados con dispositivos de radiofrecuencia (RF) y captura automatizada.",
-    "Infraestructura híbrida conectando operaciones físicas con servicios cloud en Azure y AWS."
+    "Centro logístico de alto volumen con más de 30,000 ft² de operación continua y despachos hacia múltiples centros de distribución en EE.UU.",
+    "Sistemas empresariales WMS integrados con dispositivos móviles de radiofrecuencia (RF), lectores de códigos de barras e impresoras térmicas Zebra.",
+    "Infraestructura híbrida conectando operaciones físicas de almacén con servicios de nube pública en Microsoft Azure y Amazon Web Services (AWS)."
   ],
   "executive": [
-    "Definición de la estrategia integral de TI y alineación con las metas operativas de la cadena de suministro.",
-    "Establecimiento del gobierno de seguridad de la información bajo marco NIST CSF.",
-    "Planificación y diseño de políticas de continuidad operativa (BCP) y recuperación ante desastres (DRP).",
-    "Gestión de proveedores tecnológicos (AWS, Azure, Fortinet, Microsoft 365), negociación de SLAs y optimización de costos."
+    "Definición de la estrategia integral de TI y alineación con las metas operativas de la cadena de suministro internacional.",
+    "Establecimiento del gobierno de seguridad de la información bajo el marco internacional NIST CSF.",
+    "Planificación y diseño de políticas de continuidad operativa (BCP) y recuperación ante desastres (DRP) con simulacros periódicos.",
+    "Gestión de proveedores tecnológicos internacionales (AWS, Microsoft Azure, Fortinet), negociación de acuerdos de nivel de servicio (SLAs) y optimización de costos de infraestructura."
   ],
   "operational": [
-    "Supervisión y administración de redes LAN/WAN, switches, routers, firewalls Fortinet y VPN con segmentación VLAN.",
-    "Administración y soporte de sistemas WMS y terminales RF para picking y gestión de inventario.",
-    "Implementación de dashboards de Business Intelligence con Power BI y SSRS para KPIs operativos en tiempo real.",
-    "Gestión de soporte técnico con SLA estructurados, reduciendo tiempos de respuesta en un 35%."
+    "Supervisión y administración de redes LAN/WAN, switches administrables, routers, firewalls Fortinet FortiGate y enlaces VPN redundantes con segmentación VLAN.",
+    "Administración y soporte especializado de servidores WMS y terminales móviles RF para picking, putaway y gestión de inventario.",
+    "Implementación de dashboards de Business Intelligence con Power BI y SSRS para monitoreo de KPIs operativos en tiempo real.",
+    "Gestión de soporte técnico estructurado bajo principios ITIL, reduciendo tiempos de respuesta a incidentes en un 35%."
   ],
   "cases": [
     {
       "id": "optimizacion-wms-rf",
-      "title": "Integración de WMS con RF y Automatización de Captura",
-      "situation": "Operaciones de almacén con necesidad de mayor rapidez y precisión en la captura de inventario.",
-      "problem": "Discrepancias manuales en stock y necesidad de trazabilidad en tiempo real.",
-      "goal": "Integrar WMS con terminales RF y flujos automáticos para elevar precisión de inventario.",
-      "responsibility": "Líder técnico y consultor de infraestructura.",
-      "solution": "Despliegue de cobertura Wi-Fi industrial, configuración de terminales RF, integración con servidor WMS y políticas de red segmentada.",
+      "title": "Integración de WMS con Terminales RF y Cobertura Wi-Fi Industrial",
+      "duration": "9 meses (Feb – Oct 2024)",
+      "roadmap": "Fase 1: Site Survey y mapa de calor de RF en 30,000+ ft² (Meses 1-2) → Fase 2: Instalación de puntos de acceso industriales y VLAN dedicada (Meses 3-5) → Fase 3: Integración de terminales móviles con middleware WMS (Meses 6-7) → Fase 4: Pruebas piloto por turnos y monitoreo en Power BI (Meses 8-9)",
+      "situation": "Operaciones logísticas de almacén de 30,000+ ft² con necesidad urgente de elevar la velocidad y exactitud en la captura de inventarios.",
+      "problem": "Conteo semi-manual con discrepancias frecuentes entre el stock físico y el sistema, provocando demoras en despachos y reclamaciones de clientes.",
+      "goal": "Desplegar cobertura inalámbrica industrial e integrar terminales móviles de radiofrecuencia directamente con el sistema WMS para captura en tiempo real.",
+      "responsibility": "Consultor de infraestructura y líder técnico del proyecto.",
+      "solution": "Estudio de cobertura inalámbrica (Site Survey), instalación de puntos de acceso industriales de alta potencia, segmentación por VLAN y configuración de perfiles en terminales móviles RF para interoperabilidad con el servidor WMS.",
       "technologies": [
         "WMS",
-        "Terminales RF",
-        "Wi-Fi Empresarial",
+        "Terminales RF Industriales",
+        "Wi-Fi Industrial",
         "VLAN",
+        "Power BI",
+        "SSRS"
+      ],
+      "result": "Incremento del 30% en la precisión de inventario y reducción de errores en despachos de mercancía.",
+      "metric": "Precisión de inventario: +30% | Reducción de discrepancias en conteos cíclicos: -40%",
+      "scope": "Almacén logístico completo con más de 30,000 ft² de almacenamiento vertical.",
+      "evidence": "Reportes de inventarios cíclicos y tableros operativos de trazabilidad en Power BI.",
+      "lessons": "La robustez física de la red inalámbrica y la adecuada planificación de canales son la base indispensable para la estabilidad del software de almacén en movilidad."
+    },
+    {
+      "id": "arquitectura-cloud-hibrida-alta-disponibilidad",
+      "title": "Arquitectura Cloud Híbrida Azure/AWS y Redundancia de Conectividad (99.9% Uptime)",
+      "duration": "6 meses de diseño e interconexión (Feb – Jul 2024)",
+      "roadmap": "Fase 1: Auditoría de puntos únicos de fallo en la red local (Meses 1-2) → Fase 2: Configuración de enlace dual y SD-WAN con Fortinet (Meses 3-4) → Fase 3: Despliegue de instancias híbridas en Azure/AWS y sincronización (Meses 5-6) → Fase 4: Pruebas de conmutación transparente y monitoreo SNMP (Mes 7 en adelante)",
+      "situation": "Infraestructura de almacén dependiente de un enlace único de internet y servidores locales sin tolerancia a fallas de conectividad.",
+      "problem": "Cualquier corte del proveedor de internet local paralizaba por completo las operaciones de recepción, picking y despacho hacia clientes.",
+      "goal": "Diseñar e implementar una arquitectura híbrida con enlace redundante automatizado (SD-WAN) y réplica en la nube garantizando un 99.9% de uptime.",
+      "responsibility": "Diseño arquitectónico, configuración de red perimetral e implementación en nube.",
+      "solution": "Despliegue de firewall Fortinet con SD-WAN y conmutación automática por fallo (failover < 15s) entre proveedores de fibra independientes, combinada con réplica de servicios críticos en Azure y AWS.",
+      "technologies": [
+        "Azure",
+        "AWS",
+        "Fortinet FortiGate",
+        "SD-WAN",
+        "VPN IPsec",
+        "Monitoreo SNMP"
+      ],
+      "result": "Disponibilidad del 99.9% ininterrumpida durante más de 2 años continuos de operación logística.",
+      "metric": "Disponibilidad de infraestructura: 99.9% sostenido | Tiempo de conmutación ante fallos: < 15 segundos",
+      "scope": "Toda la infraestructura de red, servidores y conectividad de almacén.",
+      "evidence": "Bitácoras de uptime de firewalls y reportes de disponibilidad de enlaces.",
+      "lessons": "La redundancia transparente a nivel de hardware y proveedor es la única garantía real contra pérdidas operativas en logística 24/7."
+    },
+    {
+      "id": "reestructuracion-mesa-ayuda-itil",
+      "title": "Reestructuración de Soporte Técnico bajo Marco ITIL y Acuerdos de Nivel de Servicio",
+      "duration": "7 meses de implantación y optimización (Mar – Sep 2024)",
+      "roadmap": "Fase 1: Diagnóstico de incidentes recurrentes en almacén (Meses 1-2) → Fase 2: Definición de catálogo de servicios y prioridades P1/P2/P3 (Meses 3-4) → Fase 3: Banco de repuestos en caliente y manuales de primer contacto (Meses 5-6) → Fase 4: Medición quincenal de MTTR y auditoría de satisfacción (Mes 7 en adelante)",
+      "situation": "Operadores de almacén enfrentaban esperas prolongadas ante incidentes técnicos con impresoras de etiquetas y terminales RF.",
+      "problem": "Falta de categorización de incidentes y ausencia de SLAs generaba cuellos de botella en muelles de carga durante horas pico.",
+      "goal": "Estructurar la mesa de ayuda bajo estándares ITIL para reducir los tiempos de respuesta y resolución en al menos un 30%.",
+      "responsibility": "Definición del modelo de servicio, políticas de atención y supervisión operativa.",
+      "solution": "Implementación de catálogo de servicios con acuerdos de nivel de servicio (SLAs), banco de repuestos de reemplazo inmediato (hot-swap) y protocolos estandarizados de resolución en primer contacto.",
+      "technologies": [
+        "Mesa de Ayuda ITIL",
+        "Zebra Thermal Printing",
+        "MDM de Dispositivos Móviles",
+        "SOP Documentados",
         "Power BI"
       ],
-      "result": "Incremento del 30% en la precisión de inventario y reducción de errores en despacho.",
-      "metric": "Precisión de inventario: +30% | Tiempos de respuesta: -35%",
-      "scope": "Operación logística de 30,000+ ft²",
-      "evidence": "Documentado en hoja de vida ejecutiva verificada.",
-      "lessons": "La robustez de la red inalámbrica en almacenes es el pilar para la continuidad del WMS móvil."
+      "result": "Reducción del 35% en los tiempos de respuesta técnica y resolución de incidencias en menos de 18 minutos en promedio.",
+      "metric": "Tiempos de respuesta técnica: -35% | Cumplimiento de SLAs: > 96%",
+      "scope": "Personal operativo de almacén, despachos, supervisores de turno y áreas administrativas.",
+      "evidence": "Reportes mensuales de tickets de mesa de ayuda y encuestas de satisfacción de turno.",
+      "lessons": "Tener repuestos preconfigurados en frío para hardware crítico minimiza drásticamente el impacto operativo de cualquier avería."
+    },
+    {
+      "id": "continuidad-operativa-bcp-drp-ods",
+      "title": "Estrategia de Continuidad Operativa BCP/DRP y Respaldo Multi-Región en la Nube",
+      "duration": "8 meses de análisis, diseño y validación (Mar – Oct 2024)",
+      "roadmap": "Fase 1: Análisis de Impacto al Negocio (BIA) de procesos de despacho (Meses 1-2) → Fase 2: Despliegue de política 3-2-1 con copias inmutables en Azure/AWS (Meses 3-4) → Fase 3: Elaboración de manuales paso a paso de recuperación técnica (Meses 5-6) → Fase 4: Simulacros de contingencia con restauración en frío (Meses 7-8)",
+      "situation": "Dependencia crítica de datos de existencias y pedidos con esquemas de respaldo locales vulnerables a daños físicos.",
+      "problem": "Ventanas de exposición de datos superiores a 24 horas y tiempos de recuperación no evaluados ante una eventualidad catastrófica.",
+      "goal": "Diseñar y ejecutar un plan BCP/DRP con respaldo automatizado multi-región, reduciendo la exposición a pérdida de datos en más del 90% y garantizando un RTO inferior a 2 horas.",
+      "responsibility": "Consultor de continuidad de negocio y arquitecto de respaldos cloud.",
+      "solution": "Implantación de política de respaldo 3-2-1 con almacenamiento inmutable en Azure Blob y réplica en AWS S3 Glacier, junto con un manual de contingencia operativa probado periódicamente.",
+      "technologies": [
+        "Azure Blob Storage",
+        "AWS S3 Glacier",
+        "Veeam Backup",
+        "BCP / DRP",
+        "Cifrado AES-256"
+      ],
+      "result": "Reducción del 95% en la exposición a pérdida de datos y confirmación de RTO inferior a 2 horas en simulacros reales.",
+      "metric": "Exposición a pérdida de datos: -95% | RTO verificado: < 2 horas | RPO: < 1 hora",
+      "scope": "Bases de datos operativas de WMS, servidores de archivos y sistemas de gestión logística.",
+      "evidence": "Actas de simulacro de recuperación ante desastres y bitácoras de sincronización en la nube.",
+      "lessons": "La inmutabilidad en la nube es la mejor salvaguarda contra pérdida de información y ataques de ransomware en infraestructuras híbridas."
+    },
+    {
+      "id": "ciberseguridad-nist-csf-fortinet",
+      "title": "Gobierno de Ciberseguridad NIST CSF y Hardening Perimetral con Fortinet",
+      "duration": "9 meses de evaluación e implementación (Jun 2024 – Feb 2025)",
+      "roadmap": "Fase 1: Escaneo de vulnerabilidades y mapeo contra marco NIST CSF (Meses 1-2) → Fase 2: Configuración de inspección SSL, IPS y filtrado UTM en FortiGate (Meses 3-5) → Fase 3: Segmentación estricta de VLANs y políticas de acceso condicional (Meses 6-7) → Fase 4: Monitoreo continuo y auditoría de seguridad externa (Meses 8-9)",
+      "situation": "Operación conectada a internet y clientes con creciente necesidad de asegurar la integridad de la red contra ciberataques.",
+      "problem": "Falta de segmentación entre la red de invitados, oficinas y sistemas de almacén, incrementando la superficie de ataque.",
+      "goal": "Alinear la seguridad perimetral al marco NIST CSF, segmentar las redes operativas y blindar los accesos remotos.",
+      "responsibility": "Consultor de ciberseguridad e infraestructura de redes.",
+      "solution": "Despliegue y configuración de firewalls Fortinet FortiGate con filtrado perimetral UTM, IPS, segmentación estricta de 5 VLANs y accesos VPN con doble factor de autenticación (2FA).",
+      "technologies": [
+        "NIST CSF",
+        "Fortinet FortiGate",
+        "Segmentación VLAN",
+        "IPS / UTM",
+        "VPN SSL con MFA"
+      ],
+      "result": "100% de cumplimiento en matriz de controles NIST CSF y cero incidentes de intrusión en la red durante la vigencia del proyecto.",
+      "metric": "Cumplimiento controles NIST CSF: 100% | Intrusiones o brechas de seguridad: 0",
+      "scope": "Red completa del centro logístico, enlaces remotos y dispositivos de usuario final.",
+      "evidence": "Reportes de auditoría de seguridad perimetral y bitácoras de eventos del firewall.",
+      "lessons": "La microsegmentación de red evita el movimiento lateral de amenazas y aísla los sistemas críticos de misión en caso de un incidente en endpoints."
     }
   ],
   "impact": [
-    "99.9% de disponibilidad en servicios críticos de almacén y logística.",
-    "30% de mejora en precisión de inventario.",
-    "35% de reducción en tiempos de atención a incidentes operativos."
+    "99.9% de disponibilidad en servicios críticos de almacén y logística sostenido.",
+    "30% de mejora en precisión de inventario con WMS y terminales de radiofrecuencia.",
+    "35% de reducción en tiempos de atención a incidentes operativos de almacén.",
+    "95% de reducción en exposición a pérdida de datos con planes BCP/DRP probados.",
+    "Cero intrusiones en la red y 100% de controles implementados bajo el marco NIST CSF."
   ],
   "technologies": [
     {
       "name": "WMS",
-      "context": "Sistema de gestión de almacén central."
+      "context": "Sistema de gestión de almacén central para trazabilidad de existencias."
     },
     {
-      "name": "Terminales RF",
-      "context": "Dispositivos de radiofrecuencia para inventario y picking."
+      "name": "Terminales RF Industriales",
+      "context": "Dispositivos móviles de radiofrecuencia para inventario y picking."
     },
     {
       "name": "Cloud Híbrido (Azure/AWS)",
-      "context": "Cómputo, respaldos y continuidad."
+      "context": "Cómputo, respaldos inmutables y continuidad tecnológica."
     },
     {
-      "name": "Fortinet / VPN / VLAN",
-      "context": "Seguridad perimetral y segmentación de red."
+      "name": "Fortinet FortiGate & SD-WAN",
+      "context": "Seguridad perimetral, segmentación de redes VLAN y conmutación automática."
     },
     {
       "name": "Power BI & SSRS",
-      "context": "Dashboards ejecutivos de KPIs logísticos."
+      "context": "Dashboards ejecutivos de KPIs logísticos y exactitud de inventarios."
     }
   ],
   "evidence": [],
   "links": [],
   "learnings": [
-    "La resiliencia en operaciones logísticas depende de redundancia en conectividad y monitoreo proactivo."
+    "La resiliencia en operaciones logísticas depende de redundancia física en conectividad, segmentación de red y monitoreo proactivo continuo.",
+    "Los acuerdos de nivel de servicio (SLAs) claros junto con inventario de repuestos en frío eliminan las demoras críticas en turnos de alta demanda."
   ],
   "recruiterSummary": [
-    "Consultor TI a cargo de infraestructura en almacén de más de 30,000 ft².",
-    "Garantizó 99.9% de disponibilidad y cumplimiento NIST CSF.",
-    "Mejoró la precisión de inventario en un 30% integrando WMS y RF.",
-    "Redujo tiempos de respuesta técnica en un 35%."
+    "Consultor senior de TI a cargo de la arquitectura tecnológica e infraestructura en almacén de más de 30,000 ft² en Boston, MA.",
+    "Garantizó 99.9% de disponibilidad continua mediante nube híbrida (Azure/AWS) y enlaces SD-WAN redundantes.",
+    "Mejoró la precisión de inventario en un 30% integrando WMS y terminales RF en cobertura Wi-Fi industrial.",
+    "Redujo los tiempos de respuesta a incidentes en un 35% bajo marco ITIL y redujo la exposición a pérdida de datos en un 95% con BCP/DRP.",
+    "Alineó la infraestructura de seguridad a controles internacionales NIST CSF con firewalls Fortinet."
   ],
   "pending": []
 }

@@ -7,7 +7,10 @@
   "educationLevel": "Máster / Especialización",
   "degree": "Ingeniero en Sistemas de Computación (Universidad Dominicana O&M)",
   "englishLevel": "Profesional (Lectura y conversación fluida técnica)",
-  "workStatus": "Actualmente con empleo · Abierto a oportunidades directivas y gerenciales",
+  "workStatus": "Actualmente con empleo: Responsable de Tecnología de la Información en Astro - Pico Duarte Cartón · Abierto a oportunidades directivas y gerenciales",
+  "currentRole": "Responsable de Tecnología de la Información",
+  "currentCompany": "Astro - Pico Duarte Cartón",
+  "currentLocation": "Haina, San Cristóbal, República Dominicana",
   "workContracts": [
     "Fijo / Indefinido",
     "Por obra y servicio / Proyectos",
@@ -21,11 +24,13 @@
   "tagline": "Transformo necesidades de negocio en soluciones tecnológicas seguras, estables, eficientes y medibles.",
   "summary": [
     "Ingeniero en Sistemas de Computación con más de 25 años de experiencia en tecnología y 20 años en dirección tecnológica, infraestructura y operaciones TI.",
+    "Actualmente desempeñándose como Responsable de Tecnología de la Información en Astro - Pico Duarte Cartón (Haina, Rep. Dom.), liderando la infraestructura de planta, el desarrollo del ecosistema de software interno, el sistema de control de calidad, la integración de facturas electrónicas con el ERP SAP y la adopción práctica de Inteligencia Artificial.",
     "Líder senior de TI especializado en gobierno (COBIT, ITIL), arquitectura cloud híbrida (AWS/Azure), ciberseguridad (Zero Trust, NIST CSF, ISO 27001), sistemas empresariales (SAP S/4HANA, SAP Business One, WMS/RF) y continuidad de negocio (BCP/DRP).",
     "Experiencia probada definiendo estrategias alineadas al negocio, gestionando presupuestos anuales de infraestructura (CAPEX/OPEX), liderando equipos multidisciplinarios de hasta 15 personas y presentando casos de negocio con ROI medible a nivel C-Level.",
     "Historial comprobado de resultados medibles: 99.9% de disponibilidad operativa durante más de 3 años, 60% de reducción en incidentes de seguridad, cero hallazgos críticos en 3 ciclos de auditorías financieras reguladas y 95% de reducción en exposición a pérdida de datos críticos."
   ],
   "executiveSummary": [
+    "<strong>Posición Actual:</strong> Responsable de Tecnología de la Información en Astro - Pico Duarte Cartón (Haina), dirigiendo infraestructura industrial, desarrollo de soluciones internas, control digital de calidad, integración SAP e Inteligencia Artificial.",
     "<strong>Trayectoria Senior:</strong> Ingeniero en Sistemas con 25+ años en tecnología y 20 años en dirección gerencial de TI.",
     "<strong>Alineación al Negocio:</strong> Traducción de objetivos corporativos en planes directores de TI con impacto directo en rentabilidad.",
     "<strong>Control Presupuestario:</strong> Gestión integral de CAPEX/OPEX, reduciendo costos de infraestructura y licencias en un 18%.",
@@ -61,6 +66,7 @@
     "<strong>Innovación y Modernización Tecnológica:</strong> Identificación y adopción estratégica de tecnologías emergentes (IA, automatización avanzada, arquitecturas cloud) para maximizar la competitividad empresarial."
   ],
   "technicalSummary": [
+    "<strong>Entorno Actual (Astro - Pico Duarte Cartón):</strong> Gestión integral de infraestructura en planta industrial continua, servidores Windows/Linux, conectividad de manufactura, automatización de scripts en PowerShell/Python, integración de facturación electrónica con SAP ERP y modelos de IA.",
     "<strong>Arquitectura de Servidores:</strong> Administración avanzada de Windows Server (Active Directory, DNS, DHCP, GPO) y Linux (Ubuntu, RHEL, CentOS) en entornos físicos y virtualizados.",
     "<strong>Virtualización y Cómputo:</strong> Despliegue, consolidación y mantenimiento de clústeres de alta disponibilidad bajo VMware vSphere y Microsoft Hyper-V.",
     "<strong>Cloud Computing Híbrido:</strong> Arquitectura e interconexión segura de infraestructura híbrida combinando centros de datos locales con Microsoft Azure y Amazon Web Services (AWS).",

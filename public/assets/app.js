@@ -47,12 +47,40 @@
   }
   var none = $('#none');
   var certs = $$('#certs .cert');
+  function updateCertFilters() {
+    var f = {}; $$('[data-f]').forEach(function (x) { f[x.dataset.f] = x.value; });
+    var shown = 0;
+    certs.forEach(function (c) {
+      var ok = (!f.issuer || c.dataset.issuer === f.issuer)
+            && (!f.cat || c.dataset.cat === f.cat)
+            && (!f.year || c.dataset.year === f.year)
+            && (!f.type || c.dataset.type === f.type);
+      c.hidden = !ok;
+      if (ok) shown++;
+    });
+    if (none) none.hidden = shown > 0;
+  }
   $$('[data-f]').forEach(function (s) {
     s.addEventListener('change', function () {
-      var f = {}; $$('[data-f]').forEach(function (x) { f[x.dataset.f] = x.value; });
-      var shown = 0;
-      certs.forEach(function (c) { var ok = (!f.issuer || c.dataset.issuer === f.issuer) && (!f.cat || c.dataset.cat === f.cat) && (!f.year || c.dataset.year === f.year); c.hidden = !ok; if (ok) shown++; });
-      if (none) none.hidden = shown > 0;
+      updateCertFilters();
+      if (s.dataset.f === 'type') {
+        $$('[data-type-tab]').forEach(function (tab) {
+          tab.setAttribute('aria-pressed', String(tab.dataset.typeTab === s.value));
+        });
+      }
+    });
+  });
+  $$('[data-type-tab]').forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      var val = tab.dataset.typeTab;
+      var sel = $('[data-f="type"]');
+      if (sel) {
+        sel.value = val;
+      }
+      $$('[data-type-tab]').forEach(function (t) {
+        t.setAttribute('aria-pressed', String(t === tab));
+      });
+      updateCertFilters();
     });
   });
   $$('[data-cert-view]').forEach(function (b) {
@@ -63,6 +91,20 @@
   });
   filterList('[data-pf]', $$('#projs > article'), 'data-type');
   filterList('[data-df]', $$('#docs > li'), 'data-cat');
+
+  // Filtro de logros y métricas
+  var achSelect = $('[data-ach-filter]');
+  if (achSelect) {
+    achSelect.addEventListener('change', function () {
+      var val = achSelect.value;
+      $$('.ach-card').forEach(function (card) {
+        card.hidden = Boolean(val && card.dataset.company !== val);
+      });
+      $$('#ach-table tbody tr').forEach(function (tr) {
+        tr.hidden = Boolean(val && tr.dataset.company !== val);
+      });
+    });
+  }
 
   // =========================================================================
   // MOTOR DE TRADUCCIÓN NATIVO Y GESTIÓN MULTILINGÜE
@@ -636,5 +678,47 @@
       }
     }
   };
+
+  // Control de autorización para documentos y descargas exclusivas
+  var AUTH_PIN = '201220';
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest('a');
+    if (!link) return;
+    if (link.hasAttribute('data-bypass-auth')) return;
+
+    var href = link.getAttribute('href') || '';
+    var isProtected = link.hasAttribute('download') ||
+                      href.indexOf('/documents/') !== -1 ||
+                      /\.(pdf|docx?|xlsx?)$/i.test(href) ||
+                      (href.indexOf('Titulo_Ingenieria') !== -1) ||
+                      (link.textContent && link.textContent.trim().toLowerCase().indexOf('descargar') !== -1);
+
+    if (isProtected) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      var entered = window.prompt('🔒 Documento restringido: Ingrese la clave de autorización para acceder o descargar:');
+      if (entered === AUTH_PIN) {
+        var temp = document.createElement('a');
+        temp.href = link.href;
+        if (link.hasAttribute('download')) {
+          temp.setAttribute('download', link.getAttribute('download') || '');
+        }
+        if (link.getAttribute('target')) {
+          temp.setAttribute('target', link.getAttribute('target'));
+        }
+        if (link.getAttribute('rel')) {
+          temp.setAttribute('rel', link.getAttribute('rel'));
+        }
+        temp.setAttribute('data-bypass-auth', '1');
+        document.body.appendChild(temp);
+        temp.click();
+        document.body.removeChild(temp);
+      } else if (entered !== null && entered !== '') {
+        alert('❌ Clave incorrecta. Acceso restringido al titular.');
+      }
+      return false;
+    }
+  }, true);
 
 })();

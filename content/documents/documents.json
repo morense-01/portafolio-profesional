@@ -6,14 +6,71 @@
     "CV AI / MLOps",
     "CV de gerencia de TI",
     "CV de infraestructura y operaciones",
+    "Títulos académicos",
+    "Constancias laborales",
+    "Cartas al mérito",
     "Certificados",
     "Insignias digitales",
     "Resúmenes de proyectos",
-    "Casos de éxito",
-    "Diagramas sanitizados",
-    "Publicaciones y presentaciones"
+    "Casos de éxito"
   ],
   "items": [
+    {
+      "title": "Título Universitario: Ingeniero en Sistemas de Computación (Universidad O&M)",
+      "description": "Título oficial de Ingeniero en Sistemas de Computación emitido por la Universidad Dominicana O&M.",
+      "category": "Títulos académicos",
+      "date": "2011",
+      "file": "Titulo_Ingenieria_Sistemas_OyM.pdf",
+      "public": true
+    },
+    {
+      "title": "Constancia Laboral Oficial: Astro - Pico Duarte Cartón",
+      "description": "Certificación laboral oficial que acredita la posición y funciones en Astro - Pico Duarte Cartón.",
+      "category": "Constancias laborales",
+      "date": "2026",
+      "file": "Carta_Laboral_Pico_Duarte_Astro.pdf",
+      "public": true
+    },
+    {
+      "title": "Constancia Laboral Oficial: UNIPAGO",
+      "description": "Certificación laboral oficial emitida por UNIPAGO acreditando el desempeño como Especialista de Infraestructura.",
+      "category": "Constancias laborales",
+      "date": "2022",
+      "file": "Carta_Laboral_Unipago.pdf",
+      "public": true
+    },
+    {
+      "title": "Constancia Laboral Oficial: VICRISA",
+      "description": "Certificación de experiencia laboral y trayectoria en Vidrios y Cristales S.A. (VICRISA).",
+      "category": "Constancias laborales",
+      "date": "2018",
+      "file": "Carta_Laboral_Vicrisa.pdf",
+      "public": true
+    },
+    {
+      "title": "Carta al Mérito Cisco: IT Essentials",
+      "description": "Carta de felicitación y mérito oficial emitida por Cisco Networking Academy y firmada por Chuck Robbins (CEO de Cisco) por excelencia académica y competencias en TI.",
+      "category": "Cartas al mérito",
+      "date": "2021-04-30",
+      "file": "Carta_al_Merito_Cisco_IT_Essentials.pdf",
+      "public": true
+    },
+    {
+      "title": "Carta al Mérito Cisco: CCNA v7 Introducción a Redes",
+      "description": "Carta de reconocimiento y felicitación oficial emitida por Cisco Networking Academy y firmada por Chuck Robbins (CEO de Cisco) por excelencia en prácticas de redes.",
+      "category": "Cartas al mérito",
+      "date": "2021-08-28",
+      "file": "Carta_al_Merito_Cisco_CCNA_Introduccion_a_Redes.pdf",
+      "public": true
+    },
+    {
+      "title": "Currículum Vitae Ejecutivo - Mario Méndez",
+      "description": "CV profesional orientado a Gerencia de TI, Infraestructura y Operaciones Tecnológicas.",
+      "category": "CV de gerencia de TI",
+      "date": "2026",
+      "file": "CV_Mario_Mendez_Gerente_de_Tecnologia.pdf",
+      "public": true
+    },
     {
       "title": "Machine Learning Operations Engineer (AI/ML) - CV Mario Méndez",
       "description": "CV técnico especializado en MLOps, despliegue de modelos en producción, LLMs, RAG, arquitecturas agénticas y pipelines CI/CD.",
@@ -23,11 +80,91 @@
       "public": true
     },
     {
-      "title": "Currículum Vitae Ejecutivo - Mario Méndez",
-      "description": "CV profesional orientado a Gerencia de TI, Infraestructura y Operaciones Tecnológicas.",
-      "category": "CV de gerencia de TI",
-      "date": "2026",
-      "file": "CV_Mario_Mendez_Gerente_de_Tecnologia.pdf",
+      "title": "Certificado Profesional en Soporte de Tecnologías de la Información (Google)",
+      "description": "Certificado profesional de Google que acredita competencias en soporte técnico, redes, sistemas operativos, administración y seguridad.",
+      "category": "Certificados",
+      "date": "2020",
+      "file": "Certificado_Google_Soporte_TI.pdf",
+      "public": true
+    },
+    {
+      "title": "NDG Linux Essentials (Linux Professional Institute / Cisco)",
+      "description": "Certificado oficial de fundamentos de Linux emitido por NDG y el Linux Professional Institute (LPI).",
+      "category": "Certificados",
+      "date": "2021",
+      "file": "Certificado_NDG_Linux_Essentials.pdf",
+      "public": true
+    },
+    {
+      "title": "Programming Essentials in Python (Python Institute / Cisco NetAcad)",
+      "description": "Certificado oficial de programación en Python expedido por Cisco Networking Academy y el Python Institute.",
+      "category": "Certificados",
+      "date": "2021",
+      "file": "Certificado_Cisco_Python_Essentials.pdf",
+      "public": true
+    },
+    {
+      "title": "Seguridad Informática: Defensa contra las artes oscuras digitales (Google)",
+      "description": "Certificado de Google sobre principios de seguridad, criptografía, autenticación y mitigación de amenazas.",
+      "category": "Certificados",
+      "date": "2020",
+      "file": "Certificado_Google_Seguridad_Informatica.pdf",
+      "public": true
+    },
+    {
+      "title": "Kali Linux: Seguridad Informática, Pentesting y Hacking",
+      "description": "Certificado en pruebas de penetración, análisis de vulnerabilidades y herramientas de seguridad ofensiva con Kali Linux.",
+      "category": "Certificados",
+      "date": "2020",
+      "file": "Certificado_Kali_Linux_Pentesting.pdf",
+      "public": true
+    },
+    {
+      "title": "Gestión y Respuesta a Incidentes de Seguridad (Academia ESET)",
+      "description": "Certificado de la Academia ESET sobre planes de contención, protocolos CSIRT y tratamiento de incidentes de seguridad.",
+      "category": "Certificados",
+      "date": "2020",
+      "file": "Certificado_ESET_Gestion_Incidentes.pdf",
+      "public": true
+    },
+    {
+      "title": "Curso de Backup y Continuidad Operativa (Academia ESET)",
+      "description": "Certificado de la Academia ESET sobre políticas de respaldo 3-2-1, almacenamiento seguro y planes BCP/DRP.",
+      "category": "Certificados",
+      "date": "2020",
+      "file": "Certificado_ESET_Curso_Backup.pdf",
+      "public": true
+    },
+    {
+      "title": "Iniciación a la Virtualización con Hyper-V (Microsoft)",
+      "description": "Certificado en despliegue de máquinas virtuales, conmutadores virtuales y administración de Hyper-V.",
+      "category": "Certificados",
+      "date": "2020",
+      "file": "Certificado_Virtualizacion_Hyper_V.pdf",
+      "public": true
+    },
+    {
+      "title": "SQL Server: Mantenimiento e Infraestructura de Datos (Microsoft Virtual Academy)",
+      "description": "Certificado de Microsoft en administración de bases de datos, mantenimiento, indexación y alta disponibilidad en SQL Server.",
+      "category": "Certificados",
+      "date": "2019",
+      "file": "Certificado_Microsoft_SQL_Server.pdf",
+      "public": true
+    },
+    {
+      "title": "Técnico en Seguridad Informática y Servidores (Fundación Carlos Slim)",
+      "description": "Certificado técnico profesional en protección de servidores, hardening de red y auditoría de seguridad.",
+      "category": "Certificados",
+      "date": "2021",
+      "file": "Certificado_Capacitate_Seguridad_Servidores.pdf",
+      "public": true
+    },
+    {
+      "title": "Curador de Bases de Datos (Fundación Carlos Slim)",
+      "description": "Certificado técnico en integridad de datos, saneamiento de tablas y modelado relacional.",
+      "category": "Certificados",
+      "date": "2021",
+      "file": "Certificado_Capacitate_Curador_Bases_Datos.pdf",
       "public": true
     }
   ]

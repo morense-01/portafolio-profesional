@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96">
+  <defs>
+    <linearGradient id="cloudbg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#075985"/>
+    </linearGradient>
+  </defs>
+  <rect width="96" height="96" rx="20" fill="url(#cloudbg)"/>
+  <rect x="2" y="2" width="92" height="92" rx="18" fill="none" stroke="#bae6fd" stroke-width="1.5" stroke-opacity="0.3"/>
+  <!-- Cloud Silhouette -->
+  <path d="M30 46 C24 46 20 41 20 35 C20 29.5 24.5 25 30 25 C31 25 32 25.2 33 25.5 C36 18.5 43 14 51 14 C61 14 69 21.5 70 31.5 C74 32.5 76 36 76 40 C76 45 72 49 67 49 L30 49" fill="#ffffff" fill-opacity="0.95"/>
+  <!-- Server Rack underneath linked -->
+  <g transform="translate(28, 52)">
+    <rect x="0" y="0" width="40" height="18" rx="3" fill="#0f172a" stroke="#bae6fd" stroke-width="1.5"/>
+    <line x1="6" y1="9" x2="34" y2="9" stroke="#334155" stroke-width="1"/>
+    <!-- LED Indicators -->
+    <circle cx="8" cy="5" r="1.5" fill="#22c55e"/>
+    <circle cx="13" cy="5" r="1.5" fill="#38bdf8"/>
+    <circle cx="8" cy="13" r="1.5" fill="#22c55e"/>
+    <circle cx="13" cy="13" r="1.5" fill="#f59e0b"/>
+    <!-- Connect line to cloud -->
+    <line x1="20" y1="0" x2="20" y2="-4" stroke="#bae6fd" stroke-width="2"/>
+  </g>
+  <text x="48" y="85" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="8.5" font-weight="800" text-anchor="middle" letter-spacing="1.5">CLOUD INFRA</text>
+</svg>

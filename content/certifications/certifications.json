@@ -1,6 +1,7 @@
 {
-  "_ayuda": "type: certificacion | curso | insignia | formacion. Todos los registros cuentan con su enlace oficial directo de verificación.",
+  "_ayuda": "type: merito | certificacion | curso | insignia | formacion | diplomado | especialidad. Todos los registros cuentan con su enlace oficial directo de verificación.",
   "categories": [
+    "Educación superior y títulos",
     "Inteligencia artificial y automatización",
     "Cloud y arquitectura",
     "Ciberseguridad",
@@ -8,9 +9,1090 @@
     "SAP y sistemas empresariales",
     "Infraestructura y administración de sistemas",
     "Gestión y liderazgo",
-    "Diplomados y especialidades"
+    "Diplomados y especialidades",
+    "Méritos y reconocimientos"
   ],
   "items": [
+    {
+      "id": "titulo-ingeniero-sistemas-oym",
+      "name": "Título Universitario: Ingeniero en Sistemas de Computación",
+      "issuer": "Universidad Dominicana O&M",
+      "category": "Educación superior y títulos",
+      "type": "titulo",
+      "status": "verificada",
+      "public": true,
+      "date": "2011",
+      "documentUrl": "documents/Titulo_Ingenieria_Sistemas_OyM.pdf",
+      "badgeImage": "titulo-universitario-badge.svg",
+      "skills": [
+        "Ingeniería de Software",
+        "Arquitectura de Sistemas y Redes",
+        "Bases de Datos Relacionales",
+        "Gestión y Dirección de TI",
+        "Análisis y Optimización de Procesos"
+      ],
+      "notes": "Título oficial universitario expedido por la Universidad Dominicana O&M. Avala la formación académica de grado como Ingeniero en Sistemas de Computación."
+    },
+    {
+      "id": "especialidad-ti",
+      "name": "Especialidad en Tecnologías de la Información (TI)",
+      "issuer": "Educación Superior Especializada",
+      "category": "Diplomados y especialidades",
+      "type": "especialidad",
+      "status": "verificada",
+      "public": true,
+      "date": "2023",
+      "skills": [
+        "Gestión TI",
+        "Infraestructura",
+        "Seguridad Informática",
+        "Continuidad Operativa"
+      ],
+      "notes": "Especialización de posgrado / máster en gestión integral de tecnología.",
+      "badgeImage": "especialidad-badge.svg",
+      "documentUrl": "documents/Certificado_Especialidad_Tecnologias_Informacion.pdf"
+    },
+    {
+      "id": "especialidad-tratamiento-datos",
+      "name": "Especialidad en Tratamiento y Gestión de Datos",
+      "issuer": "Educación Superior Especializada",
+      "category": "Diplomados y especialidades",
+      "type": "especialidad",
+      "status": "verificada",
+      "public": true,
+      "date": "2022",
+      "skills": [
+        "Bases de Datos",
+        "SQL",
+        "ETL",
+        "Gobernanza de Datos",
+        "Integridad"
+      ],
+      "notes": "Especialización en administración, consistencia y seguridad de la información.",
+      "badgeImage": "especialidad-badge.svg",
+      "documentUrl": "documents/Certificado_Especialidad_Tratamiento_Datos.pdf"
+    },
+    {
+      "id": "especialidad-integrador-iot",
+      "name": "Especialidad en Integrador de Servicios IoT",
+      "issuer": "Educación Superior Especializada",
+      "category": "Diplomados y especialidades",
+      "type": "especialidad",
+      "status": "verificada",
+      "public": true,
+      "date": "2021",
+      "skills": [
+        "Integración IoT",
+        "Redes Industriales",
+        "Monitoreo Remoto",
+        "Automatización"
+      ],
+      "notes": "Especialización en integración de soluciones de conectividad y sensórica IoT.",
+      "badgeImage": "especialidad-badge.svg",
+      "documentUrl": "documents/Certificado_Especialidad_Integrador_IoT.pdf"
+    },
+    {
+      "id": "diplomado-computo-en-la-nube",
+      "name": "Diplomado en Cómputo en la Nube",
+      "issuer": "Educación Superior Continua",
+      "category": "Diplomados y especialidades",
+      "type": "diplomado",
+      "status": "verificada",
+      "public": true,
+      "date": "2023",
+      "skills": [
+        "Cloud Architecture",
+        "Azure",
+        "AWS",
+        "Virtualization",
+        "Cloud Security"
+      ],
+      "notes": "Diplomado de especialización técnica registrado en expediente profesional.",
+      "badgeImage": "diplomado-badge.svg",
+      "documentUrl": "documents/Certificado_Capacitate_Computo_Nube.pdf"
+    },
+    {
+      "id": "diplomado-inteligencia-de-negocios",
+      "name": "Diplomado en Inteligencia de Negocios (BI)",
+      "issuer": "Educación Superior Continua",
+      "category": "Diplomados y especialidades",
+      "type": "diplomado",
+      "status": "verificada",
+      "public": true,
+      "date": "2023",
+      "skills": [
+        "Power BI",
+        "DAX",
+        "ETL",
+        "SSIS",
+        "Data Warehousing",
+        "Modelado de Datos"
+      ],
+      "notes": "Diplomado en analítica de negocios y generación de dashboards gerenciales.",
+      "badgeImage": "diplomado-badge.svg",
+      "documentUrl": "documents/Certificado_Diplomado_Inteligencia_Negocios.pdf"
+    },
+    {
+      "id": "diplomado-redes",
+      "name": "Diplomado en Redes y Telecomunicaciones",
+      "issuer": "Educación Superior Continua",
+      "category": "Diplomados y especialidades",
+      "type": "diplomado",
+      "status": "verificada",
+      "public": true,
+      "date": "2022",
+      "skills": [
+        "TCP/IP",
+        "Routing & Switching",
+        "VLAN",
+        "VPN",
+        "Seguridad de Redes"
+      ],
+      "notes": "Diplomado avanzado en infraestructura y arquitectura de conectividad.",
+      "badgeImage": "diplomado-badge.svg",
+      "documentUrl": "documents/Certificado_Diplomado_Redes.pdf"
+    },
+    {
+      "id": "diplomado-sistemas-informaticos",
+      "name": "Diplomado en Sistemas Informáticos",
+      "issuer": "Educación Superior Continua",
+      "category": "Diplomados y especialidades",
+      "type": "diplomado",
+      "status": "verificada",
+      "public": true,
+      "date": "2022",
+      "skills": [
+        "Arquitectura de Sistemas",
+        "Servidores",
+        "Bases de Datos",
+        "Operaciones TI"
+      ],
+      "notes": "Diplomado en administración integral de sistemas y plataformas empresariales.",
+      "badgeImage": "diplomado-badge.svg",
+      "documentUrl": "documents/Certificado_Diplomado_Sistemas_Informaticos.pdf"
+    },
+    {
+      "id": "diplomado-integridad-web",
+      "name": "Diplomado en Integridad y Seguridad Web",
+      "issuer": "Educación Superior Continua",
+      "category": "Diplomados y especialidades",
+      "type": "diplomado",
+      "status": "verificada",
+      "public": true,
+      "date": "2022",
+      "skills": [
+        "Seguridad Web",
+        "HTTPS/SSL",
+        "Protección de Aplicaciones",
+        "Auditoría"
+      ],
+      "notes": "Diplomado orientado a la protección de aplicaciones y servicios web.",
+      "badgeImage": "diplomado-badge.svg",
+      "documentUrl": "documents/Certificado_Diplomado_Integridad_Web.pdf"
+    },
+    {
+      "id": "diplomado-iot",
+      "name": "Diplomado en Internet de las Cosas (IoT)",
+      "issuer": "Educación Superior Continua",
+      "category": "Diplomados y especialidades",
+      "type": "diplomado",
+      "status": "verificada",
+      "public": true,
+      "date": "2021",
+      "skills": [
+        "Dispositivos IoT",
+        "Sensores",
+        "Conectividad Industrial",
+        "Telemetría"
+      ],
+      "notes": "Diplomado en tecnologías de sensórica e interconexión de dispositivos inteligentes.",
+      "badgeImage": "diplomado-badge.svg",
+      "documentUrl": "documents/Certificado_Diplomado_IoT.pdf"
+    },
+    {
+      "id": "diplomado-estrategias-digitales",
+      "name": "Diplomado en Estrategias Digitales de Aprendizaje",
+      "issuer": "Educación Superior Continua",
+      "category": "Diplomados y especialidades",
+      "type": "diplomado",
+      "status": "verificada",
+      "public": true,
+      "date": "2021",
+      "skills": [
+        "Transferencia Tecnológica",
+        "Capacitación TI",
+        "Herramientas Digitales"
+      ],
+      "notes": "Diplomado en metodologías de formación técnica y desarrollo de personal.",
+      "badgeImage": "diplomado-badge.svg",
+      "documentUrl": "documents/Certificado_Diplomado_Estrategias_Digitales.pdf"
+    },
+    {
+      "id": "fortinet-nse4",
+      "name": "Fortinet NSE 4 – Network Security Professional",
+      "issuer": "Fortinet",
+      "category": "Ciberseguridad",
+      "type": "certificacion",
+      "status": "verificada",
+      "public": true,
+      "date": "2022",
+      "credentialId": "NSE4-SEC",
+      "verifyUrl": "https://www.credly.com/users/mario-mendez.630726a8/badges",
+      "skills": [
+        "FortiGate",
+        "Firewall Policies",
+        "IPsec VPN",
+        "SSL VPN",
+        "Security Fabric"
+      ],
+      "notes": "Certificación en seguridad de redes y administración de firewalls Fortinet.",
+      "badgeImage": "fortinet-badge.svg",
+      "documentUrl": "documents/Certificado_Fortinet_NSE4.pdf"
+    },
+    {
+      "id": "aws-certified-cloud-practitioner",
+      "name": "AWS Certified Cloud Practitioner (CLF-C01)",
+      "issuer": "Amazon Web Services",
+      "category": "Cloud y arquitectura",
+      "type": "certificacion",
+      "status": "verificada",
+      "public": true,
+      "date": "2023",
+      "credentialId": "AWS-CLF",
+      "verifyUrl": "https://www.credly.com/users/mario-mendez.630726a8/badges",
+      "skills": [
+        "AWS Core Services",
+        "Cloud Security",
+        "Cloud Economics",
+        "Billing & Pricing",
+        "Architectural Principles"
+      ],
+      "notes": "Certificación oficial de Amazon Web Services en fundamentos de computación en la nube.",
+      "badgeImage": "aws-certified.svg",
+      "documentUrl": "documents/Certificado_AWS_Certified_Cloud_Practitioner.pdf"
+    },
+    {
+      "id": "mcsa-windows-server",
+      "name": "MCSA: Windows Server",
+      "issuer": "Microsoft",
+      "category": "Infraestructura y administración de sistemas",
+      "type": "certificacion",
+      "status": "verificada",
+      "public": true,
+      "date": "2019",
+      "credentialId": "MCSA-WS",
+      "verifyUrl": "https://learn.microsoft.com/es-es/users/MarioMendezAlcantaraalc",
+      "skills": [
+        "Active Directory",
+        "Group Policy",
+        "Hyper-V",
+        "DNS/DHCP",
+        "Storage Spaces"
+      ],
+      "notes": "Certificación de administrador de sistemas Microsoft Windows Server.",
+      "badgeImage": "ms-server-badge.svg",
+      "documentUrl": "documents/Certificado_Microsoft_IT_Pro_Nube.pdf"
+    },
+    {
+      "id": "comptia-a-plus",
+      "name": "CompTIA A+ (Core Hardware & Operating Systems)",
+      "issuer": "CompTIA",
+      "category": "Infraestructura y administración de sistemas",
+      "type": "certificacion",
+      "status": "verificada",
+      "public": true,
+      "date": "2018",
+      "credentialId": "COMPTIA-A",
+      "verifyUrl": "https://www.credly.com/users/mario-mendez.630726a8/badges",
+      "skills": [
+        "Hardware Diagnostics",
+        "OS Configuration",
+        "Troubleshooting",
+        "Networking Basics"
+      ],
+      "notes": "Certificación técnica fundamental en soporte e infraestructura de TI.",
+      "badgeImage": "comptia-badge.svg",
+      "documentUrl": "documents/Certificado_CompTIA_A_Plus.pdf"
+    },
+    {
+      "id": "google-certified-it-professional",
+      "name": "Certified IT Professional (TI)",
+      "issuer": "Grow with Google",
+      "category": "Infraestructura y administración de sistemas",
+      "type": "certificacion",
+      "status": "verificada",
+      "public": true,
+      "date": "2022",
+      "credentialId": "GOOGLE-IT",
+      "verifyUrl": "https://www.skills.google/public_profiles/195595b2-3a40-4602-905a-78c34b68fe62",
+      "skills": [
+        "Troubleshooting",
+        "Customer Support",
+        "Networking",
+        "System Administration",
+        "Security"
+      ],
+      "notes": "Certificación profesional de soporte y administración de tecnologías de la información emitida por Google.",
+      "badgeImage": "google-it-pro.svg",
+      "documentUrl": "documents/Certificado_Google_IT_Professional.pdf"
+    },
+    {
+      "id": "ms-data-analytics-path",
+      "name": "Get started with Microsoft data analytics (Ruta de Aprendizaje)",
+      "issuer": "Microsoft Learn",
+      "category": "SAP y sistemas empresariales",
+      "type": "certificacion",
+      "status": "verificada",
+      "public": true,
+      "date": "2026-08-11",
+      "credentialId": "3Z4SS92H",
+      "verifyUrl": "https://learn.microsoft.com/training/paths/data-analytics-microsoft/",
+      "badgeImage": "ms-data-analysis.svg",
+      "skills": [
+        "Business Intelligence",
+        "Enterprise Analytics",
+        "Power BI",
+        "Data Governance"
+      ],
+      "notes": "Trofeo oficial de Ruta de Aprendizaje completada en Microsoft Learn.",
+      "documentUrl": "documents/Certificado_Microsoft_Data_Analytics.pdf"
+    },
+    {
+      "id": "ms-copilot-productivity",
+      "name": "Optimize business processes with Microsoft 365 Copilot",
+      "issuer": "Microsoft Learn",
+      "category": "Inteligencia artificial y automatización",
+      "type": "certificacion",
+      "status": "verificada",
+      "public": true,
+      "date": "2026-08-02",
+      "credentialId": "ABLBR2X7",
+      "verifyUrl": "https://learn.microsoft.com/training/paths/optimize-business-processes-with-ai/",
+      "badgeImage": "ms-trophy.svg",
+      "skills": [
+        "Microsoft 365 Copilot",
+        "Process Automation",
+        "Enterprise Productivity"
+      ],
+      "notes": "Trofeo oficial de Ruta de Aprendizaje completada en Microsoft Learn.",
+      "documentUrl": "documents/Certificado_Microsoft_Copilot_Productivity.pdf"
+    },
+    {
+      "id": "anthropic-mcp-advanced",
+      "name": "Model Context Protocol: Advanced Topics",
+      "issuer": "Anthropic (Skilljar)",
+      "category": "Inteligencia artificial y automatización",
+      "type": "certificacion",
+      "status": "verificada",
+      "public": true,
+      "date": "2026-03-10",
+      "credentialId": "vxtfkvdm2xzr",
+      "verifyUrl": "https://verify.skilljar.com/c/vxtfkvdm2xzr",
+      "badgeImage": "anthropic-badge.svg",
+      "skills": [
+        "Model Context Protocol (MCP)",
+        "AI Tooling",
+        "Enterprise AI Integration"
+      ],
+      "notes": "Certificación oficial emitida por Anthropic a través de Skilljar.",
+      "documentUrl": "documents/Certificado_Anthropic_MCP_Advanced.pdf"
+    },
+    {
+      "id": "anthropic-mcp-intro",
+      "name": "Introduction to Model Context Protocol",
+      "issuer": "Anthropic (Skilljar)",
+      "category": "Inteligencia artificial y automatización",
+      "type": "certificacion",
+      "status": "verificada",
+      "public": true,
+      "date": "2026-03-08",
+      "credentialId": "o2r5j74e8f68",
+      "verifyUrl": "https://verify.skilljar.com/c/o2r5j74e8f68",
+      "badgeImage": "anthropic-badge.svg",
+      "skills": [
+        "Model Context Protocol",
+        "Agentic Architecture",
+        "AI APIs"
+      ],
+      "notes": "Certificación oficial emitida por Anthropic a través de Skilljar.",
+      "documentUrl": "documents/Certificado_Anthropic_MCP_Intro.pdf"
+    },
+    {
+      "id": "anthropic-claude-cowork",
+      "name": "Introduction to Claude Cowork",
+      "issuer": "Anthropic (Skilljar)",
+      "category": "Inteligencia artificial y automatización",
+      "type": "certificacion",
+      "status": "verificada",
+      "public": true,
+      "date": "2026",
+      "credentialId": "tzmigpxh43r8",
+      "verifyUrl": "https://verify.skilljar.com/c/tzmigpxh43r8",
+      "badgeImage": "anthropic-badge.svg",
+      "skills": [
+        "Claude AI",
+        "Prompt Engineering",
+        "Productivity"
+      ],
+      "notes": "Certificación oficial emitida por Anthropic.",
+      "documentUrl": "documents/Certificado_Anthropic_Claude_Cowork.pdf"
+    },
+    {
+      "id": "cisco-merito-ccna-itn",
+      "name": "Carta al Mérito: CCNA v7: Introducción a Redes",
+      "issuer": "Cisco",
+      "category": "Redes",
+      "type": "merito",
+      "status": "verificada",
+      "public": true,
+      "date": "2021-08-28",
+      "credentialId": "NetAcad-CCNA-ITN-Merit",
+      "verifyUrl": "https://www.netacad.com",
+      "documentUrl": "documents/Carta_al_Merito_Cisco_CCNA_Introduccion_a_Redes.pdf",
+      "badgeImage": "cisco-ccna-itn.png",
+      "skills": [
+        "Configuración de Routers y Switches Cisco",
+        "Protocolos Físicos y Enlace de Datos Ethernet",
+        "Direccionamiento IPv4 e IPv6",
+        "Modelo OSI y Capas de Red",
+        "Seguridad y Resolución de Problemas en Redes"
+      ],
+      "notes": "Carta de felicitación y mérito oficial emitida por Cisco Networking Academy, firmada por Chuck Robbins (CEO de Cisco), reconociendo excelencia en prácticas de laboratorio y conectividad de redes."
+    },
+    {
+      "id": "cisco-merito-it-essentials",
+      "name": "Carta al Mérito: IT Essentials",
+      "issuer": "Cisco",
+      "category": "Infraestructura y administración de sistemas",
+      "type": "merito",
+      "status": "verificada",
+      "public": true,
+      "date": "2021-04-30",
+      "credentialId": "NetAcad-ITE-Merit",
+      "verifyUrl": "https://www.netacad.com",
+      "documentUrl": "documents/Carta_al_Merito_Cisco_IT_Essentials.pdf",
+      "badgeImage": "cisco-it-essentials.png",
+      "skills": [
+        "Hardware y Mantenimiento de PCs",
+        "Sistemas Operativos Windows y Linux",
+        "Redes LAN y Servicios en la Nube",
+        "Seguridad de Usuario, Datos y Red",
+        "Diagnóstico y Soporte Técnico Profesional de TI"
+      ],
+      "notes": "Carta de felicitación y mérito oficial emitida por Cisco Networking Academy, firmada por Chuck Robbins (CEO de Cisco), acreditando competencias sobresalientes en soporte técnico e infraestructura informática."
+    },
+    {
+      "id": "ethical-hacking-az",
+      "name": "Ethical Hacking from A–Z (Pentesting & Corporate Defense)",
+      "issuer": "Educación Especializada en Ciberseguridad",
+      "category": "Ciberseguridad",
+      "type": "curso",
+      "status": "verificada",
+      "public": true,
+      "date": "2023",
+      "skills": [
+        "Ethical Hacking",
+        "Kali Linux",
+        "Vulnerability Assessment",
+        "Network Defense",
+        "Penetration Testing"
+      ],
+      "notes": "Formación integral en técnicas de evaluación de seguridad ofensiva y defensiva corporativa.",
+      "badgeImage": "ethical-hacking.svg",
+      "documentUrl": "documents/Certificado_Ethical_Hacking_AZ.pdf"
+    },
+    {
+      "id": "cisco-python-essentials",
+      "name": "Programming Essentials in Python",
+      "issuer": "OpenEDG Python Institute / Cisco",
+      "category": "Inteligencia artificial y automatización",
+      "type": "curso",
+      "status": "verificada",
+      "public": true,
+      "date": "2021-09-05",
+      "credentialId": "Python-Institute-PCAP-Prep",
+      "verifyUrl": "https://pythoninstitute.org",
+      "documentUrl": "documents/Certificado_Cisco_Python_Essentials.pdf",
+      "skills": [
+        "Python",
+        "Estructuras de Datos",
+        "POO",
+        "Automatización de Scripts",
+        "Módulos y Paquetes"
+      ],
+      "notes": "Certificado oficial emitido por Cisco Networking Academy en alianza con el Python Institute (PCAP).",
+      "badgeImage": "python-badge.svg"
+    },
+    {
+      "id": "fcs-administrador-proyectos-virtuales",
+      "name": "Administrador de Proyectos en Ambientes Virtuales",
+      "issuer": "Fundación Carlos Slim / Capacítate para el Empleo",
+      "category": "Gestión y liderazgo",
+      "type": "curso",
+      "status": "verificada",
+      "public": true,
+      "date": "2021-07-15",
+      "credentialId": "FCS-Capacitate-Project-Manager-Virtual",
+      "verifyUrl": "https://capacitateparaelempleo.org",
+      "documentUrl": "documents/Certificado_Capacitate_Administrador_Proyectos.pdf",
+      "skills": [
+        "Gestión de Proyectos",
+        "Herramientas de Colaboración",
+        "Metodologías Ágiles",
+        "Seguimiento de KPIs"
+      ],
+      "notes": "Certificado en liderazgo y gestión de proyectos tecnológicos con equipos distribuidos y remotos.",
+      "badgeImage": "project-management-badge.svg"
+    },
+    {
+      "id": "fcs-analista-datos",
+      "name": "Analista de Datos",
+      "issuer": "Fundación Carlos Slim / Capacítate para el Empleo",
+      "category": "Inteligencia artificial y automatización",
+      "type": "curso",
+      "status": "verificada",
+      "public": true,
+      "date": "2021-06-10",
+      "credentialId": "FCS-Capacitate-Data-Analyst",
+      "verifyUrl": "https://capacitateparaelempleo.org",
+      "documentUrl": "documents/Certificado_Capacitate_Analista_Datos.pdf",
+      "skills": [
+        "Analítica de Datos",
+        "Estadística Aplicada",
+        "Visualización de Datos",
+        "Toma de Decisiones"
+      ],
+      "notes": "Certificado profesional en análisis, interpretación y visualización de datos de negocio.",
+      "badgeImage": "ms-data-analysis.svg"
+    },
+    {
+      "id": "ndg-linux-essentials",
+      "name": "NDG Linux Essentials",
+      "issuer": "Linux Professional Institute (LPI) / NDG",
+      "category": "Infraestructura y administración de sistemas",
+      "type": "curso",
+      "status": "verificada",
+      "public": true,
+      "date": "2021-05-18",
+      "credentialId": "NDG-LPI-Linux-Essentials",
+      "verifyUrl": "https://www.netacad.com",
+      "documentUrl": "documents/Certificado_NDG_Linux_Essentials.pdf",
+      "skills": [
+        "Linux CLI",
+        "Permisos y Usuarios",
+        "Bash Scripting",
+        "Procesos y Paquetes",
+        "Sistemas de Archivos"
+      ],
+      "notes": "Certificación oficial de fundamentos de Linux emitida por Network Development Group (NDG) en convenio con el Linux Professional Institute (LPI).",
+      "badgeImage": "linux-badge.svg"
+    },
+    {
+      "id": "ndg-linux-unhatched",
+      "name": "NDG Linux Unhatched",
+      "issuer": "Linux Professional Institute (LPI) / NDG",
+      "category": "Infraestructura y administración de sistemas",
+      "type": "curso",
+      "status": "verificada",
+      "public": true,
+      "date": "2021-04-12",
+      "credentialId": "NDG-LPI-Linux-Unhatched",
+      "verifyUrl": "https://www.netacad.com",
+      "documentUrl": "documents/Certificado_NDG_Linux_Unhatched.pdf",
+      "skills": [
+        "Linux Básico",
+        "Comandos Shell",
+        "Administración del Sistema"
+      ],
+      "notes": "Certificado oficial de inicio en sistemas operativos de código abierto emitido por NDG y LPI.",
+      "badgeImage": "linux-badge.svg"
+    },
+    {
+      "id": "fcs-asesor-infraestructura-nube",
+      "name": "Asesor de Servicios de Infraestructura en la Nube",
+      "issuer": "Fundación Carlos Slim / Capacítate para el Empleo",
+      "category": "Cloud y arquitectura",
+      "type": "curso",
+      "status": "verificada",
+      "public": true,
+      "date": "2021-04-05",
+      "credentialId": "FCS-Capacitate-Cloud-Adviser",
+      "verifyUrl": "https://capacitateparaelempleo.org",
+      "documentUrl": "documents/Certificado_Capacitate_Infraestructura_Nube.pdf",
+      "skills": [
+        "Cloud Computing",
+        "Arquitectura IaaS/PaaS",
+        "Migración a Nube",
+        "Seguridad Cloud"
+      ],
+      "notes": "Certificado en asesoramiento y dimensionamiento de servicios de computación en la nube para organizaciones.",
+      "badgeImage": "cloud-badge.svg"
+    },
+    {
+      "id": "fcs-seguridad-informatica-servidores",
+      "name": "Técnico en Seguridad Informática y Servidores",
+      "issuer": "Fundación Carlos Slim / Capacítate para el Empleo",
+      "category": "Ciberseguridad",
+      "type": "curso",
+      "status": "verificada",
+      "public": true,
+      "date": "2021-03-25",
+      "credentialId": "FCS-Capacitate-Sec-Servers",
+      "verifyUrl": "https://capacitateparaelempleo.org",
+      "documentUrl": "documents/Certificado_Capacitate_Seguridad_Servidores.pdf",
+      "skills": [
+        "Seguridad en Servidores",
+        "Hardening",
+        "Auditoría de Redes",
+        "Políticas de Seguridad",
+        "Monitorización"
+      ],
+      "notes": "Certificado técnico profesional con aval de la Fundación Carlos Slim y Capacítate para el Empleo.",
+      "badgeImage": "fcs-capacitate.svg"
+    },
+    {
+      "id": "fcs-curador-bases-datos",
+      "name": "Curador de Bases de Datos",
+      "issuer": "Fundación Carlos Slim / Capacítate para el Empleo",
+      "category": "Infraestructura y administración de sistemas",
+      "type": "curso",
+      "status": "verificada",
+      "public": true,
+      "date": "2021-02-14",
+      "credentialId": "FCS-Capacitate-Database-Curation",
+      "verifyUrl": "https://capacitateparaelempleo.org",
+      "documentUrl": "documents/Certificado_Capacitate_Curador_Bases_Datos.pdf",
+      "skills": [
+        "Modelado de Datos",
+        "Limpieza de Datos",
+        "Integridad Referencial",
+        "SQL",
+        "Gobernanza de Datos"
+      ],
+      "notes": "Certificado técnico profesional en gestión, saneamiento y preservación de bases de datos empresariales.",
+      "badgeImage": "database-badge.svg"
+    },
+    {
+      "id": "kali-linux-pentesting",
+      "name": "Kali Linux: Seguridad Informática, Pentesting y Hacking",
+      "issuer": "Hacking Ético Profesional",
+      "category": "Ciberseguridad",
+      "type": "curso",
+      "status": "verificada",
+      "public": true,
+      "date": "2020-11-20",
+      "credentialId": "Kali-Linux-Security-Pentesting",
+      "verifyUrl": "https://www.kali.org",
+      "documentUrl": "documents/Certificado_Kali_Linux_Pentesting.pdf",
+      "badgeImage": "ethical-hacking.svg",
+      "skills": [
+        "Kali Linux",
+        "Pruebas de Penetración",
+        "Escaneo de Redes",
+        "Hardening",
+        "Análisis Forense"
+      ],
+      "notes": "Certificado de formación avanzada en herramientas ofensivas y defensivas bajo entorno Kali Linux."
+    },
+    {
+      "id": "google-ciberseguridad-teletrabajo",
+      "name": "Protege tu Negocio: Ciberseguridad en el Teletrabajo",
+      "issuer": "Google / INCIBE",
+      "category": "Ciberseguridad",
+      "type": "curso",
+      "status": "verificada",
+      "public": true,
+      "date": "2020-09-12",
+      "credentialId": "Google-INCIBE-Cybersecurity",
+      "verifyUrl": "https://www.incibe.es",
+      "documentUrl": "documents/Certificado_Google_Ciberseguridad_Teletrabajo.pdf",
+      "skills": [
+        "Ciberseguridad Remota",
+        "VPN",
+        "Conexión Segura",
+        "Protección de Datos",
+        "Sensibilización"
+      ],
+      "notes": "Certificado expedido por Google en colaboración con el Instituto Nacional de Ciberseguridad (INCIBE).",
+      "badgeImage": "google-security.svg"
+    },
+    {
+      "id": "eset-gestion-respuesta-incidentes",
+      "name": "Gestión y Respuesta a Incidentes de Seguridad",
+      "issuer": "Academia ESET",
+      "category": "Ciberseguridad",
+      "type": "curso",
+      "status": "verificada",
+      "public": true,
+      "date": "2020-08-14",
+      "credentialId": "ESET-Academia-Incident-Response",
+      "verifyUrl": "https://www.academiaeset.com",
+      "documentUrl": "documents/Certificado_ESET_Gestion_Incidentes.pdf",
+      "skills": [
+        "Respuesta a Incidentes",
+        "Análisis de Malware",
+        "Planes de Contención",
+        "Forense Digital",
+        "Protocolos CSIRT"
+      ],
+      "notes": "Certificado oficial emitido por la Academia ESET sobre metodologías y protocolos de atención a brechas e incidentes de seguridad.",
+      "badgeImage": "eset-badge.svg"
+    },
+    {
+      "id": "eset-curso-backup-continuidad",
+      "name": "Curso de Backup y Continuidad Operativa",
+      "issuer": "Academia ESET",
+      "category": "Infraestructura y administración de sistemas",
+      "type": "curso",
+      "status": "verificada",
+      "public": true,
+      "date": "2020-07-22",
+      "credentialId": "ESET-Academia-Backup-Continuity",
+      "verifyUrl": "https://www.academiaeset.com",
+      "documentUrl": "documents/Certificado_ESET_Curso_Backup.pdf",
+      "skills": [
+        "Políticas 3-2-1 de Backup",
+        "RTO y RPO",
+        "Continuidad de Negocio",
+        "Cifrado de Copias",
+        "Restauración"
+      ],
+      "notes": "Certificado oficial de la Academia ESET especializado en estrategias de respaldo y resiliencia ante desastres.",
+      "badgeImage": "eset-badge.svg"
+    },
+    {
+      "id": "microsoft-virtualizacion-hyperv",
+      "name": "Iniciación a la Virtualización con Hyper-V",
+      "issuer": "Microsoft",
+      "category": "Infraestructura y administración de sistemas",
+      "type": "curso",
+      "status": "verificada",
+      "public": true,
+      "date": "2020-06-15",
+      "credentialId": "MS-HyperV-Virtualization",
+      "verifyUrl": "https://learn.microsoft.com",
+      "documentUrl": "documents/Certificado_Virtualizacion_Hyper_V.pdf",
+      "badgeImage": "ms-server-badge.svg",
+      "skills": [
+        "Hyper-V",
+        "Máquinas Virtuales",
+        "Conmutadores Virtuales",
+        "Almacenamiento VHDX",
+        "Alta Disponibilidad"
+      ],
+      "notes": "Certificado de especialización de Microsoft en despliegue y gestión de infraestructura virtualizada empresarial."
+    },
+    {
+      "id": "google-soporte-ti-profesional",
+      "name": "Certificado Profesional en Soporte de Tecnologías de la Información",
+      "issuer": "Google",
+      "category": "Infraestructura y administración de sistemas",
+      "type": "curso",
+      "status": "verificada",
+      "public": true,
+      "date": "2020-05-15",
+      "credentialId": "Google-IT-Support-Cert",
+      "verifyUrl": "https://www.coursera.org/professional-certificates/google-it-support",
+      "documentUrl": "documents/Certificado_Google_Soporte_TI.pdf",
+      "badgeImage": "google-it-pro.svg",
+      "skills": [
+        "Soporte de TI",
+        "Resolución de Problemas",
+        "Redes",
+        "Sistemas Operativos",
+        "Seguridad"
+      ],
+      "notes": "Programa profesional de 5 cursos de Google y Coursera que acredita preparación profesional en soporte de infraestructura de TI."
+    },
+    {
+      "id": "google-infraestructura-servicios-ti",
+      "name": "Administración de sistemas y servicios de infraestructura de TI",
+      "issuer": "Google",
+      "category": "Infraestructura y administración de sistemas",
+      "type": "curso",
+      "status": "verificada",
+      "public": true,
+      "date": "2020-05-10",
+      "credentialId": "Google-System-Admin-Services",
+      "verifyUrl": "https://www.coursera.org/learn/system-administration-it-infrastructure-services",
+      "documentUrl": "documents/Certificado_Google_Infraestructura_TI.pdf",
+      "skills": [
+        "Servidores",
+        "Directorio Activo",
+        "Servicios de Infraestructura",
+        "Recuperación ante Desastres",
+        "Servicios Cloud"
+      ],
+      "notes": "Curso de especialización de Google en gestión de infraestructura, aprovisionamiento de servidores y continuidad operativa.",
+      "badgeImage": "google-it-pro.svg"
+    },
+    {
+      "id": "google-seguridad-informatica-defensa",
+      "name": "Seguridad informática: defensa contra las artes oscuras digitales",
+      "issuer": "Google",
+      "category": "Ciberseguridad",
+      "type": "curso",
+      "status": "verificada",
+      "public": true,
+      "date": "2020-05-02",
+      "credentialId": "Google-IT-Security-Defense",
+      "verifyUrl": "https://www.coursera.org/learn/it-security",
+      "documentUrl": "documents/Certificado_Google_Seguridad_Informatica.pdf",
+      "skills": [
+        "Criptografía",
+        "Seguridad de Redes",
+        "Defensa en Profundidad",
+        "Autenticación",
+        "Mitigación de Amenazas"
+      ],
+      "notes": "Curso de especialización de Google sobre conceptos fundamentales de seguridad de la información y defensa cibernética.",
+      "badgeImage": "google-security.svg"
+    },
+    {
+      "id": "google-sistemas-operativos-avanzado",
+      "name": "Sistemas operativos y tú: Convertirse en un usuario avanzado",
+      "issuer": "Google",
+      "category": "Infraestructura y administración de sistemas",
+      "type": "curso",
+      "status": "verificada",
+      "public": true,
+      "date": "2020-04-20",
+      "credentialId": "Google-OS-Power-User",
+      "verifyUrl": "https://www.coursera.org/learn/os-power-user",
+      "documentUrl": "documents/Certificado_Google_Sistemas_Operativos.pdf",
+      "skills": [
+        "Windows Server",
+        "Linux",
+        "Sistemas de Archivos",
+        "Gestión de Procesos",
+        "Línea de Comandos"
+      ],
+      "notes": "Curso de especialización de Google sobre administración avanzada de Windows y Linux.",
+      "badgeImage": "google-it-pro.svg"
+    },
+    {
+      "id": "google-redes-informaticas",
+      "name": "Los bits y bytes de las redes informáticas",
+      "issuer": "Google",
+      "category": "Redes",
+      "type": "curso",
+      "status": "verificada",
+      "public": true,
+      "date": "2020-04-10",
+      "credentialId": "Google-Bits-Bytes-Networks",
+      "verifyUrl": "https://www.coursera.org/learn/computer-networking",
+      "documentUrl": "documents/Certificado_Google_Redes_Informaticas.pdf",
+      "skills": [
+        "Modelo TCP/IP",
+        "Enrutamiento",
+        "Protocolos de Red",
+        "Subnetting",
+        "DNS y DHCP"
+      ],
+      "notes": "Curso de especialización de Google sobre protocolos y fundamentos de conectividad de redes.",
+      "badgeImage": "google-network.svg"
+    },
+    {
+      "id": "google-cloud-computing-activate",
+      "name": "Cloud Computing para Profesionales",
+      "issuer": "Google Activate",
+      "category": "Cloud y arquitectura",
+      "type": "curso",
+      "status": "verificada",
+      "public": true,
+      "date": "2020-03-20",
+      "credentialId": "Google-Activate-Cloud-Computing",
+      "verifyUrl": "https://grow.google",
+      "documentUrl": "documents/Certificado_Google_Cloud_Computing.pdf",
+      "skills": [
+        "Cloud Architecture",
+        "Almacenamiento Distribuido",
+        "Virtualización",
+        "Servicios SaaS"
+      ],
+      "notes": "Certificado oficial de Google Activate en fundamentos y aplicaciones de computación en la nube.",
+      "badgeImage": "google-cloud.svg"
+    },
+    {
+      "id": "microsoft-sql-server-infraestructura",
+      "name": "SQL Server: Mantenimiento e Infraestructura de Datos",
+      "issuer": "Microsoft Virtual Academy",
+      "category": "Infraestructura y administración de sistemas",
+      "type": "curso",
+      "status": "verificada",
+      "public": true,
+      "date": "2019-10-18",
+      "credentialId": "MVA-SQLServer-Maintenance",
+      "verifyUrl": "https://learn.microsoft.com",
+      "documentUrl": "documents/Certificado_Microsoft_SQL_Server.pdf",
+      "badgeImage": "ms-server-badge.svg",
+      "skills": [
+        "SQL Server",
+        "Planes de Mantenimiento",
+        "Respaldos de Base de Datos",
+        "Indexación",
+        "Seguridad de Datos"
+      ],
+      "notes": "Certificado de Microsoft Virtual Academy en administración de motores relacionales y bases de datos transaccionales."
+    },
+    {
+      "id": "cisco-networking-basics",
+      "name": "Networking Basics",
+      "issuer": "Cisco",
+      "category": "Redes",
+      "type": "insignia",
+      "status": "verificada",
+      "public": true,
+      "date": "2026-09-17",
+      "credentialId": "33eccf9a-b4bb-414d-9cd0-ab9904f6d3a6",
+      "verifyUrl": "https://www.credly.com/badges/33eccf9a-b4bb-414d-9cd0-ab9904f6d3a6",
+      "badgeImage": "cisco-networking-basics.png",
+      "skills": [
+        "Networking",
+        "TCP/IP",
+        "Ethernet",
+        "Network Configuration"
+      ],
+      "notes": "Insignia oficial emitida a través de Credly."
+    },
+    {
+      "id": "ms-clean-data-power-bi",
+      "name": "Clean, transform, and load data in Power BI",
+      "issuer": "Microsoft Learn",
+      "category": "SAP y sistemas empresariales",
+      "type": "insignia",
+      "status": "verificada",
+      "public": true,
+      "date": "2026-08-23",
+      "credentialId": "CRPPY8E9",
+      "verifyUrl": "https://learn.microsoft.com/training/modules/clean-data-power-bi/",
+      "badgeImage": "ms-clean-power-bi.svg",
+      "skills": [
+        "Power BI",
+        "Power Query",
+        "ETL",
+        "Data Transformation"
+      ],
+      "notes": "Insignia oficial verificable en Microsoft Learn (ID: CRPPY8E9)."
+    },
+    {
+      "id": "ms-computer-vision-azure",
+      "name": "Get started with computer vision in Azure",
+      "issuer": "Microsoft Learn",
+      "category": "Inteligencia artificial y automatización",
+      "type": "insignia",
+      "status": "verificada",
+      "public": true,
+      "date": "2026-08-23",
+      "credentialId": "NQSSMRAF",
+      "verifyUrl": "https://learn.microsoft.com/training/modules/get-started-vision-azure/",
+      "badgeImage": "ms-trophy.svg",
+      "skills": [
+        "Azure AI Vision",
+        "Image Analysis",
+        "Object Detection"
+      ],
+      "notes": "Insignia oficial verificable en Microsoft Learn (ID: NQSSMRAF)."
+    },
+    {
+      "id": "ms-dax-formulas",
+      "name": "Write DAX formulas for semantic models in Power BI",
+      "issuer": "Microsoft Learn",
+      "category": "SAP y sistemas empresariales",
+      "type": "insignia",
+      "status": "verificada",
+      "public": true,
+      "date": "2026-08-13",
+      "credentialId": "U74NYZJ3",
+      "verifyUrl": "https://learn.microsoft.com/training/modules/dax-power-bi-write-formulas/",
+      "badgeImage": "ms-dax.svg",
+      "skills": [
+        "DAX",
+        "Data Modeling",
+        "Calculated Measures",
+        "KPIs"
+      ],
+      "notes": "Insignia oficial verificable en Microsoft Learn (ID: U74NYZJ3)."
+    },
+    {
+      "id": "ms-fabric-analytics",
+      "name": "Introduction to end-to-end analytics using Microsoft Fabric",
+      "issuer": "Microsoft Learn",
+      "category": "SAP y sistemas empresariales",
+      "type": "insignia",
+      "status": "verificada",
+      "public": true,
+      "date": "2026-08-09",
+      "credentialId": "8VBBYXZW",
+      "verifyUrl": "https://learn.microsoft.com/training/modules/introduction-end-analytics-use-microsoft-fabric/",
+      "badgeImage": "ms-fabric.svg",
+      "skills": [
+        "Microsoft Fabric",
+        "Data Lakehouse",
+        "Synapse",
+        "Power BI"
+      ],
+      "notes": "Insignia oficial verificable en Microsoft Learn (ID: 8VBBYXZW)."
+    },
+    {
+      "id": "ms-rag-fundamentals",
+      "name": "Introduction to Retrieval-Augmented Generation (RAG) concepts",
+      "issuer": "Microsoft Learn",
+      "category": "Inteligencia artificial y automatización",
+      "type": "insignia",
+      "status": "verificada",
+      "public": true,
+      "date": "2026-08-09",
+      "credentialId": "CRQ2SR89",
+      "verifyUrl": "https://learn.microsoft.com/training/modules/rag-fundamentals/",
+      "badgeImage": "ms-genai.svg",
+      "skills": [
+        "RAG",
+        "Vector Search",
+        "Azure AI Search",
+        "Semantic Indexing"
+      ],
+      "notes": "Insignia oficial verificable en Microsoft Learn (ID: CRQ2SR89)."
+    },
+    {
+      "id": "ibm-cloud-essentials",
+      "name": "IBM Cloud Essentials",
+      "issuer": "IBM",
+      "category": "Cloud y arquitectura",
+      "type": "insignia",
+      "status": "verificada",
+      "public": true,
+      "date": "2025-05-14",
+      "credentialId": "9c82095d-7b30-4523-b07a-2f2479b1358f",
+      "verifyUrl": "https://www.credly.com/badges/9c82095d-7b30-4523-b07a-2f2479b1358f",
+      "badgeImage": "ibm-cloud-essentials.png",
+      "skills": [
+        "Cloud Computing",
+        "Hybrid Cloud",
+        "Infrastructure as a Service",
+        "PaaS"
+      ],
+      "notes": "Insignia oficial de IBM emitida en Credly."
+    },
+    {
+      "id": "aws-cloud-101",
+      "name": "AWS Educate Introduction to Cloud 101",
+      "issuer": "Amazon Web Services",
+      "category": "Cloud y arquitectura",
+      "type": "insignia",
+      "status": "verificada",
+      "public": true,
+      "date": "2025-05-01",
+      "credentialId": "152c604f-ab9f-4989-859a-4847df2cabc4",
+      "verifyUrl": "https://www.credly.com/badges/152c604f-ab9f-4989-859a-4847df2cabc4",
+      "badgeImage": "aws-cloud-101.png",
+      "skills": [
+        "AWS Core Services",
+        "Cloud Architecture",
+        "Security & Storage"
+      ],
+      "notes": "Insignia de formación oficial AWS Educate en Credly."
+    },
     {
       "id": "google-vertex-ai-studio",
       "name": "Introduction to Vertex AI Studio",
@@ -168,260 +1250,6 @@
       "notes": "Insignia oficial verificable en Google Skills."
     },
     {
-      "id": "ms-clean-data-power-bi",
-      "name": "Clean, transform, and load data in Power BI",
-      "issuer": "Microsoft Learn",
-      "category": "SAP y sistemas empresariales",
-      "type": "insignia",
-      "status": "verificada",
-      "public": true,
-      "date": "2026-08-23",
-      "credentialId": "CRPPY8E9",
-      "verifyUrl": "https://learn.microsoft.com/training/modules/clean-data-power-bi/",
-      "badgeImage": "ms-clean-power-bi.svg",
-      "skills": [
-        "Power BI",
-        "Power Query",
-        "ETL",
-        "Data Transformation"
-      ],
-      "notes": "Insignia oficial verificable en Microsoft Learn (ID: CRPPY8E9)."
-    },
-    {
-      "id": "ms-computer-vision-azure",
-      "name": "Get started with computer vision in Azure",
-      "issuer": "Microsoft Learn",
-      "category": "Inteligencia artificial y automatización",
-      "type": "insignia",
-      "status": "verificada",
-      "public": true,
-      "date": "2026-08-23",
-      "credentialId": "NQSSMRAF",
-      "verifyUrl": "https://learn.microsoft.com/training/modules/get-started-vision-azure/",
-      "badgeImage": "ms-trophy.svg",
-      "skills": [
-        "Azure AI Vision",
-        "Image Analysis",
-        "Object Detection"
-      ],
-      "notes": "Insignia oficial verificable en Microsoft Learn (ID: NQSSMRAF)."
-    },
-    {
-      "id": "ms-fabric-analytics",
-      "name": "Introduction to end-to-end analytics using Microsoft Fabric",
-      "issuer": "Microsoft Learn",
-      "category": "SAP y sistemas empresariales",
-      "type": "insignia",
-      "status": "verificada",
-      "public": true,
-      "date": "2026-08-09",
-      "credentialId": "8VBBYXZW",
-      "verifyUrl": "https://learn.microsoft.com/training/modules/introduction-end-analytics-use-microsoft-fabric/",
-      "badgeImage": "ms-fabric.svg",
-      "skills": [
-        "Microsoft Fabric",
-        "Data Lakehouse",
-        "Synapse",
-        "Power BI"
-      ],
-      "notes": "Insignia oficial verificable en Microsoft Learn (ID: 8VBBYXZW)."
-    },
-    {
-      "id": "ms-dax-formulas",
-      "name": "Write DAX formulas for semantic models in Power BI",
-      "issuer": "Microsoft Learn",
-      "category": "SAP y sistemas empresariales",
-      "type": "insignia",
-      "status": "verificada",
-      "public": true,
-      "date": "2026-08-13",
-      "credentialId": "U74NYZJ3",
-      "verifyUrl": "https://learn.microsoft.com/training/modules/dax-power-bi-write-formulas/",
-      "badgeImage": "ms-dax.svg",
-      "skills": [
-        "DAX",
-        "Data Modeling",
-        "Calculated Measures",
-        "KPIs"
-      ],
-      "notes": "Insignia oficial verificable en Microsoft Learn (ID: U74NYZJ3)."
-    },
-    {
-      "id": "ms-rag-fundamentals",
-      "name": "Introduction to Retrieval-Augmented Generation (RAG) concepts",
-      "issuer": "Microsoft Learn",
-      "category": "Inteligencia artificial y automatización",
-      "type": "insignia",
-      "status": "verificada",
-      "public": true,
-      "date": "2026-08-09",
-      "credentialId": "CRQ2SR89",
-      "verifyUrl": "https://learn.microsoft.com/training/modules/rag-fundamentals/",
-      "badgeImage": "ms-genai.svg",
-      "skills": [
-        "RAG",
-        "Vector Search",
-        "Azure AI Search",
-        "Semantic Indexing"
-      ],
-      "notes": "Insignia oficial verificable en Microsoft Learn (ID: CRQ2SR89)."
-    },
-    {
-      "id": "ms-data-analytics-path",
-      "name": "Get started with Microsoft data analytics (Ruta de Aprendizaje)",
-      "issuer": "Microsoft Learn",
-      "category": "SAP y sistemas empresariales",
-      "type": "certificacion",
-      "status": "verificada",
-      "public": true,
-      "date": "2026-08-11",
-      "credentialId": "3Z4SS92H",
-      "verifyUrl": "https://learn.microsoft.com/training/paths/data-analytics-microsoft/",
-      "badgeImage": "ms-data-analysis.svg",
-      "skills": [
-        "Business Intelligence",
-        "Enterprise Analytics",
-        "Power BI",
-        "Data Governance"
-      ],
-      "notes": "Trofeo oficial de Ruta de Aprendizaje completada en Microsoft Learn."
-    },
-    {
-      "id": "ms-copilot-productivity",
-      "name": "Optimize business processes with Microsoft 365 Copilot",
-      "issuer": "Microsoft Learn",
-      "category": "Inteligencia artificial y automatización",
-      "type": "certificacion",
-      "status": "verificada",
-      "public": true,
-      "date": "2026-08-02",
-      "credentialId": "ABLBR2X7",
-      "verifyUrl": "https://learn.microsoft.com/training/paths/optimize-business-processes-with-ai/",
-      "badgeImage": "ms-trophy.svg",
-      "skills": [
-        "Microsoft 365 Copilot",
-        "Process Automation",
-        "Enterprise Productivity"
-      ],
-      "notes": "Trofeo oficial de Ruta de Aprendizaje completada en Microsoft Learn."
-    },
-    {
-      "id": "anthropic-mcp-advanced",
-      "name": "Model Context Protocol: Advanced Topics",
-      "issuer": "Anthropic (Skilljar)",
-      "category": "Inteligencia artificial y automatización",
-      "type": "certificacion",
-      "status": "verificada",
-      "public": true,
-      "date": "2026-03-10",
-      "credentialId": "vxtfkvdm2xzr",
-      "verifyUrl": "https://verify.skilljar.com/c/vxtfkvdm2xzr",
-      "badgeImage": "anthropic-badge.svg",
-      "skills": [
-        "Model Context Protocol (MCP)",
-        "AI Tooling",
-        "Enterprise AI Integration"
-      ],
-      "notes": "Certificación oficial emitida por Anthropic a través de Skilljar."
-    },
-    {
-      "id": "anthropic-mcp-intro",
-      "name": "Introduction to Model Context Protocol",
-      "issuer": "Anthropic (Skilljar)",
-      "category": "Inteligencia artificial y automatización",
-      "type": "certificacion",
-      "status": "verificada",
-      "public": true,
-      "date": "2026-03-08",
-      "credentialId": "o2r5j74e8f68",
-      "verifyUrl": "https://verify.skilljar.com/c/o2r5j74e8f68",
-      "badgeImage": "anthropic-badge.svg",
-      "skills": [
-        "Model Context Protocol",
-        "Agentic Architecture",
-        "AI APIs"
-      ],
-      "notes": "Certificación oficial emitida por Anthropic a través de Skilljar."
-    },
-    {
-      "id": "anthropic-claude-cowork",
-      "name": "Introduction to Claude Cowork",
-      "issuer": "Anthropic (Skilljar)",
-      "category": "Inteligencia artificial y automatización",
-      "type": "certificacion",
-      "status": "verificada",
-      "public": true,
-      "date": "2026",
-      "credentialId": "tzmigpxh43r8",
-      "verifyUrl": "https://verify.skilljar.com/c/tzmigpxh43r8",
-      "badgeImage": "anthropic-badge.svg",
-      "skills": [
-        "Claude AI",
-        "Prompt Engineering",
-        "Productivity"
-      ],
-      "notes": "Certificación oficial emitida por Anthropic."
-    },
-    {
-      "id": "cisco-networking-basics",
-      "name": "Networking Basics",
-      "issuer": "Cisco",
-      "category": "Redes",
-      "type": "insignia",
-      "status": "verificada",
-      "public": true,
-      "date": "2026-09-17",
-      "credentialId": "33eccf9a-b4bb-414d-9cd0-ab9904f6d3a6",
-      "verifyUrl": "https://www.credly.com/badges/33eccf9a-b4bb-414d-9cd0-ab9904f6d3a6",
-      "badgeImage": "cisco-networking-basics.png",
-      "skills": [
-        "Networking",
-        "TCP/IP",
-        "Ethernet",
-        "Network Configuration"
-      ],
-      "notes": "Insignia oficial emitida a través de Credly."
-    },
-    {
-      "id": "ibm-cloud-essentials",
-      "name": "IBM Cloud Essentials",
-      "issuer": "IBM",
-      "category": "Cloud y arquitectura",
-      "type": "insignia",
-      "status": "verificada",
-      "public": true,
-      "date": "2025-05-14",
-      "credentialId": "9c82095d-7b30-4523-b07a-2f2479b1358f",
-      "verifyUrl": "https://www.credly.com/badges/9c82095d-7b30-4523-b07a-2f2479b1358f",
-      "badgeImage": "ibm-cloud-essentials.png",
-      "skills": [
-        "Cloud Computing",
-        "Hybrid Cloud",
-        "Infrastructure as a Service",
-        "PaaS"
-      ],
-      "notes": "Insignia oficial de IBM emitida en Credly."
-    },
-    {
-      "id": "aws-cloud-101",
-      "name": "AWS Educate Introduction to Cloud 101",
-      "issuer": "Amazon Web Services",
-      "category": "Cloud y arquitectura",
-      "type": "insignia",
-      "status": "verificada",
-      "public": true,
-      "date": "2025-05-01",
-      "credentialId": "152c604f-ab9f-4989-859a-4847df2cabc4",
-      "verifyUrl": "https://www.credly.com/badges/152c604f-ab9f-4989-859a-4847df2cabc4",
-      "badgeImage": "aws-cloud-101.png",
-      "skills": [
-        "AWS Core Services",
-        "Cloud Architecture",
-        "Security & Storage"
-      ],
-      "notes": "Insignia de formación oficial AWS Educate en Credly."
-    },
-    {
       "id": "ibm-cybersecurity-fundamentals",
       "name": "Cybersecurity Fundamentals",
       "issuer": "IBM SkillsBuild",
@@ -439,7 +1267,8 @@
         "Seguridad de Redes",
         "Criptografía"
       ],
-      "notes": "Insignia oficial emitida por IBM SkillsBuild en Credly."
+      "notes": "Insignia oficial emitida por IBM SkillsBuild en Credly.",
+      "documentUrl": "documents/Certificado_IBM_Cybersecurity_Fundamentals.pdf"
     },
     {
       "id": "cisco-ccna-itn",
@@ -480,7 +1309,8 @@
         "Data Confidentiality",
         "Incident Defense"
       ],
-      "notes": "Insignia oficial Cisco Networking Academy en Credly."
+      "notes": "Insignia oficial Cisco Networking Academy en Credly.",
+      "documentUrl": "documents/Certificado_Cisco_Intro_Cybersecurity.pdf"
     },
     {
       "id": "cisco-it-essentials",
@@ -501,7 +1331,8 @@
         "Troubleshooting",
         "Security"
       ],
-      "notes": "Insignia oficial Cisco Networking Academy en Credly."
+      "notes": "Insignia oficial Cisco Networking Academy en Credly.",
+      "documentUrl": "documents/Certificado_Cisco_IT_Essentials.pdf"
     },
     {
       "id": "cisco-packet-tracer",
@@ -520,7 +1351,8 @@
         "Packet Tracer",
         "Network Architecture"
       ],
-      "notes": "Insignia oficial Cisco Networking Academy en Credly."
+      "notes": "Insignia oficial Cisco Networking Academy en Credly.",
+      "documentUrl": "documents/Certificado_Cisco_Packet_Tracer.pdf"
     },
     {
       "id": "cisco-intro-iot",
@@ -539,314 +1371,8 @@
         "Automation",
         "Sensors & Connectivity"
       ],
-      "notes": "Insignia oficial Cisco Networking Academy en Credly."
-    },
-    {
-      "id": "fortinet-nse4",
-      "name": "Fortinet NSE 4 – Network Security Professional",
-      "issuer": "Fortinet",
-      "category": "Ciberseguridad",
-      "type": "certificacion",
-      "status": "verificada",
-      "public": true,
-      "date": "2022",
-      "credentialId": "NSE4-SEC",
-      "verifyUrl": "https://www.credly.com/users/mario-mendez.630726a8/badges",
-      "skills": [
-        "FortiGate",
-        "Firewall Policies",
-        "IPsec VPN",
-        "SSL VPN",
-        "Security Fabric"
-      ],
-      "notes": "Certificación en seguridad de redes y administración de firewalls Fortinet.",
-      "badgeImage": "fortinet-badge.svg"
-    },
-    {
-      "id": "mcsa-windows-server",
-      "name": "MCSA: Windows Server",
-      "issuer": "Microsoft",
-      "category": "Infraestructura y administración de sistemas",
-      "type": "certificacion",
-      "status": "verificada",
-      "public": true,
-      "date": "2019",
-      "credentialId": "MCSA-WS",
-      "verifyUrl": "https://learn.microsoft.com/es-es/users/MarioMendezAlcantaraalc",
-      "skills": [
-        "Active Directory",
-        "Group Policy",
-        "Hyper-V",
-        "DNS/DHCP",
-        "Storage Spaces"
-      ],
-      "notes": "Certificación de administrador de sistemas Microsoft Windows Server.",
-      "badgeImage": "ms-server-badge.svg"
-    },
-    {
-      "id": "comptia-a-plus",
-      "name": "CompTIA A+ (Core Hardware & Operating Systems)",
-      "issuer": "CompTIA",
-      "category": "Infraestructura y administración de sistemas",
-      "type": "certificacion",
-      "status": "verificada",
-      "public": true,
-      "date": "2018",
-      "credentialId": "COMPTIA-A",
-      "verifyUrl": "https://www.credly.com/users/mario-mendez.630726a8/badges",
-      "skills": [
-        "Hardware Diagnostics",
-        "OS Configuration",
-        "Troubleshooting",
-        "Networking Basics"
-      ],
-      "notes": "Certificación técnica fundamental en soporte e infraestructura de TI.",
-      "badgeImage": "comptia-badge.svg"
-    },
-    {
-      "id": "diplomado-computo-en-la-nube",
-      "name": "Diplomado en Cómputo en la Nube",
-      "issuer": "Educación Superior Continua",
-      "category": "Diplomados y especialidades",
-      "type": "diplomado",
-      "status": "verificada",
-      "public": true,
-      "date": "2023",
-      "skills": [
-        "Cloud Architecture",
-        "Azure",
-        "AWS",
-        "Virtualization",
-        "Cloud Security"
-      ],
-      "notes": "Diplomado de especialización técnica registrado en expediente profesional.",
-      "badgeImage": "diplomado-badge.svg"
-    },
-    {
-      "id": "diplomado-inteligencia-de-negocios",
-      "name": "Diplomado en Inteligencia de Negocios (BI)",
-      "issuer": "Educación Superior Continua",
-      "category": "Diplomados y especialidades",
-      "type": "diplomado",
-      "status": "verificada",
-      "public": true,
-      "date": "2023",
-      "skills": [
-        "Power BI",
-        "DAX",
-        "ETL",
-        "SSIS",
-        "Data Warehousing",
-        "Modelado de Datos"
-      ],
-      "notes": "Diplomado en analítica de negocios y generación de dashboards gerenciales.",
-      "badgeImage": "diplomado-badge.svg"
-    },
-    {
-      "id": "diplomado-redes",
-      "name": "Diplomado en Redes y Telecomunicaciones",
-      "issuer": "Educación Superior Continua",
-      "category": "Diplomados y especialidades",
-      "type": "diplomado",
-      "status": "verificada",
-      "public": true,
-      "date": "2022",
-      "skills": [
-        "TCP/IP",
-        "Routing & Switching",
-        "VLAN",
-        "VPN",
-        "Seguridad de Redes"
-      ],
-      "notes": "Diplomado avanzado en infraestructura y arquitectura de conectividad.",
-      "badgeImage": "diplomado-badge.svg"
-    },
-    {
-      "id": "diplomado-sistemas-informaticos",
-      "name": "Diplomado en Sistemas Informáticos",
-      "issuer": "Educación Superior Continua",
-      "category": "Diplomados y especialidades",
-      "type": "diplomado",
-      "status": "verificada",
-      "public": true,
-      "date": "2022",
-      "skills": [
-        "Arquitectura de Sistemas",
-        "Servidores",
-        "Bases de Datos",
-        "Operaciones TI"
-      ],
-      "notes": "Diplomado en administración integral de sistemas y plataformas empresariales.",
-      "badgeImage": "diplomado-badge.svg"
-    },
-    {
-      "id": "diplomado-integridad-web",
-      "name": "Diplomado en Integridad y Seguridad Web",
-      "issuer": "Educación Superior Continua",
-      "category": "Diplomados y especialidades",
-      "type": "diplomado",
-      "status": "verificada",
-      "public": true,
-      "date": "2022",
-      "skills": [
-        "Seguridad Web",
-        "HTTPS/SSL",
-        "Protección de Aplicaciones",
-        "Auditoría"
-      ],
-      "notes": "Diplomado orientado a la protección de aplicaciones y servicios web.",
-      "badgeImage": "diplomado-badge.svg"
-    },
-    {
-      "id": "diplomado-iot",
-      "name": "Diplomado en Internet de las Cosas (IoT)",
-      "issuer": "Educación Superior Continua",
-      "category": "Diplomados y especialidades",
-      "type": "diplomado",
-      "status": "verificada",
-      "public": true,
-      "date": "2021",
-      "skills": [
-        "Dispositivos IoT",
-        "Sensores",
-        "Conectividad Industrial",
-        "Telemetría"
-      ],
-      "notes": "Diplomado en tecnologías de sensórica e interconexión de dispositivos inteligentes.",
-      "badgeImage": "diplomado-badge.svg"
-    },
-    {
-      "id": "diplomado-estrategias-digitales",
-      "name": "Diplomado en Estrategias Digitales de Aprendizaje",
-      "issuer": "Educación Superior Continua",
-      "category": "Diplomados y especialidades",
-      "type": "diplomado",
-      "status": "verificada",
-      "public": true,
-      "date": "2021",
-      "skills": [
-        "Transferencia Tecnológica",
-        "Capacitación TI",
-        "Herramientas Digitales"
-      ],
-      "notes": "Diplomado en metodologías de formación técnica y desarrollo de personal.",
-      "badgeImage": "diplomado-badge.svg"
-    },
-    {
-      "id": "especialidad-ti",
-      "name": "Especialidad en Tecnologías de la Información (TI)",
-      "issuer": "Educación Superior Especializada",
-      "category": "Diplomados y especialidades",
-      "type": "especialidad",
-      "status": "verificada",
-      "public": true,
-      "date": "2023",
-      "skills": [
-        "Gestión TI",
-        "Infraestructura",
-        "Seguridad Informática",
-        "Continuidad Operativa"
-      ],
-      "notes": "Especialización de posgrado / máster en gestión integral de tecnología.",
-      "badgeImage": "especialidad-badge.svg"
-    },
-    {
-      "id": "especialidad-tratamiento-datos",
-      "name": "Especialidad en Tratamiento y Gestión de Datos",
-      "issuer": "Educación Superior Especializada",
-      "category": "Diplomados y especialidades",
-      "type": "especialidad",
-      "status": "verificada",
-      "public": true,
-      "date": "2022",
-      "skills": [
-        "Bases de Datos",
-        "SQL",
-        "ETL",
-        "Gobernanza de Datos",
-        "Integridad"
-      ],
-      "notes": "Especialización en administración, consistencia y seguridad de la información.",
-      "badgeImage": "especialidad-badge.svg"
-    },
-    {
-      "id": "especialidad-integrador-iot",
-      "name": "Especialidad en Integrador de Servicios IoT",
-      "issuer": "Educación Superior Especializada",
-      "category": "Diplomados y especialidades",
-      "type": "especialidad",
-      "status": "verificada",
-      "public": true,
-      "date": "2021",
-      "skills": [
-        "Integración IoT",
-        "Redes Industriales",
-        "Monitoreo Remoto",
-        "Automatización"
-      ],
-      "notes": "Especialización en integración de soluciones de conectividad y sensórica IoT.",
-      "badgeImage": "especialidad-badge.svg"
-    },
-    {
-      "id": "aws-certified-cloud-practitioner",
-      "name": "AWS Certified Cloud Practitioner (CLF-C01)",
-      "issuer": "Amazon Web Services",
-      "category": "Cloud y arquitectura",
-      "type": "certificacion",
-      "status": "verificada",
-      "public": true,
-      "date": "2023",
-      "credentialId": "AWS-CLF",
-      "verifyUrl": "https://www.credly.com/users/mario-mendez.630726a8/badges",
-      "skills": [
-        "AWS Core Services",
-        "Cloud Security",
-        "Cloud Economics",
-        "Billing & Pricing",
-        "Architectural Principles"
-      ],
-      "notes": "Certificación oficial de Amazon Web Services en fundamentos de computación en la nube.",
-      "badgeImage": "aws-certified.svg"
-    },
-    {
-      "id": "google-certified-it-professional",
-      "name": "Certified IT Professional (TI)",
-      "issuer": "Grow with Google",
-      "category": "Infraestructura y administración de sistemas",
-      "type": "certificacion",
-      "status": "verificada",
-      "public": true,
-      "date": "2022",
-      "credentialId": "GOOGLE-IT",
-      "verifyUrl": "https://www.skills.google/public_profiles/195595b2-3a40-4602-905a-78c34b68fe62",
-      "skills": [
-        "Troubleshooting",
-        "Customer Support",
-        "Networking",
-        "System Administration",
-        "Security"
-      ],
-      "notes": "Certificación profesional de soporte y administración de tecnologías de la información emitida por Google.",
-      "badgeImage": "google-it-pro.svg"
-    },
-    {
-      "id": "ethical-hacking-az",
-      "name": "Ethical Hacking from A–Z (Pentesting & Corporate Defense)",
-      "issuer": "Educación Especializada en Ciberseguridad",
-      "category": "Ciberseguridad",
-      "type": "curso",
-      "status": "verificada",
-      "public": true,
-      "date": "2023",
-      "skills": [
-        "Ethical Hacking",
-        "Kali Linux",
-        "Vulnerability Assessment",
-        "Network Defense",
-        "Penetration Testing"
-      ],
-      "notes": "Formación integral en técnicas de evaluación de seguridad ofensiva y defensiva corporativa.",
-      "badgeImage": "ethical-hacking.svg"
+      "notes": "Insignia oficial Cisco Networking Academy en Credly.",
+      "documentUrl": "documents/Certificado_Cisco_Intro_IoT.pdf"
     }
   ]
 }

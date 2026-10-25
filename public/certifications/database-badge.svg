@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96">
+  <defs>
+    <linearGradient id="dbbg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a8a"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="cyl" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+  </defs>
+  <rect width="96" height="96" rx="20" fill="url(#dbbg)"/>
+  <rect x="2" y="2" width="92" height="92" rx="18" fill="none" stroke="#38bdf8" stroke-width="1.5" stroke-opacity="0.3"/>
+  <!-- 3 Database Disks -->
+  <g transform="translate(48, 28)">
+    <ellipse cx="0" cy="6" rx="22" ry="7" fill="url(#cyl)"/>
+    <rect x="-22" y="0" width="44" height="6" fill="url(#cyl)"/>
+    <ellipse cx="0" cy="0" rx="22" ry="7" fill="#7dd3fc"/>
+  </g>
+  <g transform="translate(48, 42)">
+    <ellipse cx="0" cy="6" rx="22" ry="7" fill="url(#cyl)"/>
+    <rect x="-22" y="0" width="44" height="6" fill="url(#cyl)"/>
+    <ellipse cx="0" cy="0" rx="22" ry="7" fill="#38bdf8"/>
+  </g>
+  <g transform="translate(48, 56)">
+    <ellipse cx="0" cy="6" rx="22" ry="7" fill="url(#cyl)"/>
+    <rect x="-22" y="0" width="44" height="6" fill="url(#cyl)"/>
+    <ellipse cx="0" cy="0" rx="22" ry="7" fill="#0284c7"/>
+  </g>
+  <circle cx="48" cy="33" r="2" fill="#22c55e"/>
+  <circle cx="48" cy="47" r="2" fill="#22c55e"/>
+  <circle cx="48" cy="61" r="2" fill="#22c55e"/>
+  <text x="48" y="82" fill="#e0f2fe" font-family="system-ui, -apple-system, sans-serif" font-size="8.5" font-weight="800" text-anchor="middle" letter-spacing="1.5">DATABASE</text>
+</svg>

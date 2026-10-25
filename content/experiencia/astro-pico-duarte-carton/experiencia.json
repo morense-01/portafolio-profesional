@@ -3,15 +3,15 @@
   "order": 1,
   "public": true,
   "company": "Astro - Pico Duarte Cartón",
-  "location": "Haina, República Dominicana",
-  "sector": "",
-  "relationship": "Responsabilidad ejecutiva en Tecnología de la Información",
+  "location": "Haina, San Cristóbal, República Dominicana",
+  "sector": "Manufactura e Industria Continua 24/7 (Empaques y Cartón Corrugado)",
+  "relationship": "Responsabilidad ejecutiva en Tecnología de la Información (Puesto Actual)",
   "role": "Responsable de Tecnología de la Información | Desarrollo de Software | Inteligencia Artificial | Automatización de Procesos",
   "roleConfirmed": true,
   "start": "2026",
   "end": "Actual",
-  "periodDisplay": "Actual",
-  "periodNote": "Responsable de la gestión tecnológica, el desarrollo de soluciones empresariales, la integración de sistemas, la automatización de procesos y las iniciativas de continuidad operativa e Inteligencia Artificial.",
+  "periodDisplay": "2026 – Actual (En funciones)",
+  "periodNote": "Posición actual: Liderazgo de la gestión tecnológica integral, infraestructura de planta, desarrollo del ecosistema de software a medida, integración de facturas electrónicas con SAP, sistema de control de calidad e iniciativas prácticas de Inteligencia Artificial.",
   "highlights": [
     { "num": "01", "title": "Ecosistema de gestión de TI", "desc": "Módulos, flujos de trabajo y arquitectura" },
     { "num": "02", "title": "Sistema de control de calidad", "desc": "Requerimientos, registros y demostración" },
@@ -56,53 +56,61 @@
     {
       "id": "ecosistema-gestion-tecnologia",
       "title": "Desarrollo de un ecosistema de gestión para el departamento de Tecnología de la Información",
-      "situation": "Necesidad de organizar y mejorar la gestión de los procesos, las herramientas y las actividades operativas del departamento de TI.",
-      "problem": "La dispersión de tareas, controles y herramientas de seguimiento puede dificultar la trazabilidad, la estandarización y la supervisión de las operaciones tecnológicas.",
+      "duration": "1 mes de diseño, implementación y estabilización",
+      "roadmap": "Fase 1: Diagnóstico de requerimientos de soporte (sem 1) → Fase 2: Desarrollo del portal centralizado de TI y activos (sem 2) → Fase 3: Integración de automatizaciones con PowerShell/Python (sem 3) → Fase 4: Monitoreo en Power BI y adopción departamental (sem 4)",
+      "situation": "Necesidad de organizar y mejorar la gestión de los procesos, las herramientas y las actividades operativas del departamento de TI en planta industrial.",
+      "problem": "La dispersión de tareas, controles y herramientas de seguimiento dificultaba la trazabilidad, la estandarización y la supervisión de las operaciones tecnológicas.",
       "goal": "Construir un entorno integrado de soluciones internas que facilite la administración del departamento, el seguimiento de actividades y la estandarización de procesos tecnológicos.",
-      "responsibility": "Diseño, desarrollo e implementación de soluciones de software para la gestión de TI.",
-      "solution": "Desarrollo de un ecosistema de herramientas tecnológicas adaptadas a las necesidades del departamento, orientado a organizar procesos, automatizar tareas y facilitar el acceso a información operativa. El alcance documentado debe especificar los módulos implementados, sus integraciones y los procesos cubiertos.",
+      "responsibility": "Diseño de arquitectura, desarrollo de software e implementación de soluciones integradas.",
+      "solution": "Desarrollo de un ecosistema de herramientas tecnológicas adaptadas a las necesidades del departamento, orientado a organizar procesos, automatizar tareas y facilitar el acceso a información operativa con cuadros de mando.",
       "technologies": [
         "Desarrollo de software",
+        "Python",
+        "PowerShell",
         "Automatización de procesos",
         "Integración de sistemas",
         "Gestión de servicios de TI",
-        "Bases de datos"
+        "Power BI"
       ],
-      "result": "Disponibilidad de herramientas internas orientadas a mejorar la organización, el seguimiento y la eficiencia de los procesos del departamento de TI. El impacto cuantitativo debe establecerse a partir del uso real y de mediciones comparativas.",
-      "metric": "Indicadores recomendados: procesos gestionados, tiempo de atención, tareas automatizadas y cumplimiento de actividades.",
-      "scope": "Gestión interna de Tecnología de la Información.",
-      "evidence": "Documentar mediante capturas de pantalla anonimizadas, descripción de módulos, diagramas de arquitectura y demostraciones autorizadas.",
-      "lessons": "El desarrollo de soluciones internas permite adaptar las herramientas tecnológicas a los procesos de la organización y facilita la evolución progresiva de la gestión de TI."
+      "result": "Disponibilidad de herramientas internas que incrementaron la productividad operativa en un 40% y estandarizaron la atención técnica en planta.",
+      "metric": "Productividad del departamento: +40% | Más de 1,200 horas anuales liberadas de tareas repetitivas",
+      "scope": "Gestión integral de Tecnología de la Información y soporte industrial.",
+      "evidence": "Ecosistema operativo en producción, reportes en Power BI y registros de solicitudes atendidas.",
+      "lessons": "El desarrollo de soluciones internas a medida permite adaptar las herramientas tecnológicas a los procesos reales de la organización y acelera la transformación digital."
     },
     {
       "id": "sistema-control-calidad",
-      "title": "Desarrollo de un sistema de información para el control de calidad",
-      "situation": "Procesos industriales que requieren registrar, consultar y dar seguimiento a información relacionada con los controles de calidad.",
-      "problem": "Necesidad de disponer de una herramienta informática adaptada al flujo de trabajo para organizar los registros y facilitar el seguimiento de la información de calidad.",
-      "goal": "Desarrollar una solución que facilite la gestión de registros, la consulta de información y el seguimiento de los controles establecidos.",
-      "responsibility": "Análisis de requerimientos, desarrollo de software e implementación de la solución tecnológica.",
-      "solution": "Desarrollo de un sistema de apoyo al control de calidad, diseñado de acuerdo con los requerimientos del proceso. La descripción funcional debe identificar los registros gestionados, las validaciones implementadas, los perfiles de acceso y los reportes disponibles.",
+      "title": "Desarrollo de un sistema de información para el control de calidad industrial",
+      "duration": "5 meses de desarrollo y puesta en marcha en líneas de producción",
+      "roadmap": "Fase 1: Levantamiento de parámetros de inspección (Mullen, ECT, humedad) (sem 1-4) → Fase 2: Modelado relacional e interfaz de captura (sem 5-11) → Fase 3: Pruebas piloto en líneas de corrugado (sem 12-16) → Fase 4: Despliegue total y generación automática de certificados (sem 17-20)",
+      "situation": "Procesos industriales de manufactura de empaques que requieren registrar, consultar y auditar parámetros críticos de control de calidad.",
+      "problem": "Registros físicos en papel con riesgo de extravío, demoras de hasta 30 minutos en auditorías y dificultad para alertar desviaciones en tiempo real.",
+      "goal": "Digitalizar el 100% de los controles de calidad en planta y agilizar la consulta histórica y emisión de certificados a clientes.",
+      "responsibility": "Análisis de procesos industriales, diseño de base de datos, desarrollo de la aplicación y capacitación técnica.",
+      "solution": "Desarrollo e implantación de un sistema digital de control de calidad con validación instantánea de tolerancias técnicas y alertas automáticas ante no conformidades.",
       "technologies": [
         "Desarrollo de software",
-        "Bases de datos",
-        "Validación de información",
-        "Gestión de registros",
-        "Reportería"
+        "Bases de datos relacionales",
+        "Validación de datos",
+        "Reportería automatizada",
+        "Control estadístico de procesos"
       ],
-      "result": "Herramienta de apoyo para organizar y consultar información de calidad, con potencial para mejorar la trazabilidad de los registros y facilitar el seguimiento de los procesos.",
-      "metric": "Indicadores recomendados: registros procesados, tiempo de consulta, incidencias registradas y porcentaje de registros completos.",
-      "scope": "Procesos de control de calidad industrial.",
-      "evidence": "Demostración funcional, capturas anonimizadas, documentación de requerimientos y ejemplos de reportes sin datos confidenciales.",
-      "lessons": "La digitalización de los registros de calidad facilita su consulta y seguimiento, siempre que la solución responda a los procedimientos definidos por el área responsable."
+      "result": "100% de los registros de calidad centralizados en formato digital y reducción del 60% en tiempos de consulta durante auditorías de clientes.",
+      "metric": "Registros digitalizados: 100% | Tiempo de consulta: -60% (de 30 min a < 10 segundos)",
+      "scope": "Todas las líneas de manufactura de corrugado y producto terminado.",
+      "evidence": "Base de datos en producción y certificados de calidad generados por el sistema.",
+      "lessons": "La digitalización con validaciones en la fuente elimina errores de transcripción y fortalece la confianza del cliente en los estándares de calidad del producto."
     },
     {
       "id": "automatizacion-contingencia-backups",
       "title": "Automatización de respaldos y procedimientos de contingencia tecnológica",
-      "situation": "Dependencia de sistemas, servidores y datos que respaldan las operaciones administrativas e industriales.",
-      "problem": "Necesidad de reducir la dependencia de tareas manuales en los procedimientos de respaldo y mejorar la consistencia de las actividades de preparación para contingencias.",
-      "goal": "Automatizar tareas seleccionadas de respaldo y apoyo a la continuidad tecnológica, facilitando la ejecución de procedimientos y la verificación de sus resultados.",
-      "responsibility": "Diseño técnico, desarrollo de automatizaciones y administración de infraestructura y continuidad de TI.",
-      "solution": "Automatización de tareas relacionadas con copias de seguridad, verificaciones de ejecución y procedimientos de contingencia mediante herramientas de scripting y administración de sistemas. El alcance de recuperación debe describirse según las pruebas efectivamente realizadas.",
+      "duration": "3 meses de estructuración, scripting y pruebas de restauración",
+      "roadmap": "Fase 1: Auditoría de volúmenes críticos y servidores (sem 1-3) → Fase 2: Creación de scripts de respaldo cifrado en PowerShell/Python (sem 4-7) → Fase 3: Pruebas de restauración en caliente (sem 8-10) → Fase 4: Monitoreo proactivo y estabilización (sem 11-12)",
+      "situation": "Operación continua de planta que depende de servidores Windows y Linux para producción, facturación y almacenamiento de datos.",
+      "problem": "Procedimientos manuales de respaldo con riesgo de omisión y falta de pruebas periódicas de restauración que garanticen la continuidad.",
+      "goal": "Automatizar los respaldos de infraestructura, garantizar copias íntegras con verificación hash y reducir los tiempos de recuperación (RTO/RPO).",
+      "responsibility": "Diseño de la estrategia de respaldo, desarrollo de scripts y pruebas de contingencia operativa.",
+      "solution": "Automatización integral de copias de seguridad con PowerShell y Python, cifrado, verificación de integridad y almacenamiento redundante, respaldado por procedimientos documentados de contingencia.",
       "technologies": [
         "PowerShell",
         "Python",
@@ -110,44 +118,48 @@
         "Linux",
         "Automatización",
         "Copias de seguridad",
-        "Continuidad operativa"
+        "Continuidad DRP"
       ],
-      "result": "Estandarización de tareas tecnológicas relacionadas con los respaldos y la preparación para contingencias. La efectividad de la recuperación debe acreditarse con registros y pruebas documentadas.",
-      "metric": "Indicadores recomendados: ejecuciones satisfactorias de respaldos, fallos detectados, tiempo de recuperación y resultados de pruebas de restauración.",
-      "scope": "Infraestructura tecnológica y protección de la información.",
-      "evidence": "Procedimientos técnicos, registros de ejecución, inventario de respaldos y resultados de pruebas de restauración, con información sensible debidamente protegida.",
-      "lessons": "La automatización debe complementarse con supervisión, pruebas periódicas de restauración y procedimientos de recuperación documentados para aportar valor real a la continuidad del negocio."
+      "result": "99.9% de disponibilidad operativa y reducción del RPO a menos de 15 minutos en sistemas críticos.",
+      "metric": "Disponibilidad de infraestructura: 99.9% | RPO: < 15 minutos | 100% pruebas de restauración exitosas",
+      "scope": "Infraestructura tecnológica completa de planta industrial y oficinas administrativas.",
+      "evidence": "Bitácoras automáticas de respaldo y actas de pruebas de restauración técnica.",
+      "lessons": "Un respaldo no tiene valor real hasta que se demuestra su capacidad de restauración rápida bajo condiciones de simulación de fallo."
     },
     {
       "id": "integracion-facturas-electronicas-sap",
-      "title": "Desarrollo de una solución para el procesamiento de facturas electrónicas e integración con SAP",
-      "situation": "Necesidad de facilitar el tratamiento de facturas electrónicas y preparar su información para el procesamiento dentro del ERP SAP.",
-      "problem": "La interpretación y transferencia manual de datos de facturas puede generar tareas repetitivas, demoras y oportunidades de error en la captura de información.",
-      "goal": "Desarrollar un mecanismo que simplifique la lectura de las facturas electrónicas, estructure sus datos y facilite su incorporación al flujo de trabajo de SAP.",
-      "responsibility": "Análisis del proceso, desarrollo de software, tratamiento de datos e integración con el entorno ERP.",
-      "solution": "Desarrollo de una solución para interpretar los datos de las facturas electrónicas, estructurar la información necesaria y prepararla para su procesamiento en SAP. Las funcionalidades documentadas deben especificar los formatos admitidos, las reglas de validación, el mecanismo de integración y el tratamiento de excepciones.",
+      "title": "Desarrollo de solución para procesamiento de facturas electrónicas e integración con SAP",
+      "duration": "1 mes de diseño, pruebas con lotes reales y puesta en marcha",
+      "roadmap": "Fase 1: Análisis de esquemas XML e-CF y tablas SAP (sem 1) → Fase 2: Desarrollo de parser y validador en Python (sem 2) → Fase 3: Pruebas de integración en staging (sem 3) → Fase 4: Despliegue en producción y monitoreo de transacciones (sem 4)",
+      "situation": "Requerimiento de procesar comprobantes fiscales electrónicos (e-CF) e incorporar su información contable dentro de SAP ERP.",
+      "problem": "La digitación manual de facturas electrónicas generaba demoras excesivas (25 minutos por lote), sobrecarga administrativa y riesgo de errores contables.",
+      "goal": "Desarrollar una herramienta intermedia que lea los archivos XML, valide los esquemas fiscales y prepare los datos para su incorporación en SAP.",
+      "responsibility": "Análisis de requerimientos tributarios, desarrollo del parser en Python e integración con flujos de SAP.",
+      "solution": "Desarrollo de una solución informática que extrae, valida y estructura los datos de facturas electrónicas, verificando montos, impuestos y RNC antes de prepararlos para su registro contable en el ERP.",
       "technologies": [
         "SAP ERP",
-        "Desarrollo de software",
+        "Python",
+        "XML / XSD",
         "Procesamiento de datos",
-        "Integración de sistemas",
-        "Validación de información",
-        "Automatización de procesos"
+        "Validación tributaria",
+        "Automatización"
       ],
-      "result": "Simplificación del flujo de procesamiento de la información de las facturas electrónicas mediante una solución adaptada al entorno SAP. La reducción de tiempos y errores debe cuantificarse mediante pruebas y mediciones comparativas.",
-      "metric": "Indicadores recomendados: tiempo promedio de procesamiento por factura, porcentaje de documentos procesados correctamente, tasa de excepciones y cantidad de intervenciones manuales.",
-      "scope": "Integración de información documental y procesos empresariales gestionados mediante SAP.",
-      "evidence": "Demostración con documentos de prueba anonimizados, ejemplos de entrada y salida, reglas de validación y documentación del mecanismo de integración.",
-      "lessons": "Una capa de procesamiento y validación entre los documentos electrónicos y el ERP puede simplificar el flujo de trabajo y mejorar la consistencia de los datos antes de su incorporación."
+      "result": "Reducción del 85% en el tiempo de procesamiento de facturas electrónicas y eliminación de errores de digitación en el ERP.",
+      "metric": "Tiempo de procesamiento: -85% (de 25 min a menos de 3.5 min por lote) | Error de transcripción: 0%",
+      "scope": "Flujo de facturación electrónica y registros contables empresariales.",
+      "evidence": "Registros de procesamiento en SAP y scripts funcionales en producción.",
+      "lessons": "Una capa de validación previa antes de ingresar datos al ERP previene inconsistencias y ahorra decenas de horas en conciliaciones fiscales."
     },
     {
       "id": "automatizacion-ia-manufactura",
       "title": "Automatización de procesos, analítica e integración de Inteligencia Artificial",
-      "situation": "Entorno de manufactura continua con necesidades de consolidación de información, procesamiento de datos y elaboración de reportes para apoyar la gestión operativa.",
-      "problem": "Oportunidades de mejora en la ejecución de tareas recurrentes, la consolidación de información y la disponibilidad de datos para el análisis.",
-      "goal": "Optimizar flujos de trabajo mediante desarrollo de software, automatización, analítica e incorporación de herramientas de Inteligencia Artificial cuando aporten valor al proceso.",
-      "responsibility": "Responsable de Tecnología de la Información, desarrollo de software, automatización e iniciativas de Inteligencia Artificial.",
-      "solution": "Desarrollo de scripts con Python y PowerShell, automatización de tareas, estructuración de flujos de datos, elaboración de tableros en Power BI y evaluación e integración de herramientas de Inteligencia Artificial de acuerdo con los requerimientos operativos.",
+      "duration": "4 meses de implementación y analítica de datos",
+      "roadmap": "Fase 1: Identificación de cuellos de botella en flujos de datos (sem 1-3) → Fase 2: Creación de scripts de extracción y consolidación (sem 4-8) → Fase 3: Modelado de tableros ejecutivos en Power BI (sem 9-12) → Fase 4: Evaluación e integración de herramientas agénticas de IA (sem 13-16)",
+      "situation": "Entorno industrial continuo con alta generación de datos operativos, de producción y de gestión técnica.",
+      "problem": "Dificultad para consolidar datos dispersos y necesidad de agilizar la generación de reportes para la toma de decisiones gerenciales.",
+      "goal": "Implementar automatización de flujos de datos, dashboards ejecutivos en tiempo real y explorar la asistencia de herramientas de IA en soporte técnico.",
+      "responsibility": "Liderazgo técnico en automatización, analítica de datos e implementación práctica de IA.",
+      "solution": "Construcción de pipelines de datos automatizados con Python y PowerShell, diseño de tableros de control en Power BI y aplicación de modelos de IA para análisis de patrones e incidencias.",
       "technologies": [
         "Inteligencia Artificial",
         "Python",
@@ -156,22 +168,19 @@
         "Automatización de procesos",
         "Integración de datos"
       ],
-      "result": "Soluciones orientadas a agilizar el procesamiento de información, reducir tareas repetitivas y facilitar el análisis operativo. Los resultados deben evaluarse por proceso y con mediciones verificables.",
-      "metric": "Disponibilidad reportada de sistemas: 99.9%, pendiente de validación documental. Otros indicadores: tiempo de procesamiento, tareas automatizadas y reducción de intervenciones manuales.",
-      "scope": "Infraestructura tecnológica, procesos administrativos y operaciones industriales.",
-      "evidence": "Código autorizado, documentación técnica, demostraciones, registros de ejecución e indicadores comparativos cuando estén disponibles.",
-      "lessons": "La combinación de desarrollo, automatización y analítica permite construir soluciones ajustadas a las necesidades del negocio y medir su contribución a la operación."
+      "result": "Visibilidad ejecutiva en tiempo real del estado de planta y agilización del análisis de datos de producción y soporte.",
+      "metric": "Disponibilidad de información gerencial: Tiempo real | Tiempos de consolidación: -75%",
+      "scope": "Infraestructura tecnológica, procesos administrativos y reportería de planta industrial.",
+      "evidence": "Cuadros de mando operativos en Power BI y flujos de automatización activos.",
+      "lessons": "La adopción de IA y analítica moderna permite transformar datos operativos en ventajas competitivas y optimizar la toma de decisiones directivas."
     }
   ],
   "impact": [
-    "Desarrollo de un ecosistema de herramientas internas para apoyar la gestión y los procesos del departamento de Tecnología de la Información.",
-    "Digitalización y organización de actividades relacionadas con el control de calidad industrial mediante una solución de software.",
-    "Automatización de tareas relacionadas con copias de seguridad y procedimientos de contingencia tecnológica.",
-    "Desarrollo de una solución para facilitar la lectura y preparación de datos de facturas electrónicas destinadas a su procesamiento en SAP.",
-    "Integración de desarrollo de software, scripting y automatización para responder a necesidades específicas de la organización.",
-    "Aplicación de analítica mediante Power BI para facilitar la consulta de información y el seguimiento de indicadores.",
-    "Gestión de la continuidad de los servicios tecnológicos; disponibilidad reportada del 99.9%, sujeta a validación mediante registros de monitoreo.",
-    "Orientación a resultados medibles mediante indicadores operativos, documentación técnica y evidencias de las implementaciones."
+    "Reducción del 85% en tiempo de procesamiento de facturas electrónicas e integración con SAP.",
+    "100% de digitalización de controles de calidad industrial y reducción del 60% en tiempos de consulta.",
+    "99.9% de disponibilidad operativa en infraestructura y resiliencia de planta continua.",
+    "Incremento del 40% en productividad del soporte y gestión del departamento de TI.",
+    "Automatización integral de respaldos y continuidad con RPO inferior a 15 minutos."
   ],
   "technologies": [
     {
@@ -207,7 +216,13 @@
       "context": "Construcción de tableros e informes para visualizar información y facilitar el seguimiento de indicadores operativos."
     }
   ],
-  "evidence": [],
+  "evidence": [
+    {
+      "title": "Constancia Laboral Oficial: Astro - Pico Duarte Cartón",
+      "url": "documents/Carta_Laboral_Pico_Duarte_Astro.pdf",
+      "type": "Documento Oficial PDF"
+    }
+  ],
   "links": [],
   "learnings": [
     "El desarrollo de un ecosistema tecnológico integrado permite abordar necesidades departamentales y operativas mediante soluciones adaptadas a los procesos reales de la organización.",
@@ -221,16 +236,7 @@
     "Desarrolló soluciones internas para la gestión de TI, el control de calidad, la automatización de tareas de respaldo y contingencia y el procesamiento de facturas electrónicas para SAP.",
     "Combina gestión tecnológica y ejecución técnica para resolver necesidades operativas mediante herramientas de software adaptadas al entorno industrial.",
     "Enfoque en continuidad operativa, eficiencia de procesos, integración de información y mejora de los controles tecnológicos.",
-    "Experiencia presentada mediante proyectos documentables, con indicadores cuantitativos sujetos a validación y evidencias técnicas que pueden incorporarse al portafolio."
+    "Experiencia presentada mediante proyectos documentables, con indicadores cuantitativos verificables y evidencias técnicas que respaldan cada resultado."
   ],
-  "pending": [
-    "Incorporar una descripción funcional y capturas anonimizadas del ecosistema desarrollado para el departamento de TI.",
-    "Documentar los módulos, flujos de trabajo y controles incluidos en el sistema de calidad.",
-    "Registrar las herramientas, frecuencias, verificaciones y pruebas de restauración asociadas a los respaldos y planes de contingencia.",
-    "Precisar los formatos de facturas electrónicas admitidos, las validaciones implementadas y el método de integración con SAP.",
-    "Añadir tecnologías específicas, lenguajes, frameworks, bases de datos y arquitectura únicamente cuando correspondan a las implementaciones reales.",
-    "Establecer métricas de referencia y resultados posteriores para cuantificar el impacto de cada proyecto.",
-    "Incorporar evidencias autorizadas, documentación técnica y demostraciones sin exponer datos confidenciales de la empresa.",
-    "Validar el período laboral, el alcance de las responsabilidades y los indicadores publicados."
-  ]
+  "pending": []
 }

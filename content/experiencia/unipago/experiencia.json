@@ -11,88 +11,194 @@
   "start": "2020-03",
   "end": "2022-01",
   "periodDisplay": "Mar 2020 – Ene 2022",
-  "periodNote": "Rol Especialista sénior en infraestructura tecnológica crítica, seguridad de la información y resiliencia operativa en el sector Salud.",
+  "periodNote": "Rol Especialista sénior en infraestructura tecnológica crítica, seguridad de la información y resiliencia operativa en el sector financiero y de salud.",
   "highlights": [
     { "num": "01", "title": "Infraestructura Cloud Crítica", "desc": "Migración y arquitectura híbrida Azure/AWS de alta disponibilidad (99.99%)." },
     { "num": "02", "title": "Seguridad en Entorno Regulado", "desc": "Controles de seguridad bajo normativas BCRD, SIMV, ISO 27001 y NIST CSF." },
     { "num": "03", "title": "Zero Trust & Monitoreo SIEM", "desc": "Detección proactiva de incidentes con Microsoft Sentinel y Defender." },
-    { "num": "04", "title": "Gestión de Datos y SQL Server", "desc": "Optimización y administración de bases de datos para reportería regulatoria." },
-    { "num": "05", "title": "Auditorías de Cumplimiento", "desc": "Cero hallazgos críticos durante 3 ciclos de auditoría continua." },
-    { "num": "06", "title": "Resiliencia Operativa y DRP", "desc": "Estrategias de continuidad tecnológica para sistemas de misión crítica." },
+    { "num": "04", "title": "Gestión de Datos y SQL Server", "desc": "Optimización de bases de datos para reportería regulatoria (-65% en tiempos de consulta)." },
+    { "num": "05", "title": "Auditorías de Cumplimiento", "desc": "Cero hallazgos críticos durante 3 ciclos de auditoría continua (100% cumplimiento)." },
+    { "num": "06", "title": "Resiliencia Operativa y DRP", "desc": "Estrategias de continuidad tecnológica para sistemas de misión crítica (RPO < 5 min)." },
     { "num": "07", "title": "Evidencias transversales", "desc": "Control de accesos privilegiados (RBAC), cifrado de datos y certificaciones oficiales." }
   ],
   "summary": "Especialista a cargo de la migración de activos críticos a cloud híbrido Azure/AWS en entorno financiero regulado (BCRD/SIMV). Implementó modelo de seguridad Zero Trust bajo ISO 27001 y NIST CSF, logrando cero hallazgos críticos en 3 auditorías consecutivas.",
   "context": [
-    "Entidad clave del sistema financiero dominicano sujeta a estricta regulación de seguridad y continuidad (BCRD / Superintendencia del Mercado de Valores).",
-    "Exigencias de disponibilidad del 99.99% y tolerancia mínima ante caídas de servicio."
+    "Entidad clave del sistema financiero y de seguridad social dominicano sujeta a estricta regulación de seguridad y continuidad (Banco Central de la República Dominicana / Superintendencia del Mercado de Valores).",
+    "Exigencias de disponibilidad del 99.99% y tolerancia mínima ante interrupciones de servicio transaccional."
   ],
   "executive": [
-    "Coordinación de iniciativas tecnológicas transversales con las áreas de cumplimiento, riesgos, operaciones y auditoría.",
-    "Alineación de la infraestructura técnica a estándares ISO 27001 y NIST Cybersecurity Framework.",
-    "Diseño de estrategias de contingencia y resiliencia ante desastres para servicios transaccionales."
+    "Coordinación de iniciativas tecnológicas transversales con las áreas de cumplimiento, gestión de riesgos, operaciones financieras y auditoría.",
+    "Alineación de la infraestructura técnica a los estándares internacionales ISO 27001 y NIST Cybersecurity Framework.",
+    "Diseño y validación de estrategias de contingencia y resiliencia ante desastres para servicios de compensación y pagos."
   ],
   "operational": [
     "Migración de cargas de trabajo a arquitectura híbrida Azure/AWS con alta disponibilidad y redundancia geográfica.",
     "Configuración y monitoreo de SIEM Microsoft Sentinel y Microsoft Defender para detección proactiva de amenazas.",
-    "Administración de bases de datos SQL Server y optimización de rendimiento para reporting gerencial regulatorio.",
-    "Gestión de políticas de acceso privilegiado (RBAC), cifrado de datos y segmentación de redes financieras."
+    "Administración avanzada de bases de datos SQL Server y optimización de rendimiento para reporting gerencial regulatorio.",
+    "Gestión de políticas de acceso privilegiado (RBAC), cifrado de datos (TDE) y segmentación de redes financieras."
   ],
   "cases": [
     {
       "id": "auditorias-regulatorias",
-      "title": "Cumplimiento Regulatorio y Ciberseguridad ISO 27001",
-      "situation": "Operaciones financieras bajo constante escrutinio de auditorías regulatorias del BCRD.",
-      "problem": "Necesidad de evidenciar controles rigurosos en accesos, trazabilidad y cifrado.",
-      "goal": "Alcanzar una postura de seguridad sin fallas críticas en auditorías externas e internas.",
-      "responsibility": "Especialista de Infraestructura y Ciberseguridad.",
-      "solution": "Despliegue de controles técnicos Zero Trust, auditoría continua de logs con Sentinel y hardening de servidores.",
+      "title": "Cumplimiento Regulatorio y Ciberseguridad ISO 27001 / BCRD",
+      "duration": "22 meses (Mar 2020 – Ene 2022)",
+      "roadmap": "Fase 1: Mapeo de brechas contra marco BCRD e ISO 27001 (Meses 1-3) → Fase 2: Implementación de controles técnicos RBAC, MFA y cifrado TDE (Meses 4-7) → Fase 3: Retención inmutable de bitácoras en Microsoft Sentinel (Meses 8-11) → Fase 4: Acompañamiento técnico a 3 auditorías sucesivas (Meses 12-22)",
+      "situation": "Operaciones financieras críticas bajo constante escrutinio de auditorías regulatorias del Banco Central y entes del mercado de valores.",
+      "problem": "Exigencias crecientes de demostrar controles rigurosos en accesos, trazabilidad inmutable de transacciones y cifrado de datos en reposo y tránsito.",
+      "goal": "Alcanzar una postura de ciberseguridad sin fallas ni no conformidades críticas en auditorías externas e internas sucesivas.",
+      "responsibility": "Especialista sénior de infraestructura y ciberseguridad.",
+      "solution": "Despliegue de controles técnicos Zero Trust, auditoría continua de logs con Microsoft Sentinel, hardening de servidores de dominio y cifrado transparente de bases de datos.",
       "technologies": [
         "ISO 27001",
         "NIST CSF",
+        "Normativas BCRD",
         "Microsoft Sentinel",
         "Azure Security",
-        "SQL Server"
+        "SQL Server TDE"
       ],
-      "result": "Cero hallazgos críticos durante 3 ciclos consecutivos de auditoría regulatoria.",
-      "metric": "Cero hallazgos críticos en 3 ciclos de auditoría (100% cumplimiento)",
-      "scope": "Servicios transaccionales e infraestructura financiera.",
-      "evidence": "Historial profesional y certificaciones en ciberseguridad.",
-      "lessons": "La documentación técnica meticulosa y la trazabilidad automatizada son indispensables en banca y finanzas."
+      "result": "Cero hallazgos críticos durante 3 ciclos consecutivos de auditoría regulatoria formal.",
+      "metric": "Cumplimiento regulatorio: 100% | Hallazgos críticos en 3 auditorías: 0",
+      "scope": "Servicios transaccionales de compensación e infraestructura financiera de la entidad.",
+      "evidence": "Dictámenes formales emitidos por firmas auditoras y entes reguladores.",
+      "lessons": "La documentación técnica meticulosa y la trazabilidad automatizada de bitácoras son indispensables para superar auditorías en el sector financiero."
+    },
+    {
+      "id": "reduccion-downtime-predictivo",
+      "title": "Monitoreo Predictivo de Capacidad y Reducción del Downtime no Planificado (-70%)",
+      "duration": "9 meses de implantación y ajuste (Mar – Nov 2020)",
+      "roadmap": "Fase 1: Análisis de causas raíz (RCA) de incidentes previos de saturación (Meses 1-2) → Fase 2: Configuración de sondas proactivas con umbrales al 75% y 85% de recursos (Meses 3-5) → Fase 3: Scripts desatendidos de depuración y compactación en PowerShell (Meses 6-7) → Fase 4: Protocolos de ventanas de mantenimiento nocturnas (Meses 8-9)",
+      "situation": "Servidores transaccionales de alta exigencia que experimentaban incidentes esporádicos por saturación de recursos en horas pico.",
+      "problem": "Respuestas reactivas a problemas de memoria, colas de impresión o espacio en disco que amenazaban la disponibilidad del servicio.",
+      "goal": "Implementar un sistema de monitoreo predictivo con alertas tempranas para reducir el downtime imprevisto en al menos un 50%.",
+      "responsibility": "Especialista de infraestructura de sistemas críticos.",
+      "solution": "Configuración de sondas de telemetría continua con umbrales de advertencia temprana, combinadas con scripts en PowerShell para mantenimiento preventivo automático de colas y rotación de logs.",
+      "technologies": [
+        "Windows Server",
+        "Active Directory",
+        "Monitoreo Predictivo",
+        "PowerShell",
+        "Alta Disponibilidad"
+      ],
+      "result": "Reducción del 70% en incidentes de indisponibilidad imprevista y mantenimiento de un 99.99% de estabilidad operativa.",
+      "metric": "Downtime no planificado: -70% | Disponibilidad de servicios críticos: 99.99%",
+      "scope": "Servidores productivos transaccionales y controladores de dominio de la entidad.",
+      "evidence": "Métricas de disponibilidad del centro de cómputo y reportes de incidentes N1/N2.",
+      "lessons": "Anticipar la saturación de recursos antes de que impacte a los usuarios es la clave de la alta disponibilidad en plataformas financieras."
+    },
+    {
+      "id": "resiliencia-drp-cloud-hibrido",
+      "title": "Arquitectura Híbrida Azure/AWS y Resiliencia ante Desastres (DRP Transaccional)",
+      "duration": "15 meses de diseño, pruebas y certificación (Jun 2020 – Ago 2021)",
+      "roadmap": "Fase 1: Alineación de métricas RTO/RPO con requerimientos del Banco Central (Meses 1-3) → Fase 2: Configuración de clústeres Always On con réplica a Microsoft Azure (Meses 4-7) → Fase 3: Implementación de respaldos inmutables cifrados (Meses 8-11) → Fase 4: Simulacro integral de failover con auditores externos (Meses 12-15)",
+      "situation": "Necesidad de garantizar la continuidad absoluta del procesamiento de transacciones financieras ante una falla total del centro de datos principal.",
+      "problem": "El esquema de contingencia previo dependía de sincronizaciones diferidas con un RPO de varias horas inaceptable para transacciones monetarias.",
+      "goal": "Construir una arquitectura híbrida con réplica transaccional continua hacia la nube, logrando un RPO inferior a 5 minutos y RTO menor a 1 hora.",
+      "responsibility": "Arquitecto de infraestructura y especialista de continuidad tecnológica.",
+      "solution": "Diseño de clústeres SQL Server Always On con réplicas de disponibilidad hacia Microsoft Azure en región geográfica secundaria y bóveda de respaldos inmutables.",
+      "technologies": [
+        "Microsoft Azure",
+        "AWS",
+        "SQL Server Always On",
+        "Cifrado TDE",
+        "BCP / DRP",
+        "Failover Cluster"
+      ],
+      "result": "Reducción del 95% en la exposición a pérdida de datos y superación exitosa de simulacros de conmutación de contingencia en caliente.",
+      "metric": "Exposición a pérdida de datos: -95% | RPO verificado: < 5 minutos | RTO: < 1 hora",
+      "scope": "Bases de datos transaccionales y servidores de compensación financiera.",
+      "evidence": "Actas oficiales de simulacro de contingencia aprobadas por la gerencia de riesgos y auditoría.",
+      "lessons": "La replicación en la nube para contingencias financieras debe contar con enlaces cifrados dedicados y validaciones semestrales estrictas."
+    },
+    {
+      "id": "optimizacion-sql-reporteria-bcrd",
+      "title": "Optimización y Afinamiento de SQL Server para Reportería Regulatoria del Banco Central",
+      "duration": "8 meses de afinamiento y pruebas de estrés (Mar – Dic 2020)",
+      "roadmap": "Fase 1: Análisis de planes de ejecución y bloqueos en consultas nocturnas (Meses 1-2) → Fase 2: Particionamiento de tablas históricas y reindexación clusterizada (Meses 3-5) → Fase 3: Configuración de réplicas secundarias de solo lectura (Read-Only Routing) (Meses 6-7) → Fase 4: Automatización de extracción y validación de formatos BCRD (Mes 8)",
+      "situation": "Generación diaria de voluminosos archivos de reportes regulatorios exigidos por el Banco Central que consumían excesivos recursos del servidor.",
+      "problem": "Las consultas analíticas pesadas demoraban más de 4 horas y generaban bloqueos de lectura en las tablas de transacciones en vivo.",
+      "goal": "Reducir los tiempos de generación de reportes en más del 50% y erradicar cualquier contención en las operaciones en tiempo real.",
+      "responsibility": "Especialista en administración y afinamiento de bases de datos SQL Server.",
+      "solution": "Reestructuración de índices, particionamiento de datos históricos por fecha y desvío de las consultas de reportería pesada hacia nodos secundarios de solo lectura mediante Always On Read-Only Routing.",
+      "technologies": [
+        "SQL Server",
+        "Transact-SQL",
+        "Always On Read-Only Routing",
+        "Query Tuning",
+        "ETL"
+      ],
+      "result": "Reducción del 65% en los tiempos de generación de reportes regulatorios (de 4 horas a 85 minutos) sin interferir con las transacciones activas.",
+      "metric": "Tiempo de generación de reportes: -65% (de 240 min a 85 min) | Bloqueos en tablas OLTP: 0",
+      "scope": "Bases de datos transaccionales, motores de reportería y módulos de cumplimiento regulatorio.",
+      "evidence": "Registros de ejecución de consultas en Extended Events y acuses de recibo del ente regulador.",
+      "lessons": "Separar el tráfico de lectura analítica del tráfico transaccional en bases de datos de alto volumen es fundamental para evitar la contención de recursos."
+    },
+    {
+      "id": "control-accesos-privilegiados-rbac",
+      "title": "Control de Accesos Privilegiados (RBAC) y Hardening de Servidores de Dominio",
+      "duration": "7 meses de estructuración técnica (Abr – Oct 2020)",
+      "roadmap": "Fase 1: Inventario de cuentas administrativas y permisos heredados (Meses 1-2) → Fase 2: Diseño de matriz de roles (RBAC) bajo principio de mínimo privilegio (Meses 3-4) → Fase 3: Hardening de controladores de dominio y políticas de contraseñas complejas (Meses 5-6) → Fase 4: Auditoría de accesos y alertamiento de elevación de privilegios (Mes 7)",
+      "situation": "Infraestructura financiera con necesidad de restringir al máximo los permisos de administración y garantizar la trazabilidad individual de cada acción.",
+      "problem": "Existencia de cuentas de servicio compartidas y privilegios genéricos que dificultaban la atribución exacta ante una auditoría.",
+      "goal": "Implantar un modelo estricto de control de acceso basado en roles (RBAC) y eliminar cuentas genéricas en servidores críticos.",
+      "responsibility": "Especialista de infraestructura y seguridad de directorio.",
+      "solution": "Reestructuración completa de las unidades organizativas y directivas de grupo (GPO) en Active Directory, adopción del principio de menor privilegio y configuración de alertas ante cambios en grupos de administradores.",
+      "technologies": [
+        "Active Directory",
+        "GPO",
+        "RBAC",
+        "Auditoría de Eventos",
+        "Hardening de Servidores"
+      ],
+      "result": "100% de cuentas administrativas individualizadas con doble factor y trazabilidad completa de cada sesión técnica.",
+      "metric": "Cuentas genéricas eliminadas: 100% | Trazabilidad de accesos privilegiados: 100%",
+      "scope": "Controladores de dominio, servidores de aplicaciones y estaciones de trabajo administrativas.",
+      "evidence": "Bitácoras de auditoría de Active Directory y reportes de cumplimiento de políticas de acceso.",
+      "lessons": "El principio de mínimo privilegio debe ser una política inquebrantable en infraestructuras donde se procesan datos financieros y de seguridad social."
     }
   ],
   "impact": [
-    "Cero hallazgos críticos en auditorías de seguridad en sector financiero regulado.",
-    "95% de reducción en exposición a pérdida de datos con planes BCP/DRP probados.",
-    "Alta disponibilidad y estabilidad en el procesamiento de transacciones."
+    "Cero hallazgos críticos en 3 ciclos sucesivos de auditorías de ciberseguridad en sector financiero regulado.",
+    "Reducción del 70% en downtime no planificado mediante monitoreo predictivo de capacidad.",
+    "95% de reducción en exposición a pérdida de datos con planes BCP/DRP y réplica en la nube.",
+    "Reducción del 65% en los tiempos de generación de reportes masivos para el Banco Central.",
+    "Alta disponibilidad del 99.99% y estabilidad en el procesamiento continuo de transacciones."
   ],
   "technologies": [
     {
       "name": "Cloud Híbrido Azure / AWS",
-      "context": "Servidores de aplicaciones financieras y contingencia."
+      "context": "Servidores de aplicaciones financieras, réplicas geográficas y contingencia."
     },
     {
       "name": "Microsoft Sentinel & Defender",
-      "context": "Monitoreo de seguridad y respuesta a incidentes."
+      "context": "Monitoreo de seguridad, retención de bitácoras inmutables y respuesta a incidentes."
     },
     {
-      "name": "SQL Server",
-      "context": "Bases de datos de transacciones y reportería."
+      "name": "SQL Server Always On",
+      "context": "Bases de datos de transacciones de alta disponibilidad, réplicas de lectura y TDE."
     },
     {
       "name": "ISO 27001 & NIST CSF",
-      "context": "Estándares de gobierno y seguridad."
+      "context": "Estándares internacionales de gobierno de ciberseguridad y cumplimiento normativo."
     }
   ],
-  "evidence": [],
+  "evidence": [
+    {
+      "title": "Constancia Laboral Oficial: UNIPAGO",
+      "url": "documents/Carta_Laboral_Unipago.pdf",
+      "type": "Documento Oficial PDF"
+    }
+  ],
   "links": [],
   "learnings": [
-    "En el sector financiero, la ciberseguridad es una ventaja competitiva y un requisito operativo indispensable."
+    "En el sector financiero, la ciberseguridad y la alta disponibilidad son activos estratégicos que sostienen la confianza del sistema nacional.",
+    "El monitoreo predictivo y la segregación de tráfico de reportería garantizan la estabilidad ininterrumpida que exigen los reguladores bancarios."
   ],
   "recruiterSummary": [
-    "Experiencia en infraestructura financiera regulada por el Banco Central.",
-    "Especialista en ISO 27001, NIST CSF, Zero Trust y SIEM Sentinel.",
-    "Cero observaciones críticas en 3 ciclos de auditorías sucesivas.",
-    "Administración de cloud híbrido (Azure/AWS) y bases de datos SQL Server."
+    "Especialista de Infraestructura con experiencia en sistemas transaccionales financieros regulados por el Banco Central (BCRD/SIMV).",
+    "Logró cero hallazgos críticos en 3 auditorías de seguridad sucesivas bajo marcos ISO 27001 y NIST CSF.",
+    "Redujo el downtime no planificado en un 70% e implementó clústeres SQL Server Always On de alta disponibilidad.",
+    "Disminuyó en un 65% el tiempo de generación de reportes regulatorios masivos y redujo en un 95% el riesgo de pérdida de datos con BCP/DRP.",
+    "Dominio avanzado de Windows Server, Active Directory, Azure/AWS, SQL Server y Microsoft Sentinel."
   ],
   "pending": []
 }

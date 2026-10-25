@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96">
+  <defs>
+    <linearGradient id="unibg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b2545"/>
+      <stop offset="50%" stop-color="#134074"/>
+      <stop offset="100%" stop-color="#051937"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffe259"/>
+      <stop offset="100%" stop-color="#ffa751"/>
+    </linearGradient>
+    <linearGradient id="ribbon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e53935"/>
+      <stop offset="100%" stop-color="#b71c1c"/>
+    </linearGradient>
+  </defs>
+  <rect width="96" height="96" rx="20" fill="url(#unibg)"/>
+  <rect x="2" y="2" width="92" height="92" rx="18" fill="none" stroke="url(#gold)" stroke-width="2"/>
+  
+  <g fill="url(#gold)">
+    <path d="M22 62 C16 48 20 32 30 22 C28 26 26 32 26 38 C26 46 29 54 34 60 C30 61 25 62 22 62 Z"/>
+    <path d="M74 62 C80 48 76 32 66 22 C68 26 70 32 70 38 C70 46 67 54 62 60 C66 61 71 62 74 62 Z"/>
+  </g>
+  
+  <path d="M36 42 V52 C36 57 60 57 60 52 V42 Z" fill="#0f172a" stroke="url(#gold)" stroke-width="1.5"/>
+  <polygon points="48,22 76,34 48,46 20,34" fill="#1e293b" stroke="url(#gold)" stroke-width="2"/>
+  <polygon points="48,25 72,34 48,43 24,34" fill="#0f172a"/>
+  <path d="M48 34 L74 44 V54" fill="none" stroke="url(#gold)" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="74" cy="56" r="3" fill="url(#gold)"/>
+  <circle cx="48" cy="34" r="2.5" fill="url(#gold)"/>
+
+  <g transform="translate(0, 8)">
+    <rect x="30" y="52" width="36" height="12" rx="3" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+    <ellipse cx="30" cy="58" rx="2.5" ry="6" fill="#e2e8f0"/>
+    <ellipse cx="66" cy="58" rx="2.5" ry="6" fill="#f8fafc"/>
+    <rect x="45" y="51" width="6" height="14" rx="1" fill="url(#ribbon)"/>
+    <polygon points="45,65 47,72 45,71 43,72" fill="url(#ribbon)"/>
+    <polygon points="51,65 53,72 51,71 49,72" fill="url(#ribbon)"/>
+    <circle cx="48" cy="58" r="4.5" fill="url(#gold)"/>
+    <circle cx="48" cy="58" r="2.5" fill="#ca8a04"/>
+  </g>
+
+  <text x="48" y="89" fill="url(#gold)" font-family="system-ui, -apple-system, sans-serif" font-size="7.5" font-weight="900" text-anchor="middle" letter-spacing="1">TÍTULO UNIVERSITARIO</text>
+</svg>

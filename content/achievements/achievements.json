@@ -2,166 +2,735 @@
   "_ayuda": "Para publicar una métrica complete TODOS los campos, cambie status a 'validada' y public a true.",
   "items": [
     {
-      "id": "disponibilidad-99-9",
-      "title": "Disponibilidad de servicios del 99.9%",
+      "id": "facturacion-electronica-sap-85",
+      "title": "Reducción del 85% en tiempo de procesamiento de facturación electrónica e integración SAP",
+      "claimedValue": "-85%",
+      "status": "validada",
+      "public": true,
+      "company": "Astro - Pico Duarte Cartón",
+      "companySlug": "astro-pico-duarte-carton",
+      "project": "Procesamiento automatizado de comprobantes electrónicos (e-CF) e interoperabilidad ERP",
+      "period": "2026",
+      "duration": "1 mes de diseño, pruebas y despliegue continuo",
+      "definition": "Tiempo promedio requerido para la lectura, validación de esquemas fiscales, extracción de datos y carga de facturas electrónicas en SAP.",
+      "baseline": "25 minutos por lote mediante digitación y validación manual de XML",
+      "result": "Menos de 3.5 minutos en flujo desatendido y validación inmediata",
+      "method": "Medición comparativa de tiempos de ciclo de procesamiento por lote documental y tasa de rechazo.",
+      "roadmap": [
+        {
+          "phase": "Fase 1: Diagnóstico y Especificación",
+          "time": "Semana 1",
+          "desc": "Análisis de estructuras XML de comprobantes fiscales electrónicos (e-CF), esquemas XSD y requerimientos de tablas y módulos en SAP ERP."
+        },
+        {
+          "phase": "Fase 2: Arquitectura y Desarrollo del Parser",
+          "time": "Semana 2",
+          "desc": "Construcción de módulos en Python para extracción segura, parsing de datos tributarios, validación de consistencia y registro de bitácoras."
+        },
+        {
+          "phase": "Fase 3: Pruebas de Integración y Homologación",
+          "time": "Semana 3",
+          "desc": "Validación en ambiente de pruebas (staging) con lotes reales anonimizados y calibración del tratamiento de excepciones e inconsistencias."
+        },
+        {
+          "phase": "Fase 4: Puesta en Producción y Monitoreo",
+          "time": "Semana 4",
+          "desc": "Despliegue operativo, automatización de tareas programadas y supervisión continua de consistencia de datos en SAP."
+        }
+      ],
+      "technologies": ["Python", "SAP ERP", "XML / XSD", "Automatización", "SQL"],
+      "validationSource": "Registros de transacciones en SAP y bitácoras de ejecución automatizadas.",
+      "confidentiality": "Público / Demostrable",
+      "scope": "Procesamiento integral de facturación electrónica y registros contables.",
+      "notes": "Reducción drástica en errores de digitación y eliminación de cuellos de botella al cierre fiscal mensual."
+    },
+    {
+      "id": "sistema-control-calidad-industrial",
+      "title": "Digitalización del 100% de controles de calidad y reducción del 60% en tiempos de consulta",
+      "claimedValue": "100%",
+      "status": "validada",
+      "public": true,
+      "company": "Astro - Pico Duarte Cartón",
+      "companySlug": "astro-pico-duarte-carton",
+      "project": "Sistema digital de información y trazabilidad para control de calidad en planta",
+      "period": "2026",
+      "duration": "5 meses de desarrollo y adopción en líneas de producción",
+      "definition": "Porcentaje de registros de inspección física, gramaje, resistencia y humedad digitalizados y tiempo de respuesta en consultas de auditoría.",
+      "baseline": "0% digitalizado (registros manuales en carpetas físicas con demoras de hasta 30 minutos en búsquedas)",
+      "result": "100% de registros centralizados y consultas inmediatas en menos de 10 segundos",
+      "method": "Auditoría de cobertura de fichas de calidad digitalizadas y cronometrado de búsqueda de históricos.",
+      "roadmap": [
+        {
+          "phase": "Fase 1: Levantamiento de Requerimientos Industriales",
+          "time": "Semanas 1 – 4",
+          "desc": "Definición de parámetros técnicos de prueba (resistencia ECT, Mullen, humedad) y flujos de inspección de corrugadoras e impresoras."
+        },
+        {
+          "phase": "Fase 2: Modelado de Datos y Desarrollo de Software",
+          "time": "Semanas 5 – 11",
+          "desc": "Diseño de la base de datos relacional y desarrollo de interfaz intuitiva con validaciones automáticas de tolerancias técnicas."
+        },
+        {
+          "phase": "Fase 3: Pruebas Piloto en Turnos de Producción",
+          "time": "Semanas 12 – 16",
+          "desc": "Implantación en línea principal de empaques, ajuste de roles de usuario y configuración de reportes automáticos de no conformidad."
+        },
+        {
+          "phase": "Fase 4: Despliegue Total y Emisión de Certificados",
+          "time": "Semanas 17 – 20",
+          "desc": "Habilitación para todas las líneas industriales y generación automática de certificados de calidad para clientes de manufactura."
+        }
+      ],
+      "technologies": ["Desarrollo de Software", "Bases de Datos", "Reportería Automatizada", "Control Estadístico"],
+      "validationSource": "Base de datos del sistema de calidad y auditorías internas de producción.",
+      "confidentiality": "Público / Demostrable",
+      "scope": "Todas las líneas de manufactura de empaques y empaque final.",
+      "notes": "Facilita la atención a auditorías de clientes y certificación de lotes industriales en tiempo récord."
+    },
+    {
+      "id": "disponibilidad-infraestructura-astro",
+      "title": "99.9% de disponibilidad en infraestructura tecnológica y resiliencia de planta industrial",
       "claimedValue": "99.9%",
       "status": "validada",
       "public": true,
-      "company": "ODS Logistics / MADECO",
-      "project": "Continuidad operativa y arquitectura de alta disponibilidad",
-      "period": "2022 – 2026",
-      "definition": "Porcentaje de tiempo de actividad ininterrumpida en sistemas críticos de producción, WMS y ERP.",
-      "baseline": "98.5% (interrupciones periódicas previas)",
-      "result": "99.9% constante",
-      "method": "Monitoreo continuo de uptime con alertas automáticas y arquitectura redundante.",
-      "validationSource": "Registros de monitoreo de servidores y SLAs acordados con la dirección.",
+      "company": "Astro - Pico Duarte Cartón",
+      "companySlug": "astro-pico-duarte-carton",
+      "project": "Continuidad operativa, respaldo automatizado y alta disponibilidad industrial",
+      "period": "2026",
+      "duration": "3 meses de reestructuración técnica y monitoreo continuo",
+      "definition": "Porcentaje de operatividad ininterrumpida de redes de planta, servidores productivos y enlaces de comunicación.",
+      "baseline": "Interrupciones no programadas periódicas por incidentes de red o fallas de respaldo",
+      "result": "99.9% de tiempo de actividad continua y RPO inferior a 15 minutos",
+      "method": "Monitoreo continuo de sondas de disponibilidad y bitácoras automatizadas de ejecución de respaldos.",
+      "roadmap": [
+        {
+          "phase": "Fase 1: Auditoría de Redes y Servidores",
+          "time": "Semanas 1 – 3",
+          "desc": "Evaluación de cableado estructurado, switches industriales, enlaces de fibra y almacenamiento de servidores Windows y Linux."
+        },
+        {
+          "phase": "Fase 2: Automatización de Respaldos e Inmutabilidad",
+          "time": "Semanas 4 – 7",
+          "desc": "Desarrollo de scripts en PowerShell y Python para copias automáticas, validación de integridad hash y réplica secundaria."
+        },
+        {
+          "phase": "Fase 3: Pruebas de Restauración en Caliente",
+          "time": "Semanas 8 – 10",
+          "desc": "Simulacros de recuperación técnica de servidores y bases de datos corroborando tiempos de restablecimiento mínimos."
+        },
+        {
+          "phase": "Fase 4: Alertas Proactivas y Estabilización",
+          "time": "Semanas 11 – 12",
+          "desc": "Integración de monitoreo proactivo con notificaciones inmediatas ante cualquier degradación de rendimiento o conectividad."
+        }
+      ],
+      "technologies": ["Windows Server", "Linux", "PowerShell", "Python", "Redes Industriales", "Continuidad DRP"],
+      "validationSource": "Registros de sondas de uptime y bitácoras de restauración de respaldos.",
       "confidentiality": "Público / Demostrable",
-      "scope": "Infraestructura tecnológica completa de almacén y corporativa",
-      "notes": "Mantenido de forma consistente durante más de 3 años consecutivos."
+      "scope": "Operaciones industriales de manufactura y áreas administrativas corporativas.",
+      "notes": "Garantiza la operatividad continua requerida por plantas de corrugado de alto rendimiento."
     },
     {
-      "id": "reduccion-incidentes-60",
-      "title": "Reducción de incidentes de seguridad en un 60%",
-      "claimedValue": "-60%",
+      "id": "ecosistema-ti-productividad",
+      "title": "Incremento del 40% en productividad del soporte y automatización de procesos TI",
+      "claimedValue": "+40%",
       "status": "validada",
       "public": true,
-      "company": "MADECO / UNIPAGO",
-      "project": "Ciberseguridad corporativa Zero Trust, Microsoft Defender y SIEM Sentinel",
-      "period": "2020 – 2024",
-      "definition": "Disminución en el número de eventos y brechas de seguridad reportadas en endpoints y red.",
-      "baseline": "Promedio alto de alertas no correlacionadas y vulnerabilidades en estaciones de trabajo",
-      "result": "Reducción del 60% en incidentes efectivos",
-      "method": "Implementación de Microsoft 365 Defender, SIEM Microsoft Sentinel, MFA obligatorio y Tenable.io.",
-      "validationSource": "Reportes mensuales de SIEM y comités de riesgos.",
+      "company": "Astro - Pico Duarte Cartón",
+      "companySlug": "astro-pico-duarte-carton",
+      "project": "Ecosistema de gestión de TI, analítica de datos e integración de herramientas de Inteligencia Artificial",
+      "period": "2026",
+      "duration": "1 mes de diseño, implementación y analítica",
+      "definition": "Aumento en la capacidad de atención a requerimientos y reducción de tiempos dedicados a tareas técnicas rutinarias.",
+      "baseline": "Gestión reactiva de solicitudes en canales informales con tiempos de resolución variables",
+      "result": "40% más requerimientos atendidos a tiempo y más de 1,200 horas anuales proyectadas en ahorro operativo",
+      "method": "Análisis comparativo de solicitudes resueltas por mes y tiempo invertido en mantenimiento preventivo.",
+      "roadmap": [
+        {
+          "phase": "Fase 1: Estandarización de Catálogo de Servicios",
+          "time": "Semana 1",
+          "desc": "Clasificación de tipos de incidentes, niveles de criticidad operativa y asignación de prioridades de atención."
+        },
+        {
+          "phase": "Fase 2: Desarrollo del Portal de Gestión de TI",
+          "time": "Semana 2",
+          "desc": "Creación del ecosistema interno de seguimiento de activos, solicitudes, controles de mantenimiento y tareas recurrentes."
+        },
+        {
+          "phase": "Fase 3: Integración de Analítica y Modelos de IA",
+          "time": "Semana 3",
+          "desc": "Conexión de tableros de control en Power BI y pruebas de procesamiento con herramientas de IA generativa para diagnóstico técnico."
+        },
+        {
+          "phase": "Fase 4: Consolidación y Mejora Continua",
+          "time": "Semana 4",
+          "desc": "Capacitación a usuarios de planta, refinamiento de automatizaciones y presentación de reportes ejecutivos a Dirección."
+        }
+      ],
+      "technologies": ["Power BI", "Python", "PowerShell", "Inteligencia Artificial", "Gestión de Servicios TI"],
+      "validationSource": "Métricas del portal de gestión de TI y tableros de reportería directiva.",
       "confidentiality": "Público / Demostrable",
-      "scope": "Organización corporativa y financiera",
-      "notes": "Modelo de arquitectura Zero Trust e ISO 27001."
-    },
-    {
-      "id": "ahorro-costos-18",
-      "title": "Optimización y reducción de costos TI en un 18%",
-      "claimedValue": "18%",
-      "status": "validada",
-      "public": true,
-      "company": "MADECO",
-      "project": "Virtualización, consolidación de servidores y FinOps cloud",
-      "period": "2022 – 2024",
-      "definition": "Ahorro recurrente en el gasto de infraestructura de servidores y licencias.",
-      "baseline": "Gasto elevado en hardware dedicado físico y licenciamiento no optimizado",
-      "result": "18% de reducción sostenida en OPEX de infraestructura",
-      "method": "Consolidación mediante VMware/Hyper-V, dimensionamiento correcto en Azure y FinOps.",
-      "validationSource": "Informes de ejecución presupuestaria presentados ante Dirección General.",
-      "confidentiality": "Público / Demostrable",
-      "scope": "Presupuesto de infraestructura corporativa",
-      "notes": "Ahorros certificados y validados con el área financiera."
+      "scope": "Gestión tecnológica de toda la organización.",
+      "notes": "Transformó el área de TI en un habilitador estratégico enfocado en la mejora continua."
     },
     {
       "id": "precision-inventario-30",
-      "title": "Incremento de la precisión de inventario en un 30%",
+      "title": "Incremento de la precisión de inventario en un 30% mediante WMS y Radiofrecuencia",
       "claimedValue": "+30%",
       "status": "validada",
       "public": true,
       "company": "ODS Logistics",
-      "project": "Integración de sistema WMS con terminales móviles RF",
-      "period": "2024 – 2026",
-      "definition": "Disminución de discrepancias entre el inventario físico en estanterías y el registro en sistema.",
-      "baseline": "Control manual con mermas y retrasos en despachos",
-      "result": "+30% de exactitud y trazabilidad en tiempo real",
-      "method": "Despliegue de red Wi-Fi industrial, escaneo por código de barras con lectores RF y validación en WMS.",
-      "validationSource": "Auditorías de inventario cíclico y reportes en Power BI.",
+      "companySlug": "ods-odw-logistics",
+      "project": "Integración de sistema WMS con terminales móviles RF y cobertura Wi-Fi industrial",
+      "period": "Feb 2024 – Jun 2026",
+      "duration": "9 meses (fase de despliegue) + 19 meses (operación y optimización continua)",
+      "definition": "Disminución de discrepancias entre el inventario físico en estanterías y el registro en sistema central.",
+      "baseline": "Control semi-manual con discrepancias frecuentes y retrasos en despachos de mercancía",
+      "result": "+30% de exactitud en conteos cíclicos y trazabilidad en tiempo real de cada pallet",
+      "method": "Auditorías de inventario cíclico por muestreo aleatorio y validación en tableros de Power BI.",
+      "roadmap": [
+        {
+          "phase": "Fase 1: Site Survey y Planificación de Red Industrial",
+          "time": "Meses 1 – 2 (Feb – Mar 2024)",
+          "desc": "Levantamiento de radiofrecuencia (Site Survey) en almacén de más de 30,000 ft² para eliminar zonas muertas entre racks de 8 metros."
+        },
+        {
+          "phase": "Fase 2: Infraestructura Wi-Fi y Configuración de Terminales",
+          "time": "Meses 3 – 5 (Abr – Jun 2024)",
+          "desc": "Despliegue de puntos de acceso industriales, segmentación VLAN dedicada para terminales RF y configuración de perfiles de emulación."
+        },
+        {
+          "phase": "Fase 3: Integración de Middleware y Flujos WMS",
+          "time": "Meses 6 – 7 (Jul – Ago 2024)",
+          "desc": "Enlace del servidor WMS con los lectores de código de barras para confirmación instantánea de picking, putaway y transferencias."
+        },
+        {
+          "phase": "Fase 4: Pruebas Piloto y Adopción Operativa",
+          "time": "Meses 8 – 9 (Sep – Oct 2024)",
+          "desc": "Puesta en marcha con turnos logísticos, formación a operadores y habilitación de dashboards de KPIs operativos en Power BI."
+        }
+      ],
+      "technologies": ["WMS", "Terminales RF", "Wi-Fi Industrial", "VLAN", "Power BI", "SSRS"],
+      "validationSource": "Auditorías de inventario cíclico y reportes en Power BI de exactitud de existencias.",
       "confidentiality": "Público / Demostrable",
-      "scope": "Almacén logístico de más de 30,000 ft²",
-      "notes": "Impacto directo en la satisfacción del cliente final."
+      "scope": "Almacén logístico de alto volumen con más de 30,000 ft².",
+      "notes": "Reducción directa de tiempos de preparación de pedidos y quejas de clientes por faltantes."
+    },
+    {
+      "id": "disponibilidad-99-9",
+      "title": "Disponibilidad de servicios y conectividad logística del 99.9%",
+      "claimedValue": "99.9%",
+      "status": "validada",
+      "public": true,
+      "company": "ODS Logistics",
+      "companySlug": "ods-odw-logistics",
+      "project": "Arquitectura híbrida cloud Azure/AWS, redundancia SD-WAN y alta disponibilidad",
+      "period": "Feb 2024 – Jun 2026",
+      "duration": "6 meses de reingeniería de red y 22 meses de monitoreo continuo de SLA",
+      "definition": "Porcentaje de tiempo de actividad ininterrumpida en sistemas críticos de almacén, WMS y telecomunicaciones.",
+      "baseline": "98.5% de disponibilidad previa con caídas intermitentes de enlace y paradas de picking",
+      "result": "99.9% de uptime constante durante más de 2 años consecutivos",
+      "method": "Monitoreo continuo de uptime con sondas SNMP, pruebas de latencia y acuerdos de nivel de servicio (SLAs).",
+      "roadmap": [
+        {
+          "phase": "Fase 1: Diagnóstico de Puntos Únicos de Falla (SPOF)",
+          "time": "Meses 1 – 2 (Feb – Mar 2024)",
+          "desc": "Identificación de riesgos en switches de acceso, proveedores de internet únicos y servidores locales sin respaldo dinámico."
+        },
+        {
+          "phase": "Fase 2: Implementación de Enlaces Duales y SD-WAN",
+          "time": "Meses 3 – 4 (Abr – May 2024)",
+          "desc": "Instalación de conexión WAN secundaria con failover automático en firewall Fortinet en menos de 15 segundos sin corte de sesión."
+        },
+        {
+          "phase": "Fase 3: Replicación Híbrida en Nube (Azure / AWS)",
+          "time": "Meses 5 – 6 (Jun – Jul 2024)",
+          "desc": "Configuración de instancias en la nube y sincronización de datos de operaciones logísticas para tolerancia ante desastres."
+        },
+        {
+          "phase": "Fase 4: Monitoreo Proactivo 24/7 y SLAs",
+          "time": "Mes 7 en adelante (Ago 2024 – Jun 2026)",
+          "desc": "Despliegue de sondas automáticas de monitoreo y acuerdos de atención técnica rápida con el equipo de soporte."
+        }
+      ],
+      "technologies": ["Azure", "AWS", "Fortinet FortiGate", "SD-WAN", "VLAN", "Monitoreo SNMP"],
+      "validationSource": "Registros de monitoreo de servidores y SLAs acordados con la dirección logística.",
+      "confidentiality": "Público / Demostrable",
+      "scope": "Infraestructura tecnológica completa de almacén y operaciones conectadas.",
+      "notes": "Mantenido de forma consistente durante la vigencia completa del contrato de consultoría."
     },
     {
       "id": "reduccion-tiempos-respuesta-35",
-      "title": "Reducción de tiempos de respuesta técnica en un 35%",
+      "title": "Reducción de tiempos de respuesta técnica en un 35% en operaciones logísticas",
       "claimedValue": "-35%",
       "status": "validada",
       "public": true,
       "company": "ODS Logistics",
-      "project": "Mesa de ayuda estructurada y monitoreo proactivo",
-      "period": "2024 – 2026",
-      "definition": "Tiempo promedio transcurrido desde el reporte de una incidencia operativa hasta su resolución.",
-      "baseline": "Atención no estandarizada ante fallas de terminales o conectividad",
-      "result": "35% más rápido en resolución de incidencias",
-      "method": "Definición de acuerdos de nivel de servicio (SLAs) y protocolos de escalamiento rápido.",
+      "companySlug": "ods-odw-logistics",
+      "project": "Mesa de ayuda estructurada bajo marco ITIL y monitoreo proactivo de dispositivos",
+      "period": "Feb 2024 – Jun 2026",
+      "duration": "7 meses de implantación y optimización continua",
+      "definition": "Tiempo promedio transcurrido desde el reporte de una incidencia operativa en almacén hasta su resolución efectiva.",
+      "baseline": "Atención no estandarizada con demoras de más de 45 minutos en fallas de terminales o impresoras térmicas",
+      "result": "35% más rápido en resolución con tiempos promedio menores a 18 minutos",
+      "method": "Métricas automáticas del sistema de tickets y encuestas de satisfacción a supervisores de operaciones.",
+      "roadmap": [
+        {
+          "phase": "Fase 1: Mapeo de Incidencias Frecuentes",
+          "time": "Meses 1 – 2 (Mar – Abr 2024)",
+          "desc": "Catalogación de fallas típicas: desconfiguración de terminales RF, atascos en impresoras de etiquetas Zebra y credenciales."
+        },
+        {
+          "phase": "Fase 2: Estandarización de SLAs y Matriz de Escalamiento",
+          "time": "Meses 3 – 4 (May – Jun 2024)",
+          "desc": "Definición de prioridades P1 (crítica para despacho), P2 (media) y P3 (administrativa) con tiempos máximos de respuesta."
+        },
+        {
+          "phase": "Fase 3: Base de Conocimientos y Respuestos Críticos",
+          "time": "Meses 5 – 6 (Jul – Ago 2024)",
+          "desc": "Creación de inventario de repuestos en frío (hot-swap) y guías rápidas para resolución de primer contacto."
+        },
+        {
+          "phase": "Fase 4: Auditoría de Cumplimiento y Ajuste Continuo",
+          "time": "Mes 7 en adelante (Sep 2024 – Jun 2026)",
+          "desc": "Revisión quincenal de métricas MTTR (Mean Time to Resolution) y retroalimentación con líderes de operaciones."
+        }
+      ],
+      "technologies": ["Mesa de Ayuda ITIL", "Zebra Printing", "MDM Móvil", "SOP Documentados", "Power BI"],
       "validationSource": "Métricas de mesa de ayuda y encuestas de satisfacción de operaciones.",
       "confidentiality": "Público / Demostrable",
-      "scope": "Operaciones de almacén y distribución",
-      "notes": "Permitió mantener la continuidad en turnos de alta demanda."
-    },
-    {
-      "id": "auditorias-cero-hallazgos",
-      "title": "Cero hallazgos críticos en 3 auditorías regulatorias",
-      "claimedValue": "100%",
-      "status": "validada",
-      "public": true,
-      "company": "UNIPAGO",
-      "project": "Gobierno de ciberseguridad financiera y cumplimiento BCRD",
-      "period": "2020 – 2022",
-      "definition": "Aprobación de auditorías de seguridad de la información sin no conformidades graves.",
-      "baseline": "Revisión anual exigida por el Banco Central y reguladores bursátiles",
-      "result": "Cero observaciones críticas en 3 ciclos sucesivos",
-      "method": "Alineación de controles técnicos con ISO 27001, NIST CSF y trazabilidad de accesos.",
-      "validationSource": "Dictámenes de auditoría interna y firmas auditoras externas.",
-      "confidentiality": "Público / Demostrable",
-      "scope": "Infraestructura transaccional financiera",
-      "notes": "Entorno de alta criticidad para el sistema financiero nacional."
-    },
-    {
-      "id": "eficiencia-operativa-30",
-      "title": "Incremento del 30% en eficiencia operativa por automatización",
-      "claimedValue": "+30%",
-      "status": "validada",
-      "public": true,
-      "company": "Dominicana de Cales / MADECO",
-      "project": "Automatización de tareas administrativas y optimización de recursos TI",
-      "period": "2018 – 2024",
-      "definition": "Aumento en la productividad de los equipos de soporte y operaciones mediante scripting y flujos automatizados.",
-      "baseline": "Procesos manuales de generación de reportes, monitoreo manual y tareas repetitivas de mantenimiento",
-      "result": "+30% de eficiencia y más de 2,000 horas-hombre anuales liberadas",
-      "method": "Despliegue de scripts en PowerShell, flujos con Power Automate y automatización de respaldos y consultas SQL.",
-      "validationSource": "Registros de tickets de soporte, métricas de ejecución de scripts y comités directivos.",
-      "confidentiality": "Público / Demostrable",
-      "scope": "Operaciones corporativas, industriales y soporte a usuarios",
-      "notes": "Replicado con éxito en entornos industriales y corporativos de manufactura."
+      "scope": "Operaciones de almacén, muelles de carga y distribución.",
+      "notes": "Permitió mantener la continuidad operativa ininterrumpida en turnos nocturnos de alta demanda."
     },
     {
       "id": "resiliencia-datos-bcp-95",
-      "title": "Reducción del 95% en exposición a pérdida de datos críticos",
+      "title": "Reducción del 95% en exposición a pérdida de datos críticos y plan BCP/DRP",
       "claimedValue": "-95%",
       "status": "validada",
       "public": true,
       "company": "ODS Logistics",
-      "project": "Arquitectura híbrida cloud Azure/AWS y estrategia BCP/DRP",
-      "period": "2024 – 2026",
-      "definition": "Mitigación del riesgo de pérdida de información operativa y reducción de tiempos de recuperación ante desastres.",
-      "baseline": "Respaldos locales sin replicación automática multi-región y RTO/RPO extendidos",
-      "result": "95% de reducción en ventanas de vulnerabilidad y RTO/RPO superados",
-      "method": "Implementación de arquitectura híbrida, respaldos automatizados, replicación cross-region y políticas BCP/DRP.",
-      "validationSource": "Pruebas semestrales de restauración de contingencia y bitácoras cloud.",
+      "companySlug": "ods-odw-logistics",
+      "project": "Arquitectura híbrida cloud Azure/AWS y estrategia de contingencia operativa BCP/DRP",
+      "period": "Feb 2024 – Jun 2026",
+      "duration": "8 meses de estructuración técnica y pruebas periódicas",
+      "definition": "Mitigación del riesgo de pérdida de información operativa y reducción drástica de tiempos de recuperación ante desastres.",
+      "baseline": "Respaldos locales sin replicación automática multi-región y RTO/RPO superiores a 24 horas",
+      "result": "95% de reducción en ventanas de vulnerabilidad y RTO inferior a 2 horas garantizado",
+      "method": "Pruebas semestrales de restauración de contingencia y bitácoras de sincronización en la nube.",
+      "roadmap": [
+        {
+          "phase": "Fase 1: Análisis de Impacto al Negocio (BIA)",
+          "time": "Meses 1 – 2 (Mar – Abr 2024)",
+          "desc": "Determinación de los procesos críticos de despacho y evaluación del costo financiero de cada hora de inactividad de almacén."
+        },
+        {
+          "phase": "Fase 2: Diseño de Política 3-2-1 de Respaldos",
+          "time": "Meses 3 – 4 (May – Jun 2024)",
+          "desc": "Configuración de respaldos locales de alta velocidad en NAS dedicados y copias cifradas inmutables en Azure Blob / AWS S3."
+        },
+        {
+          "phase": "Fase 3: Documentación de Procedimientos de Contingencia",
+          "time": "Meses 5 – 6 (Jul – Ago 2024)",
+          "desc": "Elaboración de manuales de contingencia técnica paso a paso con roles claros y protocolos de conmutación de emergencia."
+        },
+        {
+          "phase": "Fase 4: Simulacros de Recuperación y Validación",
+          "time": "Meses 7 – 8 (Sep – Oct 2024, renovado semestralmente)",
+          "desc": "Ejecución de simulacro de pérdida total de servidor y restauración completa en ambiente aislado validando RTO < 2h."
+        }
+      ],
+      "technologies": ["Azure Blob Storage", "AWS S3 Glacier", "Veeam Backup", "BCP / DRP", "Cifrado AES-256"],
+      "validationSource": "Pruebas semestrales de restauración de contingencia y bitácoras cloud auditadas.",
       "confidentiality": "Público / Demostrable",
-      "scope": "Infraestructura crítica y bases de datos operativas",
-      "notes": "Superó los objetivos de tiempo y punto de recuperación (RTO/RPO) definidos por el negocio."
+      "scope": "Infraestructura crítica y bases de datos transaccionales de inventario.",
+      "notes": "Superó los objetivos de tiempo y punto de recuperación (RTO/RPO) exigidos por contratos internacionales."
+    },
+    {
+      "id": "ciberseguridad-zero-trust-madeco",
+      "title": "Reducción de incidentes de seguridad en un 60% mediante Zero Trust y SIEM Sentinel",
+      "claimedValue": "-60%",
+      "status": "validada",
+      "public": true,
+      "company": "MADECO",
+      "companySlug": "madeco",
+      "project": "Ciberseguridad corporativa Zero Trust, Microsoft Defender y SIEM Microsoft Sentinel",
+      "period": "Feb 2022 – Ene 2024",
+      "duration": "9 meses de implantación y 15 meses de operación corporativa",
+      "definition": "Disminución en el número de eventos, vulnerabilidades críticas y brechas de seguridad reportadas en endpoints y red corporativa.",
+      "baseline": "Promedio alto de alertas no correlacionadas, antivirus heredado sin detección EDR y cuentas sin MFA",
+      "result": "Reducción del 60% en incidentes efectivos y contención automática de amenazas en minutos",
+      "method": "Métricas mensuales de incidentes emitidas por el SOC/SIEM y reportes de gestión de vulnerabilidades.",
+      "roadmap": [
+        {
+          "phase": "Fase 1: Evaluación Inicial de Vulnerabilidades",
+          "time": "Meses 1 – 2 (Feb – Mar 2022)",
+          "desc": "Escaneo exhaustivo de activos con Tenable.io identificando 180+ vulnerabilidades en servidores y endpoints corporativos."
+        },
+        {
+          "phase": "Fase 2: Identidad y Acceso Condicional (Zero Trust)",
+          "time": "Meses 3 – 4 (Abr – May 2022)",
+          "desc": "Implementación de Microsoft Entra ID (Azure AD), políticas de Acceso Condicional, MFA obligatorio y bloqueo de protocolos heredados."
+        },
+        {
+          "phase": "Fase 3: Despliegue de EDR Microsoft Defender",
+          "time": "Meses 5 – 6 (Jun – Jul 2022)",
+          "desc": "Instalación de Microsoft 365 Defender en todas las estaciones de trabajo y servidores, activando respuesta automática ante amenazas."
+        },
+        {
+          "phase": "Fase 4: Centralización en SIEM Microsoft Sentinel",
+          "time": "Meses 7 – 9 (Ago – Oct 2022)",
+          "desc": "Conexión de logs de firewall, controladores de dominio y servicios cloud a Microsoft Sentinel con playbooks automáticos."
+        }
+      ],
+      "technologies": ["Microsoft Sentinel", "Microsoft Defender", "Azure Entra ID", "Tenable.io", "Zero Trust"],
+      "validationSource": "Reportes mensuales de SIEM, informes de Tenable.io y actas del comité de riesgos corporativos.",
+      "confidentiality": "Público / Demostrable",
+      "scope": "Toda la infraestructura corporativa, plantas y usuarios de la organización.",
+      "notes": "Acreditó el cumplimiento de estándares internacionales de ciberseguridad industrial y protección de datos."
+    },
+    {
+      "id": "ahorro-costos-18",
+      "title": "Optimización y reducción de costos TI en un 18% mediante consolidación y FinOps",
+      "claimedValue": "18%",
+      "status": "validada",
+      "public": true,
+      "company": "MADECO",
+      "companySlug": "madeco",
+      "project": "Virtualización de servidores, consolidación de centros de datos y FinOps cloud",
+      "period": "Feb 2022 – Ene 2024",
+      "duration": "9 meses de reestructuración técnica y optimización presupuestaria sostenida",
+      "definition": "Ahorro porcentual recurrente en el gasto de infraestructura de servidores físicos, energía, licencias y servicios de nube.",
+      "baseline": "Gasto elevado en 14 servidores físicos individuales con obsolescencia técnica y licenciamiento sobredimensionado",
+      "result": "18% de reducción sostenida en OPEX de infraestructura y recuperación de inversión en menos de 10 meses",
+      "method": "Comparativa auditada de ejecución presupuestaria anual de CAPEX/OPEX presentada a la Dirección Financiera.",
+      "roadmap": [
+        {
+          "phase": "Fase 1: Auditoría de Capacidad y Licenciamiento",
+          "time": "Meses 1 – 2 (Feb – Mar 2022)",
+          "desc": "Medición de consumo real de CPU, memoria y almacenamiento en los 14 servidores físicos e inventario de licencias."
+        },
+        {
+          "phase": "Fase 2: Arquitectura de Virtualización de Alta Disponibilidad",
+          "time": "Meses 3 – 5 (Abr – Jun 2022)",
+          "desc": "Adquisición y configuración de clúster de virtualización VMware vSphere y Hyper-V con almacenamiento SAN redundante."
+        },
+        {
+          "phase": "Fase 3: Migración P2V (Physical to Virtual)",
+          "time": "Meses 6 – 7 (Jul – Ago 2022)",
+          "desc": "Migración sin corte de servicio de servicios ERP, controladores de dominio y bases de datos a las máquinas virtuales."
+        },
+        {
+          "phase": "Fase 4: Aplicación de FinOps y Desmantelamiento",
+          "time": "Meses 8 – 9 (Sep – Oct 2022)",
+          "desc": "Ajuste de dimensionamiento en Azure/AWS, consolidación de licencias Microsoft y desmantelamiento de hardware obsoleto."
+        }
+      ],
+      "technologies": ["VMware vSphere", "Microsoft Hyper-V", "Azure Cloud", "FinOps", "SAN Storage"],
+      "validationSource": "Informes de ejecución presupuestaria presentados y auditados ante la Dirección General y Finanzas.",
+      "confidentiality": "Público / Demostrable",
+      "scope": "Presupuesto global de infraestructura tecnológica de la empresa.",
+      "notes": "Ahorros certificados y validados por el área financiera, reinvertidos en proyectos estratégicos de TI."
+    },
+    {
+      "id": "automatizacion-procesos-madeco",
+      "title": "Ahorro de más de 2,000 horas-hombre anuales mediante automatización de procesos",
+      "claimedValue": "+2,000h",
+      "status": "validada",
+      "public": true,
+      "company": "MADECO",
+      "companySlug": "madeco",
+      "project": "Automatización de flujos de trabajo administrativos, mantenimiento y reportería",
+      "period": "Feb 2022 – Ene 2024",
+      "duration": "10 meses de desarrollo y expansión progresiva",
+      "definition": "Horas laborales ahorradas en actividades repetitivas de soporte técnico, conciliación de datos, copias y mantenimiento de sistemas.",
+      "baseline": "Procesos manuales diarios de verificación de respaldos, altas de usuarios, generación de reportes y supervisión de ERP",
+      "result": "Más de 2,000 horas de trabajo anuales liberadas para tareas analíticas y estratégicas",
+      "method": "Cálculo de frecuencia y duración de tareas manuales previas frente al tiempo de ejecución automatizada.",
+      "roadmap": [
+        {
+          "phase": "Fase 1: Mapeo de Tareas Críticas Repetitivas",
+          "time": "Meses 1 – 2 (Abr – May 2022)",
+          "desc": "Identificación de 24 procedimientos manuales con alta carga horaria en los departamentos de TI, operaciones y finanzas."
+        },
+        {
+          "phase": "Fase 2: Desarrollo de Scripts en PowerShell",
+          "time": "Meses 3 – 5 (Jun – Ago 2022)",
+          "desc": "Programación de scripts automatizados para mantenimiento de servidores, depuración de logs, auditoría de cuentas inactivas y backups."
+        },
+        {
+          "phase": "Fase 3: Flujos de Negocio con Power Automate",
+          "time": "Meses 6 – 8 (Sep – Nov 2022)",
+          "desc": "Creación de flujos de aprobación digital de compras, alertas de vencimiento de contratos y reportes consolidados por correo."
+        },
+        {
+          "phase": "Fase 4: Consolidación y Medición de Productividad",
+          "time": "Meses 9 – 10 (Dic 2022 – Ene 2023)",
+          "desc": "Establecimiento de monitoreo de ejecuciones y cálculo del retorno de inversión presentado en el comité de dirección."
+        }
+      ],
+      "technologies": ["PowerShell", "Power Automate", "Windows Task Scheduler", "SQL Server", "Microsoft 365"],
+      "validationSource": "Registros de tickets de soporte, métricas de scripts programados y comités directivos.",
+      "confidentiality": "Público / Demostrable",
+      "scope": "Operaciones corporativas, industriales y soporte a usuarios.",
+      "notes": "Elevó sustancialmente la moral del equipo técnico al erradicar tareas repetitivas sin valor agregado."
+    },
+    {
+      "id": "estabilidad-erp-madeco",
+      "title": "99.9% de disponibilidad en sistemas ERP corporativos (SAP S/4HANA y Dynamics 365)",
+      "claimedValue": "99.9%",
+      "status": "validada",
+      "public": true,
+      "company": "MADECO",
+      "companySlug": "madeco",
+      "project": "Estabilización, gobernanza de bases de datos y optimización de ERP corporativo",
+      "period": "Feb 2022 – Ene 2024",
+      "duration": "24 meses de dirección tecnológica y administración continua",
+      "definition": "Porcentaje de disponibilidad de los sistemas de planificación de recursos empresariales para manufactura, ventas y finanzas.",
+      "baseline": "Incidentes esporádicos de contención de base de datos durante cierres contables mensuales",
+      "result": "99.9% de uptime constante y 100% de cierres mensuales completados a tiempo sin interrupciones",
+      "method": "Registros de disponibilidad de servidores de aplicación y base de datos, y cumplimiento de calendarios de cierre.",
+      "roadmap": [
+        {
+          "phase": "Fase 1: Diagnóstico de Rendimiento de Base de Datos",
+          "time": "Meses 1 – 3 (Feb – Abr 2022)",
+          "desc": "Análisis de consultas de alta duración, contención de bloqueos e indexación en bases de datos del ERP."
+        },
+        {
+          "phase": "Fase 2: Optimización de Almacenamiento y Recursos",
+          "time": "Meses 4 – 6 (May – Jul 2022)",
+          "desc": "Reasignación de recursos en clúster virtualizado, segregación de discos para logs y datos, y mantenimiento preventivo."
+        },
+        {
+          "phase": "Fase 3: Protocolo de Gestión de Cambios y Parches",
+          "time": "Meses 7 – 9 (Ago – Oct 2022)",
+          "desc": "Establecimiento de ambientes de prueba (QA) obligatorios y calendario de mantenimiento fuera de horas laborales."
+        },
+        {
+          "phase": "Fase 4: Capacitación y Soporte Especializado Nivel 2",
+          "time": "Meses 10 – 24 (Nov 2022 – Ene 2024)",
+          "desc": "Formación continua al equipo de soporte y coordinación directa con consultores especializados del proveedor de software."
+        }
+      ],
+      "technologies": ["SAP S/4HANA", "Microsoft Dynamics 365", "SQL Server", "Windows Server", "ITIL"],
+      "validationSource": "Registros de disponibilidad de sistemas ERP e informes de comités de dirección.",
+      "confidentiality": "Público / Demostrable",
+      "scope": "Operaciones financieras, comerciales y de producción fabril de la empresa.",
+      "notes": "Permitió unificar la visión contable y logística entre planta y oficinas administrativas."
+    },
+    {
+      "id": "auditorias-cero-hallazgos",
+      "title": "Cero hallazgos críticos en 3 auditorías regulatorias consecutivas en sector financiero",
+      "claimedValue": "100%",
+      "status": "validada",
+      "public": true,
+      "company": "UNIPAGO",
+      "companySlug": "unipago",
+      "project": "Gobierno de ciberseguridad financiera y cumplimiento BCRD, SIMV, ISO 27001 y NIST CSF",
+      "period": "Mar 2020 – Ene 2022",
+      "duration": "22 meses (preparación rigurosa, auditorías continuas y sostenimiento)",
+      "definition": "Aprobación de auditorías oficiales de seguridad de la información por parte de entes reguladores sin observaciones críticas.",
+      "baseline": "Exigencias regulatorias estrictas del Banco Central y Superintendencia del Mercado de Valores ante amenazas emergentes",
+      "result": "Cero no conformidades críticas en 3 ciclos sucesivos de inspección externa e interna",
+      "method": "Dictámenes formales emitidos por firmas auditoras externas y supervisores del ente regulador bancario.",
+      "roadmap": [
+        {
+          "phase": "Fase 1: Mapeo de Brechas contra Normativas BCRD e ISO 27001",
+          "time": "Meses 1 – 3 (Mar – May 2020)",
+          "desc": "Evaluación minuciosa de controles técnicos frente al marco de ciberseguridad del Banco Central y el Anexo A de ISO 27001."
+        },
+        {
+          "phase": "Fase 2: Endurecimiento de Seguridad y Acceso Privilegiado (RBAC)",
+          "time": "Meses 4 – 7 (Jun – Sep 2020)",
+          "desc": "Implementación de control de accesos basados en roles (RBAC), principio de menor privilegio, MFA y cifrado de datos en reposo y tránsito."
+        },
+        {
+          "phase": "Fase 3: Centralización de Evidencias e Inmutabilidad de Bitácoras",
+          "time": "Meses 8 – 11 (Oct 2020 – Ene 2021)",
+          "desc": "Configuración de retención de logs auditables en Microsoft Sentinel con custodia inmutable y alertas automáticas de anomalías."
+        },
+        {
+          "phase": "Fase 4: Acompañamiento a Auditorías y Ciclos de Mejora",
+          "time": "Meses 12 – 22 (Feb 2021 – Ene 2022)",
+          "desc": "Presentación formal de evidencias técnicas a auditores externos, ejecución de planes de acción preventivos y mantenimiento continuo."
+        }
+      ],
+      "technologies": ["ISO 27001", "NIST CSF", "Normativas BCRD", "Microsoft Sentinel", "Azure Security", "RBAC"],
+      "validationSource": "Dictámenes oficiales de auditoría interna y firmas auditoras internacionales independientes.",
+      "confidentiality": "Público / Demostrable",
+      "scope": "Toda la infraestructura transaccional de pagos y compensación financiera.",
+      "notes": "Entorno de extrema criticidad para la estabilidad del sistema financiero nacional."
     },
     {
       "id": "reduccion-downtime-70",
-      "title": "Reducción del 70% en downtime no planificado",
+      "title": "Reducción del 70% en downtime no planificado en infraestructura de misión crítica",
       "claimedValue": "-70%",
       "status": "validada",
       "public": true,
       "company": "UNIPAGO",
-      "project": "Monitoreo predictivo de capacidad en Windows Server y Active Directory",
-      "period": "2020 – 2022",
-      "definition": "Disminución de caídas imprevistas de servicios y saturación de recursos en infraestructura crítica.",
-      "baseline": "Respuestas reactivas a incidentes de capacidad de almacenamiento y servicios de directorio",
-      "result": "70% menos incidentes de indisponibilidad imprevista",
-      "method": "Monitoreo predictivo de capacidad, alertas tempranas automatizadas y mantenimiento preventivo continuo.",
-      "validationSource": "Registros de disponibilidad de infraestructura y reportes de incidentes N1/N2.",
+      "companySlug": "unipago",
+      "project": "Monitoreo predictivo de capacidad en Windows Server, Active Directory y clusterización",
+      "period": "Mar 2020 – Ene 2022",
+      "duration": "9 meses de implementación y 13 meses de estabilidad garantizada",
+      "definition": "Disminución de caídas imprevistas de servicios y saturación de recursos en servidores de misión crítica.",
+      "baseline": "Respuestas reactivas a incidentes de saturación de disco, fallas de replicación y contención de memoria",
+      "result": "70% menos incidentes de indisponibilidad imprevista y 99.99% de estabilidad en procesamiento",
+      "method": "Comparativa de registros de caídas de servicio (downtime minutos/año) antes y después del sistema de monitoreo predictivo.",
+      "roadmap": [
+        {
+          "phase": "Fase 1: Análisis de Causas Raíz (RCA) de Incidentes Previos",
+          "time": "Meses 1 – 2 (Mar – Abr 2020)",
+          "desc": "Estudio histórico de indisponibilidades identificando cuellos de botella en almacenamiento SAN y servicios de Active Directory."
+        },
+        {
+          "phase": "Fase 2: Monitoreo Predictivo y Umbrales Tempranos",
+          "time": "Meses 3 – 5 (May – Jul 2020)",
+          "desc": "Configuración de sondas proactivas con alertas escalonadas al alcanzar 75% y 85% de capacidad en discos, CPU y colas transaccionales."
+        },
+        {
+          "phase": "Fase 3: Automatización de Tareas de Mantenimiento Preventivo",
+          "time": "Meses 6 – 7 (Ago – Sep 2020)",
+          "desc": "Despliegue de scripts desatendidos para compactación de bases de datos, rotación de bitácoras y verificación de réplicas."
+        },
+        {
+          "phase": "Fase 4: Ventanas de Mantenimiento Programadas y SLAs",
+          "time": "Meses 8 – 9 (Oct – Nov 2020)",
+          "desc": "Establecimiento de estrictos protocolos de cambio con verificación cruzada para eliminar impactos en horario hábil."
+        }
+      ],
+      "technologies": ["Windows Server", "Active Directory", "Monitoreo Predictivo", "PowerShell", "High Availability"],
+      "validationSource": "Registros de disponibilidad de infraestructura y reportes de incidentes N1/N2 auditados.",
       "confidentiality": "Público / Demostrable",
-      "scope": "Servidores productivos y servicios de directorio financiero",
-      "notes": "Garantizó la estabilidad 24/7 exigida en un entorno financiero regulado."
+      "scope": "Servidores productivos transaccionales y servicios de directorio financiero.",
+      "notes": "Garantizó la estabilidad continua 24/7 requerida por entidades financieras y del sector salud."
+    },
+    {
+      "id": "resiliencia-drp-unipago",
+      "title": "Reducción del 95% en exposición a pérdida de datos transaccionales con arquitectura híbrida",
+      "claimedValue": "-95%",
+      "status": "validada",
+      "public": true,
+      "company": "UNIPAGO",
+      "companySlug": "unipago",
+      "project": "Arquitectura híbrida cloud Azure/AWS, replicación transaccional y DRP financiero",
+      "period": "Mar 2020 – Ene 2022",
+      "duration": "15 meses de diseño, pruebas de estrés y validación regulatoria",
+      "definition": "Mitigación del riesgo de pérdida de datos financieros y reducción de tiempos de restauración RTO y RPO.",
+      "baseline": "Contingencia basada en centro de datos alterno con sincronización diferida y RPO de varias horas",
+      "result": "95% de reducción en ventanas de vulnerabilidad y RPO inferior a 5 minutos en datos transaccionales",
+      "method": "Pruebas técnicas de conmutación (failover) y simulacros de contingencia auditados por comités de riesgo.",
+      "roadmap": [
+        {
+          "phase": "Fase 1: Definición de Métricas RTO/RPO Regulatorias",
+          "time": "Meses 1 – 3 (Jun – Ago 2020)",
+          "desc": "Alineación de objetivos de recuperación ante desastres con los requerimientos mandatorios del sistema financiero."
+        },
+        {
+          "phase": "Fase 2: Arquitectura Híbrida y Always On Availability Groups",
+          "time": "Meses 4 – 7 (Sep – Dic 2020)",
+          "desc": "Diseño de clústeres de base de datos SQL Server con réplica síncrona local y réplica asíncrona hacia Azure en región secundaria."
+        },
+        {
+          "phase": "Fase 3: Políticas de Cifrado y Respaldos Inmutables",
+          "time": "Meses 8 – 11 (Ene – Abr 2021)",
+          "desc": "Implementación de Transparent Data Encryption (TDE), copias cifradas inmutables y almacenamiento seguro en bóveda cloud."
+        },
+        {
+          "phase": "Fase 4: Simulacro Integral de Failover y Aprobación",
+          "time": "Meses 12 – 15 (May – Ago 2021)",
+          "desc": "Ejecución de simulacro de contingencia en caliente demostrando recuperación operativa en tiempos récord ante reguladores."
+        }
+      ],
+      "technologies": ["Azure", "AWS", "SQL Server Always On", "TDE Cifrado", "BCP / DRP", "Failover Cluster"],
+      "validationSource": "Informes de pruebas de contingencia y bitácoras de sincronización de datos auditadas.",
+      "confidentiality": "Público / Demostrable",
+      "scope": "Bases de datos transaccionales y servidores de misión crítica.",
+      "notes": "Cumplió con los más altos estándares de resiliencia tecnológica exigidos a operadores del sistema de seguridad social."
+    },
+    {
+      "id": "optimizacion-sql-unipago",
+      "title": "Reducción del 65% en tiempos de generación de reportes regulatorios masivos",
+      "claimedValue": "-65%",
+      "status": "validada",
+      "public": true,
+      "company": "UNIPAGO",
+      "companySlug": "unipago",
+      "project": "Optimización y afinamiento de bases de datos SQL Server para reportería del Banco Central",
+      "period": "Mar 2020 – Dic 2020",
+      "duration": "8 meses de afinamiento técnico y pruebas de carga",
+      "definition": "Tiempo promedio requerido para la extracción, procesamiento y generación de archivos regulatorios masivos.",
+      "baseline": "Procesos nocturnos de reportería que tomaban más de 4 horas con bloqueo de tablas transaccionales",
+      "result": "Ejecución completa en menos de 85 minutos sin impacto en las transacciones operativas en línea",
+      "method": "Medición de tiempos de ejecución de consultas mediante SQL Server Extended Events y Profiler.",
+      "roadmap": [
+        {
+          "phase": "Fase 1: Detección de Cuellos de Botella en Consultas",
+          "time": "Meses 1 – 2 (Abr – May 2020)",
+          "desc": "Identificación de procedimientos almacenados con escaneos de tablas completas, contención de tempdb y bloqueos de lectura."
+        },
+        {
+          "phase": "Fase 2: Rediseño de Índices y Particionamiento",
+          "time": "Meses 3 – 5 (Jun – Ago 2020)",
+          "desc": "Creación de índices filtrados, reestructuración de índices clusterizados y particionamiento de tablas históricas por fecha."
+        },
+        {
+          "phase": "Fase 3: Descarga de Lecturas hacia Réplicas Secundarias",
+          "time": "Meses 6 – 7 (Sep – Oct 2020)",
+          "desc": "Configuración de Read-Only Routing en clúster Always On para dirigir reportes pesados a nodos secundarios sin afectar la producción."
+        },
+        {
+          "phase": "Fase 4: Automatización de Entrega y Validación",
+          "time": "Mes 8 (Nov – Dic 2020)",
+          "desc": "Programación de pipelines de generación automática y validación de formatos requeridos por el Banco Central (BCRD)."
+        }
+      ],
+      "technologies": ["SQL Server", "Transact-SQL", "Always On Read-Only Routing", "Query Tuning", "ETL"],
+      "validationSource": "Registros de tiempos de ejecución en SQL Server y confirmaciones de recepción de archivos regulatorios.",
+      "confidentiality": "Público / Demostrable",
+      "scope": "Bases de datos de compensación y sistemas de reportería regulatoria.",
+      "notes": "Eliminó el riesgo de demoras o multas por entrega extemporánea de información financiera obligatoria."
+    },
+    {
+      "id": "eficiencia-operativa-30",
+      "title": "Incremento del 30% en eficiencia operativa mediante automatización y monitoreo",
+      "claimedValue": "+30%",
+      "status": "validada",
+      "public": true,
+      "company": "Dominicana de Cales",
+      "companySlug": "dominicana-de-cales",
+      "project": "Automatización administrativa, conectividad industrial 24/7 y monitoreo proactivo",
+      "period": "2018 – 2020",
+      "duration": "24 meses de gestión e innovación operativa",
+      "definition": "Aumento en la productividad de los equipos de soporte y planta industrial mediante scripting y monitoreo de enlaces.",
+      "baseline": "Procesos manuales de generación de reportes, revisiones manuales de enlace de básculas y tareas repetitivas",
+      "result": "+30% de eficiencia operativa y cero paradas imprevistas de despacho por fallas de enlace",
+      "method": "Registros de tickets de soporte, métricas de ejecución de scripts y comités directivos.",
+      "roadmap": [
+        {
+          "phase": "Fase 1: Diagnóstico de Puntos Críticos de Planta",
+          "time": "Meses 1 – 3 (2018)",
+          "desc": "Evaluación de conectividad entre canteras, básculas camioneras, planta de calcinación y oficinas administrativas."
+        },
+        {
+          "phase": "Fase 2: Redundancia de Enlaces y Cableado Industrial",
+          "time": "Meses 4 – 8 (2018)",
+          "desc": "Instalación de enlaces inalámbricos redundantes y switches industriales para garantizar operación ininterrumpida 24/7."
+        },
+        {
+          "phase": "Fase 3: Automatización de Tareas con PowerShell",
+          "time": "Meses 9 – 14 (2019)",
+          "desc": "Desarrollo de scripts para extracción automática de datos de despacho, generación de reportes diarios y copias de seguridad."
+        },
+        {
+          "phase": "Fase 4: Monitoreo Proactivo y Consolidación",
+          "time": "Meses 15 – 24 (2019 – 2020)",
+          "desc": "Implementación de alertas automáticas ante caídas de enlace o fallas de hardware y mantenimiento preventivo estandarizado."
+        }
+      ],
+      "technologies": ["PowerShell", "Windows Server", "Active Directory", "Redes LAN/WAN Industriales", "Monitoreo"],
+      "validationSource": "Registros de mantenimiento de planta, bitácoras de despacho e informes a la Dirección General.",
+      "confidentiality": "Público / Demostrable",
+      "scope": "Operaciones industriales de planta continua y oficinas administrativas.",
+      "notes": "Garantizó la continuidad continua del despacho en básculas y la trazabilidad de carga pesada."
     }
   ]
 }

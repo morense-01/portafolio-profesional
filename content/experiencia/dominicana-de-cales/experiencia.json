@@ -11,81 +11,85 @@
   "start": "2018",
   "end": "2020",
   "periodDisplay": "2018 – 2020",
-  "periodNote": "Liderazgo de infraestructura y operaciones para planta industrial 24/7.",
+  "periodNote": "Liderazgo de infraestructura, conectividad de básculas y operaciones continuas para planta industrial 24/7.",
   "highlights": [
-    { "num": "01", "title": "Infraestructura Industrial 24/7", "desc": "Garantía de conectividad entre oficinas administrativas, planta y básculas." },
-    { "num": "02", "title": "Monitoreo Proactivo de Redes", "desc": "Supervisión continua de enlaces, fibra óptica, telecomunicaciones y servidores." },
-    { "num": "03", "title": "Automatización con PowerShell", "desc": "Scripts para tareas repetitivas de respaldo, extracción de datos y reportes." },
+    { "num": "01", "title": "Infraestructura Industrial 24/7", "desc": "Garantía de conectividad entre oficinas administrativas, planta y básculas camioneras." },
+    { "num": "02", "title": "Monitoreo Proactivo de Redes", "desc": "Supervisión continua de enlaces, telecomunicaciones, switches industriales y servidores." },
+    { "num": "03", "title": "Automatización con PowerShell", "desc": "Scripts para tareas repetitivas de respaldo, extracción de datos y reportes de producción." },
     { "num": "04", "title": "Optimización Operativa (+30%)", "desc": "Reducción de tiempos de inactividad y mejoras directas en la eficiencia técnica." },
     { "num": "05", "title": "Administración Windows Server", "desc": "Servicios de directorio Active Directory, seguridad de accesos y servicios de red." },
-    { "num": "06", "title": "Gestión de Proveedores y Enlaces", "desc": "Negociación y supervisión de servicios de telecomunicaciones y soporte de hardware." },
+    { "num": "06", "title": "Gestión de Proveedores y Enlaces", "desc": "Negociación y supervisión de servicios de telecomunicaciones y soporte de hardware industrial." },
     { "num": "07", "title": "Evidencias transversales", "desc": "Informes de desempeño a Dirección, registros de mantenimiento preventivo y continuidad." }
   ],
   "summary": "Lideró la estrategia de infraestructura y operaciones TI para una operación industrial 24/7 en el sector manufacturero. Implementó monitoreo proactivo de redes y sistemas, automatización de procesos administrativos con PowerShell y optimización de eficiencia operativa en un 30%.",
   "context": [
-    "Operación manufacturera continua 24/7 con planta de procesamiento y oficinas administrativas.",
-    "Requerimiento de conectividad ininterrumpida entre planta, básculas, servidores y administración."
+    "Operación manufacturera y de minería continua 24/7 con planta de procesamiento de cal y oficinas administrativas.",
+    "Requerimiento crítico de conectividad ininterrumpida entre planta, básculas de pesaje vehicular, servidores y administración."
   ],
   "executive": [
-    "Dirección y coordinación de la infraestructura tecnológica industrial y administrativa.",
-    "Negociación con proveedores de telecomunicaciones y soporte de hardware industrial.",
-    "Presentación de informes de avance y rendimiento tecnológico a la Dirección."
+    "Dirección y coordinación general de la infraestructura tecnológica industrial y administrativa.",
+    "Negociación y gestión de contratos con proveedores de telecomunicaciones y soporte de hardware industrial.",
+    "Presentación periódica de informes de avance, costos e indicadores de rendimiento tecnológico a la Dirección General."
   ],
   "operational": [
-    "Implementación de monitoreo continuo de servidores, enlaces de red y enlaces satelitales/fibra.",
-    "Automatización de tareas de respaldo y reportes operativos mediante scripts de PowerShell.",
-    "Mantenimiento preventivo y correctivo de servidores Windows Server y conectividad de planta."
+    "Implementación de monitoreo continuo de servidores, enlaces de red y enlaces inalámbricos punto a punto de planta.",
+    "Automatización de tareas de respaldo y reportes operativos diarios mediante scripts de PowerShell.",
+    "Mantenimiento preventivo y correctivo de servidores Windows Server y conectividad de básculas de pesaje."
   ],
   "cases": [
     {
       "id": "automatizacion-monitoreo-industrial",
-      "title": "Monitoreo de Redes y Automatización Administrativa",
-      "situation": "Operaciones industriales 24/7 con tareas rutinarias de generación de reportes y supervisión manual de enlaces.",
-      "problem": "Sobrecarga de trabajo operativo y necesidad de alertamiento temprano.",
-      "goal": "Automatizar tareas repetitivas y monitorear enlaces y servicios clave.",
-      "responsibility": "Gerente de Tecnología.",
-      "solution": "Despliegue de scripts en PowerShell para respaldos y extracción de datos, junto con monitoreo centralizado.",
+      "title": "Conectividad Industrial 24/7, Monitoreo de Redes y Automatización Administrativa",
+      "duration": "24 meses de gestión y optimización continua (2018 – 2020)",
+      "roadmap": "Fase 1: Diagnóstico de puntos ciegos y caídas en enlace de básculas (Meses 1-3) → Fase 2: Despliegue de enlaces punto a punto redundantes y switches industriales (Meses 4-8) → Fase 3: Scripts en PowerShell para extracción automática de datos de pesaje y respaldos (Meses 9-14) → Fase 4: Monitoreo con alertas en tiempo real y mantenimiento preventivo (Meses 15-24)",
+      "situation": "Operaciones industriales continuas 24/7 con tareas rutinarias de generación manual de reportes y supervisión vulnerable en enlaces de básculas.",
+      "problem": "Caídas esporádicas de conectividad hacia las básculas camioneras paralizaban los despachos de material y generaban sobrecarga operativa.",
+      "goal": "Garantizar la conectividad ininterrumpida de pesaje industrial 24/7, monitorear los enlaces y automatizar la generación de reportes diarios.",
+      "responsibility": "Gerente de Tecnología (Dirección técnica y ejecución de infraestructura).",
+      "solution": "Instalación de enlaces inalámbricos redundantes hacia las zonas de pesaje y tolvas, despliegue de switches industriales con protección ante polvo/humedad y automatización de respaldos y reportes mediante scripts en PowerShell.",
       "technologies": [
         "PowerShell",
         "Windows Server",
         "Active Directory",
-        "Networking"
+        "Networking Industrial",
+        "Monitoreo Continuo"
       ],
-      "result": "Optimización de la eficiencia operativa en un 30% y reducción de fallas no notificadas.",
-      "metric": "Eficiencia operativa: +30%",
-      "scope": "Infraestructura de planta y área administrativa.",
-      "evidence": "Historial profesional verificado.",
-      "lessons": "La automatización de tareas básicas permite al equipo centrarse en proyectos de valor estratégico."
+      "result": "Optimización de la eficiencia operativa en un 30% y cero paradas imprevistas en los despachos de báscula por problemas de comunicación.",
+      "metric": "Eficiencia operativa: +30% | Caídas imprevistas de pesaje: 0 | Tareas de reporte automatizadas: 100%",
+      "scope": "Infraestructura de planta de calcinación, básculas de pesaje vehicular y sede administrativa.",
+      "evidence": "Bitácoras de mantenimiento de infraestructura y registros continuos de despacho.",
+      "lessons": "En entornos industriales severos, el hardware rugerizado y los enlaces redundantes son fundamentales para evitar pérdidas millonarias por detención de despachos."
     }
   ],
   "impact": [
-    "30% de incremento en la eficiencia operativa de soporte y reportería.",
-    "Estabilidad garantizada en la operación de planta 24/7."
+    "30% de incremento en la eficiencia operativa de soporte y reportería industrial.",
+    "Estabilidad garantizada en la conectividad de básculas y operación de planta 24/7.",
+    "Automatización completa de copias de seguridad de bases de datos de despacho con PowerShell."
   ],
   "technologies": [
     {
       "name": "Windows Server & Active Directory",
-      "context": "Gestión de dominio, usuarios y permisos."
+      "context": "Gestión de dominio, directivas de seguridad de acceso y servicios de red."
     },
     {
       "name": "PowerShell",
-      "context": "Automatización de tareas y respaldos."
+      "context": "Automatización de extracción de datos, reportería diaria y respaldos."
     },
     {
-      "name": "Networking LAN/WAN",
-      "context": "Conexión de planta con sede corporativa."
+      "name": "Networking LAN/WAN Industrial",
+      "context": "Enlaces de comunicación entre planta industrial, básculas y oficinas corporativas."
     }
   ],
   "evidence": [],
   "links": [],
   "learnings": [
-    "En entornos industriales, el monitoreo proactivo previene paradas de planta costosas."
+    "En entornos industriales, el monitoreo proactivo y los enlaces con tolerancia a fallas previenen costosas paradas de planta y garantizan el flujo logístico continuo."
   ],
   "recruiterSummary": [
-    "Gerente de Tecnología en planta manufacturera 24/7.",
-    "Supervisó infraestructura de servidores, redes y enlaces industriales.",
-    "Aumentó la eficiencia operativa en un 30% con automatización.",
-    "Gestión de proveedores y contratos de servicio."
+    "Gerente de Tecnología en planta manufacturera industrial de operación continua 24/7.",
+    "Supervisó infraestructura de servidores Windows Server, redes LAN/WAN y enlaces industriales de pesaje.",
+    "Aumentó la eficiencia operativa en un 30% automatizando reportes y respaldos con PowerShell.",
+    "Gestionó proveedores de telecomunicaciones y contratos de soporte técnico."
   ],
   "pending": []
 }

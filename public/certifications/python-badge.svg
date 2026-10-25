@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96">
+  <defs>
+    <linearGradient id="pybg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+  </defs>
+  <rect width="96" height="96" rx="20" fill="url(#pybg)"/>
+  <rect x="2" y="2" width="92" height="92" rx="18" fill="none" stroke="#38bdf8" stroke-width="1.5" stroke-opacity="0.2"/>
+  <!-- Python Official Logo Geometry Scaled -->
+  <g transform="translate(48, 42) scale(0.72)">
+    <!-- Blue snake (top) -->
+    <path fill="#3776ab" d="M -2,-29 C -16,-29 -22,-22 -22,-15 L -22,-7 L -7,-7 L -7,-3 L -28,-3 C -36,-3 -43,3 -43,15 C -43,24 -37,30 -28,30 L -21,30 L -21,21 C -21,12 -14,5 -5,5 L 10,5 C 16,5 21,0 21,-6 L 21,-18 C 21,-25 14,-29 -2,-29 Z M -11,-22 C -9,-22 -7,-20 -7,-18 C -7,-16 -9,-14 -11,-14 C -13,-14 -15,-16 -15,-18 C -15,-20 -13,-22 -11,-22 Z"/>
+    <!-- Yellow snake (bottom) -->
+    <path fill="#ffd43b" d="M 2,29 C 16,29 22,22 22,15 L 22,7 L 7,7 L 7,3 L 28,3 C 36,3 43,-3 43,-15 C 43,-24 37,-30 28,-30 L 21,-30 L 21,-21 C 21,-12 14,-5 5,-5 L -10,-5 C -16,-5 -21,-0 -21,6 L -21,18 C -21,25 -14,29 2,29 Z M 11,22 C 9,22 7,20 7,18 C 7,16 9,14 11,14 C 13,14 15,16 15,18 C 15,20 13,22 11,22 Z"/>
+  </g>
+  <text x="48" y="84" fill="#38bdf8" font-family="system-ui, -apple-system, sans-serif" font-size="9" font-weight="800" text-anchor="middle" letter-spacing="2">PYTHON</text>
+</svg>

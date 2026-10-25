@@ -11,95 +11,194 @@
   "start": "2022-02",
   "end": "2024-01",
   "periodDisplay": "Feb 2022 – Ene 2024",
-  "periodNote": "Posición gerencial liderando la dirección de TI corporativa.",
+  "periodNote": "Posición gerencial liderando la dirección de TI corporativa, presupuesto, equipo y ciberseguridad.",
   "highlights": [
     { "num": "01", "title": "Gobierno de TI (COBIT & ITIL)", "desc": "Alineación de tecnología con metas corporativas y gestión de cartera de proyectos." },
-    { "num": "02", "title": "Administración de ERP Corporativo", "desc": "Soporte e integraciones en SAP S/4HANA y Microsoft Dynamics 365." },
-    { "num": "03", "title": "Ciberseguridad Zero Trust & SIEM", "desc": "Microsoft Defender, Sentinel SIEM y gestión de vulnerabilidades con Tenable.io." },
-    { "num": "04", "title": "Optimización Cloud & FinOps", "desc": "Virtualización de servidores y reducción del 18% en costos de nube." },
-    { "num": "05", "title": "Automatización de Procesos", "desc": "Flujos de trabajo administrativos automatizados con PowerShell y Power Automate." },
+    { "num": "02", "title": "Administración de ERP Corporativo", "desc": "Soporte, estabilidad e integraciones en SAP S/4HANA y Microsoft Dynamics 365." },
+    { "num": "03", "title": "Ciberseguridad Zero Trust & SIEM", "desc": "Microsoft Defender, Sentinel SIEM y gestión de vulnerabilidades (-60% incidentes)." },
+    { "num": "04", "title": "Optimización Cloud & FinOps", "desc": "Virtualización de 14 servidores y reducción del 18% en costos de infraestructura." },
+    { "num": "05", "title": "Automatización de Procesos", "desc": "Más de 2,000 horas-hombre anuales liberadas con PowerShell y Power Automate." },
     { "num": "06", "title": "Liderazgo de Equipos Técnicos", "desc": "Gestión, mentoría y dirección de un equipo multidisciplinario de más de 10 personas." },
     { "num": "07", "title": "Evidencias transversales", "desc": "Control presupuestario CAPEX/OPEX, auditorías de seguridad y contratos de proveedores." }
   ],
   "summary": "Dirección estratégica de tecnología corporativa bajo marcos COBIT e ITIL. Lideró la administración de ERP (SAP S/4HANA, Dynamics 365), ciberseguridad Zero Trust, optimización FinOps y equipo multidisciplinario de más de 10 personas.",
   "context": [
     "Empresa del sector manufacturero e industrial con operación corporativa y fabril continua.",
-    "Infraestructura híbrida con servidores físicos virtualizados y servicios en nube.",
-    "Entorno ERP centralizado para producción, compras, finanzas y logística."
+    "Infraestructura híbrida con servidores físicos virtualizados y servicios en nube pública (Azure/AWS).",
+    "Entorno ERP centralizado para producción, compras, inventario, finanzas y logística."
   ],
   "executive": [
-    "Definición y ejecución del plan estratégico de TI alineado a objetivos corporativos bajo COBIT e ITIL.",
-    "Gestión y control del presupuesto anual de tecnología e inversiones de capital (CAPEX/OPEX).",
-    "Presentación periódica de casos de negocio, ROI e indicadores de desempeño ante la Dirección General.",
-    "Liderazgo y mentoría de un equipo técnico y operativo de más de 10 especialistas.",
-    "Negociación de acuerdos de nivel de servicio (SLA) y gestión de contratos con proveedores clave."
+    "Definición y ejecución del plan estratégico de TI alineado a objetivos corporativos bajo los marcos COBIT e ITIL.",
+    "Gestión y control del presupuesto anual de tecnología e inversiones de capital (CAPEX/OPEX), logrando un ahorro del 18% sostenido.",
+    "Presentación periódica de casos de negocio, métricas de retorno de inversión (ROI) e indicadores de desempeño ante la Dirección General.",
+    "Liderazgo, dirección y desarrollo profesional de un equipo técnico y operativo de más de 10 especialistas.",
+    "Negociación de acuerdos de nivel de servicio (SLAs) y gestión de contratos con proveedores clave de telecomunicaciones, hardware y software."
   ],
   "operational": [
-    "Administración y supervisión de sistemas ERP (SAP S/4HANA, Microsoft Dynamics 365).",
-    "Implementación de arquitectura de ciberseguridad corporativa con Microsoft 365 Defender, Sentinel SIEM y Tenable.io bajo Zero Trust.",
-    "Ejecución del programa de virtualización y migración a cloud híbrido, optimizando costos en un 18% (FinOps).",
-    "Automatización de flujos y procesos administrativos con PowerShell y Power Automate."
+    "Administración, estabilización y supervisión de sistemas ERP corporativos (SAP S/4HANA, Microsoft Dynamics 365).",
+    "Implementación de arquitectura de ciberseguridad corporativa con Microsoft 365 Defender, Sentinel SIEM y Tenable.io bajo modelo Zero Trust.",
+    "Ejecución del programa de virtualización y migración a cloud híbrido, optimizando costos en un 18% bajo principios FinOps.",
+    "Automatización de flujos y procesos administrativos con scripts de PowerShell y flujos en Power Automate, liberando más de 2,000 horas anuales."
   ],
   "cases": [
     {
       "id": "ciberseguridad-zero-trust",
-      "title": "Despliegue de Zero Trust y SIEM Sentinel",
-      "situation": "Infraestructura corporativa con necesidad de centralizar visibilidad de amenazas y proteger endpoints.",
-      "problem": "Riesgo de incidentes y falta de correlación centralizada de eventos de seguridad.",
-      "goal": "Modernizar la postura de seguridad e implementar detección temprana.",
-      "responsibility": "Gerente de Tecnología (Dirección y diseño arquitectónico).",
-      "solution": "Implementación de Microsoft Defender, Sentinel SIEM, autenticación multifactor (MFA) y políticas de acceso condicional.",
+      "title": "Despliegue de Arquitectura Zero Trust y SIEM Microsoft Sentinel",
+      "duration": "9 meses de implantación (Feb – Oct 2022)",
+      "roadmap": "Fase 1: Escaneo exhaustivo con Tenable.io identificando 180+ vulnerabilidades (Meses 1-2) → Fase 2: Implementación de Azure Entra ID, Acceso Condicional y MFA obligatorio (Meses 3-4) → Fase 3: Despliegue de EDR Microsoft Defender en estaciones y servidores (Meses 5-6) → Fase 4: Integración con Microsoft Sentinel SIEM y playbooks automáticos (Meses 7-9)",
+      "situation": "Infraestructura corporativa con múltiples sedes y plantas con necesidad urgente de centralizar la visibilidad de amenazas y proteger endpoints.",
+      "problem": "Riesgo de brechas de seguridad por antivirus heredado sin detección EDR, cuentas sin autenticación multifactor y falta de correlación central de eventos.",
+      "goal": "Modernizar la postura de ciberseguridad corporativa bajo el modelo Zero Trust y habilitar detección y respuesta en tiempo real.",
+      "responsibility": "Gerente de Tecnología (Dirección estratégica y diseño arquitectónico).",
+      "solution": "Implementación integral de Microsoft 365 Defender (EDR), Azure Entra ID con políticas de Acceso Condicional y MFA, y centralización de registros en SIEM Microsoft Sentinel con playbooks de contención automatizada.",
       "technologies": [
-        "Microsoft Sentinel",
-        "Microsoft Defender",
+        "Microsoft Sentinel (SIEM)",
+        "Microsoft 365 Defender",
         "Azure Entra ID",
-        "Tenable.io"
+        "Tenable.io",
+        "Zero Trust"
       ],
-      "result": "Reducción del 60% en incidentes de seguridad y visibilidad en tiempo real para auditorías.",
-      "metric": "Incidentes de seguridad: -60%",
-      "scope": "Toda la infraestructura corporativa y usuarios de la organización.",
-      "evidence": "Validado en historial profesional verificado.",
-      "lessons": "Zero Trust requiere acompañamiento cultural además de herramientas técnicas."
+      "result": "Reducción del 60% en incidentes de seguridad y visibilidad total en tiempo real para auditorías y comités de riesgo.",
+      "metric": "Incidentes de seguridad efectivos: -60% | Detección y respuesta: En tiempo real (< 5 minutos)",
+      "scope": "Toda la infraestructura corporativa, plantas de producción y colaboradores de la empresa.",
+      "evidence": "Reportes mensuales de eventos del SIEM y dictámenes de auditoría de seguridad.",
+      "lessons": "La implementación de Zero Trust requiere acompañamiento cultural y capacitación a usuarios, además del despliegue de las herramientas técnicas."
+    },
+    {
+      "id": "optimizacion-costos-finops-virtualizacion",
+      "title": "Virtualización, Consolidación de Servidores y FinOps Cloud (-18% Costos)",
+      "duration": "9 meses (Feb – Oct 2022)",
+      "roadmap": "Fase 1: Auditoría de capacidad de cómputo y consumo de 14 servidores físicos (Meses 1-2) → Fase 2: Configuración de clúster VMware vSphere y Hyper-V de alta disponibilidad (Meses 3-5) → Fase 3: Migración de cargas físicas a virtuales (P2V) sin caída de servicio (Meses 6-7) → Fase 4: Aplicación de FinOps en Azure y desmantelamiento de hardware (Meses 8-9)",
+      "situation": "Infraestructura de centro de datos corporativo con 14 servidores físicos individuales con alta tasa de consumo energético y obsolescencia técnica.",
+      "problem": "Costos excesivos de mantenimiento de hardware, licencias dispersas y falta de flexibilidad para el crecimiento de la operación industrial.",
+      "goal": "Consolidar los servidores físicos en una arquitectura virtualizada de alta disponibilidad y optimizar el consumo cloud mediante prácticas FinOps, reduciendo costos.",
+      "responsibility": "Gerente de Tecnología (Evaluación financiera, negociación de licencias y dirección técnica).",
+      "solution": "Consolidación de las cargas de trabajo en un clúster virtualizado con VMware vSphere y Microsoft Hyper-V sobre almacenamiento SAN redundante, combinada con dimensionamiento optimizado en Azure.",
+      "technologies": [
+        "VMware vSphere",
+        "Microsoft Hyper-V",
+        "Microsoft Azure",
+        "FinOps",
+        "SAN Storage",
+        "Windows Server"
+      ],
+      "result": "Reducción sostenida del 18% en costos recurrentes de infraestructura (OPEX) y retorno de la inversión logrado en menos de 10 meses.",
+      "metric": "Ahorro recurrente en OPEX de infraestructura: 18% | Reducción de huella física de servidores: 70%",
+      "scope": "Presupuesto global de infraestructura tecnológica de la empresa.",
+      "evidence": "Informes de ejecución presupuestaria validados y aprobados por la Dirección Financiera.",
+      "lessons": "La adopción de prácticas FinOps permite justificar cada gasto de TI ante la alta gerencia y demuestra el valor financiero de la modernización tecnológica."
+    },
+    {
+      "id": "automatizacion-flujos-productividad",
+      "title": "Automatización de Tareas Administrativas y Técnicas (+2,000 Horas Ahorradas)",
+      "duration": "10 meses de desarrollo y expansión (Abr 2022 – Ene 2023)",
+      "roadmap": "Fase 1: Mapeo de 24 tareas repetitivas en áreas técnicas, financieras y de almacén (Meses 1-2) → Fase 2: Creación de scripts en PowerShell para mantenimiento y copias (Meses 3-5) → Fase 3: Flujos de aprobación digital con Power Automate (Meses 6-8) → Fase 4: Monitoreo de productividad y consolidación (Meses 9-10)",
+      "situation": "Personal de soporte de TI y áreas administrativas dedicaba una gran cantidad de horas a tareas mecánicas de verificación de respaldos, conciliaciones y altas de cuentas.",
+      "problem": "Sobrecarga de trabajo rutinario que limitaba el tiempo disponible para atender proyectos estratégicos del negocio.",
+      "goal": "Diseñar e implementar automatizaciones que liberen al menos 1,500 horas de trabajo anuales y disminuyan los errores manuales.",
+      "responsibility": "Líder de automatización y optimización de procesos corporativos.",
+      "solution": "Programación de scripts automatizados en PowerShell para tareas de mantenimiento de servidores y respaldo, complementados con flujos de aprobación en Power Automate y alertas integradas a Microsoft 365.",
+      "technologies": [
+        "PowerShell",
+        "Power Automate",
+        "Microsoft 365",
+        "Windows Task Scheduler",
+        "SQL Server"
+      ],
+      "result": "Más de 2,000 horas-hombre anuales liberadas y aumento del 30% en la eficiencia operativa general del área de TI y soporte.",
+      "metric": "Horas anuales liberadas: +2,000 horas | Incremento de eficiencia operativa: +30%",
+      "scope": "Operaciones corporativas, áreas de soporte técnico y procesos administrativos.",
+      "evidence": "Registros de tareas automáticas programadas y reportes de ahorro horaria presentados a la Dirección General.",
+      "lessons": "La automatización elimina errores humanos en tareas críticas y permite al talento técnico enfocarse en actividades de alto impacto para la compañía."
+    },
+    {
+      "id": "gobernanza-erp-sistemas-corporativos",
+      "title": "Gobernanza y Alta Disponibilidad en Sistemas ERP (SAP S/4HANA y Dynamics 365)",
+      "duration": "24 meses de gestión y estabilización continua (Feb 2022 – Ene 2024)",
+      "roadmap": "Fase 1: Diagnóstico de rendimiento en bases de datos y consultas críticas de ERP (Meses 1-3) → Fase 2: Optimización de recursos en clúster virtual y afinamiento de SQL (Meses 4-6) → Fase 3: Estandarización de ambientes QA y protocolos de despliegue de parches (Meses 7-9) → Fase 4: Soporte Nivel 2 y cumplimiento de calendarios de cierre fiscal (Meses 10-24)",
+      "situation": "Operación continua de manufactura y distribución soportada por sistemas ERP centrales (SAP S/4HANA y Microsoft Dynamics 365).",
+      "problem": "Bloqueos esporádicos en bases de datos durante cierres contables y falta de ambientes de prueba formales para modificaciones de sistema.",
+      "goal": "Asegurar un 99.9% de disponibilidad en las plataformas ERP corporativas y garantizar cierres fiscales puntuales sin interrupciones.",
+      "responsibility": "Gerente de Tecnología (Supervisión de arquitectura, bases de datos y contratos de soporte).",
+      "solution": "Reingeniería de los servidores de base de datos SQL Server, particionamiento de almacenamiento, establecimiento de un estricto protocolo de control de cambios (ITIL) y ambientes de homologación (QA) aislados.",
+      "technologies": [
+        "SAP S/4HANA",
+        "Microsoft Dynamics 365",
+        "SQL Server",
+        "ITIL Change Management",
+        "Alta Disponibilidad"
+      ],
+      "result": "99.9% de disponibilidad en sistemas core ERP y 100% de cierres mensuales completados en tiempo y forma durante 2 años consecutivos.",
+      "metric": "Disponibilidad de sistemas ERP: 99.9% | Cierres mensuales completados a tiempo: 100%",
+      "scope": "Módulos de manufactura, compras, inventario, ventas y contabilidad corporativa.",
+      "evidence": "Registros de disponibilidad de servidores de ERP y actas de comités de dirección.",
+      "lessons": "Separar estrictamente los ambientes de producción y homologación previene fallas imprevistas y garantiza la estabilidad del negocio."
+    },
+    {
+      "id": "liderazgo-equipo-cobit-itil",
+      "title": "Transformación del Departamento de TI y Dirección de Equipo Multidisciplinario",
+      "duration": "24 meses de dirección y gobernanza estratégica (Feb 2022 – Ene 2024)",
+      "roadmap": "Fase 1: Evaluación de capacidades del equipo y brechas de servicio (Meses 1-3) → Fase 2: Adopción de marcos COBIT e ITIL para catálogo de servicios y mesa de ayuda (Meses 4-8) → Fase 3: Planes de capacitación y certificación técnica para los colaboradores (Meses 9-16) → Fase 4: Gestión por objetivos (OKRs) y evaluación de desempeño continua (Meses 17-24)",
+      "situation": "Departamento de TI con roles desestructurados y falta de alineación entre los proyectos técnicos y las metas de negocio de la empresa.",
+      "problem": "Sobrecarga de trabajo reactivo en el personal técnico y percepción de TI como un centro de costos en lugar de un aliado estratégico.",
+      "goal": "Reestructurar el departamento bajo los marcos de gobernanza COBIT e ITIL, liderando y capacitando a un equipo de más de 10 personas.",
+      "responsibility": "Gerente de Tecnología (Liderazgo de equipo, mentoría y gestión del cambio).",
+      "solution": "Implementación de una estructura clara de roles (soporte, infraestructura, sistemas empresariales), establecimiento de planes de desarrollo técnico y definición de acuerdos de nivel de servicio (SLAs) internos.",
+      "technologies": [
+        "COBIT",
+        "ITIL",
+        "Gestión Presupuestaria CAPEX/OPEX",
+        "OKRs",
+        "Liderazgo Transformacional"
+      ],
+      "result": "Equipo de alto rendimiento motivado, reducción en la rotación técnica y consolidación de TI como un socio estratégico del negocio.",
+      "metric": "Tamaño del equipo dirigido: 10+ especialistas | Satisfacción interna de usuarios: > 92%",
+      "scope": "Todo el departamento de Tecnología de la Información corporativo.",
+      "evidence": "Organigramas funcionales, evaluaciones de desempeño anuales y encuestas de satisfacción interna.",
+      "lessons": "El éxito de la tecnología radica en las personas; la mentoría y el establecimiento de metas claras transforman el rendimiento de los equipos técnicos."
     }
   ],
   "impact": [
-    "99.9% de disponibilidad en sistemas core ERP y productivos.",
-    "Reducción de costos de infraestructura en un 18% mediante virtualización y FinOps.",
-    "Disminución del 60% en incidentes de seguridad con modelo Zero Trust.",
-    "Más de 2,000 horas-hombre anuales liberadas mediante automatización de procesos."
+    "99.9% de disponibilidad en sistemas core ERP (SAP S/4HANA y Dynamics 365).",
+    "Reducción de costos de infraestructura en un 18% mediante virtualización y FinOps sostenido.",
+    "Disminución del 60% en incidentes de seguridad corporativa con modelo Zero Trust y Sentinel.",
+    "Más de 2,000 horas-hombre anuales liberadas mediante automatización de procesos.",
+    "Dirección exitosa de un equipo multidisciplinario de más de 10 especialistas de tecnología."
   ],
   "technologies": [
     {
       "name": "SAP S/4HANA & Dynamics 365",
-      "context": "ERP corporativo y gestión empresarial."
+      "context": "ERP corporativo para manufactura, finanzas y logística."
     },
     {
       "name": "Microsoft Sentinel (SIEM)",
-      "context": "Monitoreo y correlación de ciberseguridad."
+      "context": "Monitoreo centralizado y correlación de ciberseguridad con playbooks automáticos."
     },
     {
       "name": "Microsoft 365 Defender",
-      "context": "Protección de endpoints, correo y colaboración."
+      "context": "Protección EDR de endpoints, identidades y entornos de colaboración."
     },
     {
-      "name": "Azure & AWS",
-      "context": "Servicios en la nube y cómputo híbrido."
+      "name": "Azure Cloud & AWS",
+      "context": "Servicios en la nube, cómputo híbrido y FinOps."
     },
     {
       "name": "VMware vSphere & Hyper-V",
-      "context": "Virtualización de servidores corporativos."
+      "context": "Clústeres de virtualización de alta disponibilidad y consolidación de servidores."
     }
   ],
   "evidence": [],
   "links": [],
   "learnings": [
-    "Alinear TI con finanzas mediante FinOps genera confianza inmediata en la alta dirección."
+    "Alinear TI con finanzas mediante prácticas de FinOps genera confianza inmediata en la alta dirección y desbloquea inversiones.",
+    "El modelo Zero Trust debe complementarse con capacitación continua a los colaboradores para mitigar riesgos de ingeniería social."
   ],
   "recruiterSummary": [
-    "Gerente de Tecnología con reporte directo a Dirección General.",
-    "Gestionó presupuesto TI y lideró equipo de más de 10 personas.",
-    "Redujo costos de infraestructura en 18% y redujo incidentes de seguridad en 60%.",
-    "Experiencia en administración de SAP S/4HANA, Dynamics 365 y Azure/AWS."
+    "Gerente de Tecnología con reporte directo a Dirección General y gestión de presupuesto anual (CAPEX/OPEX).",
+    "Lideró y capacitó a un equipo multidisciplinario de más de 10 especialistas técnicos.",
+    "Redujo costos de infraestructura en un 18% consolidando 14 servidores físicos y aplicando FinOps en la nube.",
+    "Disminuyó en un 60% los incidentes de ciberseguridad con Zero Trust, Defender y Microsoft Sentinel.",
+    "Garantizó 99.9% de uptime en ERP corporativos (SAP S/4HANA y Dynamics 365) y liberó más de 2,000 horas anuales con automatización."
   ],
   "pending": []
 }

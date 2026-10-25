@@ -54,7 +54,13 @@
       "context": "Mantenimiento y diagnóstico de computadoras y servidores."
     }
   ],
-  "evidence": [],
+  "evidence": [
+    {
+      "title": "Constancia Laboral Oficial: VICRISA",
+      "url": "documents/Carta_Laboral_Vicrisa.pdf",
+      "type": "Documento Oficial PDF"
+    }
+  ],
   "links": [],
   "learnings": [
     "El dominio profundo del soporte y la infraestructura base es la mejor escuela para el liderazgo gerencial."
