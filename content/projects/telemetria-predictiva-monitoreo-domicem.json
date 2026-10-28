@@ -1,0 +1,32 @@
+{
+  "slug": "telemetria-predictiva-monitoreo-domicem",
+  "public": true,
+  "name": "Sistema de Telemetría Industrial, Monitoreo Proactivo de Redes y Continuidad en Planta",
+  "type": "Redes, IoT Industrial y Automatización",
+  "role": "Gerente de Tecnología",
+  "status": "Implementado en producción (2014–2019)",
+  "relatedCompany": "dominicana-de-cales",
+  "summary": "Infraestructura de monitoreo continuo de enlaces de red, servidores y sensores operativos en entorno industrial pesado, con automatización de alertas preventivas.",
+  "problem": "Interrupciones imprevistas en servicios de red y servidores en planta industrial que afectaban la continuidad de facturación, despacho en báscula y operaciones.",
+  "architecture": "Red industrial segmentada con equipos Cisco, centralización de logs y métricas SNMP/ICMP, rutinas automatizadas de respaldo y scripts de verificación de salud de servicios críticos.",
+  "technologies": [
+    "Cisco Routing & Switching",
+    "Linux Server",
+    "Windows Server",
+    "Monitoreo SNMP / Telemetría IoT",
+    "Python / Bash",
+    "SQL"
+  ],
+  "contributions": [
+    "Modernización de la red local e inalámbrica de planta y oficinas administrativas.",
+    "Implementación de tableros de monitoreo temprano de disponibilidad de enlaces y servidores.",
+    "Automatización de respaldos y tareas de mantenimiento preventivo.",
+    "Incremento del 30% en la eficiencia operativa del departamento de tecnología."
+  ],
+  "evidence": [
+    "Métrica auditada: +30% en eficiencia operativa en Dominicana de Cales.",
+    "Certificaciones verificadas: Especialidad en Integrador IoT, Diplomado en IoT, Cisco IoT y CCNA.",
+    "Expediente profesional de Dominicana de Cales."
+  ],
+  "links": []
+}

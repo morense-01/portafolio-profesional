@@ -1,0 +1,33 @@
+{
+  "slug": "ciberseguridad-zero-trust-sentinel-madeco",
+  "public": true,
+  "name": "Arquitectura de Ciberseguridad Zero Trust, SIEM Microsoft Sentinel y Defensa Perimetral Fortinet",
+  "type": "Ciberseguridad y Seguridad Cloud",
+  "role": "Gerente de Tecnología y Arquitecto de Seguridad",
+  "status": "Implementado en producción (2023–2024)",
+  "relatedCompany": "madeco",
+  "summary": "Implementación integral de estrategia Zero Trust, correlación centralizada de eventos en Microsoft Sentinel, firewalls Fortinet y protección de endpoints e identidades cloud.",
+  "problem": "Necesidad de blindar la infraestructura corporativa e industrial ante amenazas avanzadas, ransomware y accesos no autorizados en entornos híbridos.",
+  "architecture": "Defensa en profundidad multicapa: perimetral con firewalls Fortinet FortiGate (políticas UTM, IPS, filtrado web y VPN SSL/IPSec), identidad blindada con Microsoft Entra ID (MFA y Acceso Condicional), seguridad de endpoints con Microsoft 365 Defender / ESET Protect Cloud y monitoreo SIEM en Microsoft Sentinel.",
+  "technologies": [
+    "Fortinet FortiGate (NSE 4)",
+    "Microsoft Sentinel (SIEM)",
+    "Microsoft 365 Defender",
+    "Entra ID / Azure AD",
+    "Zero Trust",
+    "Kali Linux",
+    "ESET Protect"
+  ],
+  "contributions": [
+    "Diseño y despliegue del modelo Zero Trust para usuarios locales, remotos y servicios en la nube.",
+    "Configuración de reglas de correlación y playbooks de respuesta a incidentes en Microsoft Sentinel.",
+    "Segmentación de redes corporativas e industriales y pruebas de vulnerabilidades (pentesting interno).",
+    "Reducción del 60% en incidentes de seguridad y bloqueo temprano de vectores de ataque."
+  ],
+  "evidence": [
+    "Métrica auditada: Reducción del 60% en incidentes de seguridad en MADECO.",
+    "Certificaciones verificadas: Fortinet NSE 4, Ethical Hacking A-Z, Kali Linux Pentesting, ESET Incident Response e IBM/Cisco Cybersecurity.",
+    "Expediente corporativo de MADECO documentado."
+  ],
+  "links": []
+}

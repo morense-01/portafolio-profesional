@@ -1,0 +1,38 @@
+{
+  "slug": "ecosistema-ia-soporte-astro",
+  "public": true,
+  "name": "Ecosistema de Asistencia Inteligente con RAG y Model Context Protocol (MCP)",
+  "type": "Inteligencia Artificial y Automatización",
+  "role": "Desarrollador de IA, Agentes MCP y Automatización (Encargado de TI)",
+  "status": "En producción (2026)",
+  "relatedCompany": "astro-pico-duarte-carton",
+  "summary": "Agentes de IA que consultan bases de conocimiento internas mediante búsqueda semántica (RAG) y ejecutan herramientas de verificación de estado, consultas SQL seguras y documentación bajo el estándar Model Context Protocol (MCP).",
+  "problem": "La atención de consultas operativas, diagnóstico de sistemas y búsqueda en manuales técnicos consumía alto tiempo de respuesta del equipo de soporte e ingeniería.",
+  "architecture": "Arquitectura e implementación de servidores MCP personalizados (Model Context Protocol de Anthropic), indexación documental para el flujo Retrieval-Augmented Generation (RAG) e integración con Anthropic Claude API, Google Vertex AI (Gemini), Python, PowerShell y SQL Server.",
+  "technologies": [
+    "Model Context Protocol (MCP)",
+    "Retrieval-Augmented Generation (RAG)",
+    "Anthropic Claude API",
+    "Google Vertex AI (Gemini)",
+    "Python",
+    "PowerShell",
+    "SQL Server"
+  ],
+  "contributions": [
+    "Arquitectura e implementación de servidores MCP personalizados bajo el estándar de Anthropic.",
+    "Indexación documental de manuales operativos para el flujo de búsqueda semántica (RAG).",
+    "Desarrollo de scripts de diagnóstico automatizado, verificación de estado y consultas SQL seguras.",
+    "Incremento del 40% en la productividad del área de tecnología y más de 1,200 horas-hombre anuales liberadas de tareas repetitivas."
+  ],
+  "evidence": [
+    "Incremento del 40% en la productividad del área de tecnología y más de 1,200 horas-hombre anuales liberadas de tareas repetitivas.",
+    "Certificaciones oficiales Anthropic MCP (Advanced Topics #vxtfkvdm2xzr, Intro to MCP #o2r5j74e8f68, Claude Cowork #tzmigpxh43r8).",
+    "Caso en producción documentado en el expediente de Astro - Pico Duarte Cartón."
+  ],
+  "links": [
+    {
+      "title": "Repositorio y Portafolio en GitHub (github.com/morense-01)",
+      "url": "https://github.com/morense-01"
+    }
+  ]
+}

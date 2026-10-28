@@ -1,0 +1,33 @@
+{
+  "slug": "data-warehouse-bi-automatizacion-madeco",
+  "public": true,
+  "name": "Plataforma Analítica Corporativa (Microsoft Fabric / Power BI) y Automatización RPA",
+  "type": "Ciencia de Datos, BI y Automatización",
+  "role": "Gerente de Tecnología y Líder de Analítica",
+  "status": "Implementado en producción (2023–2024)",
+  "relatedCompany": "madeco",
+  "summary": "Centralización de fuentes de datos ERP en modelos semánticos de Power BI y Microsoft Fabric, combinada con flujos automatizados que eliminaron más de 2,000 horas manuales anuales.",
+  "problem": "Elaboración manual de reportes gerenciales en hojas de cálculo aisladas que consumían cientos de horas mensuales y generaban discrepancias entre departamentos.",
+  "architecture": "Pipeline de ingesta y limpieza de datos (Power Query / Dataflows / Python) conectado a bases de datos de SAP S/4HANA y Dynamics 365, capa de modelado estrella con métricas avanzadas en DAX sobre Power BI / Microsoft Fabric y bots de automatización para distribución y alertas.",
+  "technologies": [
+    "Microsoft Fabric",
+    "Power BI",
+    "DAX",
+    "Power Query",
+    "Python",
+    "SQL Server",
+    "SAP S/4HANA"
+  ],
+  "contributions": [
+    "Diseño del modelo de datos corporativo unificando finanzas, inventario, compras y producción.",
+    "Desarrollo de medidas complejas en DAX para análisis de rentabilidad, variaciones presupuestarias y KPIs operativos.",
+    "Automatización de procesos administrativos e informes recurrentes ahorrando más de 2,000 horas-hombre al año.",
+    "Capacitación a líderes de área en consumo de tableros de autoservicio para toma de decisiones basada en datos."
+  ],
+  "evidence": [
+    "Métrica auditada: Ahorro de +2,000 horas-hombre anuales mediante automatización y BI en MADECO.",
+    "Certificaciones verificadas: Diplomado en Inteligencia de Negocios, Microsoft Fabric Analytics, Write DAX Formulas, Clean Data in Power BI y Microsoft Data Analytics Path.",
+    "Caso de éxito documentado en expediente de MADECO."
+  ],
+  "links": []
+}

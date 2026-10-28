@@ -29,29 +29,33 @@
 
 ## Proyectos
 
-### Agente de inteligencia artificial para agricultura
-- [ ] Confirmar si Open WebUI, Gemini, Qdrant y SearXNG siguen formando parte de la implementación.
-- [ ] Problema atendido y usuarios.
-- [ ] Estado: prototipo o producto.
-- [ ] Diagrama de arquitectura sanitizado.
-- [ ] Repositorio y demostración.
+### AgroIARD - Plataforma de Agente de IA Multimodal con RAG, FastAPI, Docker y Bots API
+
+### Modernización de Red Industrial de Radiofrecuencia (RF), Integración WMS y Analítica Logística
+
+### Arquitectura de Ciberseguridad Zero Trust, SIEM Microsoft Sentinel y Defensa Perimetral Fortinet
 
 ### Automatización de contenidos de CocinandoteRD y Wala con n8n (oculto)
 - [ ] Decidir si se desea presentar este proyecto.
 - [ ] Describir flujos reales y resultados.
 
-### Ruta 66
-- [ ] Propósito y usuarios del proyecto.
-- [ ] Características reales de la PWA.
-- [ ] Estado (prototipo, producción).
-- [ ] Tecnologías.
-- [ ] Repositorio, demostración y capturas no sensibles.
+### Plataforma Analítica Corporativa (Microsoft Fabric / Power BI) y Automatización RPA
 
-### WaliControl
-- [ ] Componentes implementados (transcripción, orquestación, hoja).
-- [ ] Estado y alcance.
-- [ ] Datos de ejemplo no sensibles y capturas.
-- [ ] Repositorio.
+### Ecosistema de Asistencia Inteligente con RAG y Model Context Protocol (MCP)
+
+### Motor Automatizado de Facturación Electrónica (e-CF DGII) e Integración con SAP ERP
+
+### Infraestructura de Nube Híbrida (AWS / Azure), Continuidad BCP/DRP y Gobierno FinOps
+
+### Optimización de Motores SQL Server de Misión Crítica, Alta Disponibilidad y Auditoría Financiera
+
+### Ruta 66: Aplicación Web Progresiva (PWA) Full Stack con Arquitectura Offline-First
+
+### Plataforma Full Stack de Control Digital de Calidad y Trazabilidad en Planta
+
+### Sistema de Telemetría Industrial, Monitoreo Proactivo de Redes y Continuidad en Planta
+
+### WaliControl - Agente de IA Conversacional para Registro Operativo y Contable por Voz
 
 ## Métricas pendientes de validación (ocultas)
 

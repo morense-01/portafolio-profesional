@@ -473,4 +473,102 @@ iframe[id^=":"] {
   padding-top: 12px;
 }
 
+/* Portafolios Especializados por Rol y Matriz 360 */
+.portfolio-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-top: 4px solid var(--cyan);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+.portfolio-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--navy);
+  box-shadow: 0 6px 16px rgba(11, 37, 69, 0.1);
+}
+.portfolio-stats {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 10px 0;
+  padding: 0;
+  list-style: none;
+}
+.portfolio-stats li {
+  font-size: 0.78rem;
+  font-weight: 700;
+  background: var(--soft);
+  color: var(--navy);
+  border: 1px solid var(--line);
+  padding: 3px 9px;
+  border-radius: 6px;
+}
+.value-box {
+  background: linear-gradient(135deg, #f0f9ff, #e6f4fa);
+  border: 1px solid #bae6fd;
+  border-left: 5px solid var(--cyan-d);
+  border-radius: var(--r);
+  padding: 18px 22px;
+  margin: 18px 0;
+}
+.value-box h2,
+.value-box h3 {
+  margin-top: 0;
+  color: var(--navy);
+}
+.evidence-box {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-left: 4px solid #166534;
+  border-radius: 8px;
+  padding: 14px 18px;
+  margin-top: 14px;
+}
+.evidence-box h4 {
+  margin: 0 0 8px;
+  color: #166534;
+  font-size: 0.95rem;
+}
+.evidence-box ul {
+  margin: 0;
+  padding-left: 18px;
+}
+.evidence-box li {
+  margin: 4px 0;
+  font-size: 0.92rem;
+}
+.trace-table th {
+  white-space: nowrap;
+}
+.trace-table td {
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+.role-switcher {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 14px 0 0;
+}
+.role-switcher a {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 99px;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--navy);
+  font-size: 0.86rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+.role-switcher a:hover,
+.role-switcher a[aria-current="page"] {
+  background: var(--navy);
+  color: #fff;
+  border-color: var(--navy);
+}
+
+
 

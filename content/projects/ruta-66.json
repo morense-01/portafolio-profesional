@@ -1,31 +1,30 @@
 {
-    "slug":  "ruta-66",
-    "public":  true,
-    "name":  "Ruta 66",
-    "type":  "Aplicación web progresiva (PWA)",
-    "role":  "Desarrollador independiente (por confirmar)",
-    "status":  "En documentación",
-    "relatedCompany":  "",
-    "summary":  "Aplicación web progresiva (PWA). La ficha técnica se publicará cuando se confirmen sus características reales.",
-    "problem":  "",
-    "architecture":  "",
-    "technologies":  [
-
-                     ],
-    "contributions":  [
-
-                      ],
-    "evidence":  [
-
-                 ],
-    "links":  [
-
-              ],
-    "pending":  [
-                    "Propósito y usuarios del proyecto.",
-                    "Características reales de la PWA.",
-                    "Estado (prototipo, producción).",
-                    "Tecnologías.",
-                    "Repositorio, demostración y capturas no sensibles."
-                ]
+  "slug": "ruta-66",
+  "public": true,
+  "name": "Ruta 66: Aplicación Web Progresiva (PWA) Full Stack con Arquitectura Offline-First",
+  "type": "Aplicación web progresiva (PWA) y Full Stack",
+  "role": "Desarrollador Full Stack Senior",
+  "status": "Funcional en producción (2025)",
+  "relatedCompany": "ods-odw-logistics",
+  "summary": "Aplicación Web Progresiva (PWA) instalable con soporte offline mediante Service Workers, gestión de rutas, geolocalización y sincronización diferida en segundo plano.",
+  "problem": "Usuarios en rutas de distribución y transporte operan en zonas con conectividad móvil intermitente, necesitando consultar y registrar estados de entregas sin interrupción.",
+  "architecture": "Frontend PWA en JavaScript moderno con Web App Manifest, estrategia de caché híbrida en Service Workers, almacenamiento local en IndexedDB para operación sin conexión y sincronización automática con API REST al recuperar señal.",
+  "technologies": [
+    "JavaScript (ES6+)",
+    "PWA / Service Workers",
+    "IndexedDB",
+    "HTML5 / CSS3",
+    "Node.js / REST API",
+    "Seguridad Web (CSP / HTTPS)"
+  ],
+  "contributions": [
+    "Desarrollo de la arquitectura Offline-First garantizando disponibilidad de la interfaz sin conexión a internet.",
+    "Implementación de cola de sincronización transaccional para evitar pérdida de registros capturados en ruta.",
+    "Aplicación de cabeceras de seguridad Content-Security-Policy (CSP) y optimización de rendimiento móvil."
+  ],
+  "evidence": [
+    "Certificaciones de respaldo: Diplomado en Integridad y Seguridad Web, Especialidad en TI y Título de Ingeniero en Sistemas de Computación.",
+    "Código y arquitectura validados bajo estándares web modernos."
+  ],
+  "links": []
 }

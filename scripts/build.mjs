@@ -18,6 +18,8 @@ const SITE_URL = (process.env.SITE_URL ?? site.siteUrl).replace(/\/$/, '');
 const certData = rd('content/certifications/certifications.json');
 const docData = rd('content/documents/documents.json');
 const achData = rd('content/achievements/achievements.json');
+const portfolioData = rd('content/portfolios/portfolios.json');
+const portfolios = portfolioData.items || [];
 
 const allExp = fs.readdirSync(path.join(ROOT, 'content/experiencia'), { withFileTypes: true })
   .filter((d) => d.isDirectory())
@@ -50,7 +52,7 @@ function out(rel, content) {
 
 // ---------- plantilla ----------
 const NAV = [
-  ['/', 'Inicio'], ['/perfil-ejecutivo/', 'Perfil ejecutivo'], ['/perfil-tecnico/', 'Perfil Operativo'],
+  ['/', 'Inicio'], ['/portafolios/', 'Portafolios por Rol'], ['/perfil-ejecutivo/', 'Perfil ejecutivo'], ['/perfil-tecnico/', 'Perfil Operativo'],
   ['/trayectoria/', 'Trayectoria'], ['/logros/', 'Logros'], ['/certificaciones/', 'Certificaciones'],
   ['/proyectos/', 'Proyectos'], ['/documentos/', 'Documentos'],
 ];
@@ -138,8 +140,9 @@ function home() {
   const results = metrics.length
     ? `<div class="grid3">${metrics.slice(0, 6).map((m) => `<article class="card"><h3>${esc(m.claimedValue)}</h3><p>${esc(m.title)}</p><p class="muted">${esc(m.company)} · ${esc(m.period)}</p></article>`).join('')}</div><p><a href="${L('/logros/')}">Ver método, tiempo y ruta de cada resultado</a></p>`
     : `<p class="note">Los resultados medibles se publican únicamente después de validar su línea base, período, método de cálculo y fuente. Consulte la sección de <a href="${L('/logros/')}">logros</a>.</p>`;
-  const quick = [['/trayectoria/', 'Trayectoria', `${exps.length} expedientes por empresa, con enlace propio.`], ['/logros/', 'Logros', 'Resultados con método y fuente de validación.'], ['/certificaciones/', 'Certificaciones', 'Credenciales con enlace de verificación.'], ['/proyectos/', 'Proyectos', 'Proyectos tecnológicos y su estado real.'], ['/documentos/', 'Documentos', 'Biblioteca documental y currículum.']]
+  const quick = [['/portafolios/', `${portfolios.length} Portafolios por Rol`, 'Expedientes especializados con trazabilidad 360° (Experiencia → Certificaciones → Logros → Proyectos).'], ['/trayectoria/', 'Trayectoria', `${exps.length} expedientes por empresa, con enlace propio.`], ['/logros/', 'Logros', 'Resultados con método y fuente de validación.'], ['/certificaciones/', 'Certificaciones', 'Credenciales con enlace de verificación.'], ['/proyectos/', 'Proyectos', 'Proyectos tecnológicos y su estado real.'], ['/documentos/', 'Documentos', 'Biblioteca documental y currículum.']]
     .map(([r, t, d]) => `<a class="card link-card" href="${L(r)}"><h3>${t}</h3><p>${d}</p></a>`).join('');
+  const roleCardsHome = portfolios.map((pf) => `<article class="card portfolio-card"><div><span class="tag">${esc(pf.domain)}</span><h3><a href="${L(`/portafolios/${pf.slug}/`)}">${esc(pf.title)}</a></h3><p class="small">${esc(pf.headline)}</p></div><ul class="portfolio-stats"><li>${pf.experiences.length} exp.</li><li>${pf.certIds.length} cred.</li><li>${pf.metricIds.length} métricas</li><li>${pf.projectSlugs.length} proy.</li></ul><p><a class="btn small primary" href="${L(`/portafolios/${pf.slug}/`)}">Ver portafolio especializado →</a></p></article>`).join('');
   const body = `<section class="hero"><div class="wrap">
   <p class="eyebrow">${esc(profile.location)} · <span class="tag demostrada">Actual: Astro - Pico Duarte Cartón</span></p>
   <h1>${esc(profile.name)}</h1>
@@ -147,9 +150,10 @@ function home() {
   <p class="lead">${esc(profile.tagline)}</p>
   <div class="card current-role-card"><p><strong>Posición Actual:</strong> Responsable de Tecnología de la Información en <a href="${L('/experiencia/astro-pico-duarte-carton/')}">Astro - Pico Duarte Cartón</a> (Haina, Rep. Dom.) · Liderando infraestructura industrial, desarrollo de soluciones internas, integración con SAP ERP, control digital de calidad e Inteligencia Artificial.</p></div>
   <div class="card current-role-card"><p><strong>Formación Académica Superior:</strong> ${esc(profile.degree)} · <a href="${L('/documents/Titulo_Ingenieria_Sistemas_OyM.pdf')}" target="_blank" rel="noopener">Consultar Título Universitario oficial (PDF)</a> · <a href="${L('/certificaciones/')}">Ver credenciales y títulos</a></p></div>
-  <div class="actions"><a class="btn primary" href="${L('/trayectoria/')}">Ver trayectoria</a><a class="btn" href="${cvHref}"${cvAttr}>${cvLabel}</a><button class="btn ghost" data-share data-url="${abs('/')}" data-title="${esc(site.title)}">Compartir portafolio</button><button class="btn ghost" data-copy="${abs('/')}">Copiar enlace</button></div>
+  <div class="actions"><a class="btn primary" href="${L('/portafolios/')}">Explorar ${portfolios.length} Portafolios por Rol</a><a class="btn" href="${L('/trayectoria/')}">Ver trayectoria</a><a class="btn" href="${cvHref}"${cvAttr}>${cvLabel}</a><button class="btn ghost" data-share data-url="${abs('/')}" data-title="${esc(site.title)}">Compartir portafolio</button><button class="btn ghost" data-copy="${abs('/')}">Copiar enlace</button></div>
   <p class="ext">${links.map((l) => ext(l.url, l.label)).join(' · ')}</p>
 </div></section>
+<section class="wrap block"><h2>${portfolios.length} Portafolios Especializados por Rol (Coherencia 360° para Reclutadores)</h2><p class="muted">Seleccione el perfil especializado que desea evaluar. Cada portafolio integra en una misma línea conductora las experiencias reales, certificaciones oficiales del tema, logros, métricas auditadas y proyectos con evidencias verificables:</p><div class="grid3">${roleCardsHome}</div></section>
 <section class="wrap block"><h2>Resumen ejecutivo</h2>${ul(profile.summary, 'summary')}<div class="facts">${facts}</div><p class="muted small">${esc(profile.yearsNote)}</p></section>
 <section class="band"><div class="wrap block"><h2>Áreas de especialización</h2><ul class="chips">${profile.specialties.map((s) => `<li>${esc(s)}</li>`).join('')}</ul>
 <h3>Sectores</h3><ul class="chips alt">${profile.sectors.map((s) => `<li>${esc(s)}</li>`).join('')}</ul></div></section>
@@ -185,12 +189,23 @@ ${profile.executiveAreas.some(a => a.evidence === 'requiere') ? `<section class=
 
 function perfilTecnico() {
   const lab = { demostrada: 'Experiencia demostrada', 'por-confirmar': 'Por confirmar con evidencia' };
-  const cards = profile.technicalAreas.slice(0, 14).map((a, i) => `<article class="card" id="area-${i + 1}"><span class="tag ${a.level}">${lab[a.level]}</span><h3>${i + 1}. ${esc(a.title)}</h3><p>${esc(a.use)}</p></article>`).join('');
+  const cards = profile.technicalAreas.slice(0, 20).map((a, i) => `<article class="card" id="area-${i + 1}"><span class="tag ${a.level}">${lab[a.level]}</span><h3>${i + 1}. ${esc(a.title)}</h3><p>${esc(a.use)}</p></article>`).join('');
+
+  const aiPf = portfolios.find((x) => x.slug === 'desarrollador-ia-automatizacion-n8n');
+  const aiHighlightBox = aiPf ? `<section class="wrap block">
+    <div class="value-box">
+      <span class="tag demostrada">Perfil Especializado Destacado</span>
+      <h2><a href="${L(`/portafolios/${aiPf.slug}/`)}">${esc(aiPf.title)}</a></h2>
+      <p>${esc(aiPf.summary)}</p>
+      <div class="tech-summary-grid">${(aiPf.competencyCategories || []).map((cat) => `<article class="tech-item"><span class="tech-item-title">${esc(cat.title)}</span><p class="tech-item-desc">${esc(cat.desc)}</p></article>`).join('')}</div>
+      <p class="spacer-md"><a class="btn primary" href="${L(`/portafolios/${aiPf.slug}/`)}">Abrir expediente completo de Desarrollador de IA y Automatización (n8n y Agentes) →</a></p>
+    </div>
+  </section>` : '';
 
   const currentBox = `<section class="wrap block"><div class="card current-role-card"><p><strong>Entorno Operativo Actual:</strong> Responsable de TI en <a href="${L('/experiencia/astro-pico-duarte-carton/')}">Astro - Pico Duarte Cartón</a> (Haina, Rep. Dom.) · Infraestructura industrial continua, servidores Windows/Linux, desarrollo de software interno, scripts de automatización en Python/PowerShell, integración ERP SAP y modelos de IA.</p></div></section>`;
 
   const techSummaryItems = profile.technicalSummary && profile.technicalSummary.length ? profile.technicalSummary : [];
-  const techCards = techSummaryItems.slice(0, 18).map((item) => {
+  const techCards = techSummaryItems.slice(0, 22).map((item) => {
     const match = item.match(/<strong>(.*?):?<\/strong>\s*(.*)/);
     const title = match ? match[1].replace(/:$/, '') : '';
     const desc = match ? match[2] : item;
@@ -199,8 +214,8 @@ function perfilTecnico() {
   const techSummaryHtml = techSummaryItems.length ? `<section class="wrap block"><h2>Resumen de trayectoria técnica</h2><p class="muted">Síntesis estructurada de capacidades y dominios técnicos clave para evaluación rápida de reclutadores y líderes de TI:</p><div class="tech-summary-grid">${techCards}</div></section>` : '';
   const dirRows = profile.executiveAreas.filter((a) => a.evidence === 'demostrada').slice(0, 30).map((a) => `<article class="tech-item"><span class="tech-item-title">${esc(a.title)}</span><p class="tech-item-desc">${esc(a.text)}</p></article>`).join('');
   const dirHtml = dirRows ? `<section class="wrap block"><h2>Competencias directivas demostradas</h2><p class="muted">Competencias estratégicas de liderazgo y gestión respaldadas por más de 20 años en dirección tecnológica:</p><div class="tech-summary-grid">${dirRows}</div></section>` : '';
-  const body = hero('Perfil Operativo', '', '/perfil-tecnico/', '', false) + `${currentBox}${techSummaryHtml}${dirHtml}<section class="wrap block"><h2>Competencias y Áreas Técnicas</h2><div class="grid2">${cards}</div></section>`;
-  out('perfil-tecnico/index.html', layout({ title: 'Perfil Operativo', desc: 'Infraestructura, redes, seguridad, nube híbrida, continuidad, WMS y automatización: competencias técnicas con su contexto de uso.', route: '/perfil-tecnico/', body }));
+  const body = hero('Perfil Operativo', '', '/perfil-tecnico/', '', false) + `${currentBox}${aiHighlightBox}${techSummaryHtml}${dirHtml}<section class="wrap block"><h2>Competencias y Áreas Técnicas</h2><div class="grid2">${cards}</div></section>`;
+  out('perfil-tecnico/index.html', layout({ title: 'Perfil Operativo', desc: 'Desarrollador de IA y Automatización (n8n y Agentes), infraestructura, redes, seguridad, nube híbrida, continuidad y WMS: competencias técnicas con su contexto de uso.', route: '/perfil-tecnico/', body }));
 }
 
 function trayectoria() {
@@ -476,15 +491,322 @@ function certificaciones() {
 
 function proyectos() {
   const types = [...new Set(projects.map((p) => p.type))].sort();
-  const cards = projects.map((p) => `<article class="card" data-type="${esc(p.type)}"><span class="tag">${esc(p.type)}</span><h3><a href="${L(`/proyectos/${p.slug}/`)}">${esc(p.name)}</a></h3><p>${esc(p.summary)}</p><p class="muted small">Estado: ${esc(p.status)}</p></article>`).join('');
-  const body = hero('Proyectos tecnológicos', 'Cada ficha indica su estado real y el rol desempeñado. Un prototipo no se presenta como producto terminado.', '/proyectos/') + `<section class="wrap block"><div class="filters no-print"><label>Tipo de proyecto <select data-pf><option value="">Todos</option>${types.map((t) => `<option>${esc(t)}</option>`).join('')}</select></label></div><div class="grid2" id="projs">${cards}</div></section>`;
-  out('proyectos/index.html', layout({ title: 'Proyectos tecnológicos', desc: 'Catálogo de proyectos: aplicaciones web, automatización e inteligencia artificial, con su estado real.', route: '/proyectos/', body }));
+  const cards = projects.map((p) => `<article class="card" data-type="${esc(p.type)}"><span class="tag">${esc(p.type)}</span><h3><a href="${L(`/proyectos/${p.slug}/`)}">${esc(p.name)}</a></h3><p>${esc(p.summary)}</p><p class="muted small">Rol: ${esc(clean(p.role) || 'Líder técnico')} · Estado: ${esc(p.status)}</p></article>`).join('');
+  const body = hero('Proyectos tecnológicos', 'Cada ficha indica su estado real, arquitectura, rol desempeñado y las evidencias verificables para el reclutador.', '/proyectos/') + `<section class="wrap block"><div class="filters no-print"><label>Tipo de proyecto <select data-pf><option value="">Todos</option>${types.map((t) => `<option>${esc(t)}</option>`).join('')}</select></label></div><div class="grid2" id="projs">${cards}</div></section>`;
+  out('proyectos/index.html', layout({ title: 'Proyectos tecnológicos', desc: 'Catálogo de proyectos: aplicaciones web, datos, ciberseguridad, nube, automatización e inteligencia artificial, con su estado real y evidencias.', route: '/proyectos/', body }));
   projects.forEach((p) => {
     const route = `/proyectos/${p.slug}/`;
     const co = exps.find((e) => e.slug === p.relatedCompany);
+    const relPortfolios = portfolios.filter((pf) => pf.projectSlugs.includes(p.slug));
     const dl = [['Rol', clean(p.role)], ['Estado', p.status], ['Problema', p.problem], ['Arquitectura', p.architecture]].filter(([, v]) => v).map(([k, v]) => `<dt>${k}</dt><dd>${esc(v)}</dd>`).join('');
-    const body = hero(p.name, p.summary, route) + `<section class="wrap block"><dl class="facts-dl">${dl}</dl>${p.technologies.length ? `<h2>Tecnologías</h2><ul class="chips">${p.technologies.map((t) => `<li>${esc(t)}</li>`).join('')}</ul>` : ''}${p.contributions.length ? `<h2>Contribuciones personales</h2>${ul(p.contributions)}` : ''}${p.links.length ? `<h2>Enlaces</h2><ul>${p.links.map((l) => `<li>${ext(l.url, l.title)}</li>`).join('')}</ul>` : ''}${co ? `<p>Expediente relacionado: <a href="${L(`/experiencia/${co.slug}/`)}">${esc(co.company)}</a></p>` : ''}<p><a href="${L('/proyectos/')}">← Todos los proyectos</a></p></section>`;
+    const evHtml = (p.evidence && p.evidence.length)
+      ? `<div class="evidence-box"><h4>Evidencias verificables para mostrar al reclutador</h4>${ul(p.evidence)}</div>`
+      : '';
+    const relPfHtml = relPortfolios.length
+      ? `<h2>Portafolios especializados donde participa este proyecto</h2><ul class="role-switcher">${relPortfolios.map((pf) => `<li><a href="${L(`/portafolios/${pf.slug}/`)}">${esc(pf.title)}</a></li>`).join('')}</ul>`
+      : '';
+    const body = hero(p.name, p.summary, route) + `<section class="wrap block"><dl class="facts-dl">${dl}</dl>${p.technologies.length ? `<h2>Tecnologías</h2><ul class="chips">${p.technologies.map((t) => `<li>${esc(t)}</li>`).join('')}</ul>` : ''}${p.contributions.length ? `<h2>Contribuciones personales y logros técnicos</h2>${ul(p.contributions)}` : ''}${evHtml}${p.links?.length ? `<h2>Enlaces</h2><ul>${p.links.map((l) => `<li>${ext(l.url, l.title)}</li>`).join('')}</ul>` : ''}${relPfHtml}${co ? `<p class="spacer-md">Expediente empresarial relacionado: <a href="${L(`/experiencia/${co.slug}/`)}">${esc(co.company)}</a></p>` : ''}<p><a href="${L('/proyectos/')}">← Todos los proyectos</a> · <a href="${L('/portafolios/')}">Ver los 12 Portafolios por Rol</a></p></section>`;
     out(`proyectos/${p.slug}/index.html`, layout({ title: p.name, desc: p.summary, route, body }));
+  });
+}
+
+function portafolios() {
+  const domains = [...new Set(portfolios.map((p) => p.domain))];
+  const typeL = {
+    titulo: 'Título Universitario',
+    especialidad: 'Especialidad',
+    diplomado: 'Diplomado',
+    certificacion: 'Certificación',
+    merito: 'Carta al Mérito',
+    curso: 'Curso',
+    insignia: 'Insignia',
+    formacion: 'Formación'
+  };
+  const getTypeGroup = (t) => {
+    if (t === 'titulo' || t === 'grado') return 'titulo';
+    if (t === 'especialidad') return 'especialidad';
+    if (t === 'diplomado') return 'diplomado';
+    if (t === 'certificacion') return 'certificacion';
+    if (t === 'merito' || t === 'carta-merito') return 'merito';
+    if (t === 'insignia') return 'insignia';
+    return 'curso';
+  };
+
+  const domainTabs = `<div class="cert-type-tabs no-print">
+    <button class="cert-tab" data-domain-tab="" aria-pressed="true">Todos los roles (${portfolios.length})</button>
+    ${domains.map((d) => `<button class="cert-tab" data-domain-tab="${esc(d)}" aria-pressed="false">${esc(d)} (${portfolios.filter((x) => x.domain === d).length})</button>`).join('')}
+  </div>`;
+
+  const hubCards = portfolios.map((pf) => {
+    const pfMetrics = pf.metricIds.map((id) => metrics.find((m) => m.id === id)).filter(Boolean);
+    const topClaims = pfMetrics.slice(0, 3).map((m) => `${m.claimedValue} (${m.company})`).join(' · ');
+    return `<article class="card portfolio-card" data-domain="${esc(pf.domain)}">
+      <div>
+        <span class="tag">${esc(pf.domain)}</span>
+        <h3><a href="${L(`/portafolios/${pf.slug}/`)}">${esc(pf.title)}</a></h3>
+        <p>${esc(pf.headline)}</p>
+        <p class="muted small"><strong>Impacto medible:</strong> ${esc(topClaims)}</p>
+      </div>
+      <div>
+        <ul class="portfolio-stats">
+          <li>${pf.experiences.length} experiencias alineadas</li>
+          <li>${pf.certIds.length} credenciales oficiales</li>
+          <li>${pf.metricIds.length} métricas validadas</li>
+          <li>${pf.projectSlugs.length} proyectos con evidencia</li>
+        </ul>
+        <p class="spacer-sm"><a class="btn primary" href="${L(`/portafolios/${pf.slug}/`)}">Abrir portafolio 360° →</a></p>
+      </div>
+    </article>`;
+  }).join('');
+
+  const hubBody = hero(
+    'Portafolios especializados por rol',
+    '12 expedientes diseñados con coherencia 360° para reclutadores y líderes técnicos: cada portafolio conecta en la misma línea la experiencia real en empresas, las certificaciones oficiales sobre ese tema, lo que se logró, las métricas auditadas y los proyectos con evidencias verificables.',
+    '/portafolios/'
+  ) + `<section class="wrap block">
+    ${domainTabs}
+    <div class="filters no-print">
+      <label>Filtrar por dominio tecnológico:
+        <select data-port-domain>
+          <option value="">Todos los dominios (${portfolios.length} portafolios)</option>
+          ${domains.map((d) => `<option value="${esc(d)}">${esc(d)}</option>`).join('')}
+        </select>
+      </label>
+    </div>
+    <div class="grid3" id="portfolios-grid">${hubCards}</div>
+  </section>`;
+
+  out('portafolios/index.html', layout({
+    title: 'Portafolios especializados por rol',
+    desc: '12 portafolios especializados de Mario Méndez (Data Engineer, Data Analyst, Data Scientist, DBA, AI Engineer, Automation, Full Stack, IT PM, Cloud/DevOps, Redes, Ciberseguridad y Cloud Security).',
+    route: '/portafolios/',
+    body: hubBody
+  }));
+
+  portfolios.forEach((pf) => {
+    const route = `/portafolios/${pf.slug}/`;
+    const pfMetrics = pf.metricIds.map((id) => metrics.find((m) => m.id === id)).filter(Boolean);
+    const pfProjects = pf.projectSlugs.map((slug) => projects.find((p) => p.slug === slug)).filter(Boolean);
+    const pfCerts = pf.certIds.map((id) => certs.find((c) => c.id === id)).filter(Boolean);
+
+    const factsHtml = [
+      [`${pf.experiences.length}`, 'experiencias empresariales en la línea del rol'],
+      [`${pfCerts.length}`, 'títulos, especialidades, diplomados y certificaciones del tema'],
+      [`${pfMetrics.length}`, 'logros y métricas auditadas con ruta de ejecución'],
+      [`${pfProjects.length}`, 'proyectos con evidencias para el reclutador']
+    ].map(([n, t]) => `<div class="fact"><b>${esc(n)}</b><span>${esc(t)}</span></div>`).join('');
+
+    const traceRows = (pf.traceabilityMatrix || []).map((row) => {
+      const m = metrics.find((x) => x.id === row.metricId);
+      const p = projects.find((x) => x.slug === row.projectSlug);
+      const rCerts = (row.certIds || []).map((cid) => certs.find((c) => c.id === cid)).filter(Boolean);
+      const certsList = rCerts.map((c) => `<li><strong>${esc(c.name)}</strong> <span class="muted small">(${esc(c.issuer)})</span></li>`).join('');
+      return `<tr>
+        <td><strong><a href="${L(`/experiencia/${row.companySlug}/`)}">${esc(row.company)}</a></strong><br><span class="small">${esc(row.experienceFocus)}</span></td>
+        <td><ul class="plain small">${certsList}</ul></td>
+        <td>${m ? `<span class="tag demostrada">${esc(m.claimedValue)}</span> <strong>${esc(m.title)}</strong><br>` : ''}<span class="small">${esc(row.achievementSummary)}</span></td>
+        <td>${p ? `<strong><a href="${L(`/proyectos/${p.slug}/`)}">${esc(p.name)}</a></strong><br>` : ''}<span class="small">${esc(row.evidenceSummary)}</span></td>
+      </tr>`;
+    }).join('');
+
+    const expCards = (pf.experiences || []).map((ex) => {
+      return `<article class="card">
+        <p class="period">${esc(ex.period)}</p>
+        <h3><a href="${L(`/experiencia/${ex.companySlug}/`)}">${esc(ex.company)}</a> · ${esc(ex.roleTitle)}</h3>
+        <p>${esc(ex.summary)}</p>
+        <h4>Logros y responsabilidades específicas en ${esc(pf.shortTitle)}:</h4>
+        ${ul(ex.achievements || [])}
+        ${(ex.technologies && ex.technologies.length) ? `<ul class="chips spacer-sm">${ex.technologies.map((t) => `<li>${esc(t)}</li>`).join('')}</ul>` : ''}
+        <p class="spacer-sm"><a href="${L(`/experiencia/${ex.companySlug}/`)}">Ver expediente completo de ${esc(ex.company)} →</a></p>
+      </article>`;
+    }).join('');
+
+    const metricCards = pfMetrics.map((m) => {
+      const rm = (m.roadmap || []).map((step) => `
+        <li class="roadmap-step">
+          <span class="step-phase">${esc(step.phase)}</span>
+          <span class="step-time">${esc(step.time)}</span>
+          <p class="step-desc">${esc(step.desc)}</p>
+        </li>
+      `).join('');
+      return `<article class="ach-card">
+        <div class="ach-header">
+          <div>
+            <h3>${esc(m.title)}</h3>
+            <div class="ach-meta">
+              <span><strong>Empresa:</strong> ${esc(m.company)}</span>
+              <span><strong>Proyecto:</strong> ${esc(m.project)}</span>
+              <span><strong>Período:</strong> ${esc(m.period)}</span>
+              ${m.duration ? `<span><strong>Duración:</strong> ${esc(m.duration)}</span>` : ''}
+            </div>
+          </div>
+          <div class="ach-claimed">${esc(m.claimedValue)}</div>
+        </div>
+        <p>${esc(m.definition)}</p>
+        <div class="before-after-grid">
+          <div class="ba-box before"><span class="ba-label">Línea base previa</span><p>${esc(m.baseline)}</p></div>
+          <div class="ba-box after"><span class="ba-label">Resultado verificado</span><p>${esc(m.result)}</p></div>
+        </div>
+        ${rm ? `<div class="roadmap-container"><div class="roadmap-title">Ruta y fases de implementación ("Cómo se logró"):</div><ul class="roadmap-steps">${rm}</ul></div>` : ''}
+        <div class="ach-footer">
+          <div><strong>Método de cálculo:</strong> ${esc(m.method)}</div>
+          <div><strong>Fuente de validación:</strong> ${esc(m.validationSource)}</div>
+        </div>
+      </article>`;
+    }).join('');
+
+    const projCards = pfProjects.map((p) => {
+      const co = exps.find((e) => e.slug === p.relatedCompany);
+      return `<article class="card">
+        <span class="tag">${esc(p.type)}</span>
+        <h3><a href="${L(`/proyectos/${p.slug}/`)}">${esc(p.name)}</a></h3>
+        <p class="muted small"><strong>Rol:</strong> ${esc(clean(p.role) || pf.shortTitle)} · <strong>Empresa:</strong> ${co ? esc(co.company) : 'Proyecto transversal'} · <strong>Estado:</strong> ${esc(p.status)}</p>
+        <p>${esc(p.summary)}</p>
+        <p><strong>Problema resuelto:</strong> ${esc(p.problem)}</p>
+        <p><strong>Arquitectura:</strong> ${esc(p.architecture)}</p>
+        ${p.contributions?.length ? `<h4>Qué se construyó y logró:</h4>${ul(p.contributions)}` : ''}
+        ${p.evidence?.length ? `<div class="evidence-box"><h4>Evidencias verificables para mostrar al reclutador</h4>${ul(p.evidence)}</div>` : ''}
+        ${p.technologies?.length ? `<ul class="chips spacer-sm">${p.technologies.map((t) => `<li>${esc(t)}</li>`).join('')}</ul>` : ''}
+        <p class="spacer-sm"><a class="btn small" href="${L(`/proyectos/${p.slug}/`)}">Abrir ficha técnica del proyecto →</a></p>
+      </article>`;
+    }).join('');
+
+    const certCards = pfCerts.map((c) => {
+      const group = getTypeGroup(c.type);
+      const docLabel = c.type === 'titulo'
+        ? 'Consultar título universitario oficial (PDF)'
+        : (c.type === 'merito'
+            ? 'Consultar carta de mérito oficial (PDF)'
+            : (c.type === 'especialidad'
+                ? 'Consultar certificado de especialidad (PDF)'
+                : (c.type === 'diplomado'
+                    ? 'Consultar diploma oficial (PDF)'
+                    : 'Consultar certificado oficial (PDF)')));
+      const docLink = c.documentUrl
+        ? `<p><a class="btn small" href="${L('/' + c.documentUrl)}" target="_blank" rel="noopener noreferrer">${docLabel}</a></p>`
+        : '';
+      const verifyLink = c.verifyUrl
+        ? `<p><a class="btn small ghost" href="${c.verifyUrl}" target="_blank" rel="noopener noreferrer">Verificar credencial en emisor oficial ↗</a></p>`
+        : '';
+      return `<article class="card cert">
+        ${c.badgeImage ? `<img src="${L(`/certifications/${c.badgeImage}`)}" alt="Insignia ${esc(c.name)}" width="96" height="96" loading="lazy">` : ''}
+        <span class="tag tag-${esc(group)}">${typeL[c.type] || esc(c.type)}</span>
+        <h3>${esc(c.name)}</h3>
+        <p>${esc(c.issuer)} · ${esc(c.category)}</p>
+        <p class="muted">${esc(c.date || '')}${c.credentialId ? ` · ID ${esc(c.credentialId)}` : ''}</p>
+        ${c.skills?.length ? `<p class="small">${esc(c.skills.join(', '))}</p>` : ''}
+        ${docLink}
+        ${verifyLink}
+      </article>`;
+    }).join('');
+
+    const switcher = `<ul class="role-switcher">${portfolios.map((other) => `<li><a href="${L(`/portafolios/${other.slug}/`)}"${other.slug === pf.slug ? ' aria-current="page"' : ''}>${esc(other.shortTitle)}</a></li>`).join('')}</ul>`;
+
+    const toc = `<nav class="toc no-print" aria-label="Secciones del portafolio">
+      <a href="#trazabilidad">1. Matriz de Coherencia 360°</a>
+      <a href="#experiencia-rol">2. Experiencia en el Rol (${pf.experiences.length})</a>
+      <a href="#metricas-rol">3. Logros y Métricas (${pfMetrics.length})</a>
+      <a href="#proyectos-rol">4. Proyectos y Evidencias (${pfProjects.length})</a>
+      <a href="#certificaciones-rol">5. Certificaciones del Rol (${pfCerts.length})</a>
+      <a href="#otros-roles">6. Otros Portafolios</a>
+    </nav>`;
+
+    const compCatHtml = (pf.competencyCategories && pf.competencyCategories.length)
+      ? `<h3 class="spacer-md">Competencias técnicas por dominio</h3>
+         <div class="tech-summary-grid">
+           ${pf.competencyCategories.map((cat) => `<article class="tech-item"><span class="tech-item-title">${esc(cat.title)}</span><p class="tech-item-desc">${esc(cat.desc)}</p></article>`).join('')}
+         </div>`
+      : '';
+
+    const langHtml = pf.languages
+      ? `<div class="card current-role-card spacer-md"><p><strong>Idiomas:</strong> ${esc(pf.languages)}</p></div>`
+      : '';
+
+    const body = `<section class="page-head"><div class="wrap">
+      <nav class="crumbs" aria-label="Ruta"><a href="${L('/')}">Inicio</a> › <a href="${L('/portafolios/')}">Portafolios por Rol</a> › <span>${esc(pf.shortTitle)}</span></nav>
+      <p class="eyebrow">${esc(pf.domain)} · ${esc(pf.yearsExperience)}</p>
+      <h1>${esc(pf.title)}</h1>
+      <p class="lead">${esc(pf.headline)}</p>
+      ${toc}
+      ${shareBar(route, pf.title)}
+    </div></section>
+    <div class="wrap exp">
+      <section class="block" id="resumen-rol">
+        <div class="value-box">
+          <h2>Propuesta de valor y perfil especializado</h2>
+          <p>${esc(pf.summary)}</p>
+          <p><strong>Impacto directo para la organización:</strong> ${esc(pf.valueProposition)}</p>
+        </div>
+        <div class="facts">${factsHtml}</div>
+        <h3>Competencias y stack tecnológico de este portafolio</h3>
+        <ul class="chips">${(pf.skills || []).map((s) => `<li>${esc(s)}</li>`).join('')}</ul>
+        ${compCatHtml}
+        ${langHtml}
+      </section>
+
+      <section class="block" id="trazabilidad">
+        <h2>1. Matriz de coherencia y trazabilidad 360° para el reclutador</h2>
+        <p class="muted">Esta tabla demuestra que cada competencia declarada en la experiencia está respaldada en la misma línea por certificaciones oficiales del tema, logros medibles con método de validación y proyectos reales con evidencias verificables:</p>
+        <div class="table-wrap">
+          <table class="trace-table">
+            <thead>
+              <tr>
+                <th>Experiencia y qué se ejecutó</th>
+                <th>Certificaciones del tema</th>
+                <th>Qué se logró y métrica auditada</th>
+                <th>Proyecto y evidencia para el reclutador</th>
+              </tr>
+            </thead>
+            <tbody>${traceRows}</tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="block" id="experiencia-rol">
+        <h2>2. Experiencia profesional alineada a ${esc(pf.shortTitle)}</h2>
+        <p class="muted">Desempeño comprobado ejecutando funciones directas de ${esc(pf.title)} en entornos reales:</p>
+        <div class="grid2">${expCards}</div>
+      </section>
+
+      <section class="block" id="metricas-rol">
+        <h2>3. Logros y métricas validadas en ${esc(pf.shortTitle)}</h2>
+        <p class="muted">Resultados cuantificables con línea base previa, resultado auditado, tiempo de ejecución y la ruta paso a paso de cómo se lograron:</p>
+        <div>${metricCards}</div>
+      </section>
+
+      <section class="block" id="proyectos-rol">
+        <h2>4. Proyectos ejecutados y evidencias demostrables al reclutador</h2>
+        <p class="muted">Proyectos técnicos vinculados directamente a la experiencia y métricas de este rol, incluyendo las evidencias listas para revisión en entrevista:</p>
+        <div class="grid2">${projCards}</div>
+      </section>
+
+      <section class="block" id="certificaciones-rol">
+        <h2>5. Título, especialidades, diplomados y certificaciones del rol (${pfCerts.length})</h2>
+        <p class="muted">Credenciales académicas y certificaciones internacionales que respaldan técnicamente las experiencias y proyectos de este portafolio:</p>
+        <div class="grid3 cert-cards">${certCards}</div>
+      </section>
+
+      <section class="block no-print" id="otros-roles">
+        <h2>6. Explorar los 12 portafolios especializados por rol</h2>
+        <p class="muted">Cambie de perfil especializado según la vacante o comité técnico evaluador:</p>
+        ${switcher}
+      </section>
+    </div>`;
+
+    const ld = {
+      '@context': 'https://schema.org',
+      '@type': 'ProfilePage',
+      mainEntity: { '@type': 'Person', name: profile.name, jobTitle: pf.title },
+      name: `${pf.title} | ${profile.name}`,
+      url: abs(route)
+    };
+    out(`portafolios/${pf.slug}/index.html`, layout({
+      title: pf.title,
+      desc: `${pf.headline} Portafolio especializado de ${profile.name} con experiencias, certificaciones, logros, métricas y proyectos con evidencia.`.slice(0, 300),
+      route,
+      body,
+      ld
+    }));
   });
 }
 
@@ -564,7 +886,7 @@ function ogImage() {
 fs.rmSync(DIST, { recursive: true, force: true });
 fs.cpSync(path.join(ROOT, 'public'), DIST, { recursive: true });
 if (site.minimal) { homeMinimal(); pagina404(); seo(); ogImage(); }
-else { home(); perfilEjecutivo(); perfilTecnico(); trayectoria(); experiencia(); logros(); certificaciones(); proyectos(); documentos(); pagina404(); seo(); ogImage(); }
+else { home(); portafolios(); perfilEjecutivo(); perfilTecnico(); trayectoria(); experiencia(); logros(); certificaciones(); proyectos(); documentos(); pagina404(); seo(); ogImage(); }
 fs.writeFileSync(path.join(DIST, '.nojekyll'), '');
 
 // Informe de pendientes generado desde los datos (docs/PENDIENTES.md).

@@ -1,31 +1,47 @@
 {
-    "slug":  "agente-ia-agricultura",
-    "public":  true,
-    "name":  "Agente de inteligencia artificial para agricultura",
-    "type":  "Inteligencia artificial y automatización",
-    "role":  "Desarrollador independiente (por confirmar)",
-    "status":  "En documentación",
-    "relatedCompany":  "",
-    "summary":  "Agente de inteligencia artificial orientado a la agricultura. La arquitectura se publicará cuando se confirmen los componentes realmente implementados.",
-    "problem":  "",
-    "architecture":  "",
-    "technologies":  [
-
-                     ],
-    "contributions":  [
-
-                      ],
-    "evidence":  [
-
-                 ],
-    "links":  [
-
-              ],
-    "pending":  [
-                    "Confirmar si Open WebUI, Gemini, Qdrant y SearXNG siguen formando parte de la implementación.",
-                    "Problema atendido y usuarios.",
-                    "Estado: prototipo o producto.",
-                    "Diagrama de arquitectura sanitizado.",
-                    "Repositorio y demostración."
-                ]
+  "slug": "agente-ia-agricultura",
+  "public": true,
+  "name": "AgroIARD - Plataforma de Agente de IA Multimodal con RAG, FastAPI, Docker y Bots API",
+  "type": "Agentes de IA Multimodal, RAG y Automatización (n8n / Bots)",
+  "role": "Desarrollador de Inteligencia Artificial y Automatización",
+  "status": "Prototipo funcional (2025)",
+  "relatedCompany": "astro-pico-duarte-carton",
+  "summary": "API RESTful contenerizada en Docker que fragmenta e indexa documentos PDF/TXT mediante embeddings en ChromaDB, ejecuta búsqueda semántica híbrida, orquesta múltiples LLMs en streaming y automatiza flujos con n8n y Telegram Bot API.",
+  "problem": "Necesidad de consultas técnicas fundamentadas en manuales especializados mediante una API contenerizada capaz de orquestar múltiples LLMs y flujos automatizados.",
+  "architecture": "Backend REST en FastAPI (Python, LangChain, SQLAlchemy, SQLite), motor de indexación vectorial (RAG) en ChromaDB para fragmentación y embeddings de PDF/TXT, enrutador multi-LLM en streaming (OpenAI API, Claude, Vertex AI Gemini, Ollama), despliegue con Docker y Docker Compose, y flujos complementarios de automatización con n8n, Node.js y Telegram Bot API.",
+  "technologies": [
+    "Python",
+    "FastAPI",
+    "LangChain",
+    "ChromaDB",
+    "OpenAI API",
+    "Anthropic Claude",
+    "Vertex AI (Gemini)",
+    "Ollama",
+    "SQLAlchemy",
+    "SQLite",
+    "Docker",
+    "Docker Compose",
+    "n8n",
+    "Node.js",
+    "Telegram Bot API",
+    "REST API"
+  ],
+  "contributions": [
+    "Desarrollo completo del backend REST en FastAPI y motor de indexación vectorial (RAG) en ChromaDB.",
+    "Implementación del enrutador multi-LLM en streaming con conmutación entre modelos cloud (OpenAI, Claude, Gemini) y locales (Ollama).",
+    "Contenerización completa del ecosistema mediante Docker y Docker Compose.",
+    "Diseño de flujos complementarios de automatización, publicación y notificación con n8n, Python, Node.js y Telegram Bot API."
+  ],
+  "evidence": [
+    "Prototipo funcional contenerizado en Docker con conmutación entre modelos cloud/locales y pipelines automatizados de publicación y notificación.",
+    "Código fuente verificable en repositorio local y GitHub (docker-compose.yml, FastAPI, servicios RAG/LLM y bots en github.com/morense-01).",
+    "Respaldado por credenciales oficiales en Google Vertex AI Studio (#4740827), LLMs (#4547214), Transformer & BERT (#4659320) y Anthropic MCP."
+  ],
+  "links": [
+    {
+      "title": "Repositorio y Código Fuente en GitHub (github.com/morense-01)",
+      "url": "https://github.com/morense-01"
+    }
+  ]
 }

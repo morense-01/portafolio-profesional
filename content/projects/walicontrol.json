@@ -1,30 +1,39 @@
 {
-    "slug":  "walicontrol",
-    "public":  true,
-    "name":  "WaliControl",
-    "type":  "Automatización",
-    "role":  "Desarrollador independiente (por confirmar)",
-    "status":  "En documentación",
-    "relatedCompany":  "",
-    "summary":  "Automatización del procesamiento de mensajes de voz hacia Google Sheets. Los componentes se publicarán cuando se confirmen.",
-    "problem":  "",
-    "architecture":  "",
-    "technologies":  [
-
-                     ],
-    "contributions":  [
-
-                      ],
-    "evidence":  [
-
-                 ],
-    "links":  [
-
-              ],
-    "pending":  [
-                    "Componentes implementados (transcripción, orquestación, hoja).",
-                    "Estado y alcance.",
-                    "Datos de ejemplo no sensibles y capturas.",
-                    "Repositorio."
-                ]
+  "slug": "walicontrol",
+  "public": true,
+  "name": "WaliControl - Agente de IA Conversacional para Registro Operativo y Contable por Voz",
+  "type": "Agentes de IA y Automatización Conversacional",
+  "role": "Desarrollador de Inteligencia Artificial y Automatización",
+  "status": "Funcional (2025)",
+  "relatedCompany": "astro-pico-duarte-carton",
+  "summary": "Recepción de notas de voz y texto vía webhook (WhatsApp Business), transcripción Speech-to-Text, clasificación de intención (ventas, inventario, gastos, reportes), extracción validada con JSON Schema y sincronización con Google Sheets y bases de datos.",
+  "problem": "El personal de campo y pequeños negocios perdían tiempo y omitían transacciones al registrar ventas, gastos e inventario manualmente en hojas de cálculo.",
+  "architecture": "Pipeline de procesamiento de lenguaje natural: recepción de audio y texto mediante Webhooks (WhatsApp Business), transcripción con Speech-to-Text API, clasificación de intención y extracción estructurada con LLM Structured Outputs (JSON Schema) en Python, almacenamiento en PostgreSQL / Pgvector / Redis y sincronización con Google Sheets API.",
+  "technologies": [
+    "Python",
+    "LLM Structured Outputs (JSON Schema)",
+    "Speech-to-Text API",
+    "Webhooks (WhatsApp Business)",
+    "Google Sheets API",
+    "PostgreSQL",
+    "Pgvector",
+    "Redis"
+  ],
+  "contributions": [
+    "Diseño del pipeline completo de procesamiento de lenguaje natural y orquestación de eventos por voz y texto.",
+    "Integración de webhooks de mensajería (WhatsApp Business), transcripción de audio y clasificación automática de intención (ventas, inventario, gastos, reportes).",
+    "Implementación de extracción estructurada con LLMs validada estrictamente contra JSON Schema.",
+    "Sincronización en tiempo real con Google Sheets API, PostgreSQL, Pgvector y Redis."
+  ],
+  "evidence": [
+    "Eliminación de la digitación manual en el registro diario de operaciones y estandarización del 100% de las entradas listas para análisis contable.",
+    "Repositorio y arquitectura técnica documentada en portafolio (github.com/morense-01).",
+    "Respaldado por certificaciones en Python, Anthropic MCP, Microsoft RAG y Google Cloud Generative AI."
+  ],
+  "links": [
+    {
+      "title": "Repositorio y Arquitectura en GitHub (github.com/morense-01)",
+      "url": "https://github.com/morense-01"
+    }
+  ]
 }

@@ -1,0 +1,2189 @@
+{
+  "_nota": "12 Portafolios Especializados por Rol con coherencia 360°: Experiencia -> Certificaciones -> Logros -> Métricas Auditadas -> Proyectos con Evidencias para el Reclutador.",
+  "items": [
+    {
+      "slug": "ingeniero-de-datos",
+      "title": "Ingeniero de Datos — Data Engineer",
+      "shortTitle": "Ingeniero de Datos",
+      "englishTitle": "Data Engineer",
+      "domain": "Datos y Analítica",
+      "yearsExperience": "12+ años en arquitectura de datos, pipelines ETL/ELT e integración transaccional",
+      "headline": "Arquitectura de pipelines ETL/ELT, Data Warehousing corporativo, ingesta XML/XSD en tiempo real e integración de bases de datos de misión crítica con SAP S/4HANA, Dynamics 365 y SQL Server.",
+      "summary": "Ingeniero en Sistemas de Computación con Especialidad en Tratamiento y Gestión de Datos y trayectoria comprobada diseñando, construyendo y operando arquitecturas de datos empresariales e industriales. Especialista en pipelines de ingesta automatizada (Python, SQL Server, SSIS, Microsoft Fabric), modelado dimensional Estrella/Copo de Nieve y reconciliación de datos financieros y productivos de alta disponibilidad.",
+      "valueProposition": "Transformo silos transaccionales complejos (ERP SAP, WMS, básculas industriales, facturación electrónica e-CF) en arquitecturas de datos confiables, gobernadas y automatizadas que reducen hasta un 85% la latencia de procesamiento y garantizan integridad referencial del 100%.",
+      "skills": [
+        "Python (ETL / Parsing XML-XSD)",
+        "SQL Server & T-SQL Avanzado",
+        "Microsoft Fabric & Data Warehouse",
+        "Pipelines ETL / ELT (SSIS / Automatizados)",
+        "Integración SAP ERP / S/4HANA",
+        "Modelado Estrella (Star Schema)",
+        "Azure Blob Storage & AWS S3",
+        "Gobierno y Calidad de Datos"
+      ],
+      "metricIds": [
+        "facturacion-electronica-sap-85",
+        "optimizacion-sql-unipago",
+        "automatizacion-procesos-madeco",
+        "resiliencia-datos-bcp-95"
+      ],
+      "projectSlugs": [
+        "integracion-ecf-sap-astro",
+        "data-warehouse-bi-automatizacion-madeco",
+        "optimizacion-dba-sql-cumplimiento-unipago"
+      ],
+      "certIds": [
+        "titulo-ingeniero-sistemas-oym",
+        "especialidad-tratamiento-datos",
+        "diplomado-inteligencia-de-negocios",
+        "diplomado-computo-en-la-nube",
+        "ms-data-analytics-path",
+        "ms-fabric-analytics",
+        "ms-clean-data-power-bi",
+        "fcs-curador-bases-datos",
+        "microsoft-sql-server-infraestructura",
+        "cisco-python-essentials",
+        "aws-certified-cloud-practitioner"
+      ],
+      "traceabilityMatrix": [
+        {
+          "company": "Astro - Pico Duarte Cartón",
+          "companySlug": "astro-pico-duarte-carton",
+          "experienceFocus": "Ingeniería de pipelines de datos en Python/SQL para ingesta, validación XSD y carga transaccional de comprobantes electrónicos (e-CF) hacia SAP ERP.",
+          "certIds": [
+            "titulo-ingeniero-sistemas-oym",
+            "especialidad-tratamiento-datos",
+            "cisco-python-essentials"
+          ],
+          "achievementSummary": "Eliminación de digitación manual y procesamiento desatendido por lotes con control de duplicidad e integridad contable.",
+          "metricId": "facturacion-electronica-sap-85",
+          "projectSlug": "integracion-ecf-sap-astro",
+          "evidenceSummary": "Arquitectura del motor parser XML/XSD en Python, bitácoras de auditoría SQL y conciliación de tiempos de lote (25 min a <3.5 min)."
+        },
+        {
+          "company": "MADECO",
+          "companySlug": "madeco",
+          "experienceFocus": "Construcción de Data Warehouse centralizado y pipelines ETL nocturnos/incrementales unificando SAP S/4HANA y Microsoft Dynamics 365.",
+          "certIds": [
+            "diplomado-inteligencia-de-negocios",
+            "ms-fabric-analytics",
+            "ms-clean-data-power-bi"
+          ],
+          "achievementSummary": "Unificación de fuentes financieras, inventarios y manufactura con liberación masiva de horas operativas de conciliación.",
+          "metricId": "automatizacion-procesos-madeco",
+          "projectSlug": "data-warehouse-bi-automatizacion-madeco",
+          "evidenceSummary": "Esquema estrella del Data Warehouse corporativo, flujos ETL programados y métricas de ahorro de +2,000 horas-hombre anuales."
+        },
+        {
+          "company": "UNIPAGO",
+          "companySlug": "unipago",
+          "experienceFocus": "Reingeniería de extracción masiva de datos regulatorios, particionamiento de tablas históricas y descarga de lecturas en clústeres Always On.",
+          "certIds": [
+            "fcs-curador-bases-datos",
+            "microsoft-sql-server-infraestructura",
+            "ms-data-analytics-path"
+          ],
+          "achievementSummary": "Aceleración de pipelines de reportería regulatoria para el Banco Central sin bloqueos sobre las tablas transaccionales en línea.",
+          "metricId": "optimizacion-sql-unipago",
+          "projectSlug": "optimizacion-dba-sql-cumplimiento-unipago",
+          "evidenceSummary": "Estadísticas de SQL Server Extended Events (reducción de +4h a <85 min) y arquitectura de Read-Only Routing en Always On."
+        },
+        {
+          "company": "ODS Logistics",
+          "companySlug": "ods-odw-logistics",
+          "experienceFocus": "Sincronización e ingesta continua de transacciones WMS y replicación híbrida de datos hacia repositorios inmutables en Azure Blob y AWS S3.",
+          "certIds": [
+            "diplomado-computo-en-la-nube",
+            "aws-certified-cloud-practitioner"
+          ],
+          "achievementSummary": "Protección e integridad de datos de almacén con ventana de recuperación garantizada y trazabilidad de cada movimiento de inventario.",
+          "metricId": "resiliencia-datos-bcp-95",
+          "projectSlug": "arquitectura-wms-rf-ods",
+          "evidenceSummary": "Bitácoras de replicación cloud híbrida Azure/AWS y auditorías de consistencia de inventario físico vs. sistema."
+        }
+      ],
+      "experiences": [
+        {
+          "companySlug": "astro-pico-duarte-carton",
+          "company": "Astro - Pico Duarte Cartón",
+          "roleTitle": "Arquitecto e Ingeniero de Datos & Integración ERP (Responsable de TI)",
+          "period": "2026 – Actual",
+          "summary": "Diseño e implementación de pipelines de datos industriales y financieros, integrando facturación electrónica (e-CF) con SAP ERP y estructurando el modelo relacional de trazabilidad de calidad en planta.",
+          "achievements": [
+            "Desarrollé en Python y SQL el pipeline ETL de lectura, validación de esquemas XSD y carga transaccional hacia SAP ERP, reduciendo en 85% el tiempo por lote.",
+            "Diseñé el modelo de datos relacional para centralizar el 100% de las pruebas físicas de laboratorio (ECT, Mullen, gramaje y humedad) con consultas en menos de 10 segundos.",
+            "Implementé validaciones de calidad de datos (Data Quality Gates) previniendo duplicidad de NCF/e-CF y discrepancias de impuestos antes de la contabilización."
+          ],
+          "technologies": [
+            "Python",
+            "SAP ERP",
+            "SQL",
+            "XML / XSD",
+            "ETL Pipelines",
+            "Data Quality"
+          ]
+        },
+        {
+          "companySlug": "madeco",
+          "company": "MADECO",
+          "roleTitle": "Líder de Ingeniería de Datos, BI e Integración ERP (Gerente de TI)",
+          "period": "Feb 2022 – Ene 2024",
+          "summary": "Consolidación de datos corporativos mediante el diseño de un Data Warehouse en SQL Server que integró las operaciones de SAP S/4HANA y Microsoft Dynamics 365.",
+          "achievements": [
+            "Construí pipelines ETL automatizados para extraer, limpiar y transformar datos de ventas, producción fabril, compras y finanzas cada noche e incrementalmente.",
+            "Ahorré más de 2,000 horas-hombre anuales eliminando la conciliación manual de hojas de cálculo entre departamentos.",
+            "Garanticé el 99.9% de disponibilidad y consistencia en las bases de datos de los sistemas ERP durante el 100% de los cierres contables mensuales."
+          ],
+          "technologies": [
+            "SQL Server",
+            "SAP S/4HANA",
+            "Dynamics 365",
+            "Microsoft Fabric",
+            "PowerShell",
+            "Star Schema"
+          ]
+        },
+        {
+          "companySlug": "unipago",
+          "company": "UNIPAGO",
+          "roleTitle": "Especialista en Ingeniería de Datos Transaccionales y Optimización SQL",
+          "period": "Mar 2020 – Ene 2022",
+          "summary": "Ingeniería de datos de alto volumen y optimización de pipelines de extracción regulatoria para el sistema de seguridad social y el Banco Central (BCRD).",
+          "achievements": [
+            "Reduje en un 65% el tiempo de generación de archivos regulatorios masivos (de más de 4 horas a menos de 85 minutos) mediante particionamiento de tablas e indexación avanzada.",
+            "Implementé descarga de cargas analíticas (Read-Only Routing) sobre réplicas secundarias Always On para aislar el procesamiento OLTP del procesamiento OLAP/regulatorio.",
+            "Estructuré pipelines de replicación híbrida hacia la nube logrando un RPO inferior a 5 minutos."
+          ],
+          "technologies": [
+            "SQL Server Always On",
+            "Transact-SQL",
+            "Table Partitioning",
+            "ETL Regulatorio",
+            "Azure Data"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "analista-de-datos",
+      "title": "Analista de Datos — Data Analyst",
+      "shortTitle": "Analista de Datos",
+      "englishTitle": "Data Analyst",
+      "domain": "Datos y Analítica",
+      "yearsExperience": "12+ años en Inteligencia de Negocios (BI), KPIs ejecutivos y control estadístico",
+      "headline": "Inteligencia de Negocios (BI), modelado semántico con DAX en Power BI, control estadístico de procesos industriales y analítica operativa para toma de decisiones directivas.",
+      "summary": "Analista de Datos e Ingeniero en Sistemas con Diplomado en Inteligencia de Negocios (BI), Especialidad en Tratamiento de Datos y credenciales verificadas de Microsoft Learn en Power BI, DAX y Microsoft Fabric. Experto en traducir datos complejos de manufactura, logística WMS, finanzas y soporte TI en tableros interactivos que impulsan ahorros y eficiencia medible.",
+      "valueProposition": "Convierto datos operativos dispersos en modelos semánticos gobernados y dashboards ejecutivos en tiempo real (Power BI / DAX / SQL), logrando digitalizar el 100% de controles industriales y elevar un 30% la exactitud de inventarios.",
+      "skills": [
+        "Power BI & Modelado Semántico",
+        "Fórmulas DAX Avanzadas",
+        "Power Query (M) & Limpieza de Datos",
+        "SQL Analítico & SSRS",
+        "Control Estadístico de Procesos (SPC)",
+        "KPIs Ejecutivos (OTIF, MTTR, SLA, OEE)",
+        "Microsoft Fabric Analytics",
+        "Storytelling con Datos para Dirección"
+      ],
+      "metricIds": [
+        "sistema-control-calidad-industrial",
+        "precision-inventario-30",
+        "ecosistema-ti-productividad",
+        "automatizacion-procesos-madeco"
+      ],
+      "projectSlugs": [
+        "sistema-calidad-industrial-astro",
+        "data-warehouse-bi-automatizacion-madeco",
+        "arquitectura-wms-rf-ods",
+        "walicontrol"
+      ],
+      "certIds": [
+        "titulo-ingeniero-sistemas-oym",
+        "especialidad-tratamiento-datos",
+        "diplomado-inteligencia-de-negocios",
+        "ms-data-analytics-path",
+        "ms-dax-formulas",
+        "ms-clean-data-power-bi",
+        "ms-fabric-analytics",
+        "fcs-analista-datos",
+        "fcs-curador-bases-datos",
+        "ms-copilot-productivity"
+      ],
+      "traceabilityMatrix": [
+        {
+          "company": "Astro - Pico Duarte Cartón",
+          "companySlug": "astro-pico-duarte-carton",
+          "experienceFocus": "Análisis estadístico de calidad industrial (ECT, Mullen, humedad, gramaje) y analítica de desempeño del ecosistema de soporte TI en Power BI.",
+          "certIds": [
+            "diplomado-inteligencia-de-negocios",
+            "ms-dax-formulas",
+            "fcs-analista-datos"
+          ],
+          "achievementSummary": "Digitalización del 100% de registros de calidad con reducción del 60% en tiempos de consulta y +40% de productividad en soporte TI.",
+          "metricId": "sistema-control-calidad-industrial",
+          "projectSlug": "sistema-calidad-industrial-astro",
+          "evidenceSummary": "Dashboards de curvas de tolerancia por turno/lote, certificados automáticos de calidad y tableros de SLA/MTTR de TI."
+        },
+        {
+          "company": "ODS Logistics",
+          "companySlug": "ods-odw-logistics",
+          "experienceFocus": "Diseño de tableros de control logístico en Power BI y SSRS para auditoría de conteos cíclicos, rotación de SKUs y productividad de picking por hora.",
+          "certIds": [
+            "ms-data-analytics-path",
+            "ms-clean-data-power-bi",
+            "especialidad-tratamiento-datos"
+          ],
+          "achievementSummary": "Identificación de desviaciones de ubicación y mejora sostenida del +30% en la exactitud del inventario físico vs. sistema.",
+          "metricId": "precision-inventario-30",
+          "projectSlug": "arquitectura-wms-rf-ods",
+          "evidenceSummary": "Reportes auditados de conteos cíclicos en Power BI, métricas de tiempos de despacho y trazabilidad por pallet."
+        },
+        {
+          "company": "MADECO",
+          "companySlug": "madeco",
+          "experienceFocus": "Desarrollo de modelos semánticos DAX y tableros ejecutivos para Dirección General, Finanzas, Ventas y Producción sobre SAP y Dynamics 365.",
+          "certIds": [
+            "ms-fabric-analytics",
+            "ms-dax-formulas",
+            "diplomado-inteligencia-de-negocios"
+          ],
+          "achievementSummary": "Automatización de reportería gerencial y liberación de más de 2,000 horas-hombre anuales en preparación de informes.",
+          "metricId": "automatizacion-procesos-madeco",
+          "projectSlug": "data-warehouse-bi-automatizacion-madeco",
+          "evidenceSummary": "Catálogo de dashboards corporativos con Row-Level Security (RLS) y actas de comité directivo."
+        }
+      ],
+      "experiences": [
+        {
+          "companySlug": "astro-pico-duarte-carton",
+          "company": "Astro - Pico Duarte Cartón",
+          "roleTitle": "Líder de Analítica Industrial y Control de Gestión TI",
+          "period": "2026 – Actual",
+          "summary": "Implementación de analítica de calidad en manufactura de corrugado y tableros de productividad operativa en Power BI.",
+          "achievements": [
+            "Digitalicé el 100% de las fichas de control de calidad industrial, reduciendo el tiempo de consulta histórica de 30 minutos a menos de 10 segundos.",
+            "Desarrollé tableros en Power BI para monitorear MTTR, cumplimiento de SLA y carga operativa, impulsando un +40% de productividad en el área de TI.",
+            "Automaticé la emisión de reportes de no conformidad y certificados estadísticos de calidad para clientes corporativos."
+          ],
+          "technologies": [
+            "Power BI",
+            "DAX",
+            "SQL",
+            "Control Estadístico",
+            "Reportería Automatizada"
+          ]
+        },
+        {
+          "companySlug": "ods-odw-logistics",
+          "company": "ODS Logistics",
+          "roleTitle": "Analista Senior de Datos Logísticos y BI (Consultor TI)",
+          "period": "Feb 2024 – Jun 2026",
+          "summary": "Analítica operativa de almacén de más de 30,000 ft², monitoreo de exactitud de inventarios y KPIs de cumplimiento logístico.",
+          "achievements": [
+            "Construí los tableros de auditoría de inventario cíclico en Power BI y SSRS que respaldaron el incremento del +30% en precisión de existencias.",
+            "Analicé los tiempos de respuesta a incidentes de terminales RF e impresoras Zebra, guiando la reducción del 35% en tiempos de atención técnica."
+          ],
+          "technologies": [
+            "Power BI",
+            "SSRS",
+            "SQL",
+            "WMS Analytics",
+            "KPIs Logísticos"
+          ]
+        },
+        {
+          "companySlug": "madeco",
+          "company": "MADECO",
+          "roleTitle": "Arquitecto de Inteligencia de Negocios (BI) y Reportería Corporativa",
+          "period": "Feb 2022 – Ene 2024",
+          "summary": "Dirección de la estrategia de Business Intelligence unificando indicadores financieros, comerciales y fabriles para la alta gerencia.",
+          "achievements": [
+            "Diseñé modelos semánticos en Power BI con fórmulas DAX avanzadas para análisis de rentabilidad, rotación de inventario y ejecución presupuestaria.",
+            "Eliminé la reportería manual en Excel ahorrando más de 2,000 horas anuales en toda la organización."
+          ],
+          "technologies": [
+            "Power BI",
+            "DAX",
+            "Power Query",
+            "SQL Server",
+            "SAP S/4HANA",
+            "Dynamics 365"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "cientifico-de-datos",
+      "title": "Científico de Datos — Data Scientist",
+      "shortTitle": "Científico de Datos",
+      "englishTitle": "Data Scientist",
+      "domain": "Datos y Analítica",
+      "yearsExperience": "10+ años en modelado predictivo, analítica avanzada, telemetría e IA aplicada",
+      "headline": "Modelado predictivo de capacidad y fallas, detección estadística de anomalías, visión artificial y experimentación con modelos Transformer, BERT y LLMs sobre datos industriales y financieros.",
+      "summary": "Científico de Datos e Ingeniero en Sistemas con sólida formación en modelos de lenguaje (LLMs), arquitecturas Transformer/BERT, Visión por Computadora en Azure y Vertex AI Studio (Google Cloud). Combino estadística aplicada, Python y telemetría histórica para anticipar cuellos de botella en infraestructura crítica, detectar anomalías en manufactura y asistir diagnósticos técnicos.",
+      "valueProposition": "Aplico ciencia de datos, analítica predictiva e inteligencia artificial para anticipar incidentes antes de que impacten el negocio, reduciendo un 70% el downtime no planificado y acelerando un 40% el diagnóstico de fallas.",
+      "skills": [
+        "Python para Ciencia de Datos",
+        "Modelado Predictivo de Capacidad y Fallas",
+        "Modelos Transformer, BERT y LLMs",
+        "Detección de Anomalías y Series Temporales",
+        "Computer Vision (Azure AI / Google Cloud)",
+        "Retrieval-Augmented Generation (RAG)",
+        "Vertex AI Studio & Prompt Engineering",
+        "IA Responsable y Evaluación de Modelos"
+      ],
+      "metricIds": [
+        "reduccion-downtime-70",
+        "ecosistema-ti-productividad",
+        "sistema-control-calidad-industrial",
+        "eficiencia-operativa-30"
+      ],
+      "projectSlugs": [
+        "ecosistema-ia-soporte-astro",
+        "agente-ia-agricultura",
+        "telemetria-predictiva-monitoreo-domicem",
+        "sistema-calidad-industrial-astro"
+      ],
+      "certIds": [
+        "titulo-ingeniero-sistemas-oym",
+        "especialidad-tratamiento-datos",
+        "google-transformer-bert",
+        "google-large-language-models",
+        "google-vertex-ai-studio",
+        "google-image-captioning",
+        "google-image-generation",
+        "ms-computer-vision-azure",
+        "ms-rag-fundamentals",
+        "google-responsible-ai",
+        "cisco-python-essentials"
+      ],
+      "traceabilityMatrix": [
+        {
+          "company": "UNIPAGO",
+          "companySlug": "unipago",
+          "experienceFocus": "Análisis de series temporales de rendimiento y modelos predictivos de saturación de almacenamiento SAN, CPU y colas transaccionales.",
+          "certIds": [
+            "titulo-ingeniero-sistemas-oym",
+            "especialidad-tratamiento-datos",
+            "cisco-python-essentials"
+          ],
+          "achievementSummary": "Transición de operación reactiva a predicción temprana de incidentes con umbrales dinámicos (75%/85%).",
+          "metricId": "reduccion-downtime-70",
+          "projectSlug": "optimizacion-dba-sql-cumplimiento-unipago",
+          "evidenceSummary": "Comparativa auditada de minutos de indisponibilidad anual (-70% en downtime no planificado y 99.99% de estabilidad)."
+        },
+        {
+          "company": "Astro - Pico Duarte Cartón",
+          "companySlug": "astro-pico-duarte-carton",
+          "experienceFocus": "Clasificación inteligente de incidencias, recuperación semántica de soluciones (RAG) y control estadístico de tolerancias físicas en laboratorio.",
+          "certIds": [
+            "google-transformer-bert",
+            "google-large-language-models",
+            "ms-rag-fundamentals",
+            "google-responsible-ai"
+          ],
+          "achievementSummary": "Aumento del 40% en capacidad resolutiva de TI y detección inmediata de desviaciones fuera de norma en pruebas de resistencia de cartón.",
+          "metricId": "ecosistema-ti-productividad",
+          "projectSlug": "ecosistema-ia-soporte-astro",
+          "evidenceSummary": "Motor de asistencia diagnóstica con IA, base vectorial de causas raíz y métricas de ahorro proyectado de +1,200 horas/año."
+        },
+        {
+          "company": "Dominicana de Cales (DOMICEM)",
+          "companySlug": "dominicana-de-cales",
+          "experienceFocus": "Captura y análisis de telemetría de básculas camioneras y enlaces industriales para predicción de caídas y optimización de despacho.",
+          "certIds": [
+            "especialidad-integrador-iot",
+            "ms-computer-vision-azure",
+            "google-vertex-ai-studio"
+          ],
+          "achievementSummary": "Incremento del 30% en eficiencia operativa y cero paradas imprevistas de despacho por fallas de conectividad.",
+          "metricId": "eficiencia-operativa-30",
+          "projectSlug": "telemetria-predictiva-monitoreo-domicem",
+          "evidenceSummary": "Bitácoras de telemetría de planta continua 24/7 y reportes de correlación de despacho industrial."
+        }
+      ],
+      "experiences": [
+        {
+          "companySlug": "astro-pico-duarte-carton",
+          "company": "Astro - Pico Duarte Cartón",
+          "roleTitle": "Líder de Ciencia de Datos Aplicada e Inteligencia Artificial Industrial",
+          "period": "2026 – Actual",
+          "summary": "Aplicación de modelos de lenguaje, recuperación semántica (RAG) y análisis estadístico multivariable para optimizar el soporte técnico y el control de calidad en planta.",
+          "achievements": [
+            "Integré modelos de IA generativa y búsqueda contextual sobre el historial de incidencias de planta, incrementando la productividad técnica en un 40%.",
+            "Implementé algoritmos de validación estadística en tiempo real sobre parámetros de resistencia ECT, Mullen y humedad para detectar anomalías de producción al instante."
+          ],
+          "technologies": [
+            "Python",
+            "LLMs",
+            "RAG",
+            "Control Estadístico",
+            "Power BI",
+            "Análisis de Anomalías"
+          ]
+        },
+        {
+          "companySlug": "unipago",
+          "company": "UNIPAGO",
+          "roleTitle": "Especialista en Analítica Predictiva de Capacidad y Rendimiento",
+          "period": "Mar 2020 – Ene 2022",
+          "summary": "Modelado de comportamiento histórico de infraestructura financiera para prevenir saturación transaccional e indisponibilidad.",
+          "achievements": [
+            "Diseñé el esquema de monitoreo predictivo basado en tendencias de crecimiento de IOPS, memoria y almacenamiento, logrando reducir en 70% el downtime no planificado.",
+            "Analicé planes de ejecución y patrones de carga en SQL Server para reducir en 65% los tiempos de procesamiento regulatorio."
+          ],
+          "technologies": [
+            "Análisis Predictivo",
+            "Series Temporales",
+            "SQL Server Profiler",
+            "Telemetría de Capacidad"
+          ]
+        },
+        {
+          "companySlug": "dominicana-de-cales",
+          "company": "Dominicana de Cales",
+          "roleTitle": "Analista de Telemetría Operativa y Eficiencia Industrial",
+          "period": "2018 – 2020",
+          "summary": "Explotación de datos de sensores, básculas camioneras y telemetría de red en planta industrial 24/7.",
+          "achievements": [
+            "Estructuré la recolección automatizada de datos de pesaje y disponibilidad de enlaces, elevando un 30% la eficiencia operativa.",
+            "Desarrollé el prototipo funcional de Agente de IA para Agricultura orientado al diagnóstico agrotécnico asistido por modelos de lenguaje."
+          ],
+          "technologies": [
+            "Telemetría Industrial",
+            "Python",
+            "PowerShell",
+            "Modelos Predictivos"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "administrador-bases-de-datos",
+      "title": "Administrador de Bases de Datos — DBA",
+      "shortTitle": "Administrador DBA",
+      "englishTitle": "Database Administrator (DBA)",
+      "domain": "Datos y Analítica",
+      "yearsExperience": "15+ años en administración de motores SQL Server, alta disponibilidad Always On y seguridad de datos",
+      "headline": "Administración avanzada de SQL Server, clústeres de alta disponibilidad Always On, afinamiento de consultas (Query Tuning), cifrado TDE y recuperación ante desastres con RPO < 5 minutos.",
+      "summary": "Administrador de Bases de Datos (DBA) e Ingeniero en Sistemas con más de 15 años garantizando la integridad, rendimiento, seguridad y disponibilidad continua (99.9%–99.99%) de bases de datos transaccionales en banca/seguridad social (UNIPAGO), manufactura (MADECO, Astro) y logística (ODS). Experto en SQL Server Always On, particionamiento de tablas masivas, Transparent Data Encryption (TDE) y planes BCP/DRP auditados.",
+      "valueProposition": "Aseguro que las bases de datos de misión crítica operen sin bloqueos, con tiempos de respuesta óptimos (-65% en cargas masivas), cero hallazgos en auditorías regulatorias y recuperación garantizada ante cualquier contingencia (RPO < 5 min).",
+      "skills": [
+        "Microsoft SQL Server (Enterprise / Standard)",
+        "Always On Availability Groups & Failover Cluster",
+        "Query Tuning, Índices & Particionamiento",
+        "Transparent Data Encryption (TDE) & RBAC",
+        " Estrategias de Backup 3-2-1 e Inmutabilidad",
+        "Bases de Datos para SAP S/4HANA & Dynamics 365",
+        "Monitoreo con Extended Events & Profiler",
+        "Recuperación ante Desastres (RTO / RPO)"
+      ],
+      "metricIds": [
+        "optimizacion-sql-unipago",
+        "resiliencia-drp-unipago",
+        "estabilidad-erp-madeco",
+        "auditorias-cero-hallazgos"
+      ],
+      "projectSlugs": [
+        "optimizacion-dba-sql-cumplimiento-unipago",
+        "data-warehouse-bi-automatizacion-madeco",
+        "sistema-calidad-industrial-astro"
+      ],
+      "certIds": [
+        "titulo-ingeniero-sistemas-oym",
+        "especialidad-tratamiento-datos",
+        "microsoft-sql-server-infraestructura",
+        "fcs-curador-bases-datos",
+        "mcsa-windows-server",
+        "eset-curso-backup-continuidad",
+        "fcs-seguridad-informatica-servidores",
+        "diplomado-sistemas-informaticos"
+      ],
+      "traceabilityMatrix": [
+        {
+          "company": "UNIPAGO",
+          "companySlug": "unipago",
+          "experienceFocus": "Tuning de procedimientos almacenados, rediseño de índices clusterizados/filtrados, particionamiento histórico y Read-Only Routing en SQL Server Always On.",
+          "certIds": [
+            "microsoft-sql-server-infraestructura",
+            "fcs-curador-bases-datos",
+            "especialidad-tratamiento-datos"
+          ],
+          "achievementSummary": "Reducción del 65% en tiempos de generación de reportes para el Banco Central y RPO < 5 minutos con cifrado TDE.",
+          "metricId": "optimizacion-sql-unipago",
+          "projectSlug": "optimizacion-dba-sql-cumplimiento-unipago",
+          "evidenceSummary": "Métricas de SQL Server Extended Events (de >4h a <85 min), actas de simulacro de failover Always On y dictámenes de 3 auditorías con 0 hallazgos."
+        },
+        {
+          "company": "MADECO",
+          "companySlug": "madeco",
+          "experienceFocus": "Gobernanza, afinamiento de rendimiento, segregación de discos (datos/logs/tempdb) y mantenimiento preventivo de las bases de datos de SAP S/4HANA y Dynamics 365.",
+          "certIds": [
+            "mcsa-windows-server",
+            "microsoft-sql-server-infraestructura",
+            "eset-curso-backup-continuidad"
+          ],
+          "achievementSummary": "Eliminación de bloqueos en cierres contables y 99.9% de disponibilidad sostenida durante 24 meses.",
+          "metricId": "estabilidad-erp-madeco",
+          "projectSlug": "data-warehouse-bi-automatizacion-madeco",
+          "evidenceSummary": "Bitácoras de uptime de motores de base de datos ERP y cumplimiento del 100% de calendarios de cierre financiero."
+        },
+        {
+          "company": "Astro - Pico Duarte Cartón",
+          "companySlug": "astro-pico-duarte-carton",
+          "experienceFocus": "Diseño de base de datos relacional para control de calidad y automatización de respaldos con verificación criptográfica SHA-256.",
+          "certIds": [
+            "titulo-ingeniero-sistemas-oym",
+            "fcs-seguridad-informatica-servidores"
+          ],
+          "achievementSummary": "Consultas de auditoría histórica en menos de 10 segundos y RPO < 15 minutos con pruebas de restauración en caliente.",
+          "metricId": "disponibilidad-infraestructura-astro",
+          "projectSlug": "sistema-calidad-industrial-astro",
+          "evidenceSummary": "Esquema relacional en producción, scripts de backup verificado y tiempos de respuesta de consultas de laboratorio."
+        }
+      ],
+      "experiences": [
+        {
+          "companySlug": "unipago",
+          "company": "UNIPAGO",
+          "roleTitle": "Administrador Senior de Bases de Datos (DBA) y Resiliencia Transaccional",
+          "period": "Mar 2020 – Ene 2022",
+          "summary": "Administración de clústeres SQL Server de misión crítica para el procesamiento nacional de pensiones y seguridad social.",
+          "achievements": [
+            "Afiné consultas complejas, índices y particionamiento de tablas logrando una reducción del 65% en el tiempo de reportería regulatoria masiva.",
+            "Configuré grupos de disponibilidad Always On con réplica síncrona local y asíncrona en Azure, reduciendo en 95% la exposición a pérdida de datos (RPO < 5 min).",
+            "Implementé Transparent Data Encryption (TDE), segregación de funciones RBAC y auditoría inmutable, aprobando 3 auditorías regulatorias con cero hallazgos."
+          ],
+          "technologies": [
+            "SQL Server Always On",
+            "T-SQL Tuning",
+            "TDE Encryption",
+            "Failover Clustering",
+            "Extended Events"
+          ]
+        },
+        {
+          "companySlug": "madeco",
+          "company": "MADECO",
+          "roleTitle": "Líder de Administración de Bases de Datos Corporativas y ERP (Gerente de TI)",
+          "period": "Feb 2022 – Ene 2024",
+          "summary": "Administración integral de los motores de bases de datos que soportan SAP S/4HANA, Microsoft Dynamics 365 y el Data Warehouse corporativo.",
+          "achievements": [
+            "Resolví los cuellos de botella de concurrencia e I/O segregando volúmenes SAN para datos, logs transaccionales y tempdb, alcanzando un 99.9% de disponibilidad.",
+            "Automaticé los planes de mantenimiento de índices, actualización de estadísticas y verificación de integridad (DBCC CHECKDB) fuera de horario hábil."
+          ],
+          "technologies": [
+            "SQL Server",
+            "SAP HANA / S/4HANA DB",
+            "SAN Storage",
+            "Backup & Recovery",
+            "PowerShell DBA"
+          ]
+        },
+        {
+          "companySlug": "astro-pico-duarte-carton",
+          "company": "Astro - Pico Duarte Cartón",
+          "roleTitle": "Arquitecto y Administrador de Bases de Datos Industriales",
+          "period": "2026 – Actual",
+          "summary": "Modelado, administración y respaldo inmutable de las bases de datos de calidad industrial, facturación electrónica y gestión de TI.",
+          "achievements": [
+            "Modelé y desplegué la base de datos central de control de calidad permitiendo búsquedas sobre miles de lotes en menos de 10 segundos.",
+            "Implementé respaldos automatizados con validación de hash y pruebas periódicas de restauración logrando 99.9% de disponibilidad."
+          ],
+          "technologies": [
+            "Bases de Datos Relacionales",
+            "SQL",
+            "Automatización de Backups",
+            "Integridad Transaccional"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "desarrollador-ia-automatizacion-n8n",
+      "title": "Desarrollador de Inteligencia Artificial y Automatización (n8n y Agentes de IA)",
+      "shortTitle": "Desarrollador IA, n8n y Agentes",
+      "englishTitle": "AI & Automation Developer (n8n & AI Agents)",
+      "domain": "IA, Automatización y Desarrollo",
+      "yearsExperience": "Ingeniero en Sistemas de Computación · Especialista en Agentes de IA, MCP, RAG, n8n e Integración Empresarial",
+      "headline": "Diseño, desarrollo e implementación de agentes de inteligencia artificial, automatización con n8n y Power Automate, arquitecturas RAG y conectores Model Context Protocol (MCP) integrando OpenAI API, Claude y Vertex AI Gemini con Python, FastAPI, Node.js, SQL Server, PostgreSQL y SAP ERP.",
+      "summary": "Ingeniero en Sistemas de Computación especializado en diseño, desarrollo e implementación de agentes de inteligencia artificial, automatización de procesos operativos e integración de sistemas empresariales. Experiencia práctica desarrollando flujos automatizados, arquitecturas RAG y conectores con Model Context Protocol (MCP), integrando modelos LLM (OpenAI API, Claude, Vertex AI Gemini) con Python, JavaScript, Node.js, FastAPI, REST APIs, webhooks, SQL Server, PostgreSQL y SAP ERP. Historial comprobado automatizando facturación electrónica (e-CF/DGII), extracción estructurada de datos y reportes financieros, reduciendo tiempos de procesamiento en 85% y errores de transcripción a 0%.",
+      "valueProposition": "Reduzco en 85% los tiempos de procesamiento contable (e-CF/DGII hacia SAP ERP con 0% error de transcripción), incremento en 40% la productividad técnica mediante agentes MCP/RAG (+1,200h anuales liberadas) y construyo pipelines conversacionales y multimodales con Python, FastAPI, Docker, n8n, ChromaDB y Pgvector.",
+      "skills": [
+        "Agentes de IA & Model Context Protocol (MCP)",
+        "Retrieval-Augmented Generation (RAG)",
+        "n8n Workflows & Power Automate",
+        "OpenAI API, Claude API, Vertex AI (Gemini) & Ollama",
+        "LLM Structured Outputs (JSON Schema)",
+        "Python (FastAPI, LangChain, SQLAlchemy, Pydantic)",
+        "JavaScript (ES6+) & Node.js",
+        "Webhooks (WhatsApp Business & Telegram Bot API)",
+        "ChromaDB, Pgvector, PostgreSQL, SQL Server & Redis",
+        "SAP ERP Connector & Facturación Electrónica (e-CF / DGII)",
+        "Docker, Docker Compose, Linux (Ubuntu/RHEL), AWS & Azure"
+      ],
+      "competencyCategories": [
+        {
+          "title": "IA y Agentes Inteligentes",
+          "desc": "Agentes de IA, Model Context Protocol (MCP), Retrieval-Augmented Generation (RAG), ingeniería de prompts (Prompt Engineering), LLM Structured Outputs (JSON Schema), OpenAI API, Anthropic Claude API, Google Vertex AI (Gemini), Ollama, clasificación de intención y extracción de entidades."
+        },
+        {
+          "title": "Automatización e Integración",
+          "desc": "Diseño de flujos de automatización (workflows), integración con n8n, Power Automate, webhooks, orquestación de eventos, transformación de datos (JSON, XML, XSD), automatización de procesos contables/operativos y bots conversacionales (WhatsApp Business Webhook, Telegram Bot API)."
+        },
+        {
+          "title": "Desarrollo y Scripting",
+          "desc": "Python (FastAPI, LangChain, SQLAlchemy, Pydantic), JavaScript (ES6+), Node.js, SQL (T-SQL), PowerShell, Bash, HTML5, CSS3, desarrollo de aplicaciones web progresivas (PWA)."
+        },
+        {
+          "title": "APIs y Servicios Externos",
+          "desc": "Diseño y consumo de APIs RESTful, autenticación y seguridad de integraciones, Speech-to-Text API, Google Sheets API, conectores hacia SAP ERP (S/4HANA), comprobantes fiscales electrónicos (e-CF / DGII) y servicios de búsqueda web."
+        },
+        {
+          "title": "Bases de Datos y Almacenamiento",
+          "desc": "Microsoft SQL Server, PostgreSQL, MySQL, Oracle, SQLite, bases de datos vectoriales y búsqueda semántica (ChromaDB, Pgvector, embeddings), Redis, diseño de Data Warehouse y pipelines ETL."
+        },
+        {
+          "title": "Infraestructura, Cloud y Despliegue",
+          "desc": "Docker, Docker Compose, GNU/Linux (Ubuntu, RHEL), Windows Server, AWS (Certified Cloud Practitioner), Microsoft Azure, Google Cloud Platform (GCP), Git, GitHub y monitoreo de servicios en producción."
+        },
+        {
+          "title": "Calidad, Seguridad y Metodologías",
+          "desc": "Validación de esquemas de datos (JSON Schema / XSD), pruebas funcionales e integrales, control de errores y trazabilidad (logging/auditoría), seguridad de datos (ISO 27001, NIST CSF, Fortinet NSE 4) y documentación técnica."
+        }
+      ],
+      "languages": "Español: Nativo | Inglés: Básico / Técnico (lectura comprensiva de documentación técnica, APIs, repositorios y herramientas de desarrollo; nivel conversacional A1-A2).",
+      "metricIds": [
+        "facturacion-electronica-sap-85",
+        "ecosistema-ti-productividad",
+        "sistema-control-calidad-industrial",
+        "automatizacion-procesos-madeco",
+        "auditorias-cero-hallazgos"
+      ],
+      "projectSlugs": [
+        "integracion-ecf-sap-astro",
+        "ecosistema-ia-soporte-astro",
+        "walicontrol",
+        "agente-ia-agricultura"
+      ],
+      "certIds": [
+        "titulo-ingeniero-sistemas-oym",
+        "anthropic-mcp-advanced",
+        "anthropic-mcp-intro",
+        "anthropic-claude-cowork",
+        "ms-rag-fundamentals",
+        "google-vertex-ai-studio",
+        "google-large-language-models",
+        "google-transformer-bert",
+        "google-genai-fundamentals",
+        "ms-copilot-productivity",
+        "ms-fabric-analytics",
+        "cisco-python-essentials",
+        "ndg-linux-essentials",
+        "ndg-linux-unhatched",
+        "aws-certified-cloud-practitioner",
+        "fortinet-nse4",
+        "mcsa-windows-server"
+      ],
+      "traceabilityMatrix": [
+        {
+          "company": "Astro - Pico Duarte Cartón, S.R.L.",
+          "companySlug": "astro-pico-duarte-carton",
+          "experienceFocus": "Diseño e implementación en Python del motor automatizado de lectura, validación XSD (DGII) e inyección de e-CF (XML) hacia SAP ERP y SQL Server.",
+          "certIds": [
+            "titulo-ingeniero-sistemas-oym",
+            "cisco-python-essentials",
+            "ms-fabric-analytics"
+          ],
+          "achievementSummary": "Reducción del 85% en el tiempo de procesamiento contable (de 25 a <3.5 min por lote) con 0% de errores de transcripción.",
+          "metricId": "facturacion-electronica-sap-85",
+          "projectSlug": "integracion-ecf-sap-astro",
+          "evidenceSummary": "Motor Automatizado de Facturación Electrónica (e-CF DGII) e Integración con SAP ERP en producción (github.com/morense-01)."
+        },
+        {
+          "company": "Astro - Pico Duarte Cartón, S.R.L.",
+          "companySlug": "astro-pico-duarte-carton",
+          "experienceFocus": "Desarrollo de ecosistema de asistencia técnica basado en agentes de IA con Model Context Protocol (MCP), flujos RAG e integración con Claude API y Vertex AI (Gemini).",
+          "certIds": [
+            "anthropic-mcp-advanced",
+            "anthropic-mcp-intro",
+            "anthropic-claude-cowork",
+            "ms-rag-fundamentals",
+            "google-vertex-ai-studio",
+            "google-large-language-models"
+          ],
+          "achievementSummary": "Incremento del 40% en la productividad operativa del área de TI y liberación de más de 1,200 horas-hombre anuales.",
+          "metricId": "ecosistema-ti-productividad",
+          "projectSlug": "ecosistema-ia-soporte-astro",
+          "evidenceSummary": "Ecosistema de Asistencia Inteligente con RAG y MCP en producción y certificaciones oficiales Anthropic MCP (#vxtfkvdm2xzr, #o2r5j74e8f68)."
+        },
+        {
+          "company": "Proyectos de Agentes Conversacionales (WaliControl)",
+          "companySlug": "astro-pico-duarte-carton",
+          "experienceFocus": "Pipeline de voz y texto con Webhooks (WhatsApp Business), Speech-to-Text API, clasificación de intención y extracción validada con JSON Schema hacia PostgreSQL/Pgvector/Redis y Google Sheets.",
+          "certIds": [
+            "google-transformer-bert",
+            "google-genai-fundamentals",
+            "ms-copilot-productivity",
+            "cisco-python-essentials"
+          ],
+          "achievementSummary": "Eliminación de la digitación manual en el registro diario de operaciones y estandarización del 100% de las entradas contables.",
+          "metricId": "sistema-control-calidad-industrial",
+          "projectSlug": "walicontrol",
+          "evidenceSummary": "WaliControl - Agente de IA Conversacional para Registro Operativo y Contable por Voz (Funcional, 2025) en github.com/morense-01."
+        },
+        {
+          "company": "Plataforma Multimodal RAG & n8n (AgroIARD) / ODS / Madeco",
+          "companySlug": "ods-odw-logistics",
+          "experienceFocus": "Desarrollo de API REST en FastAPI, indexación vectorial en ChromaDB, enrutador multi-LLM (OpenAI, Claude, Gemini, Ollama) en Docker y flujos de automatización con n8n, Power Automate y Telegram Bot API.",
+          "certIds": [
+            "ndg-linux-essentials",
+            "aws-certified-cloud-practitioner",
+            "fortinet-nse4",
+            "mcsa-windows-server"
+          ],
+          "achievementSummary": "Orquestación multi-LLM en contenedores Docker, +30% de eficiencia operativa en ODS, -70% en tiempo de cierre en Madeco y 0 hallazgos en Unipago.",
+          "metricId": "automatizacion-procesos-madeco",
+          "projectSlug": "agente-ia-agricultura",
+          "evidenceSummary": "AgroIARD (docker-compose.yml, FastAPI, ChromaDB, n8n y Telegram Bot API) verificable en repositorio local y GitHub (github.com/morense-01)."
+        }
+      ],
+      "experiences": [
+        {
+          "companySlug": "astro-pico-duarte-carton",
+          "company": "Astro - Pico Duarte Cartón, S.R.L.",
+          "roleTitle": "Encargado de Tecnología de la Información (Desarrollo de IA, Automatización e Integración ERP)",
+          "period": "2026-01 - Actualidad · Santo Domingo, RD",
+          "summary": "Diseño, desarrollo e implementación de motores de integración ERP, ecosistemas de asistencia técnica basados en agentes de IA (MCP/RAG), aplicaciones Full Stack y automatización de flujos y reportes.",
+          "achievements": [
+            "<strong>Integración contable e-CF y SAP ERP:</strong> Diseñé e implementé en Python un motor automatizado para la lectura, validación de esquemas XSD (normativa DGII) e inyección de Comprobantes Fiscales Electrónicos (e-CF en XML) hacia SAP ERP y SQL Server, reduciendo el tiempo de procesamiento contable en un 85% (de 25 a 3.5 minutos por lote) con 0% de error de transcripción.",
+            "<strong>Agentes de IA, RAG y Model Context Protocol (MCP):</strong> Desarrollé un ecosistema de asistencia técnica basado en agentes inteligentes utilizando el estándar MCP de Anthropic, flujos RAG sobre manuales operativos e integración con Claude API, Vertex AI (Gemini), Python y SQL Server, incrementando en 40% la productividad operativa y liberando más de 1,200 horas anuales.",
+            "<strong>Desarrollo Full Stack y APIs internas:</strong> Construí e implementé una plataforma web de control digital de calidad en JavaScript (ES6+), Node.js, REST API y SQL Server, eliminando el 100% de los registros manuales en papel y reduciendo en 60% el tiempo de consulta de datos de auditoría.",
+            "<strong>Automatización de flujos y reportes:</strong> Automaticé procesos de conciliación de datos, alertas operativas y generación de reportes ejecutivos conectando bases de datos relacionales con Power BI y scripts programados en Python y PowerShell."
+          ],
+          "technologies": [
+            "Python",
+            "Anthropic MCP",
+            "RAG",
+            "Claude API",
+            "Vertex AI (Gemini)",
+            "SAP ERP",
+            "XML / XSD (DGII)",
+            "JavaScript (ES6+) / Node.js",
+            "SQL Server",
+            "Power BI",
+            "PowerShell"
+          ]
+        },
+        {
+          "companySlug": "ods-odw-logistics",
+          "company": "ODS Logistics",
+          "roleTitle": "Consultor de Infraestructura TI, Automatización e Integración de Sistemas",
+          "period": "2024-02 - 2026-06 · Híbrido",
+          "summary": "Automatización de procesos operativos, integración de pipelines de datos y administración de entornos Linux, contenedores y nube híbrida.",
+          "achievements": [
+            "<strong>Automatización de procesos operativos:</strong> Diseñé y desplegué flujos de trabajo automatizados con Power Automate, Python y PowerShell para sincronización de datos, alertas de servicio y tareas administrativas repetitivas, mejorando la eficiencia operativa en un 30%.",
+            "<strong>Integración de bases de datos y analítica:</strong> Implementé pipelines de extracción, transformación y carga (ETL) sobre SQL Server y generé tableros automatizados en Power BI y SSRS para el monitoreo en tiempo real de indicadores operativos y financieros.",
+            "<strong>Administración de entornos Linux, contenedores y nube:</strong> Gestioné servidores GNU/Linux (Ubuntu, RHEL), Windows Server y servicios en AWS y Microsoft Azure, asegurando una disponibilidad del 99.9% para las aplicaciones y APIs conectadas."
+          ],
+          "technologies": [
+            "Power Automate",
+            "Python",
+            "PowerShell",
+            "SQL Server (ETL)",
+            "Power BI / SSRS",
+            "GNU/Linux (Ubuntu, RHEL)",
+            "AWS & Azure",
+            "Windows Server"
+          ]
+        },
+        {
+          "companySlug": "madeco",
+          "company": "Madeco",
+          "roleTitle": "Gerente de Tecnología (Arquitectura de Datos, ERP y Automatización)",
+          "period": "2022-02 - 2024-01 · Santo Domingo, RD",
+          "summary": "Diseño de Data Warehouse corporativo, integración de plataformas empresariales (SAP S/4HANA y Dynamics 365) y seguridad de integraciones.",
+          "achievements": [
+            "<strong>Data Warehouse, ETL y automatización de reportes:</strong> Diseñé e implementé un Data Warehouse centralizado en SQL Server con procesos ETL automatizados que integraron datos transaccionales de producción, inventario y finanzas (SAP S/4HANA y Microsoft Dynamics 365), reduciendo en un 70% el tiempo de cierre y reportería gerencial.",
+            "<strong>Integración de plataformas empresariales:</strong> Coordiné y ejecuté la integración técnica entre módulos ERP, bases de datos SQL Server/Oracle y servicios de Microsoft 365, estandarizando flujos de aprobación y validación de datos.",
+            "<strong>Seguridad de integraciones y continuidad:</strong> Implementé controles de acceso, respaldos automatizados y remediación de vulnerabilidades sobre las plataformas de datos, reduciendo incidentes operativos y de seguridad en un 60%."
+          ],
+          "technologies": [
+            "Data Warehouse",
+            "SQL Server / Oracle",
+            "ETL Automatizado",
+            "SAP S/4HANA",
+            "Microsoft Dynamics 365",
+            "Microsoft 365",
+            "Power Automate"
+          ]
+        },
+        {
+          "companySlug": "unipago",
+          "company": "Unipago",
+          "roleTitle": "Especialista de Infraestructura y Plataformas de Datos",
+          "period": "2020-03 - 2022-01 · Santo Domingo, RD · Sector Financiero",
+          "summary": "Automatización y soporte de plataformas financieras de misión crítica y migración a infraestructura virtualizada y nube híbrida bajo normativas ISO 27001 / NIST CSF.",
+          "achievements": [
+            "<strong>Automatización y soporte de plataformas financieras:</strong> Administré y automaticé tareas de mantenimiento, validación de respaldos y monitoreo sobre servidores Linux, Windows Server y bases de datos SQL Server en un entorno transaccional financiero de alta criticidad.",
+            "<strong>Migración a la nube e integración de servicios:</strong> Ejecuté la migración de 15 servidores físicos hacia infraestructura virtualizada y nube híbrida (Azure/AWS), garantizando la integridad de las bases de datos y obteniendo cero hallazgos críticos en 3 auditorías consecutivas (ISO 27001 / NIST CSF)."
+          ],
+          "technologies": [
+            "Linux & Windows Server",
+            "SQL Server",
+            "Azure & AWS",
+            "Automatización de Backups",
+            "ISO 27001 / NIST CSF"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "ingeniero-inteligencia-artificial",
+      "title": "Ingeniero de Inteligencia Artificial — AI Engineer",
+      "shortTitle": "Ingeniero de IA",
+      "englishTitle": "AI Engineer",
+      "domain": "IA, Automatización y Desarrollo",
+      "yearsExperience": "Especialista en despliegue de sistemas LLM, protocolos MCP, arquitecturas RAG y agentes de IA en producción",
+      "headline": "Diseño e integración de soluciones de IA Generativa empresarial, arquitecturas RAG, Model Context Protocol (MCP) con Anthropic Claude, Google Vertex AI y automatización inteligente.",
+      "summary": "Ingeniero en Sistemas de Computación especializado en diseño, desarrollo e implementación de agentes de inteligencia artificial, automatización de procesos operativos e integración de sistemas empresariales. Experiencia práctica desarrollando flujos automatizados, arquitecturas RAG y conectores con Model Context Protocol (MCP), integrando modelos LLM (OpenAI API, Claude, Vertex AI Gemini) con Python, JavaScript, Node.js, FastAPI, REST APIs, webhooks, SQL Server, PostgreSQL y SAP ERP. Historial comprobado automatizando facturación electrónica (e-CF/DGII), extracción estructurada de datos y reportes financieros, reduciendo tiempos de procesamiento en 85% y errores de transcripción a 0%.",
+      "valueProposition": "Reduzco en 85% los tiempos de procesamiento contable (e-CF/DGII hacia SAP ERP con 0% error de transcripción), incremento en 40% la productividad técnica mediante agentes MCP/RAG (+1,200h anuales liberadas) y construyo pipelines conversacionales y multimodales con Python, FastAPI, Docker, n8n, ChromaDB y Pgvector.",
+      "skills": [
+        "Model Context Protocol (MCP) — Anthropic",
+        "Retrieval-Augmented Generation (RAG)",
+        "Integración de LLMs (Claude, Gemini, OpenAI)",
+        "Google Cloud Vertex AI Studio",
+        "Arquitecturas Transformer & BERT",
+        "Azure Computer Vision & Multimodal AI",
+        "Microsoft 365 Copilot & AI Workflows",
+        "Gobernanza de IA Responsable y Seguridad de Prompts"
+      ],
+      "metricIds": [
+        "ecosistema-ti-productividad",
+        "facturacion-electronica-sap-85",
+        "sistema-control-calidad-industrial"
+      ],
+      "projectSlugs": [
+        "integracion-ecf-sap-astro",
+        "ecosistema-ia-soporte-astro",
+        "walicontrol",
+        "agente-ia-agricultura"
+      ],
+      "certIds": [
+        "titulo-ingeniero-sistemas-oym",
+        "anthropic-mcp-advanced",
+        "anthropic-mcp-intro",
+        "anthropic-claude-cowork",
+        "ms-rag-fundamentals",
+        "google-vertex-ai-studio",
+        "google-large-language-models",
+        "google-transformer-bert",
+        "google-genai-fundamentals",
+        "google-intro-genai",
+        "google-responsible-ai",
+        "google-image-captioning",
+        "google-image-generation",
+        "ms-computer-vision-azure",
+        "ms-copilot-productivity",
+        "ms-fabric-analytics",
+        "cisco-python-essentials",
+        "ndg-linux-essentials",
+        "ndg-linux-unhatched",
+        "aws-certified-cloud-practitioner",
+        "fortinet-nse4",
+        "mcsa-windows-server"
+      ],
+      "traceabilityMatrix": [
+        {
+          "company": "Astro - Pico Duarte Cartón, S.R.L.",
+          "companySlug": "astro-pico-duarte-carton",
+          "experienceFocus": "Diseño e implementación en Python del motor automatizado de lectura, validación XSD (DGII) e inyección de e-CF (XML) hacia SAP ERP y SQL Server.",
+          "certIds": [
+            "titulo-ingeniero-sistemas-oym",
+            "cisco-python-essentials",
+            "ms-fabric-analytics"
+          ],
+          "achievementSummary": "Reducción del 85% en el tiempo de procesamiento contable (de 25 a <3.5 min por lote) con 0% de errores de transcripción.",
+          "metricId": "facturacion-electronica-sap-85",
+          "projectSlug": "integracion-ecf-sap-astro",
+          "evidenceSummary": "Motor Automatizado de Facturación Electrónica (e-CF DGII) e Integración con SAP ERP en producción (github.com/morense-01)."
+        },
+        {
+          "company": "Astro - Pico Duarte Cartón, S.R.L.",
+          "companySlug": "astro-pico-duarte-carton",
+          "experienceFocus": "Desarrollo de ecosistema de asistencia técnica basado en agentes de IA con Model Context Protocol (MCP), flujos RAG e integración con Claude API y Vertex AI (Gemini).",
+          "certIds": [
+            "anthropic-mcp-advanced",
+            "anthropic-mcp-intro",
+            "anthropic-claude-cowork",
+            "ms-rag-fundamentals",
+            "google-vertex-ai-studio",
+            "google-large-language-models"
+          ],
+          "achievementSummary": "Incremento del 40% en la productividad operativa del área de TI y liberación de más de 1,200 horas-hombre anuales.",
+          "metricId": "ecosistema-ti-productividad",
+          "projectSlug": "ecosistema-ia-soporte-astro",
+          "evidenceSummary": "Ecosistema de Asistencia Inteligente con RAG y MCP en producción y certificaciones oficiales Anthropic MCP (#vxtfkvdm2xzr, #o2r5j74e8f68)."
+        },
+        {
+          "company": "Proyectos de Agentes Conversacionales (WaliControl)",
+          "companySlug": "astro-pico-duarte-carton",
+          "experienceFocus": "Pipeline de voz y texto con Webhooks (WhatsApp Business), Speech-to-Text API, clasificación de intención y extracción validada con JSON Schema hacia PostgreSQL/Pgvector/Redis y Google Sheets.",
+          "certIds": [
+            "google-transformer-bert",
+            "google-genai-fundamentals",
+            "ms-copilot-productivity",
+            "cisco-python-essentials"
+          ],
+          "achievementSummary": "Eliminación de la digitación manual en el registro diario de operaciones y estandarización del 100% de las entradas contables.",
+          "metricId": "sistema-control-calidad-industrial",
+          "projectSlug": "walicontrol",
+          "evidenceSummary": "WaliControl - Agente de IA Conversacional para Registro Operativo y Contable por Voz (Funcional, 2025) en github.com/morense-01."
+        },
+        {
+          "company": "Plataforma Multimodal RAG & n8n (AgroIARD) / ODS / Madeco",
+          "companySlug": "ods-odw-logistics",
+          "experienceFocus": "Desarrollo de API REST en FastAPI, indexación vectorial en ChromaDB, enrutador multi-LLM (OpenAI, Claude, Gemini, Ollama) en Docker y flujos de automatización con n8n, Power Automate y Telegram Bot API.",
+          "certIds": [
+            "ndg-linux-essentials",
+            "aws-certified-cloud-practitioner",
+            "fortinet-nse4",
+            "mcsa-windows-server"
+          ],
+          "achievementSummary": "Orquestación multi-LLM en contenedores Docker, +30% de eficiencia operativa en ODS, -70% en tiempo de cierre en Madeco y 0 hallazgos en Unipago.",
+          "metricId": "automatizacion-procesos-madeco",
+          "projectSlug": "agente-ia-agricultura",
+          "evidenceSummary": "AgroIARD (docker-compose.yml, FastAPI, ChromaDB, n8n y Telegram Bot API) verificable en repositorio local y GitHub (github.com/morense-01)."
+        }
+      ],
+      "experiences": [
+        {
+          "companySlug": "astro-pico-duarte-carton",
+          "company": "Astro - Pico Duarte Cartón, S.R.L.",
+          "roleTitle": "Encargado de Tecnología de la Información (Desarrollo de IA, Automatización e Integración ERP)",
+          "period": "2026-01 - Actualidad · Santo Domingo, RD",
+          "summary": "Diseño, desarrollo e implementación de motores de integración ERP, ecosistemas de asistencia técnica basados en agentes de IA (MCP/RAG), aplicaciones Full Stack y automatización de flujos y reportes.",
+          "achievements": [
+            "<strong>Integración contable e-CF y SAP ERP:</strong> Diseñé e implementé en Python un motor automatizado para la lectura, validación de esquemas XSD (normativa DGII) e inyección de Comprobantes Fiscales Electrónicos (e-CF en XML) hacia SAP ERP y SQL Server, reduciendo el tiempo de procesamiento contable en un 85% (de 25 a 3.5 minutos por lote) con 0% de error de transcripción.",
+            "<strong>Agentes de IA, RAG y Model Context Protocol (MCP):</strong> Desarrollé un ecosistema de asistencia técnica basado en agentes inteligentes utilizando el estándar MCP de Anthropic, flujos RAG sobre manuales operativos e integración con Claude API, Vertex AI (Gemini), Python y SQL Server, incrementando en 40% la productividad operativa y liberando más de 1,200 horas anuales.",
+            "<strong>Desarrollo Full Stack y APIs internas:</strong> Construí e implementé una plataforma web de control digital de calidad en JavaScript (ES6+), Node.js, REST API y SQL Server, eliminando el 100% de los registros manuales en papel y reduciendo en 60% el tiempo de consulta de datos de auditoría.",
+            "<strong>Automatización de flujos y reportes:</strong> Automaticé procesos de conciliación de datos, alertas operativas y generación de reportes ejecutivos conectando bases de datos relacionales con Power BI y scripts programados en Python y PowerShell."
+          ],
+          "technologies": [
+            "Python",
+            "Anthropic MCP",
+            "RAG",
+            "Claude API",
+            "Vertex AI (Gemini)",
+            "SAP ERP",
+            "XML / XSD (DGII)",
+            "JavaScript (ES6+) / Node.js",
+            "SQL Server",
+            "Power BI",
+            "PowerShell"
+          ]
+        },
+        {
+          "companySlug": "ods-odw-logistics",
+          "company": "ODS Logistics",
+          "roleTitle": "Consultor de Infraestructura TI, Automatización e Integración de Sistemas",
+          "period": "2024-02 - 2026-06 · Híbrido",
+          "summary": "Automatización de procesos operativos, integración de pipelines de datos y administración de entornos Linux, contenedores y nube híbrida.",
+          "achievements": [
+            "<strong>Automatización de procesos operativos:</strong> Diseñé y desplegué flujos de trabajo automatizados con Power Automate, Python y PowerShell para sincronización de datos, alertas de servicio y tareas administrativas repetitivas, mejorando la eficiencia operativa en un 30%.",
+            "<strong>Integración de bases de datos y analítica:</strong> Implementé pipelines de extracción, transformación y carga (ETL) sobre SQL Server y generé tableros automatizados en Power BI y SSRS para el monitoreo en tiempo real de indicadores operativos y financieros.",
+            "<strong>Administración de entornos Linux, contenedores y nube:</strong> Gestioné servidores GNU/Linux (Ubuntu, RHEL), Windows Server y servicios en AWS y Microsoft Azure, asegurando una disponibilidad del 99.9% para las aplicaciones y APIs conectadas."
+          ],
+          "technologies": [
+            "Power Automate",
+            "Python",
+            "PowerShell",
+            "SQL Server (ETL)",
+            "Power BI / SSRS",
+            "GNU/Linux (Ubuntu, RHEL)",
+            "AWS & Azure",
+            "Windows Server"
+          ]
+        },
+        {
+          "companySlug": "madeco",
+          "company": "Madeco",
+          "roleTitle": "Gerente de Tecnología (Arquitectura de Datos, ERP y Automatización)",
+          "period": "2022-02 - 2024-01 · Santo Domingo, RD",
+          "summary": "Diseño de Data Warehouse corporativo, integración de plataformas empresariales (SAP S/4HANA y Dynamics 365) y seguridad de integraciones.",
+          "achievements": [
+            "<strong>Data Warehouse, ETL y automatización de reportes:</strong> Diseñé e implementé un Data Warehouse centralizado en SQL Server con procesos ETL automatizados que integraron datos transaccionales de producción, inventario y finanzas (SAP S/4HANA y Microsoft Dynamics 365), reduciendo en un 70% el tiempo de cierre y reportería gerencial.",
+            "<strong>Integración de plataformas empresariales:</strong> Coordiné y ejecuté la integración técnica entre módulos ERP, bases de datos SQL Server/Oracle y servicios de Microsoft 365, estandarizando flujos de aprobación y validación de datos.",
+            "<strong>Seguridad de integraciones y continuidad:</strong> Implementé controles de acceso, respaldos automatizados y remediación de vulnerabilidades sobre las plataformas de datos, reduciendo incidentes operativos y de seguridad en un 60%."
+          ],
+          "technologies": [
+            "Data Warehouse",
+            "SQL Server / Oracle",
+            "ETL Automatizado",
+            "SAP S/4HANA",
+            "Microsoft Dynamics 365",
+            "Microsoft 365",
+            "Power Automate"
+          ]
+        },
+        {
+          "companySlug": "unipago",
+          "company": "Unipago",
+          "roleTitle": "Especialista de Infraestructura y Plataformas de Datos",
+          "period": "2020-03 - 2022-01 · Santo Domingo, RD · Sector Financiero",
+          "summary": "Automatización y soporte de plataformas financieras de misión crítica y migración a infraestructura virtualizada y nube híbrida bajo normativas ISO 27001 / NIST CSF.",
+          "achievements": [
+            "<strong>Automatización y soporte de plataformas financieras:</strong> Administré y automaticé tareas de mantenimiento, validación de respaldos y monitoreo sobre servidores Linux, Windows Server y bases de datos SQL Server en un entorno transaccional financiero de alta criticidad.",
+            "<strong>Migración a la nube e integración de servicios:</strong> Ejecuté la migración de 15 servidores físicos hacia infraestructura virtualizada y nube híbrida (Azure/AWS), garantizando la integridad de las bases de datos y obteniendo cero hallazgos críticos en 3 auditorías consecutivas (ISO 27001 / NIST CSF)."
+          ],
+          "technologies": [
+            "Linux & Windows Server",
+            "SQL Server",
+            "Azure & AWS",
+            "Automatización de Backups",
+            "ISO 27001 / NIST CSF"
+          ]
+        }
+      ],
+      "competencyCategories": [
+        {
+          "title": "IA y Agentes Inteligentes",
+          "desc": "Agentes de IA, Model Context Protocol (MCP), Retrieval-Augmented Generation (RAG), ingeniería de prompts (Prompt Engineering), LLM Structured Outputs (JSON Schema), OpenAI API, Anthropic Claude API, Google Vertex AI (Gemini), Ollama, clasificación de intención y extracción de entidades."
+        },
+        {
+          "title": "Automatización e Integración",
+          "desc": "Diseño de flujos de automatización (workflows), integración con n8n, Power Automate, webhooks, orquestación de eventos, transformación de datos (JSON, XML, XSD), automatización de procesos contables/operativos y bots conversacionales (WhatsApp Business Webhook, Telegram Bot API)."
+        },
+        {
+          "title": "Desarrollo y Scripting",
+          "desc": "Python (FastAPI, LangChain, SQLAlchemy, Pydantic), JavaScript (ES6+), Node.js, SQL (T-SQL), PowerShell, Bash, HTML5, CSS3, desarrollo de aplicaciones web progresivas (PWA)."
+        },
+        {
+          "title": "APIs y Servicios Externos",
+          "desc": "Diseño y consumo de APIs RESTful, autenticación y seguridad de integraciones, Speech-to-Text API, Google Sheets API, conectores hacia SAP ERP (S/4HANA), comprobantes fiscales electrónicos (e-CF / DGII) y servicios de búsqueda web."
+        },
+        {
+          "title": "Bases de Datos y Almacenamiento",
+          "desc": "Microsoft SQL Server, PostgreSQL, MySQL, Oracle, SQLite, bases de datos vectoriales y búsqueda semántica (ChromaDB, Pgvector, embeddings), Redis, diseño de Data Warehouse y pipelines ETL."
+        },
+        {
+          "title": "Infraestructura, Cloud y Despliegue",
+          "desc": "Docker, Docker Compose, GNU/Linux (Ubuntu, RHEL), Windows Server, AWS (Certified Cloud Practitioner), Microsoft Azure, Google Cloud Platform (GCP), Git, GitHub y monitoreo de servicios en producción."
+        },
+        {
+          "title": "Calidad, Seguridad y Metodologías",
+          "desc": "Validación de esquemas de datos (JSON Schema / XSD), pruebas funcionales e integrales, control de errores y trazabilidad (logging/auditoría), seguridad de datos (ISO 27001, NIST CSF, Fortinet NSE 4) y documentación técnica."
+        }
+      ],
+      "languages": "Español: Nativo | Inglés: Básico / Técnico (lectura comprensiva de documentación técnica, APIs, repositorios y herramientas de desarrollo; nivel conversacional A1-A2)."
+    },
+    {
+      "slug": "ingeniero-de-automatizacion",
+      "title": "Ingeniero de Automatización — Automation Engineer",
+      "shortTitle": "Ingeniero de Automatización",
+      "englishTitle": "Automation Engineer",
+      "domain": "IA, Automatización y Desarrollo",
+      "yearsExperience": "15+ años automatizando procesos empresariales, industriales y de infraestructura TI",
+      "headline": "Automatización de extremo a extremo con Python, PowerShell, Power Automate e integración IoT/RF para eliminar tareas manuales, reducir tiempos de ciclo en 85% y liberar miles de horas operativas.",
+      "summary": "Ingeniero en Sistemas de Computación especializado en diseño, desarrollo e implementación de agentes de inteligencia artificial, automatización de procesos operativos e integración de sistemas empresariales. Experiencia práctica desarrollando flujos automatizados, arquitecturas RAG y conectores con Model Context Protocol (MCP), integrando modelos LLM (OpenAI API, Claude, Vertex AI Gemini) con Python, JavaScript, Node.js, FastAPI, REST APIs, webhooks, SQL Server, PostgreSQL y SAP ERP. Historial comprobado automatizando facturación electrónica (e-CF/DGII), extracción estructurada de datos y reportes financieros, reduciendo tiempos de procesamiento en 85% y errores de transcripción a 0%.",
+      "valueProposition": "Reduzco en 85% los tiempos de procesamiento contable (e-CF/DGII hacia SAP ERP con 0% error de transcripción), incremento en 40% la productividad técnica mediante agentes MCP/RAG (+1,200h anuales liberadas) y construyo pipelines conversacionales y multimodales con Python, FastAPI, Docker, n8n, ChromaDB y Pgvector.",
+      "skills": [
+        "Scripting Avanzado en Python & PowerShell",
+        "Microsoft Power Automate & Workflows",
+        "Automatización de Integraciones ERP (SAP / Dynamics)",
+        "Automatización de Infraestructura, Backups y AD",
+        "Integración de Dispositivos IoT, Básculas y Terminales RF",
+        "Orquestación de Tareas Programadas y Daemons",
+        "Parsing Automatizado de Documentos XML / XSD / PDF",
+        "Monitoreo Desatendido y Auto-Remediación"
+      ],
+      "metricIds": [
+        "facturacion-electronica-sap-85",
+        "automatizacion-procesos-madeco",
+        "ecosistema-ti-productividad",
+        "eficiencia-operativa-30"
+      ],
+      "projectSlugs": [
+        "integracion-ecf-sap-astro",
+        "ecosistema-ia-soporte-astro",
+        "walicontrol",
+        "agente-ia-agricultura"
+      ],
+      "certIds": [
+        "titulo-ingeniero-sistemas-oym",
+        "especialidad-integrador-iot",
+        "diplomado-iot",
+        "cisco-python-essentials",
+        "ms-copilot-productivity",
+        "cisco-intro-iot",
+        "ndg-linux-essentials",
+        "google-infraestructura-servicios-ti",
+        "mcsa-windows-server",
+        "anthropic-mcp-advanced",
+        "anthropic-mcp-intro",
+        "anthropic-claude-cowork",
+        "ms-rag-fundamentals",
+        "google-vertex-ai-studio",
+        "google-large-language-models",
+        "google-transformer-bert",
+        "google-genai-fundamentals",
+        "ms-fabric-analytics",
+        "ndg-linux-unhatched",
+        "aws-certified-cloud-practitioner",
+        "fortinet-nse4"
+      ],
+      "traceabilityMatrix": [
+        {
+          "company": "Astro - Pico Duarte Cartón, S.R.L.",
+          "companySlug": "astro-pico-duarte-carton",
+          "experienceFocus": "Diseño e implementación en Python del motor automatizado de lectura, validación XSD (DGII) e inyección de e-CF (XML) hacia SAP ERP y SQL Server.",
+          "certIds": [
+            "titulo-ingeniero-sistemas-oym",
+            "cisco-python-essentials",
+            "ms-fabric-analytics"
+          ],
+          "achievementSummary": "Reducción del 85% en el tiempo de procesamiento contable (de 25 a <3.5 min por lote) con 0% de errores de transcripción.",
+          "metricId": "facturacion-electronica-sap-85",
+          "projectSlug": "integracion-ecf-sap-astro",
+          "evidenceSummary": "Motor Automatizado de Facturación Electrónica (e-CF DGII) e Integración con SAP ERP en producción (github.com/morense-01)."
+        },
+        {
+          "company": "Astro - Pico Duarte Cartón, S.R.L.",
+          "companySlug": "astro-pico-duarte-carton",
+          "experienceFocus": "Desarrollo de ecosistema de asistencia técnica basado en agentes de IA con Model Context Protocol (MCP), flujos RAG e integración con Claude API y Vertex AI (Gemini).",
+          "certIds": [
+            "anthropic-mcp-advanced",
+            "anthropic-mcp-intro",
+            "anthropic-claude-cowork",
+            "ms-rag-fundamentals",
+            "google-vertex-ai-studio",
+            "google-large-language-models"
+          ],
+          "achievementSummary": "Incremento del 40% en la productividad operativa del área de TI y liberación de más de 1,200 horas-hombre anuales.",
+          "metricId": "ecosistema-ti-productividad",
+          "projectSlug": "ecosistema-ia-soporte-astro",
+          "evidenceSummary": "Ecosistema de Asistencia Inteligente con RAG y MCP en producción y certificaciones oficiales Anthropic MCP (#vxtfkvdm2xzr, #o2r5j74e8f68)."
+        },
+        {
+          "company": "Proyectos de Agentes Conversacionales (WaliControl)",
+          "companySlug": "astro-pico-duarte-carton",
+          "experienceFocus": "Pipeline de voz y texto con Webhooks (WhatsApp Business), Speech-to-Text API, clasificación de intención y extracción validada con JSON Schema hacia PostgreSQL/Pgvector/Redis y Google Sheets.",
+          "certIds": [
+            "google-transformer-bert",
+            "google-genai-fundamentals",
+            "ms-copilot-productivity",
+            "cisco-python-essentials"
+          ],
+          "achievementSummary": "Eliminación de la digitación manual en el registro diario de operaciones y estandarización del 100% de las entradas contables.",
+          "metricId": "sistema-control-calidad-industrial",
+          "projectSlug": "walicontrol",
+          "evidenceSummary": "WaliControl - Agente de IA Conversacional para Registro Operativo y Contable por Voz (Funcional, 2025) en github.com/morense-01."
+        },
+        {
+          "company": "Plataforma Multimodal RAG & n8n (AgroIARD) / ODS / Madeco",
+          "companySlug": "ods-odw-logistics",
+          "experienceFocus": "Desarrollo de API REST en FastAPI, indexación vectorial en ChromaDB, enrutador multi-LLM (OpenAI, Claude, Gemini, Ollama) en Docker y flujos de automatización con n8n, Power Automate y Telegram Bot API.",
+          "certIds": [
+            "ndg-linux-essentials",
+            "aws-certified-cloud-practitioner",
+            "fortinet-nse4",
+            "mcsa-windows-server"
+          ],
+          "achievementSummary": "Orquestación multi-LLM en contenedores Docker, +30% de eficiencia operativa en ODS, -70% en tiempo de cierre en Madeco y 0 hallazgos en Unipago.",
+          "metricId": "automatizacion-procesos-madeco",
+          "projectSlug": "agente-ia-agricultura",
+          "evidenceSummary": "AgroIARD (docker-compose.yml, FastAPI, ChromaDB, n8n y Telegram Bot API) verificable en repositorio local y GitHub (github.com/morense-01)."
+        }
+      ],
+      "experiences": [
+        {
+          "companySlug": "astro-pico-duarte-carton",
+          "company": "Astro - Pico Duarte Cartón, S.R.L.",
+          "roleTitle": "Encargado de Tecnología de la Información (Desarrollo de IA, Automatización e Integración ERP)",
+          "period": "2026-01 - Actualidad · Santo Domingo, RD",
+          "summary": "Diseño, desarrollo e implementación de motores de integración ERP, ecosistemas de asistencia técnica basados en agentes de IA (MCP/RAG), aplicaciones Full Stack y automatización de flujos y reportes.",
+          "achievements": [
+            "<strong>Integración contable e-CF y SAP ERP:</strong> Diseñé e implementé en Python un motor automatizado para la lectura, validación de esquemas XSD (normativa DGII) e inyección de Comprobantes Fiscales Electrónicos (e-CF en XML) hacia SAP ERP y SQL Server, reduciendo el tiempo de procesamiento contable en un 85% (de 25 a 3.5 minutos por lote) con 0% de error de transcripción.",
+            "<strong>Agentes de IA, RAG y Model Context Protocol (MCP):</strong> Desarrollé un ecosistema de asistencia técnica basado en agentes inteligentes utilizando el estándar MCP de Anthropic, flujos RAG sobre manuales operativos e integración con Claude API, Vertex AI (Gemini), Python y SQL Server, incrementando en 40% la productividad operativa y liberando más de 1,200 horas anuales.",
+            "<strong>Desarrollo Full Stack y APIs internas:</strong> Construí e implementé una plataforma web de control digital de calidad en JavaScript (ES6+), Node.js, REST API y SQL Server, eliminando el 100% de los registros manuales en papel y reduciendo en 60% el tiempo de consulta de datos de auditoría.",
+            "<strong>Automatización de flujos y reportes:</strong> Automaticé procesos de conciliación de datos, alertas operativas y generación de reportes ejecutivos conectando bases de datos relacionales con Power BI y scripts programados en Python y PowerShell."
+          ],
+          "technologies": [
+            "Python",
+            "Anthropic MCP",
+            "RAG",
+            "Claude API",
+            "Vertex AI (Gemini)",
+            "SAP ERP",
+            "XML / XSD (DGII)",
+            "JavaScript (ES6+) / Node.js",
+            "SQL Server",
+            "Power BI",
+            "PowerShell"
+          ]
+        },
+        {
+          "companySlug": "ods-odw-logistics",
+          "company": "ODS Logistics",
+          "roleTitle": "Consultor de Infraestructura TI, Automatización e Integración de Sistemas",
+          "period": "2024-02 - 2026-06 · Híbrido",
+          "summary": "Automatización de procesos operativos, integración de pipelines de datos y administración de entornos Linux, contenedores y nube híbrida.",
+          "achievements": [
+            "<strong>Automatización de procesos operativos:</strong> Diseñé y desplegué flujos de trabajo automatizados con Power Automate, Python y PowerShell para sincronización de datos, alertas de servicio y tareas administrativas repetitivas, mejorando la eficiencia operativa en un 30%.",
+            "<strong>Integración de bases de datos y analítica:</strong> Implementé pipelines de extracción, transformación y carga (ETL) sobre SQL Server y generé tableros automatizados en Power BI y SSRS para el monitoreo en tiempo real de indicadores operativos y financieros.",
+            "<strong>Administración de entornos Linux, contenedores y nube:</strong> Gestioné servidores GNU/Linux (Ubuntu, RHEL), Windows Server y servicios en AWS y Microsoft Azure, asegurando una disponibilidad del 99.9% para las aplicaciones y APIs conectadas."
+          ],
+          "technologies": [
+            "Power Automate",
+            "Python",
+            "PowerShell",
+            "SQL Server (ETL)",
+            "Power BI / SSRS",
+            "GNU/Linux (Ubuntu, RHEL)",
+            "AWS & Azure",
+            "Windows Server"
+          ]
+        },
+        {
+          "companySlug": "madeco",
+          "company": "Madeco",
+          "roleTitle": "Gerente de Tecnología (Arquitectura de Datos, ERP y Automatización)",
+          "period": "2022-02 - 2024-01 · Santo Domingo, RD",
+          "summary": "Diseño de Data Warehouse corporativo, integración de plataformas empresariales (SAP S/4HANA y Dynamics 365) y seguridad de integraciones.",
+          "achievements": [
+            "<strong>Data Warehouse, ETL y automatización de reportes:</strong> Diseñé e implementé un Data Warehouse centralizado en SQL Server con procesos ETL automatizados que integraron datos transaccionales de producción, inventario y finanzas (SAP S/4HANA y Microsoft Dynamics 365), reduciendo en un 70% el tiempo de cierre y reportería gerencial.",
+            "<strong>Integración de plataformas empresariales:</strong> Coordiné y ejecuté la integración técnica entre módulos ERP, bases de datos SQL Server/Oracle y servicios de Microsoft 365, estandarizando flujos de aprobación y validación de datos.",
+            "<strong>Seguridad de integraciones y continuidad:</strong> Implementé controles de acceso, respaldos automatizados y remediación de vulnerabilidades sobre las plataformas de datos, reduciendo incidentes operativos y de seguridad en un 60%."
+          ],
+          "technologies": [
+            "Data Warehouse",
+            "SQL Server / Oracle",
+            "ETL Automatizado",
+            "SAP S/4HANA",
+            "Microsoft Dynamics 365",
+            "Microsoft 365",
+            "Power Automate"
+          ]
+        },
+        {
+          "companySlug": "unipago",
+          "company": "Unipago",
+          "roleTitle": "Especialista de Infraestructura y Plataformas de Datos",
+          "period": "2020-03 - 2022-01 · Santo Domingo, RD · Sector Financiero",
+          "summary": "Automatización y soporte de plataformas financieras de misión crítica y migración a infraestructura virtualizada y nube híbrida bajo normativas ISO 27001 / NIST CSF.",
+          "achievements": [
+            "<strong>Automatización y soporte de plataformas financieras:</strong> Administré y automaticé tareas de mantenimiento, validación de respaldos y monitoreo sobre servidores Linux, Windows Server y bases de datos SQL Server en un entorno transaccional financiero de alta criticidad.",
+            "<strong>Migración a la nube e integración de servicios:</strong> Ejecuté la migración de 15 servidores físicos hacia infraestructura virtualizada y nube híbrida (Azure/AWS), garantizando la integridad de las bases de datos y obteniendo cero hallazgos críticos en 3 auditorías consecutivas (ISO 27001 / NIST CSF)."
+          ],
+          "technologies": [
+            "Linux & Windows Server",
+            "SQL Server",
+            "Azure & AWS",
+            "Automatización de Backups",
+            "ISO 27001 / NIST CSF"
+          ]
+        }
+      ],
+      "competencyCategories": [
+        {
+          "title": "IA y Agentes Inteligentes",
+          "desc": "Agentes de IA, Model Context Protocol (MCP), Retrieval-Augmented Generation (RAG), ingeniería de prompts (Prompt Engineering), LLM Structured Outputs (JSON Schema), OpenAI API, Anthropic Claude API, Google Vertex AI (Gemini), Ollama, clasificación de intención y extracción de entidades."
+        },
+        {
+          "title": "Automatización e Integración",
+          "desc": "Diseño de flujos de automatización (workflows), integración con n8n, Power Automate, webhooks, orquestación de eventos, transformación de datos (JSON, XML, XSD), automatización de procesos contables/operativos y bots conversacionales (WhatsApp Business Webhook, Telegram Bot API)."
+        },
+        {
+          "title": "Desarrollo y Scripting",
+          "desc": "Python (FastAPI, LangChain, SQLAlchemy, Pydantic), JavaScript (ES6+), Node.js, SQL (T-SQL), PowerShell, Bash, HTML5, CSS3, desarrollo de aplicaciones web progresivas (PWA)."
+        },
+        {
+          "title": "APIs y Servicios Externos",
+          "desc": "Diseño y consumo de APIs RESTful, autenticación y seguridad de integraciones, Speech-to-Text API, Google Sheets API, conectores hacia SAP ERP (S/4HANA), comprobantes fiscales electrónicos (e-CF / DGII) y servicios de búsqueda web."
+        },
+        {
+          "title": "Bases de Datos y Almacenamiento",
+          "desc": "Microsoft SQL Server, PostgreSQL, MySQL, Oracle, SQLite, bases de datos vectoriales y búsqueda semántica (ChromaDB, Pgvector, embeddings), Redis, diseño de Data Warehouse y pipelines ETL."
+        },
+        {
+          "title": "Infraestructura, Cloud y Despliegue",
+          "desc": "Docker, Docker Compose, GNU/Linux (Ubuntu, RHEL), Windows Server, AWS (Certified Cloud Practitioner), Microsoft Azure, Google Cloud Platform (GCP), Git, GitHub y monitoreo de servicios en producción."
+        },
+        {
+          "title": "Calidad, Seguridad y Metodologías",
+          "desc": "Validación de esquemas de datos (JSON Schema / XSD), pruebas funcionales e integrales, control de errores y trazabilidad (logging/auditoría), seguridad de datos (ISO 27001, NIST CSF, Fortinet NSE 4) y documentación técnica."
+        }
+      ],
+      "languages": "Español: Nativo | Inglés: Básico / Técnico (lectura comprensiva de documentación técnica, APIs, repositorios y herramientas de desarrollo; nivel conversacional A1-A2)."
+    },
+    {
+      "slug": "desarrollador-full-stack",
+      "title": "Desarrollador Full Stack — Full Stack Developer",
+      "shortTitle": "Desarrollador Full Stack",
+      "englishTitle": "Full Stack Developer",
+      "domain": "IA, Automatización y Desarrollo",
+      "yearsExperience": "12+ años desarrollando aplicaciones web empresariales, sistemas industriales y middlewares de integración",
+      "headline": "Desarrollo integral de aplicaciones web empresariales, plataformas de trazabilidad industrial en planta, portales de gestión ITSM y sistemas de control comercial y logístico.",
+      "summary": "Desarrollador Full Stack e Ingeniero en Sistemas de Computación con Diplomado en Integridad y Seguridad Web, Diplomado en Sistemas Informáticos y certificación en Python. Diseño y construyo soluciones de software completas —desde el modelado de bases de datos relacionales y APIs/middlewares de backend hasta interfaces web rápidas, seguras y adaptadas a entornos industriales y corporativos—.",
+      "valueProposition": "Desarrollo software interno a la medida que resuelve problemas reales de producción, calidad, logística y comercio sin depender de licencias costosas, digitalizando el 100% de procesos críticos en semanas.",
+      "skills": [
+        "JavaScript (ES6+) / Node.js / HTML5 / CSS3",
+        "Python (Backend, Parsers & Servicios)",
+        "Diseño de Bases de Datos SQL & APIs REST",
+        "Arquitectura Web Segura (CSP, RBAC, OWASP)",
+        "Sistemas de Trazabilidad Industrial y Calidad",
+        "Integración con ERPs (SAP) y Terminales RF/WMS",
+        "Generación Automatizada de Documentos y Certificados PDF",
+        "Git, Control de Versiones y Despliegue Continuo"
+      ],
+      "metricIds": [
+        "sistema-control-calidad-industrial",
+        "facturacion-electronica-sap-85",
+        "ecosistema-ti-productividad",
+        "precision-inventario-30"
+      ],
+      "projectSlugs": [
+        "sistema-calidad-industrial-astro",
+        "integracion-ecf-sap-astro",
+        "ecosistema-ia-soporte-astro",
+        "walicontrol",
+        "ruta-66"
+      ],
+      "certIds": [
+        "titulo-ingeniero-sistemas-oym",
+        "especialidad-ti",
+        "diplomado-integridad-web",
+        "diplomado-sistemas-informaticos",
+        "especialidad-tratamiento-datos",
+        "cisco-python-essentials",
+        "microsoft-sql-server-infraestructura",
+        "ndg-linux-essentials"
+      ],
+      "traceabilityMatrix": [
+        {
+          "company": "Astro - Pico Duarte Cartón",
+          "companySlug": "astro-pico-duarte-carton",
+          "experienceFocus": "Desarrollo Full Stack desde cero del Sistema Digital de Control de Calidad Industrial (interfaz de captura en planta, validaciones en tiempo real, motor de base de datos y emisor de certificados).",
+          "certIds": [
+            "titulo-ingeniero-sistemas-oym",
+            "diplomado-integridad-web",
+            "diplomado-sistemas-informaticos"
+          ],
+          "achievementSummary": "Digitalización del 100% de los controles de laboratorio y reducción del 60% en tiempos de consulta (de 30 min a <10 seg).",
+          "metricId": "sistema-control-calidad-industrial",
+          "projectSlug": "sistema-calidad-industrial-astro",
+          "evidenceSummary": "Aplicación en producción en todas las líneas de manufactura, base de datos histórica y certificados emitidos a clientes."
+        },
+        {
+          "company": "Astro - Pico Duarte Cartón",
+          "companySlug": "astro-pico-duarte-carton",
+          "experienceFocus": "Desarrollo del Portal Interno de Gestión de TI (activos, tickets, SLAs y mantenimientos) y del middleware en Python para facturación electrónica SAP.",
+          "certIds": [
+            "cisco-python-essentials",
+            "especialidad-tratamiento-datos",
+            "especialidad-ti"
+          ],
+          "achievementSummary": "-85% en tiempo de procesamiento de facturación electrónica e incremento del 40% en productividad de soporte.",
+          "metricId": "facturacion-electronica-sap-85",
+          "projectSlug": "integracion-ecf-sap-astro",
+          "evidenceSummary": "Módulos de software en operación diaria, bitácoras transaccionales y portal ITSM interno."
+        },
+        {
+          "company": "Proyectos de Software Comercial y Logístico",
+          "companySlug": "ods-odw-logistics",
+          "experienceFocus": "Desarrollo de aplicaciones web de gestión operativa y comercial (WaliControl y plataforma logística Ruta 66) e integración de middlewares RF.",
+          "certIds": [
+            "diplomado-integridad-web",
+            "microsoft-sql-server-infraestructura"
+          ],
+          "achievementSummary": "Control centralizado de inventario, facturación, clientes y seguimiento de rutas de transporte.",
+          "metricId": "precision-inventario-30",
+          "projectSlug": "walicontrol",
+          "evidenceSummary": "Arquitectura modular web de WaliControl y Ruta 66 con control de acceso por roles y trazabilidad transaccional."
+        }
+      ],
+      "experiences": [
+        {
+          "companySlug": "astro-pico-duarte-carton",
+          "company": "Astro - Pico Duarte Cartón",
+          "roleTitle": "Líder de Desarrollo de Software Interno e Integración (Responsable de TI)",
+          "period": "2026 – Actual",
+          "summary": "Diseño, programación y puesta en producción de sistemas internos a la medida para manufactura, calidad, facturación electrónica y gestión TI.",
+          "achievements": [
+            "Desarrollé el Sistema Digital de Control de Calidad Industrial logrando digitalizar el 100% de las pruebas de resistencia y humedad de cartón.",
+            "Construí el middleware de validación e integración de comprobantes electrónicos (e-CF) con SAP ERP reduciendo un 85% los tiempos de ciclo.",
+            "Creé el portal web interno del Ecosistema de Gestión de TI para control de activos, mantenimientos preventivos y tickets, aumentando un 40% la productividad."
+          ],
+          "technologies": [
+            "Python",
+            "JavaScript",
+            "HTML5 / CSS3",
+            "SQL",
+            "SAP Integration",
+            "Web Security"
+          ]
+        },
+        {
+          "companySlug": "ods-odw-logistics",
+          "company": "ODS Logistics",
+          "roleTitle": "Integrador de Sistemas WMS, Middleware RF y Soluciones Logísticas",
+          "period": "Feb 2024 – Jun 2026",
+          "summary": "Integración de software de gestión de almacenes (WMS) con terminales móviles de radiofrecuencia y desarrollo de herramientas de control.",
+          "achievements": [
+            "Integré los flujos de datos entre lectores de código de barras RF y el servidor central WMS, elevando un 30% la precisión de inventario.",
+            "Diseñé las arquitecturas de las plataformas WaliControl (gestión comercial) y Ruta 66 (logística de transporte)."
+          ],
+          "technologies": [
+            "WMS Middleware",
+            "SQL",
+            "Web Apps",
+            "REST / XML",
+            "Power BI"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "gerente-proyectos-ti",
+      "title": "Gerente de Proyectos TI — IT Project Manager",
+      "shortTitle": "Gerente de Proyectos TI",
+      "englishTitle": "IT Project Manager / IT Director",
+      "domain": "Gestión, Nube y Redes",
+      "yearsExperience": "12+ años en posiciones gerenciales de TI y +21 años de trayectoria tecnológica integral",
+      "headline": "Dirección de carteras de proyectos tecnológicos, gobernanza ITIL/COBIT, optimización presupuestaria CAPEX/OPEX (FinOps -18%) y liderazgo de equipos multidisciplinarios en manufactura, logística y banca.",
+      "summary": "Gerente de Tecnología e Ingeniero en Sistemas con más de 12 años liderando departamentos de TI, presupuestos corporativos, contratos con proveedores estratégicos y transformaciones digitales completas en Astro - Pico Duarte Cartón, ODS Logistics, MADECO, UNIPAGO y Dominicana de Cales. Especialista en entregar proyectos de alta complejidad a tiempo, dentro del presupuesto y con retorno de inversión (ROI) auditado.",
+      "valueProposition": "Alineo la tecnología con los objetivos financieros y operativos de la Dirección General: reduzco costos de infraestructura en un 18%, garantizo 0 hallazgos en auditorías regulatorias y lidero implementaciones de ERP, WMS, Cloud y Ciberseguridad con métricas verificables.",
+      "skills": [
+        "Dirección de Proyectos TI (PMO / Agile / Waterfall)",
+        "Gestión Presupuestaria CAPEX / OPEX & FinOps",
+        "Gobierno de TI (ITIL, COBIT, ISO 27001, NIST)",
+        "Negociación con Proveedores y Gestión de SLAs",
+        "Liderazgo de Equipos Técnicos Multidisciplinarios",
+        "Dirección de Proyectos ERP (SAP S/4HANA / Dynamics 365)",
+        "Planes de Continuidad de Negocio (BIA / BCP / DRP)",
+        "Gestión del Cambio Organizacional en Planta y Oficinas"
+      ],
+      "metricIds": [
+        "ahorro-costos-18",
+        "reduccion-tiempos-respuesta-35",
+        "estabilidad-erp-madeco",
+        "auditorias-cero-hallazgos",
+        "ecosistema-ti-productividad",
+        "precision-inventario-30"
+      ],
+      "projectSlugs": [
+        "nube-hibrida-finops-drp-madeco",
+        "sistema-calidad-industrial-astro",
+        "arquitectura-wms-rf-ods",
+        "ciberseguridad-zero-trust-sentinel-madeco"
+      ],
+      "certIds": [
+        "titulo-ingeniero-sistemas-oym",
+        "especialidad-ti",
+        "diplomado-estrategias-digitales",
+        "diplomado-computo-en-la-nube",
+        "diplomado-inteligencia-de-negocios",
+        "google-certified-it-professional",
+        "fcs-administrador-proyectos-virtuales",
+        "aws-certified-cloud-practitioner",
+        "ms-copilot-productivity",
+        "google-soporte-ti-profesional"
+      ],
+      "traceabilityMatrix": [
+        {
+          "company": "MADECO",
+          "companySlug": "madeco",
+          "experienceFocus": "Dirección integral del portafolio de proyectos de TI: consolidación de centro de datos, FinOps cloud, estabilización de SAP S/4HANA y Dynamics 365, y programa Zero Trust.",
+          "certIds": [
+            "titulo-ingeniero-sistemas-oym",
+            "especialidad-ti",
+            "fcs-administrador-proyectos-virtuales",
+            "aws-certified-cloud-practitioner"
+          ],
+          "achievementSummary": "Reducción del 18% en el gasto OPEX de TI con ROI en menos de 10 meses, 99.9% de estabilidad en ERPs y +2,000h ahorradas.",
+          "metricId": "ahorro-costos-18",
+          "projectSlug": "nube-hibrida-finops-drp-madeco",
+          "evidenceSummary": "Informes de ejecución presupuestaria CAPEX/OPEX aprobados por Dirección General y Finanzas, y actas de comité ejecutivo."
+        },
+        {
+          "company": "ODS Logistics",
+          "companySlug": "ods-odw-logistics",
+          "experienceFocus": "Gerencia del proyecto de modernización logística WMS + RF en almacén de +30,000 ft² y reestructuración de la mesa de ayuda bajo el marco ITIL.",
+          "certIds": [
+            "google-certified-it-professional",
+            "google-soporte-ti-profesional",
+            "diplomado-estrategias-digitales"
+          ],
+          "achievementSummary": "+30% en precisión de inventario y reducción del 35% en tiempos de respuesta técnica (MTTR < 18 minutos).",
+          "metricId": "reduccion-tiempos-respuesta-35",
+          "projectSlug": "arquitectura-wms-rf-ods",
+          "evidenceSummary": "Cronograma de 4 fases ejecutado sin detener el despacho, SLAs firmados y encuestas de satisfacción de operaciones."
+        },
+        {
+          "company": "Astro - Pico Duarte Cartón",
+          "companySlug": "astro-pico-duarte-carton",
+          "experienceFocus": "Liderazgo de los proyectos estratégicos de digitalización de calidad industrial, facturación electrónica SAP e innovación con IA.",
+          "certIds": [
+            "especialidad-ti",
+            "ms-copilot-productivity",
+            "diplomado-inteligencia-de-negocios"
+          ],
+          "achievementSummary": "100% de controles de calidad digitalizados, -85% en tiempo de facturación e-CF y +40% de productividad del equipo.",
+          "metricId": "ecosistema-ti-productividad",
+          "projectSlug": "sistema-calidad-industrial-astro",
+          "evidenceSummary": "Entregables en producción en todas las líneas de manufactura y tableros ejecutivos para la Dirección."
+        }
+      ],
+      "experiences": [
+        {
+          "companySlug": "astro-pico-duarte-carton",
+          "company": "Astro - Pico Duarte Cartón",
+          "roleTitle": "Responsable de Tecnología de la Información (Líder de Proyectos y Operaciones TI)",
+          "period": "2026 – Actual",
+          "summary": "Dirección estratégica y operativa del departamento de TI, liderando el portafolio de proyectos de transformación digital en manufactura.",
+          "achievements": [
+            "Dirigí de principio a fin la entrega de 4 proyectos estratégicos en su primer año: integración e-CF SAP (-85% tiempo), sistema de calidad (100% digital), alta disponibilidad (99.9%) y ecosistema IA (+40% productividad).",
+            "Estandaricé el catálogo de servicios TI, acuerdos de nivel de servicio (SLA) y reportes ejecutivos para la Dirección."
+          ],
+          "technologies": [
+            "IT Project Management",
+            "SAP ERP",
+            "ITIL",
+            "Power BI",
+            "Gobierno de TI"
+          ]
+        },
+        {
+          "companySlug": "ods-odw-logistics",
+          "company": "ODS Logistics",
+          "roleTitle": "Consultor Gerencial de Proyectos Tecnológicos e Infraestructura",
+          "period": "Feb 2024 – Jun 2026",
+          "summary": "Liderazgo de proyectos de modernización tecnológica, WMS, redes industriales y continuidad de negocio para operaciones logísticas de alto volumen.",
+          "achievements": [
+            "Gerencié el proyecto de despliegue de red industrial y terminales RF logrando un +30% en exactitud de inventario.",
+            "Implementé la mesa de ayuda basada en ITIL con matrices de escalamiento P1/P2/P3, reduciendo en 35% los tiempos de resolución técnica."
+          ],
+          "technologies": [
+            "Gestión de Proyectos",
+            "ITIL Service Desk",
+            "WMS",
+            "BCP / DRP",
+            "SLAs"
+          ]
+        },
+        {
+          "companySlug": "madeco",
+          "company": "MADECO",
+          "roleTitle": "Gerente de Tecnología de la Información (IT Manager)",
+          "period": "Feb 2022 – Ene 2024",
+          "summary": "Dirección ejecutiva del área de TI, administración del presupuesto anual CAPEX/OPEX, liderazgo de equipo técnico y relación con proveedores.",
+          "achievements": [
+            "Reduje en un 18% los costos recurrentes de TI mediante el proyecto de virtualización de servidores, consolidación de licencias y FinOps cloud.",
+            "Lideré la estabilización y gobernanza de SAP S/4HANA y Microsoft Dynamics 365 alcanzando 99.9% de disponibilidad.",
+            "Dirigí el programa de ciberseguridad Zero Trust reduciendo en 60% los incidentes de seguridad corporativos."
+          ],
+          "technologies": [
+            "Dirección de TI",
+            "CAPEX / OPEX & FinOps",
+            "SAP S/4HANA",
+            "Dynamics 365",
+            "Gestión de Proveedores"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "infraestructura-nube-devops",
+      "title": "Infraestructura, nube y DevOps",
+      "shortTitle": "Infraestructura, Nube y DevOps",
+      "englishTitle": "Cloud, Infrastructure & DevOps Engineer",
+      "domain": "Gestión, Nube y Redes",
+      "yearsExperience": "18+ años en infraestructura de servidores, virtualización, nube híbrida (Azure/AWS) y continuidad BCP/DRP",
+      "headline": "Arquitecturas de nube híbrida (Azure / AWS), virtualización de alta disponibilidad (VMware vSphere / Hyper-V), administración Windows Server & Linux, FinOps (-18% OPEX) y DRP con 99.9% de uptime.",
+      "summary": "Ingeniero de Infraestructura, Cloud y DevOps con Diplomado en Cómputo en la Nube y certificaciones oficiales AWS Certified Cloud Practitioner, Microsoft MCSA Windows Server, Hyper-V, IBM Cloud Essentials, Google Cloud y Linux LPI/NDG. Especialista en diseñar, migrar, automatizar y proteger centros de datos empresariales y entornos híbridos de misión crítica.",
+      "valueProposition": "Diseño infraestructuras híbridas resilientes y eficientes en costos: consolido servidores físicos a clústeres virtualizados (-18% en OPEX), automatizo despliegues y respaldos inmutables, y sostengo un 99.9% de disponibilidad con RTO < 2h y RPO < 5 min.",
+      "skills": [
+        "Amazon Web Services (AWS EC2, S3, Glacier, IAM)",
+        "Microsoft Azure (VMs, Blob Storage, Entra ID, Backup)",
+        "VMware vSphere & Microsoft Hyper-V Clustering",
+        "Windows Server (Active Directory, GPO, DNS, Failover)",
+        "Administración de Servidores Linux (LPI / Bash)",
+        "Automatización de Infraestructura (PowerShell / Python)",
+        "Continuidad Operativa BCP / DRP & Veeam Backup 3-2-1",
+        "FinOps y Optimización de Costos en Nube"
+      ],
+      "metricIds": [
+        "ahorro-costos-18",
+        "resiliencia-datos-bcp-95",
+        "resiliencia-drp-unipago",
+        "disponibilidad-infraestructura-astro",
+        "reduccion-downtime-70"
+      ],
+      "projectSlugs": [
+        "nube-hibrida-finops-drp-madeco",
+        "arquitectura-wms-rf-ods",
+        "optimizacion-dba-sql-cumplimiento-unipago",
+        "telemetria-predictiva-monitoreo-domicem"
+      ],
+      "certIds": [
+        "titulo-ingeniero-sistemas-oym",
+        "especialidad-ti",
+        "diplomado-computo-en-la-nube",
+        "diplomado-sistemas-informaticos",
+        "aws-certified-cloud-practitioner",
+        "mcsa-windows-server",
+        "comptia-a-plus",
+        "microsoft-virtualizacion-hyperv",
+        "ibm-cloud-essentials",
+        "aws-cloud-101",
+        "google-cloud-computing-activate",
+        "fcs-asesor-infraestructura-nube",
+        "ndg-linux-essentials",
+        "ndg-linux-unhatched",
+        "eset-curso-backup-continuidad",
+        "google-infraestructura-servicios-ti"
+      ],
+      "traceabilityMatrix": [
+        {
+          "company": "MADECO",
+          "companySlug": "madeco",
+          "experienceFocus": "Consolidación de 14 servidores físicos mediante migración P2V a clústeres VMware vSphere y Hyper-V con almacenamiento SAN y aplicación de FinOps en Azure/AWS.",
+          "certIds": [
+            "diplomado-computo-en-la-nube",
+            "aws-certified-cloud-practitioner",
+            "mcsa-windows-server",
+            "microsoft-virtualizacion-hyperv"
+          ],
+          "achievementSummary": "Reducción auditada del 18% en OPEX de TI, recuperación de inversión en <10 meses y 99.9% de disponibilidad en ERPs.",
+          "metricId": "ahorro-costos-18",
+          "projectSlug": "nube-hibrida-finops-drp-madeco",
+          "evidenceSummary": "Arquitectura del clúster de virtualización, inventario P2V completado sin downtime e informes financieros de ahorro FinOps."
+        },
+        {
+          "company": "ODS Logistics",
+          "companySlug": "ods-odw-logistics",
+          "experienceFocus": "Diseño de arquitectura híbrida Azure/AWS, política de respaldos 3-2-1 con copias inmutables cifradas AES-256 en Azure Blob y AWS S3 Glacier.",
+          "certIds": [
+            "aws-certified-cloud-practitioner",
+            "ibm-cloud-essentials",
+            "eset-curso-backup-continuidad",
+            "fcs-asesor-infraestructura-nube"
+          ],
+          "achievementSummary": "-95% en exposición a pérdida de datos, RTO < 2 horas validado en simulacros semestrales y 99.9% de disponibilidad.",
+          "metricId": "resiliencia-datos-bcp-95",
+          "projectSlug": "arquitectura-wms-rf-ods",
+          "evidenceSummary": "Actas de simulacros semestrales de restauración en ambiente aislado y bitácoras de replicación cloud."
+        },
+        {
+          "company": "UNIPAGO",
+          "companySlug": "unipago",
+          "experienceFocus": "Administración de servidores de misión crítica Windows Server, Active Directory, replicación hacia Azure y monitoreo predictivo de capacidad.",
+          "certIds": [
+            "mcsa-windows-server",
+            "google-infraestructura-servicios-ti",
+            "ndg-linux-essentials"
+          ],
+          "achievementSummary": "-70% en downtime no planificado, -95% en riesgo de pérdida transaccional (RPO < 5 min) y 99.99% de estabilidad.",
+          "metricId": "reduccion-downtime-70",
+          "projectSlug": "optimizacion-dba-sql-cumplimiento-unipago",
+          "evidenceSummary": "Reportes de disponibilidad de infraestructura crítica y pruebas de failover híbrido auditadas por reguladores."
+        },
+        {
+          "company": "Astro - Pico Duarte Cartón",
+          "companySlug": "astro-pico-duarte-carton",
+          "experienceFocus": "Reestructuración de servidores Windows/Linux en planta industrial, automatización de respaldos en PowerShell/Python y pruebas de recuperación en caliente.",
+          "certIds": [
+            "ndg-linux-essentials",
+            "mcsa-windows-server",
+            "eset-curso-backup-continuidad"
+          ],
+          "achievementSummary": "99.9% de disponibilidad operativa en planta de manufactura continua y RPO inferior a 15 minutos.",
+          "metricId": "disponibilidad-infraestructura-astro",
+          "projectSlug": "integracion-ecf-sap-astro",
+          "evidenceSummary": "Bitácoras de sondas de uptime y registros de simulacros de restauración de servidores."
+        }
+      ],
+      "experiences": [
+        {
+          "companySlug": "madeco",
+          "company": "MADECO",
+          "roleTitle": "Arquitecto de Infraestructura, Virtualización y Nube Híbrida (Gerente de TI)",
+          "period": "Feb 2022 – Ene 2024",
+          "summary": "Modernización del centro de datos corporativo, migración P2V, gestión de cargas en Azure/AWS y optimización financiera FinOps.",
+          "achievements": [
+            "Consolidé 14 servidores físicos heredados en un clúster de alta disponibilidad VMware vSphere y Hyper-V con almacenamiento SAN, reduciendo el OPEX en 18%.",
+            "Optimicé el dimensionamiento de instancias en Azure y AWS y el licenciamiento corporativo Microsoft.",
+            "Sostuve un 99.9% de disponibilidad para toda la plataforma crítica de la empresa."
+          ],
+          "technologies": [
+            "VMware vSphere",
+            "Hyper-V",
+            "Azure",
+            "AWS",
+            "Windows Server",
+            "SAN Storage",
+            "FinOps"
+          ]
+        },
+        {
+          "companySlug": "ods-odw-logistics",
+          "company": "ODS Logistics",
+          "roleTitle": "Arquitecto de Continuidad Operativa (BCP/DRP) y Nube Híbrida",
+          "period": "Feb 2024 – Jun 2026",
+          "summary": "Diseño e implementación de la arquitectura híbrida local/cloud y estrategia de recuperación ante desastres para operaciones logísticas.",
+          "achievements": [
+            "Implementé la estrategia de respaldos 3-2-1 con copias locales en NAS y réplicas inmutables en Azure Blob Storage y AWS S3 Glacier, reduciendo en 95% la exposición a pérdida de datos.",
+            "Ejecuté simulacros semestrales de pérdida total de servidor comprobando un RTO inferior a 2 horas."
+          ],
+          "technologies": [
+            "AWS S3 Glacier",
+            "Azure Blob Storage",
+            "Veeam Backup",
+            "Windows Server",
+            "BCP / DRP"
+          ]
+        },
+        {
+          "companySlug": "unipago",
+          "company": "UNIPAGO",
+          "roleTitle": "Especialista en Infraestructura de Misión Crítica y Alta Disponibilidad",
+          "period": "Mar 2020 – Ene 2022",
+          "summary": "Administración de infraestructura crítica Windows Server, Active Directory, almacenamiento SAN y contingencia en nube para el sector financiero.",
+          "achievements": [
+            "Reduje en 70% el downtime no planificado mediante monitoreo predictivo de capacidad y automatización de mantenimiento preventivo.",
+            "Logré un RPO inferior a 5 minutos mediante replicación híbrida hacia región secundaria en Azure."
+          ],
+          "technologies": [
+            "Windows Server",
+            "Active Directory",
+            "Azure Cloud",
+            "Failover Cluster",
+            "PowerShell"
+          ]
+        },
+        {
+          "companySlug": "astro-pico-duarte-carton",
+          "company": "Astro - Pico Duarte Cartón",
+          "roleTitle": "Líder de Infraestructura Industrial y Resiliencia Operativa",
+          "period": "2026 – Actual",
+          "summary": "Administración integral de servidores Windows y Linux, almacenamiento y continuidad operativa en planta industrial.",
+          "achievements": [
+            "Alcancé un 99.9% de disponibilidad en infraestructura de planta y un RPO < 15 minutos con respaldos automatizados en Python y PowerShell."
+          ],
+          "technologies": [
+            "Windows Server",
+            "Linux",
+            "PowerShell",
+            "Python",
+            "Continuidad Industrial"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "ingeniero-de-redes",
+      "title": "Ingeniero de Redes — Network Engineer",
+      "shortTitle": "Ingeniero de Redes",
+      "englishTitle": "Network & Telecommunications Engineer",
+      "domain": "Gestión, Nube y Redes",
+      "yearsExperience": "18+ años en arquitectura de redes empresariales e industriales, SD-WAN, Fortinet y Wi-Fi de alta densidad",
+      "headline": "Diseño y operación de redes empresariales e industriales 24/7: Fortinet FortiGate, SD-WAN con failover < 15s, segmentación VLAN, cobertura Wi-Fi industrial RF y monitoreo SNMP con 99.9% de disponibilidad.",
+      "summary": "Ingeniero de Redes y Telecomunicaciones con Diplomado en Redes y Telecomunicaciones, Especialidad en Integrador IoT, certificación oficial Fortinet NSE 4 – Network Security Professional y 6 credenciales verificadas de Cisco Networking Academy (incluyendo Carta al Mérito en CCNA v7). Amplia experiencia diseñando infraestructuras LAN/WAN de misión crítica en almacenes de +30,000 ft², plantas industriales de corrugado y cemento, y entidades financieras.",
+      "valueProposition": "Elimino puntos únicos de falla y zonas muertas de conectividad en plantas industriales y centros logísticos: diseño arquitecturas SD-WAN redundantes y redes Wi-Fi industriales segmentadas que garantizan 99.9% de uptime continuo.",
+      "skills": [
+        "Fortinet FortiGate (NGFW, SD-WAN, VPN IPsec / SSL)",
+        "Routing & Switching Avanzado (Cisco CCNA / VLANs / STP)",
+        "Diseño Wi-Fi Industrial de Alta Densidad y Site Survey RF",
+        "Redundancia WAN Dual y Failover Automático (<15 seg)",
+        "Cableado Estructurado, Fibra Óptica y Enlaces Inalámbricos",
+        "Monitoreo de Red Proactivo (SNMP, Latencia, QoS)",
+        "Segmentación de Redes OT / IT e IoT Industrial",
+        "Diagnóstico de Tráfico y Simulación (Cisco Packet Tracer)"
+      ],
+      "metricIds": [
+        "disponibilidad-99-9",
+        "precision-inventario-30",
+        "disponibilidad-infraestructura-astro",
+        "eficiencia-operativa-30"
+      ],
+      "projectSlugs": [
+        "arquitectura-wms-rf-ods",
+        "telemetria-predictiva-monitoreo-domicem",
+        "nube-hibrida-finops-drp-madeco"
+      ],
+      "certIds": [
+        "titulo-ingeniero-sistemas-oym",
+        "diplomado-redes",
+        "especialidad-integrador-iot",
+        "fortinet-nse4",
+        "cisco-merito-ccna-itn",
+        "cisco-ccna-itn",
+        "cisco-networking-basics",
+        "cisco-packet-tracer",
+        "google-redes-informaticas",
+        "cisco-intro-iot",
+        "cisco-merito-it-essentials"
+      ],
+      "traceabilityMatrix": [
+        {
+          "company": "ODS Logistics",
+          "companySlug": "ods-odw-logistics",
+          "experienceFocus": "Reingeniería de red con enlaces duales, SD-WAN en Fortinet FortiGate (failover < 15s), segmentación VLAN y despliegue Wi-Fi industrial tras Site Survey en almacén de +30,000 ft².",
+          "certIds": [
+            "diplomado-redes",
+            "fortinet-nse4",
+            "cisco-merito-ccna-itn",
+            "cisco-ccna-itn"
+          ],
+          "achievementSummary": "99.9% de disponibilidad continua durante más de 2 años y +30% de precisión de inventario gracias a la cobertura RF sin cortes.",
+          "metricId": "disponibilidad-99-9",
+          "projectSlug": "arquitectura-wms-rf-ods",
+          "evidenceSummary": "Mapas de calor de Site Survey RF, configuración de failover SD-WAN en FortiGate y bitácoras SNMP de uptime del 99.9%."
+        },
+        {
+          "company": "Astro - Pico Duarte Cartón",
+          "companySlug": "astro-pico-duarte-carton",
+          "experienceFocus": "Auditoría y optimización de enlaces de fibra óptica, switches industriales y cableado estructurado en nave de manufactura de corrugado.",
+          "certIds": [
+            "titulo-ingeniero-sistemas-oym",
+            "cisco-networking-basics",
+            "google-redes-informaticas"
+          ],
+          "achievementSummary": "99.9% de disponibilidad en red de planta industrial y comunicaciones administrativas sin interrupciones no programadas.",
+          "metricId": "disponibilidad-infraestructura-astro",
+          "projectSlug": "sistema-calidad-industrial-astro",
+          "evidenceSummary": "Registros de sondas de conectividad en planta y topología segmentada de red industrial."
+        },
+        {
+          "company": "Dominicana de Cales (DOMICEM)",
+          "companySlug": "dominicana-de-cales",
+          "experienceFocus": "Instalación de enlaces inalámbricos redundantes Punto a Punto y switches industriales conectando canteras, básculas camioneras y hornos de calcinación.",
+          "certIds": [
+            "especialidad-integrador-iot",
+            "cisco-intro-iot",
+            "cisco-packet-tracer"
+          ],
+          "achievementSummary": "Cero paradas imprevistas de despacho en básculas por fallas de enlace y +30% de eficiencia operativa en planta 24/7.",
+          "metricId": "eficiencia-operativa-30",
+          "projectSlug": "telemetria-predictiva-monitoreo-domicem",
+          "evidenceSummary": "Bitácoras de disponibilidad de enlaces de básculas camioneras y reportes de continuidad 24/7."
+        }
+      ],
+      "experiences": [
+        {
+          "companySlug": "ods-odw-logistics",
+          "company": "ODS Logistics",
+          "roleTitle": "Arquitecto de Redes Industriales, SD-WAN y Radiofrecuencia (Consultor TI)",
+          "period": "Feb 2024 – Jun 2026",
+          "summary": "Diseño, implementación y monitoreo 24/7 de la infraestructura de red alámbrica, inalámbrica y perimetral para operaciones logísticas.",
+          "achievements": [
+            "Eliminé los puntos únicos de falla implementando enlaces WAN duales y SD-WAN en firewalls Fortinet FortiGate con conmutación automática en menos de 15 segundos, logrando 99.9% de disponibilidad.",
+            "Ejecuté el Site Survey de radiofrecuencia y desplegué la red Wi-Fi industrial con VLAN dedicada para terminales RF entre racks de 8 metros, impulsando un +30% en exactitud de inventario."
+          ],
+          "technologies": [
+            "Fortinet FortiGate",
+            "SD-WAN",
+            "Wi-Fi Industrial",
+            "VLAN Segmentation",
+            "SNMP Monitoring"
+          ]
+        },
+        {
+          "companySlug": "astro-pico-duarte-carton",
+          "company": "Astro - Pico Duarte Cartón",
+          "roleTitle": "Líder de Redes Industriales y Telecomunicaciones de Planta",
+          "period": "2026 – Actual",
+          "summary": "Administración y reestructuración de la red industrial de fibra óptica, switching y conectividad de líneas de producción.",
+          "achievements": [
+            "Audité y reestructuré los enlaces de fibra, switches industriales y monitoreo proactivo alcanzando un 99.9% de disponibilidad continua en planta."
+          ],
+          "technologies": [
+            "Redes Industriales",
+            "Fibra Óptica",
+            "Switching",
+            "Monitoreo Proactivo"
+          ]
+        },
+        {
+          "companySlug": "dominicana-de-cales",
+          "company": "Dominicana de Cales",
+          "roleTitle": "Coordinador de Redes LAN/WAN Industriales y Telecomunicaciones",
+          "period": "2018 – 2020",
+          "summary": "Gestión de la infraestructura de comunicaciones en entorno severo de minería y calcinación con operación 24/7.",
+          "achievements": [
+            "Desplegué enlaces inalámbricos redundantes y switches industriales entre canteras, básculas y oficinas, logrando cero interrupciones de despacho y +30% de eficiencia."
+          ],
+          "technologies": [
+            "Enlaces Inalámbricos PtP",
+            "Switches Industriales",
+            "LAN / WAN",
+            "Monitoreo de Enlaces"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "analista-de-ciberseguridad",
+      "title": "Analista de Ciberseguridad — Cybersecurity Analyst",
+      "shortTitle": "Analista de Ciberseguridad",
+      "englishTitle": "Cybersecurity Analyst (SOC / GRC / SecOps)",
+      "domain": "Ciberseguridad y Seguridad Cloud",
+      "yearsExperience": "12+ años en operaciones de ciberseguridad (SOC/SIEM), gestión de vulnerabilidades, hardening y cumplimiento regulatorio",
+      "headline": "Operaciones de defensa corporativa (Microsoft Sentinel SIEM, Defender EDR, Tenable.io), arquitectura Zero Trust (-60% incidentes) y cumplimiento ISO 27001 / NIST CSF / BCRD con 0 hallazgos en auditorías.",
+      "summary": "Analista y Especialista en Ciberseguridad con certificación oficial Fortinet NSE 4, Diplomado en Integridad y Seguridad Web y credenciales especializadas de IBM Cybersecurity, Cisco Cybersecurity, Academia ESET (Gestión y Respuesta a Incidentes), Google Defense y Kali Linux / Ethical Hacking A–Z. Trayectoria comprobada protegiendo infraestructuras financieras reguladas (UNIPAGO) y corporaciones industriales (MADECO, ODS, Astro).",
+      "valueProposition": "Reduzco en un 60% los incidentes de seguridad mediante detección proactiva (SIEM Sentinel + EDR Defender + Tenable.io) y aseguro el 100% de aprobación con cero hallazgos críticos en auditorías regulatorias del sector financiero (BCRD, SIMV, ISO 27001).",
+      "skills": [
+        "SIEM Microsoft Sentinel & Correlación de Logs",
+        "EDR / XDR Microsoft 365 Defender",
+        "Gestión de Vulnerabilidades (Tenable.io) & Pentesting (Kali)",
+        "Cumplimiento Regulatorio (ISO 27001, NIST CSF, Normativa BCRD)",
+        "Seguridad Perimetral (Fortinet FortiGate NGFW / IPS)",
+        "Respuesta a Incidentes (Playbooks SOAR / Contención)",
+        "Hardening de Servidores, RBAC y Principio de Menor Privilegio",
+        "Custodia de Bitácoras Inmutables y Auditoría Forense"
+      ],
+      "metricIds": [
+        "ciberseguridad-zero-trust-madeco",
+        "auditorias-cero-hallazgos",
+        "resiliencia-datos-bcp-95",
+        "resiliencia-drp-unipago"
+      ],
+      "projectSlugs": [
+        "ciberseguridad-zero-trust-sentinel-madeco",
+        "optimizacion-dba-sql-cumplimiento-unipago",
+        "nube-hibrida-finops-drp-madeco"
+      ],
+      "certIds": [
+        "titulo-ingeniero-sistemas-oym",
+        "diplomado-integridad-web",
+        "fortinet-nse4",
+        "ethical-hacking-az",
+        "kali-linux-pentesting",
+        "eset-gestion-respuesta-incidentes",
+        "eset-curso-backup-continuidad",
+        "google-seguridad-informatica-defensa",
+        "google-ciberseguridad-teletrabajo",
+        "fcs-seguridad-informatica-servidores",
+        "ibm-cybersecurity-fundamentals",
+        "cisco-intro-cybersecurity"
+      ],
+      "traceabilityMatrix": [
+        {
+          "company": "MADECO",
+          "companySlug": "madeco",
+          "experienceFocus": "Escaneo y remediación de 180+ vulnerabilidades con Tenable.io, despliegue de EDR Microsoft Defender y centralización de logs en SIEM Microsoft Sentinel.",
+          "certIds": [
+            "fortinet-nse4",
+            "ethical-hacking-az",
+            "eset-gestion-respuesta-incidentes",
+            "ibm-cybersecurity-fundamentals"
+          ],
+          "achievementSummary": "Reducción del 60% en incidentes de seguridad efectivos y contención automatizada de amenazas en minutos.",
+          "metricId": "ciberseguridad-zero-trust-madeco",
+          "projectSlug": "ciberseguridad-zero-trust-sentinel-madeco",
+          "evidenceSummary": "Reportes mensuales del SIEM Microsoft Sentinel, informes de remediación de Tenable.io y actas del comité de riesgos."
+        },
+        {
+          "company": "UNIPAGO",
+          "companySlug": "unipago",
+          "experienceFocus": "Mapeo de controles contra ISO 27001, NIST CSF y normativas del Banco Central (BCRD), hardening RBAC, cifrado TDE y retención inmutable de logs en Sentinel.",
+          "certIds": [
+            "diplomado-integridad-web",
+            "fcs-seguridad-informatica-servidores",
+            "google-seguridad-informatica-defensa",
+            "kali-linux-pentesting"
+          ],
+          "achievementSummary": "100% de cumplimiento con cero hallazgos críticos en 3 auditorías regulatorias externas e internas consecutivas.",
+          "metricId": "auditorias-cero-hallazgos",
+          "projectSlug": "optimizacion-dba-sql-cumplimiento-unipago",
+          "evidenceSummary": "Dictámenes formales sin observaciones críticas emitidos por firmas auditoras internacionales y supervisores bancarios."
+        }
+      ],
+      "experiences": [
+        {
+          "companySlug": "madeco",
+          "company": "MADECO",
+          "roleTitle": "Líder de Ciberseguridad Corporativa, SOC/SIEM y Gestión de Vulnerabilidades",
+          "period": "Feb 2022 – Ene 2024",
+          "summary": "Diseño y ejecución de la estrategia de defensa en profundidad, monitoreo SIEM y remediación de vulnerabilidades en toda la corporación.",
+          "achievements": [
+            "Ejecuté el diagnóstico con Tenable.io remediando más de 180 vulnerabilidades críticas en servidores y estaciones de trabajo.",
+            "Desplegué Microsoft 365 Defender (EDR) y centralicé las bitácoras de firewalls, Active Directory y nube en Microsoft Sentinel, reduciendo un 60% los incidentes de seguridad."
+          ],
+          "technologies": [
+            "Microsoft Sentinel (SIEM)",
+            "Microsoft Defender (EDR)",
+            "Tenable.io",
+            "Fortinet FortiGate",
+            "Zero Trust"
+          ]
+        },
+        {
+          "companySlug": "unipago",
+          "company": "UNIPAGO",
+          "roleTitle": "Especialista en Ciberseguridad Financiera y Cumplimiento Regulatorio",
+          "period": "Mar 2020 – Ene 2022",
+          "summary": "Aseguramiento de infraestructura transaccional financiera bajo los estrictos marcos del Banco Central (BCRD), SIMV, ISO 27001 y NIST CSF.",
+          "achievements": [
+            "Logré cero hallazgos críticos en 3 ciclos consecutivos de auditoría externa y regulatoria.",
+            "Implementé controles de acceso basado en roles (RBAC), principio de menor privilegio, cifrado en tránsito/reposo y custodia inmutable de bitácoras en Sentinel."
+          ],
+          "technologies": [
+            "ISO 27001",
+            "NIST CSF",
+            "Normativas BCRD",
+            "Microsoft Sentinel",
+            "RBAC",
+            "Hardening"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "ingeniero-seguridad-cloud",
+      "title": "Ingeniero de Seguridad Cloud — Cloud Security Engineer",
+      "shortTitle": "Ingeniero de Seguridad Cloud",
+      "englishTitle": "Cloud Security Engineer",
+      "domain": "Ciberseguridad y Seguridad Cloud",
+      "yearsExperience": "10+ años asegurando arquitecturas híbridas Azure/AWS, identidad Entra ID, Zero Trust y bóvedas inmutables",
+      "headline": "Arquitectura de seguridad en la nube (Azure / AWS), Identidad Zero Trust con Microsoft Entra ID (Acceso Condicional y MFA), SIEM Cloud-Native (Sentinel) y protección criptográfica AES-256 / TDE.",
+      "summary": "Ingeniero de Seguridad Cloud e Ingeniero en Sistemas combinando certificaciones en Computación en la Nube (Diplomado Cloud, AWS Certified Cloud Practitioner, IBM Cloud, Google Cloud) y Ciberseguridad Avanzada (Fortinet NSE 4, Diplomado en Integridad Web, IBM Cybersecurity). Especialista en proteger cargas de trabajo híbridas Azure/AWS, gobernar identidades con Microsoft Entra ID y blindar datos críticos contra ransomware y desastres.",
+      "valueProposition": "Blindo entornos híbridos Azure y AWS desde la identidad hasta el dato: reduzco un 60% los incidentes con Zero Trust y Entra ID, disminuyo un 95% la exposición a pérdida de información con bóvedas cloud inmutables y cumplo al 100% con normativas financieras.",
+      "skills": [
+        "Seguridad en Microsoft Azure & Amazon Web Services (AWS)",
+        "Microsoft Entra ID (Azure AD), Acceso Condicional & MFA",
+        "Arquitectura Zero Trust & Bloqueo de Protocolos Heredados",
+        "SIEM Cloud-Native (Microsoft Sentinel) & SOAR Playbooks",
+        "Bóvedas Inmutables (Azure Blob Immutability / AWS S3 Glacier)",
+        "Cifrado Cloud y de Datos (AES-256, TLS 1.3, SQL TDE)",
+        "Seguridad de Red Híbrida (VPN IPsec, SD-WAN Segura, NSGs)",
+        "Gobierno, Riesgo y Cumplimiento en la Nube (ISO 27001 / BCRD)"
+      ],
+      "metricIds": [
+        "ciberseguridad-zero-trust-madeco",
+        "resiliencia-datos-bcp-95",
+        "resiliencia-drp-unipago",
+        "auditorias-cero-hallazgos"
+      ],
+      "projectSlugs": [
+        "ciberseguridad-zero-trust-sentinel-madeco",
+        "nube-hibrida-finops-drp-madeco",
+        "optimizacion-dba-sql-cumplimiento-unipago",
+        "arquitectura-wms-rf-ods"
+      ],
+      "certIds": [
+        "titulo-ingeniero-sistemas-oym",
+        "diplomado-computo-en-la-nube",
+        "diplomado-integridad-web",
+        "aws-certified-cloud-practitioner",
+        "fortinet-nse4",
+        "ibm-cloud-essentials",
+        "aws-cloud-101",
+        "fcs-asesor-infraestructura-nube",
+        "ibm-cybersecurity-fundamentals",
+        "eset-curso-backup-continuidad",
+        "google-seguridad-informatica-defensa",
+        "google-ciberseguridad-teletrabajo"
+      ],
+      "traceabilityMatrix": [
+        {
+          "company": "MADECO",
+          "companySlug": "madeco",
+          "experienceFocus": "Implementación de arquitectura Zero Trust en la nube con Microsoft Entra ID (Azure AD), políticas de Acceso Condicional, MFA obligatorio y SIEM cloud Microsoft Sentinel.",
+          "certIds": [
+            "diplomado-computo-en-la-nube",
+            "aws-certified-cloud-practitioner",
+            "fortinet-nse4",
+            "ibm-cybersecurity-fundamentals"
+          ],
+          "achievementSummary": "Reducción del 60% en incidentes de seguridad y bloqueo total de ataques por credenciales comprometidas o protocolos heredados.",
+          "metricId": "ciberseguridad-zero-trust-madeco",
+          "projectSlug": "ciberseguridad-zero-trust-sentinel-madeco",
+          "evidenceSummary": "Políticas de Acceso Condicional en Entra ID, playbooks SOAR en Microsoft Sentinel y reportes de postura de seguridad cloud."
+        },
+        {
+          "company": "ODS Logistics",
+          "companySlug": "ods-odw-logistics",
+          "experienceFocus": "Diseño de bóvedas de almacenamiento inmutable y cifrado AES-256 en Azure Blob Storage y AWS S3 Glacier para blindaje contra ransomware y desastres.",
+          "certIds": [
+            "aws-certified-cloud-practitioner",
+            "ibm-cloud-essentials",
+            "eset-curso-backup-continuidad"
+          ],
+          "achievementSummary": "Reducción del 95% en exposición a pérdida de datos críticos y recuperación garantizada con RTO < 2 horas.",
+          "metricId": "resiliencia-datos-bcp-95",
+          "projectSlug": "arquitectura-wms-rf-ods",
+          "evidenceSummary": "Bitácoras auditadas de sincronización cifrada multi-nube (Azure/AWS) y pruebas semestrales de restauración."
+        },
+        {
+          "company": "UNIPAGO",
+          "companySlug": "unipago",
+          "experienceFocus": "Seguridad en arquitectura híbrida financiera Azure/AWS, cifrado Transparent Data Encryption (TDE), RBAC estricto y retención inmutable de logs regulatorios.",
+          "certIds": [
+            "diplomado-integridad-web",
+            "fcs-asesor-infraestructura-nube",
+            "google-seguridad-informatica-defensa"
+          ],
+          "achievementSummary": "Cero hallazgos críticos en 3 auditorías regulatorias consecutivas y RPO < 5 minutos en replicación hacia Azure.",
+          "metricId": "resiliencia-drp-unipago",
+          "projectSlug": "optimizacion-dba-sql-cumplimiento-unipago",
+          "evidenceSummary": "Dictámenes de auditoría externa BCRD/ISO 27001 y pruebas de failover seguro hacia la nube."
+        }
+      ],
+      "experiences": [
+        {
+          "companySlug": "madeco",
+          "company": "MADECO",
+          "roleTitle": "Arquitecto de Seguridad Cloud y Zero Trust (Gerente de TI)",
+          "period": "Feb 2022 – Ene 2024",
+          "summary": "Transformación de la seguridad perimetral tradicional hacia una arquitectura moderna Zero Trust centrada en la identidad cloud y telemetría SIEM en Azure.",
+          "achievements": [
+            "Desplegué Microsoft Entra ID con políticas de Acceso Condicional por riesgo de sesión, ubicación y dispositivo, exigiendo MFA en el 100% de las cuentas.",
+            "Implementé Microsoft Sentinel como SIEM nativo en la nube integrando alertas de Microsoft 365 Defender, Azure y firewalls perimetrales (-60% en incidentes)."
+          ],
+          "technologies": [
+            "Microsoft Entra ID",
+            "Microsoft Sentinel",
+            "Azure Security",
+            "AWS IAM",
+            "Zero Trust",
+            "Defender for Cloud"
+          ]
+        },
+        {
+          "companySlug": "ods-odw-logistics",
+          "company": "ODS Logistics",
+          "roleTitle": "Especialista en Seguridad de Nube Híbrida y Protección de Datos (Consultor TI)",
+          "period": "Feb 2024 – Jun 2026",
+          "summary": "Aseguramiento de datos logísticos mediante cifrado e inmutabilidad en repositorios cloud de Azure y AWS.",
+          "achievements": [
+            "Configuré copias de seguridad cifradas bajo estándar AES-256 con bloqueo de inmutabilidad en Azure Blob Storage y AWS S3 Glacier (-95% en exposición a pérdida de datos)."
+          ],
+          "technologies": [
+            "AWS S3 Glacier",
+            "Azure Blob Storage",
+            "AES-256 Encryption",
+            "Fortinet VPN IPsec",
+            "Inmutabilidad Cloud"
+          ]
+        },
+        {
+          "companySlug": "unipago",
+          "company": "UNIPAGO",
+          "roleTitle": "Especialista en Seguridad Cloud Financiera y Resiliencia Híbrida",
+          "period": "Mar 2020 – Ene 2022",
+          "summary": "Protección criptográfica, gobierno de identidades privilegiadas y replicación segura hacia la nube bajo normativas bancarias.",
+          "achievements": [
+            "Aseguré la replicación transaccional híbrida hacia Azure con cifrado TDE y controles RBAC, logrando RPO < 5 minutos y cero hallazgos en 3 auditorías regulatorias."
+          ],
+          "technologies": [
+            "Azure Security",
+            "AWS",
+            "TDE Encryption",
+            "Microsoft Sentinel",
+            "ISO 27001 Cloud Controls"
+          ]
+        }
+      ]
+    }
+  ]
+}

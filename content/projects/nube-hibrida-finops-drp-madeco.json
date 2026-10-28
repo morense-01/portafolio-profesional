@@ -1,0 +1,33 @@
+{
+  "slug": "nube-hibrida-finops-drp-madeco",
+  "public": true,
+  "name": "Infraestructura de Nube Híbrida (AWS / Azure), Continuidad BCP/DRP y Gobierno FinOps",
+  "type": "Cloud, Infraestructura y DevOps",
+  "role": "Gerente de Tecnología y Arquitecto Cloud",
+  "status": "Implementado en producción (2023–2024)",
+  "relatedCompany": "madeco",
+  "summary": "Modernización de cargas de trabajo empresariales (SAP S/4HANA y Dynamics 365) en arquitectura híbrida AWS/Azure con recuperación ante desastres y optimización financiera FinOps.",
+  "problem": "Costos crecientes de licenciamiento y recursos cloud sobredimensionados, junto a la necesidad de garantizar continuidad 99.9% para los ERP críticos del negocio.",
+  "architecture": "Infraestructura híbrida interconectada mediante enlaces cifrados entre centro de datos local (Windows Server / Hyper-V) y nube pública (AWS / Azure), con réplicas automatizadas bajo norma ISO 22301, monitoreo de recursos y políticas de dimensionamiento dinámico (FinOps).",
+  "technologies": [
+    "Amazon Web Services (AWS)",
+    "Microsoft Azure",
+    "SAP S/4HANA",
+    "Dynamics 365",
+    "Windows Server",
+    "Hyper-V",
+    "BCP / DRP ISO 22301"
+  ],
+  "contributions": [
+    "Auditoría técnica y financiera del consumo cloud y contratos de proveedores tecnológicos.",
+    "Reingeniería y consolidación de instancias logrando un ahorro directo del 18% en el presupuesto anual de TI.",
+    "Aseguramiento de una disponibilidad del 99.9% para las plataformas SAP S/4HANA y Microsoft Dynamics 365.",
+    "Diseño y pruebas de simulacros de recuperación ante desastres (DRP) con RPO y RTO controlados."
+  ],
+  "evidence": [
+    "Métricas auditadas: 18% de reducción de costos TI y 99.9% de disponibilidad de sistemas ERP en MADECO.",
+    "Certificaciones verificadas: AWS Certified Cloud Practitioner, Diplomado en Cómputo en la Nube, MCSA Windows Server e IBM Cloud Essentials.",
+    "Expediente ejecutivo de MADECO."
+  ],
+  "links": []
+}

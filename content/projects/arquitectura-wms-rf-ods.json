@@ -1,0 +1,33 @@
+{
+  "slug": "arquitectura-wms-rf-ods",
+  "public": true,
+  "name": "Modernización de Red Industrial de Radiofrecuencia (RF), Integración WMS y Analítica Logística",
+  "type": "Redes, Infraestructura y Analítica Logística",
+  "role": "IT Infrastructure & Technology Consultant",
+  "status": "Implementado en producción (2024–2025)",
+  "relatedCompany": "ods-odw-logistics",
+  "summary": "Rediseño de la red inalámbrica industrial para terminales de radiofrecuencia, optimización del sistema WMS y reportería operativa para centros de distribución logística.",
+  "problem": "Desconexiones intermitentes de terminales RF en pasillos de almacén, desfasajes de sincronización en el WMS y demoras en la conciliación de inventarios.",
+  "architecture": "Infraestructura de red segmentada en VLANs con roaming continuo para lectores RF, enlaces troncales redundantes, alta disponibilidad de servidores de base de datos del WMS, respaldos 3-2-1 y capa de inteligencia de negocios para auditoría de stock.",
+  "technologies": [
+    "Cisco Networking",
+    "WMS",
+    "Radiofrecuencia (RF)",
+    "VLAN / VPN IPSec",
+    "SQL Server",
+    "Power BI",
+    "Windows Server"
+  ],
+  "contributions": [
+    "Estudio de cobertura inalámbrica (site survey) y reconfiguración de Access Points industriales con roaming sin cortes.",
+    "Optimización de la infraestructura de base de datos y comunicaciones que soporta el sistema WMS.",
+    "Implementación de monitoreo proactivo de red logrando 99.9% de disponibilidad operativa.",
+    "Estandarización del flujo de captura por código de barras elevando un 30% la precisión de inventario."
+  ],
+  "evidence": [
+    "Métricas auditadas: +30% en precisión de inventario, 99.9% de disponibilidad de red y -35% en tiempos de respuesta.",
+    "Certificaciones alineadas: Cisco CCNA Introduction to Networks (con Carta al Mérito) y Fortinet NSE 4.",
+    "Expediente profesional verificado de ODS Logistics."
+  ],
+  "links": []
+}

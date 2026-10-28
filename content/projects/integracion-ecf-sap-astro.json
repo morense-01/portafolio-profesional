@@ -1,0 +1,39 @@
+{
+  "slug": "integracion-ecf-sap-astro",
+  "public": true,
+  "name": "Motor Automatizado de Facturación Electrónica (e-CF DGII) e Integración con SAP ERP",
+  "type": "Ingeniería de Datos, IA y Automatización ERP",
+  "role": "Encargado de TI (Desarrollo de IA, Automatización e Integración ERP)",
+  "status": "En producción (2026)",
+  "relatedCompany": "astro-pico-duarte-carton",
+  "summary": "Ingesta automática de XML e-CF, validación estructural y fiscal contra esquemas XSD de la DGII, mapeo de campos contables (RNC, NCF, ITBIS, montos), inyección en SAP ERP y bitácora de auditoría en SQL Server.",
+  "problem": "El procesamiento manual de comprobantes fiscales electrónicos (e-CF) requería ~25 min por lote y presentaba riesgo de errores de digitación en cuentas por pagar e impuestos.",
+  "architecture": "Arquitectura de integración automatizada en Python conectada a Microsoft SQL Server y SAP ERP: ingesta automática de archivos XML e-CF, validación estructural y fiscal contra esquemas XSD (normativa DGII), mapeo de campos contables (RNC, NCF, ITBIS, montos), inyección transaccional mediante SAP ERP Connector y registro en bitácora de auditoría con alertas operativas.",
+  "technologies": [
+    "Python",
+    "XML",
+    "Validación de esquemas XSD (normativa DGII)",
+    "SAP ERP Connector",
+    "Microsoft SQL Server",
+    "Automatización por lotes y alertas",
+    "PowerShell",
+    "Git"
+  ],
+  "contributions": [
+    "Diseño completo de la arquitectura de integración contable e-CF y SAP ERP.",
+    "Desarrollo íntegro del servicio validador en Python para lectura y validación de esquemas XSD (normativa DGII).",
+    "Puesta en producción conectada a Microsoft SQL Server y SAP ERP con control de duplicidad y trazabilidad completa.",
+    "Reducción del 85% en el tiempo de procesamiento (de 25 min a <3.5 min por lote) y 0% de errores de transcripción contable."
+  ],
+  "evidence": [
+    "Reducción del 85% en el tiempo de procesamiento (de 25 min a <3.5 min por lote) y 0% de errores de transcripción contable.",
+    "Documentado en portafolio profesional (github.com/morense-01) — Caso Astro - Pico Duarte Cartón.",
+    "Bitácoras de transacciones en SAP ERP y SQL Server con validación XSD sin rechazos."
+  ],
+  "links": [
+    {
+      "title": "Repositorio y Portafolio en GitHub (github.com/morense-01)",
+      "url": "https://github.com/morense-01"
+    }
+  ]
+}

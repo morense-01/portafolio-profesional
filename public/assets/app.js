@@ -91,6 +91,25 @@
   });
   filterList('[data-pf]', $$('#projs > article'), 'data-type');
   filterList('[data-df]', $$('#docs > li'), 'data-cat');
+  filterList('[data-port-domain]', $$('#portfolios-grid > article'), 'data-domain');
+
+  $$('[data-domain-tab]').forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      var val = tab.dataset.domainTab;
+      var sel = $('[data-port-domain]');
+      if (sel) {
+        sel.value = val;
+        sel.dispatchEvent(new Event('change'));
+      } else {
+        $$('#portfolios-grid > article').forEach(function (el) {
+          el.hidden = Boolean(val && el.getAttribute('data-domain') !== val);
+        });
+      }
+      $$('[data-domain-tab]').forEach(function (t) {
+        t.setAttribute('aria-pressed', String(t === tab));
+      });
+    });
+  });
 
   // Filtro de logros y métricas
   var achSelect = $('[data-ach-filter]');

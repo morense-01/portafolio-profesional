@@ -1,0 +1,33 @@
+{
+  "slug": "sistema-calidad-industrial-astro",
+  "public": true,
+  "name": "Plataforma Full Stack de Control Digital de Calidad y Trazabilidad en Planta",
+  "type": "Desarrollo Full Stack y Analítica Industrial",
+  "role": "Arquitecto de Software y Desarrollador Full Stack",
+  "status": "En producción (2026)",
+  "relatedCompany": "astro-pico-duarte-carton",
+  "summary": "Aplicación web integral para digitalizar el 100% de las inspecciones de calidad de cartón corrugado, eliminando registros en papel y habilitando analítica en tiempo real.",
+  "problem": "Los controles de calidad física en piso de producción se registraban en formularios de papel, demorando la detección de desviaciones y el análisis histórico de lotes.",
+  "architecture": "Aplicación web Full Stack con interfaz responsiva adaptada a terminales industriales en piso de planta, backend transaccional conectado a SQL Server para almacenamiento normalizado y capa de visualización ejecutiva en Power BI para monitoreo de mermas y estándares.",
+  "technologies": [
+    "JavaScript",
+    "Node.js",
+    "HTML5 / CSS3",
+    "SQL Server",
+    "Power BI",
+    "DAX",
+    "REST API"
+  ],
+  "contributions": [
+    "Levantamiento de requerimientos en piso de planta junto a supervisores de calidad y producción.",
+    "Diseño del modelo de base de datos relacional en SQL Server para trazabilidad por orden de producción.",
+    "Desarrollo del frontend de captura rápida con validación en tiempo real y del backend de persistencia.",
+    "Creación de tableros analíticos que redujeron en un 60% el tiempo de consulta de históricos de calidad."
+  ],
+  "evidence": [
+    "Métrica auditada: 100% de digitalización de controles de calidad y -60% en tiempos de consulta.",
+    "Sistema en operación continua en la planta industrial de Haina (Astro - Pico Duarte Cartón).",
+    "Respaldo documental en expediente de experiencia de Astro - Pico Duarte Cartón."
+  ],
+  "links": []
+}

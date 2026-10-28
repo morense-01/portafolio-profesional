@@ -1,0 +1,33 @@
+{
+  "slug": "optimizacion-dba-sql-cumplimiento-unipago",
+  "public": true,
+  "name": "Optimización de Motores SQL Server de Misión Crítica, Alta Disponibilidad y Auditoría Financiera",
+  "type": "Bases de Datos (DBA), Infraestructura y Cumplimiento",
+  "role": "Especialista de Infraestructura y Bases de Datos",
+  "status": "Implementado en producción (2019–2023)",
+  "relatedCompany": "unipago",
+  "summary": "Tuning avanzado de bases de datos transaccionales SQL Server, arquitectura de replicación híbrida ante desastres y cumplimiento regulatorio en el sector de pensiones.",
+  "problem": "Los procesos masivos de generación de reportes regulatorios y cierres transaccionales presentaban cuellos de botella de I/O, y la entidad requería superar estrictas auditorías regulatorias sin hallazgos.",
+  "architecture": "Clústeres de alta disponibilidad en Windows Server y SQL Server con particionamiento de tablas históricas, optimización de planes de ejecución e índices, replicación asíncrona hacia sitio alterno de contingencia (DRP) y controles de seguridad auditables.",
+  "technologies": [
+    "Microsoft SQL Server",
+    "T-SQL",
+    "Windows Server",
+    "Hyper-V",
+    "Always On / Failover Cluster",
+    "PowerShell",
+    "Auditoría TI / Cumplimiento"
+  ],
+  "contributions": [
+    "Reingeniería de consultas T-SQL complejas, mantenimiento de índices y estadísticas reduciendo un 65% el tiempo de reportes regulatorios.",
+    "Implementación de arquitectura de alta disponibilidad que redujo en un 70% el downtime no planificado.",
+    "Ejecución de pruebas periódicas de restauración y DRP disminuyendo en un 95% la exposición a pérdida de datos.",
+    "Aplicación de controles técnicos de seguridad logrando 0 hallazgos críticos en 3 auditorías regulatorias consecutivas."
+  ],
+  "evidence": [
+    "Métricas auditadas en UNIPAGO: -65% tiempo de reportes SQL, -70% downtime, -95% riesgo de pérdida de datos y 0 hallazgos en 3 auditorías.",
+    "Carta laboral oficial de UNIPAGO y certificaciones en SQL Server, Curador de Bases de Datos y MCSA Windows Server.",
+    "Expediente detallado de UNIPAGO."
+  ],
+  "links": []
+}
