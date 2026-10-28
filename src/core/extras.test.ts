@@ -7,12 +7,12 @@ import { emptyDB, migrate } from '../data/repo';
 
 describe('tutor', () => {
   it('corrige y explica en español', () => {
-    const c = correctLocal('She have a car');
-    expect(c?.corrected).toBe('She has a car'); expect(c?.explanation).toMatch(/has/);
+    const c = correctLocal('je aime la musique');
+    expect(c?.corrected).toBe("j'aime la musique"); expect(c?.explanation).toMatch(/elisión/i);
   });
-  it('contracciones', () => expect(correctLocal('I dont know')?.corrected).toBe("I don't know"));
-  it('frase correcta sin corrección', () => expect(correctLocal('I like music.')).toBeNull());
-  it('pregunta según nivel', async () => expect(await localProvider.nextQuestion('work', 'A1', 0)).toBe('What is your job?'));
+  it('expresiones quebequenses', () => expect(correctLocal('ce weekend')?.corrected).toBe('cette fin de semaine'));
+  it('frase correcta sin corrección', () => expect(correctLocal("J'aime la musique.")).toBeNull());
+  it('pregunta según nivel', async () => expect(await localProvider.nextQuestion('work', 'A1', 0)).toBe('Quel est ton emploi ?'));
 });
 
 describe('placement', () => {

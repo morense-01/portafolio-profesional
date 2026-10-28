@@ -1,14 +1,14 @@
 /** Evaluación inicial, misiones y recordatorios (lógica pura). */
 export interface PlacementQ { q: string; options: string[]; answer: number; level: 'A1' | 'A2' | 'B1' | 'B2' }
 export const PLACEMENT: PlacementQ[] = [
-  { q: 'She ___ a student.', options: ['am', 'is', 'are'], answer: 1, level: 'A1' },
-  { q: 'I ___ coffee every morning.', options: ['drink', 'drinks', 'drinking'], answer: 0, level: 'A1' },
-  { q: 'Yesterday we ___ to the park.', options: ['go', 'went', 'gone'], answer: 1, level: 'A2' },
-  { q: 'There ___ two servers in the room.', options: ['is', 'are', 'be'], answer: 1, level: 'A2' },
-  { q: 'If it rains, I ___ at home.', options: ['stay', 'will stay', 'stayed'], answer: 1, level: 'B1' },
-  { q: 'I have lived here ___ 2020.', options: ['for', 'since', 'during'], answer: 1, level: 'B1' },
-  { q: 'The report ___ by the team before Friday.', options: ['must finish', 'must be finished', 'must finishing'], answer: 1, level: 'B2' },
-  { q: 'Had I known, I ___ differently.', options: ['would act', 'would have acted', 'acted'], answer: 1, level: 'B2' },
+  { q: 'Elle ___ étudiante à Montréal.', options: ['suis', 'est', 'sont'], answer: 1, level: 'A1' },
+  { q: 'Je ___ un café chaque matin.', options: ['bois', 'boit', 'boire'], answer: 0, level: 'A1' },
+  { q: 'Hier, nous ___ au parc du Mont-Royal.', options: ['allons', 'sommes allés', 'aller'], answer: 1, level: 'A2' },
+  { q: 'Il y ___ deux ordinateurs dans la salle.', options: ['a', 'sont', 'ont'], answer: 0, level: 'A2' },
+  { q: 'S’il neige demain, je ___ à la maison.', options: ['reste', 'resterai', 'resté'], answer: 1, level: 'B1' },
+  { q: 'J’habite au Québec ___ deux ans.', options: ['pendant', 'depuis', 'pour'], answer: 1, level: 'B1' },
+  { q: 'Le rapport ___ terminé avant vendredi.', options: ['doit être', 'doit été', 'doit étant'], answer: 0, level: 'B2' },
+  { q: 'Si j’avais su, j’___ agi différemment.', options: ['aurais', 'avais', 'aurais été'], answer: 0, level: 'B2' },
 ];
 
 /** Nivel = el más alto con al menos la mitad acertada y todos los anteriores aprobados. Estimación, no certificación. */

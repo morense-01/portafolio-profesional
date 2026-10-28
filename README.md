@@ -1,6 +1,6 @@
-﻿# Lingua Songs AI (v0.1, PWA)
+# Lingua Songs AI - Francés de Canadá (PWA & Android)
 
-Aprende inglés con canciones de YouTube: Listening → confirmación → Reading → Writing → Speaking → Test final.
+Aprende francés de Canadá (Québec y Acadie) con canciones de YouTube: Listening → confirmación → Reading → Writing → Speaking → Test final. Catálogo exclusivo de música en francés canadiense (Céline Dion, Les Cowboys Fringants, Cœur de pirate, Charlotte Cardin, Garou, Daniel Bélanger, Les Colocs, etc.).
 
 ## Decisión técnica
 **Vite + React + TypeScript (PWA)** en vez de React Native/Expo: una sola base de código, coste cero, y el reproductor oficial de YouTube funciona vía iframe. Android: empaquetar con **Capacitor** (pendiente, ver abajo). La lógica está en `src/core` (funciones puras, testeadas) y la persistencia detrás de una interfaz `Repo` (`src/data/repo.ts`), hoy con localStorage versionado y migrable; SQLite/IndexedDB se pueden añadir implementando `Repo`.

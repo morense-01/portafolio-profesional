@@ -3,7 +3,7 @@ import type { Card } from '../core/srs';
 import type { Lesson } from '../core/lesson';
 import type { XpState } from '../core/xp';
 
-export type Accent = 'CA' | 'US' | 'UK';
+export type Accent = 'CA' | 'QC' | 'AC';
 export interface Song { id: string; title: string; artist: string; videoId: string; url: string; level: string; accent: Accent; transcript: string; transcriptSource: 'youtube' | 'user-provided' | 'none'; createdAt: number }
 export interface Settings { level: string; accent: Accent; threshold: number; minPerSkill: number; timezone: string; reminders: { daily: boolean; review: boolean; time: string; days: number[]; granted: boolean }; theme: 'auto' | 'light' | 'dark' }
 export interface DB {
@@ -17,7 +17,7 @@ export interface DB {
   placementDone: boolean;
   lastNotifiedDay: string | null;
 }
-export const SCHEMA_VERSION = 3;
+export const SCHEMA_VERSION = 4;
 export const emptyDB = (): DB => ({
   version: SCHEMA_VERSION, songs: [], lessons: [], cards: [], xp: { total: 0, byDay: {} }, activeDays: [],
   assessments: [], writingAttempts: [], speakingAttempts: [],
@@ -37,6 +37,17 @@ const MIGRATIONS: ((d: any) => any)[] = [
       ...d.settings,
       accent: d.settings?.accent || 'CA',
     },
+  }),
+  (d) => ({ // 3 → 4: migración a Francés de Canadá (elimina inglés US/UK)
+    ...d,
+    settings: {
+      ...d.settings,
+      accent: (d.settings?.accent === 'QC' || d.settings?.accent === 'AC') ? d.settings.accent : 'CA',
+    },
+    songs: (d.songs ?? []).map((s: any) => ({
+      ...s,
+      accent: (s.accent === 'QC' || s.accent === 'AC') ? s.accent : 'CA',
+    })),
   }),
 ];
 export function migrate(raw: any): DB {

@@ -68,4 +68,25 @@ And I will try to fix you
     expect(extractVocabularyFromTranscript('')).toEqual([]);
     expect(extractDictationLines('', ['fallback'])).toEqual(['fallback']);
   });
+
+  it('extrae vocabulario y oraciones en francés canadiense con caracteres acentuados', () => {
+    const frenchTranscript = `
+Si on m'avait dit un jour qu'on partirait
+Regarder les étoiles filantes dans la nuit
+On va magasiner en fin de semaine
+Pour retrouver un peu de bonheur et d'espoir
+Dans les rues de Montréal sous le soleil
+`;
+    const vocab = extractVocabularyFromTranscript(frenchTranscript, 6);
+    expect(vocab.length).toBeGreaterThan(0);
+    const terms = vocab.map((v) => v.term);
+    expect(terms.some((t) => t.includes('étoile') || t === 'magasiner' || t === 'bonheur')).toBe(true);
+
+    const dictations = extractDictationLines(frenchTranscript);
+    expect(dictations.length).toBeGreaterThan(0);
+
+    const prose = formatProseForWriting(frenchTranscript);
+    expect(prose.sentences.length).toBeGreaterThan(0);
+    expect(prose.fullProse).toContain('Montréal');
+  });
 });

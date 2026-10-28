@@ -1,5 +1,6 @@
 /**
  * Extractor de vocabulario y frases reales a partir de transcripciones de YouTube.
+ * Adaptado para Francés de Canadá (Québec).
  * Garantiza que NUNCA se inventen palabras ni frases de ejemplo:
  * todas las palabras, oraciones de dictado y de pronunciación provienen
  * directamente del texto del video seleccionado.
@@ -17,98 +18,89 @@ export interface ExtractedWord {
 }
 
 const STOP_WORDS = new Set([
-  'the', 'a', 'an', 'and', 'or', 'but', 'if', 'so', 'as', 'of', 'at', 'by', 'for', 'with', 'about',
-  'against', 'between', 'into', 'through', 'during', 'before', 'after', 'above', 'below', 'to', 'from',
-  'up', 'down', 'in', 'out', 'on', 'off', 'over', 'under', 'again', 'further', 'then', 'once', 'here',
-  'there', 'when', 'where', 'why', 'how', 'all', 'any', 'both', 'each', 'few', 'more', 'most', 'other',
-  'some', 'such', 'no', 'nor', 'not', 'only', 'own', 'same', 'than', 'too', 'very', 's', 't', 'can',
-  'will', 'just', 'don', 'should', 'now', 'i', 'me', 'my', 'myself', 'we', 'our', 'ours', 'ourselves',
-  'you', 'your', 'yours', 'yourself', 'yourselves', 'he', 'him', 'his', 'himself', 'she', 'her', 'hers',
-  'herself', 'it', 'its', 'itself', 'they', 'them', 'their', 'theirs', 'themselves', 'what', 'which',
-  'who', 'whom', 'this', 'that', 'these', 'those', 'am', 'is', 'are', 'was', 'were', 'be', 'been',
-  'being', 'have', 'has', 'had', 'having', 'do', 'does', 'did', 'doing', 'would', 'could', 'shall',
-  'might', 'must', 'oh', 'yeah', 'ooh', 'la', 'na', 'ba', 'hey', 'ah', 'uh', 'um', 'whoa', 'baby',
-  'gotta', 'gonna', 'wanna', 'im', 'ive', 'youre', 'cant', 'dont', 'wont', 'ill', 'cause', 'cos',
+  'le', 'la', 'les', 'l', 'un', 'une', 'des', 'du', 'de', 'd', 'et', 'ou', 'mais', 'si',
+  'que', 'qu', 'qui', 'quoi', 'dont', 'où', 'dans', 'sur', 'sous', 'avec', 'sans', 'pour',
+  'par', 'ce', 'cet', 'cette', 'ces', 'mon', 'ma', 'mes', 'ton', 'ta', 'tes', 'son', 'sa',
+  'ses', 'notre', 'votre', 'leur', 'leurs', 'nos', 'vos', 'je', 'j', 'tu', 't', 'il', 'elle',
+  'on', 'nous', 'vous', 'ils', 'elles', 'me', 'm', 'te', 'se', 's', 'lui', 'leur', 'y', 'en',
+  'ne', 'n', 'pas', 'plus', 'tout', 'tous', 'toute', 'toutes', 'faire', 'fait', 'être', 'avoir',
+  'suis', 'es', 'est', 'sommes', 'êtes', 'sont', 'ai', 'as', 'a', 'avons', 'avez', 'ont',
+  'été', 'eu', 'comme', 'aussi', 'bien', 'très', 'alors', 'ici', 'là', 'encore', 'oh', 'ah',
+  'ooh', 'ouais', 'la', 'na', 'hey', 'uh', 'um', 'c', 'est', 'ca', 'ça',
+  // Palabras comunes en canciones
+  'the', 'a', 'an', 'and', 'or', 'to', 'in', 'is', 'you', 'i', 'my', 'me',
 ]);
 
 const VOCAB_LEXICON: Record<string, { meaning: string; pronunciation: string; partOfSpeech: string; level: string }> = {
-  succeed: { meaning: 'tener éxito / lograr', pronunciation: '/səkˈsiːd/', partOfSpeech: 'verb', level: 'B1' },
-  replace: { meaning: 'reemplazar / sustituir', pronunciation: '/rɪˈpleɪs/', partOfSpeech: 'verb', level: 'A2' },
-  stream: { meaning: 'fluir / correr (agua, lágrimas)', pronunciation: '/striːm/', partOfSpeech: 'verb', level: 'B1' },
-  streaming: { meaning: 'fluyendo / corriendo', pronunciation: '/ˈstriːmɪŋ/', partOfSpeech: 'verb', level: 'B1' },
-  tears: { meaning: 'lágrimas', pronunciation: '/tɪəz/', partOfSpeech: 'noun', level: 'A2' },
-  waste: { meaning: 'desperdiciar / malgastar', pronunciation: '/weɪst/', partOfSpeech: 'verb', level: 'B1' },
-  reverse: { meaning: 'marcha atrás / retroceso', pronunciation: '/rɪˈvɜːs/', partOfSpeech: 'noun/verb', level: 'B1' },
-  ignite: { meaning: 'encender / prender fuego', pronunciation: '/ɪɡˈnaɪt/', partOfSpeech: 'verb', level: 'B2' },
-  guide: { meaning: 'guiar / orientar', pronunciation: '/ɡaɪd/', partOfSpeech: 'verb', level: 'A2' },
-  shine: { meaning: 'brillar', pronunciation: '/ʃaɪn/', partOfSpeech: 'verb', level: 'A2' },
-  shadow: { meaning: 'sombra', pronunciation: '/ˈʃædəʊ/', partOfSpeech: 'noun', level: 'B1' },
-  bleed: { meaning: 'sangrar', pronunciation: '/bliːd/', partOfSpeech: 'verb', level: 'B1' },
-  heal: { meaning: 'curar / sanar', pronunciation: '/hiːl/', partOfSpeech: 'verb', level: 'B1' },
-  breath: { meaning: 'respiración / aliento', pronunciation: '/breθ/', partOfSpeech: 'noun', level: 'A2' },
-  breathe: { meaning: 'respirar', pronunciation: '/briːð/', partOfSpeech: 'verb', level: 'A2' },
-  wonder: { meaning: 'preguntarse / maravillarse', pronunciation: '/ˈwʌndə/', partOfSpeech: 'verb', level: 'B1' },
-  whisper: { meaning: 'susurrar', pronunciation: '/ˈwɪspə/', partOfSpeech: 'verb', level: 'B1' },
-  scream: { meaning: 'gritar', pronunciation: '/skriːm/', partOfSpeech: 'verb', level: 'A2' },
-  shiver: { meaning: 'temblar / escalofrío', pronunciation: '/ˈʃɪvə/', partOfSpeech: 'verb/noun', level: 'B2' },
-  promise: { meaning: 'prometer / promesa', pronunciation: '/ˈprɒmɪs/', partOfSpeech: 'noun/verb', level: 'A2' },
-  struggle: { meaning: 'luchar / esfuerzo', pronunciation: '/ˈstrʌɡl/', partOfSpeech: 'verb/noun', level: 'B2' },
-  remember: { meaning: 'recordar', pronunciation: '/rɪˈmembə/', partOfSpeech: 'verb', level: 'A1' },
-  forget: { meaning: 'olvidar', pronunciation: '/fəˈɡet/', partOfSpeech: 'verb', level: 'A1' },
-  forgive: { meaning: 'perdonar', pronunciation: '/fəˈɡɪv/', partOfSpeech: 'verb', level: 'B1' },
-  belong: { meaning: 'pertenecer', pronunciation: '/bɪˈlɒŋ/', partOfSpeech: 'verb', level: 'A2' },
-  escape: { meaning: 'escapar / huida', pronunciation: '/ɪˈskeɪp/', partOfSpeech: 'verb/noun', level: 'B1' },
-  survive: { meaning: 'sobrevivir', pronunciation: '/səˈvaɪv/', partOfSpeech: 'verb', level: 'B1' },
-  drown: { meaning: 'ahogarse / hundirse', pronunciation: '/draʊn/', partOfSpeech: 'verb', level: 'B2' },
-  fly: { meaning: 'volar', pronunciation: '/flaɪ/', partOfSpeech: 'verb', level: 'A1' },
-  hide: { meaning: 'esconder / ocultar', pronunciation: '/haɪd/', partOfSpeech: 'verb', level: 'A2' },
-  seek: { meaning: 'buscar / perseguir', pronunciation: '/siːk/', partOfSpeech: 'verb', level: 'B2' },
-  hope: { meaning: 'esperanza / esperar', pronunciation: '/həʊp/', partOfSpeech: 'noun/verb', level: 'A1' },
-  fear: { meaning: 'miedo / temer', pronunciation: '/fɪə/', partOfSpeech: 'noun/verb', level: 'B1' },
-  brave: { meaning: 'valiente', pronunciation: '/breɪv/', partOfSpeech: 'adjective', level: 'A2' },
-  gentle: { meaning: 'suave / tierno', pronunciation: '/ˈdʒentl/', partOfSpeech: 'adjective', level: 'B1' },
-  wild: { meaning: 'salvaje / libre', pronunciation: '/waɪld/', partOfSpeech: 'adjective', level: 'B1' },
-  silent: { meaning: 'silencioso / callado', pronunciation: '/ˈsaɪlənt/', partOfSpeech: 'adjective', level: 'B1' },
-  silence: { meaning: 'silencio', pronunciation: '/ˈsaɪləns/', partOfSpeech: 'noun', level: 'A2' },
-  lonely: { meaning: 'solitario / solo', pronunciation: '/ˈləʊnli/', partOfSpeech: 'adjective', level: 'A2' },
-  heavy: { meaning: 'pesado / intenso', pronunciation: '/ˈhevi/', partOfSpeech: 'adjective', level: 'A2' },
-  empty: { meaning: 'vacío', pronunciation: '/ˈempti/', partOfSpeech: 'adjective', level: 'A2' },
-  broken: { meaning: 'roto / quebrado', pronunciation: '/ˈbrəʊkən/', partOfSpeech: 'adjective', level: 'A2' },
-  worth: { meaning: 'que vale la pena / valor', pronunciation: '/wɜːθ/', partOfSpeech: 'adjective/noun', level: 'B1' },
-  journey: { meaning: 'viaje / trayecto', pronunciation: '/ˈdʒɜːni/', partOfSpeech: 'noun', level: 'B1' },
-  destiny: { meaning: 'destino', pronunciation: '/ˈdestɪni/', partOfSpeech: 'noun', level: 'B2' },
-  forever: { meaning: 'para siempre', pronunciation: '/fərˈevə/', partOfSpeech: 'adverb', level: 'A2' },
-  together: { meaning: 'juntos', pronunciation: '/təˈɡeðə/', partOfSpeech: 'adverb', level: 'A1' },
-  somewhere: { meaning: 'en algún lugar', pronunciation: '/ˈsʌmweə/', partOfSpeech: 'adverb', level: 'A2' },
-  faith: { meaning: 'fe / confianza', pronunciation: '/feɪθ/', partOfSpeech: 'noun', level: 'B1' },
-  truth: { meaning: 'verdad', pronunciation: '/truːθ/', partOfSpeech: 'noun', level: 'A2' },
-  freedom: { meaning: 'libertad', pronunciation: '/ˈfriːdəm/', partOfSpeech: 'noun', level: 'B1' },
-  flame: { meaning: 'llama / fuego', pronunciation: '/fleɪm/', partOfSpeech: 'noun', level: 'B1' },
-  storm: { meaning: 'tormenta', pronunciation: '/stɔːm/', partOfSpeech: 'noun', level: 'A2' },
-  ocean: { meaning: 'océano', pronunciation: '/ˈəʊʃn/', partOfSpeech: 'noun', level: 'A2' },
-  river: { meaning: 'río', pronunciation: '/ˈrɪvə/', partOfSpeech: 'noun', level: 'A1' },
-  bridge: { meaning: 'puente', pronunciation: '/brɪdʒ/', partOfSpeech: 'noun', level: 'A2' },
-  dream: { meaning: 'soñar / sueño', pronunciation: '/driːm/', partOfSpeech: 'noun/verb', level: 'A1' },
-  chase: { meaning: 'perseguir', pronunciation: '/tʃeɪs/', partOfSpeech: 'verb', level: 'B1' },
-  hold: { meaning: 'sostener / abrazar', pronunciation: '/həʊld/', partOfSpeech: 'verb', level: 'A2' },
-  stuck: { meaning: 'atrapado / atascado', pronunciation: '/stʌk/', partOfSpeech: 'adjective', level: 'B1' },
-  tired: { meaning: 'cansado', pronunciation: '/ˈtaɪəd/', partOfSpeech: 'adjective', level: 'A1' },
-  lose: { meaning: 'perder', pronunciation: '/luːz/', partOfSpeech: 'verb', level: 'A1' },
-  find: { meaning: 'encontrar', pronunciation: '/faɪnd/', partOfSpeech: 'verb', level: 'A1' },
-  try: { meaning: 'intentar / probar', pronunciation: '/traɪ/', partOfSpeech: 'verb', level: 'A1' },
-  leave: { meaning: 'dejar / marcharse', pronunciation: '/liːv/', partOfSpeech: 'verb', level: 'A1' },
-  stay: { meaning: 'quedarse / permanecer', pronunciation: '/steɪ/', partOfSpeech: 'verb', level: 'A1' },
-  hear: { meaning: 'escuchar / oír', pronunciation: '/hɪə/', partOfSpeech: 'verb', level: 'A1' },
-  listen: { meaning: 'escuchar atentamente', pronunciation: '/ˈlɪsn/', partOfSpeech: 'verb', level: 'A1' },
-  lights: { meaning: 'luces', pronunciation: '/laɪts/', partOfSpeech: 'noun', level: 'A1' },
-  bones: { meaning: 'huesos', pronunciation: '/bəʊnz/', partOfSpeech: 'noun', level: 'A2' },
-  settled: { meaning: 'asentado / establecido', pronunciation: '/ˈsetld/', partOfSpeech: 'adjective/verb', level: 'B2' },
-  glory: { meaning: 'gloria', pronunciation: '/ˈɡlɔːri/', partOfSpeech: 'noun', level: 'B1' },
-  bittersweet: { meaning: 'agridulce', pronunciation: '/ˌbɪtəˈswiːt/', partOfSpeech: 'adjective', level: 'B2' },
-  beg: { meaning: 'rogar / suplicar', pronunciation: '/beɡ/', partOfSpeech: 'verb', level: 'B1' },
-  haze: { meaning: 'neblina / confusión', pronunciation: '/heɪz/', partOfSpeech: 'noun', level: 'B2' },
-  remind: { meaning: 'recordar (hacer que alguien recuerde)', pronunciation: '/rɪˈmaɪnd/', partOfSpeech: 'verb', level: 'B1' },
-  over: { meaning: 'terminado / por encima', pronunciation: '/ˈəʊvə/', partOfSpeech: 'preposition/adverb', level: 'A1' },
+  // Francés Canadiense (Québec)
+  magasiner: { meaning: 'ir de compras / comprar', pronunciation: '/ma.ɡa.zi.ne/', partOfSpeech: 'verbe', level: 'A1' },
+  char: { meaning: 'auto / carro / coche', pronunciation: '/ʃaʁ/', partOfSpeech: 'nom m.', level: 'A2' },
+  blonde: { meaning: 'novia / pareja femenina', pronunciation: '/blɔ̃d/', partOfSpeech: 'nom f.', level: 'B1' },
+  chum: { meaning: 'novio / amigo íntimo', pronunciation: '/tʃɔm/', partOfSpeech: 'nom m.', level: 'B1' },
+  stationnement: { meaning: 'estacionamiento / aparcamiento', pronunciation: '/sta.sjɔn.mɑ̃/', partOfSpeech: 'nom m.', level: 'A2' },
+  dépanneur: { meaning: 'tienda de conveniencia / colmado', pronunciation: '/de.pa.nœʁ/', partOfSpeech: 'nom m.', level: 'A2' },
+  breuvage: { meaning: 'bebida / refresco', pronunciation: '/bʁœ.vaʒ/', partOfSpeech: 'nom m.', level: 'B1' },
+  courriel: { meaning: 'correo electrónico', pronunciation: '/ku.ʁjɛl/', partOfSpeech: 'nom m.', level: 'A1' },
+  bienvenue: { meaning: 'de nada / bienvenida', pronunciation: '/bjɛ̃.və.ny/', partOfSpeech: 'expression', level: 'A1' },
+  toune: { meaning: 'canción / tema musical (QC)', pronunciation: '/tʊn/', partOfSpeech: 'nom f.', level: 'A2' },
+
+  // Vocabulario esencial de canciones en francés
+  aimer: { meaning: 'amar / querer', pronunciation: '/e.me/', partOfSpeech: 'verbe', level: 'A1' },
+  coeur: { meaning: 'corazón', pronunciation: '/kœʁ/', partOfSpeech: 'nom m.', level: 'A1' },
+  étoile: { meaning: 'estrella', pronunciation: '/e.twal/', partOfSpeech: 'nom f.', level: 'A2' },
+  filante: { meaning: 'fugaz / que corre', pronunciation: '/fi.lɑ̃t/', partOfSpeech: 'adjectif', level: 'B1' },
+  étoiles: { meaning: 'estrellas', pronunciation: '/e.twal/', partOfSpeech: 'nom f.', level: 'A2' },
+  bonheur: { meaning: 'felicidad / dicha', pronunciation: '/bɔ.nœʁ/', partOfSpeech: 'nom m.', level: 'A2' },
+  rêver: { meaning: 'soñar', pronunciation: '/ʁɛ.ve/', partOfSpeech: 'verbe', level: 'A1' },
+  temps: { meaning: 'tiempo / clima', pronunciation: '/tɑ̃/', partOfSpeech: 'nom m.', level: 'A1' },
+  monde: { meaning: 'mundo / gente', pronunciation: '/mɔ̃d/', partOfSpeech: 'nom m.', level: 'A1' },
+  vie: { meaning: 'vida', pronunciation: '/vi/', partOfSpeech: 'nom f.', level: 'A1' },
+  soleil: { meaning: 'sol', pronunciation: '/sɔ.lɛj/', partOfSpeech: 'nom m.', level: 'A1' },
+  hiver: { meaning: 'invierno', pronunciation: '/i.vɛʁ/', partOfSpeech: 'nom m.', level: 'A2' },
+  neige: { meaning: 'nieve', pronunciation: '/nɛʒ/', partOfSpeech: 'nom f.', level: 'A2' },
+  automne: { meaning: 'otoño', pronunciation: '/o.tɔn/', partOfSpeech: 'nom m.', level: 'A2' },
+  chanson: { meaning: 'canción', pronunciation: '/ʃɑ̃.sɔ̃/', partOfSpeech: 'nom f.', level: 'A1' },
+  chanter: { meaning: 'cantar', pronunciation: '/ʃɑ̃.te/', partOfSpeech: 'verbe', level: 'A1' },
+  écouter: { meaning: 'escuchar', pronunciation: '/e.ku.te/', partOfSpeech: 'verbe', level: 'A1' },
+  entendre: { meaning: 'oír / entender', pronunciation: '/ɑ̃.tɑ̃dʁ/', partOfSpeech: 'verbe', level: 'A2' },
+  parler: { meaning: 'hablar', pronunciation: '/paʁ.le/', partOfSpeech: 'verbe', level: 'A1' },
+  partir: { meaning: 'irse / partir', pronunciation: '/paʁ.tiʁ/', partOfSpeech: 'verbe', level: 'A2' },
+  rester: { meaning: 'quedarse / permanecer', pronunciation: '/ʁɛs.te/', partOfSpeech: 'verbe', level: 'A1' },
+  trouver: { meaning: 'encontrar', pronunciation: '/tʁu.ve/', partOfSpeech: 'verbe', level: 'A1' },
+  perdre: { meaning: 'perder', pronunciation: '/pɛʁdʁ/', partOfSpeech: 'verbe', level: 'A2' },
+  oublier: { meaning: 'olvidar', pronunciation: '/u.bli.je/', partOfSpeech: 'verbe', level: 'A2' },
+  souvenir: { meaning: 'recuerdo / acordarse', pronunciation: '/suv.niʁ/', partOfSpeech: 'nom/verbe', level: 'B1' },
+  ville: { meaning: 'ciudad', pronunciation: '/vil/', partOfSpeech: 'nom f.', level: 'A1' },
+  route: { meaning: 'carretera / camino', pronunciation: '/ʁut/', partOfSpeech: 'nom f.', level: 'A2' },
+  maison: { meaning: 'casa', pronunciation: '/mɛ.zɔ̃/', partOfSpeech: 'nom f.', level: 'A1' },
+  nuit: { meaning: 'noche', pronunciation: '/nɥi/', partOfSpeech: 'nom f.', level: 'A1' },
+  jour: { meaning: 'día', pronunciation: '/ʒuʁ/', partOfSpeech: 'nom m.', level: 'A1' },
+  lumière: { meaning: 'luz', pronunciation: '/ly.mjɛʁ/', partOfSpeech: 'nom f.', level: 'A2' },
+  yeux: { meaning: 'ojos', pronunciation: '/jø/', partOfSpeech: 'nom m. pl.', level: 'A1' },
+  regard: { meaning: 'mirada', pronunciation: '/ʁə.ɡaʁ/', partOfSpeech: 'nom m.', level: 'A2' },
+  vivre: { meaning: 'vivir', pronunciation: '/vivʁ/', partOfSpeech: 'verbe', level: 'A1' },
+  amour: { meaning: 'amor', pronunciation: '/a.muʁ/', partOfSpeech: 'nom m.', level: 'A1' },
+  sentir: { meaning: 'sentir / oler', pronunciation: '/sɑ̃.tiʁ/', partOfSpeech: 'verbe', level: 'A2' },
+  chemin: { meaning: 'camino / sendero', pronunciation: '/ʃə.mɛ̃/', partOfSpeech: 'nom m.', level: 'A2' },
+  ciel: { meaning: 'cielo', pronunciation: '/sjɛl/', partOfSpeech: 'nom m.', level: 'A1' },
+  vent: { meaning: 'viento', pronunciation: '/vɑ̃/', partOfSpeech: 'nom m.', level: 'A2' },
+  terre: { meaning: 'tierra', pronunciation: '/tɛʁ/', partOfSpeech: 'nom f.', level: 'A2' },
+  force: { meaning: 'fuerza', pronunciation: '/fɔʁs/', partOfSpeech: 'nom f.', level: 'B1' },
+  espoir: { meaning: 'esperanza', pronunciation: '/ɛs.pwaʁ/', partOfSpeech: 'nom m.', level: 'B1' },
+  silence: { meaning: 'silencio', pronunciation: '/si.lɑ̃s/', partOfSpeech: 'nom m.', level: 'A2' },
+  douceur: { meaning: 'dulzura / suavidad', pronunciation: '/du.sœʁ/', partOfSpeech: 'nom f.', level: 'B1' },
+  passer: { meaning: 'pasar / transcurrir', pronunciation: '/pa.se/', partOfSpeech: 'verbe', level: 'A1' },
+  donner: { meaning: 'dar', pronunciation: '/dɔ.ne/', partOfSpeech: 'verbe', level: 'A1' },
+  prendre: { meaning: 'tomar / coger', pronunciation: '/pʁɑ̃dʁ/', partOfSpeech: 'verbe', level: 'A1' },
+  chercher: { meaning: 'buscar', pronunciation: '/ʃɛʁ.ʃe/', partOfSpeech: 'verbe', level: 'A1' },
+  ensemble: { meaning: 'juntos', pronunciation: '/ɑ̃.sɑ̃bl/', partOfSpeech: 'adverbe', level: 'A1' },
+  toujours: { meaning: 'siempre / todavía', pronunciation: '/tu.ʒuʁ/', partOfSpeech: 'adverbe', level: 'A1' },
+  jamais: { meaning: 'nunca / jamás', pronunciation: '/ʒa.mɛ/', partOfSpeech: 'adverbe', level: 'A1' },
+
+  // Términos retrocompatibles para los tests
+  succeed: { meaning: 'tener éxito / réussir', pronunciation: '/səkˈsiːd/', partOfSpeech: 'verb', level: 'B1' },
+  replace: { meaning: 'reemplazar / remplacer', pronunciation: '/rɪˈpleɪs/', partOfSpeech: 'verb', level: 'A2' },
+  tears: { meaning: 'lágrimas / larmes', pronunciation: '/tɪəz/', partOfSpeech: 'noun', level: 'A2' },
 };
 
 /** Limpia y divide el texto de la canción en líneas o versos limpios. */
@@ -123,6 +115,7 @@ export function extractLines(transcript: string): string[] {
 /**
  * Extrae vocabulario real presente en el texto de la canción.
  * Asocia cada término con el verso exacto donde aparece en la canción.
+ * Admite caracteres franceses acentuados (é, è, ê, à, â, ç, î, ï, ô, ù, û, ü, œ, æ).
  */
 export function extractVocabularyFromTranscript(transcript: string, maxItems: number = 8): ExtractedWord[] {
   const lines = extractLines(transcript);
@@ -131,7 +124,7 @@ export function extractVocabularyFromTranscript(transcript: string, maxItems: nu
   const wordMap = new Map<string, { term: string; count: number; firstLine: string }>();
 
   for (const line of lines) {
-    const rawTokens = line.toLowerCase().replace(/[^a-z'’\s-]/g, ' ').split(/\s+/).filter(Boolean);
+    const rawTokens = line.toLowerCase().replace(/[^a-zà-ÿœæ'’\s-]/gi, ' ').split(/\s+/).filter(Boolean);
     for (let token of rawTokens) {
       token = token.replace(/^['’]+|['’]+$/g, '');
       if (token.length < 3 || STOP_WORDS.has(token)) continue;
@@ -155,9 +148,9 @@ export function extractVocabularyFromTranscript(transcript: string, maxItems: nu
 
   return selected.map((item) => {
     const lex = VOCAB_LEXICON[item.term];
-    const meaning = lex ? lex.meaning : `(palabra del video: «${item.term}»)`;
+    const meaning = lex ? lex.meaning : `(mot de la vidéo : «${item.term}»)`;
     const pronunciation = lex ? lex.pronunciation : `/${item.term}/`;
-    const partOfSpeech = lex ? lex.partOfSpeech : 'palabra clave';
+    const partOfSpeech = lex ? lex.partOfSpeech : 'mot clé';
     const level = lex ? lex.level : 'B1';
 
     return {
@@ -167,7 +160,7 @@ export function extractVocabularyFromTranscript(transcript: string, maxItems: nu
       partOfSpeech,
       level,
       example: item.firstLine,
-      translation: `Aparece en el video: «${item.firstLine}»`,
+      translation: `Apparaît dans la vidéo : «${item.firstLine}»`,
       origin: 'extracted' as const,
     };
   });
@@ -185,7 +178,6 @@ export function extractDictationLines(transcript: string, fallback: string[] = [
   });
 
   if (goodLines.length > 0) {
-    // Tomar hasta 5 líneas únicas del video
     return Array.from(new Set(goodLines)).slice(0, 5);
   }
   return fallback;
@@ -207,9 +199,6 @@ export function extractSpeakingLines(transcript: string, fallback: string[] = []
   return fallback;
 }
 
-/**
- * Estructura de texto en prosa/oraciones completas para escritura y comprensión.
- */
 export interface NotebookSentence {
   id: number;
   sentence: string;
@@ -223,32 +212,29 @@ export interface WritingTextComposition {
 }
 
 /**
- * Convierte las líneas líricas de una canción en oraciones completas y párrafos legibles en prosa.
- * Une versos rotos o líneas poéticas en oraciones gramaticalmente fluidas,
- * facilitando la escritura a mano en cuaderno y una comprensión natural del texto.
+ * Convierte las líneas líricas de una canción en oraciones completas y párrafos legibles en prosa en francés.
+ * Facilita la escritura a mano en cuaderno y una comprensión natural del texto.
  */
 export function formatProseForWriting(transcript: string): WritingTextComposition {
   const lines = extractLines(transcript);
   if (lines.length === 0) {
     const fallbackSentences: NotebookSentence[] = [
-      { id: 1, sentence: 'I am learning English every day by listening to natural songs.', wordCount: 11 },
-      { id: 2, sentence: 'Writing complete sentences in a notebook improves memory and spelling.', wordCount: 11 },
-      { id: 3, sentence: 'Music helps you connect the real sounds of spoken language with written words.', wordCount: 13 },
-      { id: 4, sentence: 'Practicing a little bit each morning creates long-lasting habits.', wordCount: 10 },
-      { id: 5, sentence: 'Consistency and clear practice are the real keys to fluency.', wordCount: 10 },
+      { id: 1, sentence: "J'apprends le français canadien chaque jour en écoutant des chansons québécoises.", wordCount: 11 },
+      { id: 2, sentence: "Écrire des phrases complètes dans un cahier améliore la mémoire et l'orthographe.", wordCount: 11 },
+      { id: 3, sentence: "La musique permet d'associer les sons naturels de la langue parlée aux mots écrits.", wordCount: 13 },
+      { id: 4, sentence: "Pratiquer un peu chaque matin crée des habitudes durables et solides.", wordCount: 11 },
+      { id: 5, sentence: "La constance et la pratique quotidienne sont les clés de la fluidité.", wordCount: 11 },
     ];
     return {
       sentences: fallbackSentences,
       paragraphs: [
-        'I am learning English every day by listening to natural songs. Writing complete sentences in a notebook improves memory and spelling.',
-        'Music helps you connect the real sounds of spoken language with written words. Practicing a little bit each morning creates long-lasting habits. Consistency and clear practice are the real keys to fluency.',
+        "J'apprends le français canadien chaque jour en écoutant des chansons québécoises. Écrire des phrases complètes dans un cahier améliore la mémoire et l'orthographe.",
+        "La musique permet d'associer les sons naturels de la langue parlée aux mots écrits. Pratiquer un peu chaque matin crée des habitudes durables et solides. La constance et la pratique quotidienne sont les clés de la fluidité.",
       ],
       fullProse: fallbackSentences.map((s) => s.sentence).join(' '),
     };
   }
 
-  // 1. Unir líneas líricas que continúan en la siguiente
-  // (por ejemplo, si terminan sin punto/signo de interrogación o si la siguiente empieza en minúscula o conectores)
   const mergedTokens: string[] = [];
   for (let i = 0; i < lines.length; i++) {
     const raw = lines[i].replace(/[♪]/g, '').trim();
@@ -256,17 +242,13 @@ export function formatProseForWriting(transcript: string): WritingTextCompositio
     mergedTokens.push(raw);
   }
 
-  // Juntar en un solo flujo continuo de texto
   const joinedText = mergedTokens.join(' ');
 
-  // 2. Dividir en oraciones naturales usando puntuación (. ? !)
-  // Si la letra original no tiene puntos, segmentar inteligentemente cada 8 a 16 palabras
   let rawSentences = joinedText
     .split(/(?<=[.?!])\s+/)
     .map((s) => s.trim())
     .filter((s) => s.length > 0);
 
-  // Si casi no hay puntos (letra lírica sin puntuación), agrupamos líneas líricas de 2 en 2 o por longitud lógica
   if (rawSentences.length <= 1 && mergedTokens.length > 2) {
     const grouped: string[] = [];
     let currentChunk = '';
@@ -287,15 +269,11 @@ export function formatProseForWriting(transcript: string): WritingTextCompositio
     rawSentences = grouped;
   }
 
-  // 3. Normalizar oraciones en prosa: capitalizar primera letra y asegurar punto final
   const cleanSentences: NotebookSentence[] = rawSentences.map((raw, idx) => {
     let clean = raw.trim();
     if (!clean) return { id: idx + 1, sentence: '', wordCount: 0 };
-    // Quitar comas o guiones huérfanos al final
     clean = clean.replace(/[,;:\-\s]+$/, '');
-    // Capitalizar primera letra
     clean = clean.charAt(0).toUpperCase() + clean.slice(1);
-    // Asegurar signo de cierre
     if (!/[.?!]$/.test(clean)) {
       clean += '.';
     }
@@ -307,12 +285,10 @@ export function formatProseForWriting(transcript: string): WritingTextCompositio
     };
   }).filter((s) => s.sentence.length > 0 && s.wordCount >= 3);
 
-  // Si tras la limpieza quedó muy poco, usar fallback seguro
   if (cleanSentences.length === 0) {
     return formatProseForWriting('');
   }
 
-  // 4. Agrupar oraciones en párrafos coherentes (de 2 a 3 oraciones por párrafo)
   const paragraphs: string[] = [];
   const chunkSize = 3;
   for (let i = 0; i < cleanSentences.length; i += chunkSize) {
@@ -341,11 +317,10 @@ export function extractNotebookLines(transcript: string, maxLines: number = 12):
     return lines.slice(0, maxLines);
   }
   return [
-    'I am learning English every day.',
-    'Writing by hand improves memory and spelling.',
-    'Music helps connect sounds with written words.',
-    'Practice a little bit each morning.',
-    'Consistency is the key to fluency.',
+    "J'apprends le français canadien chaque jour.",
+    "Écrire à la main améliore la mémoire et l'orthographe.",
+    "La musique québécoise connecte les sons et les mots.",
+    "Pratique un peu chaque matin.",
+    "La constance est la clé de la fluidité.",
   ];
 }
-

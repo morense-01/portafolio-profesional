@@ -57,9 +57,9 @@ test('flujo completo hasta el test; Speaking pendiente sin evidencia', async ({ 
 test('repaso, tutor y exportación de datos', async ({ page }) => {
   await page.getByRole('button', { name: 'Tutor' }).click();
   await page.getByRole('button', { name: 'Empezar' }).click();
-  await page.getByLabel(/Tu respuesta/).fill('She have a car');
+  await page.getByLabel(/Tu respuesta/).fill('je aime la musique');
   await page.getByRole('button', { name: 'Enviar' }).click();
-  await expect(page.getByText('She has a car')).toBeVisible();
+  await expect(page.getByText("j'aime la musique")).toBeVisible();
   await page.getByRole('button', { name: 'Ajustes' }).click();
   const [dl] = await Promise.all([page.waitForEvent('download'), page.getByRole('button', { name: 'Exportar mis datos' }).click()]);
   expect(dl.suggestedFilename()).toBe('lingua-datos.json');

@@ -29,15 +29,15 @@ const today = () => dayKey(Date.now());
 const STAGE_LABEL: Record<Stage, string> = { listening: 'Listening', confirm: 'Confirmar', reading: 'Reading', writing: 'Writing', speaking: 'Speaking', test: 'Test final', done: 'Resultado' };
 
 export const ACCENT_LABELS: Record<Accent, string> = {
-  CA: 'Canadiense (CA)',
-  US: 'Americano (US)',
-  UK: 'Británico (UK)',
+  CA: 'Français canadien (Québec)',
+  QC: 'Québécois populaire',
+  AC: 'Acadien (Nouveau-Brunswick)',
 };
 
 export const ACCENT_FLAGS: Record<Accent, string> = {
   CA: '🇨🇦',
-  US: '🇺🇸',
-  UK: '🇬🇧',
+  QC: '⚜️',
+  AC: '🌲',
 };
 
 function speak(text: string, accent: Accent, rate = 1) {
@@ -46,7 +46,7 @@ function speak(text: string, accent: Accent, rate = 1) {
   setTimeout(() => {
     try {
       const u = new SpeechSynthesisUtterance(text);
-      const targetLang = accent === 'CA' ? 'en-CA' : (accent === 'UK' ? 'en-GB' : 'en-US');
+      const targetLang = 'fr-CA';
       u.lang = targetLang;
       // Normal = 1.0; Lento = 0.5 (la mitad de velocidad para diferenciar claramente lento vs normal)
       u.rate = rate < 0.8 ? 0.5 : 1.0;
@@ -55,9 +55,9 @@ function speak(text: string, accent: Accent, rate = 1) {
       const voices = window.speechSynthesis.getVoices();
       if (voices && voices.length > 0) {
         const matchingVoice =
-          voices.find((v) => v.lang === targetLang) ||
-          (accent === 'CA' ? voices.find((v) => v.lang === 'en-US') : undefined) ||
-          voices.find((v) => v.lang.replace('_', '-').startsWith('en')) ||
+          voices.find((v) => v.lang === 'fr-CA') ||
+          voices.find((v) => v.lang.toLowerCase().startsWith('fr-ca')) ||
+          voices.find((v) => v.lang.toLowerCase().startsWith('fr')) ||
           voices[0];
         if (matchingVoice) u.voice = matchingVoice;
       }
@@ -89,7 +89,7 @@ export function App() {
       const r = db.settings.reminders;
       const granted = r.granted && 'Notification' in window && Notification.permission === 'granted';
       if (shouldNotify({ daily: r.daily, time: r.time, days: r.days, timezone: db.settings.timezone, notificationsGranted: granted }, Date.now(), db.lastNotifiedDay)) {
-        new Notification('Lingua Songs AI', { body: 'Es hora de tu práctica de inglés.' });
+        new Notification('Lingua Songs AI', { body: 'Es hora de tu práctica de francés de Canadá.' });
         setDb((d) => ({ ...d, lastNotifiedDay: new Intl.DateTimeFormat('en-CA', { timeZone: d.settings.timezone }).format(Date.now()) }));
       }
     };
@@ -267,7 +267,7 @@ function Home({ db, go, open, update }: { db: DB; go: (t: Tab) => void; open: (i
         <div style={{ flex: 1 }}>
           <h2 style={{ margin: '0 0 4px 0', fontSize: '1.25rem' }}>¡Hola! Modo Aprendizaje Activo</h2>
           <p className="mut" style={{ margin: '0 0 6px 0', fontSize: '0.9rem' }}>
-            Aprende inglés con canciones de YouTube. Nivel orientativo: <b>{db.settings.level}</b> (no es una certificación oficial).
+            Aprende francés de Canadá con canciones de YouTube. Nivel orientativo: <b>{db.settings.level}</b> (no es una certificación oficial).
           </p>
           <p className="mut" style={{ margin: '0 0 10px 0', fontSize: '0.88rem' }}>
             XP: <b>{db.xp.total}</b> · Racha: <b>{s}</b> día(s) · Repasos pendientes: <b>{due}</b>
@@ -884,7 +884,7 @@ function Listening({ lesson: l, song, setLesson, done, online }: { lesson: Lesso
       <h4>Autoevaluación (opcional)</h4>
       <label htmlFor="c">Comprensión (1–5): {cmp}</label><input id="c" type="range" min={1} max={5} value={cmp} onChange={(e) => setCmp(+e.target.value)} />
       <label htmlFor="d">Dificultad percibida (1–5): {diff}</label><input id="d" type="range" min={1} max={5} value={diff} onChange={(e) => setDiff(+e.target.value)} />
-      <label htmlFor="s">¿Qué entendiste de la canción? (español o inglés)</label><textarea id="s" rows={3} value={sum} onChange={(e) => setSum(e.target.value)} />
+      <label htmlFor="s">¿Qué entendiste de la canción? (español o francés)</label><textarea id="s" rows={3} value={sum} onChange={(e) => setSum(e.target.value)} />
       <button className="p" onClick={() => done(secs)}>Terminé de escuchar</button>
     </div>
   );
@@ -1053,7 +1053,7 @@ function Reading({ song, db, update, done }: { song: Song; db: DB; update: (f: (
           <div>
             <label htmlFor="mexample" style={{ fontWeight: 600 }}>Ejemplo (verso de la canción)</label>
             <p className="mut" style={{ margin: '2px 0 6px 0', fontSize: '0.85rem' }}>
-              El verso completo en inglés donde escuchaste la palabra (para memorizarla siempre con contexto).
+              El verso completo en francés donde escuchaste la palabra (para memorizarla siempre con contexto).
             </p>
             <input
               id="mexample"
@@ -1340,7 +1340,7 @@ function Writing({ song, db, update, done }: { song: Song; db: DB; update: (f: (
           rows={2}
           value={ans}
           onChange={(e) => setAns(e.target.value)}
-          placeholder="Escribe aquí en inglés..."
+          placeholder="Escribe aquí en francés..."
         />
         <div style={{ marginTop: 8 }}>
           <button className="p" onClick={check} disabled={!ans.trim()}>Comparar con la canción</button>
@@ -1403,11 +1403,11 @@ function download(name: string, text: string, type: string) { const a = document
 
 function Speaking({ song, update, done }: { song: Song; update: (f: (d: DB) => DB) => void; lesson: Lesson; done: () => void; db: DB }) {
   const songPhrases = useMemo(
-    () => extractSpeakingLines(song.transcript, ['I would like a cup of tea, please.']),
+    () => extractSpeakingLines(song.transcript, ['Bonjour tout le monde !', 'La musique québécoise est magnifique.']),
     [song.transcript]
   );
   const [phraseIndex, setPhraseIndex] = useState(0);
-  const target = songPhrases[phraseIndex % songPhrases.length] || 'I would like a cup of tea, please.';
+  const target = songPhrases[phraseIndex % songPhrases.length] || 'Bonjour tout le monde !';
 
   const SR = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
   const [rec, setRec] = useState<string | null>(null);
@@ -1461,7 +1461,7 @@ function Speaking({ song, update, done }: { song: Song; update: (f: (d: DB) => D
   }
 
   async function recognize() {
-    const speechLang = song.accent === 'CA' ? 'en-CA' : (song.accent === 'UK' ? 'en-GB' : 'en-US');
+    const speechLang = 'fr-CA';
     if (isNative()) {
       try {
         const text = await nativeRecognize(speechLang);
@@ -1497,7 +1497,7 @@ function Speaking({ song, update, done }: { song: Song; update: (f: (d: DB) => D
       r.interimResults = false;
       r.maxAlternatives = 1;
       setIsListening(true);
-      setMsg('🎙️ Escuchando... Di la frase en inglés ahora.');
+      setMsg('🎙️ Escuchando... Di la frase en francés ahora.');
 
       r.onresult = (e: any) => {
         setIsListening(false);
@@ -1635,7 +1635,7 @@ function Speaking({ song, update, done }: { song: Song; update: (f: (d: DB) => D
 
       <div className="card">
         <h3>Pares mínimos</h3>
-        <p className="mut" style={{ fontSize: '0.88rem' }}>Distingue sonidos cercanos en inglés:</p>
+        <p className="mut" style={{ fontSize: '0.88rem' }}>Distingue sonidos cercanos en francés:</p>
         {MINIMAL_PAIRS.map(([a, b]) => (
           <p key={a} style={{ margin: '8px 0' }}>
             <b>{a}</b> / <b>{b}</b>{' '}
@@ -1681,7 +1681,7 @@ function FinalTest({ db, lesson: l, song, update, giveXp, done }: { db: DB; less
       <label><input type="checkbox" style={{ width: 'auto' }} checked={noAudio} onChange={(e) => setNoAudio(e.target.checked)} /> No puedo reproducir audio ahora (Listening quedará pendiente)</label>
       {!noAudio && lItems.map((it, i) => <fieldset key={i}><legend>Frase {i + 1} <button className="s" onClick={() => speak(it.say, song.accent)}>🔊 Escuchar</button> <button className="s" onClick={() => speak(it.say, song.accent, 0.6)}>🐢</button></legend>
         {it.options.map((o) => <label key={o} style={{ display: 'block', fontWeight: 400 }}><input type="radio" style={{ width: 'auto' }} name={'l' + i} checked={lAns[i] === o} onChange={() => setLAns({ ...lAns, [i]: o })} /> {o}</label>)}</fieldset>)}
-      <label htmlFor="fill">Escribe en inglés: «{qs[0].c.meaning}»</label><input id="fill" value={fill} onChange={(e) => setFill(e.target.value)} />
+      <label htmlFor="fill">Escribe en francés: «{qs[0].c.meaning}»</label><input id="fill" value={fill} onChange={(e) => setFill(e.target.value)} />
       <button className="p" onClick={submit}>Calificar</button>
       {res && <div role="status"><h4>Total: {res.total}/{res.maxPossible} {res.passed ? '✅ Aprobado' : '— Pendiente de dominio'}</h4>
         <ul><li>Listening: {res.perSkill.listening === null ? 'pendiente (sin audio disponible, no se inventa puntuación)' : res.perSkill.listening + '/25'}</li><li>Reading: {res.perSkill.reading}/25</li><li>Writing: {res.perSkill.writing}/25</li>
@@ -1705,7 +1705,7 @@ function Review({ db, update, giveXp }: { db: DB; update: (f: (d: DB) => DB) => 
   return (
     <div className="card"><h2>Repasar hoy ({due.length})</h2>
       <p>Significado: <b>{c.meaning}</b></p>
-      <label htmlFor="rv">Escríbelo en inglés</label><input id="rv" value={typed} onChange={(e) => setTyped(e.target.value)} />
+      <label htmlFor="rv">Escríbelo en francés</label><input id="rv" value={typed} onChange={(e) => setTyped(e.target.value)} />
       {!shown ? <button className="p" onClick={() => setShown(true)}>Comprobar</button> : <div role="status">
         <p>Respuesta: <b>{c.term}</b> {okTyped ? <span className="ok">✔ Correcto</span> : <span className="bad">✘ Revisa</span>}</p>
         <button className="p" onClick={() => answer(okTyped, true)}>Continuar</button></div>}
@@ -1781,9 +1781,9 @@ function Settings({ db, update }: { db: DB; update: (f: (d: DB) => DB) => void }
         <label htmlFor="lv">Nivel (manual)</label><select id="lv" value={s.level} onChange={(e) => set({ level: e.target.value })}>{['A1', 'A2', 'B1', 'B2'].map((x) => <option key={x}>{x}</option>)}</select>
         <label htmlFor="ac">Acento objetivo</label>
         <select id="ac" value={s.accent} onChange={(e) => set({ accent: e.target.value as Accent })}>
-          <option value="CA">🇨🇦 Canadiense (Principal)</option>
-          <option value="US">🇺🇸 Americano</option>
-          <option value="UK">🇬🇧 Británico</option>
+          <option value="CA">🇨🇦 Français canadien (Québec)</option>
+          <option value="QC">⚜️ Québécois populaire</option>
+          <option value="AC">🌲 Acadien (Nouveau-Brunswick)</option>
         </select>
         <label htmlFor="th">Umbral para aprobar: {s.threshold}</label><input id="th" type="range" min={50} max={100} value={s.threshold} onChange={(e) => set({ threshold: +e.target.value })} />
         <label htmlFor="mn">Mínimo por habilidad: {s.minPerSkill}/25</label><input id="mn" type="range" min={0} max={25} value={s.minPerSkill} onChange={(e) => set({ minPerSkill: +e.target.value })} />

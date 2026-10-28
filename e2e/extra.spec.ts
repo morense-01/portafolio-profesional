@@ -34,6 +34,10 @@ test('migra datos antiguos de localStorage a IndexedDB', async ({ page, context 
 
 test('Listening: respuestas correctas con audio → 25/25 evaluado', async ({ page }) => {
   await toTest(page);
+  const noAudioCb = page.getByLabel(/No puedo reproducir audio/);
+  if (await noAudioCb.isChecked()) {
+    await noAudioCb.uncheck();
+  }
   for (const it of LISTEN_ITEMS.slice(0, 4)) await page.getByLabel(it.say, { exact: true }).check();
   await page.getByRole('button', { name: 'Calificar' }).click();
   await expect(page.getByText('Listening: 25/25')).toBeVisible();

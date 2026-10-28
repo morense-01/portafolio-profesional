@@ -51,7 +51,7 @@ export function Tutor({ db, update, giveXp }: { db: DB; update: Upd; giveXp: (a:
       <div aria-live="polite">{log.map((m, i) => <div key={i} className="card"><b>{m.who === 'tutor' ? 'Tutor' : 'Tú'}:</b> {m.text}
         {m.corr && <p><span className="bad">Versión corregida:</span> <b>{m.corr.corrected}</b><br />{m.corr.explanation}<br /><span className="mut">Repite la versión corregida en voz alta o por escrito.</span></p>}
         {m.who === 'you' && m.corr === null && <p className="ok">Sin errores detectados por las reglas locales.</p>}</div>)}</div>
-      {log.length > 0 && <><label htmlFor="ti">Tu respuesta (en inglés)</label><textarea id="ti" rows={2} maxLength={500} value={input} onChange={(e) => setInput(e.target.value)} />
+      {log.length > 0 && <><label htmlFor="ti">Tu respuesta (en francés)</label><textarea id="ti" rows={2} maxLength={500} value={input} onChange={(e) => setInput(e.target.value)} />
         <button className="p" disabled={busy || !input.trim()} onClick={send}>Enviar</button></>}
       {Object.keys(db.tutorErrors).length > 0 && <p className="mut">Errores recurrentes: {Object.entries(db.tutorErrors).map(([k, v]) => `${k} ×${v}`).join(', ')}</p>}
     </div>
@@ -97,7 +97,7 @@ export function Practice({ db, update }: { db: DB; update: Upd }) {
         <button className="p" onClick={check}>Revisar</button></div>
       <div className="card"><h2>Recuperación de memoria</h2>
         <p>Significado: <b>{c.meaning}</b></p>
-        <label htmlFor="mem">¿Cómo se dice en inglés?</label><input id="mem" value={mem} onChange={(e) => setMem(e.target.value)} />
+        <label htmlFor="mem">¿Cómo se dice en francés?</label><input id="mem" value={mem} onChange={(e) => setMem(e.target.value)} />
         <button className="p" onClick={() => { const ok = compareText(c.term, mem).accuracy >= 0.99; setMemRes(ok); update((d) => ({ ...d, writingAttempts: [...d.writingAttempts, { at: Date.now(), type: 'recall', prompt: c.meaning, response: mem, accuracy: ok ? 1 : 0 }] })); }}>Comprobar</button>
         {memRes !== null && <p role="status">{memRes ? <span className="ok">✔ Correcto</span> : <span className="bad">✘ Era «{c.term}»</span>} <button className="s" onClick={() => { setMi(mi + 1); setMem(''); setMemRes(null); }}>Siguiente</button></p>}</div>
     </>

@@ -25,7 +25,7 @@ export async function syncNativeReminders(p: ReminderPrefs & { deviceTz: string 
   const slots = deviceSchedule(p.time, p.days, p.timezone, p.deviceTz);
   await LocalNotifications.schedule({
     notifications: slots.map((s) => ({
-      id: 100 + s.dow, title: 'Lingua Songs AI', body: 'Es hora de tu práctica de inglés.',
+      id: 100 + s.dow, title: 'Lingua Songs AI', body: 'Es hora de tu práctica de francés de Canadá.',
       schedule: { on: { weekday: s.dow + 1, hour: s.hour, minute: s.minute }, allowWhileIdle: true },
     })),
   });
