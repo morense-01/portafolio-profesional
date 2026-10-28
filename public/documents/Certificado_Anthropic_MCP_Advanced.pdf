@@ -1,49 +1,74 @@
 %PDF-1.4
+%“Œ‹ž ReportLab Generated PDF document http://www.reportlab.com
 1 0 obj
-<< /Type /Catalog /Pages 2 0 R >>
+<<
+/F1 2 0 R /F2 3 0 R
+>>
 endobj
 2 0 obj
-<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+<<
+/BaseFont /Helvetica /Encoding /WinAnsiEncoding /Name /F1 /Subtype /Type1 /Type /Font
+>>
 endobj
 3 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>
+<<
+/BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding /Name /F2 /Subtype /Type1 /Type /Font
+>>
 endobj
 4 0 obj
-<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+<<
+/Contents 8 0 R /MediaBox [ 0 0 792 612 ] /Parent 7 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
 endobj
 5 0 obj
-<< /Length 419 >>
+<<
+/PageMode /UseNone /Pages 7 0 R /Type /Catalog
+>>
+endobj
+6 0 obj
+<<
+/Author (anonymous) /CreationDate (D:20261028194143+04'00') /Creator (ReportLab PDF Library - www.reportlab.com) /Keywords () /ModDate (D:20261028194143+04'00') /Producer (ReportLab PDF Library - www.reportlab.com) 
+  /Subject (unspecified) /Title (Model Context Protocol: Advanced Topics) /Trapped /False
+>>
+endobj
+7 0 obj
+<<
+/Count 1 /Kids [ 4 0 R ] /Type /Pages
+>>
+endobj
+8 0 obj
+<<
+/Filter [ /ASCII85Decode /FlateDecode ] /Length 994
+>>
 stream
-BT
-/F1 18 Tf
-50 720 Td
-(Model Context Protocol: Advanced Topics) Tj
-/F1 12 Tf
-0 -40 Td
-(Acreditado a: Mario Mendez) Tj
-0 -30 Td
-(Institucion Emisora: Anthropic / Skilljar) Tj
-0 -30 Td
-(ID de Credencial Oficial: vxtfkvdm2xzr) Tj
-0 -30 Td
-(Registro de Verificacion Oficial en Linea:) Tj
-0 -20 Td
-(https://verify.skilljar.com/c/vxtfkvdm2xzr) Tj
-0 -40 Td
-(Estado: Credencial Oficial Verificada en Plataforma Skilljar) Tj
-ET
-endstream
+Gat$ugQ(#H'R]XVbYtbQ&t4#9IT'c;<U1T?TtgkX;.\I^6kTrdlYc:dKk,,e/\DNB&\:(5B?m%+@A'9$_m=00%lqWc#0)eo_'G/ak=G1VM#shj";6Df7(e#)>U[,"W#`Z>`1\'(1YBG_&ZW^09+W"=(24>WAO&+2+%HrnNEU;SY<Y]./UPif6pa>;&4C98FT<U2A&/0("%;X-"[%I$i<AcZc(I[J-lNME5[8CcoX?o@L,q>^*9u$!][Za#^R2jQ"&6:U;A=D/]6KbD\ll/A"E>&Me&=I6hedkhk4@Kic0%$(OFKRqG-FSE/CGa%9S3J<.38@pARKUfjYo/E6pe#K`0iGR2gI=)P'FRTC6g/K4NB:t/6g-clr0EbX!R0G-_#4HjlbM`9pSop?OPjZ-j9\b_Z_e4X0)V_6'*;eQ48cYV'/hm8D4taDr%*P?/Xp?B3K4MPg8VF?^-gm@J<c)'fClj[>NR_F_M$jHPJm&;SaPK<6-6[N]"=N`1(Rs7Co"dT+K>4GaZUA(Ic*--:ZKFJkSO0M?YOiJ(8tCIW!`Occ3@q1aFR!&Abo,C[:Idr+R-CgDk"hMk*:<po<'bV73TWR__0dUO70S`>GFk^=lZM$S*ShYO!ag;(n%&S"Z^B6nEj"(E`%ie4=EAc'-3%=`6r;:Cuti79c3$EdOn1mR<R0qGBNR&!*m+@=pLjgrMBP!=?Y?6-s\9P/kl&#)d#OX`5`KOLq7SNn4#MfG;`:Y1gcTCea`h.fTr"mE)lHQ\Ae.[beNhX#bn.?s8VV.j%IJ?/[<grib,UQY<K4W^1J[`>FHf<<kV%l,iD/SotQmqX1Mr?39d;3&BY`JXsWYC5]\"4u@Ea::YgL`Ht'mDkOTc1m62WC"I!1Jn28kcdTNK#l"*=h-?hpb<>]&6pqJqZ%$@FPNV"_oB[gOojE+.Pu0f"f$EX1[Ot1)eKouqnG_'7`oE8&ec$NP^/fCTV/W6;c+"b.iX85*",E/*U&~>endstream
 endobj
 xref
-0 6
+0 9
 0000000000 65535 f 
-0000000009 00000 n 
-0000000058 00000 n 
-0000000115 00000 n 
-0000000241 00000 n 
-0000000316 00000 n 
+0000000073 00000 n 
+0000000114 00000 n 
+0000000221 00000 n 
+0000000333 00000 n 
+0000000526 00000 n 
+0000000594 00000 n 
+0000000921 00000 n 
+0000000980 00000 n 
 trailer
-<< /Size 6 /Root 1 0 R >>
+<<
+/ID 
+[<b52ddd74d831c1d8c483fbdccfc02d4c><b52ddd74d831c1d8c483fbdccfc02d4c>]
+% ReportLab generated PDF document -- digest (http://www.reportlab.com)
+
+/Info 6 0 R
+/Root 5 0 R
+/Size 9
+>>
 startxref
-786
+2064
 %%EOF

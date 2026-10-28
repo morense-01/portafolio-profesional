@@ -80,6 +80,30 @@
 ## Certificaciones pendientes de verificación (ocultas)
 
 - [x] Título Universitario: Ingeniero en Sistemas de Computación (Universidad Dominicana O&M): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] Model Context Protocol: Advanced Topics (Anthropic (Skilljar)): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] Introduction to Model Context Protocol (Anthropic (Skilljar)): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] Claude Platform 101 (Anthropic (Skilljar)): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] Introduction to Claude Cowork (Anthropic (Skilljar)): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] Claude on Google Cloud (Anthropic (Skilljar)): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] Claude Code 101 (Anthropic (Skilljar)): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] Claude 101 (Anthropic (Skilljar)): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] Design and Develop Agentic Systems (OpenAI Academy): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] Develop with Retrieval-Augmented Generation (RAG) (OpenAI Academy): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] Agents and Workflows (OpenAI Academy): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] Evaluate AI Applications (OpenAI Academy): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] Optimize AI Application Performance (OpenAI Academy): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] Applied AI Foundations (OpenAI Academy): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] AI Foundations (OpenAI Academy): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] In Practice: AI, Testing & Best Practices (N8N103) (n8n Academy): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] Integrations: APIs & Connected Workflows (N8N102) (n8n Academy): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] Essentials: Your First Workflows (N8N101) (n8n Academy): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] n8n Quickstart (QS101) (n8n Academy): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] Implementing SAP Business One (TB1200) (SAP Learning): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] Accelerating Hybrid Integrations with SAP Integration Suite on Microsoft Azure (HIMS1) (SAP Learning): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] SAP HANA - Installation and Administration (HA200) (SAP Learning): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] Getting Started with Terraform on SAP BTP (TERRA1) (SAP Learning): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] Learning the Basics of SAP Fiori (UX100) (SAP Learning): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] Certificado Profesional de Docker (Docker): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
 - [x] Especialidad en Tecnologías de la Información (TI) (Educación Superior Especializada): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
 - [x] Especialidad en Tratamiento y Gestión de Datos (Educación Superior Especializada): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
 - [x] Especialidad en Integrador de Servicios IoT (Educación Superior Especializada): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
@@ -97,15 +121,8 @@
 - [x] Certified IT Professional (TI) (Grow with Google): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
 - [x] Get started with Microsoft data analytics (Ruta de Aprendizaje) (Microsoft Learn): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
 - [x] Optimize business processes with Microsoft 365 Copilot (Microsoft Learn): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
-- [x] Model Context Protocol: Advanced Topics (Anthropic (Skilljar)): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
-- [x] Introduction to Model Context Protocol (Anthropic (Skilljar)): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
-- [x] Introduction to Claude Cowork (Anthropic (Skilljar)): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
-- [x] ChatGPT & OpenAI API: Prompt Engineering y LLM Structured Outputs (JSON Schema) (OpenAI / DeepLearning.AI): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
 - [x] Prompt Engineering for Generative AI & Enterprise Agents (OpenAI / Formación Especializada en IA): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
 - [x] Introducción a la Inteligencia Artificial y Modelos Fundacionales (Formación Especializada en IA): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
-- [x] n8n Workflow Automation & AI Agent Orchestration (n8n): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
-- [x] SAP S/4HANA & Enterprise ERP Integration Architecture (SAP Learning): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
-- [x] Docker Essentials: Containerization & Docker Compose for Microservices (Docker): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
 - [x] Microsoft Azure AI Fundamentals: Generative AI & NLP Workloads (Microsoft Learn): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
 - [x] Carta al Mérito: CCNA v7: Introducción a Redes (Cisco): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
 - [x] Carta al Mérito: IT Essentials (Cisco): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
