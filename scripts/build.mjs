@@ -56,10 +56,12 @@ const NAV = [
   ['/trayectoria/', 'Trayectoria'], ['/logros/', 'Logros'], ['/certificaciones/', 'Certificaciones'],
   ['/proyectos/', 'Proyectos'], ['/documentos/', 'Documentos'],
 ];
-function layout({ title, desc, route, body, noindex = false, ld = null, type = 'website' }) {
+function layout({ title, desc, route, body, noindex = false, ld = null, type = 'website', standalone = false }) {
   const full = title === site.shortName ? (site.minimal ? site.shortName : site.title) : `${title} | ${site.shortName}`;
   const url = abs(route);
   const nav = NAV.map(([r, t]) => `<li><a href="${L(r)}"${r === route || (r !== '/' && route.startsWith(r)) ? ' aria-current="page"' : ''}>${t}</a></li>`).join('');
+  const brandHref = standalone ? '#contenido' : L('/');
+  const showMenu = !site.minimal && !standalone;
   return `<!doctype html>
 <html lang="${site.lang}">
 <head>
@@ -90,9 +92,9 @@ ${ld ? `<script type="application/ld+json">${JSON.stringify(ld).replace(/</g, '\
 <a class="skip" href="#contenido">Saltar al contenido</a>
 <header class="site-header">
   <div class="wrap bar">
-    <a class="brand" href="${L('/')}"><span class="mark" aria-hidden="true">MM</span><span>${esc(site.shortName)}</span></a>
-    ${site.minimal ? '' : `<button class="menu-btn" aria-expanded="false" aria-controls="menu">Menú</button>
-    <nav id="menu" aria-label="Principal"><ul>${nav}</ul></nav>`}
+    <a class="brand" href="${brandHref}"><span class="mark" aria-hidden="true">MM</span><span>${esc(site.shortName)}</span></a>
+    ${showMenu ? `<button class="menu-btn" aria-expanded="false" aria-controls="menu">Menú</button>
+    <nav id="menu" aria-label="Principal"><ul>${nav}</ul></nav>` : ''}
   </div>
 </header>
 <main id="contenido">
@@ -100,7 +102,7 @@ ${body}
 </main>
 <footer class="site-footer">
   <div class="wrap">
-    ${site.minimal ? '' : `<p><a href="${L('/')}">Volver al inicio</a></p>`}
+    ${standalone ? `<p><a href="#contenido">Volver arriba ↑</a></p>` : (site.minimal ? '' : `<p><a href="${L('/')}">Volver al inicio</a></p>`)}
   </div>
 </footer>
 <script src="${L('/assets/app.js')}?v=201220" defer></script>
@@ -189,17 +191,6 @@ function perfilTecnico() {
   const lab = { demostrada: 'Experiencia demostrada', 'por-confirmar': 'Por confirmar con evidencia' };
   const cards = profile.technicalAreas.slice(0, 20).map((a, i) => `<article class="card" id="area-${i + 1}"><span class="tag ${a.level}">${lab[a.level]}</span><h3>${i + 1}. ${esc(a.title)}</h3><p>${esc(a.use)}</p></article>`).join('');
 
-  const aiPf = portfolios.find((x) => x.slug === 'ingeniero-inteligencia-artificial');
-  const aiHighlightBox = aiPf ? `<section class="wrap block">
-    <div class="value-box">
-      <span class="tag demostrada">Especialidad Destacada</span>
-      <h2><a href="${L(`/portafolios/${aiPf.slug}/`)}">${esc(aiPf.title)}</a> &amp; <a href="${L('/portafolios/ingeniero-de-automatizacion/')}">Ingeniero de Automatización</a></h2>
-      <p>${esc(aiPf.summary)}</p>
-      <div class="tech-summary-grid">${(aiPf.competencyCategories || []).map((cat) => `<article class="tech-item"><span class="tech-item-title">${esc(cat.title)}</span><p class="tech-item-desc">${esc(cat.desc)}</p></article>`).join('')}</div>
-      <p class="spacer-md"><a class="btn primary" href="${L(`/portafolios/${aiPf.slug}/`)}">Ver Portafolio de Ingeniero de IA →</a> <a class="btn" href="${L('/portafolios/ingeniero-de-automatizacion/')}">Ver Portafolio de Ingeniero de Automatización →</a></p>
-    </div>
-  </section>` : '';
-
   const currentBox = `<section class="wrap block"><div class="card current-role-card"><p><strong>Entorno Operativo Actual:</strong> Responsable de TI en <a href="${L('/experiencia/astro-pico-duarte-carton/')}">Astro - Pico Duarte Cartón</a> (Haina, Rep. Dom.) · Infraestructura industrial continua, servidores Windows/Linux, desarrollo de software interno, scripts de automatización en Python/PowerShell, integración ERP SAP y modelos de IA.</p></div></section>`;
 
   const techSummaryItems = profile.technicalSummary && profile.technicalSummary.length ? profile.technicalSummary : [];
@@ -212,7 +203,7 @@ function perfilTecnico() {
   const techSummaryHtml = techSummaryItems.length ? `<section class="wrap block"><h2>Resumen de trayectoria técnica</h2><p class="muted">Síntesis estructurada de capacidades y dominios técnicos clave para evaluación rápida de reclutadores y líderes de TI:</p><div class="tech-summary-grid">${techCards}</div></section>` : '';
   const dirRows = profile.executiveAreas.filter((a) => a.evidence === 'demostrada').slice(0, 30).map((a) => `<article class="tech-item"><span class="tech-item-title">${esc(a.title)}</span><p class="tech-item-desc">${esc(a.text)}</p></article>`).join('');
   const dirHtml = dirRows ? `<section class="wrap block"><h2>Competencias directivas demostradas</h2><p class="muted">Competencias estratégicas de liderazgo y gestión respaldadas por más de 20 años en dirección tecnológica:</p><div class="tech-summary-grid">${dirRows}</div></section>` : '';
-  const body = hero('Perfil Operativo', '', '/perfil-tecnico/', '', false) + `${currentBox}${aiHighlightBox}${techSummaryHtml}${dirHtml}<section class="wrap block"><h2>Competencias y Áreas Técnicas</h2><div class="grid2">${cards}</div></section>`;
+  const body = hero('Perfil Operativo', '', '/perfil-tecnico/', '', false) + `${currentBox}${techSummaryHtml}${dirHtml}<section class="wrap block"><h2>Competencias y Áreas Técnicas</h2><div class="grid2">${cards}</div></section>`;
   out('perfil-tecnico/index.html', layout({ title: 'Perfil Operativo', desc: 'Infraestructura, redes, seguridad, nube híbrida, continuidad, WMS, inteligencia artificial y automatización: competencias técnicas con su contexto de uso.', route: '/perfil-tecnico/', body }));
 }
 
@@ -668,23 +659,27 @@ function portafolios() {
       const p = projects.find((x) => x.slug === row.projectSlug);
       const rCerts = (row.certIds || []).map((cid) => certs.find((c) => c.id === cid)).filter(Boolean);
       const certsList = rCerts.map((c) => `<li><strong>${esc(c.name)}</strong> <span class="muted small">(${esc(c.issuer)})</span></li>`).join('');
+      const hasExpAnchor = (pf.experiences || []).some((ex) => ex.companySlug === row.companySlug);
+      const hasProjAnchor = p && pfProjects.some((px) => px.slug === p.slug);
       return `<tr>
-        <td><strong><a href="${L(`/experiencia/${row.companySlug}/`)}">${esc(row.company)}</a></strong><br><span class="small">${esc(row.experienceFocus)}</span></td>
+        <td><strong>${hasExpAnchor ? `<a href="#exp-${esc(row.companySlug)}">${esc(row.company)}</a>` : esc(row.company)}</strong><br><span class="small">${esc(row.experienceFocus)}</span></td>
         <td><ul class="plain small">${certsList}</ul></td>
         <td>${m ? `<span class="tag demostrada">${esc(m.claimedValue)}</span> <strong>${esc(m.title)}</strong><br>` : ''}<span class="small">${esc(row.achievementSummary)}</span></td>
-        <td>${p ? `<strong><a href="${L(`/proyectos/${p.slug}/`)}">${esc(p.name)}</a></strong><br>` : ''}<span class="small">${esc(row.evidenceSummary)}</span></td>
+        <td>${p ? `<strong>${hasProjAnchor ? `<a href="#proj-${esc(p.slug)}">${esc(p.name)}</a>` : esc(p.name)}</strong><br>` : ''}<span class="small">${esc(row.evidenceSummary)}</span></td>
       </tr>`;
     }).join('');
 
+    const seenExpIds = new Set();
     const expCards = (pf.experiences || []).map((ex) => {
-      return `<article class="card">
+      const idAttr = !seenExpIds.has(ex.companySlug) ? ` id="exp-${esc(ex.companySlug)}"` : '';
+      seenExpIds.add(ex.companySlug);
+      return `<article class="card"${idAttr}>
         <p class="period">${esc(ex.period)}</p>
-        <h3><a href="${L(`/experiencia/${ex.companySlug}/`)}">${esc(ex.company)}</a> · ${esc(ex.roleTitle)}</h3>
+        <h3>${esc(ex.company)} · ${esc(ex.roleTitle)}</h3>
         <p>${esc(ex.summary)}</p>
         <h4>Logros y responsabilidades específicas en ${esc(pf.shortTitle)}:</h4>
         ${ul(ex.achievements || [])}
         ${(ex.technologies && ex.technologies.length) ? `<ul class="chips spacer-sm">${ex.technologies.map((t) => `<li>${esc(t)}</li>`).join('')}</ul>` : ''}
-        <p class="spacer-sm"><a href="${L(`/experiencia/${ex.companySlug}/`)}">Ver expediente completo de ${esc(ex.company)} →</a></p>
       </article>`;
     }).join('');
 
@@ -728,9 +723,9 @@ function portafolios() {
         ? `<div class="cv-Requirement-badge"><strong>Alineación con el puesto y CV (${esc(p.companyName || (co ? co.company : 'Empresa'))}):</strong> ${esc(p.cvRequirement)}</div>`
         : '';
       const tangibleHtml = renderTangibleSystem(p, `${pf.slug}-${idx}`);
-      return `<article class="card spacer-md">
+      return `<article class="card spacer-md" id="proj-${esc(p.slug)}">
         <span class="tag">${esc(p.type)}</span>
-        <h3><a href="${L(`/proyectos/${p.slug}/`)}">${esc(p.name)}</a></h3>
+        <h3>${esc(p.name)}</h3>
         <p class="muted small"><strong>Puesto desempeñado:</strong> ${esc(clean(p.role) || pf.shortTitle)} · <strong>Empresa:</strong> ${esc(p.companyName || (co ? co.company : 'Proyecto transversal'))} · <strong>Estado:</strong> ${esc(p.status)}</p>
         ${cvReqHtml}
         <p>${esc(p.summary)}</p>
@@ -740,7 +735,6 @@ function portafolios() {
         ${tangibleHtml}
         ${p.evidence?.length ? `<div class="evidence-box"><h4>Resultado demostrable y evidencia para el reclutador</h4>${ul(p.evidence)}</div>` : ''}
         ${p.technologies?.length ? `<ul class="chips spacer-sm">${p.technologies.map((t) => `<li>${esc(t)}</li>`).join('')}</ul>` : ''}
-        <p class="spacer-sm"><a class="btn small primary" href="${L(`/proyectos/${p.slug}/`)}">Abrir vista dedicada del sistema y documentación →</a></p>
       </article>`;
     }).join('');
 
@@ -782,7 +776,6 @@ function portafolios() {
          <ul class="chips">${(pf.skills || []).map((s) => `<li>${esc(s)}</li>`).join('')}</ul>`;
 
     const body = `<section class="page-head"><div class="wrap">
-      <nav class="crumbs" aria-label="Ruta"><a href="${L('/')}">Inicio</a> › <span>${esc(pf.shortTitle)}</span></nav>
       <p class="eyebrow">${esc(pf.domain)} · ${esc(pf.yearsExperience)}</p>
       <h1>${esc(pf.title)}</h1>
       <p class="lead">${esc(pf.headline)}</p>
@@ -852,7 +845,8 @@ function portafolios() {
       desc: `${pf.headline} Portafolio especializado de ${profile.name} con experiencias, certificaciones, logros, métricas y proyectos con evidencia.`.slice(0, 300),
       route,
       body,
-      ld
+      ld,
+      standalone: true
     }));
   });
 }
