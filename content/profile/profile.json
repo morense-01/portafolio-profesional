@@ -66,7 +66,7 @@
     "<strong>Innovación y Modernización Tecnológica:</strong> Identificación y adopción estratégica de tecnologías emergentes (IA, automatización avanzada, arquitecturas cloud) para maximizar la competitividad empresarial."
   ],
   "technicalSummary": [
-    "<strong>Desarrollador de Inteligencia Artificial y Automatización (n8n y Agentes de IA):</strong> Diseño, desarrollo e implementación de agentes de IA, flujos con n8n y Power Automate, arquitecturas RAG y conectores Model Context Protocol (MCP), integrando LLMs (OpenAI API, Claude, Vertex AI Gemini, Ollama) con Python, FastAPI, Node.js, webhooks, SQL Server, PostgreSQL y SAP ERP (-85% tiempo en facturación e-CF/DGII y 0% errores de transcripción).",
+    "<strong>Desarrollo de Inteligencia Artificial y Automatización:</strong> Diseño, desarrollo e implementación de agentes de IA, flujos con n8n y Power Automate, arquitecturas RAG y conectores Model Context Protocol (MCP), integrando LLMs (OpenAI API, Claude, Vertex AI Gemini, Ollama) con Python, FastAPI, Node.js, webhooks, SQL Server, PostgreSQL y SAP ERP (-85% tiempo en facturación e-CF/DGII y 0% errores de transcripción).",
     "<strong>Entorno Actual (Astro - Pico Duarte Cartón):</strong> Gestión integral de infraestructura en planta industrial continua, servidores Windows/Linux, conectividad de manufactura, automatización de scripts en PowerShell/Python, integración de facturación electrónica con SAP ERP y modelos de IA.",
     "<strong>Arquitectura de Servidores:</strong> Administración avanzada de Windows Server (Active Directory, DNS, DHCP, GPO) y Linux (Ubuntu, RHEL, CentOS) en entornos físicos y virtualizados.",
     "<strong>Virtualización y Cómputo:</strong> Despliegue, consolidación y mantenimiento de clústeres de alta disponibilidad bajo VMware vSphere y Microsoft Hyper-V.",
@@ -319,7 +319,7 @@
   ],
   "technicalAreas": [
     {
-      "title": "Desarrollador de Inteligencia Artificial y Automatización (n8n y Agentes de IA)",
+      "title": "Desarrollo de Inteligencia Artificial, Agentes MCP/RAG y Automatización",
       "level": "demostrada",
       "use": "Agentes de IA, Model Context Protocol (MCP), Retrieval-Augmented Generation (RAG), LLM Structured Outputs (JSON Schema), OpenAI API, Anthropic Claude API, Google Vertex AI (Gemini), Ollama, flujos con n8n y Power Automate, Python (FastAPI, LangChain, SQLAlchemy, Pydantic), JavaScript (ES6+), Node.js, ChromaDB, Pgvector, Redis, Docker y bots conversacionales (WhatsApp Business Webhook, Telegram Bot API)."
     },

@@ -191,14 +191,14 @@ function perfilTecnico() {
   const lab = { demostrada: 'Experiencia demostrada', 'por-confirmar': 'Por confirmar con evidencia' };
   const cards = profile.technicalAreas.slice(0, 20).map((a, i) => `<article class="card" id="area-${i + 1}"><span class="tag ${a.level}">${lab[a.level]}</span><h3>${i + 1}. ${esc(a.title)}</h3><p>${esc(a.use)}</p></article>`).join('');
 
-  const aiPf = portfolios.find((x) => x.slug === 'desarrollador-ia-automatizacion-n8n');
+  const aiPf = portfolios.find((x) => x.slug === 'ingeniero-inteligencia-artificial');
   const aiHighlightBox = aiPf ? `<section class="wrap block">
     <div class="value-box">
-      <span class="tag demostrada">Perfil Especializado Destacado</span>
-      <h2><a href="${L(`/portafolios/${aiPf.slug}/`)}">${esc(aiPf.title)}</a></h2>
+      <span class="tag demostrada">Especialidad Destacada</span>
+      <h2><a href="${L(`/portafolios/${aiPf.slug}/`)}">${esc(aiPf.title)}</a> &amp; <a href="${L('/portafolios/ingeniero-de-automatizacion/')}">Ingeniero de Automatización</a></h2>
       <p>${esc(aiPf.summary)}</p>
       <div class="tech-summary-grid">${(aiPf.competencyCategories || []).map((cat) => `<article class="tech-item"><span class="tech-item-title">${esc(cat.title)}</span><p class="tech-item-desc">${esc(cat.desc)}</p></article>`).join('')}</div>
-      <p class="spacer-md"><a class="btn primary" href="${L(`/portafolios/${aiPf.slug}/`)}">Abrir expediente completo de Desarrollador de IA y Automatización (n8n y Agentes) →</a></p>
+      <p class="spacer-md"><a class="btn primary" href="${L(`/portafolios/${aiPf.slug}/`)}">Ver Portafolio de Ingeniero de IA →</a> <a class="btn" href="${L('/portafolios/ingeniero-de-automatizacion/')}">Ver Portafolio de Ingeniero de Automatización →</a></p>
     </div>
   </section>` : '';
 
@@ -215,7 +215,7 @@ function perfilTecnico() {
   const dirRows = profile.executiveAreas.filter((a) => a.evidence === 'demostrada').slice(0, 30).map((a) => `<article class="tech-item"><span class="tech-item-title">${esc(a.title)}</span><p class="tech-item-desc">${esc(a.text)}</p></article>`).join('');
   const dirHtml = dirRows ? `<section class="wrap block"><h2>Competencias directivas demostradas</h2><p class="muted">Competencias estratégicas de liderazgo y gestión respaldadas por más de 20 años en dirección tecnológica:</p><div class="tech-summary-grid">${dirRows}</div></section>` : '';
   const body = hero('Perfil Operativo', '', '/perfil-tecnico/', '', false) + `${currentBox}${aiHighlightBox}${techSummaryHtml}${dirHtml}<section class="wrap block"><h2>Competencias y Áreas Técnicas</h2><div class="grid2">${cards}</div></section>`;
-  out('perfil-tecnico/index.html', layout({ title: 'Perfil Operativo', desc: 'Desarrollador de IA y Automatización (n8n y Agentes), infraestructura, redes, seguridad, nube híbrida, continuidad y WMS: competencias técnicas con su contexto de uso.', route: '/perfil-tecnico/', body }));
+  out('perfil-tecnico/index.html', layout({ title: 'Perfil Operativo', desc: 'Infraestructura, redes, seguridad, nube híbrida, continuidad, WMS, inteligencia artificial y automatización: competencias técnicas con su contexto de uso.', route: '/perfil-tecnico/', body }));
 }
 
 function trayectoria() {
