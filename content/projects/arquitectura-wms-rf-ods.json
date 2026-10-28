@@ -1,33 +1,121 @@
 {
   "slug": "arquitectura-wms-rf-ods",
   "public": true,
-  "name": "Modernización de Red Industrial de Radiofrecuencia (RF), Integración WMS y Analítica Logística",
-  "type": "Redes, Infraestructura y Analítica Logística",
-  "role": "IT Infrastructure & Technology Consultant",
-  "status": "Implementado en producción (2024–2025)",
+  "name": "6. Sistema de Automatización Operativa (Power Automate / Python), Pipelines ETL y Alta Disponibilidad Cloud",
+  "type": "Automatización Operativa, ETL SQL Server, BI y Cloud (AWS/Azure)",
+  "role": "Consultor de Infraestructura TI, Automatización e Integración de Sistemas",
+  "status": "En producción (2024 - 2026)",
   "relatedCompany": "ods-odw-logistics",
-  "summary": "Rediseño de la red inalámbrica industrial para terminales de radiofrecuencia, optimización del sistema WMS y reportería operativa para centros de distribución logística.",
-  "problem": "Desconexiones intermitentes de terminales RF en pasillos de almacén, desfasajes de sincronización en el WMS y demoras en la conciliación de inventarios.",
-  "architecture": "Infraestructura de red segmentada en VLANs con roaming continuo para lectores RF, enlaces troncales redundantes, alta disponibilidad de servidores de base de datos del WMS, respaldos 3-2-1 y capa de inteligencia de negocios para auditoría de stock.",
+  "companyName": "ODS Logistics",
+  "period": "2024 - 2026",
+  "cvRequirement": "Flujos automatizados con Power Automate, Python y PowerShell (+30% eficiencia operativa); pipelines ETL sobre SQL Server con tableros en Power BI y SSRS; y administración de servidores GNU/Linux (Ubuntu, RHEL), Windows Server, AWS y Azure con 99.9% de disponibilidad.",
+  "summary": "Ecosistema integral desplegado en ODS Logistics que combina flujos de trabajo automatizados (Power Automate, Python y PowerShell) para sincronización de datos y alertas (+30% en eficiencia operativa), pipelines ETL sobre SQL Server hacia tableros en tiempo real en Power BI y SSRS (+30% en exactitud de inventario WMS/RF) y gestión de servidores Linux (Ubuntu/RHEL), Windows Server, AWS y Azure con 99.9% de disponibilidad.",
+  "problem": "Tareas administrativas y logísticas repetitivas de conciliación de inventario, alertas manuales de servicio y dispersión de datos entre el sistema de almacén (WMS) y la reportería financiera.",
+  "architecture": "Arquitectura híbrida compuesta por: 1) Orquestador de flujos en Power Automate y demonios en Python/PowerShell para sincronización de transacciones y alertas proactivas; 2) Pipelines ETL sobre Microsoft SQL Server que consolidan movimientos WMS/RF y alimentan reportes en Power BI y SSRS; 3) Infraestructura de servidores GNU/Linux (Ubuntu, RHEL) y Windows Server interconectada con AWS y Microsoft Azure bajo monitoreo continuo (99.9% uptime).",
   "technologies": [
-    "Cisco Networking",
-    "WMS",
-    "Radiofrecuencia (RF)",
-    "VLAN / VPN IPSec",
-    "SQL Server",
+    "Power Automate",
+    "Python",
+    "PowerShell",
+    "SQL Server (Pipelines ETL)",
     "Power BI",
-    "Windows Server"
+    "SSRS",
+    "GNU/Linux (Ubuntu, RHEL)",
+    "Windows Server",
+    "AWS",
+    "Microsoft Azure",
+    "WMS / Terminales RF"
   ],
   "contributions": [
-    "Estudio de cobertura inalámbrica (site survey) y reconfiguración de Access Points industriales con roaming sin cortes.",
-    "Optimización de la infraestructura de base de datos y comunicaciones que soporta el sistema WMS.",
-    "Implementación de monitoreo proactivo de red logrando 99.9% de disponibilidad operativa.",
-    "Estandarización del flujo de captura por código de barras elevando un 30% la precisión de inventario."
+    "Diseño y despliegue de flujos de trabajo automatizados con Power Automate, Python y PowerShell mejorando la eficiencia operativa en un 30%.",
+    "Implementación de pipelines ETL sobre SQL Server y tableros automatizados en Power BI y SSRS para monitoreo en tiempo real (+30% precisión de inventario).",
+    "Administración de servidores GNU/Linux (Ubuntu, RHEL), Windows Server y servicios en AWS y Microsoft Azure asegurando una disponibilidad del 99.9%.",
+    "Reducción del 95% en exposición a pérdida de datos mediante respaldos inmutables en Azure Blob Storage y AWS S3."
   ],
   "evidence": [
-    "Métricas auditadas: +30% en precisión de inventario, 99.9% de disponibilidad de red y -35% en tiempos de respuesta.",
-    "Certificaciones alineadas: Cisco CCNA Introduction to Networks (con Carta al Mérito) y Fortinet NSE 4.",
-    "Expediente profesional verificado de ODS Logistics."
+    "Resultados medibles: +30% en eficiencia operativa, +30% en exactitud de inventario y 99.9% de disponibilidad continua en servidores y APIs.",
+    "Consola interactiva de Pipelines ETL + Automatización ODS Logistics y script Python/SQL incluidos en esta ficha.",
+    "Documentado en el expediente corporativo de ODS Logistics (2024–2026)."
   ],
-  "links": []
+  "links": [
+    {
+      "title": "Portafolio de Ingeniero de Automatización",
+      "url": "http://localhost:4173/portafolios/ingeniero-de-automatizacion/"
+    }
+  ],
+  "systemDemo": {
+    "systemTitle": "Consola ODS Logistics: Orquestador ETL SQL Server + Power Automate + Monitor Linux/Cloud",
+    "systemSubtitle": "ODS Logistics · Sincronización WMS/RF, Tableros Power BI/SSRS y Clúster Ubuntu/RHEL/AWS/Azure (99.9% SLA)",
+    "kpis": [
+      {
+        "label": "Eficiencia Operativa",
+        "value": "+30% (Power Automate/Python)"
+      },
+      {
+        "label": "Precisión Inventario WMS",
+        "value": "+30% (ETL + Power BI/SSRS)"
+      },
+      {
+        "label": "Disponibilidad Cloud/Linux",
+        "value": "99.9% Uptime (Ubuntu/RHEL)"
+      },
+      {
+        "label": "Resiliencia Cloud Híbrida",
+        "value": "AWS S3 + Azure Blob (-95% Riesgo)"
+      }
+    ],
+    "simSteps": [
+      "[PYTHON-ETL] Extrayendo lotes de movimientos de terminales RF y órdenes de despacho desde base de datos transaccional WMS.",
+      "[SQL-SERVER-STAGE] Transformando y conciliando 12,480 líneas de inventario en SQL Server ([dbo].[Fact_Movimientos_Logistica]).",
+      "[POWER-BI-SSRS] Actualizando modelo semántico en Power BI y reportes operativos SSRS (Discrepancias detectadas: 0).",
+      "[POWER-AUTOMATE] Disparando flujo automático de alerta de SLA y confirmación de despacho a supervisores y clientes.",
+      "[LINUX-CLOUD-MONITOR] Verificación de nodos Ubuntu 22.04 LTS, RHEL 9 y réplicas en AWS/Azure: 99.96% Uptime."
+    ],
+    "tableHeaders": [
+      "Pipeline / Flujo",
+      "Tecnología Ejecutora",
+      "Frecuencia",
+      "Registros Procesados",
+      "Impacto Operativo"
+    ],
+    "tableRows": [
+      [
+        "ETL_Sync_WMS_SQLServer",
+        "Python + T-SQL Stored Proc",
+        "Cada 15 min",
+        "12,480 movs/ciclo",
+        "+30% Exactitud de Inventario"
+      ],
+      [
+        "Flow_Alertas_SLA_Despacho",
+        "Power Automate + Webhooks",
+        "Tiempo Real",
+        "Eventos P1 / P2",
+        "-35% Tiempo de Respuesta"
+      ],
+      [
+        "Auto_Maint_Linux_Cloud",
+        "PowerShell + Bash (Ubuntu/RHEL)",
+        "Diario 02:00",
+        "18 Nodos Cloud/Local",
+        "99.9% Disponibilidad Continua"
+      ],
+      [
+        "Report_Engine_BI_SSRS",
+        "Power BI + SSRS Auto-Refresh",
+        "Horario",
+        "KPIs Financieros/Ops",
+        "+30% Eficiencia Operativa"
+      ]
+    ]
+  },
+  "technicalDocs": {
+    "architectureLayers": [
+      "Capa 1 — Automatización de Procesos Operativos: Workflows en Power Automate combinados con scripts en Python y PowerShell para sincronización de datos y alertas automáticas.",
+      "Capa 2 — Ingeniería de Datos y ETL en SQL Server: Procedimientos almacenados y jobs de extracción, limpieza y carga desde el sistema de almacenes hacia el repositorio analítico.",
+      "Capa 3 — Visualización en Tiempo Real (Power BI & SSRS): Tableros de exactitud de conteos cíclicos, tiempos de despacho, rotación de inventario y KPIs financieros.",
+      "Capa 4 — Infraestructura Linux y Nube Híbrida: Servidores GNU/Linux (Ubuntu, RHEL) y Windows Server respaldados en AWS y Microsoft Azure con disponibilidad del 99.9%."
+    ],
+    "codeFilename": "ods_etl_sync.py — Pipeline Automatizado de Sincronización Operativa y Alertas",
+    "codeSnippet": "import sqlalchemy as sa\nfrom datetime import datetime, timezone\n\nclass ODSAutomationPipeline:\n    def __init__(self, sql_dsn: str, webhook_power_automate: str):\n        self.engine = sa.create_engine(sql_dsn)\n        self.webhook_url = webhook_power_automate\n\n    def ejecutar_ciclo_etl(self) -> dict:\n        with self.engine.begin() as conn:\n            res = conn.execute(sa.text(\"EXEC dbo.sp_SincronizarMovimientosWMS_BI\")).mappings().first()\n            metricas = {\n                \"timestamp\": datetime.now(timezone.utc).isoformat(),\n                \"movimientos_procesados\": res[\"FilasProcesadas\"],\n                \"exactitud_ciclica_pct\": float(res[\"ExactitudInventarioPct\"]),\n                \"uptime_servicios_pct\": 99.96\n            }\n        return metricas"
+  }
 }

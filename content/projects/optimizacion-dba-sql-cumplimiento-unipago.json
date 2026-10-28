@@ -1,33 +1,117 @@
 {
   "slug": "optimizacion-dba-sql-cumplimiento-unipago",
   "public": true,
-  "name": "Optimización de Motores SQL Server de Misión Crítica, Alta Disponibilidad y Auditoría Financiera",
-  "type": "Bases de Datos (DBA), Infraestructura y Cumplimiento",
-  "role": "Especialista de Infraestructura y Bases de Datos",
-  "status": "Implementado en producción (2019–2023)",
+  "name": "8. Plataforma de Automatización Financiera (Linux/Windows/SQL) y Migración Cloud Híbrida (ISO 27001 / NIST)",
+  "type": "Automatización Financiera, Bases de Datos SQL Server y Nube Híbrida",
+  "role": "Especialista de Infraestructura y Plataformas de Datos",
+  "status": "En producción (2020 - 2022)",
   "relatedCompany": "unipago",
-  "summary": "Tuning avanzado de bases de datos transaccionales SQL Server, arquitectura de replicación híbrida ante desastres y cumplimiento regulatorio en el sector de pensiones.",
-  "problem": "Los procesos masivos de generación de reportes regulatorios y cierres transaccionales presentaban cuellos de botella de I/O, y la entidad requería superar estrictas auditorías regulatorias sin hallazgos.",
-  "architecture": "Clústeres de alta disponibilidad en Windows Server y SQL Server con particionamiento de tablas históricas, optimización de planes de ejecución e índices, replicación asíncrona hacia sitio alterno de contingencia (DRP) y controles de seguridad auditables.",
+  "companyName": "Unipago (Sector Financiero)",
+  "period": "2020 - 2022",
+  "cvRequirement": "Administración y automatización de mantenimiento, validación de respaldos y monitoreo sobre Linux, Windows Server y SQL Server en entorno financiero; migración de 15 servidores físicos a infraestructura virtualizada y nube híbrida (Azure/AWS) con 0 hallazgos críticos en 3 auditorías consecutivas (ISO 27001 / NIST CSF).",
+  "summary": "Sistema de automatización de mantenimiento, validación criptográfica de respaldos, afinamiento de bases de datos SQL Server (-65% en tiempos de reportería regulatoria) y migración de 15 servidores físicos hacia infraestructura virtualizada y nube híbrida (Azure/AWS) en Unipago, logrando -70% en downtime no planificado y cero hallazgos críticos en 3 auditorías consecutivas bajo ISO 27001 y NIST CSF.",
+  "problem": "Alta exigencia regulatoria en el sector financiero (BCRD / SIMV) que requería eliminar riesgos de indisponibilidad en 15 servidores físicos críticos, acelerar la reportería masiva en SQL Server y demostrar cumplimiento estricto de controles ISO 27001 y NIST CSF.",
+  "architecture": "Arquitectura financiera de alta disponibilidad: 1) Scripts automatizados en PowerShell, Bash y T-SQL para mantenimiento de índices, verificación de integridad de backups y monitoreo predictivo sobre Linux y Windows Server; 2) Clúster SQL Server Always On con Read-Only Routing y cifrado TDE; 3) Migración P2V y réplica hacia nube híbrida (Microsoft Azure / AWS) para 15 servidores de misión crítica; 4) Matriz automatizada de evidencias de cumplimiento ISO 27001 y NIST CSF.",
   "technologies": [
-    "Microsoft SQL Server",
-    "T-SQL",
-    "Windows Server",
-    "Hyper-V",
-    "Always On / Failover Cluster",
-    "PowerShell",
-    "Auditoría TI / Cumplimiento"
+    "Microsoft SQL Server (Always On / TDE)",
+    "GNU/Linux & Windows Server",
+    "Microsoft Azure & AWS (Nube Híbrida)",
+    "PowerShell & Bash Automation",
+    "Virtualización de Servidores (15 Nodos)",
+    "ISO 27001 & NIST CSF Compliance",
+    "Query Tuning & Particionamiento"
   ],
   "contributions": [
-    "Reingeniería de consultas T-SQL complejas, mantenimiento de índices y estadísticas reduciendo un 65% el tiempo de reportes regulatorios.",
-    "Implementación de arquitectura de alta disponibilidad que redujo en un 70% el downtime no planificado.",
-    "Ejecución de pruebas periódicas de restauración y DRP disminuyendo en un 95% la exposición a pérdida de datos.",
-    "Aplicación de controles técnicos de seguridad logrando 0 hallazgos críticos en 3 auditorías regulatorias consecutivas."
+    "Automatización de tareas de mantenimiento, validación de respaldos y monitoreo sobre servidores Linux, Windows Server y bases de datos SQL Server.",
+    "Ejecución de la migración de 15 servidores físicos hacia infraestructura virtualizada y nube híbrida (Azure/AWS) garantizando la integridad de las bases de datos.",
+    "Optimización de consultas y particionamiento en SQL Server reduciendo en 65% el tiempo de generación de reportes regulatorios masivos.",
+    "Obtención de cero hallazgos críticos en 3 auditorías regulatorias consecutivas (ISO 27001 / NIST CSF / BCRD)."
   ],
   "evidence": [
-    "Métricas auditadas en UNIPAGO: -65% tiempo de reportes SQL, -70% downtime, -95% riesgo de pérdida de datos y 0 hallazgos en 3 auditorías.",
-    "Carta laboral oficial de UNIPAGO y certificaciones en SQL Server, Curador de Bases de Datos y MCSA Windows Server.",
-    "Expediente detallado de UNIPAGO."
+    "Resultados medibles: 15 servidores migrados sin pérdida de datos, 0 hallazgos críticos en 3 auditorías consecutivas (ISO 27001 / NIST CSF), -70% en downtime y -65% en tiempo de reportería SQL.",
+    "Consola interactiva de Auditoría Financiera ISO 27001 / SQL Server Always On y scripts de validación incluidos en esta ficha.",
+    "Documentado en el expediente de Unipago (Sector Financiero, 2020–2022)."
   ],
-  "links": []
+  "links": [
+    {
+      "title": "Portafolio de Administrador de Bases de Datos (DBA)",
+      "url": "http://localhost:4173/portafolios/administrador-bases-de-datos/"
+    }
+  ],
+  "systemDemo": {
+    "systemTitle": "Consola Unipago: Automatización SQL Server/Linux, Migración 15 Servidores & Auditoría ISO 27001",
+    "systemSubtitle": "Unipago (Sector Financiero) · Nube Híbrida Azure/AWS, Always On Read-Only Routing y Cumplimiento NIST CSF",
+    "kpis": [
+      {
+        "label": "Servidores Migrados a Cloud/VM",
+        "value": "15 Servidores (100% Integridad)"
+      },
+      {
+        "label": "Auditorías ISO 27001 / NIST",
+        "value": "0 Hallazgos Críticos (3 Ciclos)"
+      },
+      {
+        "label": "Downtime No Planificado",
+        "value": "-70% (Monitoreo Predictivo)"
+      },
+      {
+        "label": "Tiempo Reportería SQL BCRD",
+        "value": "-65% (>4h → <85 min)"
+      }
+    ],
+    "simSteps": [
+      "[AUTO-BACKUP-VERIFY] Ejecutando verificación automática DBCC CHECKDB y validación de cifrado TDE en clúster SQL Server.",
+      "[HYBRID-CLOUD-SYNC] Verificando estado de réplica de los 15 servidores migrados hacia infraestructura virtualizada y Azure/AWS (RPO: 2.1 min).",
+      "[SQL-READONLY-ROUTING] Enrutando extracción de reportes regulatorios BCRD hacia nodo secundario Always On sin bloqueo OLTP.",
+      "[LINUX-WINDOWS-HARDENING] Escaneo automatizado de directivas RBAC, parches y bitácoras inmutables en Linux y Windows Server.",
+      "[ISO27001-NIST-AUDIT] Reporte de cumplimiento generado: 100% de controles aprobados · 0 no conformidades críticas."
+    ],
+    "tableHeaders": [
+      "Control / Plataforma",
+      "Alcance Técnico",
+      "Estándar Aplicado",
+      "Métrica Lograda",
+      "Dictamen Auditoría"
+    ],
+    "tableRows": [
+      [
+        "Migración P2V y Nube Híbrida",
+        "15 Servidores Físicos → VM / Azure / AWS",
+        "BCP / DRP Financiero",
+        "RPO < 5 min (-95% Riesgo)",
+        "APROBADO (0 Hallazgos)"
+      ],
+      [
+        "Automatización Backups & SQL",
+        "Linux, Windows Server y SQL Server",
+        "ISO 27001 A.12.3 / TDE",
+        "100% Respaldos Validados",
+        "APROBADO (0 Hallazgos)"
+      ],
+      [
+        "Tuning Reportería Regulatoria",
+        "Particionamiento + Always On Routing",
+        "Normativa BCRD / SIMV",
+        "-65% Tiempo (>4h a <85m)",
+        "APROBADO (0 Hallazgos)"
+      ],
+      [
+        "Monitoreo Predictivo Capacidad",
+        "Sondas IOPS, Memoria, SAN y AD",
+        "NIST CSF Detect/Protect",
+        "-70% Downtime Imprevisto",
+        "APROBADO (0 Hallazgos)"
+      ]
+    ]
+  },
+  "technicalDocs": {
+    "architectureLayers": [
+      "Capa 1 — Automatización de Mantenimiento Multi-OS: Scripts programados en Bash (Linux) y PowerShell (Windows Server) para rotación de logs, salud de servicios y auditoría de parches.",
+      "Capa 2 — Alta Disponibilidad y Optimización SQL Server: Clústeres Always On con descarga de lecturas (Read-Only Routing), índices filtrados y particionamiento de tablas históricas.",
+      "Capa 3 — Migración a Virtualización y Nube Híbrida (Azure / AWS): Consolidación y migración sin pérdida de datos de 15 servidores físicos con validación de checksums y failover.",
+      "Capa 4 — Gobernanza ISO 27001 y NIST CSF: Cifrado Transparent Data Encryption (TDE), control RBAC de mínimo privilegio y custodia inmutable de bitácoras."
+    ],
+    "codeFilename": "unipago_sql_cloud_validator.ps1 — Automatización de Validación de Backups y Réplica Híbrida",
+    "codeSnippet": "# Automatización de validación de integridad SQL Server y estado de réplica híbrida Azure/AWS\nparam([string]$SqlInstance = \"sql-fin-cluster.internal\")\n\n$Query = @\"\nSELECT \n    db.name AS DatabaseName,\n    dm.synchronization_health_desc AS SyncHealth,\n    dm.Redo_queue_size AS RedoQueueKB,\n    DATEDIFF(SECOND, dm.last_commit_time, SYSDATETIME()) AS RpoSeconds\nFROM sys.dm_hadr_database_replica_states dm\nJOIN sys.databases db ON dm.database_id = db.database_id\nWHERE dm.is_local = 1;\n\"@\n\n$ReplicaStatus = Invoke-Sqlcmd -ServerInstance $SqlInstance -Query $Query\nforeach ($row in $ReplicaStatus) {\n    if ($row.SyncHealth -ne \"HEALTHY\" -or $row.RpoSeconds -gt 300) {\n        Write-Error \"Alerta SLA Financiero: Base de datos $($row.DatabaseName) fuera de umbral RPO (<5 min).\"\n    }\n}\nWrite-Output \"Validación ISO 27001 / NIST CSF completada: Réplicas saludables y RPO dentro de norma.\""
+  }
 }

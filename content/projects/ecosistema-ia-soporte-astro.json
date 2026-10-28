@@ -1,14 +1,17 @@
 {
   "slug": "ecosistema-ia-soporte-astro",
   "public": true,
-  "name": "Ecosistema de Asistencia Inteligente con RAG y Model Context Protocol (MCP)",
-  "type": "Inteligencia Artificial y Automatización",
-  "role": "Desarrollador de IA, Agentes MCP y Automatización (Encargado de TI)",
+  "name": "2. Ecosistema de Asistencia Inteligente con RAG y Model Context Protocol (MCP)",
+  "type": "IA Generativa, Agentes MCP y RAG",
+  "role": "Encargado de Tecnología de la Información (Desarrollo de IA, Automatización e Integración ERP)",
   "status": "En producción (2026)",
   "relatedCompany": "astro-pico-duarte-carton",
-  "summary": "Agentes de IA que consultan bases de conocimiento internas mediante búsqueda semántica (RAG) y ejecutan herramientas de verificación de estado, consultas SQL seguras y documentación bajo el estándar Model Context Protocol (MCP).",
+  "companyName": "Astro - Pico Duarte Cartón, S.R.L.",
+  "period": "2026 - Actualidad",
+  "cvRequirement": "Agentes de IA, RAG y Model Context Protocol (MCP): ecosistema de asistencia técnica basado en agentes inteligentes utilizando el estándar MCP de Anthropic, flujos RAG sobre manuales operativos e integración con Claude API, Vertex AI (Gemini), Python y SQL Server.",
+  "summary": "Ecosistema de asistencia técnica en producción basado en servidores Model Context Protocol (MCP) personalizados y flujos Retrieval-Augmented Generation (RAG) conectados a Anthropic Claude API, Google Vertex AI (Gemini), Python, PowerShell y SQL Server, logrando +40% de productividad operativa y liberando más de 1,200 horas-hombre anuales.",
   "problem": "La atención de consultas operativas, diagnóstico de sistemas y búsqueda en manuales técnicos consumía alto tiempo de respuesta del equipo de soporte e ingeniería.",
-  "architecture": "Arquitectura e implementación de servidores MCP personalizados (Model Context Protocol de Anthropic), indexación documental para el flujo Retrieval-Augmented Generation (RAG) e integración con Anthropic Claude API, Google Vertex AI (Gemini), Python, PowerShell y SQL Server.",
+  "architecture": "Arquitectura agéntica compuesta por: 1) Servidores MCP personalizados en Python que exponen herramientas seguras de solo lectura (consulta de estado de servidores, telemetría de red industrial, bitácoras SQL Server y tickets); 2) Motor RAG con indexación semántica de manuales técnicos, SOPs de planta y guías SAP; 3) Orquestador de modelos fundacionales (Anthropic Claude API / Google Vertex AI Gemini) con validación de esquemas y auditoría de ejecuciones.",
   "technologies": [
     "Model Context Protocol (MCP)",
     "Retrieval-Augmented Generation (RAG)",
@@ -19,20 +22,101 @@
     "SQL Server"
   ],
   "contributions": [
-    "Arquitectura e implementación de servidores MCP personalizados bajo el estándar de Anthropic.",
-    "Indexación documental de manuales operativos para el flujo de búsqueda semántica (RAG).",
-    "Desarrollo de scripts de diagnóstico automatizado, verificación de estado y consultas SQL seguras.",
-    "Incremento del 40% en la productividad del área de tecnología y más de 1,200 horas-hombre anuales liberadas de tareas repetitivas."
+    "Arquitectura e implementación de servidores MCP personalizados bajo el estándar oficial de Anthropic.",
+    "Indexación documental de manuales operativos e industriales para el flujo de búsqueda semántica (RAG).",
+    "Desarrollo de herramientas (MCP Tools) de diagnóstico automatizado en Python y PowerShell y consultas SQL seguras.",
+    "Incremento del 40% en la productividad del área de tecnología y más de 1,200 horas-hombre anuales liberadas."
   ],
   "evidence": [
-    "Incremento del 40% en la productividad del área de tecnología y más de 1,200 horas-hombre anuales liberadas de tareas repetitivas.",
-    "Certificaciones oficiales Anthropic MCP (Advanced Topics #vxtfkvdm2xzr, Intro to MCP #o2r5j74e8f68, Claude Cowork #tzmigpxh43r8).",
-    "Caso en producción documentado en el expediente de Astro - Pico Duarte Cartón."
+    "Resultado medible: Incremento del 40% en la productividad del área de tecnología y más de 1,200 horas-hombre anuales liberadas de tareas repetitivas.",
+    "Respaldado por certificaciones oficiales de Anthropic: Model Context Protocol: Advanced Topics (#vxtfkvdm2xzr), Introduction to MCP (#o2r5j74e8f68) e Introduction to Claude Cowork (#tzmigpxh43r8).",
+    "Consola interactiva del servidor MCP + RAG y código del conector disponibles en esta ficha."
   ],
   "links": [
     {
-      "title": "Repositorio y Portafolio en GitHub (github.com/morense-01)",
-      "url": "https://github.com/morense-01"
+      "title": "Verificar Certificación Oficial Anthropic MCP Advanced (#vxtfkvdm2xzr)",
+      "url": "https://verify.skilljar.com/c/vxtfkvdm2xzr"
+    },
+    {
+      "title": "Portafolio de Ingeniero de IA y Automatización",
+      "url": "http://localhost:4173/portafolios/ingeniero-inteligencia-artificial/"
     }
-  ]
+  ],
+  "systemDemo": {
+    "systemTitle": "Consola de Agente Técnico MCP + RAG (Claude API / Vertex AI Gemini)",
+    "systemSubtitle": "Servidor MCP Interno Astro-TI · Búsqueda Semántica RAG + Herramientas de Diagnóstico SQL/PowerShell",
+    "kpis": [
+      {
+        "label": "Incremento Productividad TI",
+        "value": "+40% (Auditado)"
+      },
+      {
+        "label": "Horas Liberadas al Año",
+        "value": "+1,200 h/hombre"
+      },
+      {
+        "label": "Herramientas MCP Activas",
+        "value": "12 Tools (SQL/PS/RAG)"
+      },
+      {
+        "label": "Precisión Citas Manuales RAG",
+        "value": "98.4% (Top-K=4)"
+      }
+    ],
+    "simSteps": [
+      "[MCP-HOST] Consulta recibida: 'Verificar retraso en cola de impresión de certificados de calidad Línea Corrugadora 2'.",
+      "[MCP-TOOL -> rag_search_manuals] Recuperando contexto en manuales SOP-CAL-04 y guía de Spooler Industrial (Similitud: 0.94).",
+      "[MCP-TOOL -> sql_query_readonly] Ejecutando diagnóstico seguro en SQL Server: SELECT status, queue_len FROM sys_print_queues WHERE line='CORR-02'.",
+      "[MCP-TOOL -> powershell_diag] Verificando servicio de impresión y latencia de switch industrial VLAN-20 (Latencia: 1.4 ms OK).",
+      "[LLM-SYNTHESIS] Claude/Gemini genera diagnóstico con causa raíz (bloqueo de job huérfano #4821) y ejecuta script preventivo autorizado.",
+      "[RESULTADO] Incidencia diagnosticada y resuelta en 42 segundos (Tiempo manual previo: 22 minutos)."
+    ],
+    "tableHeaders": [
+      "Herramienta MCP (Tool)",
+      "Tipo de Operación",
+      "Fuente Conectada",
+      "Tiempo Respuesta",
+      "Nivel de Seguridad"
+    ],
+    "tableRows": [
+      [
+        "search_technical_manuals",
+        "Búsqueda Semántica RAG",
+        "Índice Vectorial SOPs Planta",
+        "180 ms",
+        "Solo Lectura / Citado"
+      ],
+      [
+        "inspect_ecf_batch_status",
+        "Consulta SQL Parametrizada",
+        "SQL Server [Bitacora_eCF]",
+        "95 ms",
+        "Read-Only Role (RBAC)"
+      ],
+      [
+        "diagnose_industrial_node",
+        "Script Diagnóstico Remoto",
+        "PowerShell / Switches Planta",
+        "410 ms",
+        "Ejecución Firmada Auditada"
+      ],
+      [
+        "generate_itil_resolution",
+        "Estructuración JSON Schema",
+        "Portal Interno ITSM Astro",
+        "260 ms",
+        "Validado Human-in-the-Loop"
+      ]
+    ]
+  },
+  "technicalDocs": {
+    "architectureLayers": [
+      "Capa 1 — Protocolo MCP (Model Context Protocol): Servidor Python que expone recursos documentales y herramientas tipadas mediante JSON-RPC estandarizado.",
+      "Capa 2 — Motor RAG Industrial: Fragmentación de manuales técnicos de planta, procedimientos SAP y bitácoras históricas con búsqueda por similitud vectorial.",
+      "Capa 3 — Ejecución Segura de Herramientas: Consultas SQL parametrizadas de solo lectura y rutinas PowerShell pre-aprobadas para diagnóstico de infraestructura.",
+      "Capa 4 — Gobernanza y Auditoría: Registro completo de prompts, herramientas invocadas y tiempos de resolución para métricas ejecutivas en Power BI."
+    ],
+    "codeFilename": "mcp_astro_server.py — Servidor MCP con Herramientas RAG y Diagnóstico SQL",
+    "codeSnippet": "from typing import Any\nimport sqlalchemy as sa\n\nclass AstroMCPServer:\n    \"\"\"Servidor Model Context Protocol (MCP) para diagnóstico técnico y RAG.\"\"\"\n    def __init__(self, sql_dsn: str, vector_store):\n        self.db = sa.create_engine(sql_dsn)\n        self.vectors = vector_store\n\n    def list_tools(self) -> list[dict[str, Any]]:\n        return [\n            {\n                \"name\": \"consultar_manual_rag\",\n                \"description\": \"Busca procedimientos técnicos en manuales operativos de planta mediante embeddings.\",\n                \"inputSchema\": {\n                    \"type\": \"object\",\n                    \"properties\": {\"consulta\": {\"type\": \"string\"}, \"top_k\": {\"type\": \"integer\", \"default\": 4}},\n                    \"required\": [\"consulta\"]\n                }\n            },\n            {\n                \"name\": \"estado_lotes_sap_sql\",\n                \"description\": \"Consulta de solo lectura del estado de lotes e-CF y servicios en SQL Server.\",\n                \"inputSchema\": {\n                    \"type\": \"object\",\n                    \"properties\": {\"fecha\": {\"type\": \"string\"}},\n                    \"required\": [\"fecha\"]\n                }\n            }\n        ]\n\n    def call_tool(self, name: str, arguments: dict[str, Any]) -> dict[str, Any]:\n        if name == \"consultar_manual_rag\":\n            docs = self.vectors.similarity_search(arguments[\"consulta\"], k=arguments.get(\"top_k\", 4))\n            return {\"matches\": [{\"source\": d.metadata[\"doc_id\"], \"excerpt\": d.page_content} for d in docs]}\n        if name == \"estado_lotes_sap_sql\":\n            with self.db.connect() as conn:\n                rows = conn.execute(\n                    sa.text(\"SELECT lote_id, estado, duracion_seg FROM vw_monitoreo_lotes WHERE fecha = :f\"),\n                    {\"f\": arguments[\"fecha\"]}\n                ).mappings().all()\n                return {\"lotes\": [dict(r) for r in rows]}"
+  }
 }

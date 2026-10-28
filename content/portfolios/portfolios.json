@@ -619,15 +619,22 @@
         "Gobernanza de IA Responsable y Seguridad de Prompts"
       ],
       "metricIds": [
-        "ecosistema-ti-productividad",
         "facturacion-electronica-sap-85",
-        "sistema-control-calidad-industrial"
+        "ecosistema-ti-productividad",
+        "sistema-control-calidad-industrial",
+        "precision-inventario-30",
+        "automatizacion-procesos-madeco",
+        "auditorias-cero-hallazgos"
       ],
       "projectSlugs": [
         "integracion-ecf-sap-astro",
         "ecosistema-ia-soporte-astro",
         "walicontrol",
-        "agente-ia-agricultura"
+        "agente-ia-agricultura",
+        "sistema-calidad-industrial-astro",
+        "arquitectura-wms-rf-ods",
+        "data-warehouse-bi-automatizacion-madeco",
+        "optimizacion-dba-sql-cumplimiento-unipago"
       ],
       "certIds": [
         "titulo-ingeniero-sistemas-oym",
@@ -655,23 +662,23 @@
       ],
       "traceabilityMatrix": [
         {
-          "company": "Astro - Pico Duarte Cartón, S.R.L.",
+          "company": "Astro - Pico Duarte Cartón, S.R.L. (2026 - Actualidad)",
           "companySlug": "astro-pico-duarte-carton",
-          "experienceFocus": "Diseño e implementación en Python del motor automatizado de lectura, validación XSD (DGII) e inyección de e-CF (XML) hacia SAP ERP y SQL Server.",
+          "experienceFocus": "Encargado de TI (Desarrollo de IA, Automatización e Integración ERP): Motor automatizado en Python para lectura, validación XSD (DGII) e inyección de e-CF (XML) hacia SAP ERP y SQL Server.",
           "certIds": [
             "titulo-ingeniero-sistemas-oym",
             "cisco-python-essentials",
             "ms-fabric-analytics"
           ],
-          "achievementSummary": "Reducción del 85% en el tiempo de procesamiento contable (de 25 a <3.5 min por lote) con 0% de errores de transcripción.",
+          "achievementSummary": "Reducción del 85% en el tiempo de procesamiento contable (de 25 a <3.5 min por lote) con 0% de error de transcripción.",
           "metricId": "facturacion-electronica-sap-85",
           "projectSlug": "integracion-ecf-sap-astro",
-          "evidenceSummary": "Motor Automatizado de Facturación Electrónica (e-CF DGII) e Integración con SAP ERP en producción (github.com/morense-01)."
+          "evidenceSummary": "Sistema interactivo validador XSD/SAP, bitácora SQL Server y código fuente Python (ecf_sap_engine.py)."
         },
         {
-          "company": "Astro - Pico Duarte Cartón, S.R.L.",
+          "company": "Astro - Pico Duarte Cartón, S.R.L. (2026 - Actualidad)",
           "companySlug": "astro-pico-duarte-carton",
-          "experienceFocus": "Desarrollo de ecosistema de asistencia técnica basado en agentes de IA con Model Context Protocol (MCP), flujos RAG e integración con Claude API y Vertex AI (Gemini).",
+          "experienceFocus": "Encargado de TI: Ecosistema de asistencia técnica basado en agentes inteligentes con Model Context Protocol (MCP) de Anthropic, flujos RAG sobre manuales operativos e integración con Claude API, Vertex AI (Gemini), Python y SQL Server.",
           "certIds": [
             "anthropic-mcp-advanced",
             "anthropic-mcp-intro",
@@ -680,40 +687,84 @@
             "google-vertex-ai-studio",
             "google-large-language-models"
           ],
-          "achievementSummary": "Incremento del 40% en la productividad operativa del área de TI y liberación de más de 1,200 horas-hombre anuales.",
+          "achievementSummary": "Incremento del 40% en la productividad operativa del área de TI y más de 1,200 horas-hombre anuales liberadas.",
           "metricId": "ecosistema-ti-productividad",
           "projectSlug": "ecosistema-ia-soporte-astro",
-          "evidenceSummary": "Ecosistema de Asistencia Inteligente con RAG y MCP en producción y certificaciones oficiales Anthropic MCP (#vxtfkvdm2xzr, #o2r5j74e8f68)."
+          "evidenceSummary": "Consola interactiva de Agente MCP + RAG, código del servidor MCP (mcp_astro_server.py) y certificaciones Anthropic (#vxtfkvdm2xzr, #o2r5j74e8f68)."
         },
         {
-          "company": "Proyectos de Agentes Conversacionales (WaliControl)",
+          "company": "Astro - Pico Duarte Cartón, S.R.L. (2026 - Actualidad)",
           "companySlug": "astro-pico-duarte-carton",
-          "experienceFocus": "Pipeline de voz y texto con Webhooks (WhatsApp Business), Speech-to-Text API, clasificación de intención y extracción validada con JSON Schema hacia PostgreSQL/Pgvector/Redis y Google Sheets.",
+          "experienceFocus": "Encargado de TI: Plataforma web de control digital de calidad en JavaScript (ES6+), Node.js, REST API y SQL Server, y automatización de reportes ejecutivos en Power BI con Python y PowerShell.",
+          "certIds": [
+            "diplomado-integridad-web",
+            "diplomado-sistemas-informaticos",
+            "ms-dax-formulas"
+          ],
+          "achievementSummary": "Eliminación del 100% de registros manuales en papel y reducción del 60% en el tiempo de consulta de datos de auditoría (<10 seg).",
+          "metricId": "sistema-control-calidad-industrial",
+          "projectSlug": "sistema-calidad-industrial-astro",
+          "evidenceSummary": "Sistema web interactivo de Control de Calidad, controlador REST API en Node.js (quality_api_controller.js) y emisión de certificados."
+        },
+        {
+          "company": "WaliControl & AgroIARD (Proyectos de Agentes de IA y Automatización, 2025)",
+          "companySlug": "astro-pico-duarte-carton",
+          "experienceFocus": "Agente conversacional por voz (Speech-to-Text, Webhooks WhatsApp, JSON Schema, PostgreSQL, Pgvector, Redis, Google Sheets) y Plataforma Multimodal RAG en FastAPI, ChromaDB, Docker Compose, n8n y Telegram Bot API.",
           "certIds": [
             "google-transformer-bert",
             "google-genai-fundamentals",
             "ms-copilot-productivity",
-            "cisco-python-essentials"
+            "ndg-linux-essentials"
           ],
-          "achievementSummary": "Eliminación de la digitación manual en el registro diario de operaciones y estandarización del 100% de las entradas contables.",
-          "metricId": "sistema-control-calidad-industrial",
+          "achievementSummary": "Eliminación del 100% de digitación manual por voz y orquestación contenerizada multi-LLM (OpenAI, Claude, Gemini, Ollama).",
+          "metricId": "ecosistema-ti-productividad",
           "projectSlug": "walicontrol",
-          "evidenceSummary": "WaliControl - Agente de IA Conversacional para Registro Operativo y Contable por Voz (Funcional, 2025) en github.com/morense-01."
+          "evidenceSummary": "Consolas interactivas de WaliControl (walicontrol_extractor.py) y AgroIARD (docker-compose.yml + FastAPI + ChromaDB + n8n)."
         },
         {
-          "company": "Plataforma Multimodal RAG & n8n (AgroIARD) / ODS / Madeco",
+          "company": "ODS Logistics (2024 - 2026)",
           "companySlug": "ods-odw-logistics",
-          "experienceFocus": "Desarrollo de API REST en FastAPI, indexación vectorial en ChromaDB, enrutador multi-LLM (OpenAI, Claude, Gemini, Ollama) en Docker y flujos de automatización con n8n, Power Automate y Telegram Bot API.",
+          "experienceFocus": "Consultor de Infraestructura TI, Automatización e Integración de Sistemas: Flujos automatizados con Power Automate, Python y PowerShell; pipelines ETL sobre SQL Server con Power BI/SSRS; y servidores Linux (Ubuntu, RHEL), Windows Server, AWS y Azure.",
           "certIds": [
-            "ndg-linux-essentials",
             "aws-certified-cloud-practitioner",
-            "fortinet-nse4",
-            "mcsa-windows-server"
+            "ndg-linux-essentials",
+            "ms-data-analytics-path",
+            "fortinet-nse4"
           ],
-          "achievementSummary": "Orquestación multi-LLM en contenedores Docker, +30% de eficiencia operativa en ODS, -70% en tiempo de cierre en Madeco y 0 hallazgos en Unipago.",
+          "achievementSummary": "Mejora del 30% en eficiencia operativa, +30% en exactitud de inventario y 99.9% de disponibilidad en aplicaciones y APIs conectadas.",
+          "metricId": "precision-inventario-30",
+          "projectSlug": "arquitectura-wms-rf-ods",
+          "evidenceSummary": "Consola interactiva del Orquestador ETL + Power Automate en ODS Logistics y pipeline Python/SQL (ods_etl_sync.py)."
+        },
+        {
+          "company": "Madeco (2022 - 2024)",
+          "companySlug": "madeco",
+          "experienceFocus": "Gerente de Tecnología (Arquitectura de Datos, ERP y Automatización): Data Warehouse centralizado en SQL Server con ETL automatizado integrando SAP S/4HANA, Dynamics 365 y Oracle; flujos M365 y seguridad de integraciones.",
+          "certIds": [
+            "diplomado-inteligencia-de-negocios",
+            "ms-fabric-analytics",
+            "microsoft-sql-server-infraestructura",
+            "fortinet-nse4"
+          ],
+          "achievementSummary": "Reducción del 70% en el tiempo de cierre y reportería gerencial (+2,000h ahorradas) y reducción del 60% en incidentes de seguridad.",
           "metricId": "automatizacion-procesos-madeco",
-          "projectSlug": "agente-ia-agricultura",
-          "evidenceSummary": "AgroIARD (docker-compose.yml, FastAPI, ChromaDB, n8n y Telegram Bot API) verificable en repositorio local y GitHub (github.com/morense-01)."
+          "projectSlug": "data-warehouse-bi-automatizacion-madeco",
+          "evidenceSummary": "Consola interactiva del Data Warehouse Multi-ERP y procedimiento almacenado T-SQL (sp_ETL_ConsolidarCierreERP.sql)."
+        },
+        {
+          "company": "Unipago — Sector Financiero (2020 - 2022)",
+          "companySlug": "unipago",
+          "experienceFocus": "Especialista de Infraestructura y Plataformas de Datos: Automatización de mantenimiento, validación de respaldos y monitoreo sobre Linux, Windows Server y SQL Server; migración de 15 servidores físicos a nube híbrida (Azure/AWS).",
+          "certIds": [
+            "mcsa-windows-server",
+            "aws-certified-cloud-practitioner",
+            "microsoft-sql-server-infraestructura",
+            "eset-curso-backup-continuidad"
+          ],
+          "achievementSummary": "15 servidores migrados con integridad total, -65% en tiempo de reportería regulatoria y cero hallazgos críticos en 3 auditorías consecutivas (ISO 27001 / NIST CSF).",
+          "metricId": "auditorias-cero-hallazgos",
+          "projectSlug": "optimizacion-dba-sql-cumplimiento-unipago",
+          "evidenceSummary": "Consola interactiva de Auditoría Financiera ISO 27001 / Always On y script PowerShell/SQL (unipago_sql_cloud_validator.ps1)."
         }
       ],
       "experiences": [
@@ -859,15 +910,21 @@
       ],
       "metricIds": [
         "facturacion-electronica-sap-85",
-        "automatizacion-procesos-madeco",
         "ecosistema-ti-productividad",
-        "eficiencia-operativa-30"
+        "sistema-control-calidad-industrial",
+        "precision-inventario-30",
+        "automatizacion-procesos-madeco",
+        "auditorias-cero-hallazgos"
       ],
       "projectSlugs": [
         "integracion-ecf-sap-astro",
         "ecosistema-ia-soporte-astro",
         "walicontrol",
-        "agente-ia-agricultura"
+        "agente-ia-agricultura",
+        "sistema-calidad-industrial-astro",
+        "arquitectura-wms-rf-ods",
+        "data-warehouse-bi-automatizacion-madeco",
+        "optimizacion-dba-sql-cumplimiento-unipago"
       ],
       "certIds": [
         "titulo-ingeniero-sistemas-oym",
@@ -894,23 +951,23 @@
       ],
       "traceabilityMatrix": [
         {
-          "company": "Astro - Pico Duarte Cartón, S.R.L.",
+          "company": "Astro - Pico Duarte Cartón, S.R.L. (2026 - Actualidad)",
           "companySlug": "astro-pico-duarte-carton",
-          "experienceFocus": "Diseño e implementación en Python del motor automatizado de lectura, validación XSD (DGII) e inyección de e-CF (XML) hacia SAP ERP y SQL Server.",
+          "experienceFocus": "Encargado de TI (Desarrollo de IA, Automatización e Integración ERP): Motor automatizado en Python para lectura, validación XSD (DGII) e inyección de e-CF (XML) hacia SAP ERP y SQL Server.",
           "certIds": [
             "titulo-ingeniero-sistemas-oym",
             "cisco-python-essentials",
             "ms-fabric-analytics"
           ],
-          "achievementSummary": "Reducción del 85% en el tiempo de procesamiento contable (de 25 a <3.5 min por lote) con 0% de errores de transcripción.",
+          "achievementSummary": "Reducción del 85% en el tiempo de procesamiento contable (de 25 a <3.5 min por lote) con 0% de error de transcripción.",
           "metricId": "facturacion-electronica-sap-85",
           "projectSlug": "integracion-ecf-sap-astro",
-          "evidenceSummary": "Motor Automatizado de Facturación Electrónica (e-CF DGII) e Integración con SAP ERP en producción (github.com/morense-01)."
+          "evidenceSummary": "Sistema interactivo validador XSD/SAP, bitácora SQL Server y código fuente Python (ecf_sap_engine.py)."
         },
         {
-          "company": "Astro - Pico Duarte Cartón, S.R.L.",
+          "company": "Astro - Pico Duarte Cartón, S.R.L. (2026 - Actualidad)",
           "companySlug": "astro-pico-duarte-carton",
-          "experienceFocus": "Desarrollo de ecosistema de asistencia técnica basado en agentes de IA con Model Context Protocol (MCP), flujos RAG e integración con Claude API y Vertex AI (Gemini).",
+          "experienceFocus": "Encargado de TI: Ecosistema de asistencia técnica basado en agentes inteligentes con Model Context Protocol (MCP) de Anthropic, flujos RAG sobre manuales operativos e integración con Claude API, Vertex AI (Gemini), Python y SQL Server.",
           "certIds": [
             "anthropic-mcp-advanced",
             "anthropic-mcp-intro",
@@ -919,40 +976,84 @@
             "google-vertex-ai-studio",
             "google-large-language-models"
           ],
-          "achievementSummary": "Incremento del 40% en la productividad operativa del área de TI y liberación de más de 1,200 horas-hombre anuales.",
+          "achievementSummary": "Incremento del 40% en la productividad operativa del área de TI y más de 1,200 horas-hombre anuales liberadas.",
           "metricId": "ecosistema-ti-productividad",
           "projectSlug": "ecosistema-ia-soporte-astro",
-          "evidenceSummary": "Ecosistema de Asistencia Inteligente con RAG y MCP en producción y certificaciones oficiales Anthropic MCP (#vxtfkvdm2xzr, #o2r5j74e8f68)."
+          "evidenceSummary": "Consola interactiva de Agente MCP + RAG, código del servidor MCP (mcp_astro_server.py) y certificaciones Anthropic (#vxtfkvdm2xzr, #o2r5j74e8f68)."
         },
         {
-          "company": "Proyectos de Agentes Conversacionales (WaliControl)",
+          "company": "Astro - Pico Duarte Cartón, S.R.L. (2026 - Actualidad)",
           "companySlug": "astro-pico-duarte-carton",
-          "experienceFocus": "Pipeline de voz y texto con Webhooks (WhatsApp Business), Speech-to-Text API, clasificación de intención y extracción validada con JSON Schema hacia PostgreSQL/Pgvector/Redis y Google Sheets.",
+          "experienceFocus": "Encargado de TI: Plataforma web de control digital de calidad en JavaScript (ES6+), Node.js, REST API y SQL Server, y automatización de reportes ejecutivos en Power BI con Python y PowerShell.",
+          "certIds": [
+            "diplomado-integridad-web",
+            "diplomado-sistemas-informaticos",
+            "ms-dax-formulas"
+          ],
+          "achievementSummary": "Eliminación del 100% de registros manuales en papel y reducción del 60% en el tiempo de consulta de datos de auditoría (<10 seg).",
+          "metricId": "sistema-control-calidad-industrial",
+          "projectSlug": "sistema-calidad-industrial-astro",
+          "evidenceSummary": "Sistema web interactivo de Control de Calidad, controlador REST API en Node.js (quality_api_controller.js) y emisión de certificados."
+        },
+        {
+          "company": "WaliControl & AgroIARD (Proyectos de Agentes de IA y Automatización, 2025)",
+          "companySlug": "astro-pico-duarte-carton",
+          "experienceFocus": "Agente conversacional por voz (Speech-to-Text, Webhooks WhatsApp, JSON Schema, PostgreSQL, Pgvector, Redis, Google Sheets) y Plataforma Multimodal RAG en FastAPI, ChromaDB, Docker Compose, n8n y Telegram Bot API.",
           "certIds": [
             "google-transformer-bert",
             "google-genai-fundamentals",
             "ms-copilot-productivity",
-            "cisco-python-essentials"
+            "ndg-linux-essentials"
           ],
-          "achievementSummary": "Eliminación de la digitación manual en el registro diario de operaciones y estandarización del 100% de las entradas contables.",
-          "metricId": "sistema-control-calidad-industrial",
+          "achievementSummary": "Eliminación del 100% de digitación manual por voz y orquestación contenerizada multi-LLM (OpenAI, Claude, Gemini, Ollama).",
+          "metricId": "ecosistema-ti-productividad",
           "projectSlug": "walicontrol",
-          "evidenceSummary": "WaliControl - Agente de IA Conversacional para Registro Operativo y Contable por Voz (Funcional, 2025) en github.com/morense-01."
+          "evidenceSummary": "Consolas interactivas de WaliControl (walicontrol_extractor.py) y AgroIARD (docker-compose.yml + FastAPI + ChromaDB + n8n)."
         },
         {
-          "company": "Plataforma Multimodal RAG & n8n (AgroIARD) / ODS / Madeco",
+          "company": "ODS Logistics (2024 - 2026)",
           "companySlug": "ods-odw-logistics",
-          "experienceFocus": "Desarrollo de API REST en FastAPI, indexación vectorial en ChromaDB, enrutador multi-LLM (OpenAI, Claude, Gemini, Ollama) en Docker y flujos de automatización con n8n, Power Automate y Telegram Bot API.",
+          "experienceFocus": "Consultor de Infraestructura TI, Automatización e Integración de Sistemas: Flujos automatizados con Power Automate, Python y PowerShell; pipelines ETL sobre SQL Server con Power BI/SSRS; y servidores Linux (Ubuntu, RHEL), Windows Server, AWS y Azure.",
           "certIds": [
-            "ndg-linux-essentials",
             "aws-certified-cloud-practitioner",
-            "fortinet-nse4",
-            "mcsa-windows-server"
+            "ndg-linux-essentials",
+            "ms-data-analytics-path",
+            "fortinet-nse4"
           ],
-          "achievementSummary": "Orquestación multi-LLM en contenedores Docker, +30% de eficiencia operativa en ODS, -70% en tiempo de cierre en Madeco y 0 hallazgos en Unipago.",
+          "achievementSummary": "Mejora del 30% en eficiencia operativa, +30% en exactitud de inventario y 99.9% de disponibilidad en aplicaciones y APIs conectadas.",
+          "metricId": "precision-inventario-30",
+          "projectSlug": "arquitectura-wms-rf-ods",
+          "evidenceSummary": "Consola interactiva del Orquestador ETL + Power Automate en ODS Logistics y pipeline Python/SQL (ods_etl_sync.py)."
+        },
+        {
+          "company": "Madeco (2022 - 2024)",
+          "companySlug": "madeco",
+          "experienceFocus": "Gerente de Tecnología (Arquitectura de Datos, ERP y Automatización): Data Warehouse centralizado en SQL Server con ETL automatizado integrando SAP S/4HANA, Dynamics 365 y Oracle; flujos M365 y seguridad de integraciones.",
+          "certIds": [
+            "diplomado-inteligencia-de-negocios",
+            "ms-fabric-analytics",
+            "microsoft-sql-server-infraestructura",
+            "fortinet-nse4"
+          ],
+          "achievementSummary": "Reducción del 70% en el tiempo de cierre y reportería gerencial (+2,000h ahorradas) y reducción del 60% en incidentes de seguridad.",
           "metricId": "automatizacion-procesos-madeco",
-          "projectSlug": "agente-ia-agricultura",
-          "evidenceSummary": "AgroIARD (docker-compose.yml, FastAPI, ChromaDB, n8n y Telegram Bot API) verificable en repositorio local y GitHub (github.com/morense-01)."
+          "projectSlug": "data-warehouse-bi-automatizacion-madeco",
+          "evidenceSummary": "Consola interactiva del Data Warehouse Multi-ERP y procedimiento almacenado T-SQL (sp_ETL_ConsolidarCierreERP.sql)."
+        },
+        {
+          "company": "Unipago — Sector Financiero (2020 - 2022)",
+          "companySlug": "unipago",
+          "experienceFocus": "Especialista de Infraestructura y Plataformas de Datos: Automatización de mantenimiento, validación de respaldos y monitoreo sobre Linux, Windows Server y SQL Server; migración de 15 servidores físicos a nube híbrida (Azure/AWS).",
+          "certIds": [
+            "mcsa-windows-server",
+            "aws-certified-cloud-practitioner",
+            "microsoft-sql-server-infraestructura",
+            "eset-curso-backup-continuidad"
+          ],
+          "achievementSummary": "15 servidores migrados con integridad total, -65% en tiempo de reportería regulatoria y cero hallazgos críticos en 3 auditorías consecutivas (ISO 27001 / NIST CSF).",
+          "metricId": "auditorias-cero-hallazgos",
+          "projectSlug": "optimizacion-dba-sql-cumplimiento-unipago",
+          "evidenceSummary": "Consola interactiva de Auditoría Financiera ISO 27001 / Always On y script PowerShell/SQL (unipago_sql_cloud_validator.ps1)."
         }
       ],
       "experiences": [
@@ -1097,17 +1198,22 @@
         "Git, Control de Versiones y Despliegue Continuo"
       ],
       "metricIds": [
-        "sistema-control-calidad-industrial",
         "facturacion-electronica-sap-85",
         "ecosistema-ti-productividad",
-        "precision-inventario-30"
+        "sistema-control-calidad-industrial",
+        "precision-inventario-30",
+        "automatizacion-procesos-madeco",
+        "auditorias-cero-hallazgos"
       ],
       "projectSlugs": [
-        "sistema-calidad-industrial-astro",
         "integracion-ecf-sap-astro",
         "ecosistema-ia-soporte-astro",
         "walicontrol",
-        "ruta-66"
+        "agente-ia-agricultura",
+        "sistema-calidad-industrial-astro",
+        "arquitectura-wms-rf-ods",
+        "data-warehouse-bi-automatizacion-madeco",
+        "optimizacion-dba-sql-cumplimiento-unipago"
       ],
       "certIds": [
         "titulo-ingeniero-sistemas-oym",
@@ -1121,45 +1227,109 @@
       ],
       "traceabilityMatrix": [
         {
-          "company": "Astro - Pico Duarte Cartón",
+          "company": "Astro - Pico Duarte Cartón, S.R.L. (2026 - Actualidad)",
           "companySlug": "astro-pico-duarte-carton",
-          "experienceFocus": "Desarrollo Full Stack desde cero del Sistema Digital de Control de Calidad Industrial (interfaz de captura en planta, validaciones en tiempo real, motor de base de datos y emisor de certificados).",
+          "experienceFocus": "Encargado de TI (Desarrollo de IA, Automatización e Integración ERP): Motor automatizado en Python para lectura, validación XSD (DGII) e inyección de e-CF (XML) hacia SAP ERP y SQL Server.",
           "certIds": [
             "titulo-ingeniero-sistemas-oym",
-            "diplomado-integridad-web",
-            "diplomado-sistemas-informaticos"
-          ],
-          "achievementSummary": "Digitalización del 100% de los controles de laboratorio y reducción del 60% en tiempos de consulta (de 30 min a <10 seg).",
-          "metricId": "sistema-control-calidad-industrial",
-          "projectSlug": "sistema-calidad-industrial-astro",
-          "evidenceSummary": "Aplicación en producción en todas las líneas de manufactura, base de datos histórica y certificados emitidos a clientes."
-        },
-        {
-          "company": "Astro - Pico Duarte Cartón",
-          "companySlug": "astro-pico-duarte-carton",
-          "experienceFocus": "Desarrollo del Portal Interno de Gestión de TI (activos, tickets, SLAs y mantenimientos) y del middleware en Python para facturación electrónica SAP.",
-          "certIds": [
             "cisco-python-essentials",
-            "especialidad-tratamiento-datos",
-            "especialidad-ti"
+            "ms-fabric-analytics"
           ],
-          "achievementSummary": "-85% en tiempo de procesamiento de facturación electrónica e incremento del 40% en productividad de soporte.",
+          "achievementSummary": "Reducción del 85% en el tiempo de procesamiento contable (de 25 a <3.5 min por lote) con 0% de error de transcripción.",
           "metricId": "facturacion-electronica-sap-85",
           "projectSlug": "integracion-ecf-sap-astro",
-          "evidenceSummary": "Módulos de software en operación diaria, bitácoras transaccionales y portal ITSM interno."
+          "evidenceSummary": "Sistema interactivo validador XSD/SAP, bitácora SQL Server y código fuente Python (ecf_sap_engine.py)."
         },
         {
-          "company": "Proyectos de Software Comercial y Logístico",
-          "companySlug": "ods-odw-logistics",
-          "experienceFocus": "Desarrollo de aplicaciones web de gestión operativa y comercial (WaliControl y plataforma logística Ruta 66) e integración de middlewares RF.",
+          "company": "Astro - Pico Duarte Cartón, S.R.L. (2026 - Actualidad)",
+          "companySlug": "astro-pico-duarte-carton",
+          "experienceFocus": "Encargado de TI: Ecosistema de asistencia técnica basado en agentes inteligentes con Model Context Protocol (MCP) de Anthropic, flujos RAG sobre manuales operativos e integración con Claude API, Vertex AI (Gemini), Python y SQL Server.",
+          "certIds": [
+            "anthropic-mcp-advanced",
+            "anthropic-mcp-intro",
+            "anthropic-claude-cowork",
+            "ms-rag-fundamentals",
+            "google-vertex-ai-studio",
+            "google-large-language-models"
+          ],
+          "achievementSummary": "Incremento del 40% en la productividad operativa del área de TI y más de 1,200 horas-hombre anuales liberadas.",
+          "metricId": "ecosistema-ti-productividad",
+          "projectSlug": "ecosistema-ia-soporte-astro",
+          "evidenceSummary": "Consola interactiva de Agente MCP + RAG, código del servidor MCP (mcp_astro_server.py) y certificaciones Anthropic (#vxtfkvdm2xzr, #o2r5j74e8f68)."
+        },
+        {
+          "company": "Astro - Pico Duarte Cartón, S.R.L. (2026 - Actualidad)",
+          "companySlug": "astro-pico-duarte-carton",
+          "experienceFocus": "Encargado de TI: Plataforma web de control digital de calidad en JavaScript (ES6+), Node.js, REST API y SQL Server, y automatización de reportes ejecutivos en Power BI con Python y PowerShell.",
           "certIds": [
             "diplomado-integridad-web",
-            "microsoft-sql-server-infraestructura"
+            "diplomado-sistemas-informaticos",
+            "ms-dax-formulas"
           ],
-          "achievementSummary": "Control centralizado de inventario, facturación, clientes y seguimiento de rutas de transporte.",
-          "metricId": "precision-inventario-30",
+          "achievementSummary": "Eliminación del 100% de registros manuales en papel y reducción del 60% en el tiempo de consulta de datos de auditoría (<10 seg).",
+          "metricId": "sistema-control-calidad-industrial",
+          "projectSlug": "sistema-calidad-industrial-astro",
+          "evidenceSummary": "Sistema web interactivo de Control de Calidad, controlador REST API en Node.js (quality_api_controller.js) y emisión de certificados."
+        },
+        {
+          "company": "WaliControl & AgroIARD (Proyectos de Agentes de IA y Automatización, 2025)",
+          "companySlug": "astro-pico-duarte-carton",
+          "experienceFocus": "Agente conversacional por voz (Speech-to-Text, Webhooks WhatsApp, JSON Schema, PostgreSQL, Pgvector, Redis, Google Sheets) y Plataforma Multimodal RAG en FastAPI, ChromaDB, Docker Compose, n8n y Telegram Bot API.",
+          "certIds": [
+            "google-transformer-bert",
+            "google-genai-fundamentals",
+            "ms-copilot-productivity",
+            "ndg-linux-essentials"
+          ],
+          "achievementSummary": "Eliminación del 100% de digitación manual por voz y orquestación contenerizada multi-LLM (OpenAI, Claude, Gemini, Ollama).",
+          "metricId": "ecosistema-ti-productividad",
           "projectSlug": "walicontrol",
-          "evidenceSummary": "Arquitectura modular web de WaliControl y Ruta 66 con control de acceso por roles y trazabilidad transaccional."
+          "evidenceSummary": "Consolas interactivas de WaliControl (walicontrol_extractor.py) y AgroIARD (docker-compose.yml + FastAPI + ChromaDB + n8n)."
+        },
+        {
+          "company": "ODS Logistics (2024 - 2026)",
+          "companySlug": "ods-odw-logistics",
+          "experienceFocus": "Consultor de Infraestructura TI, Automatización e Integración de Sistemas: Flujos automatizados con Power Automate, Python y PowerShell; pipelines ETL sobre SQL Server con Power BI/SSRS; y servidores Linux (Ubuntu, RHEL), Windows Server, AWS y Azure.",
+          "certIds": [
+            "aws-certified-cloud-practitioner",
+            "ndg-linux-essentials",
+            "ms-data-analytics-path",
+            "fortinet-nse4"
+          ],
+          "achievementSummary": "Mejora del 30% en eficiencia operativa, +30% en exactitud de inventario y 99.9% de disponibilidad en aplicaciones y APIs conectadas.",
+          "metricId": "precision-inventario-30",
+          "projectSlug": "arquitectura-wms-rf-ods",
+          "evidenceSummary": "Consola interactiva del Orquestador ETL + Power Automate en ODS Logistics y pipeline Python/SQL (ods_etl_sync.py)."
+        },
+        {
+          "company": "Madeco (2022 - 2024)",
+          "companySlug": "madeco",
+          "experienceFocus": "Gerente de Tecnología (Arquitectura de Datos, ERP y Automatización): Data Warehouse centralizado en SQL Server con ETL automatizado integrando SAP S/4HANA, Dynamics 365 y Oracle; flujos M365 y seguridad de integraciones.",
+          "certIds": [
+            "diplomado-inteligencia-de-negocios",
+            "ms-fabric-analytics",
+            "microsoft-sql-server-infraestructura",
+            "fortinet-nse4"
+          ],
+          "achievementSummary": "Reducción del 70% en el tiempo de cierre y reportería gerencial (+2,000h ahorradas) y reducción del 60% en incidentes de seguridad.",
+          "metricId": "automatizacion-procesos-madeco",
+          "projectSlug": "data-warehouse-bi-automatizacion-madeco",
+          "evidenceSummary": "Consola interactiva del Data Warehouse Multi-ERP y procedimiento almacenado T-SQL (sp_ETL_ConsolidarCierreERP.sql)."
+        },
+        {
+          "company": "Unipago — Sector Financiero (2020 - 2022)",
+          "companySlug": "unipago",
+          "experienceFocus": "Especialista de Infraestructura y Plataformas de Datos: Automatización de mantenimiento, validación de respaldos y monitoreo sobre Linux, Windows Server y SQL Server; migración de 15 servidores físicos a nube híbrida (Azure/AWS).",
+          "certIds": [
+            "mcsa-windows-server",
+            "aws-certified-cloud-practitioner",
+            "microsoft-sql-server-infraestructura",
+            "eset-curso-backup-continuidad"
+          ],
+          "achievementSummary": "15 servidores migrados con integridad total, -65% en tiempo de reportería regulatoria y cero hallazgos críticos en 3 auditorías consecutivas (ISO 27001 / NIST CSF).",
+          "metricId": "auditorias-cero-hallazgos",
+          "projectSlug": "optimizacion-dba-sql-cumplimiento-unipago",
+          "evidenceSummary": "Consola interactiva de Auditoría Financiera ISO 27001 / Always On y script PowerShell/SQL (unipago_sql_cloud_validator.ps1)."
         }
       ],
       "experiences": [

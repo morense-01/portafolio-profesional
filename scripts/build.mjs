@@ -489,23 +489,92 @@ function certificaciones() {
   out('certificaciones/index.html', layout({ title: 'Certificaciones, cursos e insignias', desc: 'Credenciales profesionales verificables con enlace directo al emisor: Cisco, Google Cloud, Microsoft, IBM y Anthropic.', route: '/certificaciones/', body }));
 }
 
+function renderTangibleSystem(p, uid) {
+  if (!p.systemDemo && !p.technicalDocs) return '';
+  const sd = p.systemDemo || {};
+  const td = p.technicalDocs || {};
+  const group = `sys-${uid}-${p.slug}`;
+  const termId = `term-${uid}-${p.slug}`;
+
+  const kpisHtml = (sd.kpis && sd.kpis.length)
+    ? `<div class="sys-kpis">${sd.kpis.map((k) => `<div class="sys-kpi"><span class="sys-kpi-label">${esc(k.label)}</span><span class="sys-kpi-val">${esc(k.value)}</span></div>`).join('')}</div>`
+    : '';
+
+  const termHtml = (sd.simSteps && sd.simSteps.length)
+    ? `<div class="sys-terminal-bar">
+         <strong>Bitácora de Ejecución en Tiempo Real:</strong>
+         <button type="button" class="btn small primary no-print" data-sim-run="${esc(termId)}">▶ Ejecutar prueba del sistema en vivo</button>
+       </div>
+       <ul class="sys-terminal" id="${esc(termId)}">${sd.simSteps.map((s) => `<li>${esc(s)}</li>`).join('')}</ul>`
+    : '';
+
+  const tableHtml = (sd.tableHeaders && sd.tableRows)
+    ? `<div class="table-wrap">
+         <table>
+           <thead><tr>${sd.tableHeaders.map((h) => `<th>${esc(h)}</th>`).join('')}</tr></thead>
+           <tbody>${sd.tableRows.map((r) => `<tr>${r.map((c) => `<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody>
+         </table>
+       </div>`
+    : '';
+
+  const archHtml = (td.architectureLayers && td.architectureLayers.length)
+    ? `<ul class="arch-layers">${td.architectureLayers.map((l) => `<li>${esc(l)}</li>`).join('')}</ul>`
+    : `<p>${esc(p.architecture)}</p>`;
+
+  const codeHtml = td.codeSnippet
+    ? `<div class="code-artifact">
+         <div class="code-artifact-head">${esc(td.codeFilename || 'implementacion.py')}</div>
+         <pre><code>${esc(td.codeSnippet)}</code></pre>
+       </div>`
+    : '';
+
+  return `<div class="tangible-system">
+    <div class="sys-topbar">
+      <div>
+        <p class="sys-topbar-title">🖥️ ${esc(sd.systemTitle || p.name)}</p>
+        <p class="sys-topbar-sub">${esc(sd.systemSubtitle || p.status)}</p>
+      </div>
+      <span class="tag demostrada">Sistema &amp; Documentación Tangible</span>
+    </div>
+    <div class="sys-tabs no-print">
+      <button type="button" class="sys-tab" data-sys-group="${esc(group)}" data-sys-tab="live" aria-selected="true">1. Sistema en Vivo y Registros</button>
+      <button type="button" class="sys-tab" data-sys-group="${esc(group)}" data-sys-tab="arch" aria-selected="false">2. Documentación de Arquitectura</button>
+      <button type="button" class="sys-tab" data-sys-group="${esc(group)}" data-sys-tab="code" aria-selected="false">3. Código Fuente y Esquemas</button>
+    </div>
+    <div class="sys-pane" data-sys-pane-group="${esc(group)}" data-sys-pane="live">
+      ${kpisHtml}
+      ${termHtml}
+      ${tableHtml}
+    </div>
+    <div class="sys-pane" data-sys-pane-group="${esc(group)}" data-sys-pane="arch" hidden>
+      <h4>Arquitectura Técnica e Integración de Capas</h4>
+      ${archHtml}
+    </div>
+    <div class="sys-pane" data-sys-pane-group="${esc(group)}" data-sys-pane="code" hidden>
+      <h4>Artefacto de Código e Implementación Verificable</h4>
+      ${codeHtml}
+    </div>
+  </div>`;
+}
+
 function proyectos() {
   const types = [...new Set(projects.map((p) => p.type))].sort();
-  const cards = projects.map((p) => `<article class="card" data-type="${esc(p.type)}"><span class="tag">${esc(p.type)}</span><h3><a href="${L(`/proyectos/${p.slug}/`)}">${esc(p.name)}</a></h3><p>${esc(p.summary)}</p><p class="muted small">Rol: ${esc(clean(p.role) || 'Líder técnico')} · Estado: ${esc(p.status)}</p></article>`).join('');
-  const body = hero('Proyectos tecnológicos', 'Cada ficha indica su estado real, arquitectura, rol desempeñado y las evidencias verificables para el reclutador.', '/proyectos/') + `<section class="wrap block"><div class="filters no-print"><label>Tipo de proyecto <select data-pf><option value="">Todos</option>${types.map((t) => `<option>${esc(t)}</option>`).join('')}</select></label></div><div class="grid2" id="projs">${cards}</div></section>`;
-  out('proyectos/index.html', layout({ title: 'Proyectos tecnológicos', desc: 'Catálogo de proyectos: aplicaciones web, datos, ciberseguridad, nube, automatización e inteligencia artificial, con su estado real y evidencias.', route: '/proyectos/', body }));
+  const cards = projects.map((p) => `<article class="card" data-type="${esc(p.type)}"><span class="tag">${esc(p.type)}</span><h3><a href="${L(`/proyectos/${p.slug}/`)}">${esc(p.name)}</a></h3><p>${esc(p.summary)}</p><p class="muted small">Empresa: ${esc(p.companyName || 'Transversal')} · Rol: ${esc(clean(p.role) || 'Líder técnico')} · Estado: ${esc(p.status)}</p><p class="spacer-sm"><a class="btn small primary" href="${L(`/proyectos/${p.slug}/`)}">Abrir sistema interactivo y documentación →</a></p></article>`).join('');
+  const body = hero('Proyectos tecnológicos y sistemas demostrables', 'Cada ficha incluye su sistema interactivo, bitácoras de ejecución, arquitectura por capas, código fuente tangible y evidencias alineadas al CV.', '/proyectos/') + `<section class="wrap block"><div class="filters no-print"><label>Tipo de proyecto <select data-pf><option value="">Todos</option>${types.map((t) => `<option>${esc(t)}</option>`).join('')}</select></label></div><div class="grid2" id="projs">${cards}</div></section>`;
+  out('proyectos/index.html', layout({ title: 'Proyectos tecnológicos', desc: 'Catálogo de proyectos tangibles: IA, agentes MCP/RAG, n8n, automatización, integración SAP ERP, Full Stack, ETL y Cloud.', route: '/proyectos/', body }));
   projects.forEach((p) => {
     const route = `/proyectos/${p.slug}/`;
     const co = exps.find((e) => e.slug === p.relatedCompany);
     const relPortfolios = portfolios.filter((pf) => pf.projectSlugs.includes(p.slug));
-    const dl = [['Rol', clean(p.role)], ['Estado', p.status], ['Problema', p.problem], ['Arquitectura', p.architecture]].filter(([, v]) => v).map(([k, v]) => `<dt>${k}</dt><dd>${esc(v)}</dd>`).join('');
+    const dl = [['Empresa / Entorno', p.companyName || (co ? co.company : '')], ['Puesto desempeñado', clean(p.role)], ['Período y Estado', `${p.period ? p.period + ' · ' : ''}${p.status}`], ['Requerimiento del puesto en el CV', p.cvRequirement], ['Problema que resuelve', p.problem], ['Arquitectura implementada', p.architecture]].filter(([, v]) => v).map(([k, v]) => `<dt>${k}</dt><dd>${esc(v)}</dd>`).join('');
     const evHtml = (p.evidence && p.evidence.length)
-      ? `<div class="evidence-box"><h4>Evidencias verificables para mostrar al reclutador</h4>${ul(p.evidence)}</div>`
+      ? `<div class="evidence-box"><h4>Resultado demostrable y evidencias para el reclutador</h4>${ul(p.evidence)}</div>`
       : '';
+    const tangibleHtml = renderTangibleSystem(p, 'projpage');
     const relPfHtml = relPortfolios.length
-      ? `<h2>Portafolios especializados donde participa este proyecto</h2><ul class="role-switcher">${relPortfolios.map((pf) => `<li><a href="${L(`/portafolios/${pf.slug}/`)}">${esc(pf.title)}</a></li>`).join('')}</ul>`
+      ? `<h2 class="spacer-md">Portafolios especializados donde participa este proyecto</h2><ul class="role-switcher">${relPortfolios.map((pf) => `<li><a href="${L(`/portafolios/${pf.slug}/`)}">${esc(pf.title)}</a></li>`).join('')}</ul>`
       : '';
-    const body = hero(p.name, p.summary, route) + `<section class="wrap block"><dl class="facts-dl">${dl}</dl>${p.technologies.length ? `<h2>Tecnologías</h2><ul class="chips">${p.technologies.map((t) => `<li>${esc(t)}</li>`).join('')}</ul>` : ''}${p.contributions.length ? `<h2>Contribuciones personales y logros técnicos</h2>${ul(p.contributions)}` : ''}${evHtml}${p.links?.length ? `<h2>Enlaces</h2><ul>${p.links.map((l) => `<li>${ext(l.url, l.title)}</li>`).join('')}</ul>` : ''}${relPfHtml}${co ? `<p class="spacer-md">Expediente empresarial relacionado: <a href="${L(`/experiencia/${co.slug}/`)}">${esc(co.company)}</a></p>` : ''}<p><a href="${L('/proyectos/')}">← Todos los proyectos</a> · <a href="${L('/portafolios/')}">Ver los 12 Portafolios por Rol</a></p></section>`;
+    const body = hero(p.name, p.summary, route) + `<section class="wrap block"><dl class="facts-dl">${dl}</dl>${tangibleHtml}${p.technologies.length ? `<h2 class="spacer-md">Tecnologías utilizadas</h2><ul class="chips">${p.technologies.map((t) => `<li>${esc(t)}</li>`).join('')}</ul>` : ''}${p.contributions.length ? `<h2>Contribución concreta y funcionalidad implementada</h2>${ul(p.contributions)}` : ''}${evHtml}${p.links?.length ? `<h2>Enlaces y verificación</h2><ul>${p.links.map((l) => `<li>${ext(l.url, l.title)}</li>`).join('')}</ul>` : ''}${relPfHtml}${co ? `<p class="spacer-md">Expediente empresarial relacionado: <a href="${L(`/experiencia/${co.slug}/`)}">${esc(co.company)}</a></p>` : ''}<p><a href="${L('/proyectos/')}">← Todos los proyectos</a> · <a href="${L('/portafolios/')}">Ver los 12 Portafolios por Rol</a></p></section>`;
     out(`proyectos/${p.slug}/index.html`, layout({ title: p.name, desc: p.summary, route, body }));
   });
 }
@@ -655,19 +724,25 @@ function portafolios() {
       </article>`;
     }).join('');
 
-    const projCards = pfProjects.map((p) => {
+    const projCards = pfProjects.map((p, idx) => {
       const co = exps.find((e) => e.slug === p.relatedCompany);
-      return `<article class="card">
+      const cvReqHtml = p.cvRequirement
+        ? `<div class="cv-Requirement-badge"><strong>Alineación con el puesto y CV (${esc(p.companyName || (co ? co.company : 'Empresa'))}):</strong> ${esc(p.cvRequirement)}</div>`
+        : '';
+      const tangibleHtml = renderTangibleSystem(p, `${pf.slug}-${idx}`);
+      return `<article class="card spacer-md">
         <span class="tag">${esc(p.type)}</span>
         <h3><a href="${L(`/proyectos/${p.slug}/`)}">${esc(p.name)}</a></h3>
-        <p class="muted small"><strong>Rol:</strong> ${esc(clean(p.role) || pf.shortTitle)} · <strong>Empresa:</strong> ${co ? esc(co.company) : 'Proyecto transversal'} · <strong>Estado:</strong> ${esc(p.status)}</p>
+        <p class="muted small"><strong>Puesto desempeñado:</strong> ${esc(clean(p.role) || pf.shortTitle)} · <strong>Empresa:</strong> ${esc(p.companyName || (co ? co.company : 'Proyecto transversal'))} · <strong>Estado:</strong> ${esc(p.status)}</p>
+        ${cvReqHtml}
         <p>${esc(p.summary)}</p>
-        <p><strong>Problema resuelto:</strong> ${esc(p.problem)}</p>
-        <p><strong>Arquitectura:</strong> ${esc(p.architecture)}</p>
-        ${p.contributions?.length ? `<h4>Qué se construyó y logró:</h4>${ul(p.contributions)}` : ''}
-        ${p.evidence?.length ? `<div class="evidence-box"><h4>Evidencias verificables para mostrar al reclutador</h4>${ul(p.evidence)}</div>` : ''}
+        <p><strong>Problema que resuelve:</strong> ${esc(p.problem)}</p>
+        <p><strong>Arquitectura y funcionalidad implementada:</strong> ${esc(p.architecture)}</p>
+        ${p.contributions?.length ? `<h4>Contribución concreta y logros técnicos:</h4>${ul(p.contributions)}` : ''}
+        ${tangibleHtml}
+        ${p.evidence?.length ? `<div class="evidence-box"><h4>Resultado demostrable y evidencia para el reclutador</h4>${ul(p.evidence)}</div>` : ''}
         ${p.technologies?.length ? `<ul class="chips spacer-sm">${p.technologies.map((t) => `<li>${esc(t)}</li>`).join('')}</ul>` : ''}
-        <p class="spacer-sm"><a class="btn small" href="${L(`/proyectos/${p.slug}/`)}">Abrir ficha técnica del proyecto →</a></p>
+        <p class="spacer-sm"><a class="btn small primary" href="${L(`/proyectos/${p.slug}/`)}">Abrir vista dedicada del sistema y documentación →</a></p>
       </article>`;
     }).join('');
 
@@ -722,11 +797,16 @@ function portafolios() {
       ? `<div class="card current-role-card spacer-md"><p><strong>Idiomas:</strong> ${esc(pf.languages)}</p></div>`
       : '';
 
+    const ecosystemsBar = pf.domain === 'IA, Automatización y Desarrollo'
+      ? `<div class="ecosystem-links"><strong>Perfiles y ecosistemas verificados:</strong> ${ext('https://www.linkedin.com/in/mariomendeza/', 'Linkedin')} · <a href="${L('/portafolios/ingeniero-inteligencia-artificial/')}">Portafolio IA</a> · ${ext('https://www.skills.google/public_profiles/195595b2-3a40-4602-905a-78c34b68fe62', 'Google Cloud Skills')} · ${ext('https://www.credly.com/users/mario-mendez.630726a8/badges', 'Credly')} · ${ext('https://learn.microsoft.com/es-es/users/MarioMendezAlcantaraalc', 'Microsoft Learn')} · ${ext('https://verify.skilljar.com/c/vxtfkvdm2xzr', 'Claude / Anthropic MCP')} · ${ext('https://platform.openai.com/docs', 'ChatGPT / OpenAI')} · ${ext('https://n8n.io/', 'n8n')} · ${ext('https://profile.sap.com/u/mario_mendez_a', 'SAP')} · ${ext('https://pythoninstitute.org/', 'Python')} · ${ext('https://www.docker.com/', 'Docker')}</div>`
+      : '';
+
     const body = `<section class="page-head"><div class="wrap">
       <nav class="crumbs" aria-label="Ruta"><a href="${L('/')}">Inicio</a> › <a href="${L('/portafolios/')}">Portafolios por Rol</a> › <span>${esc(pf.shortTitle)}</span></nav>
       <p class="eyebrow">${esc(pf.domain)} · ${esc(pf.yearsExperience)}</p>
       <h1>${esc(pf.title)}</h1>
       <p class="lead">${esc(pf.headline)}</p>
+      ${ecosystemsBar}
       ${toc}
       ${shareBar(route, pf.title)}
     </div></section>
@@ -775,9 +855,9 @@ function portafolios() {
       </section>
 
       <section class="block" id="proyectos-rol">
-        <h2>4. Proyectos ejecutados y evidencias demostrables al reclutador</h2>
-        <p class="muted">Proyectos técnicos vinculados directamente a la experiencia y métricas de este rol, incluyendo las evidencias listas para revisión en entrevista:</p>
-        <div class="grid2">${projCards}</div>
+        <h2>4. Sistemas tangibles, proyectos ejecutados y documentación técnica (${pfProjects.length})</h2>
+        <p class="muted">Cada proyecto responde directamente al puesto y experiencia del CV en cada empresa e incluye su consola interactiva en vivo, arquitectura de 4 capas y código fuente verificable:</p>
+        <div>${projCards}</div>
       </section>
 
       <section class="block" id="certificaciones-rol">

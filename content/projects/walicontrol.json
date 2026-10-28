@@ -1,14 +1,17 @@
 {
   "slug": "walicontrol",
   "public": true,
-  "name": "WaliControl - Agente de IA Conversacional para Registro Operativo y Contable por Voz",
-  "type": "Agentes de IA y Automatización Conversacional",
-  "role": "Desarrollador de Inteligencia Artificial y Automatización",
+  "name": "3. WaliControl — Agente de IA Conversacional para Registro Operativo y Contable por Voz",
+  "type": "Agentes de IA, NLP y Automatización por Voz",
+  "role": "Desarrollador de IA y Automatización",
   "status": "Funcional (2025)",
   "relatedCompany": "astro-pico-duarte-carton",
-  "summary": "Recepción de notas de voz y texto vía webhook (WhatsApp Business), transcripción Speech-to-Text, clasificación de intención (ventas, inventario, gastos, reportes), extracción validada con JSON Schema y sincronización con Google Sheets y bases de datos.",
+  "companyName": "Ecosistema de IA Conversacional y Automatización Contable",
+  "period": "2025",
+  "cvRequirement": "Diseño del pipeline de procesamiento de lenguaje natural, integración de webhooks de mensajería, transcripción de audio y extracción estructurada con LLMs (JSON Schema) hacia Google Sheets, PostgreSQL, Pgvector y Redis.",
+  "summary": "Agente de IA conversacional funcional que recibe notas de voz y mensajes de texto vía Webhooks de WhatsApp Business, ejecuta transcripción Speech-to-Text, clasifica la intención operativa (ventas, inventario, gastos, reportes), extrae entidades validadas con LLM Structured Outputs (JSON Schema) y sincroniza en tiempo real con PostgreSQL, Pgvector, Redis y Google Sheets API.",
   "problem": "El personal de campo y pequeños negocios perdían tiempo y omitían transacciones al registrar ventas, gastos e inventario manualmente en hojas de cálculo.",
-  "architecture": "Pipeline de procesamiento de lenguaje natural: recepción de audio y texto mediante Webhooks (WhatsApp Business), transcripción con Speech-to-Text API, clasificación de intención y extracción estructurada con LLM Structured Outputs (JSON Schema) en Python, almacenamiento en PostgreSQL / Pgvector / Redis y sincronización con Google Sheets API.",
+  "architecture": "Pipeline orientado a eventos: 1) Recepción asíncrona de notas de voz OGG/MP3 y texto vía WhatsApp Business Webhook; 2) Gestión de estado conversacional y caché en Redis; 3) Transcripción automática con Speech-to-Text API; 4) Motor de extracción semántica con LLM Structured Outputs (JSON Schema estricto) que clasifica intención y normaliza montos, impuestos, SKUs y clientes; 5) Escritura transaccional en PostgreSQL + búsqueda semántica en Pgvector y actualización en vivo en Google Sheets API.",
   "technologies": [
     "Python",
     "LLM Structured Outputs (JSON Schema)",
@@ -20,20 +23,107 @@
     "Redis"
   ],
   "contributions": [
-    "Diseño del pipeline completo de procesamiento de lenguaje natural y orquestación de eventos por voz y texto.",
-    "Integración de webhooks de mensajería (WhatsApp Business), transcripción de audio y clasificación automática de intención (ventas, inventario, gastos, reportes).",
-    "Implementación de extracción estructurada con LLMs validada estrictamente contra JSON Schema.",
-    "Sincronización en tiempo real con Google Sheets API, PostgreSQL, Pgvector y Redis."
+    "Diseño del pipeline completo de procesamiento de lenguaje natural y transcripción de voz a estructuras contables.",
+    "Integración de webhooks de mensajería (WhatsApp Business), control de sesiones en Redis y transcripción Speech-to-Text.",
+    "Implementación de extracción estructurada con LLMs garantizando el 100% de adherencia a JSON Schema (ventas, inventario, gastos y reportes).",
+    "Sincronización bidireccional con PostgreSQL, índice vectorial Pgvector y hojas financieras en Google Sheets API."
   ],
   "evidence": [
-    "Eliminación de la digitación manual en el registro diario de operaciones y estandarización del 100% de las entradas listas para análisis contable.",
-    "Repositorio y arquitectura técnica documentada en portafolio (github.com/morense-01).",
-    "Respaldado por certificaciones en Python, Anthropic MCP, Microsoft RAG y Google Cloud Generative AI."
+    "Resultado medible: Eliminación del 100% de la digitación manual en el registro diario de operaciones y estandarización total de entradas listas para análisis contable.",
+    "Simulador interactivo del pipeline Voz → JSON Schema → PostgreSQL/Sheets disponible en esta página.",
+    "Esquema JSON Schema y código del procesador de webhooks documentados a continuación."
   ],
   "links": [
     {
-      "title": "Repositorio y Arquitectura en GitHub (github.com/morense-01)",
-      "url": "https://github.com/morense-01"
+      "title": "Portafolio de Ingeniero de IA y Automatización",
+      "url": "http://localhost:4173/portafolios/ingeniero-inteligencia-artificial/"
     }
-  ]
+  ],
+  "systemDemo": {
+    "systemTitle": "Consola WaliControl: Pipeline Voz (WhatsApp Webhook) → JSON Schema → PostgreSQL & Sheets",
+    "systemSubtitle": "Procesamiento Multimodal Speech-to-Text + LLM Structured Outputs + Pgvector / Redis",
+    "kpis": [
+      {
+        "label": "Digitación Manual",
+        "value": "0% (100% por Voz/Texto)"
+      },
+      {
+        "label": "Validación JSON Schema",
+        "value": "100% Estricto"
+      },
+      {
+        "label": "Latencia Media Audio→BD",
+        "value": "1.8 segundos"
+      },
+      {
+        "label": "Motores de Persistencia",
+        "value": "PostgreSQL + Pgvector + Sheets"
+      }
+    ],
+    "simSteps": [
+      "[WEBHOOK-IN] Nota de voz recibida desde WhatsApp Business (+1-809-XXX-XXXX, duración: 7.4s, formato: audio/ogg).",
+      "[SPEECH-TO-TEXT] Transcripción completada: 'Registrar venta al contado de 35 cajas corrugadas modelo C-40 a Distribuidora Caribe por 42,000 pesos con ITBIS incluido'.",
+      "[INTENT-CLASSIFIER] Intención detectada: REGISTRO_VENTA (Confianza: 0.992). Recuperando SKU en Pgvector: 'CAJA-CORR-C40'.",
+      "[LLM-JSON-SCHEMA] Extracción estructurada validada: {tipo: 'VENTA', sku: 'CAJA-CORR-C40', cantidad: 35, subtotal: 35593.22, itbis: 6406.78, total: 42000.00}.",
+      "[POSTGRES-SYNC] Transacción #TX-90412 insertada en PostgreSQL y fila sincronizada en Google Sheets API.",
+      "[WEBHOOK-OUT] Confirmación enviada por WhatsApp con comprobante resumido y balance actualizado."
+    ],
+    "tableHeaders": [
+      "ID Transacción",
+      "Canal Entrada",
+      "Intención Clasificada",
+      "Entidad / Producto",
+      "Monto Neto",
+      "ITBIS",
+      "Destino Sincronizado"
+    ],
+    "tableRows": [
+      [
+        "TX-90412",
+        "Audio WhatsApp (7.4s)",
+        "VENTA_FACTURADA",
+        "35x Caja C-40 (Distribuidora Caribe)",
+        "35,593.22",
+        "6,406.78",
+        "PostgreSQL + Google Sheets"
+      ],
+      [
+        "TX-90413",
+        "Audio WhatsApp (5.1s)",
+        "GASTO_OPERATIVO",
+        "Combustible Flota Despacho Ruta Norte",
+        "8,500.00",
+        "0.00",
+        "PostgreSQL + Google Sheets"
+      ],
+      [
+        "TX-90414",
+        "Texto WhatsApp",
+        "AJUSTE_INVENTARIO",
+        "Entrada +200 Bobinas Kraft Almacén Central",
+        "0.00",
+        "0.00",
+        "PostgreSQL + Pgvector"
+      ],
+      [
+        "TX-90415",
+        "Audio WhatsApp (4.0s)",
+        "CONSULTA_REPORTE",
+        "Cierre diario de ventas e inventario",
+        "148,200.00",
+        "26,676.00",
+        "Reporte PDF / WhatsApp"
+      ]
+    ]
+  },
+  "technicalDocs": {
+    "architectureLayers": [
+      "Capa 1 — Ingesta Conversacional: Endpoint Webhook para WhatsApp Business con validación de firma, cola de eventos y control de duplicados en Redis.",
+      "Capa 2 — Transcripción y Búsqueda Vectorial: Conversión de audio a texto con Speech-to-Text API y resolución de nombres de productos/clientes mediante similitud semántica en Pgvector.",
+      "Capa 3 — Extracción Estructurada (LLM Structured Outputs): Generación forzada contra un esquema JSON Schema validado con Pydantic para impedir alucinaciones o campos mal formateados.",
+      "Capa 4 — Persistencia Dual Contable: Registro ACID en PostgreSQL y actualización simultánea de libros contables en Google Sheets API."
+    ],
+    "codeFilename": "walicontrol_extractor.py — Extracción por Voz con JSON Schema Estricto",
+    "codeSnippet": "from enum import Enum\nfrom decimal import Decimal\nfrom pydantic import BaseModel, Field\n\nclass TipoOperacion(str, Enum):\n    VENTA = \"VENTA\"\n    GASTO = \"GASTO\"\n    INVENTARIO = \"INVENTARIO\"\n    REPORTE = \"REPORTE\"\n\nclass RegistroOperativoSchema(BaseModel):\n    intencion: TipoOperacion\n    cliente_o_proveedor: str = Field(..., description=\"Nombre normalizado de la entidad\")\n    sku_resuelto: str = Field(..., description=\"Código SKU obtenido vía Pgvector\")\n    cantidad: Decimal\n    monto_subtotal: Decimal\n    monto_itbis: Decimal\n    monto_total: Decimal\n    moneda: str = Field(default=\"DOP\")\n\ndef procesar_nota_voz_webhook(audio_bytes: bytes, sender_id: str, stt_client, llm_client, db_conn, sheets_client):\n    transcripcion = stt_client.transcribe(audio_bytes, language=\"es-DO\")\n    extraccion: RegistroOperativoSchema = llm_client.parse_structured(\n        prompt=f\"Extrae los datos contables exactos del siguiente mensaje: {transcripcion}\",\n        response_schema=RegistroOperativoSchema\n    )\n    tx_id = db_conn.insert_transaction(sender_id, extraccion.model_dump())\n    sheets_client.append_row(\"Libro_Operaciones_2025\", [tx_id, sender_id, *extraccion.model_dump().values()])\n    return {\"tx_id\": tx_id, \"schema_valid\": True, \"data\": extraccion.model_dump()}"
+  }
 }

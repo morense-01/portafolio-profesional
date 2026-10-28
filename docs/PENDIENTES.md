@@ -29,9 +29,9 @@
 
 ## Proyectos
 
-### AgroIARD - Plataforma de Agente de IA Multimodal con RAG, FastAPI, Docker y Bots API
+### 4. AgroIARD — Plataforma de Agente de IA Multimodal con RAG, FastAPI, Docker y Bots API
 
-### Modernización de Red Industrial de Radiofrecuencia (RF), Integración WMS y Analítica Logística
+### 6. Sistema de Automatización Operativa (Power Automate / Python), Pipelines ETL y Alta Disponibilidad Cloud
 
 ### Arquitectura de Ciberseguridad Zero Trust, SIEM Microsoft Sentinel y Defensa Perimetral Fortinet
 
@@ -39,23 +39,23 @@
 - [ ] Decidir si se desea presentar este proyecto.
 - [ ] Describir flujos reales y resultados.
 
-### Plataforma Analítica Corporativa (Microsoft Fabric / Power BI) y Automatización RPA
+### 7. Data Warehouse Centralizado SQL Server, ETL Automatizado e Integración ERP (SAP S/4HANA y Dynamics 365)
 
-### Ecosistema de Asistencia Inteligente con RAG y Model Context Protocol (MCP)
+### 2. Ecosistema de Asistencia Inteligente con RAG y Model Context Protocol (MCP)
 
-### Motor Automatizado de Facturación Electrónica (e-CF DGII) e Integración con SAP ERP
+### 1. Motor Automatizado de Facturación Electrónica (e-CF DGII) e Integración con SAP ERP
 
 ### Infraestructura de Nube Híbrida (AWS / Azure), Continuidad BCP/DRP y Gobierno FinOps
 
-### Optimización de Motores SQL Server de Misión Crítica, Alta Disponibilidad y Auditoría Financiera
+### 8. Plataforma de Automatización Financiera (Linux/Windows/SQL) y Migración Cloud Híbrida (ISO 27001 / NIST)
 
 ### Ruta 66: Aplicación Web Progresiva (PWA) Full Stack con Arquitectura Offline-First
 
-### Plataforma Full Stack de Control Digital de Calidad y Trazabilidad en Planta
+### 5. Plataforma Web Full Stack de Control Digital de Calidad, REST API y Automatización de Reportes
 
 ### Sistema de Telemetría Industrial, Monitoreo Proactivo de Redes y Continuidad en Planta
 
-### WaliControl - Agente de IA Conversacional para Registro Operativo y Contable por Voz
+### 3. WaliControl — Agente de IA Conversacional para Registro Operativo y Contable por Voz
 
 ## Métricas pendientes de validación (ocultas)
 

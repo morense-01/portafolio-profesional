@@ -1,33 +1,128 @@
 {
   "slug": "sistema-calidad-industrial-astro",
   "public": true,
-  "name": "Plataforma Full Stack de Control Digital de Calidad y Trazabilidad en Planta",
-  "type": "Desarrollo Full Stack y Analítica Industrial",
-  "role": "Arquitecto de Software y Desarrollador Full Stack",
+  "name": "5. Plataforma Web Full Stack de Control Digital de Calidad, REST API y Automatización de Reportes",
+  "type": "Desarrollo Full Stack (Node.js / ES6+), SQL Server y Power BI",
+  "role": "Encargado de Tecnología de la Información (Desarrollo Full Stack, APIs y Automatización)",
   "status": "En producción (2026)",
   "relatedCompany": "astro-pico-duarte-carton",
-  "summary": "Aplicación web integral para digitalizar el 100% de las inspecciones de calidad de cartón corrugado, eliminando registros en papel y habilitando analítica en tiempo real.",
-  "problem": "Los controles de calidad física en piso de producción se registraban en formularios de papel, demorando la detección de desviaciones y el análisis histórico de lotes.",
-  "architecture": "Aplicación web Full Stack con interfaz responsiva adaptada a terminales industriales en piso de planta, backend transaccional conectado a SQL Server para almacenamiento normalizado y capa de visualización ejecutiva en Power BI para monitoreo de mermas y estándares.",
+  "companyName": "Astro - Pico Duarte Cartón, S.R.L.",
+  "period": "2026 - Actualidad",
+  "cvRequirement": "Desarrollo Full Stack y APIs internas: plataforma web de control digital de calidad en JavaScript (ES6+), Node.js, REST API y SQL Server, eliminando el 100% de registros en papel y reduciendo en 60% el tiempo de consulta, más automatización de reportes en Power BI con Python/PowerShell.",
+  "summary": "Plataforma web Full Stack desarrollada en JavaScript (ES6+), Node.js, REST API, HTML5/CSS3 y Microsoft SQL Server que digitalizó el 100% de los controles de calidad en planta industrial, redujo en 60% el tiempo de consulta de datos de auditoría (de 30 min a <10 seg) y automatizó la conciliación y emisión de reportes ejecutivos en Power BI con Python y PowerShell.",
+  "problem": "Los registros de inspección física de laboratorio y calidad (ECT, Mullen, gramaje y humedad) se llevaban manualmente en carpetas de papel, provocando demoras de hasta 30 minutos durante auditorías de clientes y cierres de turno.",
+  "architecture": "Aplicación web progresiva (PWA / SPA) en JavaScript ES6+ conectada a un backend RESTful en Node.js con validación de esquemas JSON, persistencia relacional en Microsoft SQL Server, motor automático de alertas de desviación de tolerancias y scripts programados en Python/PowerShell que alimentan tableros ejecutivos en Power BI.",
   "technologies": [
-    "JavaScript",
+    "JavaScript (ES6+)",
     "Node.js",
-    "HTML5 / CSS3",
-    "SQL Server",
+    "REST API",
+    "Microsoft SQL Server",
+    "HTML5 / CSS3 (PWA)",
     "Power BI",
-    "DAX",
-    "REST API"
+    "Python",
+    "PowerShell"
   ],
   "contributions": [
-    "Levantamiento de requerimientos en piso de planta junto a supervisores de calidad y producción.",
-    "Diseño del modelo de base de datos relacional en SQL Server para trazabilidad por orden de producción.",
-    "Desarrollo del frontend de captura rápida con validación en tiempo real y del backend de persistencia.",
-    "Creación de tableros analíticos que redujeron en un 60% el tiempo de consulta de históricos de calidad."
+    "Diseño y construcción Full Stack de la plataforma web de control digital de calidad y sus endpoints REST API en Node.js.",
+    "Modelado de la base de datos en SQL Server para trazabilidad por orden de producción, turno, máquina, lote y cliente.",
+    "Automatización de procesos de conciliación de datos, alertas operativas y generación de certificados PDF y reportes en Power BI.",
+    "Eliminación del 100% de los registros manuales en papel y reducción del 60% en tiempos de consulta de auditoría."
   ],
   "evidence": [
-    "Métrica auditada: 100% de digitalización de controles de calidad y -60% en tiempos de consulta.",
-    "Sistema en operación continua en la planta industrial de Haina (Astro - Pico Duarte Cartón).",
-    "Respaldo documental en expediente de experiencia de Astro - Pico Duarte Cartón."
+    "Resultado medible: 100% de registros manuales en papel eliminados y -60% en el tiempo de consulta de datos de auditoría (consultas en <10 segundos).",
+    "Consola interactiva del Sistema de Calidad y código del endpoint REST API en Node.js incluidos en esta ficha.",
+    "Operación activa en todas las líneas de manufactura de Astro - Pico Duarte Cartón."
   ],
-  "links": []
+  "links": [
+    {
+      "title": "Portafolio de Desarrollador Full Stack",
+      "url": "http://localhost:4173/portafolios/desarrollador-full-stack/"
+    }
+  ],
+  "systemDemo": {
+    "systemTitle": "Sistema Web de Control Digital de Calidad Industrial (Node.js REST API + SQL Server)",
+    "systemSubtitle": "Astro - Pico Duarte Cartón, S.R.L. · Trazabilidad de Laboratorio ECT / Mullen / Humedad y Certificados",
+    "kpis": [
+      {
+        "label": "Registros en Papel Eliminados",
+        "value": "100% Digitalizado"
+      },
+      {
+        "label": "Tiempo Consulta Auditoría",
+        "value": "-60% (<10 segundos)"
+      },
+      {
+        "label": "Stack de Aplicación",
+        "value": "Node.js + ES6+ + SQL Server"
+      },
+      {
+        "label": "Reportería Ejecutiva",
+        "value": "Power BI + Python Auto-Sync"
+      }
+    ],
+    "simSteps": [
+      "[WEB-UI] Inspector de turno registra lote #OP-2026-8841 en interfaz web (Línea Corrugadora 1, Flauta C).",
+      "[NODE-REST-API] POST /api/calidad/inspecciones valida tolerancias técnicas (ECT: 44.2 lb/in, Humedad: 7.8%, Mullen: 210 psi).",
+      "[SQL-SERVER] Transacción almacenada en [dbo].[Inspecciones_Calidad] con índice por OrdenProduccion y Cliente.",
+      "[AUTO-CERTIFICATE] Generado Certificado de Calidad Digital #CERT-8841 listo para despacho y auditoría.",
+      "[PYTHON-POWERBI-SYNC] Script programado actualiza dataset ejecutivo de Power BI con métricas OEE y tasa de conformidad (99.4%)."
+    ],
+    "tableHeaders": [
+      "Orden Prod.",
+      "Línea / Turno",
+      "Prueba ECT (lb/in)",
+      "Resistencia Mullen",
+      "Humedad (%)",
+      "Estado Norma",
+      "Certificado Digital"
+    ],
+    "tableRows": [
+      [
+        "OP-2026-8841",
+        "Corrugadora 1 · T1",
+        "44.2 (Min: 42.0)",
+        "210 psi",
+        "7.8%",
+        "APROBADO",
+        "CERT-8841.pdf"
+      ],
+      [
+        "OP-2026-8842",
+        "Impresora Flexo 2 · T1",
+        "38.5 (Min: 36.0)",
+        "185 psi",
+        "8.1%",
+        "APROBADO",
+        "CERT-8842.pdf"
+      ],
+      [
+        "OP-2026-8843",
+        "Corrugadora 1 · T2",
+        "49.0 (Min: 48.0)",
+        "255 psi",
+        "7.5%",
+        "APROBADO",
+        "CERT-8843.pdf"
+      ],
+      [
+        "OP-2026-8844",
+        "Troqueladora 3 · T2",
+        "32.1 (Min: 32.0)",
+        "160 psi",
+        "8.3%",
+        "APROBADO",
+        "CERT-8844.pdf"
+      ]
+    ]
+  },
+  "technicalDocs": {
+    "architectureLayers": [
+      "Capa 1 — Frontend Web Responsivo (ES6+ / HTML5 / CSS3): Interfaz de captura rápida en planta con validación inmediata de rangos de laboratorio.",
+      "Capa 2 — Backend REST API en Node.js: Controladores modulares para registro de pruebas físicas, búsqueda histórica instantánea y emisión de certificados.",
+      "Capa 3 — Base de Datos Relacional SQL Server: Esquema normalizado con procedimientos almacenados para auditorías de clientes en menos de 10 segundos.",
+      "Capa 4 — Automatización de Reportes (Python + PowerShell + Power BI): Extracción programada de indicadores de merma y calidad hacia tableros directivos."
+    ],
+    "codeFilename": "quality_api_controller.js — Endpoint REST API Node.js + SQL Server",
+    "codeSnippet": "import express from 'express';\nimport sql from 'mssql';\n\nconst router = express.Router();\n\nrouter.post('/api/calidad/inspecciones', async (req, res) => {\n  const { ordenProduccion, linea, ectValor, ectMinimo, mullenPsi, humedadPct, inspector } = req.body;\n  const conforme = Number(ectValor) >= Number(ectMinimo) && Number(humedadPct) <= 9.5;\n\n  const pool = await sql.connect(process.env.SQL_CONNECTION_STRING);\n  const result = await pool.request()\n    .input('OrdenProduccion', sql.VarChar(30), ordenProduccion)\n    .input('Linea', sql.VarChar(40), linea)\n    .input('ECT', sql.Decimal(8, 2), ectValor)\n    .input('Mullen', sql.Decimal(8, 2), mullenPsi)\n    .input('Humedad', sql.Decimal(5, 2), humedadPct)\n    .input('Estado', sql.VarChar(20), conforme ? 'APROBADO' : 'RETENIDO_REVISION')\n    .input('Inspector', sql.VarChar(60), inspector)\n    .execute('sp_RegistrarInspeccionCalidad');\n\n  return res.status(201).json({\n    inspeccionId: result.recordset[0].InspeccionID,\n    estado: conforme ? 'APROBADO' : 'RETENIDO_REVISION',\n    certificadoEmitido: conforme\n  });\n});\n\nexport default router;"
+  }
 }

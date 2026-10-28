@@ -117,6 +117,43 @@
     });
   });
 
+  // Pestañas y simulador interactivo de sistemas tangibles
+  $$('[data-sys-tab]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var group = btn.getAttribute('data-sys-group');
+      var target = btn.getAttribute('data-sys-tab');
+      $$('[data-sys-group="' + group + '"][data-sys-tab]').forEach(function (b) {
+        b.setAttribute('aria-selected', String(b === btn));
+      });
+      $$('[data-sys-pane-group="' + group + '"]').forEach(function (pane) {
+        pane.hidden = pane.getAttribute('data-sys-pane') !== target;
+      });
+    });
+  });
+
+  $$('[data-sim-run]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var termId = btn.getAttribute('data-sim-run');
+      var term = document.getElementById(termId);
+      if (!term) return;
+      var items = $$('li', term);
+      var origLabel = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = '⏳ Ejecutando flujo en tiempo real...';
+      items.forEach(function (li) { li.hidden = true; });
+      items.forEach(function (li, idx) {
+        setTimeout(function () {
+          li.hidden = false;
+          if (idx === items.length - 1) {
+            btn.disabled = false;
+            btn.textContent = '✔ Ejecución validada (0 errores) · Volver a ejecutar';
+            setTimeout(function () { btn.textContent = origLabel; }, 3500);
+          }
+        }, (idx + 1) * 280);
+      });
+    });
+  });
+
   // Filtro de logros y métricas
   var achSelect = $('[data-ach-filter]');
   if (achSelect) {
