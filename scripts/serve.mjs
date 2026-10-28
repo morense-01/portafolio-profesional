@@ -15,6 +15,10 @@ export function start(port = 4173) {
     } else if (p === '/portafolio-profesional') {
       p = '/';
     }
+    if (p.startsWith('/portafolios/desarrollador-ia-automatizacion')) {
+      res.writeHead(301, { Location: '/portafolios/ingeniero-inteligencia-artificial/' });
+      return res.end();
+    }
     let f = path.join(DIST, p);
     if (!f.startsWith(DIST)) { res.writeHead(403); return res.end(); }
     if (fs.existsSync(f) && fs.statSync(f).isDirectory()) f = path.join(f, 'index.html');

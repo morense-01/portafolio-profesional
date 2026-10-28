@@ -4,6 +4,12 @@
   var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
   var base = document.body.dataset.base || '';
 
+  // Redirección automática de ruta anterior hacia Ingeniero de Inteligencia Artificial
+  if (window.location && window.location.pathname.indexOf('/portafolios/desarrollador-ia-automatizacion') !== -1) {
+    window.location.replace(base + '/portafolios/ingeniero-inteligencia-artificial/');
+    return;
+  }
+
   // Menú móvil
   var mb = $('.menu-btn');
   if (mb) mb.addEventListener('click', function () {
