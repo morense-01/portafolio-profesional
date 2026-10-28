@@ -738,8 +738,40 @@ function portafolios() {
       </article>`;
     }).join('');
 
+    const getCertEco = (c) => {
+      if (c.id.startsWith('anthropic-')) return 'Claude / Anthropic MCP';
+      if (c.id.includes('openai') || c.id.includes('prompt-engineering')) return 'ChatGPT / OpenAI';
+      if (c.id.includes('n8n')) return 'n8n';
+      if (c.id.includes('sap')) return 'SAP';
+      if (c.id.includes('python')) return 'Python';
+      if (c.id.includes('docker')) return 'Docker';
+      if (c.id.startsWith('google-') || c.id === 'intro-inteligencia-artificial-badge') return 'Google Cloud Skills';
+      if (c.id.startsWith('ms-') || c.id.startsWith('microsoft-') || c.id === 'mcsa-windows-server') return 'Microsoft Learn';
+      if ((c.verifyUrl || '').includes('credly.com') || c.id.startsWith('ndg-linux') || c.id.startsWith('aws-') || c.id.startsWith('fortinet')) return 'Credly / Cloud / Linux';
+      return 'Títulos y Diplomados';
+    };
+
+    const ecoOrder = [
+      'Claude / Anthropic MCP',
+      'ChatGPT / OpenAI',
+      'n8n',
+      'SAP',
+      'Python',
+      'Docker',
+      'Google Cloud Skills',
+      'Microsoft Learn',
+      'Credly / Cloud / Linux',
+      'Títulos y Diplomados'
+    ];
+    const activeEcos = ecoOrder.filter((eName) => pfCerts.some((c) => getCertEco(c) === eName));
+    const roleEcoTabs = `<div class="cert-type-tabs no-print">
+      <button class="cert-tab" data-eco-tab="" aria-pressed="true">Todas (${pfCerts.length})</button>
+      ${activeEcos.map((eName) => `<button class="cert-tab" data-eco-tab="${esc(eName)}" aria-pressed="false">${esc(eName)} (${pfCerts.filter((c) => getCertEco(c) === eName).length})</button>`).join('')}
+    </div>`;
+
     const certCards = pfCerts.map((c) => {
       const group = getTypeGroup(c.type);
+      const eco = getCertEco(c);
       const docLabel = c.type === 'titulo'
         ? 'Consultar título universitario oficial (PDF)'
         : (c.type === 'merito'
@@ -755,9 +787,9 @@ function portafolios() {
       const verifyLink = c.verifyUrl
         ? `<p><a class="btn small ghost" href="${c.verifyUrl}" target="_blank" rel="noopener noreferrer">Verificar credencial en emisor oficial ↗</a></p>`
         : '';
-      return `<article class="card cert">
+      return `<article class="card cert" data-eco="${esc(eco)}">
         ${c.badgeImage ? `<img src="${L(`/certifications/${c.badgeImage}`)}" alt="Insignia ${esc(c.name)}" width="96" height="96" loading="lazy">` : ''}
-        <span class="tag tag-${esc(group)}">${typeL[c.type] || esc(c.type)}</span>
+        <span class="tag tag-${esc(group)}">${typeL[c.type] || esc(c.type)} · ${esc(eco)}</span>
         <h3>${esc(c.name)}</h3>
         <p>${esc(c.issuer)} · ${esc(c.category)}</p>
         <p class="muted">${esc(c.date || '')}${c.credentialId ? ` · ID ${esc(c.credentialId)}` : ''}</p>
@@ -828,8 +860,9 @@ function portafolios() {
 
       <section class="block" id="certificaciones-rol">
         <h2>5. Título, especialidades, diplomados y certificaciones del rol (${pfCerts.length})</h2>
-        <p class="muted">Credenciales académicas y certificaciones internacionales que respaldan técnicamente las experiencias y proyectos de este portafolio:</p>
-        <div class="grid3 cert-cards">${certCards}</div>
+        <p class="muted">Credenciales académicas y certificaciones internacionales que respaldan técnicamente las experiencias y proyectos de este portafolio (filtre por ecosistema oficial):</p>
+        ${roleEcoTabs}
+        <div class="grid3 cert-cards" id="role-certs-grid">${certCards}</div>
       </section>
     </div>`;
 

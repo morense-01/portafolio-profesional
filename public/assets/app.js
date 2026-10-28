@@ -117,6 +117,18 @@
     });
   });
 
+  $$('[data-eco-tab]').forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      var val = tab.getAttribute('data-eco-tab');
+      $$('#role-certs-grid > article').forEach(function (el) {
+        el.hidden = Boolean(val && el.getAttribute('data-eco') !== val);
+      });
+      $$('[data-eco-tab]').forEach(function (t) {
+        t.setAttribute('aria-pressed', String(t === tab));
+      });
+    });
+  });
+
   // Pestañas y simulador interactivo de sistemas tangibles
   $$('[data-sys-tab]').forEach(function (btn) {
     btn.addEventListener('click', function () {

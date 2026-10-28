@@ -448,6 +448,7 @@
       "date": "2025",
       "credentialId": "OPENAI-LLM-STRUCT",
       "verifyUrl": "https://platform.openai.com/docs",
+      "documentUrl": "documents/Certificado_OpenAI_Prompt_Engineering_LLM.pdf",
       "badgeImage": "openai-badge.svg",
       "skills": [
         "OpenAI API",
@@ -469,6 +470,7 @@
       "date": "2025",
       "credentialId": "PROMPT-ENG-AI",
       "verifyUrl": "https://platform.openai.com/docs",
+      "documentUrl": "documents/Certificado_OpenAI_Prompt_Engineering_LLM.pdf",
       "badgeImage": "prompt-engineer.png",
       "skills": [
         "Ingeniería de Prompts",
@@ -510,6 +512,7 @@
       "date": "2025",
       "credentialId": "N8N-AI-WORKFLOWS",
       "verifyUrl": "https://n8n.io/",
+      "documentUrl": "documents/Certificado_n8n_Workflow_Automation_AI.pdf",
       "badgeImage": "n8n-badge.svg",
       "skills": [
         "n8n Workflows",
@@ -531,6 +534,7 @@
       "date": "2025",
       "credentialId": "SAP-S4HANA-INT",
       "verifyUrl": "https://profile.sap.com/u/mario_mendez_a",
+      "documentUrl": "documents/Certificado_SAP_S4HANA_Integration.pdf",
       "badgeImage": "sap-badge.svg",
       "skills": [
         "SAP S/4HANA",
@@ -552,6 +556,7 @@
       "date": "2025",
       "credentialId": "DOCKER-COMPOSE-OPS",
       "verifyUrl": "https://www.docker.com/",
+      "documentUrl": "documents/Certificado_Docker_Containers_Microservices.pdf",
       "badgeImage": "docker-badge.svg",
       "skills": [
         "Docker",
