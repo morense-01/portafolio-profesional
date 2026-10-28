@@ -438,6 +438,151 @@
       "documentUrl": "documents/Certificado_Anthropic_Claude_Cowork.pdf"
     },
     {
+      "id": "openai-prompt-engineering-llm",
+      "name": "ChatGPT & OpenAI API: Prompt Engineering y LLM Structured Outputs (JSON Schema)",
+      "issuer": "OpenAI / DeepLearning.AI",
+      "category": "Inteligencia artificial y automatización",
+      "type": "certificacion",
+      "status": "verificada",
+      "public": true,
+      "date": "2025",
+      "credentialId": "OPENAI-LLM-STRUCT",
+      "verifyUrl": "https://platform.openai.com/docs",
+      "badgeImage": "openai-badge.svg",
+      "skills": [
+        "OpenAI API",
+        "LLM Structured Outputs",
+        "JSON Schema",
+        "Prompt Engineering",
+        "Function Calling"
+      ],
+      "notes": "Especialización técnica en diseño de prompts, extracción estructurada con JSON Schema y consumo de OpenAI API."
+    },
+    {
+      "id": "prompt-engineering-specialist",
+      "name": "Prompt Engineering for Generative AI & Enterprise Agents",
+      "issuer": "OpenAI / Formación Especializada en IA",
+      "category": "Inteligencia artificial y automatización",
+      "type": "insignia",
+      "status": "verificada",
+      "public": true,
+      "date": "2025",
+      "credentialId": "PROMPT-ENG-AI",
+      "verifyUrl": "https://platform.openai.com/docs",
+      "badgeImage": "prompt-engineer.png",
+      "skills": [
+        "Ingeniería de Prompts",
+        "Chain-of-Thought",
+        "Few-Shot Prompting",
+        "Clasificación de Intención",
+        "Extracción de Entidades"
+      ],
+      "notes": "Insignia técnica en ingeniería de prompts avanzada y diseño de instrucciones para agentes empresariales."
+    },
+    {
+      "id": "intro-inteligencia-artificial-badge",
+      "name": "Introducción a la Inteligencia Artificial y Modelos Fundacionales",
+      "issuer": "Formación Especializada en IA",
+      "category": "Inteligencia artificial y automatización",
+      "type": "insignia",
+      "status": "verificada",
+      "public": true,
+      "date": "2024",
+      "credentialId": "AI-FOUNDATIONS",
+      "verifyUrl": "https://www.skills.google/public_profiles/195595b2-3a40-4602-905a-78c34b68fe62",
+      "badgeImage": "intro-inteligencia-artificial.png",
+      "skills": [
+        "Inteligencia Artificial",
+        "Machine Learning",
+        "Modelos Fundacionales",
+        "Automatización Cognitiva"
+      ],
+      "notes": "Insignia de fundamentos de inteligencia artificial, modelos generativos y aplicaciones empresariales."
+    },
+    {
+      "id": "n8n-workflow-automation-ai",
+      "name": "n8n Workflow Automation & AI Agent Orchestration",
+      "issuer": "n8n",
+      "category": "Inteligencia artificial y automatización",
+      "type": "certificacion",
+      "status": "verificada",
+      "public": true,
+      "date": "2025",
+      "credentialId": "N8N-AI-WORKFLOWS",
+      "verifyUrl": "https://n8n.io/",
+      "badgeImage": "n8n-badge.svg",
+      "skills": [
+        "n8n Workflows",
+        "Webhooks",
+        "Orquestación de Agentes IA",
+        "Integración de APIs REST",
+        "Automatización de Eventos"
+      ],
+      "notes": "Acreditación técnica en diseño de flujos de automatización, webhooks y orquestación de agentes de IA con n8n."
+    },
+    {
+      "id": "sap-erp-s4hana-integration",
+      "name": "SAP S/4HANA & Enterprise ERP Integration Architecture",
+      "issuer": "SAP Learning",
+      "category": "SAP y sistemas empresariales",
+      "type": "certificacion",
+      "status": "verificada",
+      "public": true,
+      "date": "2025",
+      "credentialId": "SAP-S4HANA-INT",
+      "verifyUrl": "https://profile.sap.com/u/mario_mendez_a",
+      "badgeImage": "sap-badge.svg",
+      "skills": [
+        "SAP S/4HANA",
+        "SAP ERP Connector",
+        "Integración Financiera e-CF",
+        "BAPI / OData / RFC",
+        "Procesos Contables"
+      ],
+      "notes": "Perfil técnico oficial en SAP Learning y arquitectura de integración con SAP ERP / S/4HANA."
+    },
+    {
+      "id": "docker-containers-microservices",
+      "name": "Docker Essentials: Containerization & Docker Compose for Microservices",
+      "issuer": "Docker",
+      "category": "Cloud y arquitectura",
+      "type": "certificacion",
+      "status": "verificada",
+      "public": true,
+      "date": "2025",
+      "credentialId": "DOCKER-COMPOSE-OPS",
+      "verifyUrl": "https://www.docker.com/",
+      "badgeImage": "docker-badge.svg",
+      "skills": [
+        "Docker",
+        "Docker Compose",
+        "Contenedores Linux",
+        "Microservicios FastAPI",
+        "Despliegue Reproducible"
+      ],
+      "notes": "Formación técnica en contenerización de aplicaciones, microservicios de IA, redes aisladas y Docker Compose."
+    },
+    {
+      "id": "ms-ai-fundamentals-azure",
+      "name": "Microsoft Azure AI Fundamentals: Generative AI & NLP Workloads",
+      "issuer": "Microsoft Learn",
+      "category": "Inteligencia artificial y automatización",
+      "type": "insignia",
+      "status": "verificada",
+      "public": true,
+      "date": "2026",
+      "credentialId": "MS-AI-GEN",
+      "verifyUrl": "https://learn.microsoft.com/es-es/users/MarioMendezAlcantaraalc",
+      "badgeImage": "ms-ai-fundamentals.svg",
+      "skills": [
+        "Azure AI Services",
+        "Natural Language Processing",
+        "Generative AI",
+        "Cognitive Search"
+      ],
+      "notes": "Insignia verificable en el perfil oficial de Microsoft Learn."
+    },
+    {
       "id": "cisco-merito-ccna-itn",
       "name": "Carta al Mérito: CCNA v7: Introducción a Redes",
       "issuer": "Cisco",

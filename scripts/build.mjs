@@ -52,7 +52,7 @@ function out(rel, content) {
 
 // ---------- plantilla ----------
 const NAV = [
-  ['/', 'Inicio'], ['/portafolios/', 'Portafolios por Rol'], ['/perfil-ejecutivo/', 'Perfil ejecutivo'], ['/perfil-tecnico/', 'Perfil Operativo'],
+  ['/', 'Inicio'], ['/perfil-ejecutivo/', 'Perfil ejecutivo'], ['/perfil-tecnico/', 'Perfil Operativo'],
   ['/trayectoria/', 'Trayectoria'], ['/logros/', 'Logros'], ['/certificaciones/', 'Certificaciones'],
   ['/proyectos/', 'Proyectos'], ['/documentos/', 'Documentos'],
 ];
@@ -140,9 +140,8 @@ function home() {
   const results = metrics.length
     ? `<div class="grid3">${metrics.slice(0, 6).map((m) => `<article class="card"><h3>${esc(m.claimedValue)}</h3><p>${esc(m.title)}</p><p class="muted">${esc(m.company)} · ${esc(m.period)}</p></article>`).join('')}</div><p><a href="${L('/logros/')}">Ver método, tiempo y ruta de cada resultado</a></p>`
     : `<p class="note">Los resultados medibles se publican únicamente después de validar su línea base, período, método de cálculo y fuente. Consulte la sección de <a href="${L('/logros/')}">logros</a>.</p>`;
-  const quick = [['/portafolios/', `${portfolios.length} Portafolios por Rol`, 'Expedientes especializados con trazabilidad 360° (Experiencia → Certificaciones → Logros → Proyectos).'], ['/trayectoria/', 'Trayectoria', `${exps.length} expedientes por empresa, con enlace propio.`], ['/logros/', 'Logros', 'Resultados con método y fuente de validación.'], ['/certificaciones/', 'Certificaciones', 'Credenciales con enlace de verificación.'], ['/proyectos/', 'Proyectos', 'Proyectos tecnológicos y su estado real.'], ['/documentos/', 'Documentos', 'Biblioteca documental y currículum.']]
+  const quick = [['/perfil-ejecutivo/', 'Perfil Ejecutivo', 'Gobierno, dirección tecnológica y continuidad operativa.'], ['/trayectoria/', 'Trayectoria', `${exps.length} expedientes por empresa, con enlace propio.`], ['/logros/', 'Logros', 'Resultados con método y fuente de validación.'], ['/certificaciones/', 'Certificaciones', 'Credenciales con enlace de verificación.'], ['/proyectos/', 'Proyectos', 'Proyectos tecnológicos y su estado real.'], ['/documentos/', 'Documentos', 'Biblioteca documental y currículum.']]
     .map(([r, t, d]) => `<a class="card link-card" href="${L(r)}"><h3>${t}</h3><p>${d}</p></a>`).join('');
-  const roleCardsHome = portfolios.map((pf) => `<article class="card portfolio-card"><div><span class="tag">${esc(pf.domain)}</span><h3><a href="${L(`/portafolios/${pf.slug}/`)}">${esc(pf.title)}</a></h3><p class="small">${esc(pf.headline)}</p></div><ul class="portfolio-stats"><li>${pf.experiences.length} exp.</li><li>${pf.certIds.length} cred.</li><li>${pf.metricIds.length} métricas</li><li>${pf.projectSlugs.length} proy.</li></ul><p><a class="btn small primary" href="${L(`/portafolios/${pf.slug}/`)}">Ver portafolio especializado →</a></p></article>`).join('');
   const body = `<section class="hero"><div class="wrap">
   <p class="eyebrow">${esc(profile.location)} · <span class="tag demostrada">Actual: Astro - Pico Duarte Cartón</span></p>
   <h1>${esc(profile.name)}</h1>
@@ -150,10 +149,9 @@ function home() {
   <p class="lead">${esc(profile.tagline)}</p>
   <div class="card current-role-card"><p><strong>Posición Actual:</strong> Responsable de Tecnología de la Información en <a href="${L('/experiencia/astro-pico-duarte-carton/')}">Astro - Pico Duarte Cartón</a> (Haina, Rep. Dom.) · Liderando infraestructura industrial, desarrollo de soluciones internas, integración con SAP ERP, control digital de calidad e Inteligencia Artificial.</p></div>
   <div class="card current-role-card"><p><strong>Formación Académica Superior:</strong> ${esc(profile.degree)} · <a href="${L('/documents/Titulo_Ingenieria_Sistemas_OyM.pdf')}" target="_blank" rel="noopener">Consultar Título Universitario oficial (PDF)</a> · <a href="${L('/certificaciones/')}">Ver credenciales y títulos</a></p></div>
-  <div class="actions"><a class="btn primary" href="${L('/portafolios/')}">Explorar ${portfolios.length} Portafolios por Rol</a><a class="btn" href="${L('/trayectoria/')}">Ver trayectoria</a><a class="btn" href="${cvHref}"${cvAttr}>${cvLabel}</a><button class="btn ghost" data-share data-url="${abs('/')}" data-title="${esc(site.title)}">Compartir portafolio</button><button class="btn ghost" data-copy="${abs('/')}">Copiar enlace</button></div>
+  <div class="actions"><a class="btn primary" href="${L('/trayectoria/')}">Ver trayectoria</a><a class="btn" href="${L('/proyectos/')}">Ver proyectos</a><a class="btn" href="${cvHref}"${cvAttr}>${cvLabel}</a><button class="btn ghost" data-share data-url="${abs('/')}" data-title="${esc(site.title)}">Compartir portafolio</button><button class="btn ghost" data-copy="${abs('/')}">Copiar enlace</button></div>
   <p class="ext">${links.map((l) => ext(l.url, l.label)).join(' · ')}</p>
 </div></section>
-<section class="wrap block"><h2>${portfolios.length} Portafolios Especializados por Rol (Coherencia 360° para Reclutadores)</h2><p class="muted">Seleccione el perfil especializado que desea evaluar. Cada portafolio integra en una misma línea conductora las experiencias reales, certificaciones oficiales del tema, logros, métricas auditadas y proyectos con evidencias verificables:</p><div class="grid3">${roleCardsHome}</div></section>
 <section class="wrap block"><h2>Resumen ejecutivo</h2>${ul(profile.summary, 'summary')}<div class="facts">${facts}</div><p class="muted small">${esc(profile.yearsNote)}</p></section>
 <section class="band"><div class="wrap block"><h2>Áreas de especialización</h2><ul class="chips">${profile.specialties.map((s) => `<li>${esc(s)}</li>`).join('')}</ul>
 <h3>Sectores</h3><ul class="chips alt">${profile.sectors.map((s) => `<li>${esc(s)}</li>`).join('')}</ul></div></section>
@@ -775,40 +773,19 @@ function portafolios() {
       </article>`;
     }).join('');
 
-    const switcher = `<ul class="role-switcher">${portfolios.map((other) => `<li><a href="${L(`/portafolios/${other.slug}/`)}"${other.slug === pf.slug ? ' aria-current="page"' : ''}>${esc(other.shortTitle)}</a></li>`).join('')}</ul>`;
-
-    const toc = `<nav class="toc no-print" aria-label="Secciones del portafolio">
-      <a href="#trazabilidad">1. Matriz de Coherencia 360°</a>
-      <a href="#experiencia-rol">2. Experiencia en el Rol (${pf.experiences.length})</a>
-      <a href="#metricas-rol">3. Logros y Métricas (${pfMetrics.length})</a>
-      <a href="#proyectos-rol">4. Proyectos y Evidencias (${pfProjects.length})</a>
-      <a href="#certificaciones-rol">5. Certificaciones del Rol (${pfCerts.length})</a>
-      <a href="#otros-roles">6. Otros Portafolios</a>
-    </nav>`;
-
     const compCatHtml = (pf.competencyCategories && pf.competencyCategories.length)
       ? `<h3 class="spacer-md">Competencias técnicas por dominio</h3>
          <div class="tech-summary-grid">
            ${pf.competencyCategories.map((cat) => `<article class="tech-item"><span class="tech-item-title">${esc(cat.title)}</span><p class="tech-item-desc">${esc(cat.desc)}</p></article>`).join('')}
          </div>`
-      : '';
-
-    const langHtml = pf.languages
-      ? `<div class="card current-role-card spacer-md"><p><strong>Idiomas:</strong> ${esc(pf.languages)}</p></div>`
-      : '';
-
-    const ecosystemsBar = pf.domain === 'IA, Automatización y Desarrollo'
-      ? `<div class="ecosystem-links"><strong>Perfiles y ecosistemas verificados:</strong> ${ext('https://www.linkedin.com/in/mariomendeza/', 'Linkedin')} · <a href="${L('/portafolios/ingeniero-inteligencia-artificial/')}">Portafolio IA</a> · ${ext('https://www.skills.google/public_profiles/195595b2-3a40-4602-905a-78c34b68fe62', 'Google Cloud Skills')} · ${ext('https://www.credly.com/users/mario-mendez.630726a8/badges', 'Credly')} · ${ext('https://learn.microsoft.com/es-es/users/MarioMendezAlcantaraalc', 'Microsoft Learn')} · ${ext('https://verify.skilljar.com/c/vxtfkvdm2xzr', 'Claude / Anthropic MCP')} · ${ext('https://platform.openai.com/docs', 'ChatGPT / OpenAI')} · ${ext('https://n8n.io/', 'n8n')} · ${ext('https://profile.sap.com/u/mario_mendez_a', 'SAP')} · ${ext('https://pythoninstitute.org/', 'Python')} · ${ext('https://www.docker.com/', 'Docker')}</div>`
-      : '';
+      : `<h3>Competencias y stack tecnológico de este portafolio</h3>
+         <ul class="chips">${(pf.skills || []).map((s) => `<li>${esc(s)}</li>`).join('')}</ul>`;
 
     const body = `<section class="page-head"><div class="wrap">
-      <nav class="crumbs" aria-label="Ruta"><a href="${L('/')}">Inicio</a> › <a href="${L('/portafolios/')}">Portafolios por Rol</a> › <span>${esc(pf.shortTitle)}</span></nav>
+      <nav class="crumbs" aria-label="Ruta"><a href="${L('/')}">Inicio</a> › <span>${esc(pf.shortTitle)}</span></nav>
       <p class="eyebrow">${esc(pf.domain)} · ${esc(pf.yearsExperience)}</p>
       <h1>${esc(pf.title)}</h1>
       <p class="lead">${esc(pf.headline)}</p>
-      ${ecosystemsBar}
-      ${toc}
-      ${shareBar(route, pf.title)}
     </div></section>
     <div class="wrap exp">
       <section class="block" id="resumen-rol">
@@ -817,11 +794,7 @@ function portafolios() {
           <p>${esc(pf.summary)}</p>
           <p><strong>Impacto directo para la organización:</strong> ${esc(pf.valueProposition)}</p>
         </div>
-        <div class="facts">${factsHtml}</div>
-        <h3>Competencias y stack tecnológico de este portafolio</h3>
-        <ul class="chips">${(pf.skills || []).map((s) => `<li>${esc(s)}</li>`).join('')}</ul>
         ${compCatHtml}
-        ${langHtml}
       </section>
 
       <section class="block" id="trazabilidad">
@@ -864,12 +837,6 @@ function portafolios() {
         <h2>5. Título, especialidades, diplomados y certificaciones del rol (${pfCerts.length})</h2>
         <p class="muted">Credenciales académicas y certificaciones internacionales que respaldan técnicamente las experiencias y proyectos de este portafolio:</p>
         <div class="grid3 cert-cards">${certCards}</div>
-      </section>
-
-      <section class="block no-print" id="otros-roles">
-        <h2>6. Explorar los 12 portafolios especializados por rol</h2>
-        <p class="muted">Cambie de perfil especializado según la vacante o comité técnico evaluador:</p>
-        ${switcher}
       </section>
     </div>`;
 

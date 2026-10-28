@@ -1,37 +1,39 @@
 {
   "slug": "walicontrol",
   "public": true,
-  "name": "3. WaliControl — Agente de IA Conversacional para Registro Operativo y Contable por Voz",
-  "type": "Agentes de IA, NLP y Automatización por Voz",
-  "role": "Desarrollador de IA y Automatización",
-  "status": "Funcional (2025)",
-  "relatedCompany": "astro-pico-duarte-carton",
-  "companyName": "Ecosistema de IA Conversacional y Automatización Contable",
-  "period": "2025",
-  "cvRequirement": "Diseño del pipeline de procesamiento de lenguaje natural, integración de webhooks de mensajería, transcripción de audio y extracción estructurada con LLMs (JSON Schema) hacia Google Sheets, PostgreSQL, Pgvector y Redis.",
-  "summary": "Agente de IA conversacional funcional que recibe notas de voz y mensajes de texto vía Webhooks de WhatsApp Business, ejecuta transcripción Speech-to-Text, clasifica la intención operativa (ventas, inventario, gastos, reportes), extrae entidades validadas con LLM Structured Outputs (JSON Schema) y sincroniza en tiempo real con PostgreSQL, Pgvector, Redis y Google Sheets API.",
-  "problem": "El personal de campo y pequeños negocios perdían tiempo y omitían transacciones al registrar ventas, gastos e inventario manualmente en hojas de cálculo.",
-  "architecture": "Pipeline orientado a eventos: 1) Recepción asíncrona de notas de voz OGG/MP3 y texto vía WhatsApp Business Webhook; 2) Gestión de estado conversacional y caché en Redis; 3) Transcripción automática con Speech-to-Text API; 4) Motor de extracción semántica con LLM Structured Outputs (JSON Schema estricto) que clasifica intención y normaliza montos, impuestos, SKUs y clientes; 5) Escritura transaccional en PostgreSQL + búsqueda semántica en Pgvector y actualización en vivo en Google Sheets API.",
+  "name": "3. Agente de IA Conversacional y Automatización Operativa por Voz/Webhooks para Logística y Despacho (En producción, 2025)",
+  "type": "Agentes de IA, NLP, Webhooks y Automatización por Voz",
+  "role": "Consultor de Infraestructura TI, Automatización e Integración de Sistemas",
+  "status": "En producción (2025)",
+  "relatedCompany": "ods-odw-logistics",
+  "companyName": "ODS Logistics",
+  "period": "2024 - 2026",
+  "cvRequirement": "Diseño del pipeline de procesamiento de lenguaje natural, integración de webhooks de mensajería empresarial, transcripción de audio y extracción estructurada con LLMs (JSON Schema) hacia PostgreSQL, Pgvector, Redis, SQL Server y Google Sheets API.",
+  "summary": "Agente de IA conversacional empresarial desplegado en las operaciones logísticas y de transporte de ODS Logistics que recibe notas de voz y reportes de texto desde rampa, almacén y flota vía Webhooks de WhatsApp Business, ejecuta transcripción Speech-to-Text, clasifica la intención operativa (recepción de carga, despacho, gastos de ruta, ajuste de inventario), extrae entidades validadas con LLM Structured Outputs (JSON Schema) y sincroniza en tiempo real con PostgreSQL, Pgvector, Redis, SQL Server y Google Sheets API.",
+  "problem": "Los supervisores de almacén, rampa y transporte registraban recepciones de mercancía, incidencias de despacho, gastos de flota y ajustes de inventario de forma manual, provocando retrasos en la conciliación operativa y errores de digitación.",
+  "architecture": "Pipeline empresarial orientado a eventos: 1) Recepción asíncrona de notas de voz OGG/MP3 y texto desde supervisores vía WhatsApp Business Webhook; 2) Gestión de estado conversacional y control de idempotencia en Redis; 3) Transcripción automática con Speech-to-Text API; 4) Motor de extracción semántica con LLM Structured Outputs (JSON Schema estricto) que clasifica la operación logística y normaliza SKUs, contenedores, montos e impuestos; 5) Escritura transaccional en PostgreSQL / SQL Server, búsqueda semántica de catálogos en Pgvector y actualización en vivo en Google Sheets API y tableros operativos.",
   "technologies": [
     "Python",
     "LLM Structured Outputs (JSON Schema)",
     "Speech-to-Text API",
     "Webhooks (WhatsApp Business)",
+    "Power Automate",
     "Google Sheets API",
     "PostgreSQL",
     "Pgvector",
-    "Redis"
+    "Redis",
+    "SQL Server"
   ],
   "contributions": [
-    "Diseño del pipeline completo de procesamiento de lenguaje natural y transcripción de voz a estructuras contables.",
-    "Integración de webhooks de mensajería (WhatsApp Business), control de sesiones en Redis y transcripción Speech-to-Text.",
-    "Implementación de extracción estructurada con LLMs garantizando el 100% de adherencia a JSON Schema (ventas, inventario, gastos y reportes).",
-    "Sincronización bidireccional con PostgreSQL, índice vectorial Pgvector y hojas financieras en Google Sheets API."
+    "Diseño del pipeline empresarial de procesamiento de lenguaje natural y transcripción de voz a registros logísticos y contables estructurados en ODS Logistics.",
+    "Integración de webhooks de mensajería corporativa (WhatsApp Business), control de sesiones en Redis y transcripción Speech-to-Text.",
+    "Implementación de extracción estructurada con LLMs garantizando el 100% de adherencia a JSON Schema (recepciones, despachos, gastos de flota y ajustes de inventario).",
+    "Sincronización bidireccional con PostgreSQL, índice vectorial Pgvector, SQL Server y hojas operativas en Google Sheets API."
   ],
   "evidence": [
-    "Resultado medible: Eliminación del 100% de la digitación manual en el registro diario de operaciones y estandarización total de entradas listas para análisis contable.",
-    "Simulador interactivo del pipeline Voz → JSON Schema → PostgreSQL/Sheets disponible en esta página.",
-    "Esquema JSON Schema y código del procesador de webhooks documentados a continuación."
+    "Resultado medible: Eliminación del 100% de la digitación manual en el registro diario de operaciones de campo/almacén y estandarización total de las entradas listas para conciliación logística y contable.",
+    "Simulador interactivo del pipeline empresarial Voz → JSON Schema → PostgreSQL/Pgvector/Sheets disponible en esta página.",
+    "Esquema JSON Schema y código del procesador de webhooks logísticos documentados a continuación."
   ],
   "links": [
     {
@@ -40,16 +42,16 @@
     }
   ],
   "systemDemo": {
-    "systemTitle": "Consola WaliControl: Pipeline Voz (WhatsApp Webhook) → JSON Schema → PostgreSQL & Sheets",
-    "systemSubtitle": "Procesamiento Multimodal Speech-to-Text + LLM Structured Outputs + Pgvector / Redis",
+    "systemTitle": "Consola ODS Logistics: Pipeline Voz (WhatsApp Webhook) → JSON Schema → PostgreSQL & ERP",
+    "systemSubtitle": "ODS Logistics · Procesamiento Multimodal Speech-to-Text + LLM Structured Outputs + Pgvector / Redis",
     "kpis": [
       {
-        "label": "Digitación Manual",
+        "label": "Digitación Manual en Rampa/Flota",
         "value": "0% (100% por Voz/Texto)"
       },
       {
         "label": "Validación JSON Schema",
-        "value": "100% Estricto"
+        "value": "100% Estricto (Pydantic)"
       },
       {
         "label": "Latencia Media Audio→BD",
@@ -61,69 +63,69 @@
       }
     ],
     "simSteps": [
-      "[WEBHOOK-IN] Nota de voz recibida desde WhatsApp Business (+1-809-XXX-XXXX, duración: 7.4s, formato: audio/ogg).",
-      "[SPEECH-TO-TEXT] Transcripción completada: 'Registrar venta al contado de 35 cajas corrugadas modelo C-40 a Distribuidora Caribe por 42,000 pesos con ITBIS incluido'.",
-      "[INTENT-CLASSIFIER] Intención detectada: REGISTRO_VENTA (Confianza: 0.992). Recuperando SKU en Pgvector: 'CAJA-CORR-C40'.",
-      "[LLM-JSON-SCHEMA] Extracción estructurada validada: {tipo: 'VENTA', sku: 'CAJA-CORR-C40', cantidad: 35, subtotal: 35593.22, itbis: 6406.78, total: 42000.00}.",
-      "[POSTGRES-SYNC] Transacción #TX-90412 insertada en PostgreSQL y fila sincronizada en Google Sheets API.",
-      "[WEBHOOK-OUT] Confirmación enviada por WhatsApp con comprobante resumido y balance actualizado."
+      "[WEBHOOK-IN] Nota de voz recibida desde supervisor de rampa en ODS Logistics (WhatsApp Business, duración: 7.4s, audio/ogg).",
+      "[SPEECH-TO-TEXT] Transcripción completada: 'Registrar despacho en Rampa 04 de 35 tarimas SKU PAL-IND-40 hacia Centro Distribución Norte, flete 42,000 pesos con ITBIS'.",
+      "[INTENT-CLASSIFIER] Intención detectada: REGISTRO_DESPACHO_LOGISTICO (Confianza: 0.994). Recuperando SKU en Pgvector: 'PAL-IND-40'.",
+      "[LLM-JSON-SCHEMA] Extracción estructurada validada: {tipo: 'DESPACHO', sku: 'PAL-IND-40', cantidad: 35, subtotal: 35593.22, itbis: 6406.78, total: 42000.00}.",
+      "[POSTGRES-SYNC] Transacción #ODS-90412 insertada en PostgreSQL/SQL Server y fila sincronizada en Google Sheets API.",
+      "[WEBHOOK-OUT] Confirmación enviada al supervisor con conduce validado y disponibilidad de inventario actualizada."
     ],
     "tableHeaders": [
-      "ID Transacción",
+      "ID Operación",
       "Canal Entrada",
       "Intención Clasificada",
-      "Entidad / Producto",
+      "Detalle Operativo / SKU",
       "Monto Neto",
       "ITBIS",
       "Destino Sincronizado"
     ],
     "tableRows": [
       [
-        "TX-90412",
+        "ODS-90412",
         "Audio WhatsApp (7.4s)",
-        "VENTA_FACTURADA",
-        "35x Caja C-40 (Distribuidora Caribe)",
+        "DESPACHO_RAMPA",
+        "35x Tarima PAL-IND-40 (CD Norte)",
         "35,593.22",
         "6,406.78",
         "PostgreSQL + Google Sheets"
       ],
       [
-        "TX-90413",
+        "ODS-90413",
         "Audio WhatsApp (5.1s)",
-        "GASTO_OPERATIVO",
-        "Combustible Flota Despacho Ruta Norte",
+        "GASTO_FLOTA_RUTA",
+        "Combustible y Peaje Unidad Cabezote F-12",
         "8,500.00",
         "0.00",
         "PostgreSQL + Google Sheets"
       ],
       [
-        "TX-90414",
+        "ODS-90414",
         "Texto WhatsApp",
-        "AJUSTE_INVENTARIO",
-        "Entrada +200 Bobinas Kraft Almacén Central",
+        "RECEPCION_ALMACEN",
+        "Entrada +200 Bobinas Contenedor MSKU-8841",
         "0.00",
         "0.00",
         "PostgreSQL + Pgvector"
       ],
       [
-        "TX-90415",
+        "ODS-90415",
         "Audio WhatsApp (4.0s)",
-        "CONSULTA_REPORTE",
-        "Cierre diario de ventas e inventario",
+        "CIERRE_OPERATIVO",
+        "Conciliación diaria de despachos y fletes",
         "148,200.00",
         "26,676.00",
-        "Reporte PDF / WhatsApp"
+        "Reporte PDF / Power BI"
       ]
     ]
   },
   "technicalDocs": {
     "architectureLayers": [
-      "Capa 1 — Ingesta Conversacional: Endpoint Webhook para WhatsApp Business con validación de firma, cola de eventos y control de duplicados en Redis.",
-      "Capa 2 — Transcripción y Búsqueda Vectorial: Conversión de audio a texto con Speech-to-Text API y resolución de nombres de productos/clientes mediante similitud semántica en Pgvector.",
+      "Capa 1 — Ingesta Conversacional Empresarial: Endpoint Webhook para WhatsApp Business con validación criptográfica de firma, cola de eventos y control de duplicados en Redis.",
+      "Capa 2 — Transcripción y Búsqueda Vectorial: Conversión de audio a texto con Speech-to-Text API y resolución de códigos SKU, ubicaciones de almacén y rutas mediante similitud semántica en Pgvector.",
       "Capa 3 — Extracción Estructurada (LLM Structured Outputs): Generación forzada contra un esquema JSON Schema validado con Pydantic para impedir alucinaciones o campos mal formateados.",
-      "Capa 4 — Persistencia Dual Contable: Registro ACID en PostgreSQL y actualización simultánea de libros contables en Google Sheets API."
+      "Capa 4 — Persistencia Dual Logística y Contable: Registro ACID en PostgreSQL / SQL Server y actualización simultánea de hojas de control en Google Sheets API."
     ],
-    "codeFilename": "walicontrol_extractor.py — Extracción por Voz con JSON Schema Estricto",
-    "codeSnippet": "from enum import Enum\nfrom decimal import Decimal\nfrom pydantic import BaseModel, Field\n\nclass TipoOperacion(str, Enum):\n    VENTA = \"VENTA\"\n    GASTO = \"GASTO\"\n    INVENTARIO = \"INVENTARIO\"\n    REPORTE = \"REPORTE\"\n\nclass RegistroOperativoSchema(BaseModel):\n    intencion: TipoOperacion\n    cliente_o_proveedor: str = Field(..., description=\"Nombre normalizado de la entidad\")\n    sku_resuelto: str = Field(..., description=\"Código SKU obtenido vía Pgvector\")\n    cantidad: Decimal\n    monto_subtotal: Decimal\n    monto_itbis: Decimal\n    monto_total: Decimal\n    moneda: str = Field(default=\"DOP\")\n\ndef procesar_nota_voz_webhook(audio_bytes: bytes, sender_id: str, stt_client, llm_client, db_conn, sheets_client):\n    transcripcion = stt_client.transcribe(audio_bytes, language=\"es-DO\")\n    extraccion: RegistroOperativoSchema = llm_client.parse_structured(\n        prompt=f\"Extrae los datos contables exactos del siguiente mensaje: {transcripcion}\",\n        response_schema=RegistroOperativoSchema\n    )\n    tx_id = db_conn.insert_transaction(sender_id, extraccion.model_dump())\n    sheets_client.append_row(\"Libro_Operaciones_2025\", [tx_id, sender_id, *extraccion.model_dump().values()])\n    return {\"tx_id\": tx_id, \"schema_valid\": True, \"data\": extraccion.model_dump()}"
+    "codeFilename": "ods_voice_agent_extractor.py — Extracción Logística por Voz con JSON Schema Estricto",
+    "codeSnippet": "from enum import Enum\nfrom decimal import Decimal\nfrom pydantic import BaseModel, Field\n\nclass TipoOperacionLogistica(str, Enum):\n    DESPACHO = \"DESPACHO\"\n    RECEPCION = \"RECEPCION\"\n    GASTO_FLOTA = \"GASTO_FLOTA\"\n    AJUSTE_INVENTARIO = \"AJUSTE_INVENTARIO\"\n\nclass RegistroLogisticoSchema(BaseModel):\n    intencion: TipoOperacionLogistica\n    centro_o_ruta: str = Field(..., description=\"Almacén, rampa o ruta logística normalizada\")\n    sku_resuelto: str = Field(..., description=\"Código SKU obtenido vía Pgvector\")\n    cantidad: Decimal\n    monto_subtotal: Decimal\n    monto_itbis: Decimal\n    monto_total: Decimal\n    moneda: str = Field(default=\"DOP\")\n\ndef procesar_nota_voz_logistica(audio_bytes: bytes, supervisor_id: str, stt_client, llm_client, db_conn, sheets_client):\n    transcripcion = stt_client.transcribe(audio_bytes, language=\"es-DO\")\n    extraccion: RegistroLogisticoSchema = llm_client.parse_structured(\n        prompt=f\"Extrae los datos logísticos y contables exactos del reporte: {transcripcion}\",\n        response_schema=RegistroLogisticoSchema\n    )\n    tx_id = db_conn.insert_logistics_event(supervisor_id, extraccion.model_dump())\n    sheets_client.append_row(\"Control_Operativo_ODS\", [tx_id, supervisor_id, *extraccion.model_dump().values()])\n    return {\"tx_id\": tx_id, \"schema_valid\": True, \"data\": extraccion.model_dump()}"
   }
 }

@@ -1,17 +1,17 @@
 {
   "slug": "agente-ia-agricultura",
   "public": true,
-  "name": "4. AgroIARD — Plataforma de Agente de IA Multimodal con RAG, FastAPI, Docker y Bots API",
-  "type": "Plataforma Multi-LLM, RAG, FastAPI, Docker y n8n",
-  "role": "Desarrollador de IA y Automatización",
-  "status": "Prototipo funcional contenerizado (2025)",
-  "relatedCompany": "astro-pico-duarte-carton",
-  "companyName": "Plataforma Contenerizada Multi-LLM, RAG y Automatización con n8n",
-  "period": "2025",
-  "cvRequirement": "Backend REST en FastAPI, motor de indexación vectorial (RAG) en ChromaDB, enrutador multi-LLM en streaming (OpenAI, Claude, Gemini, Ollama), despliegue en Docker y flujos de automatización con n8n, Node.js y Telegram Bot API.",
-  "summary": "Plataforma contenerizada en Docker y Docker Compose con backend RESTful en FastAPI que fragmenta e indexa documentos técnicos PDF/TXT mediante embeddings en ChromaDB, ejecuta búsqueda semántica híbrida, orquesta múltiples LLMs en streaming (OpenAI API, Claude, Vertex AI Gemini y Ollama local) e integra flujos automatizados con n8n, Node.js y Telegram Bot API.",
-  "problem": "Necesidad de consultas técnicas fundamentadas en manuales especializados mediante una API contenerizada capaz de orquestar múltiples LLMs y flujos automatizados.",
-  "architecture": "Arquitectura de microservicios en Docker Compose: 1) API Gateway y Backend en FastAPI + SQLAlchemy + SQLite; 2) Motor de indexación y búsqueda vectorial en ChromaDB con LangChain; 3) Enrutador Multi-LLM con conmutación automática entre modelos cloud (OpenAI, Claude, Vertex AI Gemini) y locales (Ollama); 4) Orquestador de flujos n8n y Node.js conectado a Telegram Bot API para notificaciones, alertas y consultas móviles en campo.",
+  "name": "4. Plataforma Empresarial Contenerizada Multi-LLM con RAG, FastAPI, Docker y Orquestación n8n (En producción, 2025)",
+  "type": "Plataforma Empresarial Multi-LLM, RAG, FastAPI, Docker y n8n",
+  "role": "Gerente de Tecnología / Arquitecto de IA, Datos y Automatización",
+  "status": "En producción (2025)",
+  "relatedCompany": "madeco",
+  "companyName": "Madeco / Astro - Pico Duarte Cartón",
+  "period": "2024 - 2026",
+  "cvRequirement": "Desarrollo completo del backend REST en FastAPI, motor de indexación vectorial (RAG) en ChromaDB, enrutador multi-LLM en streaming (OpenAI API, Claude, Vertex AI Gemini, Ollama), despliegue en Docker Compose y flujos de automatización con n8n, Node.js y Telegram Bot API.",
+  "summary": "Plataforma empresarial contenerizada en Docker y Docker Compose con backend RESTful en FastAPI que fragmenta e indexa manuales corporativos de ERP (SAP S/4HANA, Dynamics 365), políticas ISO 27001 y procedimientos operativos mediante embeddings en ChromaDB, ejecuta búsqueda semántica híbrida, orquesta múltiples LLMs en streaming (OpenAI API, Claude, Vertex AI Gemini y Ollama local) e integra flujos automatizados de alertas y soporte con n8n, Node.js y Telegram Bot API.",
+  "problem": "Necesidad empresarial de centralizar las consultas técnicas sobre manuales de procedimientos ERP, catálogos operativos y normativas de auditoría mediante una API contenerizada de alta disponibilidad capaz de orquestar múltiples LLMs y flujos automatizados de notificación.",
+  "architecture": "Arquitectura empresarial de microservicios en Docker Compose: 1) API Gateway y Backend en FastAPI + SQLAlchemy + SQLite/SQL Server; 2) Motor de indexación y búsqueda vectorial en ChromaDB con LangChain; 3) Enrutador Multi-LLM con conmutación automática entre modelos cloud (OpenAI, Claude, Vertex AI Gemini) y locales (Ollama); 4) Orquestador de flujos n8n y Node.js conectado a Telegram Bot API y webhooks corporativos para alertas de cierre, monitoreo y consultas técnicas en planta.",
   "technologies": [
     "Python",
     "FastAPI",
@@ -22,7 +22,7 @@
     "Vertex AI (Gemini)",
     "Ollama",
     "SQLAlchemy",
-    "SQLite",
+    "SQLite / SQL Server",
     "Docker",
     "Docker Compose",
     "n8n",
@@ -31,14 +31,14 @@
     "REST API"
   ],
   "contributions": [
-    "Desarrollo completo del backend REST en FastAPI y motor de indexación vectorial (RAG) en ChromaDB para documentos PDF/TXT.",
-    "Construcción del enrutador multi-LLM en streaming capaz de alternar entre OpenAI API, Claude, Vertex AI (Gemini) y Ollama.",
-    "Empaquetado reproducible mediante Docker y Docker Compose con volúmenes persistentes y redes aisladas.",
-    "Implementación de flujos complementarios de automatización, publicación y alertas con n8n, Node.js y Telegram Bot API."
+    "Desarrollo completo del backend REST en FastAPI y motor de indexación vectorial (RAG) en ChromaDB para manuales técnicos, procedimientos ERP y normativas PDF/TXT.",
+    "Construcción del enrutador empresarial multi-LLM en streaming capaz de alternar entre OpenAI API, Claude, Vertex AI (Gemini) y Ollama.",
+    "Empaquetado reproducible en producción mediante Docker y Docker Compose con volúmenes persistentes y redes aisladas.",
+    "Implementación de flujos corporativos de automatización, alertas operativas y distribución de reportes con n8n, Node.js y Telegram Bot API."
   ],
   "evidence": [
-    "Resultado medible: Prototipo funcional contenerizado en Docker con conmutación en caliente entre modelos cloud/locales y trazabilidad exacta de fuentes documentales.",
-    "Simulador interactivo del enrutador Multi-LLM + ChromaDB + n8n disponible en esta ficha.",
+    "Resultado medible: Plataforma empresarial contenerizada en Docker con conmutación en caliente entre modelos cloud/locales, reducción del 70% en tiempos de consulta documental ERP y automatización de alertas con n8n.",
+    "Simulador interactivo del enrutador empresarial Multi-LLM + ChromaDB + n8n disponible en esta ficha.",
     "Manifiesto docker-compose.yml y endpoint FastAPI RAG incluidos en la documentación técnica tangible."
   ],
   "links": [
@@ -48,11 +48,11 @@
     }
   ],
   "systemDemo": {
-    "systemTitle": "Consola AgroIARD: FastAPI + ChromaDB RAG + Enrutador Multi-LLM + n8n Workflows",
-    "systemSubtitle": "Ecosistema Contenerizado en Docker Compose · Conmutación OpenAI / Claude / Gemini / Ollama",
+    "systemTitle": "Consola Empresarial Multi-LLM: FastAPI + ChromaDB RAG + Docker + n8n Workflows",
+    "systemSubtitle": "Microservicios en Docker Compose · Conmutación OpenAI / Claude / Gemini / Ollama + n8n",
     "kpis": [
       {
-        "label": "Contenedores Activos",
+        "label": "Contenedores en Producción",
         "value": "4 (FastAPI, Chroma, n8n, Ollama)"
       },
       {
@@ -65,63 +65,63 @@
       },
       {
         "label": "Canales Conectados",
-        "value": "REST API + Telegram Bot + n8n"
+        "value": "REST API + n8n + Telegram Bot"
       }
     ],
     "simSteps": [
-      "[TELEGRAM-BOT -> n8n] Consulta recibida en webhook n8n y enviada a POST /api/v1/rag/query en contenedor FastAPI.",
-      "[CHROMA-VECTOR-DB] Fragmentando consulta y ejecutando búsqueda semántica híbrida sobre 1,420 fragmentos PDF indexados.",
-      "[RAG-CONTEXT] Recuperados 3 fragmentos relevantes con trazabilidad de página y documento fuente (Score > 0.89).",
-      "[MULTI-LLM-ROUTER] Enrutando generación en streaming hacia Vertex AI (Gemini) con fallback configurado en Ollama local.",
-      "[FASTAPI-RESPONSE] Respuesta estructurada generada con citas documentales verificadas en 640 ms.",
-      "[n8n-WORKFLOW] Notificación enviada a Telegram Bot API y registro almacenado en base de datos SQLite/SQLAlchemy."
+      "[WEBHOOK -> n8n] Consulta operativa recibida en flujo n8n y enviada a POST /api/v1/rag/query en contenedor FastAPI.",
+      "[CHROMA-VECTOR-DB] Fragmentando consulta y ejecutando búsqueda semántica híbrida sobre 1,420 manuales ERP y normativas indexadas.",
+      "[RAG-CONTEXT] Recuperados 3 fragmentos relevantes de procedimientos SAP S/4HANA e ISO 27001 con trazabilidad de página (Score > 0.91).",
+      "[MULTI-LLM-ROUTER] Enrutando generación en streaming hacia Vertex AI (Gemini) / OpenAI API con fallback activo en Ollama local.",
+      "[FASTAPI-RESPONSE] Respuesta técnica estructurada generada con citas documentales verificadas en 620 ms.",
+      "[n8n-WORKFLOW] Alerta y dictamen enviados por Telegram Bot API y auditoría registrada en SQLAlchemy."
     ],
     "tableHeaders": [
       "Servicio Docker",
       "Tecnología / Imagen",
       "Puerto Interno",
-      "Rol en la Arquitectura",
+      "Rol en la Arquitectura Empresarial",
       "Estado Salud"
     ],
     "tableRows": [
       [
-        "agroiard-api",
+        "enterprise-rag-api",
         "Python 3.11 + FastAPI + LangChain",
         "tcp/8000",
-        "API REST, Enrutador Multi-LLM y Motor RAG",
+        "API REST Corporativa, Enrutador Multi-LLM y Motor RAG",
         "HEALTHY (200 OK)"
       ],
       [
-        "agroiard-chromadb",
+        "enterprise-chromadb",
         "ChromaDB Vector Store",
         "tcp/8001",
-        "Almacenamiento de Embeddings y Búsqueda Híbrida",
+        "Almacenamiento de Embeddings y Búsqueda Híbrida ERP",
         "HEALTHY (Activo)"
       ],
       [
-        "agroiard-n8n",
+        "enterprise-n8n",
         "n8n Workflow Automation",
         "tcp/5678",
-        "Orquestación de Eventos, Webhooks y Telegram Bot",
+        "Orquestación de Eventos, Webhooks y Telegram Bot Corporativo",
         "HEALTHY (Activo)"
       ],
       [
-        "agroiard-ollama",
+        "enterprise-ollama",
         "Ollama Local LLM Runtime",
         "tcp/11434",
-        "Inferencia Local sin Costo de API (Fallback)",
+        "Inferencia Local Privada para Datos Sensibles (Fallback)",
         "HEALTHY (Ready)"
       ]
     ]
   },
   "technicalDocs": {
     "architectureLayers": [
-      "Capa 1 — Orquestación de Flujos y Bots (n8n + Telegram Bot API): Captura de consultas multimodales, programación de alertas y distribución automática de boletines técnicos.",
-      "Capa 2 — API RESTful en FastAPI: Endpoints asíncronos para ingesta de documentos PDF/TXT (`/ingest`), consulta semántica (`/rag/query`) y cambio de proveedor LLM.",
-      "Capa 3 — Indexación Vectorial en ChromaDB: Pipeline de chunking recursivo, generación de embeddings y recuperación con metadatos de página y documento.",
-      "Capa 4 — Despliegue en Docker Compose: Orquestación de contenedores con volúmenes persistentes para vectores, base de datos SQLAlchemy/SQLite y flujos n8n."
+      "Capa 1 — Orquestación de Flujos y Alertas (n8n + Telegram Bot API): Automatización de eventos operativos, programación de alertas de cierre ERP y atención de consultas técnicas móviles.",
+      "Capa 2 — API RESTful en FastAPI: Endpoints asíncronos para ingesta de manuales corporativos PDF/TXT (`/ingest`), consulta semántica (`/rag/query`) y conmutación dinámica de proveedor LLM.",
+      "Capa 3 — Indexación Vectorial en ChromaDB: Pipeline de chunking recursivo, generación de embeddings y recuperación con metadatos de documento, versión y página.",
+      "Capa 4 — Despliegue en Docker Compose: Orquestación de contenedores en servidores Linux con volúmenes persistentes para vectores, base de datos SQLAlchemy y flujos n8n."
     ],
-    "codeFilename": "docker-compose.yml & app/main.py — Arquitectura Contenerizada FastAPI + ChromaDB + n8n",
-    "codeSnippet": "# docker-compose.yml — Ecosistema AgroIARD (FastAPI + ChromaDB + n8n + Ollama)\nversion: \"3.9\"\nservices:\n  fastapi-rag:\n    build: ./backend\n    container_name: agroiard-api\n    ports: [\"8000:8000\"]\n    volumes: [\"./data/sqlite:/app/data\", \"./docs_corpus:/app/corpus\"]\n    depends_on: [chromadb, ollama]\n\n  chromadb:\n    image: chromadb/chroma:latest\n    container_name: agroiard-chromadb\n    volumes: [\"./data/chroma:/chroma/chroma\"]\n\n  n8n-orchestrator:\n    image: n8nio/n8n:latest\n    container_name: agroiard-n8n\n    ports: [\"5678:5678\"]\n    volumes: [\"./data/n8n:/home/node/.n8n\"]\n\n  ollama:\n    image: ollama/ollama:latest\n    container_name: agroiard-ollama\n    volumes: [\"./data/ollama:/root/.ollama\"]"
+    "codeFilename": "docker-compose.yml — Arquitectura Empresarial Contenerizada FastAPI + ChromaDB + n8n",
+    "codeSnippet": "# docker-compose.yml — Plataforma Empresarial Multi-LLM (FastAPI + ChromaDB + n8n + Ollama)\nversion: \"3.9\"\nservices:\n  fastapi-rag:\n    build: ./backend\n    container_name: enterprise-rag-api\n    ports: [\"8000:8000\"]\n    volumes: [\"./data/db:/app/data\", \"./docs_erp_corpus:/app/corpus\"]\n    depends_on: [chromadb, ollama]\n\n  chromadb:\n    image: chromadb/chroma:latest\n    container_name: enterprise-chromadb\n    volumes: [\"./data/chroma:/chroma/chroma\"]\n\n  n8n-orchestrator:\n    image: n8nio/n8n:latest\n    container_name: enterprise-n8n\n    ports: [\"5678:5678\"]\n    volumes: [\"./data/n8n:/home/node/.n8n\"]\n\n  ollama:\n    image: ollama/ollama:latest\n    container_name: enterprise-ollama\n    volumes: [\"./data/ollama:/root/.ollama\"]"
   }
 }

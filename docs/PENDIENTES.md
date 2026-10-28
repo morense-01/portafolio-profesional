@@ -29,7 +29,7 @@
 
 ## Proyectos
 
-### 4. AgroIARD — Plataforma de Agente de IA Multimodal con RAG, FastAPI, Docker y Bots API
+### 4. Plataforma Empresarial Contenerizada Multi-LLM con RAG, FastAPI, Docker y Orquestación n8n (En producción, 2025)
 
 ### 6. Sistema de Automatización Operativa (Power Automate / Python), Pipelines ETL y Alta Disponibilidad Cloud
 
@@ -47,7 +47,7 @@
 
 ### Infraestructura de Nube Híbrida (AWS / Azure), Continuidad BCP/DRP y Gobierno FinOps
 
-### 8. Plataforma de Automatización Financiera (Linux/Windows/SQL) y Migración Cloud Híbrida (ISO 27001 / NIST)
+### 8. Plataforma de Automatización (Linux/Windows/SQL) y Migración Cloud Híbrida (ISO 27001 / NIST) — Sector Financiero y Sector Salud
 
 ### Ruta 66: Aplicación Web Progresiva (PWA) Full Stack con Arquitectura Offline-First
 
@@ -55,7 +55,7 @@
 
 ### Sistema de Telemetría Industrial, Monitoreo Proactivo de Redes y Continuidad en Planta
 
-### 3. WaliControl — Agente de IA Conversacional para Registro Operativo y Contable por Voz
+### 3. Agente de IA Conversacional y Automatización Operativa por Voz/Webhooks para Logística y Despacho (En producción, 2025)
 
 ## Métricas pendientes de validación (ocultas)
 
@@ -100,6 +100,13 @@
 - [x] Model Context Protocol: Advanced Topics (Anthropic (Skilljar)): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
 - [x] Introduction to Model Context Protocol (Anthropic (Skilljar)): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
 - [x] Introduction to Claude Cowork (Anthropic (Skilljar)): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] ChatGPT & OpenAI API: Prompt Engineering y LLM Structured Outputs (JSON Schema) (OpenAI / DeepLearning.AI): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] Prompt Engineering for Generative AI & Enterprise Agents (OpenAI / Formación Especializada en IA): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] Introducción a la Inteligencia Artificial y Modelos Fundacionales (Formación Especializada en IA): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] n8n Workflow Automation & AI Agent Orchestration (n8n): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] SAP S/4HANA & Enterprise ERP Integration Architecture (SAP Learning): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] Docker Essentials: Containerization & Docker Compose for Microservices (Docker): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
+- [x] Microsoft Azure AI Fundamentals: Generative AI & NLP Workloads (Microsoft Learn): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
 - [x] Carta al Mérito: CCNA v7: Introducción a Redes (Cisco): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
 - [x] Carta al Mérito: IT Essentials (Cisco): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.
 - [x] Ethical Hacking from A–Z (Pentesting & Corporate Defense) (Educación Especializada en Ciberseguridad): confirmar denominación oficial, tipo, fecha, enlace de verificación e imagen autorizada.

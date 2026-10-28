@@ -638,10 +638,31 @@
       ],
       "certIds": [
         "titulo-ingeniero-sistemas-oym",
+        "especialidad-ti",
+        "especialidad-tratamiento-datos",
+        "especialidad-integrador-iot",
+        "diplomado-inteligencia-de-negocios",
+        "diplomado-computo-en-la-nube",
+        "diplomado-sistemas-informaticos",
+        "diplomado-integridad-web",
+        "diplomado-iot",
         "anthropic-mcp-advanced",
         "anthropic-mcp-intro",
         "anthropic-claude-cowork",
+        "openai-prompt-engineering-llm",
+        "prompt-engineering-specialist",
+        "intro-inteligencia-artificial-badge",
+        "n8n-workflow-automation-ai",
+        "sap-erp-s4hana-integration",
+        "docker-containers-microservices",
         "ms-rag-fundamentals",
+        "ms-ai-fundamentals-azure",
+        "ms-copilot-productivity",
+        "ms-computer-vision-azure",
+        "ms-fabric-analytics",
+        "ms-data-analytics-path",
+        "ms-clean-data-power-bi",
+        "ms-dax-formulas",
         "google-vertex-ai-studio",
         "google-large-language-models",
         "google-transformer-bert",
@@ -650,15 +671,21 @@
         "google-responsible-ai",
         "google-image-captioning",
         "google-image-generation",
-        "ms-computer-vision-azure",
-        "ms-copilot-productivity",
-        "ms-fabric-analytics",
         "cisco-python-essentials",
         "ndg-linux-essentials",
         "ndg-linux-unhatched",
         "aws-certified-cloud-practitioner",
+        "aws-cloud-101",
+        "ibm-cloud-essentials",
+        "ibm-cybersecurity-fundamentals",
         "fortinet-nse4",
-        "mcsa-windows-server"
+        "mcsa-windows-server",
+        "microsoft-sql-server-infraestructura",
+        "fcs-analista-datos",
+        "fcs-curador-bases-datos",
+        "fcs-asesor-infraestructura-nube",
+        "fcs-seguridad-informatica-servidores",
+        "eset-curso-backup-continuidad"
       ],
       "traceabilityMatrix": [
         {
@@ -667,6 +694,7 @@
           "experienceFocus": "Encargado de TI (Desarrollo de IA, Automatización e Integración ERP): Motor automatizado en Python para lectura, validación XSD (DGII) e inyección de e-CF (XML) hacia SAP ERP y SQL Server.",
           "certIds": [
             "titulo-ingeniero-sistemas-oym",
+            "sap-erp-s4hana-integration",
             "cisco-python-essentials",
             "ms-fabric-analytics"
           ],
@@ -699,7 +727,8 @@
           "certIds": [
             "diplomado-integridad-web",
             "diplomado-sistemas-informaticos",
-            "ms-dax-formulas"
+            "ms-dax-formulas",
+            "ms-clean-data-power-bi"
           ],
           "achievementSummary": "Eliminación del 100% de registros manuales en papel y reducción del 60% en el tiempo de consulta de datos de auditoría (<10 seg).",
           "metricId": "sistema-control-calidad-industrial",
@@ -707,19 +736,20 @@
           "evidenceSummary": "Sistema web interactivo de Control de Calidad, controlador REST API en Node.js (quality_api_controller.js) y emisión de certificados."
         },
         {
-          "company": "WaliControl & AgroIARD (Proyectos de Agentes de IA y Automatización, 2025)",
-          "companySlug": "astro-pico-duarte-carton",
-          "experienceFocus": "Agente conversacional por voz (Speech-to-Text, Webhooks WhatsApp, JSON Schema, PostgreSQL, Pgvector, Redis, Google Sheets) y Plataforma Multimodal RAG en FastAPI, ChromaDB, Docker Compose, n8n y Telegram Bot API.",
+          "company": "ODS Logistics (2024 - 2026)",
+          "companySlug": "ods-odw-logistics",
+          "experienceFocus": "Consultor de Infraestructura TI, Automatización e Integración de Sistemas: Agente de IA conversacional empresarial por voz y texto (Speech-to-Text API, Webhooks WhatsApp Business, LLM Structured Outputs con JSON Schema) sincronizado con PostgreSQL, Pgvector, Redis, SQL Server y Google Sheets API para registro automatizado de recepciones, despachos y gastos de flota.",
           "certIds": [
+            "openai-prompt-engineering-llm",
+            "prompt-engineering-specialist",
             "google-transformer-bert",
             "google-genai-fundamentals",
-            "ms-copilot-productivity",
-            "ndg-linux-essentials"
+            "ms-copilot-productivity"
           ],
-          "achievementSummary": "Eliminación del 100% de digitación manual por voz y orquestación contenerizada multi-LLM (OpenAI, Claude, Gemini, Ollama).",
-          "metricId": "ecosistema-ti-productividad",
+          "achievementSummary": "Eliminación del 100% de la digitación manual en reportes de rampa, almacén y flota, estandarizando las entradas operativas y contables en tiempo real.",
+          "metricId": "precision-inventario-30",
           "projectSlug": "walicontrol",
-          "evidenceSummary": "Consolas interactivas de WaliControl (walicontrol_extractor.py) y AgroIARD (docker-compose.yml + FastAPI + ChromaDB + n8n)."
+          "evidenceSummary": "Consola interactiva del Agente Empresarial de Voz para Logística y Despacho (ods_voice_agent_extractor.py) con validación JSON Schema y Pgvector."
         },
         {
           "company": "ODS Logistics (2024 - 2026)",
@@ -739,12 +769,27 @@
         {
           "company": "Madeco (2022 - 2024)",
           "companySlug": "madeco",
+          "experienceFocus": "Gerente de Tecnología (Arquitectura de Datos, ERP y Automatización): Plataforma empresarial contenerizada Multi-LLM con RAG en FastAPI, ChromaDB, Docker Compose y orquestación n8n + Telegram Bot API para consulta de manuales ERP y alertas operativas.",
+          "certIds": [
+            "docker-containers-microservices",
+            "n8n-workflow-automation-ai",
+            "openai-prompt-engineering-llm",
+            "ndg-linux-essentials"
+          ],
+          "achievementSummary": "Orquestación contenerizada Multi-LLM (OpenAI, Claude, Gemini, Ollama) en producción y automatización de consultas técnicas y alertas con n8n.",
+          "metricId": "automatizacion-procesos-madeco",
+          "projectSlug": "agente-ia-agricultura",
+          "evidenceSummary": "Consola interactiva de la Plataforma Empresarial Multi-LLM + ChromaDB + Docker Compose + n8n (docker-compose.yml)."
+        },
+        {
+          "company": "Madeco (2022 - 2024)",
+          "companySlug": "madeco",
           "experienceFocus": "Gerente de Tecnología (Arquitectura de Datos, ERP y Automatización): Data Warehouse centralizado en SQL Server con ETL automatizado integrando SAP S/4HANA, Dynamics 365 y Oracle; flujos M365 y seguridad de integraciones.",
           "certIds": [
             "diplomado-inteligencia-de-negocios",
+            "sap-erp-s4hana-integration",
             "ms-fabric-analytics",
-            "microsoft-sql-server-infraestructura",
-            "fortinet-nse4"
+            "microsoft-sql-server-infraestructura"
           ],
           "achievementSummary": "Reducción del 70% en el tiempo de cierre y reportería gerencial (+2,000h ahorradas) y reducción del 60% en incidentes de seguridad.",
           "metricId": "automatizacion-procesos-madeco",
@@ -752,9 +797,9 @@
           "evidenceSummary": "Consola interactiva del Data Warehouse Multi-ERP y procedimiento almacenado T-SQL (sp_ETL_ConsolidarCierreERP.sql)."
         },
         {
-          "company": "Unipago — Sector Financiero (2020 - 2022)",
+          "company": "Unipago — Sector Financiero y Sector Salud (2020 - 2022)",
           "companySlug": "unipago",
-          "experienceFocus": "Especialista de Infraestructura y Plataformas de Datos: Automatización de mantenimiento, validación de respaldos y monitoreo sobre Linux, Windows Server y SQL Server; migración de 15 servidores físicos a nube híbrida (Azure/AWS).",
+          "experienceFocus": "Especialista de Infraestructura y Plataformas de Datos (Sector Financiero y Sector Salud): Automatización de mantenimiento, validación de respaldos y monitoreo sobre Linux, Windows Server y SQL Server; migración de 15 servidores físicos a nube híbrida (Azure/AWS).",
           "certIds": [
             "mcsa-windows-server",
             "aws-certified-cloud-practitioner",
@@ -764,7 +809,7 @@
           "achievementSummary": "15 servidores migrados con integridad total, -65% en tiempo de reportería regulatoria y cero hallazgos críticos en 3 auditorías consecutivas (ISO 27001 / NIST CSF).",
           "metricId": "auditorias-cero-hallazgos",
           "projectSlug": "optimizacion-dba-sql-cumplimiento-unipago",
-          "evidenceSummary": "Consola interactiva de Auditoría Financiera ISO 27001 / Always On y script PowerShell/SQL (unipago_sql_cloud_validator.ps1)."
+          "evidenceSummary": "Consola interactiva de Auditoría Financiera y Salud ISO 27001 / Always On y script PowerShell/SQL (unipago_sql_cloud_validator.ps1)."
         }
       ],
       "experiences": [
@@ -839,12 +884,12 @@
         },
         {
           "companySlug": "unipago",
-          "company": "Unipago",
+          "company": "Unipago — Sector Financiero y Sector Salud",
           "roleTitle": "Especialista de Infraestructura y Plataformas de Datos",
-          "period": "2020-03 - 2022-01 · Santo Domingo, RD · Sector Financiero",
-          "summary": "Automatización y soporte de plataformas financieras de misión crítica y migración a infraestructura virtualizada y nube híbrida bajo normativas ISO 27001 / NIST CSF.",
+          "period": "2020-03 - 2022-01 · Santo Domingo, RD · Sector Financiero y Sector Salud",
+          "summary": "Automatización y soporte de plataformas transaccionales de misión crítica en el Sector Financiero y Sector Salud, y migración a infraestructura virtualizada y nube híbrida bajo normativas ISO 27001 / NIST CSF.",
           "achievements": [
-            "<strong>Automatización y soporte de plataformas financieras:</strong> Administré y automaticé tareas de mantenimiento, validación de respaldos y monitoreo sobre servidores Linux, Windows Server y bases de datos SQL Server en un entorno transaccional financiero de alta criticidad.",
+            "<strong>Automatización y soporte de plataformas del Sector Financiero y Sector Salud:</strong> Administré y automaticé tareas de mantenimiento, validación de respaldos y monitoreo sobre servidores Linux, Windows Server y bases de datos SQL Server en un entorno transaccional financiero y de salud de alta criticidad.",
             "<strong>Migración a la nube e integración de servicios:</strong> Ejecuté la migración de 15 servidores físicos hacia infraestructura virtualizada y nube híbrida (Azure/AWS), garantizando la integridad de las bases de datos y obteniendo cero hallazgos críticos en 3 auditorías consecutivas (ISO 27001 / NIST CSF)."
           ],
           "technologies": [
@@ -885,8 +930,7 @@
           "title": "Calidad, Seguridad y Metodologías",
           "desc": "Validación de esquemas de datos (JSON Schema / XSD), pruebas funcionales e integrales, control de errores y trazabilidad (logging/auditoría), seguridad de datos (ISO 27001, NIST CSF, Fortinet NSE 4) y documentación técnica."
         }
-      ],
-      "languages": "Español: Nativo | Inglés: Básico / Técnico (lectura comprensiva de documentación técnica, APIs, repositorios y herramientas de desarrollo; nivel conversacional A1-A2)."
+      ]
     },
     {
       "slug": "ingeniero-de-automatizacion",
@@ -928,26 +972,54 @@
       ],
       "certIds": [
         "titulo-ingeniero-sistemas-oym",
+        "especialidad-ti",
+        "especialidad-tratamiento-datos",
         "especialidad-integrador-iot",
+        "diplomado-inteligencia-de-negocios",
+        "diplomado-computo-en-la-nube",
+        "diplomado-sistemas-informaticos",
+        "diplomado-integridad-web",
         "diplomado-iot",
-        "cisco-python-essentials",
-        "ms-copilot-productivity",
-        "cisco-intro-iot",
-        "ndg-linux-essentials",
-        "google-infraestructura-servicios-ti",
-        "mcsa-windows-server",
         "anthropic-mcp-advanced",
         "anthropic-mcp-intro",
         "anthropic-claude-cowork",
+        "openai-prompt-engineering-llm",
+        "prompt-engineering-specialist",
+        "intro-inteligencia-artificial-badge",
+        "n8n-workflow-automation-ai",
+        "sap-erp-s4hana-integration",
+        "docker-containers-microservices",
         "ms-rag-fundamentals",
+        "ms-ai-fundamentals-azure",
+        "ms-copilot-productivity",
+        "ms-computer-vision-azure",
+        "ms-fabric-analytics",
+        "ms-data-analytics-path",
+        "ms-clean-data-power-bi",
+        "ms-dax-formulas",
         "google-vertex-ai-studio",
         "google-large-language-models",
         "google-transformer-bert",
         "google-genai-fundamentals",
-        "ms-fabric-analytics",
+        "google-intro-genai",
+        "google-responsible-ai",
+        "google-image-captioning",
+        "google-image-generation",
+        "cisco-python-essentials",
+        "ndg-linux-essentials",
         "ndg-linux-unhatched",
         "aws-certified-cloud-practitioner",
-        "fortinet-nse4"
+        "aws-cloud-101",
+        "ibm-cloud-essentials",
+        "ibm-cybersecurity-fundamentals",
+        "fortinet-nse4",
+        "mcsa-windows-server",
+        "microsoft-sql-server-infraestructura",
+        "fcs-analista-datos",
+        "fcs-curador-bases-datos",
+        "fcs-asesor-infraestructura-nube",
+        "fcs-seguridad-informatica-servidores",
+        "eset-curso-backup-continuidad"
       ],
       "traceabilityMatrix": [
         {
@@ -956,6 +1028,7 @@
           "experienceFocus": "Encargado de TI (Desarrollo de IA, Automatización e Integración ERP): Motor automatizado en Python para lectura, validación XSD (DGII) e inyección de e-CF (XML) hacia SAP ERP y SQL Server.",
           "certIds": [
             "titulo-ingeniero-sistemas-oym",
+            "sap-erp-s4hana-integration",
             "cisco-python-essentials",
             "ms-fabric-analytics"
           ],
@@ -988,7 +1061,8 @@
           "certIds": [
             "diplomado-integridad-web",
             "diplomado-sistemas-informaticos",
-            "ms-dax-formulas"
+            "ms-dax-formulas",
+            "ms-clean-data-power-bi"
           ],
           "achievementSummary": "Eliminación del 100% de registros manuales en papel y reducción del 60% en el tiempo de consulta de datos de auditoría (<10 seg).",
           "metricId": "sistema-control-calidad-industrial",
@@ -996,19 +1070,20 @@
           "evidenceSummary": "Sistema web interactivo de Control de Calidad, controlador REST API en Node.js (quality_api_controller.js) y emisión de certificados."
         },
         {
-          "company": "WaliControl & AgroIARD (Proyectos de Agentes de IA y Automatización, 2025)",
-          "companySlug": "astro-pico-duarte-carton",
-          "experienceFocus": "Agente conversacional por voz (Speech-to-Text, Webhooks WhatsApp, JSON Schema, PostgreSQL, Pgvector, Redis, Google Sheets) y Plataforma Multimodal RAG en FastAPI, ChromaDB, Docker Compose, n8n y Telegram Bot API.",
+          "company": "ODS Logistics (2024 - 2026)",
+          "companySlug": "ods-odw-logistics",
+          "experienceFocus": "Consultor de Infraestructura TI, Automatización e Integración de Sistemas: Agente de IA conversacional empresarial por voz y texto (Speech-to-Text API, Webhooks WhatsApp Business, LLM Structured Outputs con JSON Schema) sincronizado con PostgreSQL, Pgvector, Redis, SQL Server y Google Sheets API para registro automatizado de recepciones, despachos y gastos de flota.",
           "certIds": [
+            "openai-prompt-engineering-llm",
+            "prompt-engineering-specialist",
             "google-transformer-bert",
             "google-genai-fundamentals",
-            "ms-copilot-productivity",
-            "ndg-linux-essentials"
+            "ms-copilot-productivity"
           ],
-          "achievementSummary": "Eliminación del 100% de digitación manual por voz y orquestación contenerizada multi-LLM (OpenAI, Claude, Gemini, Ollama).",
-          "metricId": "ecosistema-ti-productividad",
+          "achievementSummary": "Eliminación del 100% de la digitación manual en reportes de rampa, almacén y flota, estandarizando las entradas operativas y contables en tiempo real.",
+          "metricId": "precision-inventario-30",
           "projectSlug": "walicontrol",
-          "evidenceSummary": "Consolas interactivas de WaliControl (walicontrol_extractor.py) y AgroIARD (docker-compose.yml + FastAPI + ChromaDB + n8n)."
+          "evidenceSummary": "Consola interactiva del Agente Empresarial de Voz para Logística y Despacho (ods_voice_agent_extractor.py) con validación JSON Schema y Pgvector."
         },
         {
           "company": "ODS Logistics (2024 - 2026)",
@@ -1028,12 +1103,27 @@
         {
           "company": "Madeco (2022 - 2024)",
           "companySlug": "madeco",
+          "experienceFocus": "Gerente de Tecnología (Arquitectura de Datos, ERP y Automatización): Plataforma empresarial contenerizada Multi-LLM con RAG en FastAPI, ChromaDB, Docker Compose y orquestación n8n + Telegram Bot API para consulta de manuales ERP y alertas operativas.",
+          "certIds": [
+            "docker-containers-microservices",
+            "n8n-workflow-automation-ai",
+            "openai-prompt-engineering-llm",
+            "ndg-linux-essentials"
+          ],
+          "achievementSummary": "Orquestación contenerizada Multi-LLM (OpenAI, Claude, Gemini, Ollama) en producción y automatización de consultas técnicas y alertas con n8n.",
+          "metricId": "automatizacion-procesos-madeco",
+          "projectSlug": "agente-ia-agricultura",
+          "evidenceSummary": "Consola interactiva de la Plataforma Empresarial Multi-LLM + ChromaDB + Docker Compose + n8n (docker-compose.yml)."
+        },
+        {
+          "company": "Madeco (2022 - 2024)",
+          "companySlug": "madeco",
           "experienceFocus": "Gerente de Tecnología (Arquitectura de Datos, ERP y Automatización): Data Warehouse centralizado en SQL Server con ETL automatizado integrando SAP S/4HANA, Dynamics 365 y Oracle; flujos M365 y seguridad de integraciones.",
           "certIds": [
             "diplomado-inteligencia-de-negocios",
+            "sap-erp-s4hana-integration",
             "ms-fabric-analytics",
-            "microsoft-sql-server-infraestructura",
-            "fortinet-nse4"
+            "microsoft-sql-server-infraestructura"
           ],
           "achievementSummary": "Reducción del 70% en el tiempo de cierre y reportería gerencial (+2,000h ahorradas) y reducción del 60% en incidentes de seguridad.",
           "metricId": "automatizacion-procesos-madeco",
@@ -1041,9 +1131,9 @@
           "evidenceSummary": "Consola interactiva del Data Warehouse Multi-ERP y procedimiento almacenado T-SQL (sp_ETL_ConsolidarCierreERP.sql)."
         },
         {
-          "company": "Unipago — Sector Financiero (2020 - 2022)",
+          "company": "Unipago — Sector Financiero y Sector Salud (2020 - 2022)",
           "companySlug": "unipago",
-          "experienceFocus": "Especialista de Infraestructura y Plataformas de Datos: Automatización de mantenimiento, validación de respaldos y monitoreo sobre Linux, Windows Server y SQL Server; migración de 15 servidores físicos a nube híbrida (Azure/AWS).",
+          "experienceFocus": "Especialista de Infraestructura y Plataformas de Datos (Sector Financiero y Sector Salud): Automatización de mantenimiento, validación de respaldos y monitoreo sobre Linux, Windows Server y SQL Server; migración de 15 servidores físicos a nube híbrida (Azure/AWS).",
           "certIds": [
             "mcsa-windows-server",
             "aws-certified-cloud-practitioner",
@@ -1053,7 +1143,7 @@
           "achievementSummary": "15 servidores migrados con integridad total, -65% en tiempo de reportería regulatoria y cero hallazgos críticos en 3 auditorías consecutivas (ISO 27001 / NIST CSF).",
           "metricId": "auditorias-cero-hallazgos",
           "projectSlug": "optimizacion-dba-sql-cumplimiento-unipago",
-          "evidenceSummary": "Consola interactiva de Auditoría Financiera ISO 27001 / Always On y script PowerShell/SQL (unipago_sql_cloud_validator.ps1)."
+          "evidenceSummary": "Consola interactiva de Auditoría Financiera y Salud ISO 27001 / Always On y script PowerShell/SQL (unipago_sql_cloud_validator.ps1)."
         }
       ],
       "experiences": [
@@ -1128,12 +1218,12 @@
         },
         {
           "companySlug": "unipago",
-          "company": "Unipago",
+          "company": "Unipago — Sector Financiero y Sector Salud",
           "roleTitle": "Especialista de Infraestructura y Plataformas de Datos",
-          "period": "2020-03 - 2022-01 · Santo Domingo, RD · Sector Financiero",
-          "summary": "Automatización y soporte de plataformas financieras de misión crítica y migración a infraestructura virtualizada y nube híbrida bajo normativas ISO 27001 / NIST CSF.",
+          "period": "2020-03 - 2022-01 · Santo Domingo, RD · Sector Financiero y Sector Salud",
+          "summary": "Automatización y soporte de plataformas transaccionales de misión crítica en el Sector Financiero y Sector Salud, y migración a infraestructura virtualizada y nube híbrida bajo normativas ISO 27001 / NIST CSF.",
           "achievements": [
-            "<strong>Automatización y soporte de plataformas financieras:</strong> Administré y automaticé tareas de mantenimiento, validación de respaldos y monitoreo sobre servidores Linux, Windows Server y bases de datos SQL Server en un entorno transaccional financiero de alta criticidad.",
+            "<strong>Automatización y soporte de plataformas del Sector Financiero y Sector Salud:</strong> Administré y automaticé tareas de mantenimiento, validación de respaldos y monitoreo sobre servidores Linux, Windows Server y bases de datos SQL Server en un entorno transaccional financiero y de salud de alta criticidad.",
             "<strong>Migración a la nube e integración de servicios:</strong> Ejecuté la migración de 15 servidores físicos hacia infraestructura virtualizada y nube híbrida (Azure/AWS), garantizando la integridad de las bases de datos y obteniendo cero hallazgos críticos en 3 auditorías consecutivas (ISO 27001 / NIST CSF)."
           ],
           "technologies": [
@@ -1174,8 +1264,7 @@
           "title": "Calidad, Seguridad y Metodologías",
           "desc": "Validación de esquemas de datos (JSON Schema / XSD), pruebas funcionales e integrales, control de errores y trazabilidad (logging/auditoría), seguridad de datos (ISO 27001, NIST CSF, Fortinet NSE 4) y documentación técnica."
         }
-      ],
-      "languages": "Español: Nativo | Inglés: Básico / Técnico (lectura comprensiva de documentación técnica, APIs, repositorios y herramientas de desarrollo; nivel conversacional A1-A2)."
+      ]
     },
     {
       "slug": "desarrollador-full-stack",
@@ -1218,12 +1307,53 @@
       "certIds": [
         "titulo-ingeniero-sistemas-oym",
         "especialidad-ti",
-        "diplomado-integridad-web",
-        "diplomado-sistemas-informaticos",
         "especialidad-tratamiento-datos",
+        "especialidad-integrador-iot",
+        "diplomado-inteligencia-de-negocios",
+        "diplomado-computo-en-la-nube",
+        "diplomado-sistemas-informaticos",
+        "diplomado-integridad-web",
+        "diplomado-iot",
+        "anthropic-mcp-advanced",
+        "anthropic-mcp-intro",
+        "anthropic-claude-cowork",
+        "openai-prompt-engineering-llm",
+        "prompt-engineering-specialist",
+        "intro-inteligencia-artificial-badge",
+        "n8n-workflow-automation-ai",
+        "sap-erp-s4hana-integration",
+        "docker-containers-microservices",
+        "ms-rag-fundamentals",
+        "ms-ai-fundamentals-azure",
+        "ms-copilot-productivity",
+        "ms-computer-vision-azure",
+        "ms-fabric-analytics",
+        "ms-data-analytics-path",
+        "ms-clean-data-power-bi",
+        "ms-dax-formulas",
+        "google-vertex-ai-studio",
+        "google-large-language-models",
+        "google-transformer-bert",
+        "google-genai-fundamentals",
+        "google-intro-genai",
+        "google-responsible-ai",
+        "google-image-captioning",
+        "google-image-generation",
         "cisco-python-essentials",
+        "ndg-linux-essentials",
+        "ndg-linux-unhatched",
+        "aws-certified-cloud-practitioner",
+        "aws-cloud-101",
+        "ibm-cloud-essentials",
+        "ibm-cybersecurity-fundamentals",
+        "fortinet-nse4",
+        "mcsa-windows-server",
         "microsoft-sql-server-infraestructura",
-        "ndg-linux-essentials"
+        "fcs-analista-datos",
+        "fcs-curador-bases-datos",
+        "fcs-asesor-infraestructura-nube",
+        "fcs-seguridad-informatica-servidores",
+        "eset-curso-backup-continuidad"
       ],
       "traceabilityMatrix": [
         {
@@ -1232,6 +1362,7 @@
           "experienceFocus": "Encargado de TI (Desarrollo de IA, Automatización e Integración ERP): Motor automatizado en Python para lectura, validación XSD (DGII) e inyección de e-CF (XML) hacia SAP ERP y SQL Server.",
           "certIds": [
             "titulo-ingeniero-sistemas-oym",
+            "sap-erp-s4hana-integration",
             "cisco-python-essentials",
             "ms-fabric-analytics"
           ],
@@ -1264,7 +1395,8 @@
           "certIds": [
             "diplomado-integridad-web",
             "diplomado-sistemas-informaticos",
-            "ms-dax-formulas"
+            "ms-dax-formulas",
+            "ms-clean-data-power-bi"
           ],
           "achievementSummary": "Eliminación del 100% de registros manuales en papel y reducción del 60% en el tiempo de consulta de datos de auditoría (<10 seg).",
           "metricId": "sistema-control-calidad-industrial",
@@ -1272,19 +1404,20 @@
           "evidenceSummary": "Sistema web interactivo de Control de Calidad, controlador REST API en Node.js (quality_api_controller.js) y emisión de certificados."
         },
         {
-          "company": "WaliControl & AgroIARD (Proyectos de Agentes de IA y Automatización, 2025)",
-          "companySlug": "astro-pico-duarte-carton",
-          "experienceFocus": "Agente conversacional por voz (Speech-to-Text, Webhooks WhatsApp, JSON Schema, PostgreSQL, Pgvector, Redis, Google Sheets) y Plataforma Multimodal RAG en FastAPI, ChromaDB, Docker Compose, n8n y Telegram Bot API.",
+          "company": "ODS Logistics (2024 - 2026)",
+          "companySlug": "ods-odw-logistics",
+          "experienceFocus": "Consultor de Infraestructura TI, Automatización e Integración de Sistemas: Agente de IA conversacional empresarial por voz y texto (Speech-to-Text API, Webhooks WhatsApp Business, LLM Structured Outputs con JSON Schema) sincronizado con PostgreSQL, Pgvector, Redis, SQL Server y Google Sheets API para registro automatizado de recepciones, despachos y gastos de flota.",
           "certIds": [
+            "openai-prompt-engineering-llm",
+            "prompt-engineering-specialist",
             "google-transformer-bert",
             "google-genai-fundamentals",
-            "ms-copilot-productivity",
-            "ndg-linux-essentials"
+            "ms-copilot-productivity"
           ],
-          "achievementSummary": "Eliminación del 100% de digitación manual por voz y orquestación contenerizada multi-LLM (OpenAI, Claude, Gemini, Ollama).",
-          "metricId": "ecosistema-ti-productividad",
+          "achievementSummary": "Eliminación del 100% de la digitación manual en reportes de rampa, almacén y flota, estandarizando las entradas operativas y contables en tiempo real.",
+          "metricId": "precision-inventario-30",
           "projectSlug": "walicontrol",
-          "evidenceSummary": "Consolas interactivas de WaliControl (walicontrol_extractor.py) y AgroIARD (docker-compose.yml + FastAPI + ChromaDB + n8n)."
+          "evidenceSummary": "Consola interactiva del Agente Empresarial de Voz para Logística y Despacho (ods_voice_agent_extractor.py) con validación JSON Schema y Pgvector."
         },
         {
           "company": "ODS Logistics (2024 - 2026)",
@@ -1304,12 +1437,27 @@
         {
           "company": "Madeco (2022 - 2024)",
           "companySlug": "madeco",
+          "experienceFocus": "Gerente de Tecnología (Arquitectura de Datos, ERP y Automatización): Plataforma empresarial contenerizada Multi-LLM con RAG en FastAPI, ChromaDB, Docker Compose y orquestación n8n + Telegram Bot API para consulta de manuales ERP y alertas operativas.",
+          "certIds": [
+            "docker-containers-microservices",
+            "n8n-workflow-automation-ai",
+            "openai-prompt-engineering-llm",
+            "ndg-linux-essentials"
+          ],
+          "achievementSummary": "Orquestación contenerizada Multi-LLM (OpenAI, Claude, Gemini, Ollama) en producción y automatización de consultas técnicas y alertas con n8n.",
+          "metricId": "automatizacion-procesos-madeco",
+          "projectSlug": "agente-ia-agricultura",
+          "evidenceSummary": "Consola interactiva de la Plataforma Empresarial Multi-LLM + ChromaDB + Docker Compose + n8n (docker-compose.yml)."
+        },
+        {
+          "company": "Madeco (2022 - 2024)",
+          "companySlug": "madeco",
           "experienceFocus": "Gerente de Tecnología (Arquitectura de Datos, ERP y Automatización): Data Warehouse centralizado en SQL Server con ETL automatizado integrando SAP S/4HANA, Dynamics 365 y Oracle; flujos M365 y seguridad de integraciones.",
           "certIds": [
             "diplomado-inteligencia-de-negocios",
+            "sap-erp-s4hana-integration",
             "ms-fabric-analytics",
-            "microsoft-sql-server-infraestructura",
-            "fortinet-nse4"
+            "microsoft-sql-server-infraestructura"
           ],
           "achievementSummary": "Reducción del 70% en el tiempo de cierre y reportería gerencial (+2,000h ahorradas) y reducción del 60% en incidentes de seguridad.",
           "metricId": "automatizacion-procesos-madeco",
@@ -1317,9 +1465,9 @@
           "evidenceSummary": "Consola interactiva del Data Warehouse Multi-ERP y procedimiento almacenado T-SQL (sp_ETL_ConsolidarCierreERP.sql)."
         },
         {
-          "company": "Unipago — Sector Financiero (2020 - 2022)",
+          "company": "Unipago — Sector Financiero y Sector Salud (2020 - 2022)",
           "companySlug": "unipago",
-          "experienceFocus": "Especialista de Infraestructura y Plataformas de Datos: Automatización de mantenimiento, validación de respaldos y monitoreo sobre Linux, Windows Server y SQL Server; migración de 15 servidores físicos a nube híbrida (Azure/AWS).",
+          "experienceFocus": "Especialista de Infraestructura y Plataformas de Datos (Sector Financiero y Sector Salud): Automatización de mantenimiento, validación de respaldos y monitoreo sobre Linux, Windows Server y SQL Server; migración de 15 servidores físicos a nube híbrida (Azure/AWS).",
           "certIds": [
             "mcsa-windows-server",
             "aws-certified-cloud-practitioner",
@@ -1329,7 +1477,7 @@
           "achievementSummary": "15 servidores migrados con integridad total, -65% en tiempo de reportería regulatoria y cero hallazgos críticos en 3 auditorías consecutivas (ISO 27001 / NIST CSF).",
           "metricId": "auditorias-cero-hallazgos",
           "projectSlug": "optimizacion-dba-sql-cumplimiento-unipago",
-          "evidenceSummary": "Consola interactiva de Auditoría Financiera ISO 27001 / Always On y script PowerShell/SQL (unipago_sql_cloud_validator.ps1)."
+          "evidenceSummary": "Consola interactiva de Auditoría Financiera y Salud ISO 27001 / Always On y script PowerShell/SQL (unipago_sql_cloud_validator.ps1)."
         }
       ],
       "experiences": [

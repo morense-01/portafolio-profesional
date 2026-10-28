@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96">
+  <defs>
+    <linearGradient id="dkrbg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2496ed"/>
+      <stop offset="100%" stop-color="#0b5ea8"/>
+    </linearGradient>
+  </defs>
+  <rect width="96" height="96" rx="20" fill="url(#dkrbg)"/>
+  <rect x="2" y="2" width="92" height="92" rx="18" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-opacity="0.25"/>
+  <g fill="#ffffff">
+    <rect x="26" y="36" width="8" height="7" rx="1"/>
+    <rect x="36" y="36" width="8" height="7" rx="1"/>
+    <rect x="46" y="36" width="8" height="7" rx="1"/>
+    <rect x="36" y="27" width="8" height="7" rx="1"/>
+    <rect x="46" y="27" width="8" height="7" rx="1"/>
+    <rect x="46" y="18" width="8" height="7" rx="1"/>
+    <path d="M20 45h42c3 0 6-2 8-5 2 2 5 2 7 1-1 4-4 6-7 7-2 10-12 16-25 16-14 0-23-7-25-19z"/>
+  </g>
+  <text x="48" y="83" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="9.5" font-weight="800" text-anchor="middle" letter-spacing="1.8">DOCKER</text>
+</svg>
