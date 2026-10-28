@@ -84,7 +84,15 @@ export function App() {
     loadAsync().then((d) => {
       // Si la base de datos tenía canciones antiguas en inglés, purgarlas automáticamente
       const OLD_ENGLISH = new Set(['heaven', 'what a wonderful world', 'stand by me (live)', 'yellow', 'three little birds', 'ghost', 'fix you', 'count on me', 'imagine', 'treat you better', 'someone like you', 'wake me up', 'boulevard of broken dreams', 'viva la vida', 'shape of you', 'rolling in the deep']);
-      const filteredSongs = (d.songs || []).filter((s) => !OLD_ENGLISH.has(s.title.toLowerCase().trim()));
+      const filteredSongs = (d.songs || []).filter((s) => !OLD_ENGLISH.has(s.title.toLowerCase().trim())).map((s) => {
+        const catalogMatch = LEVELED_CATALOG.find(
+          (c) => c.title.toLowerCase().trim() === s.title.toLowerCase().trim()
+        );
+        if (catalogMatch && s.videoId !== catalogMatch.videoId) {
+          return { ...s, videoId: catalogMatch.videoId, url: catalogMatch.url };
+        }
+        return s;
+      });
       const validSongIds = new Set(filteredSongs.map((s) => s.id));
       const filteredLessons = (d.lessons || []).filter((l) => validSongIds.has(l.songId));
       const safeAccent: Accent = (d.settings.accent === 'QC' || d.settings.accent === 'AC') ? d.settings.accent : 'CA';
@@ -920,10 +928,9 @@ function Listening({ lesson: l, song, setLesson, done, online }: { lesson: Lesso
           key={reload}
           className="video"
           title={`Video de YouTube: ${song.title}`}
-          src={`https://www.youtube-nocookie.com/embed/${song.videoId}?enablejsapi=1&rel=0&origin=${encodeURIComponent(location.origin)}`}
-          allow="encrypted-media; picture-in-picture"
+          src={`https://www.youtube.com/embed/${song.videoId}?enablejsapi=1&rel=0`}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
-          referrerPolicy="strict-origin-when-cross-origin"
         />
       ) : (
         <p role="alert" className="bad">Sin conexión: YouTube necesita internet.</p>
