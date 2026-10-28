@@ -26,7 +26,15 @@ import type { Accent } from './data/repo';
 type Tab = 'home' | 'library' | 'review' | 'progress' | 'settings' | 'lesson' | 'tutor' | 'missions' | 'practice';
 const uid = () => crypto.randomUUID();
 const today = () => dayKey(Date.now());
-const STAGE_LABEL: Record<Stage, string> = { listening: 'Listening', confirm: 'Confirmar', reading: 'Reading', writing: 'Writing', speaking: 'Speaking', test: 'Test final', done: 'Resultado' };
+const STAGE_LABEL: Record<Stage, string> = {
+  listening: 'Écoute (Escucha)',
+  confirm: 'Confirmación',
+  reading: 'Lecture (Lectura)',
+  writing: 'Écriture (Escritura)',
+  speaking: 'Prononciation (Habla)',
+  test: 'Test final',
+  done: 'Resultado',
+};
 
 export const ACCENT_LABELS: Record<Accent, string> = {
   CA: 'Français canadien (Québec)',
@@ -72,7 +80,29 @@ function speak(text: string, accent: Accent, rate = 1) {
 export function App() {
   const [db, setDb] = useState<DB>(emptyDB);
   const [ready, setReady] = useState(false);
-  useEffect(() => { loadAsync().then((d) => { setDb(d); setReady(true); }); navigator.storage?.persist?.().catch(() => {}); }, []);
+  useEffect(() => {
+    loadAsync().then((d) => {
+      // Si la base de datos tenía canciones antiguas en inglés, purgarlas automáticamente
+      const OLD_ENGLISH = new Set(['heaven', 'what a wonderful world', 'stand by me (live)', 'yellow', 'three little birds', 'ghost', 'fix you', 'count on me', 'imagine', 'treat you better', 'someone like you', 'wake me up', 'boulevard of broken dreams', 'viva la vida', 'shape of you', 'rolling in the deep']);
+      const filteredSongs = (d.songs || []).filter((s) => !OLD_ENGLISH.has(s.title.toLowerCase().trim()));
+      const validSongIds = new Set(filteredSongs.map((s) => s.id));
+      const filteredLessons = (d.lessons || []).filter((l) => validSongIds.has(l.songId));
+      const safeAccent: Accent = (d.settings.accent === 'QC' || d.settings.accent === 'AC') ? d.settings.accent : 'CA';
+
+      const cleaned: DB = {
+        ...d,
+        songs: filteredSongs,
+        lessons: filteredLessons,
+        settings: {
+          ...d.settings,
+          accent: safeAccent,
+        },
+      };
+      setDb(cleaned);
+      setReady(true);
+    });
+    navigator.storage?.persist?.().catch(() => {});
+  }, []);
   const [tab, setTab] = useState<Tab>('home');
   const [lessonId, setLessonId] = useState<string | null>(null);
   const [online, setOnline] = useState(navigator.onLine);
@@ -173,10 +203,10 @@ export function App() {
 }
 
 const DUO_SECTIONS = [
-  { level: 'A1', name: 'Sección 1: Principiante', subtitle: 'Presente simple y vocabulario cotidiano', icon: '🌱' },
-  { level: 'A2', name: 'Sección 2: Básico consolidado', subtitle: 'Pasado simple, preguntas y rutinas familiares', icon: '🌿' },
-  { level: 'B1', name: 'Sección 3: Intermedio', subtitle: 'Narrativas, emociones y lenguaje figurado', icon: '🌳' },
-  { level: 'B2', name: 'Sección 4: Intermedio alto', subtitle: 'Phrasal verbs, velocidad y entonación nativa', icon: '🚀' },
+  { level: 'A1', name: 'Sección 1: Principiante (A1)', subtitle: 'Presente simple y vocabulario cotidiano québécois', icon: '🌱' },
+  { level: 'A2', name: 'Sección 2: Básico consolidado (A2)', subtitle: 'Passé composé, preguntas y expresiones familiares', icon: '🌿' },
+  { level: 'B1', name: 'Sección 3: Intermedio (B1)', subtitle: 'Narrativas, emociones y modismos de Québec', icon: '🌳' },
+  { level: 'B2', name: 'Sección 4: Intermedio alto (B2)', subtitle: 'Joual, expresiones idiomáticas québécoises y velocidad nativa', icon: '🚀' },
 ] as const;
 
 function Home({ db, go, open, update }: { db: DB; go: (t: Tab) => void; open: (id: string) => void; update: (f: (d: DB) => DB) => void }) {
@@ -277,6 +307,43 @@ function Home({ db, go, open, update }: { db: DB; go: (t: Tab) => void; open: (i
             <button className="s" onClick={() => go('review')}>Repasar hoy</button>
           </div>
         </div>
+      </div>
+
+      <div style={{
+        background: 'rgba(59, 130, 246, 0.1)',
+        border: '1px solid #3b82f6',
+        borderRadius: 12,
+        padding: '10px 14px',
+        marginBottom: 16,
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        flexWrap: 'wrap',
+        gap: 8,
+      }}>
+        <div>
+          <b>🇨🇦 Francés de Canadá (Québec) Activo</b>
+          <p className="mut" style={{ margin: '2px 0 0 0', fontSize: '0.85rem' }}>
+            Acento actual: <b>{ACCENT_LABELS[db.settings.accent || 'CA']}</b>. Todas las canciones y ejercicios son en francés canadiense.
+          </p>
+        </div>
+        <button
+          className="s"
+          style={{ fontSize: '0.82rem', padding: '4px 10px' }}
+          onClick={() => {
+            if (window.confirm('¿Deseas reiniciar y limpiar los datos anteriores para asegurar el catálogo 100% en Francés de Canadá?')) {
+              clearAsync().then(() => {
+                if ('caches' in window) {
+                  caches.keys().then((ks) => Promise.all(ks.map((k) => caches.delete(k)))).then(() => location.reload());
+                } else {
+                  location.reload();
+                }
+              });
+            }
+          }}
+        >
+          🔄 Limpiar datos anteriores
+        </button>
       </div>
 
       {active.length > 0 && (
@@ -774,7 +841,7 @@ function LessonView(p: {
       {l.stage === 'listening' && <Listening {...p} done={(secs) => { p.giveXp('listening'); p.setLesson(advance({ ...l, listening: { ...l.listening, seconds: l.listening.seconds + secs } })); }} />}
       {l.stage === 'confirm' && (
         <div className="card" role="dialog" aria-labelledby="cf"><h3 id="cf">¿Estás listo para comenzar la lectura y comparar lo que escuchaste con el texto?</h3>
-          <button className="p" onClick={() => go()}>Sí, empezar Reading</button>
+          <button className="p" onClick={() => go()}>Sí, empezar Lectura (Lecture)</button>
           <button className="s" onClick={() => p.setLesson(repeatListening(l))}>Necesito escuchar otra vez</button></div>)}
       {l.stage === 'reading' && canShowTranscript(l) && <Reading {...p} done={() => { p.giveXp('reading'); go(); }} />}
       {l.stage === 'writing' && <Writing {...p} done={() => { p.giveXp('writing'); go(); }} />}
@@ -1089,7 +1156,7 @@ function Reading({ song, db, update, done }: { song: Song; db: DB; update: (f: (
           </button>
         </div>
       </form>
-      <button className="p" onClick={done}>Continuar a Writing</button>
+      <button className="p" onClick={done}>Continuar a Escritura (Écriture)</button>
     </>
   );
 }
@@ -1392,7 +1459,7 @@ function Writing({ song, db, update, done }: { song: Song; db: DB; update: (f: (
         </div>
       </div>
 
-      <button className="p" onClick={done}>Continuar a Speaking</button>
+      <button className="p" onClick={done}>Continuar a Pronunciación (Prononciation)</button>
     </>
   );
 }

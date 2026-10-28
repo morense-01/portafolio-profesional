@@ -10,9 +10,9 @@ async function toTest(page: any) {
   await page.getByLabel('Título').fill('Demo');
   await page.getByRole('button', { name: 'Crear lección' }).click();
   await page.getByRole('button', { name: 'Terminé de escuchar' }).click();
-  await page.getByRole('button', { name: 'Sí, empezar Reading' }).click();
-  await page.getByRole('button', { name: 'Continuar a Writing' }).click();
-  await page.getByRole('button', { name: 'Continuar a Speaking' }).click();
+  await page.getByRole('button', { name: /empezar Lectura|Reading/i }).click();
+  await page.getByRole('button', { name: /Continuar a Escritura|Writing/i }).click();
+  await page.getByRole('button', { name: /Continuar a Pronunciación|Speaking/i }).click();
   await page.getByRole('button', { name: 'Ir al test final' }).click();
 }
 

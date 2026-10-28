@@ -17,13 +17,21 @@ export interface DB {
   placementDone: boolean;
   lastNotifiedDay: string | null;
 }
-export const SCHEMA_VERSION = 4;
+export const SCHEMA_VERSION = 5;
 export const emptyDB = (): DB => ({
   version: SCHEMA_VERSION, songs: [], lessons: [], cards: [], xp: { total: 0, byDay: {} }, activeDays: [],
   assessments: [], writingAttempts: [], speakingAttempts: [],
   settings: { level: 'A1', accent: 'CA', threshold: 80, minPerSkill: 0, timezone: 'America/Santo_Domingo', reminders: { daily: false, review: false, time: '19:00', days: [0, 1, 2, 3, 4, 5, 6], granted: false }, theme: 'auto' },
   events: [], tutorErrors: {}, placementDone: false, lastNotifiedDay: null,
 });
+
+const OLD_ENGLISH_SONG_TITLES = new Set([
+  'heaven', 'what a wonderful world', 'stand by me (live)', 'yellow', 'three little birds',
+  'ghost', 'fix you', 'count on me', 'imagine', 'treat you better', 'someone like you',
+  'wake me up', 'boulevard of broken dreams', 'my heart will go on', 'viva la vida',
+  'shape of you', 'rolling in the deep', 'demo'
+]);
+
 /** Migraciones: índice n migra de versión n a n+1. */
 const MIGRATIONS: ((d: any) => any)[] = [
   (d) => d, // 0 → 1: sin datos previos
@@ -49,6 +57,29 @@ const MIGRATIONS: ((d: any) => any)[] = [
       accent: (s.accent === 'QC' || s.accent === 'AC') ? s.accent : 'CA',
     })),
   }),
+  (d) => { // 4 → 5: purga total de canciones y tarjetas anteriores en inglés
+    const validSongs = (d.songs ?? []).filter((s: any) => {
+      const titleLower = (s.title || '').toLowerCase().trim();
+      return !OLD_ENGLISH_SONG_TITLES.has(titleLower);
+    });
+    const validSongIds = new Set(validSongs.map((s: any) => s.id));
+    const validLessons = (d.lessons ?? []).filter((l: any) => validSongIds.has(l.songId));
+    const validCards = (d.cards ?? []).filter((c: any) => {
+      const isEnglishSeed = ['look forward to', 'deploy', 'password', 'reliable', 'schedule'].includes(c.term);
+      const belongsToValidSong = Array.from(validSongIds).some((id) => c.id.startsWith(id as string));
+      return !isEnglishSeed && (belongsToValidSong || !c.id.includes(':'));
+    });
+    return {
+      ...d,
+      settings: {
+        ...d.settings,
+        accent: (d.settings?.accent === 'QC' || d.settings?.accent === 'AC') ? d.settings.accent : 'CA',
+      },
+      songs: validSongs,
+      lessons: validLessons,
+      cards: validCards,
+    };
+  },
 ];
 export function migrate(raw: any): DB {
   if (!raw || typeof raw !== 'object') return emptyDB();

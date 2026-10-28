@@ -25,7 +25,7 @@ test('Listening oculta la letra y Reading exige confirmación', async ({ page })
   await page.getByRole('button', { name: 'Terminé de escuchar' }).click();
   await expect(page.getByText('¿Estás listo para comenzar la lectura')).toBeVisible();
   await expect(page.getByText('SECRETLYRIC')).toHaveCount(0);
-  await page.getByRole('button', { name: 'Sí, empezar Reading' }).click();
+  await page.getByRole('button', { name: /empezar Lectura|Reading/i }).click();
   await expect(page.getByText('SECRETLYRIC').first()).toBeVisible();
 });
 
@@ -40,14 +40,14 @@ test('la lección se retoma tras recargar', async ({ page }) => {
 test('flujo completo hasta el test; Speaking pendiente sin evidencia', async ({ page }) => {
   await addSong(page);
   await page.getByRole('button', { name: 'Terminé de escuchar' }).click();
-  await page.getByRole('button', { name: 'Sí, empezar Reading' }).click();
+  await page.getByRole('button', { name: /empezar Lectura|Reading/i }).click();
   await page.getByRole('button', { name: 'Guardar tarjeta' }).first().click();
   await page.getByRole('button', { name: 'Guardar tarjeta' }).nth(1).click();
-  await page.getByRole('button', { name: 'Continuar a Writing' }).click();
+  await page.getByRole('button', { name: /Continuar a Escritura|Writing/i }).click();
   await page.getByLabel('Escribe lo que oyes').fill('hello');
   await page.getByRole('button', { name: 'Comparar' }).click();
   await expect(page.getByText(/Precisión/)).toBeVisible();
-  await page.getByRole('button', { name: 'Continuar a Speaking' }).click();
+  await page.getByRole('button', { name: /Continuar a Pronunciación|Speaking/i }).click();
   await page.getByRole('button', { name: 'Ir al test final' }).click();
   await page.getByRole('button', { name: 'Calificar' }).click();
   await expect(page.getByText(/pendiente \(sin reconocimiento de voz/)).toBeVisible();
