@@ -739,6 +739,7 @@ function portafolios() {
     }).join('');
 
     const getCertEco = (c) => {
+      if (c.id === 'titulo-ingeniero-sistemas-oym') return 'Título Universitario';
       if (c.id.startsWith('anthropic-')) return 'Claude / Anthropic MCP';
       if (c.id.includes('openai') || c.id.includes('prompt-engineering')) return 'ChatGPT / OpenAI';
       if (c.id.includes('n8n')) return 'n8n';
@@ -747,8 +748,8 @@ function portafolios() {
       if (c.id.includes('docker')) return 'Docker';
       if (c.id.startsWith('google-') || c.id === 'intro-inteligencia-artificial-badge') return 'Google Cloud Skills';
       if (c.id.startsWith('ms-') || c.id.startsWith('microsoft-') || c.id === 'mcsa-windows-server') return 'Microsoft Learn';
-      if ((c.verifyUrl || '').includes('credly.com') || c.id.startsWith('ndg-linux') || c.id.startsWith('aws-') || c.id.startsWith('fortinet')) return 'Credly / Cloud / Linux';
-      return 'Títulos y Diplomados';
+      if ((c.verifyUrl || '').includes('credly.com') || c.id.startsWith('ndg-linux') || c.id.startsWith('aws-') || c.id.startsWith('fortinet')) return 'Cloud & Linux';
+      return 'Especialidades y Diplomados';
     };
 
     const ecoOrder = [
@@ -760,8 +761,9 @@ function portafolios() {
       'Docker',
       'Google Cloud Skills',
       'Microsoft Learn',
-      'Credly / Cloud / Linux',
-      'Títulos y Diplomados'
+      'Cloud & Linux',
+      'Título Universitario',
+      'Especialidades y Diplomados'
     ];
     const activeEcos = ecoOrder.filter((eName) => pfCerts.some((c) => getCertEco(c) === eName));
     const roleEcoTabs = `<div class="cert-type-tabs no-print">

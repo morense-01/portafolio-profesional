@@ -678,31 +678,11 @@
         "ms-copilot-productivity",
         "ms-computer-vision-azure",
         "ms-fabric-analytics",
-        "ms-data-analytics-path",
         "ms-clean-data-power-bi",
         "ms-dax-formulas",
-        "mcsa-windows-server",
-        "microsoft-sql-server-infraestructura",
         "aws-certified-cloud-practitioner",
-        "aws-cloud-101",
-        "ibm-cloud-essentials",
-        "ibm-cybersecurity-fundamentals",
-        "fortinet-nse4",
         "ndg-linux-essentials",
-        "ndg-linux-unhatched",
-        "eset-curso-backup-continuidad",
-        "especialidad-ti",
-        "especialidad-tratamiento-datos",
-        "especialidad-integrador-iot",
-        "diplomado-inteligencia-de-negocios",
-        "diplomado-computo-en-la-nube",
-        "diplomado-sistemas-informaticos",
-        "diplomado-integridad-web",
-        "diplomado-iot",
-        "fcs-analista-datos",
-        "fcs-curador-bases-datos",
-        "fcs-asesor-infraestructura-nube",
-        "fcs-seguridad-informatica-servidores"
+        "ndg-linux-unhatched"
       ],
       "traceabilityMatrix": [
         {
@@ -738,15 +718,15 @@
           "achievementSummary": "Incremento del 40% en la productividad operativa del área de TI y más de 1,200 horas-hombre anuales liberadas.",
           "metricId": "ecosistema-ti-productividad",
           "projectSlug": "ecosistema-ia-soporte-astro",
-          "evidenceSummary": "Consola interactiva de Agente MCP + RAG, código del servidor MCP (mcp_astro_server.py) y certificaciones Anthropic (#vxtfkvdm2xzr, #o2r5j74e8f68)."
+          "evidenceSummary": "Consola interactiva de Agente MCP + RAG, código del servidor MCP (mcp_astro_server.py) y 7 certificaciones Anthropic Skilljar."
         },
         {
           "company": "Astro - Pico Duarte Cartón, S.R.L. (2026 - Actualidad)",
           "companySlug": "astro-pico-duarte-carton",
           "experienceFocus": "Encargado de TI: Plataforma web de control digital de calidad en JavaScript (ES6+), Node.js, REST API y SQL Server, y automatización de reportes ejecutivos en Power BI con Python y PowerShell.",
           "certIds": [
-            "diplomado-integridad-web",
-            "diplomado-sistemas-informaticos",
+            "n8n-n8n102-integrations",
+            "cisco-python-essentials",
             "ms-dax-formulas",
             "ms-clean-data-power-bi"
           ],
@@ -764,7 +744,7 @@
             "openai-agents-workflows",
             "openai-applied-ai-foundations",
             "openai-evaluate-ai-applications",
-            "ms-copilot-productivity"
+            "prompt-engineering-specialist"
           ],
           "achievementSummary": "Eliminación del 100% de la digitación manual en reportes de rampa, almacén y flota, estandarizando las entradas operativas y contables en tiempo real.",
           "metricId": "precision-inventario-30",
@@ -776,10 +756,10 @@
           "companySlug": "ods-odw-logistics",
           "experienceFocus": "Consultor de Infraestructura TI, Automatización e Integración de Sistemas: Flujos automatizados con Power Automate, Python y PowerShell; pipelines ETL sobre SQL Server con Power BI/SSRS; y servidores Linux (Ubuntu, RHEL), Windows Server, AWS y Azure.",
           "certIds": [
+            "ms-copilot-productivity",
             "aws-certified-cloud-practitioner",
             "ndg-linux-essentials",
-            "ms-data-analytics-path",
-            "fortinet-nse4"
+            "cisco-python-essentials"
           ],
           "achievementSummary": "Mejora del 30% en eficiencia operativa, +30% en exactitud de inventario y 99.9% de disponibilidad en aplicaciones y APIs conectadas.",
           "metricId": "precision-inventario-30",
@@ -812,8 +792,8 @@
             "sap-ha200-hana-administration",
             "sap-terra1-terraform-btp",
             "sap-ux100-fiori-basics",
-            "diplomado-inteligencia-de-negocios",
-            "ms-fabric-analytics"
+            "ms-fabric-analytics",
+            "ms-rag-fundamentals"
           ],
           "achievementSummary": "Reducción del 70% en el tiempo de cierre y reportería gerencial (+2,000h ahorradas) y reducción del 60% en incidentes de seguridad.",
           "metricId": "automatizacion-procesos-madeco",
@@ -825,10 +805,10 @@
           "companySlug": "unipago",
           "experienceFocus": "Especialista de Infraestructura y Plataformas de Datos (Sector Financiero y Sector Salud): Automatización de mantenimiento, validación de respaldos y monitoreo sobre Linux, Windows Server y SQL Server; migración de 15 servidores físicos a nube híbrida (Azure/AWS).",
           "certIds": [
-            "mcsa-windows-server",
             "aws-certified-cloud-practitioner",
-            "microsoft-sql-server-infraestructura",
-            "eset-curso-backup-continuidad"
+            "ndg-linux-essentials",
+            "ndg-linux-unhatched",
+            "docker-profesional-cert"
           ],
           "achievementSummary": "15 servidores migrados con integridad total, -65% en tiempo de reportería regulatoria y cero hallazgos críticos en 3 auditorías consecutivas (ISO 27001 / NIST CSF).",
           "metricId": "auditorias-cero-hallazgos",
@@ -1036,31 +1016,11 @@
         "ms-copilot-productivity",
         "ms-computer-vision-azure",
         "ms-fabric-analytics",
-        "ms-data-analytics-path",
         "ms-clean-data-power-bi",
         "ms-dax-formulas",
-        "mcsa-windows-server",
-        "microsoft-sql-server-infraestructura",
         "aws-certified-cloud-practitioner",
-        "aws-cloud-101",
-        "ibm-cloud-essentials",
-        "ibm-cybersecurity-fundamentals",
-        "fortinet-nse4",
         "ndg-linux-essentials",
-        "ndg-linux-unhatched",
-        "eset-curso-backup-continuidad",
-        "especialidad-ti",
-        "especialidad-tratamiento-datos",
-        "especialidad-integrador-iot",
-        "diplomado-inteligencia-de-negocios",
-        "diplomado-computo-en-la-nube",
-        "diplomado-sistemas-informaticos",
-        "diplomado-integridad-web",
-        "diplomado-iot",
-        "fcs-analista-datos",
-        "fcs-curador-bases-datos",
-        "fcs-asesor-infraestructura-nube",
-        "fcs-seguridad-informatica-servidores"
+        "ndg-linux-unhatched"
       ],
       "traceabilityMatrix": [
         {
@@ -1096,15 +1056,15 @@
           "achievementSummary": "Incremento del 40% en la productividad operativa del área de TI y más de 1,200 horas-hombre anuales liberadas.",
           "metricId": "ecosistema-ti-productividad",
           "projectSlug": "ecosistema-ia-soporte-astro",
-          "evidenceSummary": "Consola interactiva de Agente MCP + RAG, código del servidor MCP (mcp_astro_server.py) y certificaciones Anthropic (#vxtfkvdm2xzr, #o2r5j74e8f68)."
+          "evidenceSummary": "Consola interactiva de Agente MCP + RAG, código del servidor MCP (mcp_astro_server.py) y 7 certificaciones Anthropic Skilljar."
         },
         {
           "company": "Astro - Pico Duarte Cartón, S.R.L. (2026 - Actualidad)",
           "companySlug": "astro-pico-duarte-carton",
           "experienceFocus": "Encargado de TI: Plataforma web de control digital de calidad en JavaScript (ES6+), Node.js, REST API y SQL Server, y automatización de reportes ejecutivos en Power BI con Python y PowerShell.",
           "certIds": [
-            "diplomado-integridad-web",
-            "diplomado-sistemas-informaticos",
+            "n8n-n8n102-integrations",
+            "cisco-python-essentials",
             "ms-dax-formulas",
             "ms-clean-data-power-bi"
           ],
@@ -1122,7 +1082,7 @@
             "openai-agents-workflows",
             "openai-applied-ai-foundations",
             "openai-evaluate-ai-applications",
-            "ms-copilot-productivity"
+            "prompt-engineering-specialist"
           ],
           "achievementSummary": "Eliminación del 100% de la digitación manual en reportes de rampa, almacén y flota, estandarizando las entradas operativas y contables en tiempo real.",
           "metricId": "precision-inventario-30",
@@ -1134,10 +1094,10 @@
           "companySlug": "ods-odw-logistics",
           "experienceFocus": "Consultor de Infraestructura TI, Automatización e Integración de Sistemas: Flujos automatizados con Power Automate, Python y PowerShell; pipelines ETL sobre SQL Server con Power BI/SSRS; y servidores Linux (Ubuntu, RHEL), Windows Server, AWS y Azure.",
           "certIds": [
+            "ms-copilot-productivity",
             "aws-certified-cloud-practitioner",
             "ndg-linux-essentials",
-            "ms-data-analytics-path",
-            "fortinet-nse4"
+            "cisco-python-essentials"
           ],
           "achievementSummary": "Mejora del 30% en eficiencia operativa, +30% en exactitud de inventario y 99.9% de disponibilidad en aplicaciones y APIs conectadas.",
           "metricId": "precision-inventario-30",
@@ -1170,8 +1130,8 @@
             "sap-ha200-hana-administration",
             "sap-terra1-terraform-btp",
             "sap-ux100-fiori-basics",
-            "diplomado-inteligencia-de-negocios",
-            "ms-fabric-analytics"
+            "ms-fabric-analytics",
+            "ms-rag-fundamentals"
           ],
           "achievementSummary": "Reducción del 70% en el tiempo de cierre y reportería gerencial (+2,000h ahorradas) y reducción del 60% en incidentes de seguridad.",
           "metricId": "automatizacion-procesos-madeco",
@@ -1183,10 +1143,10 @@
           "companySlug": "unipago",
           "experienceFocus": "Especialista de Infraestructura y Plataformas de Datos (Sector Financiero y Sector Salud): Automatización de mantenimiento, validación de respaldos y monitoreo sobre Linux, Windows Server y SQL Server; migración de 15 servidores físicos a nube híbrida (Azure/AWS).",
           "certIds": [
-            "mcsa-windows-server",
             "aws-certified-cloud-practitioner",
-            "microsoft-sql-server-infraestructura",
-            "eset-curso-backup-continuidad"
+            "ndg-linux-essentials",
+            "ndg-linux-unhatched",
+            "docker-profesional-cert"
           ],
           "achievementSummary": "15 servidores migrados con integridad total, -65% en tiempo de reportería regulatoria y cero hallazgos críticos en 3 auditorías consecutivas (ISO 27001 / NIST CSF).",
           "metricId": "auditorias-cero-hallazgos",
@@ -1394,31 +1354,11 @@
         "ms-copilot-productivity",
         "ms-computer-vision-azure",
         "ms-fabric-analytics",
-        "ms-data-analytics-path",
         "ms-clean-data-power-bi",
         "ms-dax-formulas",
-        "mcsa-windows-server",
-        "microsoft-sql-server-infraestructura",
         "aws-certified-cloud-practitioner",
-        "aws-cloud-101",
-        "ibm-cloud-essentials",
-        "ibm-cybersecurity-fundamentals",
-        "fortinet-nse4",
         "ndg-linux-essentials",
-        "ndg-linux-unhatched",
-        "eset-curso-backup-continuidad",
-        "especialidad-ti",
-        "especialidad-tratamiento-datos",
-        "especialidad-integrador-iot",
-        "diplomado-inteligencia-de-negocios",
-        "diplomado-computo-en-la-nube",
-        "diplomado-sistemas-informaticos",
-        "diplomado-integridad-web",
-        "diplomado-iot",
-        "fcs-analista-datos",
-        "fcs-curador-bases-datos",
-        "fcs-asesor-infraestructura-nube",
-        "fcs-seguridad-informatica-servidores"
+        "ndg-linux-unhatched"
       ],
       "traceabilityMatrix": [
         {
@@ -1454,15 +1394,15 @@
           "achievementSummary": "Incremento del 40% en la productividad operativa del área de TI y más de 1,200 horas-hombre anuales liberadas.",
           "metricId": "ecosistema-ti-productividad",
           "projectSlug": "ecosistema-ia-soporte-astro",
-          "evidenceSummary": "Consola interactiva de Agente MCP + RAG, código del servidor MCP (mcp_astro_server.py) y certificaciones Anthropic (#vxtfkvdm2xzr, #o2r5j74e8f68)."
+          "evidenceSummary": "Consola interactiva de Agente MCP + RAG, código del servidor MCP (mcp_astro_server.py) y 7 certificaciones Anthropic Skilljar."
         },
         {
           "company": "Astro - Pico Duarte Cartón, S.R.L. (2026 - Actualidad)",
           "companySlug": "astro-pico-duarte-carton",
           "experienceFocus": "Encargado de TI: Plataforma web de control digital de calidad en JavaScript (ES6+), Node.js, REST API y SQL Server, y automatización de reportes ejecutivos en Power BI con Python y PowerShell.",
           "certIds": [
-            "diplomado-integridad-web",
-            "diplomado-sistemas-informaticos",
+            "n8n-n8n102-integrations",
+            "cisco-python-essentials",
             "ms-dax-formulas",
             "ms-clean-data-power-bi"
           ],
@@ -1480,7 +1420,7 @@
             "openai-agents-workflows",
             "openai-applied-ai-foundations",
             "openai-evaluate-ai-applications",
-            "ms-copilot-productivity"
+            "prompt-engineering-specialist"
           ],
           "achievementSummary": "Eliminación del 100% de la digitación manual en reportes de rampa, almacén y flota, estandarizando las entradas operativas y contables en tiempo real.",
           "metricId": "precision-inventario-30",
@@ -1492,10 +1432,10 @@
           "companySlug": "ods-odw-logistics",
           "experienceFocus": "Consultor de Infraestructura TI, Automatización e Integración de Sistemas: Flujos automatizados con Power Automate, Python y PowerShell; pipelines ETL sobre SQL Server con Power BI/SSRS; y servidores Linux (Ubuntu, RHEL), Windows Server, AWS y Azure.",
           "certIds": [
+            "ms-copilot-productivity",
             "aws-certified-cloud-practitioner",
             "ndg-linux-essentials",
-            "ms-data-analytics-path",
-            "fortinet-nse4"
+            "cisco-python-essentials"
           ],
           "achievementSummary": "Mejora del 30% en eficiencia operativa, +30% en exactitud de inventario y 99.9% de disponibilidad en aplicaciones y APIs conectadas.",
           "metricId": "precision-inventario-30",
@@ -1528,8 +1468,8 @@
             "sap-ha200-hana-administration",
             "sap-terra1-terraform-btp",
             "sap-ux100-fiori-basics",
-            "diplomado-inteligencia-de-negocios",
-            "ms-fabric-analytics"
+            "ms-fabric-analytics",
+            "ms-rag-fundamentals"
           ],
           "achievementSummary": "Reducción del 70% en el tiempo de cierre y reportería gerencial (+2,000h ahorradas) y reducción del 60% en incidentes de seguridad.",
           "metricId": "automatizacion-procesos-madeco",
@@ -1541,10 +1481,10 @@
           "companySlug": "unipago",
           "experienceFocus": "Especialista de Infraestructura y Plataformas de Datos (Sector Financiero y Sector Salud): Automatización de mantenimiento, validación de respaldos y monitoreo sobre Linux, Windows Server y SQL Server; migración de 15 servidores físicos a nube híbrida (Azure/AWS).",
           "certIds": [
-            "mcsa-windows-server",
             "aws-certified-cloud-practitioner",
-            "microsoft-sql-server-infraestructura",
-            "eset-curso-backup-continuidad"
+            "ndg-linux-essentials",
+            "ndg-linux-unhatched",
+            "docker-profesional-cert"
           ],
           "achievementSummary": "15 servidores migrados con integridad total, -65% en tiempo de reportería regulatoria y cero hallazgos críticos en 3 auditorías consecutivas (ISO 27001 / NIST CSF).",
           "metricId": "auditorias-cero-hallazgos",
