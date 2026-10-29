@@ -198,6 +198,36 @@ export const LEVELED_CATALOG: LeveledSong[] = [
   },
 ];
 
+export const BROKEN_VIDEO_ID_MAP: Record<string, string> = {
+  AzaTyxMapAQ: 'AzaTyxMduH4',
+  PaUI3O_oI18: 'U-fU_V7Boic',
+  u1xR7U5vD2Y: '4oYhxqfrY5A',
+  Xm2lDqX2xZc: 'RkC9HgrRq3Q',
+  l2uS2Lw5H7o: '4j8DVTkZdCE',
+  O0oYpM2o3e8: 'R3jDPgpUN9k',
+  m_1b_4lB3tA: 'boK-TEe2_sA',
+  PjF15dYn9f8: 'j0wQ5snYyoo',
+  '0Q8EQgq14Qo': 'InCeVCGtHak',
+  'B3J9j-4Z8Q8': '0J3wIDAaLSU',
+  'c_K7U9k-6h0': 'VI3C6MROOvY',
+  eM3t8z6PZf0: 'DqEaSVqQF1M',
+  '6J8O0c_n0yI': 'UgPFUO76Kbo',
+  B2_U8r9v8V4: '2vmHANYQcVw',
+  'a8Kk2S-d6i0': 'IOmZ_pF_XFI',
+  h8U9m4c7o7M: 'AtYcPgLXzG8',
+};
+
+export function resolveWorkingVideoId(videoId: string, title?: string): string {
+  if (BROKEN_VIDEO_ID_MAP[videoId]) return BROKEN_VIDEO_ID_MAP[videoId];
+  if (title) {
+    const clean = title.toLowerCase().trim();
+    if (clean === "l'indien") return 'AtYcPgLXzG8';
+    const match = LEVELED_CATALOG.find((c) => c.title.toLowerCase().trim() === clean);
+    if (match) return match.videoId;
+  }
+  return videoId;
+}
+
 const LEVEL_ORDER = ['A1', 'A2', 'B1', 'B2'] as const;
 
 /**

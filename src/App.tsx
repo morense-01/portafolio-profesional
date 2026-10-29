@@ -20,7 +20,7 @@ import {
   extractNotebookLines,
   formatProseForWriting,
 } from './core/extractor';
-import { LEVELED_CATALOG, getUnlockedLevels, type LeveledSong } from './data/catalog';
+import { LEVELED_CATALOG, getUnlockedLevels, resolveWorkingVideoId, type LeveledSong } from './data/catalog';
 import type { Accent } from './data/repo';
 
 type Tab = 'home' | 'library' | 'review' | 'progress' | 'settings' | 'lesson' | 'tutor' | 'missions' | 'practice';
@@ -85,11 +85,10 @@ export function App() {
       // Si la base de datos tenía canciones antiguas en inglés, purgarlas automáticamente
       const OLD_ENGLISH = new Set(['heaven', 'what a wonderful world', 'stand by me (live)', 'yellow', 'three little birds', 'ghost', 'fix you', 'count on me', 'imagine', 'treat you better', 'someone like you', 'wake me up', 'boulevard of broken dreams', 'viva la vida', 'shape of you', 'rolling in the deep']);
       const filteredSongs = (d.songs || []).filter((s) => !OLD_ENGLISH.has(s.title.toLowerCase().trim())).map((s) => {
-        const catalogMatch = LEVELED_CATALOG.find(
-          (c) => c.title.toLowerCase().trim() === s.title.toLowerCase().trim()
-        );
-        if (catalogMatch && s.videoId !== catalogMatch.videoId) {
-          return { ...s, videoId: catalogMatch.videoId, url: catalogMatch.url };
+        const fixedId = resolveWorkingVideoId(s.videoId, s.title);
+        const fixedTitle = s.title.toLowerCase().trim() === "l'indien" ? 'Lindberg' : s.title;
+        if (fixedId !== s.videoId || fixedTitle !== s.title) {
+          return { ...s, title: fixedTitle, videoId: fixedId, url: `https://www.youtube.com/watch?v=${fixedId}` };
         }
         return s;
       });
@@ -249,8 +248,16 @@ function Home({ db, go, open, update }: { db: DB; go: (t: Tab) => void; open: (i
   }
 
   async function handleStartCatalog(catSong: LeveledSong) {
-    const existing = db.songs.find((s) => s.videoId === catSong.videoId);
+    const existing = db.songs.find(
+      (s) => s.videoId === catSong.videoId || s.title.toLowerCase().trim() === catSong.title.toLowerCase().trim()
+    );
     if (existing) {
+      if (existing.videoId !== catSong.videoId) {
+        update((d) => ({
+          ...d,
+          songs: d.songs.map((s) => (s.id === existing.id ? { ...s, videoId: catSong.videoId, url: catSong.url } : s)),
+        }));
+      }
       const existingLesson = db.lessons.find((l) => l.songId === existing.id);
       if (existingLesson) {
         open(existingLesson.id);
@@ -598,8 +605,16 @@ function Library({ db, update, open }: { db: DB; update: (f: (d: DB) => DB) => v
   }
 
   async function handleStartCatalog(catSong: LeveledSong) {
-    const existing = db.songs.find((s) => s.videoId === catSong.videoId);
+    const existing = db.songs.find(
+      (s) => s.videoId === catSong.videoId || s.title.toLowerCase().trim() === catSong.title.toLowerCase().trim()
+    );
     if (existing) {
+      if (existing.videoId !== catSong.videoId) {
+        update((d) => ({
+          ...d,
+          songs: d.songs.map((s) => (s.id === existing.id ? { ...s, videoId: catSong.videoId, url: catSong.url } : s)),
+        }));
+      }
       const existingLesson = db.lessons.find((l) => l.songId === existing.id);
       if (existingLesson) {
         open(existingLesson.id);
@@ -688,8 +703,8 @@ function Library({ db, update, open }: { db: DB; update: (f: (d: DB) => DB) => v
         <h2>Añadir canción personalizada</h2>
         <div style={{ marginBottom: 12, display: 'flex', gap: 6, flexWrap: 'wrap' }}>
           <span className="mut" style={{ width: '100%' }}>Ejemplos listos para probar:</span>
-          <button type="button" className="s" onClick={() => loadSample('https://www.youtube.com/watch?v=k4V3Mo61fJM', 'Fix You', 'Coldplay')}>🎵 Coldplay - Fix You</button>
-          <button type="button" className="s" onClick={() => loadSample('https://www.youtube.com/watch?v=hLQl3WQQoQ0', 'Someone Like You', 'Adele')}>🎵 Adele - Someone Like You</button>
+          <button type="button" className="s" onClick={() => loadSample('https://www.youtube.com/watch?v=AzaTyxMduH4', "Pour que tu m'aimes encore", 'Céline Dion')}>🎵 Céline Dion - Pour que tu m'aimes encore</button>
+          <button type="button" className="s" onClick={() => loadSample('https://www.youtube.com/watch?v=InCeVCGtHak', 'Les étoiles filantes', 'Les Cowboys Fringants')}>🎵 Les Cowboys Fringants - Les étoiles filantes</button>
         </div>
         <label htmlFor="url">URL de YouTube</label>
         <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
@@ -886,7 +901,8 @@ function Listening({ lesson: l, song, setLesson, done, online }: { lesson: Lesso
     return () => removeEventListener('message', h);
   }, []);
 
-  const ytDirectUrl = `https://www.youtube.com/watch?v=${song.videoId}`;
+  const resolvedVideoId = resolveWorkingVideoId(song.videoId, song.title);
+  const ytDirectUrl = `https://www.youtube.com/watch?v=${resolvedVideoId}`;
 
   return (
     <div className="card">
@@ -925,10 +941,11 @@ function Listening({ lesson: l, song, setLesson, done, online }: { lesson: Lesso
 
       {online ? (
         <iframe
-          key={reload}
+          key={`${resolvedVideoId}-${reload}`}
           className="video"
           title={`Video de YouTube: ${song.title}`}
-          src={`https://www.youtube.com/embed/${song.videoId}?enablejsapi=1&rel=0`}
+          src={`https://www.youtube.com/embed/${resolvedVideoId}?enablejsapi=1&rel=0`}
+          referrerPolicy="strict-origin-when-cross-origin"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
         />
@@ -1097,15 +1114,15 @@ function Reading({ song, db, update, done }: { song: Song; db: DB; update: (f: (
 
         <div style={{ display: 'grid', gap: 12 }}>
           <div>
-            <label htmlFor="mterm" style={{ fontWeight: 600 }}>Palabra en inglés *</label>
+            <label htmlFor="mterm" style={{ fontWeight: 600 }}>Palabra en francés *</label>
             <p className="mut" style={{ margin: '2px 0 6px 0', fontSize: '0.85rem' }}>
-              La palabra, phrasal verb o expresión exacta que escuchaste o leíste en la canción.
+              La palabra o expresión exacta en francés canadiense que escuchaste o leíste en la canción.
             </p>
             <input
               id="mterm"
               value={manual.term}
               onChange={(e) => setManual({ ...manual, term: e.target.value })}
-              placeholder="Ej: reverse, stuck, guide you home, mistakes..."
+              placeholder="Ej: toune, char, chum, étoiles filantes..."
               required
             />
           </div>
@@ -1261,7 +1278,7 @@ function Writing({ song, db, update, done }: { song: Song; db: DB; update: (f: (
         </div>
 
         <p className="mut" style={{ marginTop: 10, fontSize: '0.92rem', lineHeight: 1.5 }}>
-          <b>Consejo de escritura y comprensión:</b> Las canciones suelen cortar ideas a mitad de verso por la métrica musical. Aquí unimos las ideas en <b>oraciones completas y párrafos continuos</b> con gramática y puntuación clara para que al transcribir a tu cuaderno entrenes la estructura real del inglés.
+          <b>Consejo de escritura y comprensión:</b> Las canciones suelen cortar ideas a mitad de verso por la métrica musical. Aquí unimos las ideas en <b>oraciones completas y párrafos continuos</b> con gramática y puntuación clara para que al transcribir a tu cuaderno entrenes la estructura real del francés.
         </p>
 
         {viewMode === 'sentences' ? (

@@ -2,6 +2,7 @@ import { get, set, del } from 'idb-keyval';
 import type { Card } from '../core/srs';
 import type { Lesson } from '../core/lesson';
 import type { XpState } from '../core/xp';
+import { resolveWorkingVideoId } from './catalog';
 
 export type Accent = 'CA' | 'QC' | 'AC';
 export interface Song { id: string; title: string; artist: string; videoId: string; url: string; level: string; accent: Accent; transcript: string; transcriptSource: 'youtube' | 'user-provided' | 'none'; createdAt: number }
@@ -17,7 +18,7 @@ export interface DB {
   placementDone: boolean;
   lastNotifiedDay: string | null;
 }
-export const SCHEMA_VERSION = 5;
+export const SCHEMA_VERSION = 6;
 export const emptyDB = (): DB => ({
   version: SCHEMA_VERSION, songs: [], lessons: [], cards: [], xp: { total: 0, byDay: {} }, activeDays: [],
   assessments: [], writingAttempts: [], speakingAttempts: [],
@@ -80,6 +81,19 @@ const MIGRATIONS: ((d: any) => any)[] = [
       cards: validCards,
     };
   },
+  (d) => ({ // 5 → 6: actualiza videoIds antiguos a IDs oficiales de YouTube con inserción habilitada
+    ...d,
+    songs: (d.songs ?? []).map((s: any) => {
+      const fixedId = resolveWorkingVideoId(s.videoId || '', s.title);
+      const fixedTitle = (s.title || '').toLowerCase().trim() === "l'indien" ? 'Lindberg' : s.title;
+      return {
+        ...s,
+        title: fixedTitle,
+        videoId: fixedId,
+        url: `https://www.youtube.com/watch?v=${fixedId}`,
+      };
+    }),
+  }),
 ];
 export function migrate(raw: any): DB {
   if (!raw || typeof raw !== 'object') return emptyDB();
