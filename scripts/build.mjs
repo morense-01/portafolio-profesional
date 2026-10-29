@@ -563,7 +563,7 @@ function proyectos() {
     const relPfHtml = relPortfolios.length
       ? `<h2 class="spacer-md">Portafolios especializados donde participa este proyecto</h2><ul class="role-switcher">${relPortfolios.map((pf) => `<li><a href="${L(`/portafolios/${pf.slug}/`)}">${esc(pf.title)}</a></li>`).join('')}</ul>`
       : '';
-    const body = hero(p.name, p.summary, route) + `<section class="wrap block"><dl class="facts-dl">${dl}</dl>${tangibleHtml}${p.technologies.length ? `<h2 class="spacer-md">Tecnologías utilizadas</h2><ul class="chips">${p.technologies.map((t) => `<li>${esc(t)}</li>`).join('')}</ul>` : ''}${p.contributions.length ? `<h2>Contribución concreta y funcionalidad implementada</h2>${ul(p.contributions)}` : ''}${evHtml}${p.links?.length ? `<h2>Enlaces y verificación</h2><ul>${p.links.map((l) => `<li>${ext(l.url, l.title)}</li>`).join('')}</ul>` : ''}${relPfHtml}${co ? `<p class="spacer-md">Expediente empresarial relacionado: <a href="${L(`/experiencia/${co.slug}/`)}">${esc(co.company)}</a></p>` : ''}<p><a href="${L('/proyectos/')}">← Todos los proyectos</a> · <a href="${L('/portafolios/')}">Ver los 12 Portafolios por Rol</a></p></section>`;
+    const body = hero(p.name, p.summary, route) + `<section class="wrap block"><dl class="facts-dl">${dl}</dl>${tangibleHtml}${p.technologies.length ? `<h2 class="spacer-md">Tecnologías utilizadas</h2><ul class="chips">${p.technologies.map((t) => `<li>${esc(t)}</li>`).join('')}</ul>` : ''}${p.contributions.length ? `<h2>Contribución concreta y funcionalidad implementada</h2>${ul(p.contributions)}` : ''}${evHtml}${p.links?.length ? `<h2>Enlaces y verificación</h2><ul>${p.links.map((l) => `<li>${ext(l.url, l.title)}</li>`).join('')}</ul>` : ''}${relPfHtml}${co ? `<p class="spacer-md">Expediente empresarial relacionado: <a href="${L(`/experiencia/${co.slug}/`)}">${esc(co.company)}</a></p>` : ''}<p><a href="${L('/proyectos/')}">← Todos los proyectos</a> · <a href="${L('/portafolios/')}">Ver los ${portfolios.length} Portafolios por Rol</a></p></section>`;
     out(`proyectos/${p.slug}/index.html`, layout({ title: p.name, desc: p.summary, route, body }));
   });
 }
@@ -619,7 +619,7 @@ function portafolios() {
 
   const hubBody = hero(
     'Portafolios especializados por rol',
-    '12 expedientes diseñados con coherencia 360° para reclutadores y líderes técnicos: cada portafolio conecta en la misma línea la experiencia real en empresas, las certificaciones oficiales sobre ese tema, lo que se logró, las métricas auditadas y los proyectos con evidencias verificables.',
+    `${portfolios.length} expedientes diseñados con coherencia 360° para reclutadores y líderes técnicos: cada portafolio conecta en la misma línea la experiencia real en empresas, las certificaciones oficiales sobre ese tema, lo que se logró, las métricas auditadas y los proyectos con evidencias verificables.`,
     '/portafolios/'
   ) + `<section class="wrap block">
     ${domainTabs}
@@ -636,7 +636,7 @@ function portafolios() {
 
   out('portafolios/index.html', layout({
     title: 'Portafolios especializados por rol',
-    desc: '12 portafolios especializados de Mario Méndez (Data Engineer, Data Analyst, Data Scientist, DBA, AI Engineer, Automation, Full Stack, IT PM, Cloud/DevOps, Redes, Ciberseguridad y Cloud Security).',
+    desc: `${portfolios.length} portafolios especializados de Mario Méndez (Data Engineer, Data Analyst, Data Scientist, DBA, AI Engineer, Automation, Full Stack, IT PM, Cloud/DevOps, Redes, Ciberseguridad, Cloud Security y Customer Support Specialist).`,
     route: '/portafolios/',
     body: hubBody
   }));
@@ -748,7 +748,7 @@ function portafolios() {
       if (c.id.includes('docker')) return 'Docker';
       if (c.id.startsWith('google-') || c.id === 'intro-inteligencia-artificial-badge') return 'Google Cloud Skills';
       if (c.id.startsWith('ms-') || c.id.startsWith('microsoft-') || c.id === 'mcsa-windows-server') return 'Microsoft Learn';
-      if ((c.verifyUrl || '').includes('credly.com') || c.id.startsWith('ndg-linux') || c.id.startsWith('aws-') || c.id.startsWith('fortinet')) return 'Cloud & Linux';
+      if ((c.verifyUrl || '').includes('credly.com') || c.id.startsWith('ndg-linux') || c.id.startsWith('aws-') || c.id.startsWith('fortinet') || c.id.startsWith('cisco-') || c.id.startsWith('comptia-')) return 'Cloud & Linux';
       return 'Especialidades y Diplomados';
     };
 
