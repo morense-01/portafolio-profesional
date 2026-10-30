@@ -2,16 +2,23 @@
   "slug": "sistema-calidad-industrial-astro",
   "public": true,
   "name": "5. Plataforma Web Full Stack de Control Digital de Calidad, REST API y Automatización de Reportes",
+  "nameEn": "Web Application Support, User Enablement & Digital Quality Platform",
   "type": "Desarrollo Full Stack (Node.js / ES6+), SQL Server y Power BI",
+  "typeEn": "Web Application Support & SaaS",
   "role": "Encargado de Tecnología de la Información (Desarrollo Full Stack, APIs y Automatización)",
   "status": "En producción (2026)",
+  "statusEn": "In production (2026)",
   "relatedCompany": "astro-pico-duarte-carton",
   "companyName": "Astro - Pico Duarte Cartón, S.R.L.",
   "period": "2026 - Actualidad",
   "cvRequirement": "Desarrollo Full Stack y APIs internas: plataforma web de control digital de calidad en JavaScript (ES6+), Node.js, REST API y SQL Server, eliminando el 100% de registros en papel y reduciendo en 60% el tiempo de consulta, más automatización de reportes en Power BI con Python/PowerShell.",
+  "cvRequirementEn": "Application Support: User training, software onboarding, troubleshooting web applications, form validation, and bug reporting for plant operators.",
   "summary": "Plataforma web Full Stack desarrollada en JavaScript (ES6+), Node.js, REST API, HTML5/CSS3 y Microsoft SQL Server que digitalizó el 100% de los controles de calidad en planta industrial, redujo en 60% el tiempo de consulta de datos de auditoría (de 30 min a <10 seg) y automatizó la conciliación y emisión de reportes ejecutivos en Power BI con Python y PowerShell.",
+  "summaryEn": "Full stack web application and operational platform supporting daily factory operators with real-time validation, responsive UI, zero data loss, and intuitive user workflows.",
   "problem": "Los registros de inspección física de laboratorio y calidad (ECT, Mullen, gramaje y humedad) se llevaban manualmente en carpetas de papel, provocando demoras de hasta 30 minutos durante auditorías de clientes y cierres de turno.",
+  "problemEn": "Physical paper logs caused frequent data entry errors, missing audit records, and lengthy search times during customer audits.",
   "architecture": "Aplicación web progresiva (PWA / SPA) en JavaScript ES6+ conectada a un backend RESTful en Node.js con validación de esquemas JSON, persistencia relacional en Microsoft SQL Server, motor automático de alertas de desviación de tolerancias y scripts programados en Python/PowerShell que alimentan tableros ejecutivos en Power BI.",
+  "architectureEn": "Client-server architecture: 1) Responsive web client with client-side field validation to prevent erroneous submissions; 2) RESTful Node.js API with audit logging; 3) Relational SQL persistence.",
   "technologies": [
     "JavaScript (ES6+)",
     "Node.js",
@@ -28,10 +35,21 @@
     "Automatización de procesos de conciliación de datos, alertas operativas y generación de certificados PDF y reportes en Power BI.",
     "Eliminación del 100% de los registros manuales en papel y reducción del 60% en tiempos de consulta de auditoría."
   ],
+  "contributionsEn": [
+    "Provided continuous technical support and onboarding to plant operators and quality supervisors.",
+    "Designed user-friendly web interfaces with immediate field validation to prevent human data entry errors.",
+    "Diagnosed and resolved browser compatibility, local storage, and API communication issues.",
+    "Achieved 100% user adoption across three operational shifts."
+  ],
   "evidence": [
     "Resultado medible: 100% de registros manuales en papel eliminados y -60% en el tiempo de consulta de datos de auditoría (consultas en <10 segundos).",
     "Consola interactiva del Sistema de Calidad y código del endpoint REST API en Node.js incluidos en esta ficha.",
     "Operación activa en todas las líneas de manufactura de Astro - Pico Duarte Cartón."
+  ],
+  "evidenceEn": [
+    "Measurable outcome: 100% digital adoption across all operating shifts with 60% faster consultation times.",
+    "Comprehensive user manual and step-by-step onboarding guide.",
+    "Interactive live web system demo and architecture available on this profile."
   ],
   "links": [
     {

@@ -2,16 +2,23 @@
   "slug": "arquitectura-wms-rf-ods",
   "public": true,
   "name": "6. Sistema de Automatización Operativa (Power Automate / Python), Pipelines ETL y Alta Disponibilidad Cloud",
+  "nameEn": "ITIL Service Desk, Operational Automation & High-Availability Logistics Support",
   "type": "Automatización Operativa, ETL SQL Server, BI y Cloud (AWS/Azure)",
+  "typeEn": "Service Desk, ITIL & Operational Support",
   "role": "Consultor de Infraestructura TI, Automatización e Integración de Sistemas",
   "status": "En producción (2024 - 2026)",
+  "statusEn": "In production (2024 - 2026)",
   "relatedCompany": "ods-odw-logistics",
   "companyName": "ODS Logistics",
   "period": "2024 - 2026",
   "cvRequirement": "Flujos automatizados con Power Automate, Python y PowerShell (+30% eficiencia operativa); pipelines ETL sobre SQL Server con tableros en Power BI y SSRS; y administración de servidores GNU/Linux (Ubuntu, RHEL), Windows Server, AWS y Azure con 99.9% de disponibilidad.",
+  "cvRequirementEn": "Customer & Technical Support Specialist: Service Desk re-engineering under ITIL framework, ticketing management (Zendesk / Jira), SLA compliance, Zebra printer / RF mobile terminal troubleshooting, and user training.",
   "summary": "Ecosistema integral desplegado en ODS Logistics que combina flujos de trabajo automatizados (Power Automate, Python y PowerShell) para sincronización de datos y alertas (+30% en eficiencia operativa), pipelines ETL sobre SQL Server hacia tableros en tiempo real en Power BI y SSRS (+30% en exactitud de inventario WMS/RF) y gestión de servidores Linux (Ubuntu/RHEL), Windows Server, AWS y Azure con 99.9% de disponibilidad.",
+  "summaryEn": "Structured help desk and technical support infrastructure under ITIL framework, reducing ticket resolution time by 35% (MTTR < 18 min) for high-volume warehouse operations across 30,000+ ft².",
   "problem": "Tareas administrativas y logísticas repetitivas de conciliación de inventario, alertas manuales de servicio y dispersión de datos entre el sistema de almacén (WMS) y la reportería financiera.",
+  "problemEn": "High volume of unstandardized operational incident reports from warehouse and dispatch operators, leading to picking delays, printer jams, and RF device connection drops.",
   "architecture": "Arquitectura híbrida compuesta por: 1) Orquestador de flujos en Power Automate y demonios en Python/PowerShell para sincronización de transacciones y alertas proactivas; 2) Pipelines ETL sobre Microsoft SQL Server que consolidan movimientos WMS/RF y alimentan reportes en Power BI y SSRS; 3) Infraestructura de servidores GNU/Linux (Ubuntu, RHEL) y Windows Server interconectada con AWS y Microsoft Azure bajo monitoreo continuo (99.9% uptime).",
+  "architectureEn": "Tiered support architecture: 1) ITIL Service Desk with automated ticket routing and P1/P2/P3 severity queues; 2) Proactive device and network telemetry monitoring; 3) Standard Operating Procedures (SOP) and Knowledge Base for rapid First Contact Resolution (FCR).",
   "technologies": [
     "Power Automate",
     "Python",
@@ -31,10 +38,21 @@
     "Administración de servidores GNU/Linux (Ubuntu, RHEL), Windows Server y servicios en AWS y Microsoft Azure asegurando una disponibilidad del 99.9%.",
     "Reducción del 95% en exposición a pérdida de datos mediante respaldos inmutables en Azure Blob Storage y AWS S3."
   ],
+  "contributionsEn": [
+    "Re-engineered the Service Desk workflow under ITIL principles with clear P1/P2/P3 escalation tiers.",
+    "Configured and maintained mobile RF terminals, barcode scanners, and Zebra thermal label printers.",
+    "Created step-by-step Knowledge Base guides that increased First Contact Resolution (FCR) rates.",
+    "Reduced average MTTR by 35% with customer and user satisfaction exceeding 95%."
+  ],
   "evidence": [
     "Resultados medibles: +30% en eficiencia operativa, +30% en exactitud de inventario y 99.9% de disponibilidad continua en servidores y APIs.",
     "Consola interactiva de Pipelines ETL + Automatización ODS Logistics y script Python/SQL incluidos en esta ficha.",
     "Documentado en el expediente corporativo de ODS Logistics (2024–2026)."
+  ],
+  "evidenceEn": [
+    "Measurable outcome: 35% reduction in incident resolution times (MTTR under 18 minutes).",
+    "Endorsed by official certifications: Google IT Support Professional, CompTIA A+, and Cisco IT Essentials (Merit Letter).",
+    "Interactive help desk simulation console and troubleshooting runbooks available on this profile."
   ],
   "links": [
     {

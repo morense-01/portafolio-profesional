@@ -32,7 +32,7 @@ for (const p of pages) {
   if (!/<title>[^<]{10,}<\/title>/.test(h)) fail(`${p}: falta <title>`);
   if (!/<meta name="description" content="[^"]{30,}"/.test(h)) fail(`${p}: falta meta description`);
   if (!/property="og:image" content="https?:\/\//.test(h)) fail(`${p}: falta og:image absoluto`);
-  if (!/<html lang="es"/.test(h)) fail(`${p}: falta lang`);
+  if (!/<html lang="(es|en)"/.test(h)) fail(`${p}: falta lang`);
   if ((h.match(/<h1[ >]/g) || []).length !== 1) fail(`${p}: debe haber un único h1`);
   for (const m of h.matchAll(/<img\b[^>]*>/g)) if (!/\salt="/.test(m[0])) fail(`${p}: imagen sin alt`);
   if (/<script(?![^>]*(src=|ld\+json))[^>]*>/.test(h)) fail(`${p}: script en línea (viola CSP)`);

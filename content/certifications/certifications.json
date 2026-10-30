@@ -828,6 +828,7 @@
     {
       "id": "google-certified-it-professional",
       "name": "Certified IT Professional (TI)",
+      "nameEn": "Google Certified IT Professional",
       "issuer": "Grow with Google",
       "category": "Infraestructura y administración de sistemas",
       "type": "certificacion",
@@ -975,6 +976,7 @@
     {
       "id": "cisco-merito-it-essentials",
       "name": "Carta al Mérito: IT Essentials",
+      "nameEn": "Letter of Merit: IT Essentials (Signed by Chuck Robbins, CEO)",
       "issuer": "Cisco",
       "category": "Infraestructura y administración de sistemas",
       "type": "merito",
@@ -1210,6 +1212,7 @@
     {
       "id": "google-ciberseguridad-teletrabajo",
       "name": "Protege tu Negocio: Ciberseguridad en el Teletrabajo",
+      "nameEn": "Protect Your Business: Cybersecurity in Remote Work",
       "issuer": "Google / INCIBE",
       "category": "Ciberseguridad",
       "type": "curso",
@@ -1298,6 +1301,7 @@
     {
       "id": "google-soporte-ti-profesional",
       "name": "Certificado Profesional en Soporte de Tecnologías de la Información",
+      "nameEn": "Google IT Support Professional Certificate",
       "issuer": "Google",
       "category": "Infraestructura y administración de sistemas",
       "type": "curso",
@@ -1320,6 +1324,7 @@
     {
       "id": "google-infraestructura-servicios-ti",
       "name": "Administración de sistemas y servicios de infraestructura de TI",
+      "nameEn": "System Administration and IT Infrastructure Services",
       "issuer": "Google",
       "category": "Infraestructura y administración de sistemas",
       "type": "curso",
@@ -1342,6 +1347,7 @@
     {
       "id": "google-seguridad-informatica-defensa",
       "name": "Seguridad informática: defensa contra las artes oscuras digitales",
+      "nameEn": "IT Security: Defense Against the Digital Dark Arts",
       "issuer": "Google",
       "category": "Ciberseguridad",
       "type": "curso",
@@ -1364,6 +1370,7 @@
     {
       "id": "google-sistemas-operativos-avanzado",
       "name": "Sistemas operativos y tú: Convertirse en un usuario avanzado",
+      "nameEn": "Operating Systems and You: Becoming a Power User",
       "issuer": "Google",
       "category": "Infraestructura y administración de sistemas",
       "type": "curso",
@@ -1386,6 +1393,7 @@
     {
       "id": "google-redes-informaticas",
       "name": "Los bits y bytes de las redes informáticas",
+      "nameEn": "The Bits and Bytes of Networking",
       "issuer": "Google",
       "category": "Redes",
       "type": "curso",

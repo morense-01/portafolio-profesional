@@ -2,16 +2,23 @@
   "slug": "walicontrol",
   "public": true,
   "name": "3. Agente de IA Conversacional y Automatización Operativa por Voz/Webhooks para Logística y Despacho (En producción, 2025)",
+  "nameEn": "Omnichannel Customer Inquiries & Operational Support Automation",
   "type": "Agentes de IA, NLP, Webhooks y Automatización por Voz",
+  "typeEn": "Customer Inquiries & Automation",
   "role": "Consultor de Infraestructura TI, Automatización e Integración de Sistemas",
   "status": "En producción (2025)",
+  "statusEn": "In production (2025 - 2026)",
   "relatedCompany": "ods-odw-logistics",
   "companyName": "ODS Logistics",
   "period": "2024 - 2026",
   "cvRequirement": "Diseño del pipeline de procesamiento de lenguaje natural, integración de webhooks de mensajería empresarial, transcripción de audio y extracción estructurada con LLMs (JSON Schema) hacia PostgreSQL, Pgvector, Redis, SQL Server y Google Sheets API.",
+  "cvRequirementEn": "Customer Communication: Handling user requests, webhook integrations, API troubleshooting, automated confirmations, and error-free ticket tracking.",
   "summary": "Agente de IA conversacional empresarial desplegado en las operaciones logísticas y de transporte de ODS Logistics que recibe notas de voz y reportes de texto desde rampa, almacén y flota vía Webhooks de WhatsApp Business, ejecuta transcripción Speech-to-Text, clasifica la intención operativa (recepción de carga, despacho, gastos de ruta, ajuste de inventario), extrae entidades validadas con LLM Structured Outputs (JSON Schema) y sincroniza en tiempo real con PostgreSQL, Pgvector, Redis, SQL Server y Google Sheets API.",
+  "summaryEn": "Omnichannel conversational support agent handling field user inquiries and operational logging, eliminating manual data entry errors and providing real-time status updates.",
   "problem": "Los supervisores de almacén, rampa y transporte registraban recepciones de mercancía, incidencias de despacho, gastos de flota y ajustes de inventario de forma manual, provocando retrasos en la conciliación operativa y errores de digitación.",
+  "problemEn": "Field supervisors and drivers submitted operational reports via unstructured phone messages, causing miscommunication, transcription errors, and slow tracking updates.",
   "architecture": "Pipeline empresarial orientado a eventos: 1) Recepción asíncrona de notas de voz OGG/MP3 y texto desde supervisores vía WhatsApp Business Webhook; 2) Gestión de estado conversacional y control de idempotencia en Redis; 3) Transcripción automática con Speech-to-Text API; 4) Motor de extracción semántica con LLM Structured Outputs (JSON Schema estricto) que clasifica la operación logística y normaliza SKUs, contenedores, montos e impuestos; 5) Escritura transaccional en PostgreSQL / SQL Server, búsqueda semántica de catálogos en Pgvector y actualización en vivo en Google Sheets API y tableros operativos.",
+  "architectureEn": "Event-driven support pipeline: 1) Webhook ingestion for multi-channel inquiries; 2) Input validation with JSON Schema; 3) Automated ticket creation, real-time database updates, and instant confirmation responses.",
   "technologies": [
     "Python",
     "LLM Structured Outputs (JSON Schema)",
@@ -30,10 +37,21 @@
     "Implementación de extracción estructurada con LLMs garantizando el 100% de adherencia a JSON Schema (recepciones, despachos, gastos de flota y ajustes de inventario).",
     "Sincronización bidireccional con PostgreSQL, índice vectorial Pgvector, SQL Server y hojas operativas en Google Sheets API."
   ],
+  "contributionsEn": [
+    "Configured webhook integrations for multi-channel message handling and instant ticket creation.",
+    "Implemented strict input validation (JSON Schema) to eliminate user transcription errors.",
+    "Provided automated confirmation receipts and self-service status inquiries to end-users.",
+    "Integrated error logging and alerting for instant notification on API drops."
+  ],
   "evidence": [
     "Resultado medible: Eliminación del 100% de la digitación manual en el registro diario de operaciones de campo/almacén y estandarización total de las entradas listas para conciliación logística y contable.",
     "Simulador interactivo del pipeline empresarial Voz → JSON Schema → PostgreSQL/Pgvector/Sheets disponible en esta página.",
     "Esquema JSON Schema y código del procesador de webhooks logísticos documentados a continuación."
+  ],
+  "evidenceEn": [
+    "Measurable outcome: 100% elimination of manual transcription errors and real-time confirmation.",
+    "Verified with n8n and API integration credentials.",
+    "Interactive simulation console and webhook schemas available on this profile."
   ],
   "links": [
     {

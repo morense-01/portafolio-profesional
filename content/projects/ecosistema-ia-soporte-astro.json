@@ -2,16 +2,23 @@
   "slug": "ecosistema-ia-soporte-astro",
   "public": true,
   "name": "2. Ecosistema de Asistencia Inteligente con RAG y Model Context Protocol (MCP)",
+  "nameEn": "Intelligent Technical Support Ecosystem & Guided Self-Service Knowledge Base",
   "type": "IA Generativa, Agentes MCP y RAG",
+  "typeEn": "Technical Support & Self-Service",
   "role": "Encargado de Tecnología de la Información (Desarrollo de IA, Automatización e Integración ERP)",
   "status": "En producción (2026)",
+  "statusEn": "In production (2026)",
   "relatedCompany": "astro-pico-duarte-carton",
   "companyName": "Astro - Pico Duarte Cartón, S.R.L.",
   "period": "2026 - Actualidad",
   "cvRequirement": "Agentes de IA, RAG y Model Context Protocol (MCP): ecosistema de asistencia técnica basado en agentes inteligentes utilizando el estándar MCP de Anthropic, flujos RAG sobre manuales operativos e integración con Claude API, Vertex AI (Gemini), Python y SQL Server.",
+  "cvRequirementEn": "Support Operations: Guided self-service troubleshooting, technical knowledge base, and automated diagnostics for end-users, achieving +40% support throughput.",
   "summary": "Ecosistema de asistencia técnica en producción basado en servidores Model Context Protocol (MCP) personalizados y flujos Retrieval-Augmented Generation (RAG) conectados a Anthropic Claude API, Google Vertex AI (Gemini), Python, PowerShell y SQL Server, logrando +40% de productividad operativa y liberando más de 1,200 horas-hombre anuales.",
+  "summaryEn": "Technical support ecosystem and semantic knowledge base enabling fast self-service troubleshooting and automated system diagnostics, increasing support throughput by 40% and saving over 1,200 annual hours.",
   "problem": "La atención de consultas operativas, diagnóstico de sistemas y búsqueda en manuales técnicos consumía alto tiempo de respuesta del equipo de soporte e ingeniería.",
+  "problemEn": "Answering operational inquiries, system diagnostics, and locating solutions in technical manuals consumed substantial response time from the support team.",
   "architecture": "Arquitectura agéntica compuesta por: 1) Servidores MCP personalizados en Python que exponen herramientas seguras de solo lectura (consulta de estado de servidores, telemetría de red industrial, bitácoras SQL Server y tickets); 2) Motor RAG con indexación semántica de manuales técnicos, SOPs de planta y guías SAP; 3) Orquestador de modelos fundacionales (Anthropic Claude API / Google Vertex AI Gemini) con validación de esquemas y auditoría de ejecuciones.",
+  "architectureEn": "Support ecosystem comprising: 1) Automated diagnostic tools for server status and network checks; 2) Semantic search over technical SOPs and ERP guides; 3) Guided step-by-step assistance for end-users.",
   "technologies": [
     "Model Context Protocol (MCP)",
     "Retrieval-Augmented Generation (RAG)",
@@ -27,10 +34,21 @@
     "Desarrollo de herramientas (MCP Tools) de diagnóstico automatizado en Python y PowerShell y consultas SQL seguras.",
     "Incremento del 40% en la productividad del área de tecnología y más de 1,200 horas-hombre anuales liberadas."
   ],
+  "contributionsEn": [
+    "Deployed internal support catalog and knowledge base for end-user issue resolution.",
+    "Standardized ticket categories and automated diagnostic queries for faster root-cause analysis.",
+    "Trained non-technical personnel to resolve frequent configuration issues autonomously.",
+    "Liberated over 1,200 hours annually from repetitive support inquiries."
+  ],
   "evidence": [
     "Resultado medible: Incremento del 40% en la productividad del área de tecnología y más de 1,200 horas-hombre anuales liberadas de tareas repetitivas.",
     "Respaldado por certificaciones oficiales de Anthropic: Model Context Protocol: Advanced Topics (#vxtfkvdm2xzr), Introduction to MCP (#o2r5j74e8f68) e Introduction to Claude Cowork (#tzmigpxh43r8).",
     "Consola interactiva del servidor MCP + RAG y código del conector disponibles en esta ficha."
+  ],
+  "evidenceEn": [
+    "Measurable outcome: 40% increase in user support throughput and over 1,200 hours saved annually.",
+    "Backed by official Anthropic Claude and Google Cloud certifications.",
+    "Interactive support console and documentation available in this section."
   ],
   "links": [
     {

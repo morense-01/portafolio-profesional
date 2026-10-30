@@ -2278,48 +2278,49 @@
     },
     {
       "slug": "customer-support-specialist",
-      "title": "Especialista en Soporte Técnico y Atención al Cliente — Customer Support Specialist",
+      "lang": "en",
+      "title": "Customer Support Specialist & Technical Solutions Specialist",
       "shortTitle": "Customer Support Specialist",
       "englishTitle": "Customer Support & Technical Solutions Specialist",
-      "domain": "Soporte Técnico y Operaciones",
-      "yearsExperience": "10+ años en soporte técnico, Service Desk ITIL, resolución de incidencias N1/N2/N3 y atención omnicanal",
-      "headline": "Soporte técnico integral a usuarios, resolución ágil de incidencias bajo marco ITIL (MTTR < 18 min), administración de tickets y SLAs, soporte a aplicaciones web/SaaS y comunicación empática de primer contacto.",
-      "summary": "Especialista en Soporte Técnico y Atención al Cliente con certificación profesional de Google en Soporte de TI, CompTIA A+, Cisco IT Essentials (Carta al Mérito del CEO de Cisco) y formación en Ingeniería en Sistemas. Con amplia trayectoria resolviendo incidencias complejas de software, hardware, sistemas operativos (Windows/Linux/macOS), redes, ERPs y plataformas digitales, combinando comunicación empática, apego estricto a SLAs y diagnóstico técnico de causa raíz.",
-      "valueProposition": "Garantizo una experiencia de usuario excepcional y resolución técnica oportuna: transformo requerimientos complejos en soluciones claras, reduzco los tiempos de espera hasta un 35% con un MTTR inferior a 18 minutos y aplico diagnóstico de causa raíz para evitar recurrencias y elevar la retención del cliente.",
+      "domain": "Technical Support & Customer Success",
+      "yearsExperience": "10+ years in Technical Support, ITIL Service Desk, Tier 1/2/3 Escalations & Omnichannel Customer Success",
+      "headline": "Comprehensive customer & technical support, rapid incident resolution under ITIL framework (MTTR < 18 min), ticketing & SLA management (Zendesk, Jira, Freshdesk), web/SaaS platform troubleshooting, and empathetic first-contact communication.",
+      "summary": "Customer Support & Technical Solutions Specialist with official Google IT Support Professional Certification, CompTIA A+, Cisco IT Essentials (Merit Letter signed by Cisco CEO Chuck Robbins), and a Bachelor's Degree in Systems Engineering. Proven track record diagnosing and resolving complex software, hardware, operating system (Windows/Linux/macOS), network, and SaaS application issues. Dedicated to customer satisfaction (CSAT), strict SLA compliance, root-cause troubleshooting, and clear knowledge base documentation.",
+      "valueProposition": "I deliver exceptional customer experiences and rapid technical resolutions: transforming complex inquiries into clear, actionable guidance, reducing resolution times by up to 35% with an MTTR under 18 minutes, and performing root-cause analysis to eliminate recurring issues and maximize customer retention.",
       "skills": [
-        "Atención al Cliente y Soporte Técnico (Nivel 1, 2 y 3)",
-        "Gestión de Tickets y SLAs (Zendesk, Freshdesk, Jira Service Desk)",
-        "Marco ITIL (Gestión de Incidentes, Solicitudes y Problemas)",
-        "Troubleshooting de Sistemas Operativos (Windows, Linux, macOS)",
-        "Soporte de Aplicaciones Web, SaaS, Webhooks y APIs",
-        "Diagnóstico de Redes LAN/WAN, Conectividad Wi-Fi y VPN",
-        "Resolución en Primer Contacto (FCR) y Creación de Base de Conocimiento (KB)",
-        "Comunicación Asertiva, Empatía y Desescalamiento de Clientes Críticos"
+        "Customer Support & Technical Troubleshooting (Tier 1, Tier 2, Tier 3)",
+        "Ticketing Systems & SLA Management (Zendesk, Freshdesk, Jira Service Desk)",
+        "ITIL Framework (Incident, Request & Problem Management)",
+        "Operating Systems Troubleshooting (Windows 10/11, Linux, macOS)",
+        "Web Applications & SaaS Troubleshooting (APIs, Webhooks, Log Inspection)",
+        "Network Connectivity Diagnosis (TCP/IP, DNS, DHCP, Wi-Fi, VPN)",
+        "First Contact Resolution (FCR) & Knowledge Base Creation (KB / SOPs)",
+        "Active Listening, Empathy, Clear Technical Communication & Conflict De-escalation"
       ],
       "competencyCategories": [
         {
-          "title": "Soporte Técnico y Atención al Cliente (Nivel 1, 2 y 3)",
-          "desc": "Gestión de tickets, diagnóstico metódico de incidentes de software y hardware, atención empática y asertiva, resolución en primer contacto (FCR), desescalamiento de situaciones críticas y comunicación clara con usuarios no técnicos."
+          "title": "Customer Support & Technical Troubleshooting (Tier 1, 2, 3)",
+          "desc": "End-to-end ticket lifecycle management, methodical hardware and software diagnosis, active listening, first-contact resolution (FCR), empathetic de-escalation of urgent customer inquiries, and user-friendly communication for non-technical stakeholders."
         },
         {
-          "title": "Gestión de Servicios y Marco ITIL",
-          "desc": "Gestión de incidentes, solicitudes de servicio y problemas; cumplimiento riguroso de SLAs, matrices de escalamiento P1/P2/P3, métricas MTTR (Mean Time to Resolution) y documentación de bases de conocimiento (Knowledge Base / SOPs)."
+          "title": "Service Desk Operations & ITIL Best Practices",
+          "desc": "Structured incident, service request, and problem management; rigorous adherence to response and resolution SLAs; priority classification (P1/P2/P3); MTTR (Mean Time to Resolution) tracking; and standard operating procedures (SOP) documentation."
         },
         {
-          "title": "Sistemas Operativos y Estaciones de Trabajo",
-          "desc": "Troubleshooting avanzado en Microsoft Windows (10/11, Server), GNU/Linux (LPI / Bash) y macOS; gestión de cuentas de usuario, permisos, Active Directory, GPOs y diagnóstico de fallas a nivel de registro y servicios."
+          "title": "Operating Systems & Workstation Support",
+          "desc": "Advanced troubleshooting across Microsoft Windows (10/11, Server), GNU/Linux environments (LPI / Bash), and macOS; user account administration, permissions, Active Directory, cloud identities, and registry/service error resolution."
         },
         {
-          "title": "Soporte de Software, SaaS, Webhooks y APIs",
-          "desc": "Soporte a aplicaciones web empresariales, plataformas SaaS, CRM/Ticketing (Zendesk, Jira Service Desk, Freshdesk), diagnóstico de llamadas a APIs REST, inspección de webhooks, flujos en n8n y herramientas ofimáticas (Microsoft 365, Google Workspace)."
+          "title": "SaaS Platforms, Web Applications & API Troubleshooting",
+          "desc": "Support for web-based enterprise applications, cloud SaaS tools, CRM and ticketing platforms (Zendesk, Jira Service Desk, Freshdesk), HTTP/REST API error diagnosis, webhook inspections, n8n automations, and Microsoft 365 / Google Workspace administration."
         },
         {
-          "title": "Conectividad, Redes y Comunicaciones",
-          "desc": "Diagnóstico de conectividad TCP/IP, resolución DNS, asignación DHCP, configuración de redes Wi-Fi empresariales, túneles VPN para trabajo remoto y soporte a periféricos de misión crítica (impresoras térmicas Zebra, lectores de códigos de barras, terminales móviles)."
+          "title": "Network Connectivity & Peripherals Support",
+          "desc": "Diagnosis of TCP/IP connectivity, DNS resolution, DHCP lease issues, corporate Wi-Fi configurations, remote access VPN setups, and mission-critical peripherals (Zebra thermal label printers, barcode scanners, handheld RF terminals)."
         },
         {
-          "title": "Capacitación, Autoservicio y Habilitación",
-          "desc": "Elaboración de manuales de usuario, guías de autoservicio paso a paso, onboarding técnico de colaboradores y diseño de flujos de auto-diagnóstico asistido para minimizar el volumen de tickets repetitivos."
+          "title": "Customer Onboarding, Self-Service & Knowledge Base",
+          "desc": "Authoring comprehensive user guides, step-by-step FAQs, onboarding documentation, and guided self-service troubleshooting workflows that minimize ticket volume and empower end-users."
         }
       ],
       "metricIds": [
@@ -2354,133 +2355,133 @@
         {
           "company": "ODS Logistics",
           "companySlug": "ods-odw-logistics",
-          "experienceFocus": "Reingeniería de la mesa de ayuda (Service Desk) bajo marco ITIL, atención directa de incidentes de usuarios, soporte a terminales móviles RF y resolución con SLA garantizado.",
+          "experienceFocus": "ITIL Service Desk re-engineering, high-volume user ticket resolution, RF mobile device troubleshooting, and strict SLA compliance for warehouse operations.",
           "certIds": [
             "google-certified-it-professional",
             "cisco-merito-it-essentials",
             "comptia-a-plus"
           ],
-          "achievementSummary": "Reducción del 35% en tiempos de resolución de tickets (MTTR < 18 min) y creación de matriz de escalamiento P1/P2/P3 con guías de primer contacto (FCR).",
+          "achievementSummary": "35% reduction in technical incident resolution times (MTTR < 18 min) and deployment of P1/P2/P3 escalation matrix with First Contact Resolution (FCR) quick guides.",
           "metricId": "reduccion-tiempos-respuesta-35",
           "projectSlug": "arquitectura-wms-rf-ods",
-          "evidenceSummary": "Métricas del sistema de tickets, catálogo de fallas frecuentes (impresoras Zebra, RF, credenciales) y encuestas de satisfacción de usuarios."
+          "evidenceSummary": "Help desk ticketing metrics, frequent incident catalog (Zebra printers, RF terminals, network access), and customer satisfaction surveys."
         },
         {
           "company": "Astro - Pico Duarte Cartón",
           "companySlug": "astro-pico-duarte-carton",
-          "experienceFocus": "Gestión y atención de requerimientos de usuarios de planta y oficinas, implementación de base de conocimientos interactiva (RAG) y catálogo de servicios TI.",
+          "experienceFocus": "End-user support management across administrative and manufacturing staff, self-service knowledge base deployment, and IT service catalog standardization.",
           "certIds": [
             "google-soporte-ti-profesional",
             "google-infraestructura-servicios-ti",
             "n8n-n8n101-essentials"
           ],
-          "achievementSummary": "Incremento del 40% en la productividad de atención de soporte a usuarios y más de 1,200 horas operativas ahorradas anualmente.",
+          "achievementSummary": "40% increase in user support throughput and over 1,200 operating hours saved annually through guided self-service tools.",
           "metricId": "ecosistema-ti-productividad",
           "projectSlug": "ecosistema-ia-soporte-astro",
-          "evidenceSummary": "Portal interno de soporte técnico, guías de autoservicio para usuarios y asistente inteligente de diagnóstico de incidencias."
+          "evidenceSummary": "Internal support portal, interactive self-service troubleshooting guides, and incident categorization dashboards."
         },
         {
           "company": "MADECO",
           "companySlug": "madeco",
-          "experienceFocus": "Soporte de segundo nivel a usuarios corporativos sobre sistemas ERP (SAP S/4HANA y Dynamics 365), suites ofimáticas Microsoft 365 y estaciones de trabajo.",
+          "experienceFocus": "Tier 2 enterprise application support for SAP S/4HANA, Microsoft Dynamics 365, Microsoft 365 suite, and remote workstation environments.",
           "certIds": [
             "google-sistemas-operativos-avanzado",
             "sap-ux100-fiori-basics"
           ],
-          "achievementSummary": "Garantía de disponibilidad del 99.9% en plataformas empresariales utilizadas por cientos de usuarios finales administrativos y operativos.",
+          "achievementSummary": "Maintained 99.9% uptime for core corporate business systems supporting hundreds of daily operational users.",
           "metricId": "disponibilidad-infraestructura-astro",
           "projectSlug": "sistema-calidad-industrial-astro",
-          "evidenceSummary": "Soporte continuo y capacitación técnica a usuarios en procesos de cierre contable, inventarios y compras."
+          "evidenceSummary": "Continuous technical assistance, user training for financial/logistics workflows, and rapid troubleshooting of access tickets."
         },
         {
           "company": "UNIPAGO",
           "companySlug": "unipago",
-          "experienceFocus": "Atención a incidencias operativas en infraestructura de misión crítica, soporte a operadores de sistemas y administración de accesos y credenciales bajo estrictas normas de seguridad.",
+          "experienceFocus": "Mission-critical operations support, rapid incident triage, secure user access provisioning, and strict compliance with financial security standards.",
           "certIds": [
             "google-redes-informaticas",
             "ndg-linux-essentials",
             "google-ciberseguridad-teletrabajo"
           ],
-          "achievementSummary": "Cero downtime no planificado y atención prioritaria inmediata ante alertas operativas en entorno financiero regulado.",
+          "achievementSummary": "Zero unplanned downtime and immediate resolution for high-priority operational alerts under financial regulatory oversight.",
           "metricId": "disponibilidad-99-9",
           "projectSlug": "walicontrol",
-          "evidenceSummary": "Bitácoras de auditoría de incidentes resueltos, cumplimiento estricto de SLAs y documentación de procedimientos estándar (SOPs)."
+          "evidenceSummary": "Audited incident logs, 100% SLA compliance for critical tickets, and standard operating procedure (SOP) documentation."
         }
       ],
       "experiences": [
         {
           "companySlug": "ods-odw-logistics",
           "company": "ODS Logistics",
-          "roleTitle": "Especialista en Mesa de Ayuda (Service Desk) y Soporte Técnico ITIL",
+          "roleTitle": "Customer Support & ITIL Service Desk Specialist",
           "period": "Feb 2024 – Jun 2026",
-          "summary": "Atención directa de tickets e incidencias de usuarios finales, soporte a terminales móviles e infraestructura operativa bajo SLAs estrictos.",
+          "summary": "Managed high-volume technical support tickets for operational staff, resolving hardware, network, and application issues under strict SLA deadlines.",
           "achievements": [
-            "Reduje en 35% el tiempo promedio de resolución de incidencias técnicas (MTTR < 18 minutos) mediante estandarización de SLAs y priorización P1/P2/P3.",
-            "Creé la base de conocimientos (Knowledge Base) y procedimientos paso a paso (SOPs) que aumentaron la tasa de resolución en el primer contacto (FCR).",
-            "Brindé soporte integral a usuarios de almacén en configuración de terminales RF, impresoras térmicas Zebra y conectividad de red."
+            "Reduced average incident resolution time by 35% (MTTR < 18 minutes) by establishing standardized SLA benchmarks and P1/P2/P3 severity queues.",
+            "Created an internal Knowledge Base (KB) and step-by-step troubleshooting SOPs that boosted First Contact Resolution (FCR) rates.",
+            "Delivered hands-on and remote support for warehouse mobile devices, Zebra thermal label printers, barcode scanners, and wireless connectivity."
           ],
           "technologies": [
-            "Service Desk ITIL",
+            "ITIL Service Desk",
             "Zendesk / Jira",
-            "Windows",
-            "Dispositivos Móviles",
-            "Hardware / Periféricos",
-            "Zebra"
+            "Windows 10/11",
+            "Mobile Hardware",
+            "Zebra Printers",
+            "SLA Management"
           ]
         },
         {
           "companySlug": "astro-pico-duarte-carton",
           "company": "Astro - Pico Duarte Cartón",
-          "roleTitle": "Coordinador de Soporte a Usuarios y Habilitación Tecnológica",
-          "period": "2026 – Actual",
-          "summary": "Gestión de soporte a usuarios administrativos y de planta, estandarización del catálogo de servicios y habilitación de autoservicio.",
+          "roleTitle": "User Support Coordinator & Technology Enablement Specialist",
+          "period": "2026 – Present",
+          "summary": "Provided omnichannel technical support to administrative and plant personnel, standardizing the IT service catalog and deploying user enablement workflows.",
           "achievements": [
-            "Aumenté en 40% la capacidad de atención a solicitudes de usuarios mediante la clasificación estructurada de incidentes y portal de soporte.",
-            "Capacité a personal no técnico en el uso óptimo de herramientas digitales, software ERP y sistemas de calidad, reduciendo tickets recurrentes.",
-            "Implementé asistentes de auto-diagnóstico guiado que liberaron más de 1,200 horas anuales en consultas operativas rutinarias."
+            "Boosted support ticket resolution capacity by 40% through structured categorization, user self-service portals, and proactive communication.",
+            "Trained non-technical staff on digital productivity tools, reducing recurring user error tickets by 50%.",
+            "Implemented guided troubleshooting assistants that saved over 1,200 annual operating hours across the organization."
           ],
           "technologies": [
             "Help Desk",
             "Microsoft 365",
-            "Gestión de SLAs",
-            "Capacitación a Usuarios",
-            "Documentación SOP"
+            "SLA Tracking",
+            "User Onboarding",
+            "Knowledge Base (SOPs)"
           ]
         },
         {
           "companySlug": "madeco",
           "company": "MADECO",
-          "roleTitle": "Especialista de Soporte a Sistemas Corporativos y Aplicaciones",
-          "period": "Feb 2022 – Ene 2024",
-          "summary": "Soporte N2 a usuarios finales en plataformas ERP (SAP S/4HANA y Dynamics 365), resolución de problemas de cuentas, accesos y estaciones.",
+          "roleTitle": "Corporate Systems & Application Support Specialist",
+          "period": "Feb 2022 – Jan 2024",
+          "summary": "Provided Tier 2 functional and technical support for enterprise ERP platforms (SAP S/4HANA & Dynamics 365), user access management, and remote workstations.",
           "achievements": [
-            "Atendí y resolví requerimientos funcionales y técnicos de usuarios de finanzas, compras y producción con un índice de satisfacción superior al 95%.",
-            "Gestioné incidencias de puestos de trabajo Windows, configuración de clientes VPN y políticas de seguridad para usuarios en sitio y remotos."
+            "Resolved complex software tickets for finance, procurement, and logistics teams with an overall user satisfaction (CSAT) rating above 95%.",
+            "Handled workstation setup, VPN client configuration, credential management, and security policy adherence for on-site and remote employees."
           ],
           "technologies": [
-            "Soporte ERP (SAP/Dynamics)",
+            "ERP Support (SAP/Dynamics)",
             "Windows 10/11",
             "Active Directory",
-            "VPN",
-            "Atención al Usuario"
+            "VPN Troubleshooting",
+            "Customer Care"
           ]
         },
         {
           "companySlug": "unipago",
           "company": "UNIPAGO",
-          "roleTitle": "Soporte Técnico de Misión Crítica y Operaciones",
-          "period": "Mar 2020 – Ene 2022",
-          "summary": "Atención y seguimiento de incidentes de infraestructura crítica, soporte a operadores y control estricto de accesos de usuarios.",
+          "roleTitle": "Mission-Critical Operations & Technical Support Analyst",
+          "period": "Mar 2020 – Jan 2022",
+          "summary": "Responsible for round-the-clock incident response, operator assistance, and privileged user account administration in a regulated financial environment.",
           "achievements": [
-            "Cumplimiento del 100% en SLAs de escalamiento y atención de alertas operativas en entorno financiero de alta exigencia.",
-            "Elaboración de manuales de usuario y guías de contingencia operativa con cero no conformidades en auditorías regulatorias."
+            "Achieved 100% SLA compliance for critical ticket escalation and operational issue resolution without business interruption.",
+            "Authored operational runbooks and user documentation with zero non-conformities during international security and regulatory audits."
           ],
           "technologies": [
-            "Gestión de Incidentes",
-            "Monitoreo de Servicios",
-            "SLA",
-            "SOPs",
-            "Seguridad de Accesos"
+            "Incident Management",
+            "Service Monitoring",
+            "SLA Compliance",
+            "SOP Documentation",
+            "Access Security"
           ]
         }
       ]

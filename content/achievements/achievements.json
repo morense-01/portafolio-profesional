@@ -90,18 +90,25 @@
     {
       "id": "disponibilidad-infraestructura-astro",
       "title": "99.9% de disponibilidad en infraestructura tecnológica y resiliencia de planta industrial",
+      "titleEn": "99.9% Infrastructure Availability and Operational Resilience",
       "claimedValue": "99.9%",
       "status": "validada",
       "public": true,
       "company": "Astro - Pico Duarte Cartón",
       "companySlug": "astro-pico-duarte-carton",
       "project": "Continuidad operativa, respaldo automatizado y alta disponibilidad industrial",
+      "projectEn": "Operational Continuity, Automated Backups & High Availability",
       "period": "2026",
       "duration": "3 meses de reestructuración técnica y monitoreo continuo",
+      "durationEn": "3 months of technical restructuring and continuous monitoring",
       "definition": "Porcentaje de operatividad ininterrumpida de redes de planta, servidores productivos y enlaces de comunicación.",
+      "definitionEn": "Percentage of uninterrupted uptime across factory networks, business servers, and communications.",
       "baseline": "Interrupciones no programadas periódicas por incidentes de red o fallas de respaldo",
+      "baselineEn": "Periodic unscheduled interruptions caused by network incidents or manual backup failures",
       "result": "99.9% de tiempo de actividad continua y RPO inferior a 15 minutos",
+      "resultEn": "99.9% continuous uptime and recovery point objective (RPO) under 15 minutes",
       "method": "Monitoreo continuo de sondas de disponibilidad y bitácoras automatizadas de ejecución de respaldos.",
+      "methodEn": "Continuous uptime telemetry and automated backup verification logs.",
       "roadmap": [
         {
           "phase": "Fase 1: Auditoría de Redes y Servidores",
@@ -124,8 +131,31 @@
           "desc": "Integración de monitoreo proactivo con notificaciones inmediatas ante cualquier degradación de rendimiento o conectividad."
         }
       ],
+      "roadmapEn": [
+        {
+          "phase": "Phase 1: Network & Server Infrastructure Audit",
+          "time": "Weeks 1 – 3",
+          "desc": "Evaluation of structured cabling, industrial switches, fiber uplinks, and Windows/Linux server storage."
+        },
+        {
+          "phase": "Phase 2: Automated Backups & Immutability",
+          "time": "Weeks 4 – 7",
+          "desc": "PowerShell and Python scripts for automated backups, hash integrity validation, and secondary replication."
+        },
+        {
+          "phase": "Phase 3: Live Restoration Drills",
+          "time": "Weeks 8 – 10",
+          "desc": "Recovery simulations for servers and databases verifying minimal restoration timeframes."
+        },
+        {
+          "phase": "Phase 4: Proactive Alerts & System Stabilization",
+          "time": "Weeks 11 – 12",
+          "desc": "Proactive monitoring with real-time alerting on performance or connectivity degradation."
+        }
+      ],
       "technologies": ["Windows Server", "Linux", "PowerShell", "Python", "Redes Industriales", "Continuidad DRP"],
       "validationSource": "Registros de sondas de uptime y bitácoras de restauración de respaldos.",
+      "validationSourceEn": "Uptime probe telemetry and verified backup restoration logs.",
       "confidentiality": "Público / Demostrable",
       "scope": "Operaciones industriales de manufactura y áreas administrativas corporativas.",
       "notes": "Garantiza la operatividad continua requerida por plantas de corrugado de alto rendimiento."
@@ -133,18 +163,25 @@
     {
       "id": "ecosistema-ti-productividad",
       "title": "Incremento del 40% en productividad del soporte y automatización de procesos TI",
+      "titleEn": "40% Increase in Support Productivity and IT Process Automation",
       "claimedValue": "+40%",
       "status": "validada",
       "public": true,
       "company": "Astro - Pico Duarte Cartón",
       "companySlug": "astro-pico-duarte-carton",
       "project": "Ecosistema de gestión de TI, analítica de datos e integración de herramientas de Inteligencia Artificial",
+      "projectEn": "IT Service Management Ecosystem, Support Analytics & AI Enablement",
       "period": "2026",
       "duration": "1 mes de diseño, implementación y analítica",
+      "durationEn": "1 month of design, deployment, and analytics",
       "definition": "Aumento en la capacidad de atención a requerimientos y reducción de tiempos dedicados a tareas técnicas rutinarias.",
+      "definitionEn": "Increase in user ticket throughput and reduction in time spent on repetitive technical tasks.",
       "baseline": "Gestión reactiva de solicitudes en canales informales con tiempos de resolución variables",
+      "baselineEn": "Reactive management of requests across informal channels with unpredictable resolution times",
       "result": "40% más requerimientos atendidos a tiempo y más de 1,200 horas anuales proyectadas en ahorro operativo",
+      "resultEn": "40% more user requests resolved on time and over 1,200 annual operating hours saved",
       "method": "Análisis comparativo de solicitudes resueltas por mes y tiempo invertido en mantenimiento preventivo.",
+      "methodEn": "Comparative analysis of tickets resolved per month and time invested in preventive maintenance.",
       "roadmap": [
         {
           "phase": "Fase 1: Estandarización de Catálogo de Servicios",
@@ -167,8 +204,31 @@
           "desc": "Capacitación a usuarios de planta, refinamiento de automatizaciones y presentación de reportes ejecutivos a Dirección."
         }
       ],
+      "roadmapEn": [
+        {
+          "phase": "Phase 1: Service Catalog Standardization",
+          "time": "Week 1",
+          "desc": "Classification of incident types, operational criticality levels, and SLA assignment."
+        },
+        {
+          "phase": "Phase 2: IT Management Portal Deployment",
+          "time": "Week 2",
+          "desc": "Centralized tracking for asset management, tickets, maintenance schedules, and recurring tasks."
+        },
+        {
+          "phase": "Phase 3: Analytics & Self-Service Integration",
+          "time": "Week 3",
+          "desc": "Live dashboards and guided troubleshooting tools for accelerated issue diagnosis."
+        },
+        {
+          "phase": "Phase 4: Consolidation & Continuous Improvement",
+          "time": "Week 4",
+          "desc": "User training for non-technical staff, workflow refinement, and executive reporting."
+        }
+      ],
       "technologies": ["Power BI", "Python", "PowerShell", "Inteligencia Artificial", "Gestión de Servicios TI"],
       "validationSource": "Métricas del portal de gestión de TI y tableros de reportería directiva.",
+      "validationSourceEn": "IT management portal metrics and executive reporting dashboards.",
       "confidentiality": "Público / Demostrable",
       "scope": "Gestión tecnológica de toda la organización.",
       "notes": "Transformó el área de TI en un habilitador estratégico enfocado en la mejora continua."
@@ -219,18 +279,25 @@
     {
       "id": "disponibilidad-99-9",
       "title": "Disponibilidad de servicios y conectividad logística del 99.9%",
+      "titleEn": "99.9% Service Availability and Operational Logistics Connectivity",
       "claimedValue": "99.9%",
       "status": "validada",
       "public": true,
       "company": "ODS Logistics",
       "companySlug": "ods-odw-logistics",
       "project": "Arquitectura híbrida cloud Azure/AWS, redundancia SD-WAN y alta disponibilidad",
+      "projectEn": "Azure/AWS Hybrid Architecture, SD-WAN Redundancy & High Availability",
       "period": "Feb 2024 – Jun 2026",
       "duration": "6 meses de reingeniería de red y 22 meses de monitoreo continuo de SLA",
+      "durationEn": "6 months of network re-engineering and 22 months of SLA monitoring",
       "definition": "Porcentaje de tiempo de actividad ininterrumpida en sistemas críticos de almacén, WMS y telecomunicaciones.",
+      "definitionEn": "Percentage of uninterrupted uptime across critical warehouse systems, WMS platform, and operational telecom.",
       "baseline": "98.5% de disponibilidad previa con caídas intermitentes de enlace y paradas de picking",
+      "baselineEn": "98.5% previous uptime with intermittent connection drops and warehouse work stoppages",
       "result": "99.9% de uptime constante durante más de 2 años consecutivos",
+      "resultEn": "99.9% constant uptime sustained for over 2 consecutive years",
       "method": "Monitoreo continuo de uptime con sondas SNMP, pruebas de latencia y acuerdos de nivel de servicio (SLAs).",
+      "methodEn": "Continuous uptime telemetry via SNMP probes, latency audits, and service level agreements (SLAs).",
       "roadmap": [
         {
           "phase": "Fase 1: Diagnóstico de Puntos Únicos de Falla (SPOF)",
@@ -253,8 +320,31 @@
           "desc": "Despliegue de sondas automáticas de monitoreo y acuerdos de atención técnica rápida con el equipo de soporte."
         }
       ],
+      "roadmapEn": [
+        {
+          "phase": "Phase 1: Single Point of Failure (SPOF) Assessment",
+          "time": "Months 1 – 2 (Feb – Mar 2024)",
+          "desc": "Risk identification across access switches, single ISP connections, and unbacked local hosts."
+        },
+        {
+          "phase": "Phase 2: Dual WAN & SD-WAN Failover Deployment",
+          "time": "Months 3 – 4 (Apr – May 2024)",
+          "desc": "Implementation of secondary WAN links with automated Fortinet failover in under 15 seconds without session drops."
+        },
+        {
+          "phase": "Phase 3: Hybrid Cloud Redundancy (Azure / AWS)",
+          "time": "Months 5 – 6 (Jun – Jul 2024)",
+          "desc": "Cloud instance configuration and data replication for disaster tolerance and uninterrupted shift work."
+        },
+        {
+          "phase": "Phase 4: 24/7 Proactive Monitoring & SLA Tracking",
+          "time": "Month 7 onwards (Aug 2024 – Jun 2026)",
+          "desc": "Deployment of automated monitoring probes and fast-response protocols for technical support."
+        }
+      ],
       "technologies": ["Azure", "AWS", "Fortinet FortiGate", "SD-WAN", "VLAN", "Monitoreo SNMP"],
       "validationSource": "Registros de monitoreo de servidores y SLAs acordados con la dirección logística.",
+      "validationSourceEn": "Server monitoring logs and SLA performance reports agreed with logistics leadership.",
       "confidentiality": "Público / Demostrable",
       "scope": "Infraestructura tecnológica completa de almacén y operaciones conectadas.",
       "notes": "Mantenido de forma consistente durante la vigencia completa del contrato de consultoría."
@@ -262,18 +352,25 @@
     {
       "id": "reduccion-tiempos-respuesta-35",
       "title": "Reducción de tiempos de respuesta técnica en un 35% en operaciones logísticas",
+      "titleEn": "35% Reduction in Technical Incident Resolution Times in Logistics Operations",
       "claimedValue": "-35%",
       "status": "validada",
       "public": true,
       "company": "ODS Logistics",
       "companySlug": "ods-odw-logistics",
       "project": "Mesa de ayuda estructurada bajo marco ITIL y monitoreo proactivo de dispositivos",
+      "projectEn": "Structured ITIL Service Desk & Proactive Device Support",
       "period": "Feb 2024 – Jun 2026",
       "duration": "7 meses de implantación y optimización continua",
+      "durationEn": "7 months of deployment and continuous optimization",
       "definition": "Tiempo promedio transcurrido desde el reporte de una incidencia operativa en almacén hasta su resolución efectiva.",
+      "definitionEn": "Average time elapsed from the initial reporting of an operational incident to its verified resolution.",
       "baseline": "Atención no estandarizada con demoras de más de 45 minutos en fallas de terminales o impresoras térmicas",
+      "baselineEn": "Unstandardized support with delays exceeding 45 minutes for handheld RF terminal and thermal printer issues",
       "result": "35% más rápido en resolución con tiempos promedio menores a 18 minutos",
+      "resultEn": "35% faster resolution with average Mean Time to Resolution (MTTR) under 18 minutes",
       "method": "Métricas automáticas del sistema de tickets y encuestas de satisfacción a supervisores de operaciones.",
+      "methodEn": "Automated help desk ticketing metrics and operational supervisor satisfaction surveys.",
       "roadmap": [
         {
           "phase": "Fase 1: Mapeo de Incidencias Frecuentes",
@@ -296,8 +393,31 @@
           "desc": "Revisión quincenal de métricas MTTR (Mean Time to Resolution) y retroalimentación con líderes de operaciones."
         }
       ],
+      "roadmapEn": [
+        {
+          "phase": "Phase 1: Frequent Incident Mapping",
+          "time": "Months 1 – 2 (Mar – Apr 2024)",
+          "desc": "Cataloging frequent failures: RF terminal configurations, Zebra label printer jams, and credential resets."
+        },
+        {
+          "phase": "Phase 2: SLA Standardization & Escalation Matrix",
+          "time": "Months 3 – 4 (May – Jun 2024)",
+          "desc": "Defining P1 (critical for shipping), P2 (medium), and P3 (administrative) priorities with maximum response times."
+        },
+        {
+          "phase": "Phase 3: Knowledge Base & Critical Spares",
+          "time": "Months 5 – 6 (Jul – Aug 2024)",
+          "desc": "Creation of hot-swap spare inventory and quick-reference guides for First Contact Resolution (FCR)."
+        },
+        {
+          "phase": "Phase 4: Continuous Auditing & Optimization",
+          "time": "Month 7 onwards (Sep 2024 – Jun 2026)",
+          "desc": "Bi-weekly review of MTTR (Mean Time to Resolution) metrics and continuous feedback loops with operational leadership."
+        }
+      ],
       "technologies": ["Mesa de Ayuda ITIL", "Zebra Printing", "MDM Móvil", "SOP Documentados", "Power BI"],
       "validationSource": "Métricas de mesa de ayuda y encuestas de satisfacción de operaciones.",
+      "validationSourceEn": "Help desk ticketing analytics and operational supervisor satisfaction surveys.",
       "confidentiality": "Público / Demostrable",
       "scope": "Operaciones de almacén, muelles de carga y distribución.",
       "notes": "Permitió mantener la continuidad operativa ininterrumpida en turnos nocturnos de alta demanda."
